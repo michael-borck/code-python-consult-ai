@@ -352,53 +352,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#files---persisting-your-data" id="toc-files---persisting-your-data" class="nav-link active" data-scroll-target="#files---persisting-your-data"><span class="header-section-number">18</span> Files - Persisting Your Data</a>
   <ul class="collapse">
-  <li><a href="#chapter-outline" id="toc-chapter-outline" class="nav-link" data-scroll-target="#chapter-outline">Chapter Outline</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#introduction-why-store-data-in-files" id="toc-introduction-why-store-data-in-files" class="nav-link" data-scroll-target="#introduction-why-store-data-in-files">1. Introduction: Why Store Data in Files?</a></li>
-  <li><a href="#understanding-file-operations" id="toc-understanding-file-operations" class="nav-link" data-scroll-target="#understanding-file-operations">2. Understanding File Operations</a></li>
-  <li><a href="#using-the-with-statement-a-safer-approach" id="toc-using-the-with-statement-a-safer-approach" class="nav-link" data-scroll-target="#using-the-with-statement-a-safer-approach">3. Using the with Statement: A Safer Approach</a></li>
-  <li><a href="#reading-from-files" id="toc-reading-from-files" class="nav-link" data-scroll-target="#reading-from-files">4. Reading from Files</a>
+  <li><a href="#chapter-outline" id="toc-chapter-outline" class="nav-link" data-scroll-target="#chapter-outline"><span class="header-section-number">18.1</span> Chapter Outline</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">18.2</span> Learning Objectives</a></li>
+  <li><a href="#introduction-why-store-data-in-files" id="toc-introduction-why-store-data-in-files" class="nav-link" data-scroll-target="#introduction-why-store-data-in-files"><span class="header-section-number">18.3</span> 1. Introduction: Why Store Data in Files?</a></li>
+  <li><a href="#understanding-file-operations" id="toc-understanding-file-operations" class="nav-link" data-scroll-target="#understanding-file-operations"><span class="header-section-number">18.4</span> 2. Understanding File Operations</a></li>
+  <li><a href="#using-the-with-statement-a-safer-approach" id="toc-using-the-with-statement-a-safer-approach" class="nav-link" data-scroll-target="#using-the-with-statement-a-safer-approach"><span class="header-section-number">18.5</span> 3. Using the with Statement: A Safer Approach</a></li>
+  <li><a href="#reading-from-files" id="toc-reading-from-files" class="nav-link" data-scroll-target="#reading-from-files"><span class="header-section-number">18.6</span> 4. Reading from Files</a>
   <ul class="collapse">
-  <li><a href="#reading-the-entire-file" id="toc-reading-the-entire-file" class="nav-link" data-scroll-target="#reading-the-entire-file">Reading the Entire File</a></li>
-  <li><a href="#reading-line-by-line" id="toc-reading-line-by-line" class="nav-link" data-scroll-target="#reading-line-by-line">Reading Line by Line</a></li>
-  <li><a href="#reading-all-lines-into-a-list" id="toc-reading-all-lines-into-a-list" class="nav-link" data-scroll-target="#reading-all-lines-into-a-list">Reading All Lines into a List</a></li>
-  <li><a href="#iterating-over-a-file" id="toc-iterating-over-a-file" class="nav-link" data-scroll-target="#iterating-over-a-file">Iterating Over a File</a></li>
+  <li><a href="#reading-the-entire-file" id="toc-reading-the-entire-file" class="nav-link" data-scroll-target="#reading-the-entire-file"><span class="header-section-number">18.6.1</span> Reading the Entire File</a></li>
+  <li><a href="#reading-line-by-line" id="toc-reading-line-by-line" class="nav-link" data-scroll-target="#reading-line-by-line"><span class="header-section-number">18.6.2</span> Reading Line by Line</a></li>
+  <li><a href="#reading-all-lines-into-a-list" id="toc-reading-all-lines-into-a-list" class="nav-link" data-scroll-target="#reading-all-lines-into-a-list"><span class="header-section-number">18.6.3</span> Reading All Lines into a List</a></li>
+  <li><a href="#iterating-over-a-file" id="toc-iterating-over-a-file" class="nav-link" data-scroll-target="#iterating-over-a-file"><span class="header-section-number">18.6.4</span> Iterating Over a File</a></li>
   </ul></li>
-  <li><a href="#writing-to-files" id="toc-writing-to-files" class="nav-link" data-scroll-target="#writing-to-files">5. Writing to Files</a>
+  <li><a href="#writing-to-files" id="toc-writing-to-files" class="nav-link" data-scroll-target="#writing-to-files"><span class="header-section-number">18.7</span> 5. Writing to Files</a>
   <ul class="collapse">
-  <li><a href="#creating-a-new-file-or-overwriting-an-existing-one" id="toc-creating-a-new-file-or-overwriting-an-existing-one" class="nav-link" data-scroll-target="#creating-a-new-file-or-overwriting-an-existing-one">Creating a New File or Overwriting an Existing One</a></li>
-  <li><a href="#appending-to-an-existing-file" id="toc-appending-to-an-existing-file" class="nav-link" data-scroll-target="#appending-to-an-existing-file">Appending to an Existing File</a></li>
-  <li><a href="#writing-multiple-lines-at-once" id="toc-writing-multiple-lines-at-once" class="nav-link" data-scroll-target="#writing-multiple-lines-at-once">Writing Multiple Lines at Once</a></li>
+  <li><a href="#creating-a-new-file-or-overwriting-an-existing-one" id="toc-creating-a-new-file-or-overwriting-an-existing-one" class="nav-link" data-scroll-target="#creating-a-new-file-or-overwriting-an-existing-one"><span class="header-section-number">18.7.1</span> Creating a New File or Overwriting an Existing One</a></li>
+  <li><a href="#appending-to-an-existing-file" id="toc-appending-to-an-existing-file" class="nav-link" data-scroll-target="#appending-to-an-existing-file"><span class="header-section-number">18.7.2</span> Appending to an Existing File</a></li>
+  <li><a href="#writing-multiple-lines-at-once" id="toc-writing-multiple-lines-at-once" class="nav-link" data-scroll-target="#writing-multiple-lines-at-once"><span class="header-section-number">18.7.3</span> Writing Multiple Lines at Once</a></li>
   </ul></li>
-  <li><a href="#working-with-file-paths" id="toc-working-with-file-paths" class="nav-link" data-scroll-target="#working-with-file-paths">6. Working with File Paths</a>
+  <li><a href="#working-with-file-paths" id="toc-working-with-file-paths" class="nav-link" data-scroll-target="#working-with-file-paths"><span class="header-section-number">18.8</span> 6. Working with File Paths</a>
   <ul class="collapse">
-  <li><a href="#absolute-paths" id="toc-absolute-paths" class="nav-link" data-scroll-target="#absolute-paths">Absolute Paths</a></li>
-  <li><a href="#relative-paths" id="toc-relative-paths" class="nav-link" data-scroll-target="#relative-paths">Relative Paths</a></li>
-  <li><a href="#using-the-os.path-module" id="toc-using-the-os.path-module" class="nav-link" data-scroll-target="#using-the-os.path-module">Using the os.path Module</a></li>
+  <li><a href="#absolute-paths" id="toc-absolute-paths" class="nav-link" data-scroll-target="#absolute-paths"><span class="header-section-number">18.8.1</span> Absolute Paths</a></li>
+  <li><a href="#relative-paths" id="toc-relative-paths" class="nav-link" data-scroll-target="#relative-paths"><span class="header-section-number">18.8.2</span> Relative Paths</a></li>
+  <li><a href="#using-the-os.path-module" id="toc-using-the-os.path-module" class="nav-link" data-scroll-target="#using-the-os.path-module"><span class="header-section-number">18.8.3</span> Using the os.path Module</a></li>
   </ul></li>
-  <li><a href="#common-file-operations" id="toc-common-file-operations" class="nav-link" data-scroll-target="#common-file-operations">7. Common File Operations</a>
+  <li><a href="#common-file-operations" id="toc-common-file-operations" class="nav-link" data-scroll-target="#common-file-operations"><span class="header-section-number">18.9</span> 7. Common File Operations</a>
   <ul class="collapse">
-  <li><a href="#checking-if-a-file-exists" id="toc-checking-if-a-file-exists" class="nav-link" data-scroll-target="#checking-if-a-file-exists">Checking if a File Exists</a></li>
-  <li><a href="#creating-directories" id="toc-creating-directories" class="nav-link" data-scroll-target="#creating-directories">Creating Directories</a></li>
-  <li><a href="#listing-files-in-a-directory" id="toc-listing-files-in-a-directory" class="nav-link" data-scroll-target="#listing-files-in-a-directory">Listing Files in a Directory</a></li>
-  <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files">Deleting Files</a></li>
-  <li><a href="#renaming-files" id="toc-renaming-files" class="nav-link" data-scroll-target="#renaming-files">Renaming Files</a></li>
+  <li><a href="#checking-if-a-file-exists" id="toc-checking-if-a-file-exists" class="nav-link" data-scroll-target="#checking-if-a-file-exists"><span class="header-section-number">18.9.1</span> Checking if a File Exists</a></li>
+  <li><a href="#creating-directories" id="toc-creating-directories" class="nav-link" data-scroll-target="#creating-directories"><span class="header-section-number">18.9.2</span> Creating Directories</a></li>
+  <li><a href="#listing-files-in-a-directory" id="toc-listing-files-in-a-directory" class="nav-link" data-scroll-target="#listing-files-in-a-directory"><span class="header-section-number">18.9.3</span> Listing Files in a Directory</a></li>
+  <li><a href="#deleting-files" id="toc-deleting-files" class="nav-link" data-scroll-target="#deleting-files"><span class="header-section-number">18.9.4</span> Deleting Files</a></li>
+  <li><a href="#renaming-files" id="toc-renaming-files" class="nav-link" data-scroll-target="#renaming-files"><span class="header-section-number">18.9.5</span> Renaming Files</a></li>
   </ul></li>
-  <li><a href="#working-with-csv-files" id="toc-working-with-csv-files" class="nav-link" data-scroll-target="#working-with-csv-files">8. Working with CSV Files</a>
+  <li><a href="#working-with-csv-files" id="toc-working-with-csv-files" class="nav-link" data-scroll-target="#working-with-csv-files"><span class="header-section-number">18.10</span> 8. Working with CSV Files</a>
   <ul class="collapse">
-  <li><a href="#reading-csv-files" id="toc-reading-csv-files" class="nav-link" data-scroll-target="#reading-csv-files">Reading CSV Files</a></li>
-  <li><a href="#writing-csv-files" id="toc-writing-csv-files" class="nav-link" data-scroll-target="#writing-csv-files">Writing CSV Files</a></li>
+  <li><a href="#reading-csv-files" id="toc-reading-csv-files" class="nav-link" data-scroll-target="#reading-csv-files"><span class="header-section-number">18.10.1</span> Reading CSV Files</a></li>
+  <li><a href="#writing-csv-files" id="toc-writing-csv-files" class="nav-link" data-scroll-target="#writing-csv-files"><span class="header-section-number">18.10.2</span> Writing CSV Files</a></li>
   </ul></li>
-  <li><a href="#working-with-json-files" id="toc-working-with-json-files" class="nav-link" data-scroll-target="#working-with-json-files">9. Working with JSON Files</a>
+  <li><a href="#working-with-json-files" id="toc-working-with-json-files" class="nav-link" data-scroll-target="#working-with-json-files"><span class="header-section-number">18.11</span> 9. Working with JSON Files</a>
   <ul class="collapse">
-  <li><a href="#reading-json-files" id="toc-reading-json-files" class="nav-link" data-scroll-target="#reading-json-files">Reading JSON Files</a></li>
-  <li><a href="#writing-json-files" id="toc-writing-json-files" class="nav-link" data-scroll-target="#writing-json-files">Writing JSON Files</a></li>
+  <li><a href="#reading-json-files" id="toc-reading-json-files" class="nav-link" data-scroll-target="#reading-json-files"><span class="header-section-number">18.11.1</span> Reading JSON Files</a></li>
+  <li><a href="#writing-json-files" id="toc-writing-json-files" class="nav-link" data-scroll-target="#writing-json-files"><span class="header-section-number">18.11.2</span> Writing JSON Files</a></li>
   </ul></li>
-  <li><a href="#self-assessment-quiz" id="toc-self-assessment-quiz" class="nav-link" data-scroll-target="#self-assessment-quiz">10. Self-Assessment Quiz</a></li>
-  <li><a href="#common-file-handling-pitfalls" id="toc-common-file-handling-pitfalls" class="nav-link" data-scroll-target="#common-file-handling-pitfalls">11. Common File Handling Pitfalls</a></li>
-  <li><a href="#project-corner-persistent-chatbot-with-file-storage" id="toc-project-corner-persistent-chatbot-with-file-storage" class="nav-link" data-scroll-target="#project-corner-persistent-chatbot-with-file-storage">Project Corner: Persistent Chatbot with File Storage</a></li>
-  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references">Cross-References</a></li>
-  <li><a href="#real-world-file-applications" id="toc-real-world-file-applications" class="nav-link" data-scroll-target="#real-world-file-applications">Real-World File Applications</a></li>
+  <li><a href="#self-assessment-quiz" id="toc-self-assessment-quiz" class="nav-link" data-scroll-target="#self-assessment-quiz"><span class="header-section-number">18.12</span> 10. Self-Assessment Quiz</a></li>
+  <li><a href="#common-file-handling-pitfalls" id="toc-common-file-handling-pitfalls" class="nav-link" data-scroll-target="#common-file-handling-pitfalls"><span class="header-section-number">18.13</span> 11. Common File Handling Pitfalls</a></li>
+  <li><a href="#project-corner-persistent-chatbot-with-file-storage" id="toc-project-corner-persistent-chatbot-with-file-storage" class="nav-link" data-scroll-target="#project-corner-persistent-chatbot-with-file-storage"><span class="header-section-number">18.14</span> Project Corner: Persistent Chatbot with File Storage</a></li>
+  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references"><span class="header-section-number">18.15</span> Cross-References</a></li>
+  <li><a href="#real-world-file-applications" id="toc-real-world-file-applications" class="nav-link" data-scroll-target="#real-world-file-applications"><span class="header-section-number">18.16</span> Real-World File Applications</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/python-jumpstart/edit/main/chapters/15_files.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/python-jumpstart/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -427,8 +427,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="files---persisting-your-data" class="level1" data-number="18">
 <h1 data-number="18"><span class="header-section-number">18</span> Files - Persisting Your Data</h1>
-<section id="chapter-outline" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-outline">Chapter Outline</h2>
+<section id="chapter-outline" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="chapter-outline"><span class="header-section-number">18.1</span> Chapter Outline</h2>
 <ul>
 <li>Understanding file operations</li>
 <li>Opening and closing files</li>
@@ -441,12 +441,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Handling text and binary files</li>
 </ul>
 </section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<section id="learning-objectives" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">18.2</span> Learning Objectives</h2>
 <p>By the end of this chapter, you will be able to: - Understand how file operations work in Python - Read data from text files - Write and append data to files - Safely manage file resources with the with statement - Work with file paths and different file formats - Create programs that persist data between runs - Implement file operations in practical applications</p>
 </section>
-<section id="introduction-why-store-data-in-files" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-why-store-data-in-files">1. Introduction: Why Store Data in Files?</h2>
+<section id="introduction-why-store-data-in-files" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="introduction-why-store-data-in-files"><span class="header-section-number">18.3</span> 1. Introduction: Why Store Data in Files?</h2>
 <p>So far, all the programs we’ve written have been ephemeral - the data exists only while the program is running. Once the program ends, all the variables, lists, and dictionaries vanish from memory. But what if you want to save your data for later use? Or what if you want to share data between different programs?</p>
 <p>This is where files come in. Files allow your programs to:</p>
 <ul>
@@ -460,8 +460,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this chapter, we’ll learn how to read from and write to files, which is a fundamental skill for creating useful programs.</p>
 <p><strong><em>AI Tip: Ask your AI assistant to help you understand the difference between volatile memory (RAM) and persistent storage (disk) in computing.</em></strong></p>
 </section>
-<section id="understanding-file-operations" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-file-operations">2. Understanding File Operations</h2>
+<section id="understanding-file-operations" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="understanding-file-operations"><span class="header-section-number">18.4</span> 2. Understanding File Operations</h2>
 <p>Working with files in Python typically follows a three-step process:</p>
 <ol type="1">
 <li><strong>Open</strong> the file, which creates a connection to the file and prepares it for reading or writing</li>
@@ -481,8 +481,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>open()</code> function takes two arguments: - The filename (or path) - The mode (how you want to use the file)</p>
 <p>Common file modes include: - <code>'r'</code> - Read (default): Open for reading - <code>'w'</code> - Write: Open for writing (creates a new file or truncates an existing one) - <code>'a'</code> - Append: Open for writing, appending to the end of the file - <code>'r+'</code> - Read+Write: Open for both reading and writing - <code>'b'</code> - Binary mode (added to other modes, e.g., <code>'rb'</code> for reading binary files)</p>
 </section>
-<section id="using-the-with-statement-a-safer-approach" class="level2">
-<h2 class="anchored" data-anchor-id="using-the-with-statement-a-safer-approach">3. Using the with Statement: A Safer Approach</h2>
+<section id="using-the-with-statement-a-safer-approach" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="using-the-with-statement-a-safer-approach"><span class="header-section-number">18.5</span> 3. Using the with Statement: A Safer Approach</h2>
 <p>It’s crucial to close files after you’re done with them, but it’s easy to forget or miss this step if an error occurs. Python provides a cleaner solution with the <code>with</code> statement, which automatically closes the file when the block is exited:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A safer way to work with files</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'example.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -492,17 +492,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This approach is preferred because: - It’s more concise - The file is automatically closed, even if an error occurs - It follows Python’s “context manager” pattern for resource management</p>
 <p>Throughout this chapter, we’ll use the <code>with</code> statement for all file operations.</p>
 </section>
-<section id="reading-from-files" class="level2">
-<h2 class="anchored" data-anchor-id="reading-from-files">4. Reading from Files</h2>
+<section id="reading-from-files" class="level2" data-number="18.6">
+<h2 data-number="18.6" class="anchored" data-anchor-id="reading-from-files"><span class="header-section-number">18.6</span> 4. Reading from Files</h2>
 <p>Python offers several methods for reading file content:</p>
-<section id="reading-the-entire-file" class="level3">
-<h3 class="anchored" data-anchor-id="reading-the-entire-file">Reading the Entire File</h3>
+<section id="reading-the-entire-file" class="level3" data-number="18.6.1">
+<h3 data-number="18.6.1" class="anchored" data-anchor-id="reading-the-entire-file"><span class="header-section-number">18.6.1</span> Reading the Entire File</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'example.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()  <span class="co"># Reads the entire file into a single string</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="reading-line-by-line" class="level3">
-<h3 class="anchored" data-anchor-id="reading-line-by-line">Reading Line by Line</h3>
+<section id="reading-line-by-line" class="level3" data-number="18.6.2">
+<h3 data-number="18.6.2" class="anchored" data-anchor-id="reading-line-by-line"><span class="header-section-number">18.6.2</span> Reading Line by Line</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'example.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Read one line at a time</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    first_line <span class="op">=</span> <span class="bu">file</span>.readline()</span>
@@ -510,16 +510,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(first_line.strip())  <span class="co"># .strip() removes the newline character</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(second_line.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="reading-all-lines-into-a-list" class="level3">
-<h3 class="anchored" data-anchor-id="reading-all-lines-into-a-list">Reading All Lines into a List</h3>
+<section id="reading-all-lines-into-a-list" class="level3" data-number="18.6.3">
+<h3 data-number="18.6.3" class="anchored" data-anchor-id="reading-all-lines-into-a-list"><span class="header-section-number">18.6.3</span> Reading All Lines into a List</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'example.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> <span class="bu">file</span>.readlines()  <span class="co"># Returns a list where each element is a line</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(line.strip())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="iterating-over-a-file" class="level3">
-<h3 class="anchored" data-anchor-id="iterating-over-a-file">Iterating Over a File</h3>
+<section id="iterating-over-a-file" class="level3" data-number="18.6.4">
+<h3 data-number="18.6.4" class="anchored" data-anchor-id="iterating-over-a-file"><span class="header-section-number">18.6.4</span> Iterating Over a File</h3>
 <p>The most memory-efficient way to process large files is to iterate directly over the file object:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'example.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>:  <span class="co"># File objects are iterable</span></span>
@@ -527,24 +527,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This approach reads only one line at a time into memory, which is ideal for large files.</p>
 </section>
 </section>
-<section id="writing-to-files" class="level2">
-<h2 class="anchored" data-anchor-id="writing-to-files">5. Writing to Files</h2>
+<section id="writing-to-files" class="level2" data-number="18.7">
+<h2 data-number="18.7" class="anchored" data-anchor-id="writing-to-files"><span class="header-section-number">18.7</span> 5. Writing to Files</h2>
 <p>Writing to files is just as straightforward as reading:</p>
-<section id="creating-a-new-file-or-overwriting-an-existing-one" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-new-file-or-overwriting-an-existing-one">Creating a New File or Overwriting an Existing One</h3>
+<section id="creating-a-new-file-or-overwriting-an-existing-one" class="level3" data-number="18.7.1">
+<h3 data-number="18.7.1" class="anchored" data-anchor-id="creating-a-new-file-or-overwriting-an-existing-one"><span class="header-section-number">18.7.1</span> Creating a New File or Overwriting an Existing One</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'output.txt'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">'Hello, world!</span><span class="ch">\n</span><span class="st">'</span>)  <span class="co"># \n adds a newline</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">'This is a new file.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This creates a new file named <code>output.txt</code> (or overwrites it if it already exists) with the content “Hello, world!” followed by “This is a new file.” on the next line.</p>
 </section>
-<section id="appending-to-an-existing-file" class="level3">
-<h3 class="anchored" data-anchor-id="appending-to-an-existing-file">Appending to an Existing File</h3>
+<section id="appending-to-an-existing-file" class="level3" data-number="18.7.2">
+<h3 data-number="18.7.2" class="anchored" data-anchor-id="appending-to-an-existing-file"><span class="header-section-number">18.7.2</span> Appending to an Existing File</h3>
 <p>If you want to add content to the end of an existing file without overwriting it, use the append mode:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'log.txt'</span>, <span class="st">'a'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">'New log entry</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="writing-multiple-lines-at-once" class="level3">
-<h3 class="anchored" data-anchor-id="writing-multiple-lines-at-once">Writing Multiple Lines at Once</h3>
+<section id="writing-multiple-lines-at-once" class="level3" data-number="18.7.3">
+<h3 data-number="18.7.3" class="anchored" data-anchor-id="writing-multiple-lines-at-once"><span class="header-section-number">18.7.3</span> Writing Multiple Lines at Once</h3>
 <p>The <code>writelines()</code> method lets you write multiple lines from a list:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> [<span class="st">'First line</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">'Second line</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">'Third line</span><span class="ch">\n</span><span class="st">'</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -553,11 +553,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note that <code>writelines()</code> doesn’t add newline characters automatically; you need to include them in your strings.</p>
 </section>
 </section>
-<section id="working-with-file-paths" class="level2">
-<h2 class="anchored" data-anchor-id="working-with-file-paths">6. Working with File Paths</h2>
+<section id="working-with-file-paths" class="level2" data-number="18.8">
+<h2 data-number="18.8" class="anchored" data-anchor-id="working-with-file-paths"><span class="header-section-number">18.8</span> 6. Working with File Paths</h2>
 <p>So far, we’ve worked with files in the current directory. To work with files in other locations, you need to specify the path:</p>
-<section id="absolute-paths" class="level3">
-<h3 class="anchored" data-anchor-id="absolute-paths">Absolute Paths</h3>
+<section id="absolute-paths" class="level3" data-number="18.8.1">
+<h3 data-number="18.8.1" class="anchored" data-anchor-id="absolute-paths"><span class="header-section-number">18.8.1</span> Absolute Paths</h3>
 <p>An absolute path specifies the complete location from the root directory:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows example</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="vs">r'C:\Users\Username\Documents\file.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -568,8 +568,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note the <code>r</code> prefix in the Windows example, which creates a “raw string” that doesn’t interpret backslashes as escape characters.</p>
 </section>
-<section id="relative-paths" class="level3">
-<h3 class="anchored" data-anchor-id="relative-paths">Relative Paths</h3>
+<section id="relative-paths" class="level3" data-number="18.8.2">
+<h3 data-number="18.8.2" class="anchored" data-anchor-id="relative-paths"><span class="header-section-number">18.8.2</span> Relative Paths</h3>
 <p>A relative path specifies the location relative to the current directory:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># File in the current directory</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'file.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -583,8 +583,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'../file.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="using-the-os.path-module" class="level3">
-<h3 class="anchored" data-anchor-id="using-the-os.path-module">Using the os.path Module</h3>
+<section id="using-the-os.path-module" class="level3" data-number="18.8.3">
+<h3 data-number="18.8.3" class="anchored" data-anchor-id="using-the-os.path-module"><span class="header-section-number">18.8.3</span> Using the os.path Module</h3>
 <p>For platform-independent code, use the <code>os.path</code> module to handle file paths:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -599,11 +599,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"File </span><span class="sc">{</span>file_path<span class="sc">}</span><span class="ss"> does not exist"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="common-file-operations" class="level2">
-<h2 class="anchored" data-anchor-id="common-file-operations">7. Common File Operations</h2>
+<section id="common-file-operations" class="level2" data-number="18.9">
+<h2 data-number="18.9" class="anchored" data-anchor-id="common-file-operations"><span class="header-section-number">18.9</span> 7. Common File Operations</h2>
 <p>Beyond basic reading and writing, here are some common file operations:</p>
-<section id="checking-if-a-file-exists" class="level3">
-<h3 class="anchored" data-anchor-id="checking-if-a-file-exists">Checking if a File Exists</h3>
+<section id="checking-if-a-file-exists" class="level3" data-number="18.9.1">
+<h3 data-number="18.9.1" class="anchored" data-anchor-id="checking-if-a-file-exists"><span class="header-section-number">18.9.1</span> Checking if a File Exists</h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(<span class="st">'file.txt'</span>):</span>
@@ -611,8 +611,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The file does not exist"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="creating-directories" class="level3">
-<h3 class="anchored" data-anchor-id="creating-directories">Creating Directories</h3>
+<section id="creating-directories" class="level3" data-number="18.9.2">
+<h3 data-number="18.9.2" class="anchored" data-anchor-id="creating-directories"><span class="header-section-number">18.9.2</span> Creating Directories</h3>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a single directory</span></span>
@@ -621,35 +621,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create multiple nested directories</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>os.makedirs(<span class="st">'parent/child/grandchild'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="listing-files-in-a-directory" class="level3">
-<h3 class="anchored" data-anchor-id="listing-files-in-a-directory">Listing Files in a Directory</h3>
+<section id="listing-files-in-a-directory" class="level3" data-number="18.9.3">
+<h3 data-number="18.9.3" class="anchored" data-anchor-id="listing-files-in-a-directory"><span class="header-section-number">18.9.3</span> Listing Files in a Directory</h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># List all files and directories</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>entries <span class="op">=</span> os.listdir(<span class="st">'.'</span>)  <span class="co"># '.' represents the current directory</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(entries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="deleting-files" class="level3">
-<h3 class="anchored" data-anchor-id="deleting-files">Deleting Files</h3>
+<section id="deleting-files" class="level3" data-number="18.9.4">
+<h3 data-number="18.9.4" class="anchored" data-anchor-id="deleting-files"><span class="header-section-number">18.9.4</span> Deleting Files</h3>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Delete a file</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(<span class="st">'unwanted.txt'</span>):</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    os.remove(<span class="st">'unwanted.txt'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="renaming-files" class="level3">
-<h3 class="anchored" data-anchor-id="renaming-files">Renaming Files</h3>
+<section id="renaming-files" class="level3" data-number="18.9.5">
+<h3 data-number="18.9.5" class="anchored" data-anchor-id="renaming-files"><span class="header-section-number">18.9.5</span> Renaming Files</h3>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename a file</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>os.rename(<span class="st">'old_name.txt'</span>, <span class="st">'new_name.txt'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="working-with-csv-files" class="level2">
-<h2 class="anchored" data-anchor-id="working-with-csv-files">8. Working with CSV Files</h2>
+<section id="working-with-csv-files" class="level2" data-number="18.10">
+<h2 data-number="18.10" class="anchored" data-anchor-id="working-with-csv-files"><span class="header-section-number">18.10</span> 8. Working with CSV Files</h2>
 <p>Comma-Separated Values (CSV) files are a common format for storing tabular data. Python provides the <code>csv</code> module for working with CSV files:</p>
-<section id="reading-csv-files" class="level3">
-<h3 class="anchored" data-anchor-id="reading-csv-files">Reading CSV Files</h3>
+<section id="reading-csv-files" class="level3" data-number="18.10.1">
+<h3 data-number="18.10.1" class="anchored" data-anchor-id="reading-csv-files"><span class="header-section-number">18.10.1</span> Reading CSV Files</h3>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.csv'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -663,8 +663,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> csv_reader:</span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)  <span class="co"># Each row is a list of values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="writing-csv-files" class="level3">
-<h3 class="anchored" data-anchor-id="writing-csv-files">Writing CSV Files</h3>
+<section id="writing-csv-files" class="level3" data-number="18.10.2">
+<h3 data-number="18.10.2" class="anchored" data-anchor-id="writing-csv-files"><span class="header-section-number">18.10.2</span> Writing CSV Files</h3>
 <div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [</span>
@@ -681,11 +681,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    csv_writer.writerows(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="working-with-json-files" class="level2">
-<h2 class="anchored" data-anchor-id="working-with-json-files">9. Working with JSON Files</h2>
+<section id="working-with-json-files" class="level2" data-number="18.11">
+<h2 data-number="18.11" class="anchored" data-anchor-id="working-with-json-files"><span class="header-section-number">18.11</span> 9. Working with JSON Files</h2>
 <p>JavaScript Object Notation (JSON) is a popular data format that’s particularly useful for storing hierarchical data. Python’s <code>json</code> module makes it easy to work with JSON files:</p>
-<section id="reading-json-files" class="level3">
-<h3 class="anchored" data-anchor-id="reading-json-files">Reading JSON Files</h3>
+<section id="reading-json-files" class="level3" data-number="18.11.1">
+<h3 data-number="18.11.1" class="anchored" data-anchor-id="reading-json-files"><span class="header-section-number">18.11.1</span> Reading JSON Files</h3>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'config.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -694,8 +694,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(data[<span class="st">'name'</span>])</span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(data[<span class="st">'settings'</span>][<span class="st">'theme'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="writing-json-files" class="level3">
-<h3 class="anchored" data-anchor-id="writing-json-files">Writing JSON Files</h3>
+<section id="writing-json-files" class="level3" data-number="18.11.2">
+<h3 data-number="18.11.2" class="anchored" data-anchor-id="writing-json-files"><span class="header-section-number">18.11.2</span> Writing JSON Files</h3>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
@@ -712,8 +712,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    json.dump(data, <span class="bu">file</span>, indent<span class="op">=</span><span class="dv">4</span>)  <span class="co"># indent for pretty formatting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="self-assessment-quiz" class="level2">
-<h2 class="anchored" data-anchor-id="self-assessment-quiz">10. Self-Assessment Quiz</h2>
+<section id="self-assessment-quiz" class="level2" data-number="18.12">
+<h2 data-number="18.12" class="anchored" data-anchor-id="self-assessment-quiz"><span class="header-section-number">18.12</span> 10. Self-Assessment Quiz</h2>
 <ol type="1">
 <li>Which file mode would you use to add data to the end of an existing file?
 <ol type="a">
@@ -753,8 +753,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><strong>Answers &amp; Feedback:</strong> 1. c) <code>'a'</code> — Append mode adds new content to the end of an existing file 2. b) It automatically closes the file even if an error occurs — This prevents resource leaks 3. c) <code>file.read()</code> — This method reads the entire file into memory as a string 4. b) The existing file is deleted and a new empty file is created — Be careful with write mode! 5. a) <code>csv</code> — Python’s built-in module for working with CSV files</p>
 </section>
-<section id="common-file-handling-pitfalls" class="level2">
-<h2 class="anchored" data-anchor-id="common-file-handling-pitfalls">11. Common File Handling Pitfalls</h2>
+<section id="common-file-handling-pitfalls" class="level2" data-number="18.13">
+<h2 data-number="18.13" class="anchored" data-anchor-id="common-file-handling-pitfalls"><span class="header-section-number">18.13</span> 11. Common File Handling Pitfalls</h2>
 <ul>
 <li><strong>Not closing files</strong>: Always close files or use the <code>with</code> statement to avoid resource leaks</li>
 <li><strong>Hardcoding file paths</strong>: Use relative paths or <code>os.path</code> functions for more portable code</li>
@@ -764,8 +764,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Not handling encoding issues</strong>: Specify the encoding when working with text files containing special characters</li>
 </ul>
 </section>
-<section id="project-corner-persistent-chatbot-with-file-storage" class="level2">
-<h2 class="anchored" data-anchor-id="project-corner-persistent-chatbot-with-file-storage">Project Corner: Persistent Chatbot with File Storage</h2>
+<section id="project-corner-persistent-chatbot-with-file-storage" class="level2" data-number="18.14">
+<h2 data-number="18.14" class="anchored" data-anchor-id="project-corner-persistent-chatbot-with-file-storage"><span class="header-section-number">18.14</span> Project Corner: Persistent Chatbot with File Storage</h2>
 <p>Let’s enhance our chatbot by adding the ability to save and load conversations:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -913,8 +913,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This makes the chatbot more useful, as you can review past interactions and continue conversations later.</p>
 <p><strong>Challenges</strong>: - Add a feature to save conversations in JSON format - Implement automatic periodic saving - Create a settings file that remembers user preferences - Add the ability to search through saved conversations for specific keywords - Implement a feature to pick up a conversation where it left off</p>
 </section>
-<section id="cross-references" class="level2">
-<h2 class="anchored" data-anchor-id="cross-references">Cross-References</h2>
+<section id="cross-references" class="level2" data-number="18.15">
+<h2 data-number="18.15" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">18.15</span> Cross-References</h2>
 <ul>
 <li>Previous Chapter: <a href="../chapters/14_dictionaries.html">Dictionaries</a></li>
 <li>Next Chapter: <a href="../chapters/16_errors_and_exceptions.html">Errors and Exceptions</a></li>
@@ -922,8 +922,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong><em>AI Tip: Ask your AI assistant to suggest file organization strategies for different types of projects, such as data analysis, web development, or scientific computing.</em></strong></p>
 </section>
-<section id="real-world-file-applications" class="level2">
-<h2 class="anchored" data-anchor-id="real-world-file-applications">Real-World File Applications</h2>
+<section id="real-world-file-applications" class="level2" data-number="18.16">
+<h2 data-number="18.16" class="anchored" data-anchor-id="real-world-file-applications"><span class="header-section-number">18.16</span> Real-World File Applications</h2>
 <p>Files are fundamental to many programming tasks. Here are some common real-world applications:</p>
 <ol type="1">
 <li><p><strong>Configuration Files</strong>: Store application settings in a format like JSON or INI.</p>
