@@ -50,13 +50,14 @@ This interactive guide covers everything from basic Python syntax to more advanc
 
 ## Related Resources {.unnumbered}
 
-This guide is part of a trilogy of free resources to help you master modern software development:
+This guide is part of a 4-book series designed to help you master modern software development in the AI era:
 
-1. **Python Jumpstart: Coding Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration
-2. **Intentional Prompting: Mastering the Human-AI Development Process**: A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
-3. **From Zero to Production: A Practical Python Development Pipeline**: Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
+1. **Python Step by Step with AI: Learning with AI** - An innovative programming textbook that embraces AI as a learning partner. Master Python by learning how to think computationally and direct AI to help you build solutions. Perfect for absolute beginners in the age of AI.
+2. **Python Jumpstart: Coding Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration - ideal for those who want a focused introduction to Python fundamentals
+3. **Intentional Prompting: Mastering the Human-AI Development Process**: A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
+4. **From Zero to Production: A Practical Python Development Pipeline**: Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
 
-While this guide focuses on Python fundamentals with AI integration, you'll find references to these complementary resources throughout, particularly in Chapters 17-22 which touch on the production pipeline concepts covered in-depth in "From Zero to Production."
+**Book Progression**: Start with "Python Step by Step with AI" if you're a complete beginner, or jump into "Python Jumpstart" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "From Zero to Production," while "Intentional Prompting" provides the AI collaboration methodology that enhances all your development work.
 
 ## How to Use This Guide {.unnumbered}
 
@@ -71,3 +72,12 @@ The guide is organized into several sections:
 5. **Code Quality**: Debugging, testing, and organizing code
 6. **Practical Python**: How to run, install, and get help with Python
 7. **Python in the AI Era**: Using AI assistants and integrating AI into your Python apps
+
+## License {.unnumbered}
+
+This book is released under a dual license:
+
+- **Book content** (text, explanations, documentation): [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Code examples**: [MIT License](https://opensource.org/licenses/MIT)
+
+This means you're free to use all the Python code examples in your own projects without restriction, while the educational content can be shared and adapted with proper attribution. See the full [LICENSE.md](LICENSE.md) for details.

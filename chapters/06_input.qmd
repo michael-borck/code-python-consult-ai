@@ -1,9 +1,4 @@
----
-title: "Input Inception: Getting Data from Users into Your Programs"
----
-
-
-# Chapter 6: Input - The Gateway to User Interaction
+# Input - The Gateway to User Interaction
 
 ## Chapter Outline
 - Understanding the `input()` function and its capabilities

@@ -1,8 +1,4 @@
----
-title: "Going Loopy: Repeating Code Without Losing Your Mind"
----
-
-# Chapter 12: Loops - Automating Repetitive Tasks
+# Loops - Automating Repetitive Tasks
 
 ## Chapter Outline
 - Understanding loops and iteration

@@ -1,9 +1,4 @@
----
-title: "Python in the Age of AI: Coding with Digital Collaborators"
----
-
-
-# Chapter 1: Python in the Age of AI
+# Python in the Age of AI
 
 ## Chapter Outline
 - Welcome to the AI-enhanced programming era

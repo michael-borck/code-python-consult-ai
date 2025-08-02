@@ -53,11 +53,12 @@ It doesn't cover everything about Python but provides the critical foundation ne
 
 ## Related Resources
 
-This guide is part of a trilogy of free resources to help you master modern software development:
+This guide is part of a 4-book series designed to help you master modern software development in the AI era:
 
-1. **Python Jumpstart: Coding Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration
-2. **Intentional Prompting: Mastering the Human-AI Development Process**: A methodology for effective AI collaboration
-3. **From Zero to Production: A Practical Python Development Pipeline**: Build professional-grade Python applications with modern tools
+1. **Python Step by Step with AI: Learning with AI** - Perfect for absolute beginners who want to learn computational thinking and AI collaboration from the ground up
+2. **Python Jumpstart: Coding Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration - ideal for focused Python fundamentals
+3. **Intentional Prompting: Mastering the Human-AI Development Process**: A methodology for effective AI collaboration
+4. **From Zero to Production: A Practical Python Development Pipeline**: Build professional-grade Python applications with modern tools
 
 ## Learning Path
 

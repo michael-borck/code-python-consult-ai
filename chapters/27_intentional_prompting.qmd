@@ -1,9 +1,8 @@
 ---
-title: "Intentional Prompting: Speaking the Language of AI Assistants"
 jupyter: python3
 ---
 
-# Chapter 27: Intentional Prompting
+# Intentional Prompting
 
 ## Chapter Outline
 - Understanding the concept of intentional prompting

@@ -1,9 +1,4 @@
----
-title: "Function Factory: Crafting Your Own Reusable Code Magic"
----
-
-
-# Chapter 9: Creating Functions - Build Your Own Python Tools
+# Creating Functions - Build Your Own Python Tools
 
 ## Chapter Outline
 - Understanding the importance of custom functions

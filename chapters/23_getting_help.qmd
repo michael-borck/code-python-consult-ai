@@ -1,8 +1,4 @@
----
-title: "Help Headquarters: Finding Answers When You Get Stuck"
----
-
-# Chapter 23: Getting Help with Python
+# Getting Help with Python
 
 ## Chapter Outline
 - Understanding the truth about programming and looking up information

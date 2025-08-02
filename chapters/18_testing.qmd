@@ -1,8 +1,4 @@
----
-title: "Test Kitchen: Ensuring Your Code Works as Intended"
----
-
-# Chapter 18: Testing - Ensuring Your Code Works as Intended
+# Testing - Ensuring Your Code Works as Intended
 
 ## Chapter Outline
 - Understanding software testing fundamentals

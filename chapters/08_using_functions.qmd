@@ -1,9 +1,4 @@
----
-title: "Function Fiesta: Using Python's Pre-built Code Blocks"
----
-
-
-# Chapter 8: Using Functions - Python's Built-in Powertools
+# Using Functions - Python's Built-in Powertools
 
 ## Chapter Outline
 - Understanding functions in the Python ecosystem

@@ -1,9 +1,4 @@
----
-title: "Output Odyssey: Making Your Code Speak to the World"
----
-
-
-# Chapter 5: Output - Communicating with the World
+# Output - Communicating with the World
 
 ## Chapter Outline
 - Understanding the `print()` function and its capabilities

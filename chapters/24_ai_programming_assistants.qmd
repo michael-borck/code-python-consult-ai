@@ -1,8 +1,4 @@
----
-title: "AI Programming Assistants: Coding with Digital Colleagues"
----
-
-# Chapter 24: AI Programming Assistants
+# AI Programming Assistants
 
 ## Chapter Outline
 - Understanding AI programming assistants and their capabilities

@@ -1,0 +1,49 @@
+# Acknowledgments {.unnumbered}
+
+This book represents the evolution of Python education in the age of AI, blending traditional programming fundamentals with modern AI-assisted learning approaches. I would like to acknowledge the contributions of various individuals, tools, and communities that made this work possible.
+
+## Author
+
+**Michael Borck** (michael@borck.me) - Lead author and creator. Michael developed the core concepts, structured the book, and wrote the original content for "Python Jumpstart: Coding Fundamentals for the AI Era."
+
+## AI Assistance
+
+This book was developed with extensive assistance from AI tools, embodying the very human-AI collaboration model it teaches:
+
+- **Claude by Anthropic** - Served as a primary writing and editing partner, helping refine concepts, improve explanations, and develop the AI integration sections throughout the book.
+- **ChatGPT by OpenAI** - Contributed to concept development and provided alternative perspectives on AI-assisted programming approaches.
+- **GitHub Copilot** - Assisted with code example generation and refinement.
+
+## Technical Production
+
+- **Quarto** - Used for document formatting, book generation, and cross-platform publishing
+- **GitHub** - Version control, collaboration, and project management
+- **GitHub Pages** - Hosts the online version of the book
+- **Python** - The language that makes it all possible
+
+## Educational Inspiration
+
+Special thanks to the educators and researchers who are pioneering AI-assisted learning:
+
+- The growing community of educators integrating AI tools into programming education
+- Teachers who emphasize understanding over memorization in the age of AI
+- Researchers exploring the intersection of human learning and AI assistance
+
+## Community Acknowledgments
+
+This book builds upon the collective wisdom of:
+
+- **The Python Community** - For creating an accessible, readable programming language that serves as the perfect introduction to coding
+- **AI Tool Developers** - For creating accessible AI assistants that are transforming how we learn and work
+- **Open Source Contributors** - Whose libraries and tools form the foundation of modern Python development
+- **Educational Content Creators** - Who continue to innovate in making programming accessible to everyone
+
+## Special Thanks
+
+To the early readers and educators who provided feedback on the AI-assisted learning approach, helping shape this book's unique perspective on learning Python in the modern era.
+
+To the students and professionals who are navigating the new landscape of AI-assisted programming - your questions and challenges helped inform the practical guidance throughout this book.
+
+---
+
+*Note: This book practices what it preaches about human-AI collaboration. While AI tools were extensively used in production, all content reflects the author's educational philosophy and has been carefully reviewed and refined by humans. The goal is to demonstrate effective partnership between human expertise and AI capabilities - the very model this book teaches for programming in the AI era.*

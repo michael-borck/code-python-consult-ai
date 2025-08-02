@@ -1,8 +1,4 @@
----
-title: "Module Mastery: Organizing Your Code for Growth and Reuse"
----
-
-# Chapter 19: Modules and Packages - Organizing Your Python Code
+# Modules and Packages - Organizing Your Python Code
 
 ## Chapter Outline
 - Understanding modules and packages in Python

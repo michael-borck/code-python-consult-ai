@@ -1,8 +1,4 @@
----
-title: "Debugging Detectives: Finding and Fixing Code Mysteries"
----
-
-# Chapter 17: Debugging - Finding and Fixing Code Mysteries
+# Debugging - Finding and Fixing Code Mysteries
 
 ## Chapter Outline
 - Understanding debugging fundamentals

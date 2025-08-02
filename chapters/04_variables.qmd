@@ -1,9 +1,4 @@
----
-title: "Variables: Your Data's Home in Python"
----
-
-
-# Chapter 4: Variables - Storing and Managing Data
+# Variables - Storing and Managing Data
 
 ## Chapter Outline
 - What are variables and why do we need them?

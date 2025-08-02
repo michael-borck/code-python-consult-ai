@@ -1,9 +1,4 @@
----
-title: "Values: The Building Blocks of Python Data"
----
-
-
-# Chapter 3: Values - Understanding Python's Data Types
+# Values - Understanding Python's Data Types
 
 ## Chapter Outline
 - What are values in programming?

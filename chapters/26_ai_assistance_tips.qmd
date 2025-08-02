@@ -1,8 +1,4 @@
----
-title: "AI Assistance Tips: Maximizing Your Machine Learning Mentors"
----
-
-# Chapter 26: AI Assistance Tips
+# AI Assistance Tips
 
 ## Chapter Outline
 - Advanced techniques for AI tool interactions

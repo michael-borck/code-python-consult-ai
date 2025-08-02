@@ -1,8 +1,4 @@
----
-title: "Installation Station: Setting Up Python and Required Libraries"
----
-
-# Chapter 22: Installing Python and Essential Libraries
+# Installing Python and Essential Libraries
 
 ## Chapter Outline
 - Understanding Python installation options

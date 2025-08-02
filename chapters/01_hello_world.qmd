@@ -1,9 +1,4 @@
----
-title: "Hello, World! - Your First Python Adventure"
----
-
-
-# Chapter 1: Hello, World! - Your First Python Adventure
+# Hello, World! - Your First Python Adventure
 
 ## Chapter Outline
 - The tradition of "Hello, World!"

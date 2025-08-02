@@ -1,9 +1,4 @@
----
-title: "Python Language Syntax: Your Coding Roadmap"
----
-
-
-# Chapter 2: Python Language Syntax - Decoding the Code Language
+# Python Language Syntax - Decoding the Code Language
 
 ## Chapter Outline
 - Understanding Python's unique syntax

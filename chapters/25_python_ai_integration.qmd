@@ -1,9 +1,4 @@
----
-title: "Python AI Integration: Connecting Your Code to Intelligent Services"
----
-
-
-# Chapter 25: Python AI Integration
+# Python AI Integration
 
 ## Chapter Outline
 - Understanding the AI integration landscape for Python
@@ -240,7 +235,7 @@ title: 'AI Integrator: Connecting Python Applications to AI Services'
 jupyter: python3
 ---
 
-# Chapter 25: Python AI Integration
+# Python AI Integration
 
 ## Chapter Outline
 - Understanding the AI integration landscape for Python

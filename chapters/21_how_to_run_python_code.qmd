@@ -1,8 +1,4 @@
----
-title: "Python Pilot: How to Execute Your Code in Different Environments"
----
-
-# Chapter 21: How to Run Python Code
+# How to Run Python Code
 
 ## Chapter Outline
 - Understanding interpreted vs. compiled languages

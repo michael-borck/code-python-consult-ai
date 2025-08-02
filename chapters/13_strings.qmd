@@ -1,8 +1,4 @@
----
-title: "String Theory: Manipulating Text in the Python Universe"
----
-
-# Chapter 13: Strings - Mastering Text Manipulation
+# Strings - Mastering Text Manipulation
 
 ## Chapter Outline
 - Understanding strings in Python: core concepts and importance

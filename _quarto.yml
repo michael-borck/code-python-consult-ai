@@ -5,53 +5,39 @@ project:
 book:
   title: "Python Jumpstart: Coding Fundamentals for the AI Era"
   author: "Michael Borck"
+  license: "CC BY-SA 4.0 (content), MIT (code examples)"
   chapters:
     - index.qmd
-    - part: "Core Python Fundamentals"
-      chapters:
-        - chapters/00_python_in_the_age_of_ai.qmd
-        - chapters/01_hello_world.qmd
-        - chapters/02_basic_python_syntax.qmd
-        - chapters/03_values.qmd
-        - chapters/04_variables.qmd
-        - chapters/05_output.qmd
-        - chapters/06_input.qmd
-        - chapters/07_operators.qmd
-    - part: "Functions and Control Flow"
-      chapters:
-        - chapters/08_using_functions.qmd
-        - chapters/09_creating_functions.qmd
-        - chapters/10_making_decisions.qmd
-    - part: "Data Structures and Iteration"
-      chapters:
-        - chapters/11_lists.qmd
-        - chapters/12_going_loopy.qmd
-        - chapters/13_strings.qmd
-        - chapters/14_dictionaries.qmd
-    - part: "Working with Data and Files"
-      chapters:
-        - chapters/15_files.qmd
-    - part: "Code Quality and Organization"
-      chapters:
-        - chapters/16_errors_and_exceptions.qmd
-        - chapters/17_debugging.qmd
-        - chapters/18_testing.qmd
-        - chapters/19_modules_and_packages.qmd
-        - chapters/20_orientating_your_objects.qmd
-    - part: "Practical Python Usage"
-      chapters:
-        - chapters/21_how_to_run_python_code.qmd
-        - chapters/22_how_to_install_python_testing.qmd
-        - chapters/23_getting_help.qmd
-    - part: "Python in the AI Era"
-      chapters:
-        - chapters/24_ai_programming_assistants.qmd
-        - chapters/25_python_ai_integration.qmd
-        - chapters/26_ai_assistance_tips.qmd
-        - chapters/27_intentional_prompting.qmd
-    - part: "Project: Build Your Own AI Chatbot"
-      chapters:
-        - chapters/chatbot_project.qmd
+    - chapters/00_python_in_the_age_of_ai.qmd
+    - chapters/01_hello_world.qmd
+    - chapters/02_basic_python_syntax.qmd
+    - chapters/03_values.qmd
+    - chapters/04_variables.qmd
+    - chapters/05_output.qmd
+    - chapters/06_input.qmd
+    - chapters/07_operators.qmd
+    - chapters/08_using_functions.qmd
+    - chapters/09_creating_functions.qmd
+    - chapters/10_making_decisions.qmd
+    - chapters/11_lists.qmd
+    - chapters/12_going_loopy.qmd
+    - chapters/13_strings.qmd
+    - chapters/14_dictionaries.qmd
+    - chapters/15_files.qmd
+    - chapters/16_errors_and_exceptions.qmd
+    - chapters/17_debugging.qmd
+    - chapters/18_testing.qmd
+    - chapters/19_modules_and_packages.qmd
+    - chapters/20_orientating_your_objects.qmd
+    - chapters/21_how_to_run_python_code.qmd
+    - chapters/22_how_to_install_python_testing.qmd
+    - chapters/23_getting_help.qmd
+    - chapters/24_ai_programming_assistants.qmd
+    - chapters/25_python_ai_integration.qmd
+    - chapters/26_ai_assistance_tips.qmd
+    - chapters/27_intentional_prompting.qmd
+    - chapters/chatbot_project.qmd
+    - acknowledgments.qmd
 
   downloads: [pdf, epub]
   repo-url: https://github.com/michael-borck/python-jumpstart
@@ -71,7 +57,6 @@ format:
     code-tools: true
     highlight-style: github
     toc: true
-    number-sections: true
     downloads: [pdf, epub]
   pdf:
     documentclass: scrbook

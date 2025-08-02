@@ -1,8 +1,4 @@
----
-title: "Orientating Your Objects: Building Digital Models of Real-World Things"
----
-
-# Chapter 20: Object-Oriented Programming in Python
+# Object-Oriented Programming in Python
 
 ## Chapter Outline
 - Understanding the concept of objects in programming

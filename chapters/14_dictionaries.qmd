@@ -1,8 +1,4 @@
----
-title: "Dictionary Detectives: Mastering Python's Key-Value Pairs"
----
-
-# Chapter 14: Dictionaries - Organizing Data with Key-Value Pairs
+# Dictionaries - Organizing Data with Key-Value Pairs
 
 ## Chapter Outline
 - Understanding dictionary data structure

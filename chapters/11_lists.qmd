@@ -1,8 +1,4 @@
----
-title: 'List Laboratory: Organizing Data in Python''s Most Versatile Container'
----
-
-# Chapter 11: Lists - Organizing Collections of Data
+# Lists - Organizing Collections of Data
 
 ## Chapter Outline
 - Understanding lists and their importance in programming

@@ -1,8 +1,4 @@
----
-title: "File Frontier: Reading and Writing Data to Permanent Storage"
----
-
-# Chapter 15: Files - Persisting Your Data
+# Files - Persisting Your Data
 
 ## Chapter Outline
 - Understanding file operations

@@ -1,8 +1,4 @@
----
-title: "Error Embassy: Understanding and Handling Exceptions with Grace"
----
-
-# Chapter 16: Errors and Exceptions - Handling the Unexpected
+# Errors and Exceptions - Handling the Unexpected
 
 ## Chapter Outline
 - Understanding error types in Python
