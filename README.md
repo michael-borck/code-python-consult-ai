@@ -1,4 +1,4 @@
-# Python Jumpstart: Coding Fundamentals for the AI Era
+# Python Foundations: Coding Fundamentals for the AI Era
 
 This Quarto book introduces the essential components of Python programming with a modern twist for the AI era. The focus is on learning just enough Python to effectively work with AI coding assistants - not becoming a Python expert.
 
@@ -60,8 +60,8 @@ This book is part of a comprehensive series for mastering modern software develo
 
 ### Python Track
 - **[Python Step by Step with AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Perfect for absolute beginners learning computational thinking
-- **[Python Jumpstart](https://michaelborck-books.github.io/python-jumpstart)** (this book): Coding Fundamentals for the AI Era
-- **[From Zero to Production](https://michaelborck-books.github.io/python-dev-book)**: A Practical Python Development Pipeline
+- **[Python Foundations](https://michaelborck-books.github.io/python-foundations)** (this book): Coding Fundamentals for the AI Era
+- **[Python Development Pipelines](https://michaelborck-books.github.io/python-development-pipelines)**: Tools and Workflows for Professional Python
 
 ### Web Track
 - **[Web Development Step by Step](https://michaelborck-books.github.io/web-dev-step-by-ste-ai)**: Building Business Solutions with AI

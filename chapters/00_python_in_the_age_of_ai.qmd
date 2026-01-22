@@ -583,8 +583,8 @@ This book is part of a comprehensive series for mastering modern software develo
 **Python Track**
 
 - [Python Step by Step with AI: Learning with AI](https://michaelborck-books.github.io/python-step-by-step-ai) - Perfect for absolute beginners
-- [Python Jumpstart: Coding Fundamentals for the AI Era](https://michaelborck-books.github.io/python-jumpstart) (this book) - Focused Python fundamentals
-- [From Zero to Production: A Practical Python Development Pipeline](https://michaelborck-books.github.io/python-dev-book) - Professional-grade applications
+- [Python Foundations: Coding Fundamentals for the AI Era](https://michaelborck-books.github.io/python-foundations) (this book) - Core Python knowledge
+- [Python Development Pipelines: Tools and Workflows for Professional Python](https://michaelborck-books.github.io/python-development-pipelines) - Professional development practices
 
 **Web Track**
 
