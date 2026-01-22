@@ -51,14 +51,20 @@ It doesn't cover everything about Python but provides the critical foundation ne
 ### Project
 - Chatbot Construction Site: Building Your AI-Enhanced Python Conversation Partner
 
-## Related Resources
+## Related Materials
 
-This guide is part of a 4-book series designed to help you master modern software development in the AI era:
+This book is part of a comprehensive series for mastering modern software development in the AI era:
 
-1. **Python Step by Step with AI: Learning with AI** - Perfect for absolute beginners who want to learn computational thinking and AI collaboration from the ground up
-2. **Python Jumpstart: Coding Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration - ideal for focused Python fundamentals
-3. **Intentional Prompting: Mastering the Human-AI Development Process**: A methodology for effective AI collaboration
-4. **From Zero to Production: A Practical Python Development Pipeline**: Build professional-grade Python applications with modern tools
+### Foundational Methodology
+- **[Intentional Prompting](https://michaelborck-books.github.io/intentional-prompting)**: Mastering the Human-AI Development Process
+
+### Python Track
+- **[Python Step by Step with AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Perfect for absolute beginners learning computational thinking
+- **[Python Jumpstart](https://michaelborck-books.github.io/python-jumpstart)** (this book): Coding Fundamentals for the AI Era
+- **[From Zero to Production](https://michaelborck-books.github.io/python-dev-book)**: A Practical Python Development Pipeline
+
+### Web Track
+- **[Web Development Step by Step](https://michaelborck-books.github.io/web-dev-step-by-ste-ai)**: Building Business Solutions with AI
 
 ## Learning Path
 

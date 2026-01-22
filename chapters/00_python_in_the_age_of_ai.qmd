@@ -572,4 +572,22 @@ Key takeaways include:
 
 As we proceed through this book, you'll build both your Python knowledge and your skills in working with AI assistants. This dual focus will prepare you for a future where effective programming is increasingly about human-AI collaboration rather than purely human effort.
 
+## Related Materials
+
+This book is part of a comprehensive series for mastering modern software development in the AI era:
+
+**Foundational Methodology**
+
+- [Intentional Prompting: Mastering the Human-AI Development Process](https://michaelborck-books.github.io/intentional-prompting)
+
+**Python Track**
+
+- [Python Step by Step with AI: Learning with AI](https://michaelborck-books.github.io/python-step-by-step-ai) - Perfect for absolute beginners
+- [Python Jumpstart: Coding Fundamentals for the AI Era](https://michaelborck-books.github.io/python-jumpstart) (this book) - Focused Python fundamentals
+- [From Zero to Production: A Practical Python Development Pipeline](https://michaelborck-books.github.io/python-dev-book) - Professional-grade applications
+
+**Web Track**
+
+- [Web Development Step by Step: Building Business Solutions with AI](https://michaelborck-books.github.io/web-dev-step-by-ste-ai) - HTML, CSS, JavaScript, WordPress, React
+
 Welcome to your Python journey in the age of AI—let's get started!
