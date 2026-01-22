@@ -588,6 +588,6 @@ This book is part of a comprehensive series for mastering modern software develo
 
 **Web Track**
 
-- [Web Development Step by Step: Building Business Solutions with AI](https://michaelborck-books.github.io/web-dev-step-by-ste-ai) - HTML, CSS, JavaScript, WordPress, React
+- [Web Development Step by Step: Building Business Solutions with AI](https://michaelborck-books.github.io/web-dev-step-by-step-ai) - HTML, CSS, JavaScript, WordPress, React
 
 Welcome to your Python journey in the age of AI—let's get started!
