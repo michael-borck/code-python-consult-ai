@@ -1,4 +1,4 @@
-# Python Foundations: Coding Fundamentals for the AI Era
+# Code Python, Consult AI: Python Fundamentals for the AI Era
 
 This Quarto book introduces the essential components of Python programming with a modern twist for the AI era. The focus is on learning just enough Python to effectively work with AI coding assistants - not becoming a Python expert.
 
@@ -56,15 +56,15 @@ It doesn't cover everything about Python but provides the critical foundation ne
 This book is part of a comprehensive series for mastering modern software development in the AI era:
 
 ### Foundational Methodology
-- **[Intentional Prompting](https://michaelborck-books.github.io/intentional-prompting)**: Mastering the Human-AI Development Process
+- **[Conversation, Not Delegation](https://michaelborck-books.github.io/intentional-prompting)**: Mastering Human-AI Development
 
 ### Python Track
-- **[Python Step by Step with AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Perfect for absolute beginners learning computational thinking
-- **[Python Foundations](https://michaelborck-books.github.io/python-foundations)** (this book): Coding Fundamentals for the AI Era
-- **[Python Development Pipelines](https://michaelborck-books.github.io/python-development-pipelines)**: Tools and Workflows for Professional Python
+- **[Think Python, Direct AI](https://michaelborck-books.github.io/python-step-by-step-ai)**: Computational Thinking for Beginners
+- **[Code Python, Consult AI](https://michaelborck-books.github.io/python-foundations)** (this book): Python Fundamentals for the AI Era
+- **[Ship It: Python in Production](https://michaelborck-books.github.io/python-development-pipelines)**: Professional Tools and Workflows
 
 ### Web Track
-- **[Web Development Step by Step](https://michaelborck-books.github.io/web-dev-step-by-step-ai)**: Building Business Solutions with AI
+- **[Build Web, Guide AI](https://michaelborck-books.github.io/web-dev-step-by-step-ai)**: Business Web Development with AI
 
 ## Learning Path
 

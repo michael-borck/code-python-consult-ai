@@ -578,16 +578,16 @@ This book is part of a comprehensive series for mastering modern software develo
 
 **Foundational Methodology**
 
-- [Intentional Prompting: Mastering the Human-AI Development Process](https://michaelborck-books.github.io/intentional-prompting)
+- [Conversation, Not Delegation: Mastering Human-AI Development](https://michaelborck-books.github.io/intentional-prompting)
 
 **Python Track**
 
-- [Python Step by Step with AI: Learning with AI](https://michaelborck-books.github.io/python-step-by-step-ai) - Perfect for absolute beginners
-- [Python Foundations: Coding Fundamentals for the AI Era](https://michaelborck-books.github.io/python-foundations) (this book) - Core Python knowledge
-- [Python Development Pipelines: Tools and Workflows for Professional Python](https://michaelborck-books.github.io/python-development-pipelines) - Professional development practices
+- [Think Python, Direct AI: Computational Thinking for Beginners](https://michaelborck-books.github.io/python-step-by-step-ai) - Perfect for absolute beginners
+- [Code Python, Consult AI: Python Fundamentals for the AI Era](https://michaelborck-books.github.io/python-foundations) (this book) - Core Python knowledge
+- [Ship It: Python in Production](https://michaelborck-books.github.io/python-development-pipelines) - Professional tools and workflows
 
 **Web Track**
 
-- [Web Development Step by Step: Building Business Solutions with AI](https://michaelborck-books.github.io/web-dev-step-by-step-ai) - HTML, CSS, JavaScript, WordPress, React
+- [Build Web, Guide AI: Business Web Development with AI](https://michaelborck-books.github.io/web-dev-step-by-step-ai) - HTML, CSS, JavaScript, WordPress, React
 
 Welcome to your Python journey in the age of AI—let's get started!
