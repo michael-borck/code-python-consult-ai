@@ -1,10 +1,10 @@
 ---
-title: "Python Jumpstart: Coding Fundamentals for the AI Era"
+title: "Code Python, Consult AI: Python Fundamentals for the AI Era"
 ---
 
 # The AI-Era Advantage {.unnumbered}
 
-Welcome to "Python Jumpstart: Coding Fundamentals for the AI Era" - a
+Welcome to "Code Python, Consult AI: Python Fundamentals for the AI Era" - a
 comprehensive introduction to Python programming with a modern twist. This
 guide was created specifically for beginners who want to learn just enough
 Python to work effectively in today's AI-assisted programming environment.
@@ -16,7 +16,7 @@ This guide recognises that the landscape of programming is changing fast. While
 fundamentals remain essential, the ability to collaborate with AI—using it as a
 learning aid, coding partner, and productivity booster—is a crucial new skill.
 
-"Python Jumpstart: Coding Fundamentals for the AI Era" is your gateway to
+"Code Python, Consult AI: Python Fundamentals for the AI Era" is your gateway to
 Python programming, tailored for beginners who want to quickly become effective
 in a world where AI is part of everyday coding. You'll master the basics, learn
 to work with AI tools, and gain practical skills that are relevant right now
@@ -52,12 +52,12 @@ This interactive guide covers everything from basic Python syntax to more advanc
 
 This guide is part of a 4-book series designed to help you master modern software development in the AI era:
 
-1. **Python Step by Step with AI: Learning with AI** - An innovative programming textbook that embraces AI as a learning partner. Master Python by learning how to think computationally and direct AI to help you build solutions. Perfect for absolute beginners in the age of AI.
-2. **Python Jumpstart: Coding Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration - ideal for those who want a focused introduction to Python fundamentals
-3. **Intentional Prompting: Mastering the Human-AI Development Process**: A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
-4. **From Zero to Production: A Practical Python Development Pipeline**: Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
+1. **Think Python, Direct AI: Computational Thinking for Beginners** - An innovative programming textbook that embraces AI as a learning partner. Master Python by learning how to think computationally and direct AI to help you build solutions. Perfect for absolute beginners in the age of AI.
+2. **Code Python, Consult AI: Python Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration - ideal for those who want a focused introduction to Python fundamentals
+3. **Conversation, Not Delegation: Mastering Human-AI Development**: A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
+4. **Ship It: Python in Production**: Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
 
-**Book Progression**: Start with "Python Step by Step with AI" if you're a complete beginner, or jump into "Python Jumpstart" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "From Zero to Production," while "Intentional Prompting" provides the AI collaboration methodology that enhances all your development work.
+**Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship It: Python in Production," while "Conversation, Not Delegation" provides the AI collaboration methodology that enhances all your development work.
 
 ## How to Use This Guide {.unnumbered}
 

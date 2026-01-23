@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "Python Jumpstart: Coding Fundamentals for the AI Era"
+  title: "Code Python, Consult AI: Python Fundamentals for the AI Era"
   author: "Michael Borck"
   license: "CC BY-SA 4.0 (content), MIT (code examples)"
   chapters:
@@ -40,12 +40,12 @@ book:
     - acknowledgments.qmd
 
   downloads: [pdf, epub]
-  repo-url: https://github.com/michael-borck/python-jumpstart
+  repo-url: https://github.com/michaelborck-books/code-python-consult-ai
   repo-actions: [edit, issue]
 
 website:
   favicon: assets/python-logo.png
-  repo-url: https://github.com/michael-borck/python-jumpstart
+  repo-url: https://github.com/michaelborck-books/code-python-consult-ai
   repo-actions: [edit, issue]
   open-graph: true
 
