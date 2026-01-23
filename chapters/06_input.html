@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Jumpstart: Coding Fundamentals for the AI Era – 8&nbsp; Input - The Gateway to User Interaction</title>
+<title>8&nbsp; Input - The Gateway to User Interaction – Python Jumpstart: Coding Fundamentals for the AI Era</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/07_operators.html" rel="next">
 <link href="../chapters/05_output.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -471,11 +474,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-input-function-your-gateway-to-user-data" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="the-input-function-your-gateway-to-user-data"><span class="header-section-number">8.4</span> 2. The <code>input()</code> Function: Your Gateway to User Data</h2>
 <p>Python makes collecting user input remarkably straightforward with the built-in <code>input()</code> function:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic input with a prompt</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic input with a prompt</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">'What is your name? '</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the collected input</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">! Nice to meet you."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">! Nice to meet you."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="how-input-works-behind-the-scenes" class="level3" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="how-input-works-behind-the-scenes"><span class="header-section-number">8.4.1</span> How Input Works Behind the Scenes</h3>
 <p>The <code>input()</code> function follows a simple process:</p>
@@ -487,23 +490,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Program execution resumes with the captured value</li>
 </ol>
 <p>Let’s look at this process in more detail:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Program starting..."</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Program starting..."</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>user_response <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter something: "</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"You entered: </span><span class="sc">{</span>user_response<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Program continuing..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Program continuing..."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When you run this code: - “Program starting…” is displayed - “Enter something:” is displayed (with no line break) - The program pauses, waiting for you to type - After you type and press Enter, your input is stored in <code>user_response</code> - The program displays what you entered and continues execution</p>
 </section>
 <section id="crafting-effective-prompts" class="level3" data-number="8.4.2">
 <h3 data-number="8.4.2" class="anchored" data-anchor-id="crafting-effective-prompts"><span class="header-section-number">8.4.2</span> Crafting Effective Prompts</h3>
 <p>The text you provide to <code>input()</code> serves as the prompt—your instructions to the user. Writing clear prompts is essential for good user experience:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unclear prompt</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unclear prompt</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter: '</span>)  <span class="co"># What should the user enter?</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear prompt</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">input</span>(<span class="st">'How old are you? '</span>)  <span class="co"># Specific request</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Prompt with guidance</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter your email address (example@domain.com): '</span>)  <span class="co"># With example</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter your email address (example@domain.com): '</span>)  <span class="co"># With example</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <blockquote class="blockquote">
 <p><strong>Usability Tip</strong>: Your prompts are like micro-documentation for users. The more specific and helpful they are, the less frustration users will experience.</p>
 </blockquote>
@@ -515,38 +518,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Use appropriate punctuation</strong> (question mark for questions, colon for entries)</li>
 <li><strong>Consider adding a space</strong> at the end of your prompt for better readability</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of well-crafted prompts</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of well-crafted prompts</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter the temperature in Celsius: '</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>birth_year <span class="op">=</span> <span class="bu">input</span>(<span class="st">'What year were you born? '</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>filename <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter the filename to save (including extension): '</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>filename <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter the filename to save (including extension): '</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="understanding-input-types-everything-is-a-string" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="understanding-input-types-everything-is-a-string"><span class="header-section-number">8.5</span> 3. Understanding Input Types: Everything is a String</h2>
 <p>One of the most important things to understand about <code>input()</code> is that it <strong>always returns a string</strong>, regardless of what the user enters:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrating that input always returns a string</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstrating that input always returns a string</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">input</span>(<span class="st">'How old are you? '</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The value is: </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The type is: </span><span class="sc">{</span><span class="bu">type</span>(age)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># Will always show &lt;class 'str'&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The type is: </span><span class="sc">{</span><span class="bu">type</span>(age)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># Will always show &lt;class 'str'&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This behavior is consistent but can cause confusion, especially with numeric input:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This looks like a math operation but won't work as expected</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This looks like a math operation but won't work as expected</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>birth_year <span class="op">=</span> <span class="bu">input</span>(<span class="st">'What year were you born? '</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>current_year <span class="op">=</span> <span class="dv">2023</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> current_year <span class="op">-</span> birth_year  <span class="co"># TypeError: unsupported operand type(s) for -: 'int' and 'str'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> current_year <span class="op">-</span> birth_year  <span class="co"># TypeError: unsupported operand type(s) for -: 'int' and 'str'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The code above will fail because you cannot subtract a string from an integer. This leads us to our next important topic: type conversion.</p>
 </section>
 <section id="converting-input-to-the-right-type" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="converting-input-to-the-right-type"><span class="header-section-number">8.6</span> 4. Converting Input to the Right Type</h2>
 <p>Since <code>input()</code> always gives us strings, we often need to convert the input to a more appropriate type for processing:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting string input to appropriate types</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting string input to appropriate types</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>birth_year_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">'What year were you born? '</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>birth_year_int <span class="op">=</span> <span class="bu">int</span>(birth_year_str)  <span class="co"># Convert to integer</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>current_year <span class="op">=</span> <span class="dv">2023</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> current_year <span class="op">-</span> birth_year_int  <span class="co"># Now works correctly</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"You are approximately </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"You are approximately </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Common type conversions include:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># String to integer (for whole numbers)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># String to integer (for whole numbers)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>count_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">'How many items? '</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="bu">int</span>(count_str)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -556,28 +559,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># String to boolean (requires additional logic)</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Proceed? (yes/no): '</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>proceed <span class="op">=</span> response.lower() <span class="kw">in</span> [<span class="st">'yes'</span>, <span class="st">'y'</span>, <span class="st">'true'</span>, <span class="st">'1'</span>, <span class="st">'sure'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>proceed <span class="op">=</span> response.lower() <span class="kw">in</span> [<span class="st">'yes'</span>, <span class="st">'y'</span>, <span class="st">'true'</span>, <span class="st">'1'</span>, <span class="st">'sure'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="handling-conversion-errors" class="level3" data-number="8.6.1">
 <h3 data-number="8.6.1" class="anchored" data-anchor-id="handling-conversion-errors"><span class="header-section-number">8.6.1</span> Handling Conversion Errors</h3>
 <p>Type conversion can fail if the input string doesn’t match the expected format:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This will cause an error if the user enters text that's not a valid number</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This will cause an error if the user enters text that's not a valid number</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>age_str <span class="op">=</span> <span class="bu">input</span>(<span class="st">'How old are you? '</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(age_str)  <span class="co"># ValueError if input isn't a valid integer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(age_str)  <span class="co"># ValueError if input isn't a valid integer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In later chapters, we’ll learn how to handle these potential errors gracefully. For now, be aware that type conversion requires valid input.</p>
 </section>
 <section id="shorthand-for-input-and-conversion" class="level3" data-number="8.6.2">
 <h3 data-number="8.6.2" class="anchored" data-anchor-id="shorthand-for-input-and-conversion"><span class="header-section-number">8.6.2</span> Shorthand for Input and Conversion</h3>
 <p>You can combine input and conversion in a single line for more concise code:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One-step input and conversion</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One-step input and conversion</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'How old are you? '</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'How tall are you in meters? '</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">'How tall are you in meters? '</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This style is common but carries the risk of conversion errors. Use it when you’re confident the input will be valid or when you’ve learned error handling techniques.</p>
 </section>
 </section>
 <section id="building-interactive-dialogues" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="building-interactive-dialogues"><span class="header-section-number">8.7</span> 5. Building Interactive Dialogues</h2>
 <p>Real applications often require multi-step interactions. Let’s build a simple interactive dialogue:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-step interactive dialogue</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multi-step interactive dialogue</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to the Trip Planner!"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">30</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -595,12 +598,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total Budget: $</span><span class="sc">{</span>budget<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Budget Per Person: $</span><span class="sc">{</span>cost_per_person<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">30</span>)</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your trip!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your trip!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This program demonstrates how input can create a personalized experience that adapts to the user’s specific situation.</p>
 <section id="advanced-input-techniques" class="level3" data-number="8.7.1">
 <h3 data-number="8.7.1" class="anchored" data-anchor-id="advanced-input-techniques"><span class="header-section-number">8.7.1</span> Advanced Input Techniques</h3>
 <p>For more advanced input needs, there are additional techniques you can use:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collecting hidden input (like passwords) requires a package</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collecting hidden input (like passwords) requires a package</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> getpass</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>password <span class="op">=</span> getpass.getpass(<span class="st">"Enter your password: "</span>)  <span class="co"># Input won't be visible as user types</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -614,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>note <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(lines)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Your note is:</span><span class="ch">\n</span><span class="sc">{</span>note<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Your note is:</span><span class="ch">\n</span><span class="sc">{</span>note<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <blockquote class="blockquote">
 <p><strong>Looking Ahead</strong>: As your programs become more complex, you might explore third-party libraries like <code>PyInquirer</code> or <code>questionary</code> that provide enhanced input capabilities, including menus, checkboxes, and more.</p>
 </blockquote>
@@ -626,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-conversational-loop" class="level3" data-number="8.8.1">
 <h3 data-number="8.8.1" class="anchored" data-anchor-id="basic-conversational-loop"><span class="header-section-number">8.8.1</span> Basic Conversational Loop</h3>
 <p>The foundation of any chatbot is a loop that listens, processes, and responds:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_chatbot():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_chatbot():</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A basic chatbot that can respond to simple inputs."""</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -669,13 +672,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Chat session ended."</span>)</span>
 <span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the chatbot</span></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>simple_chatbot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>simple_chatbot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This basic chatbot demonstrates: - Collecting the user’s name for personalized interaction - A continuous loop for ongoing conversation - Simple input processing to generate responses - An exit command to end the conversation</p>
 </section>
 <section id="enhancing-the-chatbot-with-input-validation" class="level3" data-number="8.8.2">
 <h3 data-number="8.8.2" class="anchored" data-anchor-id="enhancing-the-chatbot-with-input-validation"><span class="header-section-number">8.8.2</span> Enhancing the Chatbot with Input Validation</h3>
 <p>Let’s improve our chatbot by adding input validation for more robust interactions:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> enhanced_chatbot():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> enhanced_chatbot():</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""An enhanced chatbot with input validation and better responses."""</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -760,13 +763,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the enhanced chatbot (commented out to avoid execution)</span></span>
-<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a><span class="co"># enhanced_chatbot()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a><span class="co"># enhanced_chatbot()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This enhanced version adds: - Input validation to ensure the user’s name isn’t empty - More sophisticated response patterns based on input content - A state variable to track how many questions have been asked - Better formatting for a more professional appearance</p>
 </section>
 <section id="numeric-input-in-a-chatbot-context" class="level3" data-number="8.8.3">
 <h3 data-number="8.8.3" class="anchored" data-anchor-id="numeric-input-in-a-chatbot-context"><span class="header-section-number">8.8.3</span> Numeric Input in a Chatbot Context</h3>
 <p>Let’s extend our chatbot to handle numeric input for a more interactive experience:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> python_quiz_bot():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> python_quiz_bot():</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A chatbot that asks Python quiz questions and processes numeric answers."""</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"QuizBot"</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -817,7 +820,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Thanks for taking the quiz!"</span>)</span>
 <span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the quiz bot (commented out to avoid execution)</span></span>
-<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="co"># python_quiz_bot()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="co"># python_quiz_bot()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This quiz bot demonstrates: - Handling numeric input with type conversion - Input validation with error handling - Using input to create an interactive learning experience</p>
 <blockquote class="blockquote">
 <p><strong>Project Evolution</strong>: The concepts in this chapter transform our chatbot from a one-way communication tool to a true conversational agent. As we progress through the book, we’ll add more sophisticated processing, memory, and AI capabilities to make the interactions even more natural.</p>
@@ -845,7 +848,7 @@ Please show me code examples with proper validation and error handling for each 
 - Input validation with specific error messages
 - Retrying until valid input is received</code></pre>
 <p><strong>AI Response:</strong> <em>Here’s a comprehensive approach to collecting and validating the different input types you need:</em></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_valid_username():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_valid_username():</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Get and validate a username (letters only, 3-15 characters)."""</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        username <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter username (letters only, 3-15 characters): "</span>).strip()</span>
@@ -933,7 +936,7 @@ Please show me code examples with proper validation and error handling for each 
 <span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Thank you for registering!"</span>)</span>
 <span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Key features of this implementation:</em></p>
 <ul>
 <li><em>Each input type has its own dedicated validation function</em></li>
@@ -971,17 +974,17 @@ Please show me code that:
 <p>When working with user input, watch out for these common issues:</p>
 <section id="forgetting-that-input-returns-strings" class="level3" data-number="8.10.1">
 <h3 data-number="8.10.1" class="anchored" data-anchor-id="forgetting-that-input-returns-strings"><span class="header-section-number">8.10.1</span> Forgetting That Input Returns Strings</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect - will raise TypeError</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect - will raise TypeError</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>birth_year <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your birth year: "</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">2023</span> <span class="op">-</span> birth_year  <span class="co"># Error: cannot subtract string from integer</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>birth_year <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your birth year: "</span>)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">2023</span> <span class="op">-</span> <span class="bu">int</span>(birth_year)  <span class="co"># Convert string to integer first</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">2023</span> <span class="op">-</span> <span class="bu">int</span>(birth_year)  <span class="co"># Convert string to integer first</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="not-checking-for-empty-input" class="level3" data-number="8.10.2">
 <h3 data-number="8.10.2" class="anchored" data-anchor-id="not-checking-for-empty-input"><span class="header-section-number">8.10.2</span> Not Checking for Empty Input</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problematic - empty input might cause issues later</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problematic - empty input might cause issues later</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your name: "</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>  <span class="co"># Could be "Hello, !" if input is empty</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -990,11 +993,11 @@ Please show me code that:
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name:</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    greeting <span class="op">=</span> <span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span></span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    greeting <span class="op">=</span> <span class="st">"Hello, stranger!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    greeting <span class="op">=</span> <span class="st">"Hello, stranger!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="assuming-valid-numeric-input" class="level3" data-number="8.10.3">
 <h3 data-number="8.10.3" class="anchored" data-anchor-id="assuming-valid-numeric-input"><span class="header-section-number">8.10.3</span> Assuming Valid Numeric Input</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Risky - will crash if user enters non-numeric text</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Risky - will crash if user enters non-numeric text</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter your age: "</span>))</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># More robust - handles invalid input</span></span>
@@ -1004,27 +1007,27 @@ Please show me code that:
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> <span class="bu">int</span>(age_input)</span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  <span class="co"># Exit loop if conversion succeeds</span></span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Please enter a valid number."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Please enter a valid number."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="unclear-prompts-leading-to-confusion" class="level3" data-number="8.10.4">
 <h3 data-number="8.10.4" class="anchored" data-anchor-id="unclear-prompts-leading-to-confusion"><span class="header-section-number">8.10.4</span> Unclear Prompts Leading to Confusion</h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confusing prompt</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confusing prompt</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter value: "</span>)  <span class="co"># What value? What format?</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear prompt with guidance</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter temperature in Celsius (e.g., 22.5): "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter temperature in Celsius (e.g., 22.5): "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="not-sanitizing-input" class="level3" data-number="8.10.5">
 <h3 data-number="8.10.5" class="anchored" data-anchor-id="not-sanitizing-input"><span class="header-section-number">8.10.5</span> Not Sanitizing Input</h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problematic - leading/trailing spaces can cause issues</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problematic - leading/trailing spaces can cause issues</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>username <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Username: "</span>)  <span class="co"># User might accidentally type " john "</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Better - clean the input</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>username <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Username: "</span>).strip()  <span class="co"># Removes leading/trailing spaces</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>username <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Username: "</span>).strip()  <span class="co"># Removes leading/trailing spaces</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="not-validating-within-range" class="level3" data-number="8.10.6">
 <h3 data-number="8.10.6" class="anchored" data-anchor-id="not-validating-within-range"><span class="header-section-number">8.10.6</span> Not Validating Within Range</h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problematic - accepts any integer</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problematic - accepts any integer</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>rating <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Rate from 1-5: "</span>))  <span class="co"># User could enter 10 or -3</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Better - validates within range</span></span>
@@ -1036,7 +1039,7 @@ Please show me code that:
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Please enter a number between 1 and 5."</span>)</span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Please enter a valid number."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Please enter a valid number."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="real-world-input-examples" class="level2" data-number="8.11">
@@ -1045,7 +1048,7 @@ Please show me code that:
 <section id="command-line-interface-cli-tools" class="level3" data-number="8.11.1">
 <h3 data-number="8.11.1" class="anchored" data-anchor-id="command-line-interface-cli-tools"><span class="header-section-number">8.11.1</span> Command-Line Interface (CLI) Tools</h3>
 <p>CLI tools often need to process input flags and arguments:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_cli():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_cli():</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A simple command-line interface demonstrating input processing."""</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> sys</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1090,12 +1093,12 @@ Please show me code that:
 <span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Type 'help' for a list of commands"</span>)</span>
 <span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the CLI demo (commented out to avoid execution)</span></span>
-<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a><span class="co"># simple_cli()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a><span class="co"># simple_cli()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="data-collection-forms" class="level3" data-number="8.11.2">
 <h3 data-number="8.11.2" class="anchored" data-anchor-id="data-collection-forms"><span class="header-section-number">8.11.2</span> Data Collection Forms</h3>
 <p>Applications often need to collect multiple fields of related information:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> user_registration_form():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> user_registration_form():</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A data collection form with comprehensive validation."""</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== User Registration Form ===</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1159,12 +1162,12 @@ Please show me code that:
 <span id="cb27-62"><a href="#cb27-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Registration successful!"</span>)</span>
 <span id="cb27-63"><a href="#cb27-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-64"><a href="#cb27-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the registration form (commented out to avoid execution)</span></span>
-<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a><span class="co"># user_registration_form()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a><span class="co"># user_registration_form()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="interactive-help-system" class="level3" data-number="8.11.3">
 <h3 data-number="8.11.3" class="anchored" data-anchor-id="interactive-help-system"><span class="header-section-number">8.11.3</span> Interactive Help System</h3>
 <p>Help systems often use input to guide users through solutions:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> interactive_help_system():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> interactive_help_system():</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""An interactive help system that adapts to user input."""</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== Python Learning Assistant ===</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"I can help you learn Python concepts. Tell me what you need help with."</span>)</span>
@@ -1216,7 +1219,7 @@ Please show me code that:
 <span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">40</span>)</span>
 <span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the help system (commented out to avoid execution)</span></span>
-<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="co"># interactive_help_system()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="co"># interactive_help_system()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>These examples demonstrate how input can be used to create professional, user-friendly applications across different contexts. The techniques are the same as those we’ve covered—just applied with attention to user experience and validation.</p>
 </section>
 </section>
@@ -1339,290 +1342,294 @@ Please show me code that:
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
           } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
         }
-        return container.innerHTML
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1630,185 +1637,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/05_output.html" class="pagination-link" aria-label="Output - Communicating with the World">
@@ -1821,7 +1804,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb29" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Input - The Gateway to User Interaction</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Input - The Gateway to User Interaction</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter Outline</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understanding the <span class="in">`input()`</span> function and its capabilities</span>
@@ -2853,7 +2836,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb29-1030"><a href="#cb29-1030" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-1031"><a href="#cb29-1031" aria-hidden="true" tabindex="-1"></a>Input is the bridge that connects users to your program's functionality. When combined with the output techniques from the previous chapter, you now have the fundamental tools for creating interactive, responsive applications. These skills form the basis for all user interaction in your Python programs and are essential for building effective human-computer interfaces.</span>
 <span id="cb29-1032"><a href="#cb29-1032" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-1033"><a href="#cb29-1033" aria-hidden="true" tabindex="-1"></a>Remember that collecting input is just the beginning—the real power comes from what your program does with that input, which we'll explore in upcoming chapters on operators, decision making, and data structures.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb29-1033"><a href="#cb29-1033" aria-hidden="true" tabindex="-1"></a>Remember that collecting input is just the beginning—the real power comes from what your program does with that input, which we'll explore in upcoming chapters on operators, decision making, and data structures.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

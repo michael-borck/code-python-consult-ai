@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Jumpstart: Coding Fundamentals for the AI Era – 22&nbsp; Object-Oriented Programming in Python</title>
+<title>22&nbsp; Object-Oriented Programming in Python – Python Jumpstart: Coding Fundamentals for the AI Era</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/21_how_to_run_python_code.html" rel="next">
 <link href="../chapters/19_modules_and_packages.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -465,8 +468,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="class-declaration" class="level2" data-number="22.6">
 <h2 data-number="22.6" class="anchored" data-anchor-id="class-declaration"><span class="header-section-number">22.6</span> 4. Class Declaration</h2>
 <p>To declare a class in Python, we use the <code>class</code> keyword followed by a custom name and a colon:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>pass</code> statement is a placeholder that does nothing - it’s used here because Python requires at least one statement in a class definition. Later we’ll replace it with meaningful code.</p>
 <blockquote class="blockquote">
 <p><strong>What is <code>pass</code>?</strong> In Python, the <code>pass</code> keyword is a statement that does nothing - it’s discarded during byte-compilation. Though it seems useless, it’s quite handy as a placeholder during development when you want to define a structure but haven’t implemented the details yet.</p>
@@ -480,18 +483,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="attributes-and-the-constructor-method" class="level2" data-number="22.8">
 <h2 data-number="22.8" class="anchored" data-anchor-id="attributes-and-the-constructor-method"><span class="header-section-number">22.8</span> 6. Attributes and the Constructor Method</h2>
 <p>To create a class with attributes, we define what’s called a constructor method. In Python, this special method is named <code>__init__</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, author, number_of_pages, publisher):</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.author <span class="op">=</span> author</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.number_of_pages <span class="op">=</span> number_of_pages</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.publisher <span class="op">=</span> publisher</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.publisher <span class="op">=</span> publisher</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>__init__</code> method is automatically called when a new object is created. The first parameter is always <code>self</code>, which represents the object being created. The other parameters are values that must be provided when creating a new <code>Book</code> object.</p>
 <p>Inside the method, we assign these values to object attributes using the pattern <code>self.attribute_name = value</code>. ## 7. Creating Objects from Classes</p>
 <p>Now that we’ve defined our <code>Book</code> class, what can we do with it? A class is an abstract blueprint, but to use it, we need to create concrete objects (also called instances).</p>
 <p>When you’re looking for a book, you don’t just search for any “book” - you want a specific one like “Harry Potter” or “Python Crash Course.” Similarly, in programming, we need specific instances of our classes.</p>
 <p>To create an object from a class, we call the class name as if it were a function:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_book <span class="op">=</span> Book(<span class="st">"Python for Business"</span>, <span class="st">"Michael Borck"</span>, <span class="dv">321</span>, <span class="st">"OC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_book <span class="op">=</span> Book(<span class="st">"Python for Business"</span>, <span class="st">"Michael Borck"</span>, <span class="dv">321</span>, <span class="st">"OC"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This code: 1. Declares a variable named <code>my_book</code> 2. Creates a new <code>Book</code> object with the provided attributes 3. Assigns this object to the <code>my_book</code> variable</p>
 <p>We’ve now instantiated an object of the <code>Book</code> class! We can create as many different book objects as we need, each with its own set of attributes.</p>
 </section>
@@ -501,20 +504,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="accessing-attributes" class="level3" data-number="22.9.1">
 <h3 data-number="22.9.1" class="anchored" data-anchor-id="accessing-attributes"><span class="header-section-number">22.9.1</span> Accessing Attributes</h3>
 <p>To read an attribute’s value:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.title)       <span class="co"># Outputs: Python for Business</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.title)       <span class="co"># Outputs: Python for Business</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.author)      <span class="co"># Outputs: Michael Borck</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.number_of_pages)  <span class="co"># Outputs: 321</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.number_of_pages)  <span class="co"># Outputs: 321</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="modifying-attributes" class="level3" data-number="22.9.2">
 <h3 data-number="22.9.2" class="anchored" data-anchor-id="modifying-attributes"><span class="header-section-number">22.9.2</span> Modifying Attributes</h3>
 <p>To change an attribute’s value:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_book.title <span class="op">=</span> <span class="st">"Coding in Python"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_book.title <span class="op">=</span> <span class="st">"Coding in Python"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_book.author <span class="op">=</span> <span class="st">"James Borck"</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>my_book.number_of_pages <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># Add 10 pages</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.title)       <span class="co"># Outputs: Coding in Python</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.author)      <span class="co"># Outputs: James Borck</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.number_of_pages)  <span class="co"># Outputs: 331</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_book.number_of_pages)  <span class="co"># Outputs: 331</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Object attributes behave like variables - you can assign new values to them, use them in expressions, and pass them to functions.</p>
 </section>
 </section>
@@ -522,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="22.10" class="anchored" data-anchor-id="adding-behavior-object-methods"><span class="header-section-number">22.10</span> 9. Adding Behavior: Object Methods</h2>
 <p>So far, our objects can store data (attributes) but can’t do anything. Real-world objects have behaviors: books can be read, cars can be driven, doors can be opened. In programming, we implement behaviors as methods.</p>
 <p>A method is simply a function that belongs to a class. Let’s add a <code>read_book</code> method to our <code>Book</code> class:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, author, number_of_pages, publisher):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.author <span class="op">=</span> author</span>
@@ -530,36 +533,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.publisher <span class="op">=</span> publisher</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> read_book(<span class="va">self</span>):</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Reading </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss"> by </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>author<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Reading </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss"> by </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>author<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To call a method on an object, we use the same dot notation:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_book <span class="op">=</span> Book(<span class="st">"Python for Beginners"</span>, <span class="st">"John Smith"</span>, <span class="dv">250</span>, <span class="st">"Tech Press"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>my_book.read_book()  <span class="co"># Outputs: Reading Python for Beginners by John Smith</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_book <span class="op">=</span> Book(<span class="st">"Python for Beginners"</span>, <span class="st">"John Smith"</span>, <span class="dv">250</span>, <span class="st">"Tech Press"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>my_book.read_book()  <span class="co"># Outputs: Reading Python for Beginners by John Smith</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Methods can also take parameters beyond <code>self</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Constructor and other methods...</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> read_pages(<span class="va">self</span>, start_page, end_page):</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> start_page <span class="op">&lt;</span> <span class="dv">1</span> <span class="kw">or</span> end_page <span class="op">&gt;</span> <span class="va">self</span>.number_of_pages:</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Invalid page range!"</span>)</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Reading pages </span><span class="sc">{</span>start_page<span class="sc">}</span><span class="ss"> to </span><span class="sc">{</span>end_page<span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Reading pages </span><span class="sc">{</span>start_page<span class="sc">}</span><span class="ss"> to </span><span class="sc">{</span>end_page<span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Using this method:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_book.read_pages(<span class="dv">10</span>, <span class="dv">25</span>)  <span class="co"># Outputs: Reading pages 10 to 25 of Python for Beginners</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_book.read_pages(<span class="dv">10</span>, <span class="dv">25</span>)  <span class="co"># Outputs: Reading pages 10 to 25 of Python for Beginners</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Methods can also return values, just like regular functions:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Constructor and other methods...</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_reading_time(<span class="va">self</span>, reading_speed<span class="op">=</span><span class="dv">2</span>):</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Estimate reading time in minutes based on pages and reading speed."""</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.number_of_pages <span class="op">/</span> reading_speed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.number_of_pages <span class="op">/</span> reading_speed</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Using this method:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> my_book.get_reading_time()</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Estimated reading time: </span><span class="sc">{</span>time<span class="sc">}</span><span class="ss"> minutes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> my_book.get_reading_time()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Estimated reading time: </span><span class="sc">{</span>time<span class="sc">}</span><span class="ss"> minutes"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="building-a-more-complete-book-class" class="level2" data-number="22.11">
 <h2 data-number="22.11" class="anchored" data-anchor-id="building-a-more-complete-book-class"><span class="header-section-number">22.11</span> 10. Building a More Complete Book Class</h2>
 <p>Let’s bring everything together into a more useful <code>Book</code> class with multiple attributes and methods:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, author, number_of_pages, publisher, year<span class="op">=</span><span class="va">None</span>, genre<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.author <span class="op">=</span> author</span>
@@ -606,9 +609,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>            info <span class="op">+=</span> <span class="ss">f"Genre: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>genre<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>        info <span class="op">+=</span> <span class="ss">f"Reading progress: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>get_reading_progress()<span class="sc">:.1f}</span><span class="ss">%"</span></span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> info</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now we can interact with our improved <code>Book</code> class:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a book</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a book</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>python_book <span class="op">=</span> Book(<span class="st">"Python Crash Course"</span>, <span class="st">"Eric Matthes"</span>, <span class="dv">544</span>, <span class="st">"No Starch Press"</span>, <span class="dv">2019</span>, <span class="st">"Programming"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get book info</span></span>
@@ -627,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Reading progress: </span><span class="sc">{</span>python_book<span class="sc">.</span>get_reading_progress()<span class="sc">:.1f}</span><span class="ss">%"</span>)</span>
 <span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co"># View bookmarks</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Bookmarked pages: </span><span class="sc">{</span>python_book<span class="sc">.</span>get_bookmarks()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Bookmarked pages: </span><span class="sc">{</span>python_book<span class="sc">.</span>get_bookmarks()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="encapsulation-bundling-data-and-methods" class="level2" data-number="22.12">
 <h2 data-number="22.12" class="anchored" data-anchor-id="encapsulation-bundling-data-and-methods"><span class="header-section-number">22.12</span> 11. Encapsulation: Bundling Data and Methods</h2>
@@ -644,7 +647,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-a-library-management-system" class="level2" data-number="22.13">
 <h2 data-number="22.13" class="anchored" data-anchor-id="creating-a-library-management-system"><span class="header-section-number">22.13</span> 12. Creating a Library Management System</h2>
 <p>Let’s extend our example to build a simple library management system. This will show how objects can interact with each other:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Library:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Library:</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.books <span class="op">=</span> []</span>
@@ -697,9 +700,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
 <span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_borrowed_books(<span class="va">self</span>):</span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [book.title <span class="cf">for</span> book <span class="kw">in</span> <span class="va">self</span>.borrowed_books]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [book.title <span class="cf">for</span> book <span class="kw">in</span> <span class="va">self</span>.borrowed_books]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>And here’s how we might use these classes:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create books</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create books</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>book1 <span class="op">=</span> Book(<span class="st">"Python Crash Course"</span>, <span class="st">"Eric Matthes"</span>, <span class="dv">544</span>, <span class="st">"No Starch Press"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>book2 <span class="op">=</span> Book(<span class="st">"Automate the Boring Stuff"</span>, <span class="st">"Al Sweigart"</span>, <span class="dv">504</span>, <span class="st">"No Starch Press"</span>)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>book3 <span class="op">=</span> Book(<span class="st">"Clean Code"</span>, <span class="st">"Robert Martin"</span>, <span class="dv">464</span>, <span class="st">"Prentice Hall"</span>)</span>
@@ -734,7 +737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>alice.return_book(book1, central_library)</span>
 <span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(central_library.get_library_info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(central_library.get_library_info())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="self-assessment-quiz" class="level2" data-number="22.14">
 <h2 data-number="22.14" class="anchored" data-anchor-id="self-assessment-quiz"><span class="header-section-number">22.14</span> 13. Self-Assessment Quiz</h2>
@@ -781,7 +784,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="project-corner-enhancing-your-chatbot-with-object-oriented-design" class="level2" data-number="22.15">
 <h2 data-number="22.15" class="anchored" data-anchor-id="project-corner-enhancing-your-chatbot-with-object-oriented-design"><span class="header-section-number">22.15</span> 14. Project Corner: Enhancing Your Chatbot with Object-Oriented Design</h2>
 <p>Let’s apply object-oriented principles to our chatbot project by creating a well-organized class structure. This approach will make our code more maintainable and extensible.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Chatbot:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Chatbot:</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A simple chatbot that becomes smarter as you learn Python."""</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name<span class="op">=</span><span class="st">"PyBot"</span>):</span>
@@ -914,12 +917,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-131"><a href="#cb16-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-132"><a href="#cb16-132" aria-hidden="true" tabindex="-1"></a>            response <span class="op">=</span> <span class="va">self</span>.get_response(user_input)</span>
 <span id="cb16-133"><a href="#cb16-133" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">&gt; </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb16-134"><a href="#cb16-134" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.add_to_history(<span class="va">self</span>.name, response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-134"><a href="#cb16-134" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.add_to_history(<span class="va">self</span>.name, response)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="extending-the-chatbot-with-inheritance" class="level2" data-number="22.16">
 <h2 data-number="22.16" class="anchored" data-anchor-id="extending-the-chatbot-with-inheritance"><span class="header-section-number">22.16</span> 15. Extending the Chatbot with Inheritance</h2>
 <p>Now that we have a solid object-oriented foundation, let’s extend our chatbot with specialized subclasses that add new features:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> WeatherChatbot(Chatbot):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> WeatherChatbot(Chatbot):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A chatbot that can also report weather information."""</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name<span class="op">=</span><span class="st">"WeatherBot"</span>):</span>
@@ -949,7 +952,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check for weather requests with location</span></span>
 <span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> re</span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in (\w+)'</span>, user_input)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in </span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>, user_input)</span>
 <span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> weather_match:</span>
 <span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>            location <span class="op">=</span> weather_match.group(<span class="dv">1</span>)</span>
 <span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.get_weather(location)</span>
@@ -1045,12 +1048,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-124"><a href="#cb17-124" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> user_input.lower() <span class="op">==</span> <span class="st">"start quiz"</span>:</span>
 <span id="cb17-125"><a href="#cb17-125" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.start_quiz()</span>
 <span id="cb17-126"><a href="#cb17-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">super</span>().get_response(user_input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">super</span>().get_response(user_input)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="multiple-inheritance-and-method-override" class="level2" data-number="22.17">
 <h2 data-number="22.17" class="anchored" data-anchor-id="multiple-inheritance-and-method-override"><span class="header-section-number">22.17</span> 16. Multiple Inheritance and Method Override</h2>
 <p>Python supports multiple inheritance, allowing a class to inherit from more than one parent class. Let’s create a “super” chatbot that combines both weather and quiz capabilities:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SuperChatbot(WeatherChatbot, QuizChatbot):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SuperChatbot(WeatherChatbot, QuizChatbot):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A chatbot that combines weather and quiz capabilities."""</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name<span class="op">=</span><span class="st">"SuperBot"</span>):</span>
@@ -1068,13 +1071,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Then check for weather requests</span></span>
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> re</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in (\w+)'</span>, user_input.lower())</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in </span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>, user_input.lower())</span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> weather_match:</span>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>            location <span class="op">=</span> weather_match.group(<span class="dv">1</span>)</span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.get_weather(location)</span>
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Finally, fall back to standard chatbot responses</span></span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Chatbot.get_response(<span class="va">self</span>, user_input)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Chatbot.get_response(<span class="va">self</span>, user_input)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="object-oriented-benefits-for-our-chatbot" class="level2" data-number="22.18">
 <h2 data-number="22.18" class="anchored" data-anchor-id="object-oriented-benefits-for-our-chatbot"><span class="header-section-number">22.18</span> 17. Object-Oriented Benefits for Our Chatbot</h2>
@@ -1104,7 +1107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="running-the-object-oriented-chatbot" class="level2" data-number="22.20">
 <h2 data-number="22.20" class="anchored" data-anchor-id="running-the-object-oriented-chatbot"><span class="header-section-number">22.20</span> 19. Running the Object-Oriented Chatbot</h2>
 <p>Let’s see how we might run our object-oriented chatbot:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Welcome to the Chatbot Selector!"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Choose a chatbot type:"</span>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"1: Basic Chatbot"</span>)</span>
@@ -1128,7 +1131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    bot.run()</span>
 <span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="further-enhancements" class="level2" data-number="22.21">
 <h2 data-number="22.21" class="anchored" data-anchor-id="further-enhancements"><span class="header-section-number">22.21</span> 20. Further Enhancements</h2>
@@ -1173,290 +1176,294 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
           } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
         }
-        return container.innerHTML
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1464,185 +1471,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/19_modules_and_packages.html" class="pagination-link" aria-label="Modules and Packages - Organizing Your Python Code">
@@ -1655,7 +1638,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Object-Oriented Programming in Python</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Object-Oriented Programming in Python</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter Outline</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understanding the concept of objects in programming</span>
@@ -2283,7 +2266,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-626"><a href="#cb20-626" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-627"><a href="#cb20-627" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Check for weather requests with location</span></span>
 <span id="cb20-628"><a href="#cb20-628" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> re</span>
-<span id="cb20-629"><a href="#cb20-629" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in (\w+)'</span>, user_input)</span>
+<span id="cb20-629"><a href="#cb20-629" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in </span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>, user_input)</span>
 <span id="cb20-630"><a href="#cb20-630" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> weather_match:</span>
 <span id="cb20-631"><a href="#cb20-631" aria-hidden="true" tabindex="-1"></a>            location <span class="op">=</span> weather_match.group(<span class="dv">1</span>)</span>
 <span id="cb20-632"><a href="#cb20-632" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.get_weather(location)</span>
@@ -2405,7 +2388,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-748"><a href="#cb20-748" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-749"><a href="#cb20-749" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Then check for weather requests</span></span>
 <span id="cb20-750"><a href="#cb20-750" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> re</span>
-<span id="cb20-751"><a href="#cb20-751" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in (\w+)'</span>, user_input.lower())</span>
+<span id="cb20-751"><a href="#cb20-751" aria-hidden="true" tabindex="-1"></a>        weather_match <span class="op">=</span> re.search(<span class="vs">r'weather in </span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>, user_input.lower())</span>
 <span id="cb20-752"><a href="#cb20-752" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> weather_match:</span>
 <span id="cb20-753"><a href="#cb20-753" aria-hidden="true" tabindex="-1"></a>            location <span class="op">=</span> weather_match.group(<span class="dv">1</span>)</span>
 <span id="cb20-754"><a href="#cb20-754" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.get_weather(location)</span>
@@ -2504,7 +2487,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb20-847"><a href="#cb20-847" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-848"><a href="#cb20-848" aria-hidden="true" tabindex="-1"></a>Object-oriented programming is a powerful paradigm that helps us manage complexity by organizing code into logical, reusable components. As your Python projects grow, these skills will become increasingly valuable in keeping your code maintainable and extensible.</span>
 <span id="cb20-849"><a href="#cb20-849" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-850"><a href="#cb20-850" aria-hidden="true" tabindex="-1"></a>The chatbot project now has a solid object-oriented foundation that you can continue to build upon. By understanding how to design classes and how they interact with each other, you've gained powerful tools for structuring larger Python applications.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb20-850"><a href="#cb20-850" aria-hidden="true" tabindex="-1"></a>The chatbot project now has a solid object-oriented foundation that you can continue to build upon. By understanding how to design classes and how they interact with each other, you've gained powerful tools for structuring larger Python applications.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

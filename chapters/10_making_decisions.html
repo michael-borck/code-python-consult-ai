@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Jumpstart: Coding Fundamentals for the AI Era – 12&nbsp; Making Decisions - Controlling Your Program’s Flow</title>
+<title>12&nbsp; Making Decisions - Controlling Your Program’s Flow – Python Jumpstart: Coding Fundamentals for the AI Era</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/11_lists.html" rel="next">
 <link href="../chapters/09_creating_functions.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -494,14 +497,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-if-statement-your-first-decision-point" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="the-if-statement-your-first-decision-point"><span class="header-section-number">12.4</span> 2. The <code>if</code> Statement: Your First Decision Point</h2>
 <p>The <code>if</code> statement is the fundamental building block of decision-making in Python. It evaluates a condition and executes a block of code only when that condition is <code>True</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This code runs only if the condition is True</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    statement1</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    statement2</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and so on...</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This code always runs, regardless of the condition</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>outside_statement</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>outside_statement</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Let’s break down the key components:</p>
 <ul>
 <li><strong><code>if</code></strong>: The keyword that signals a decision point</li>
@@ -510,20 +513,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Indented block</strong>: All indented statements form the “body” of the <code>if</code> statement and execute only when the condition is <code>True</code></li>
 </ul>
 <p>Here’s a concrete example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">32</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">32</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's hot today!"</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Remember to stay hydrated."</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your day!"</span>)  <span class="co"># This always executes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your day!"</span>)  <span class="co"># This always executes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When <code>temperature</code> is 32, both statements in the <code>if</code> block will run because the condition <code>temperature &gt; 30</code> evaluates to <code>True</code>. However, if <code>temperature</code> were 25, those statements would be skipped, and only “Enjoy your day!” would be displayed.</p>
 <section id="indentation-matters" class="level3" data-number="12.4.1">
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="indentation-matters"><span class="header-section-number">12.4.1</span> Indentation Matters</h3>
 <p>Unlike many programming languages that use braces <code>{}</code> or keywords like <code>begin</code>/<code>end</code> to define blocks, Python uses indentation. This makes the code cleaner but requires careful attention to spacing:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's hot today!"</span>)  <span class="co"># Indented (part of the if block)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your day!"</span>)      <span class="co"># Not indented (outside the if block)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your day!"</span>)      <span class="co"># Not indented (outside the if block)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The standard indentation is 4 spaces, though the exact number is less important than consistency. Whatever indentation you choose, stick with it throughout your code.</p>
 </section>
 </section>
@@ -533,43 +536,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="comparison-operators" class="level3" data-number="12.5.1">
 <h3 data-number="12.5.1" class="anchored" data-anchor-id="comparison-operators"><span class="header-section-number">12.5.1</span> Comparison Operators</h3>
 <p>These operators compare values and return a boolean result:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">&gt;</span> <span class="dv">18</span>    <span class="co"># Greater than: True if age is greater than 18</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>age <span class="op">&lt;</span> <span class="dv">65</span>    <span class="co"># Less than: True if age is less than 65</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>age <span class="op">&gt;=</span> <span class="dv">21</span>   <span class="co"># Greater than or equal to: True if age is at least 21</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>age <span class="op">&lt;=</span> <span class="dv">30</span>   <span class="co"># Less than or equal to: True if age is at most 30</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>age <span class="op">==</span> <span class="dv">25</span>   <span class="co"># Equal to: True if age is exactly 25</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>age <span class="op">!=</span> <span class="dv">30</span>   <span class="co"># Not equal to: True if age is not 30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>age <span class="op">!=</span> <span class="dv">30</span>   <span class="co"># Not equal to: True if age is not 30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="boolean-variables" class="level3" data-number="12.5.2">
 <h3 data-number="12.5.2" class="anchored" data-anchor-id="boolean-variables"><span class="header-section-number">12.5.2</span> Boolean Variables</h3>
 <p>Variables that directly store <code>True</code> or <code>False</code> values:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>is_student <span class="op">=</span> <span class="va">True</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>is_student <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>has_membership <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_student:</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Student discount applied"</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> has_membership:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Consider upgrading to a membership"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Consider upgrading to a membership"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="membership-tests" class="level3" data-number="12.5.3">
 <h3 data-number="12.5.3" class="anchored" data-anchor-id="membership-tests"><span class="header-section-number">12.5.3</span> Membership Tests</h3>
 <p>Check if a value exists within a sequence:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>choice <span class="op">=</span> <span class="st">"banana"</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> choice <span class="kw">in</span> fruits:</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"We have </span><span class="sc">{</span>choice<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"orange"</span> <span class="kw">not</span> <span class="kw">in</span> fruits:</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sorry, we don't have oranges"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sorry, we don't have oranges"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="string-operations" class="level3" data-number="12.5.4">
 <h3 data-number="12.5.4" class="anchored" data-anchor-id="string-operations"><span class="header-section-number">12.5.4</span> String Operations</h3>
 <p>Check properties or contents of strings:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice Johnson"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice Johnson"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name.startswith(<span class="st">"A"</span>):</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name starts with A"</span>)</span>
@@ -578,23 +581,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name contains 'son'"</span>)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name.isalpha():  <span class="co"># Would be False because of the space</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name contains only letters"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name contains only letters"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="function-results" class="level3" data-number="12.5.5">
 <h3 data-number="12.5.5" class="anchored" data-anchor-id="function-results"><span class="header-section-number">12.5.5</span> Function Results</h3>
 <p>Functions that return boolean values:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> <span class="st">"user@example.com"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> <span class="st">"user@example.com"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_valid_email(email):</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"@"</span> <span class="kw">in</span> email <span class="kw">and</span> <span class="st">"."</span> <span class="kw">in</span> email</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_valid_email(email):</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Email format looks valid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Email format looks valid"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="boolean-clarity" class="level3" data-number="12.5.6">
 <h3 data-number="12.5.6" class="anchored" data-anchor-id="boolean-clarity"><span class="header-section-number">12.5.6</span> Boolean Clarity</h3>
 <p>For complex conditions, storing the result in a descriptively named boolean variable improves readability:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">45000</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>credit_score <span class="op">=</span> <span class="dv">720</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -608,14 +611,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>meets_credit_requirement <span class="op">=</span> credit_score <span class="op">&gt;=</span> <span class="dv">700</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> meets_age_requirement <span class="kw">and</span> meets_income_requirement <span class="kw">and</span> meets_credit_requirement:</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Loan approved"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Loan approved"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This approach makes your code self-documenting—the boolean variable names explain what’s being checked.</p>
 </section>
 </section>
 <section id="adding-alternatives-with-else" class="level2" data-number="12.6">
 <h2 data-number="12.6" class="anchored" data-anchor-id="adding-alternatives-with-else"><span class="header-section-number">12.6</span> 4. Adding Alternatives with <code>else</code></h2>
 <p>The <code>else</code> clause provides an alternative path when the condition is <code>False</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's hot today!"</span>)</span>
@@ -624,14 +627,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's not very hot today."</span>)</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Normal precautions are sufficient."</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your day!"</span>)  <span class="co"># This always executes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enjoy your day!"</span>)  <span class="co"># This always executes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When the condition is <code>False</code> (as it is when <code>temperature</code> is 25), the <code>else</code> block executes instead of the <code>if</code> block. This creates a simple “either-or” decision structure.</p>
 <p>The <code>else</code> clause is optional. Use it when you need to choose between exactly two alternatives; omit it when you only need to execute code conditionally without an alternative.</p>
 </section>
 <section id="multiple-choices-with-elif" class="level2" data-number="12.7">
 <h2 data-number="12.7" class="anchored" data-anchor-id="multiple-choices-with-elif"><span class="header-section-number">12.7</span> 5. Multiple Choices with <code>elif</code></h2>
 <p>Real-world decisions often involve more than two options. The <code>elif</code> (short for “else if”) statement lets you check multiple conditions in sequence:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">22</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">22</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's a hot day!"</span>)</span>
@@ -646,13 +649,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's cold today!"</span>)</span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Don't forget your coat."</span>)</span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Have a great day!"</span>)  <span class="co"># This always executes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Have a great day!"</span>)  <span class="co"># This always executes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Python evaluates each condition in order: 1. First, it checks if <code>temperature &gt; 30</code> (False when temperature is 22) 2. Then, it checks if <code>temperature &gt; 20</code> (True when temperature is 22) 3. Since the second condition is True, it executes that block and skips the rest</p>
 <p>Only one block will execute, even if multiple conditions could be true. The first true condition “wins,” and the rest are skipped.</p>
 <section id="the-importance-of-order" class="level3" data-number="12.7.1">
 <h3 data-number="12.7.1" class="anchored" data-anchor-id="the-importance-of-order"><span class="header-section-number">12.7.1</span> The Importance of Order</h3>
 <p>The order of your <code>elif</code> statements matters. Consider this example:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct order (most specific to least specific)</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
@@ -664,9 +667,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"D"</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"F"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"F"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If we reversed the order:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect order (least specific to most specific)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect order (least specific to most specific)</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"D"</span>    <span class="co"># This would always trigger first for any passing score!</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
@@ -676,7 +679,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"A"</span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"F"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    grade <span class="op">=</span> <span class="st">"F"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>With a score of 85, the first example correctly assigns grade “B”, but the second incorrectly assigns “D” because the first condition is already true.</p>
 <blockquote class="blockquote">
 <p><strong>Best Practice</strong>: When conditions overlap, arrange them from most specific/restrictive to most general.</p>
@@ -689,35 +692,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-and-operator" class="level3" data-number="12.8.1">
 <h3 data-number="12.8.1" class="anchored" data-anchor-id="the-and-operator"><span class="header-section-number">12.8.1</span> The <code>and</code> Operator</h3>
 <p>True only if both conditions are true:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">50000</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">21</span> <span class="kw">and</span> income <span class="op">&gt;=</span> <span class="dv">40000</span>:</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eligible for premium credit card"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eligible for premium credit card"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-or-operator" class="level3" data-number="12.8.2">
 <h3 data-number="12.8.2" class="anchored" data-anchor-id="the-or-operator"><span class="header-section-number">12.8.2</span> The <code>or</code> Operator</h3>
 <p>True if at least one condition is true:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_holiday <span class="op">=</span> <span class="va">True</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_holiday <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>is_weekend <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_holiday <span class="kw">or</span> is_weekend:</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The office is closed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The office is closed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-not-operator" class="level3" data-number="12.8.3">
 <h3 data-number="12.8.3" class="anchored" data-anchor-id="the-not-operator"><span class="header-section-number">12.8.3</span> The <code>not</code> Operator</h3>
 <p>Inverts a boolean value:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>is_working_day <span class="op">=</span> <span class="va">True</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>is_working_day <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> is_working_day:</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You can sleep in today"</span>)</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time to go to work"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time to go to work"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="complex-combinations" class="level3" data-number="12.8.4">
 <h3 data-number="12.8.4" class="anchored" data-anchor-id="complex-combinations"><span class="header-section-number">12.8.4</span> Complex Combinations</h3>
 <p>You can create complex conditions by combining these operators:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">65</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">65</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">30000</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>is_student <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>has_disability <span class="op">=</span> <span class="va">True</span></span>
@@ -726,14 +729,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - Senior (65+) or student or has disability</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># - AND income under 35000</span></span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (age <span class="op">&gt;=</span> <span class="dv">65</span> <span class="kw">or</span> is_student <span class="kw">or</span> has_disability) <span class="kw">and</span> income <span class="op">&lt;</span> <span class="dv">35000</span>:</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eligible for financial assistance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eligible for financial assistance"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Use parentheses to make the precedence clear, even if not strictly necessary for the logic.</p>
 </section>
 </section>
 <section id="nested-conditionals-decisions-within-decisions" class="level2" data-number="12.9">
 <h2 data-number="12.9" class="anchored" data-anchor-id="nested-conditionals-decisions-within-decisions"><span class="header-section-number">12.9</span> 7. Nested Conditionals: Decisions Within Decisions</h2>
 <p>Sometimes, you need to make a decision based on the outcome of another decision. This creates a nested conditional structure:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>has_ticket <span class="op">=</span> <span class="va">True</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>has_ticket <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>has_id <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> has_ticket:</span>
@@ -745,9 +748,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Sorry, you need ID to enter. Please return with ID."</span>)</span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You need a ticket to enter. Please purchase one first."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You need a ticket to enter. Please purchase one first."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>While nesting can express complex logic, deep nesting (more than 2-3 levels) can make code hard to follow. Often, you can flatten nested conditions using logical operators:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of nesting:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of nesting:</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> has_ticket:</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> has_id:</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Welcome to the event!"</span>)</span>
@@ -762,7 +765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> has_ticket:  <span class="co"># At this point, we know has_id is False</span></span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"ID required"</span>)</span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ticket required"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ticket required"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The flattened version is often easier to read and maintain.</p>
 </section>
 <section id="common-patterns-in-decision-making" class="level2" data-number="12.10">
@@ -770,7 +773,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here are some common decision-making patterns you’ll use frequently:</p>
 <section id="input-validation" class="level3" data-number="12.10.1">
 <h3 data-number="12.10.1" class="anchored" data-anchor-id="input-validation"><span class="header-section-number">12.10.1</span> Input Validation</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>user_age <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your age: "</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>user_age <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your age: "</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> user_age.isdigit():</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> <span class="bu">int</span>(user_age)</span>
@@ -779,12 +782,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Sorry, you must be 18 or older"</span>)</span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Please enter a valid number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Please enter a valid number"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="mutually-exclusive-categories" class="level3" data-number="12.10.2">
 <h3 data-number="12.10.2" class="anchored" data-anchor-id="mutually-exclusive-categories"><span class="header-section-number">12.10.2</span> Mutually Exclusive Categories</h3>
 <p>When options are mutually exclusive (only one can be true):</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> <span class="st">"red"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> <span class="st">"red"</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> color <span class="op">==</span> <span class="st">"red"</span>:</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Stop"</span>)</span>
@@ -793,12 +796,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> color <span class="op">==</span> <span class="st">"green"</span>:</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Go"</span>)</span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Unknown signal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Unknown signal"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="independent-checks" class="level3" data-number="12.10.3">
 <h3 data-number="12.10.3" class="anchored" data-anchor-id="independent-checks"><span class="header-section-number">12.10.3</span> Independent Checks</h3>
 <p>When you need to perform multiple independent checks:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Each check is independent - multiple messages can print</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Each check is independent - multiple messages can print</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">35</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>humidity <span class="op">=</span> <span class="dv">80</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>air_quality <span class="op">=</span> <span class="st">"Poor"</span></span>
@@ -810,24 +813,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"High humidity warning"</span>)</span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> air_quality <span class="op">==</span> <span class="st">"Poor"</span>:</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Air quality alert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Air quality alert"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="early-returns-and-guards" class="level3" data-number="12.10.4">
 <h3 data-number="12.10.4" class="anchored" data-anchor-id="early-returns-and-guards"><span class="header-section-number">12.10.4</span> Early Returns and Guards</h3>
 <p>In functions, using conditionals to “guard” against invalid cases:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Guard against division by zero</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> b <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Error: Cannot divide by zero"</span>)</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># Early return</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Only reached if b is not zero</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="state-machines" class="level3" data-number="12.10.5">
 <h3 data-number="12.10.5" class="anchored" data-anchor-id="state-machines"><span class="header-section-number">12.10.5</span> State Machines</h3>
 <p>Using conditionals to model different states:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> <span class="st">"pending"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>status <span class="op">=</span> <span class="st">"pending"</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>days_active <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> status <span class="op">==</span> <span class="st">"pending"</span>:</span>
@@ -842,7 +845,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> status <span class="op">==</span> <span class="st">"delivered"</span>:</span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Order has been delivered"</span>)</span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Unknown order status"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Unknown order status"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="project-corner-making-your-chatbot-intelligent" class="level2" data-number="12.11">
@@ -851,7 +854,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="basic-decision-tree-chatbot" class="level3" data-number="12.11.1">
 <h3 data-number="12.11.1" class="anchored" data-anchor-id="basic-decision-tree-chatbot"><span class="header-section-number">12.11.1</span> Basic Decision Tree Chatbot</h3>
 <p>Let’s start with a simple decision tree based on keywords:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_response(user_input, user_name):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_response(user_input, user_name):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Generate a response based on user input.</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -944,13 +947,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-92"><a href="#cb25-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the chatbot if this file is executed directly</span></span>
 <span id="cb25-93"><a href="#cb25-93" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a>    run_chatbot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a>    run_chatbot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This basic chatbot demonstrates several conditional concepts: - Using <code>if</code>/<code>elif</code>/<code>else</code> for different categories of input - Nested conditions for subcategories (like weather types) - Keyword detection with the <code>in</code> operator - Combining conditions with <code>or</code> for similar triggers</p>
 </section>
 <section id="advanced-context-aware-chatbot" class="level3" data-number="12.11.2">
 <h3 data-number="12.11.2" class="anchored" data-anchor-id="advanced-context-aware-chatbot"><span class="header-section-number">12.11.2</span> Advanced Context-Aware Chatbot</h3>
 <p>Let’s enhance our chatbot to remember context and respond more intelligently:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> context_aware_chatbot():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> context_aware_chatbot():</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A more sophisticated chatbot that maintains conversation context."""</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1070,13 +1073,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-118"><a href="#cb26-118" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb26-119"><a href="#cb26-119" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-120"><a href="#cb26-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the context-aware chatbot</span></span>
-<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a><span class="co"># context_aware_chatbot()  # Uncomment to run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a><span class="co"># context_aware_chatbot()  # Uncomment to run</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This advanced chatbot demonstrates: - Maintaining state with a context dictionary - Making decisions based on conversation history - Using nested conditionals for complex logic - Adapting responses based on multiple factors - Tracking and counting specific events (questions)</p>
 </section>
 <section id="implementing-a-mood-system-with-state-machine" class="level3" data-number="12.11.3">
 <h3 data-number="12.11.3" class="anchored" data-anchor-id="implementing-a-mood-system-with-state-machine"><span class="header-section-number">12.11.3</span> Implementing a Mood System with State Machine</h3>
 <p>Here’s a focused example of using conditionals to implement a mood system:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mood_based_chatbot():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mood_based_chatbot():</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""A chatbot that changes responses based on its current mood state."""</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"MoodBot"</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1171,7 +1174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-93"><a href="#cb27-93" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"[Current mood: </span><span class="sc">{</span>bot_mood<span class="sc">}</span><span class="ss">]"</span>)</span>
 <span id="cb27-94"><a href="#cb27-94" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-95"><a href="#cb27-95" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the mood-based chatbot</span></span>
-<span id="cb27-96"><a href="#cb27-96" aria-hidden="true" tabindex="-1"></a><span class="co"># mood_based_chatbot()  # Uncomment to run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-96"><a href="#cb27-96" aria-hidden="true" tabindex="-1"></a><span class="co"># mood_based_chatbot()  # Uncomment to run</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This mood system demonstrates: - Using a state variable (<code>bot_mood</code>) to control response style - Transitioning between states based on conditions - Different responses for the same input based on state - Conditional state transitions based on user interaction</p>
 </section>
 </section>
@@ -1182,12 +1185,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="12.12.1" class="anchored" data-anchor-id="before-vague-prompting"><span class="header-section-number">12.12.1</span> Before: Vague Prompting</h3>
 <pre><code>Help me with Python if statements.</code></pre>
 <p><strong>AI Response:</strong> <em>Python if statements let you execute code conditionally. The basic syntax is:</em></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run if condition is True</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> other_condition:</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run if other_condition is True</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run if all conditions are False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># code to run if all conditions are False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>You can use comparison operators like <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, and <code>&lt;=</code> to create conditions. Logical operators <code>and</code>, <code>or</code>, and <code>not</code> can combine multiple conditions.</em></p>
 <p>This response provides basic information but doesn’t address specific design challenges or best practices.</p>
 </section>
@@ -1205,7 +1208,7 @@ submissions. I need to create conditional logic that:
 Please show me well-structured code with effective conditional logic and explain
 the design principles you're using.</code></pre>
 <p><strong>AI Response:</strong> <em>Here’s a well-structured approach to validation with effective conditional logic:</em></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> validate_registration(username, password, email, is_admin<span class="op">=</span><span class="va">False</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> validate_registration(username, password, email, is_admin<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Validate user registration data and return results.</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1293,7 +1296,7 @@ the design principles you're using.</code></pre>
 <span id="cb31-86"><a href="#cb31-86" aria-hidden="true" tabindex="-1"></a>    register_user(<span class="st">"adminuser"</span>, <span class="st">"Admin@1234567"</span>, <span class="st">"admin@company.com"</span>, is_admin<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb31-87"><a href="#cb31-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-88"><a href="#cb31-88" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Test invalid admin (password not complex enough)</span></span>
-<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a>    register_user(<span class="st">"adminuser2"</span>, <span class="st">"simple123"</span>, <span class="st">"admin2@company.com"</span>, is_admin<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a>    register_user(<span class="st">"adminuser2"</span>, <span class="st">"simple123"</span>, <span class="st">"admin2@company.com"</span>, is_admin<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>This code demonstrates several principles for effective conditional logic:</em></p>
 <ol type="1">
 <li><em>Early returns for validation:</em>
@@ -1363,20 +1366,20 @@ It should give free shipping when:
 
 But members with exactly 1 item are getting free shipping. What's wrong with my logic?</code></pre>
 <p><strong>AI Response:</strong> <em>I see the issue in your conditional logic. There’s an operator precedence problem. The current code is being interpreted as:</em></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (cart_total <span class="op">&gt;</span> <span class="dv">50</span>) <span class="kw">or</span> (is_member <span class="kw">and</span> item_count <span class="op">&gt;</span> <span class="dv">1</span>):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (cart_total <span class="op">&gt;</span> <span class="dv">50</span>) <span class="kw">or</span> (is_member <span class="kw">and</span> item_count <span class="op">&gt;</span> <span class="dv">1</span>):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>But based on your description, you want:</em></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (cart_total <span class="op">&gt;</span> <span class="dv">50</span>) <span class="kw">or</span> (is_member <span class="kw">and</span> item_count <span class="op">&gt;</span> <span class="dv">1</span>):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (cart_total <span class="op">&gt;</span> <span class="dv">50</span>) <span class="kw">or</span> (is_member <span class="kw">and</span> item_count <span class="op">&gt;</span> <span class="dv">1</span>):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Wait - those look the same, so that’s not the issue. Let me check again…</em></p>
 <p><em>Actually, your code logic matches your description correctly. If a user is a member AND has more than 1 item, they get free shipping. Or if cart total &gt; $50, they get free shipping regardless of membership or item count.</em></p>
 <p><em>The problem must be elsewhere. Let’s double-check with some test cases:</em></p>
 <p><em>Case 1: cart_total = 40, is_member = True, item_count = 1</em> - <em>cart_total &gt; 50 is False</em> - <em>is_member is True</em> - <em>item_count &gt; 1 is False</em> - <em>So: False or (True and False) → False or False → False</em> - <em>This user should NOT get free shipping</em></p>
 <p><em>If members with exactly 1 item are getting free shipping, possible causes include:</em> 1. <em>The <code>is_member</code> value might not be what you expect (check its type and value)</em> 2. <em>The <code>item_count</code> might not be what you expect (make sure it’s actually 1, not 2)</em> 3. <em>There might be another part of your code that’s overriding this function’s result</em></p>
 <p><em>I recommend adding debug statements to verify the values:</em></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> qualifies_for_free_shipping(cart_total, is_member, item_count):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> qualifies_for_free_shipping(cart_total, is_member, item_count):</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Debug - cart_total: </span><span class="sc">{</span>cart_total<span class="sc">}</span><span class="ss">, is_member: </span><span class="sc">{</span>is_member<span class="sc">}</span><span class="ss">, item_count: </span><span class="sc">{</span>item_count<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    qualifies <span class="op">=</span> cart_total <span class="op">&gt;</span> <span class="dv">50</span> <span class="kw">or</span> (is_member <span class="kw">and</span> item_count <span class="op">&gt;</span> <span class="dv">1</span>)</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Debug - qualifies: </span><span class="sc">{</span>qualifies<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> qualifies</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> qualifies</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>This will help you confirm what’s actually happening when the function runs.</em></p>
 </section>
 <section id="creating-complex-decision-trees-with-ai-assistance" class="level3" data-number="12.12.5">
@@ -1400,28 +1403,28 @@ detailed rejection reasons?</code></pre>
 <p>As you work with conditional statements, watch for these common issues:</p>
 <section id="using-assignment-instead-of-equality" class="level3" data-number="12.13.1">
 <h3 data-number="12.13.1" class="anchored" data-anchor-id="using-assignment-instead-of-equality"><span class="header-section-number">12.13.1</span> Using Assignment (=) Instead of Equality (==)</h3>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - accidentally assigns value instead of comparing</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - accidentally assigns value instead of comparing</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">=</span> <span class="dv">18</span>:  <span class="co"># This is a syntax error in Python</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You're 18!"</span>)</span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># CORRECT - compares values</span></span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">==</span> <span class="dv">18</span>:</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You're 18!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You're 18!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Python’s syntax prevents this common error, but it’s a frequent mistake in many languages.</p>
 </section>
 <section id="missing-the-colon" class="level3" data-number="12.13.2">
 <h3 data-number="12.13.2" class="anchored" data-anchor-id="missing-the-colon"><span class="header-section-number">12.13.2</span> Missing the Colon</h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - missing colon</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - missing colon</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;</span> <span class="dv">18</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are an adult."</span>)</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># CORRECT</span></span>
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;</span> <span class="dv">18</span>:</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are an adult."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are an adult."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="inconsistent-indentation" class="level3" data-number="12.13.3">
 <h3 data-number="12.13.3" class="anchored" data-anchor-id="inconsistent-indentation"><span class="header-section-number">12.13.3</span> Inconsistent Indentation</h3>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - inconsistent indentation</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - inconsistent indentation</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's hot!"</span>)</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Drink water."</span>)  <span class="co"># IndentationError</span></span>
@@ -1429,11 +1432,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># CORRECT - consistent indentation</span></span>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"It's hot!"</span>)</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Drink water."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Drink water."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="confusing-andor-logic" class="level3" data-number="12.13.4">
 <h3 data-number="12.13.4" class="anchored" data-anchor-id="confusing-andor-logic"><span class="header-section-number">12.13.4</span> Confusing <code>and</code>/<code>or</code> Logic</h3>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - inverted logic</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INCORRECT - inverted logic</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Meant: "If age is at least 18 AND no more than 65"</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span> <span class="kw">or</span> age <span class="op">&lt;=</span> <span class="dv">65</span>:  <span class="co"># Always True for any age!</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Working age"</span>)</span>
@@ -1444,11 +1447,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ALTERNATIVE (cleaner)</span></span>
 <span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">18</span> <span class="op">&lt;=</span> age <span class="op">&lt;=</span> <span class="dv">65</span>:</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Working age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Working age"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="forgetting-that-else-belongs-to-the-closest-if" class="level3" data-number="12.13.5">
 <h3 data-number="12.13.5" class="anchored" data-anchor-id="forgetting-that-else-belongs-to-the-closest-if"><span class="header-section-number">12.13.5</span> Forgetting That <code>else</code> Belongs to the Closest <code>if</code></h3>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MISLEADING - the else belongs to the inner if, not the outer one</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MISLEADING - the else belongs to the inner if, not the outer one</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> humidity <span class="op">&gt;</span> <span class="dv">70</span>:</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hot and humid"</span>)</span>
@@ -1462,11 +1465,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:  <span class="co"># Clearly belongs to the humidity check</span></span>
 <span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hot but not humid"</span>)</span>
 <span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:  <span class="co"># Clearly belongs to the temperature check</span></span>
-<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not hot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not hot"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="redundant-conditions" class="level3" data-number="12.13.6">
 <h3 data-number="12.13.6" class="anchored" data-anchor-id="redundant-conditions"><span class="header-section-number">12.13.6</span> Redundant Conditions</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># REDUNDANT - unnecessarily verbose</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># REDUNDANT - unnecessarily verbose</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_valid <span class="op">==</span> <span class="va">True</span>:</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Valid"</span>)</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1478,11 +1481,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Valid"</span>)</span>
 <span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> has_permission:</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Access denied"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Access denied"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="arrow-code-deeply-nested-conditionals" class="level3" data-number="12.13.7">
 <h3 data-number="12.13.7" class="anchored" data-anchor-id="arrow-code-deeply-nested-conditionals"><span class="header-section-number">12.13.7</span> “Arrow Code” (Deeply Nested Conditionals)</h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROBLEMATIC - deeply nested "arrow code"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PROBLEMATIC - deeply nested "arrow code"</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_order(order):</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> order.is_valid:</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> order.is_paid:</span>
@@ -1516,11 +1519,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If we get here, all conditions are met</span></span>
 <span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>    order.ship()</span>
-<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Shipped"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Shipped"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="forgetting-that-multiple-elif-conditions-are-exclusive" class="level3" data-number="12.13.8">
 <h3 data-number="12.13.8" class="anchored" data-anchor-id="forgetting-that-multiple-elif-conditions-are-exclusive"><span class="header-section-number">12.13.8</span> Forgetting That Multiple <code>elif</code> Conditions Are Exclusive</h3>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MISLEADING - only one block will execute, even if multiple conditions are true</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MISLEADING - only one block will execute, even if multiple conditions are true</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">95</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">60</span>:</span>
@@ -1533,7 +1536,7 @@ detailed rejection reasons?</code></pre>
 <span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You passed"</span>)</span>
 <span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">90</span>:</span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You got an A"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You got an A"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="real-world-conditional-logic-examples" class="level2" data-number="12.14">
@@ -1541,7 +1544,7 @@ detailed rejection reasons?</code></pre>
 <p>Let’s examine how conditionals are used in professional applications:</p>
 <section id="form-validation" class="level3" data-number="12.14.1">
 <h3 data-number="12.14.1" class="anchored" data-anchor-id="form-validation"><span class="header-section-number">12.14.1</span> Form Validation</h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> validate_form_submission(form_data):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> validate_form_submission(form_data):</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Validate a form submission with multiple fields."""</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    errors <span class="op">=</span> {}</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1576,11 +1579,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> errors:</span>
 <span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span>, errors</span>
 <span id="cb46-35"><a href="#cb46-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span>, <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span>, <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="e-commerce-discount-calculation" class="level3" data-number="12.14.2">
 <h3 data-number="12.14.2" class="anchored" data-anchor-id="e-commerce-discount-calculation"><span class="header-section-number">12.14.2</span> E-commerce Discount Calculation</h3>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_discount(order_total, user, day_of_week):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_discount(order_total, user, day_of_week):</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate discount based on multiple conditions."""</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize discount</span></span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    discount_percentage <span class="op">=</span> <span class="dv">0</span></span>
@@ -1617,11 +1620,11 @@ detailed rejection reasons?</code></pre>
 <span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"discount_percentage"</span>: discount_percentage,</span>
 <span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"discount_amount"</span>: discount_amount,</span>
 <span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"final_total"</span>: order_total <span class="op">-</span> discount_amount</span>
-<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="game-character-status" class="level3" data-number="12.14.3">
 <h3 data-number="12.14.3" class="anchored" data-anchor-id="game-character-status"><span class="header-section-number">12.14.3</span> Game Character Status</h3>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_character_status(character):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_character_status(character):</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Update a game character's status based on their attributes."""</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reset temporary status effects</span></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    character.status_effects <span class="op">=</span> []</span>
@@ -1660,7 +1663,7 @@ detailed rejection reasons?</code></pre>
 <span id="cb48-37"><a href="#cb48-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> character.status_effects:</span>
 <span id="cb48-38"><a href="#cb48-38" aria-hidden="true" tabindex="-1"></a>        character.update_visual_indicators()</span>
 <span id="cb48-39"><a href="#cb48-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-40"><a href="#cb48-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> character.status_effects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-40"><a href="#cb48-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> character.status_effects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>These examples demonstrate how conditionals are used to implement complex business logic, multi-factor decisions, and state-based behaviors in professional applications.</p>
 </section>
 </section>
@@ -1783,290 +1786,294 @@ detailed rejection reasons?</code></pre>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
           } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
         }
-        return container.innerHTML
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2074,185 +2081,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/09_creating_functions.html" class="pagination-link" aria-label="Creating Functions - Build Your Own Python Tools">
@@ -2265,7 +2248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb49" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Making Decisions - Controlling Your Program's Flow</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Making Decisions - Controlling Your Program's Flow</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter Outline</span></span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understanding conditional execution and its importance</span>
@@ -3799,7 +3782,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-1532"><a href="#cb49-1532" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-1533"><a href="#cb49-1533" aria-hidden="true" tabindex="-1"></a>Decision-making is one of the most fundamental aspects of programming. Nearly every non-trivial program uses conditionals in some form, from simple validations to complex business logic. The skills you've learned in this chapter will serve you in virtually every program you write.</span>
 <span id="cb49-1534"><a href="#cb49-1534" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-1535"><a href="#cb49-1535" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore lists—Python's primary tool for working with collections of data. Combined with conditionals, lists will enable us to manage and process multiple pieces of information, further enhancing our chatbot's capabilities.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb49-1535"><a href="#cb49-1535" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore lists—Python's primary tool for working with collections of data. Combined with conditionals, lists will enable us to manage and process multiple pieces of information, further enhancing our chatbot's capabilities.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

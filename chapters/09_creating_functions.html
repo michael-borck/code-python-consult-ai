@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Jumpstart: Coding Fundamentals for the AI Era – 11&nbsp; Creating Functions - Build Your Own Python Tools</title>
+<title>11&nbsp; Creating Functions - Build Your Own Python Tools – Python Jumpstart: Coding Fundamentals for the AI Era</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,15 +67,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../chapters/10_making_decisions.html" rel="next">
 <link href="../chapters/08_using_functions.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea07c801963e0f738b5ea27386c64fa2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -488,11 +491,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="function-definition-the-building-blocks" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="function-definition-the-building-blocks"><span class="header-section-number">11.4</span> 2. Function Definition: The Building Blocks</h2>
 <p>A function in Python consists of a <strong>header</strong> (the definition line) and a <strong>body</strong> (the indented code block that follows):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameters):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameters):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Docstring: explains what the function does."""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Function body - indented code</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># that runs when the function is called</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result  <span class="co"># Optional return statement</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result  <span class="co"># Optional return statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Let’s break down each component:</p>
 <ul>
 <li><code>def</code>: The keyword that tells Python you’re defining a function</li>
@@ -503,16 +506,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>return</code>: Optional statement to send a value back to the caller</li>
 </ul>
 <p>Here’s a simple example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display a simple greeting."""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calling the function</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Output: Hello, world!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Output: Hello, world!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Every time you call the function, its code executes:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Hello, world!</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Hello, world!</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Hello, world!</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Hello, world!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Hello, world!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="function-naming-best-practices" class="level3" data-number="11.4.1">
 <h3 data-number="11.4.1" class="anchored" data-anchor-id="function-naming-best-practices"><span class="header-section-number">11.4.1</span> Function Naming Best Practices</h3>
 <p>Good function names are:</p>
@@ -522,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Lowercase</strong> with underscores between words (snake_case)</li>
 <li><strong>Consistent</strong> in style throughout your program</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good function names</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Good function names</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_area(width, height):</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> width <span class="op">*</span> height</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -537,49 +540,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> w <span class="op">*</span> h</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function1():  <span class="co"># Says nothing about purpose</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="parameters-and-arguments-making-functions-flexible" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="parameters-and-arguments-making-functions-flexible"><span class="header-section-number">11.5</span> 3. Parameters and Arguments: Making Functions Flexible</h2>
 <p>Parameters make functions adaptable by allowing them to work with different inputs each time they’re called:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Greet a person by name."""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calling with different arguments</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>)  <span class="co"># Output: Hello, Alice!</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Bob"</span>)    <span class="co"># Output: Hello, Bob!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Bob"</span>)    <span class="co"># Output: Hello, Bob!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="required-parameters" class="level3" data-number="11.5.1">
 <h3 data-number="11.5.1" class="anchored" data-anchor-id="required-parameters"><span class="header-section-number">11.5.1</span> Required Parameters</h3>
 <p>In the example above, <code>name</code> is a required parameter. If you don’t provide it, Python raises an error:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Error: greet() missing 1 required positional argument: 'name'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>greet()  <span class="co"># Error: greet() missing 1 required positional argument: 'name'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="multiple-parameters" class="level3" data-number="11.5.2">
 <h3 data-number="11.5.2" class="anchored" data-anchor-id="multiple-parameters"><span class="header-section-number">11.5.2</span> Multiple Parameters</h3>
 <p>Functions can accept multiple parameters:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_info(name, age, location):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_info(name, age, location):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display a person's information."""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Name: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Age: </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Location: </span><span class="sc">{</span>location<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Call with multiple arguments</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>display_info(<span class="st">"Charlie"</span>, <span class="dv">25</span>, <span class="st">"San Francisco"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>display_info(<span class="st">"Charlie"</span>, <span class="dv">25</span>, <span class="st">"San Francisco"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When calling functions with multiple parameters, you must provide them in the correct order, or use named arguments:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Positional arguments (order matters)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Positional arguments (order matters)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>display_info(<span class="st">"Charlie"</span>, <span class="dv">25</span>, <span class="st">"San Francisco"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Named arguments (order doesn't matter)</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>display_info(location<span class="op">=</span><span class="st">"San Francisco"</span>, name<span class="op">=</span><span class="st">"Charlie"</span>, age<span class="op">=</span><span class="dv">25</span>)</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mix of positional and named (positional must come first)</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>display_info(<span class="st">"Charlie"</span>, location<span class="op">=</span><span class="st">"San Francisco"</span>, age<span class="op">=</span><span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>display_info(<span class="st">"Charlie"</span>, location<span class="op">=</span><span class="st">"San Francisco"</span>, age<span class="op">=</span><span class="dv">25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="default-parameter-values" class="level3" data-number="11.5.3">
 <h3 data-number="11.5.3" class="anchored" data-anchor-id="default-parameter-values"><span class="header-section-number">11.5.3</span> Default Parameter Values</h3>
 <p>You can make parameters optional by providing default values:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name, greeting<span class="op">=</span><span class="st">"Hello"</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name, greeting<span class="op">=</span><span class="st">"Hello"</span>):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Greet a person with a customizable greeting."""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>greeting<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -587,20 +590,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Diana"</span>)  <span class="co"># Output: Hello, Diana!</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Overriding the default</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Edward"</span>, <span class="st">"Good morning"</span>)  <span class="co"># Output: Good morning, Edward!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Edward"</span>, <span class="st">"Good morning"</span>)  <span class="co"># Output: Good morning, Edward!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Default parameters must come after non-default parameters:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct: default parameter after required parameter</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct: default parameter after required parameter</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function(required, optional<span class="op">=</span><span class="st">"default"</span>):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect: default parameter before required parameter</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function(optional<span class="op">=</span><span class="st">"default"</span>, required):  <span class="co"># SyntaxError</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="parameter-types-and-docstrings" class="level3" data-number="11.5.4">
 <h3 data-number="11.5.4" class="anchored" data-anchor-id="parameter-types-and-docstrings"><span class="header-section-number">11.5.4</span> Parameter Types and Docstrings</h3>
 <p>Good practice includes documenting the expected types and purpose of parameters:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_total(price, quantity, tax_rate<span class="op">=</span><span class="fl">0.08</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_total(price, quantity, tax_rate<span class="op">=</span><span class="fl">0.08</span>):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate the total cost including tax.</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -614,14 +617,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    subtotal <span class="op">=</span> price <span class="op">*</span> quantity</span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> subtotal <span class="op">*</span> tax_rate</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> subtotal <span class="op">+</span> tax</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> subtotal <span class="op">+</span> tax</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This documentation helps other developers (and future you) understand how to use the function correctly.</p>
 </section>
 </section>
 <section id="return-values-getting-results-from-functions" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="return-values-getting-results-from-functions"><span class="header-section-number">11.6</span> 4. Return Values: Getting Results from Functions</h2>
 <p>Functions can send data back to the caller using the <code>return</code> statement:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add two numbers and return the result."""</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -631,9 +634,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the return value directly in an expression</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> add(<span class="dv">5</span>, <span class="dv">3</span>) <span class="op">+</span> add(<span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)  <span class="co"># Output: 11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)  <span class="co"># Output: 11</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>return</code> statement immediately exits the function and sends the specified value back:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> absolute_value(number):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> absolute_value(number):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return the absolute value of a number."""</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> number  <span class="co"># Function ends here if number is positive</span></span>
@@ -642,11 +645,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>number</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absolute_value(<span class="dv">5</span>))    <span class="co"># Output: 5</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absolute_value(<span class="op">-</span><span class="dv">10</span>))  <span class="co"># Output: 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(absolute_value(<span class="op">-</span><span class="dv">10</span>))  <span class="co"># Output: 10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="returning-multiple-values" class="level3" data-number="11.6.1">
 <h3 data-number="11.6.1" class="anchored" data-anchor-id="returning-multiple-values"><span class="header-section-number">11.6.1</span> Returning Multiple Values</h3>
 <p>Python functions can return multiple values using tuples:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_dimensions():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_dimensions():</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return width and height."""</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">800</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    height <span class="op">=</span> <span class="dv">600</span></span>
@@ -654,24 +657,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Unpacking the returned tuple</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>screen_width, screen_height <span class="op">=</span> get_dimensions()</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Width: </span><span class="sc">{</span>screen_width<span class="sc">}</span><span class="ss">, Height: </span><span class="sc">{</span>screen_height<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Width: </span><span class="sc">{</span>screen_width<span class="sc">}</span><span class="ss">, Height: </span><span class="sc">{</span>screen_height<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="no-return-statement" class="level3" data-number="11.6.2">
 <h3 data-number="11.6.2" class="anchored" data-anchor-id="no-return-statement"><span class="header-section-number">11.6.2</span> No Return Statement</h3>
 <p>If a function doesn’t include a <code>return</code> statement, Python implicitly returns <code>None</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Greet a person by name."""</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This function doesn't explicitly return anything</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> greet(<span class="st">"Frank"</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Output: None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Output: None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This behavior explains why <code>print()</code> doesn’t appear to return anything - it’s returning <code>None</code> after displaying output.</p>
 </section>
 <section id="return-early-for-validation" class="level3" data-number="11.6.3">
 <h3 data-number="11.6.3" class="anchored" data-anchor-id="return-early-for-validation"><span class="header-section-number">11.6.3</span> Return Early for Validation</h3>
 <p>Returning early is useful for validation:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Divide a by b, with validation."""</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Validate input first</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> b <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -679,30 +682,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># Return early on invalid input</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Only execute if validation passed</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="variable-scope-understanding-where-variables-live" class="level2" data-number="11.7">
 <h2 data-number="11.7" class="anchored" data-anchor-id="variable-scope-understanding-where-variables-live"><span class="header-section-number">11.7</span> 5. Variable Scope: Understanding Where Variables Live</h2>
 <p>When you create a variable inside a function, it only exists within that function. This is called “local scope”:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_local():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_local():</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Demonstrate local variable scope."""</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This variable only exists inside this function</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> <span class="st">"I'm a local variable"</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(message)</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>show_local()  <span class="co"># Output: I'm a local variable</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print(message)  # Error: name 'message' is not defined</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print(message)  # Error: name 'message' is not defined</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Parameters are also local variables:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> double(number):  <span class="co"># 'number' is a local variable</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> double(number):  <span class="co"># 'number' is a local variable</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> number <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> double(<span class="dv">5</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print(number)  # Error: 'number' doesn't exist outside the function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print(number)  # Error: 'number' doesn't exist outside the function</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="local-vs.-global-scope" class="level3" data-number="11.7.1">
 <h3 data-number="11.7.1" class="anchored" data-anchor-id="local-vs.-global-scope"><span class="header-section-number">11.7.1</span> Local vs.&nbsp;Global Scope</h3>
 <p>Variables defined outside any function have “global scope” and can be accessed (but not modified) inside functions:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Global variable</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Global variable</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment():</span>
@@ -716,26 +719,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Increment the global counter."""</span></span>
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> counter  <span class="co"># Declare that we want to use the global variable</span></span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">=</span> counter <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> counter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> counter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>However, it’s generally better practice to pass values as parameters and return results, rather than relying on global variables:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Better approach</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Better approach</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment(value):</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Increment the given value."""</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> value <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> increment(counter)  <span class="co"># counter becomes 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> increment(counter)  <span class="co"># counter becomes 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="variable-lifetime" class="level3" data-number="11.7.2">
 <h3 data-number="11.7.2" class="anchored" data-anchor-id="variable-lifetime"><span class="header-section-number">11.7.2</span> Variable Lifetime</h3>
 <p>Local variables are created when the function is called and destroyed when it returns:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_data():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_data():</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Created when function starts</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Processing at </span><span class="sc">{</span>temp<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 'temp' is destroyed when function ends</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>process_data()</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>process_data()  <span class="co"># Creates a fresh 'temp' variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>process_data()  <span class="co"># Creates a fresh 'temp' variable</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This explains why functions don’t “remember” values from previous calls unless you use global variables or other techniques we’ll learn later.</p>
 </section>
 </section>
@@ -745,7 +748,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="single-responsibility-principle" class="level3" data-number="11.8.1">
 <h3 data-number="11.8.1" class="anchored" data-anchor-id="single-responsibility-principle"><span class="header-section-number">11.8.1</span> 1. Single Responsibility Principle</h3>
 <p>Each function should have one clear purpose:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Too many responsibilities</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Too many responsibilities</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_user(name):</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Processing user: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    validate_email(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">@example.com"</span>)</span>
@@ -763,12 +766,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> send_welcome_email(email):</span>
 <span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Send welcome message to user."""</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sending welcome email to </span><span class="sc">{</span>email<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sending welcome email to </span><span class="sc">{</span>email<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="keep-functions-short-and-focused" class="level3" data-number="11.8.2">
 <h3 data-number="11.8.2" class="anchored" data-anchor-id="keep-functions-short-and-focused"><span class="header-section-number">11.8.2</span> 2. Keep Functions Short and Focused</h3>
 <p>Aim for functions that fit on one screen (20-30 lines maximum):</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Too long and complex</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Too long and complex</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> do_everything():</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 100 lines of code doing many different things</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -784,12 +787,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_report():</span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 20 lines of code</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="use-descriptive-names-and-documentation" class="level3" data-number="11.8.3">
 <h3 data-number="11.8.3" class="anchored" data-anchor-id="use-descriptive-names-and-documentation"><span class="header-section-number">11.8.3</span> 3. Use Descriptive Names and Documentation</h3>
 <p>Make your functions self-documenting:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unclear</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unclear</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc(a, b):</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -805,12 +808,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">        float: Area of the rectangle</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> width <span class="op">*</span> height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> width <span class="op">*</span> height</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="minimize-side-effects" class="level3" data-number="11.8.4">
 <h3 data-number="11.8.4" class="anchored" data-anchor-id="minimize-side-effects"><span class="header-section-number">11.8.4</span> 4. Minimize Side Effects</h3>
 <p>Functions should ideally return values rather than modifying global state:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function with side effects</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function with side effects</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_to_total(value):</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> total</span>
@@ -820,12 +823,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> add(total, value)  <span class="co"># Explicit about what's changing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> add(total, value)  <span class="co"># Explicit about what's changing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="error-handling" class="level3" data-number="11.8.5">
 <h3 data-number="11.8.5" class="anchored" data-anchor-id="error-handling"><span class="header-section-number">11.8.5</span> 5. Error Handling</h3>
 <p>Consider what happens when things go wrong:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Divide a by b.</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -839,7 +842,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> b <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Error: Cannot divide by zero"</span>)</span>
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="project-corner-structuring-your-chatbot-with-functions" class="level2" data-number="11.9">
@@ -847,7 +850,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now let’s apply these principles to enhance our chatbot project with well-designed functions. Previously, we had a simple script; now we’ll organize it into modular, reusable components.</p>
 <section id="basic-function-based-chatbot" class="level3" data-number="11.9.1">
 <h3 data-number="11.9.1" class="anchored" data-anchor-id="basic-function-based-chatbot"><span class="header-section-number">11.9.1</span> Basic Function-Based Chatbot</h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_response(user_input, user_name):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_response(user_input, user_name):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Generate a response based on user input.</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -890,13 +893,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the chatbot if this file is executed directly</span></span>
 <span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>    run_chatbot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>    run_chatbot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This approach already improves our code by: - Separating response generation into a dedicated function - Adding proper documentation with docstrings - Creating a main function that handles the chatbot loop - Using a conditional to only run the chatbot when the file is executed directly</p>
 </section>
 <section id="enhanced-modular-chatbot" class="level3" data-number="11.9.2">
 <h3 data-number="11.9.2" class="anchored" data-anchor-id="enhanced-modular-chatbot"><span class="header-section-number">11.9.2</span> Enhanced Modular Chatbot</h3>
 <p>Let’s take it further by adding more functions for specific tasks:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_user_name():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_user_name():</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Get the user's name with basic validation.</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1016,7 +1019,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-118"><a href="#cb28-118" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-119"><a href="#cb28-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the chatbot if this file is executed directly</span></span>
 <span id="cb28-120"><a href="#cb28-120" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb28-121"><a href="#cb28-121" aria-hidden="true" tabindex="-1"></a>    run_chatbot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-121"><a href="#cb28-121" aria-hidden="true" tabindex="-1"></a>    run_chatbot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This enhanced version demonstrates several advanced function design principles:</p>
 <ol type="1">
 <li><strong>Each function has a single responsibility</strong> - input, output, logic, etc.</li>
@@ -1029,7 +1032,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adding-new-capabilities-with-functions" class="level3" data-number="11.9.3">
 <h3 data-number="11.9.3" class="anchored" data-anchor-id="adding-new-capabilities-with-functions"><span class="header-section-number">11.9.3</span> Adding New Capabilities with Functions</h3>
 <p>When you want to extend your chatbot, you can simply add new functions:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_age(birth_year):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_age(birth_year):</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate age based on birth year.</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1078,7 +1081,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> age_response:</span>
 <span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> age_response</span>
 <span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Other response logic...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Other response logic...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This modular approach makes extending your chatbot clean and manageable. Each new capability goes into its own function, keeping your code organized.</p>
 </section>
 </section>
@@ -1089,11 +1092,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="11.10.1" class="anchored" data-anchor-id="before-vague-prompting"><span class="header-section-number">11.10.1</span> Before: Vague Prompting</h3>
 <pre><code>Help me create a function in Python.</code></pre>
 <p><strong>AI Response:</strong> <em>To create a function in Python, you use the <code>def</code> keyword followed by the function name and parentheses. Here’s a basic example:</em></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""This function greets the person passed in as a parameter."""</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>)  <span class="co"># Output: Hello, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>)  <span class="co"># Output: Hello, Alice!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Functions can have parameters, return values, and docstrings that explain what they do. Parameters make your functions reusable with different inputs.</em></p>
 <p>This response provides basic information but doesn’t address specific function design needs.</p>
 </section>
@@ -1109,7 +1112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Please provide a function with proper documentation, parameter validation, and
 error handling. Also explain any design decisions in your implementation.</code></pre>
 <p><strong>AI Response:</strong> <em>Here’s a well-designed function to analyze sentiment in chatbot messages:</em></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_sentiment(message, custom_keywords<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_sentiment(message, custom_keywords<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Analyze the sentiment of a message as positive, negative, or neutral.</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1189,7 +1192,7 @@ error handling. Also explain any design decisions in your implementation.</code>
 <span id="cb33-78"><a href="#cb33-78" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> message <span class="kw">in</span> test_messages:</span>
 <span id="cb33-79"><a href="#cb33-79" aria-hidden="true" tabindex="-1"></a>        sentiment, confidence <span class="op">=</span> analyze_sentiment(message)</span>
 <span id="cb33-80"><a href="#cb33-80" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Message: '</span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb33-81"><a href="#cb33-81" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Sentiment: </span><span class="sc">{</span>sentiment<span class="sc">}</span><span class="ss">, Confidence: </span><span class="sc">{</span>confidence<span class="sc">:.2f}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-81"><a href="#cb33-81" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Sentiment: </span><span class="sc">{</span>sentiment<span class="sc">}</span><span class="ss">, Confidence: </span><span class="sc">{</span>confidence<span class="sc">:.2f}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Design decisions explained:</em></p>
 <ol type="1">
 <li><em>Function signature:</em>
@@ -1253,7 +1256,7 @@ Please provide the function code with comments explaining the implementation.</c
 <p>As you create your own functions, watch for these common issues:</p>
 <section id="too-many-parameters" class="level3" data-number="11.11.1">
 <h3 data-number="11.11.1" class="anchored" data-anchor-id="too-many-parameters"><span class="header-section-number">11.11.1</span> Too Many Parameters</h3>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hard to use and understand</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hard to use and understand</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_user(name, email, password, age, location, interests, account_type,</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                newsletter, referral_code, language, theme_preference):</span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Function with too many parameters</span></span>
@@ -1267,11 +1270,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Or use a dictionary/class for related parameters</span></span>
 <span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_user(user_data):</span>
 <span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Access fields with user_data['name'], etc.</span></span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="side-effects-without-documentation" class="level3" data-number="11.11.2">
 <h3 data-number="11.11.2" class="anchored" data-anchor-id="side-effects-without-documentation"><span class="header-section-number">11.11.2</span> Side Effects Without Documentation</h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Surprising side effect</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Surprising side effect</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_stats(data):</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate mean and median of data."""</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    data.sort()  <span class="co"># Side effect: modifies input list!</span></span>
@@ -1293,11 +1296,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_stats(data):</span>
 <span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate statistics from data (non-modifying)."""</span></span>
 <span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data)  <span class="co"># Creates a new sorted list</span></span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use sorted_data instead of modifying input</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use sorted_data instead of modifying input</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="not-handling-edge-cases" class="level3" data-number="11.11.3">
 <h3 data-number="11.11.3" class="anchored" data-anchor-id="not-handling-edge-cases"><span class="header-section-number">11.11.3</span> Not Handling Edge Cases</h3>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Missing edge case handling</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Missing edge case handling</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_average(numbers):</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(numbers) <span class="op">/</span> <span class="bu">len</span>(numbers)  <span class="co"># Crashes on empty list</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1305,11 +1308,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_average(numbers):</span>
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> numbers:</span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span>  <span class="co"># Or raise an exception, or return None</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(numbers) <span class="op">/</span> <span class="bu">len</span>(numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(numbers) <span class="op">/</span> <span class="bu">len</span>(numbers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="function-naming-confusion" class="level3" data-number="11.11.4">
 <h3 data-number="11.11.4" class="anchored" data-anchor-id="function-naming-confusion"><span class="header-section-number">11.11.4</span> Function Naming Confusion</h3>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confusing name - doesn't match behavior</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confusing name - doesn't match behavior</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_email(email):</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Validates an email and returns a boolean."""</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"@"</span> <span class="kw">in</span> email <span class="kw">and</span> <span class="st">"."</span> <span class="kw">in</span> email</span>
@@ -1326,11 +1329,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Email must contain @ symbol"</span></span>
 <span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"."</span> <span class="kw">not</span> <span class="kw">in</span> email:</span>
 <span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Email must contain a domain"</span></span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span>  <span class="co"># No errors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span>  <span class="co"># No errors</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="inconsistent-return-types" class="level3" data-number="11.11.5">
 <h3 data-number="11.11.5" class="anchored" data-anchor-id="inconsistent-return-types"><span class="header-section-number">11.11.5</span> Inconsistent Return Types</h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inconsistent - sometimes returns bool, sometimes string</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inconsistent - sometimes returns bool, sometimes string</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_payment(amount):</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> amount <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Invalid amount"</span>  <span class="co"># String</span></span>
@@ -1349,11 +1352,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> process_successful:</span>
 <span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span>, <span class="st">"Payment successful"</span></span>
 <span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span>, <span class="st">"Payment failed"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span>, <span class="st">"Payment failed"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="doing-too-much-in-one-function" class="level3" data-number="11.11.6">
 <h3 data-number="11.11.6" class="anchored" data-anchor-id="doing-too-much-in-one-function"><span class="header-section-number">11.11.6</span> Doing Too Much in One Function</h3>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function trying to do too much</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function trying to do too much</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_order(order_id):</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Validate the order</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the total</span></span>
@@ -1376,7 +1379,7 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Payment processing</span></span>
 <span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
 <span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Etc.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Etc.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="real-world-function-examples" class="level2" data-number="11.12">
@@ -1384,7 +1387,7 @@ Please provide the function code with comments explaining the implementation.</c
 <p>Let’s look at some realistic examples of function design in different contexts:</p>
 <section id="data-processing-function" class="level3" data-number="11.12.1">
 <h3 data-number="11.12.1" class="anchored" data-anchor-id="data-processing-function"><span class="header-section-number">11.12.1</span> Data Processing Function</h3>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_data(data, columns<span class="op">=</span><span class="va">None</span>, drop_duplicates<span class="op">=</span><span class="va">True</span>, fill_missing<span class="op">=</span><span class="va">None</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_data(data, columns<span class="op">=</span><span class="va">None</span>, drop_duplicates<span class="op">=</span><span class="va">True</span>, fill_missing<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Clean a pandas DataFrame by handling specified issues.</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1439,11 +1442,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb41-53"><a href="#cb41-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage:</span></span>
 <span id="cb41-54"><a href="#cb41-54" aria-hidden="true" tabindex="-1"></a><span class="co"># df, summary = clean_data(customer_data,</span></span>
 <span id="cb41-55"><a href="#cb41-55" aria-hidden="true" tabindex="-1"></a><span class="co">#                          columns=["name", "email"],</span></span>
-<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a><span class="co">#                          fill_missing={"age": 0, "income": 0})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a><span class="co">#                          fill_missing={"age": 0, "income": 0})</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="web-application-function" class="level3" data-number="11.12.2">
 <h3 data-number="11.12.2" class="anchored" data-anchor-id="web-application-function"><span class="header-section-number">11.12.2</span> Web Application Function</h3>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> authenticate_user(username, password, max_attempts<span class="op">=</span><span class="dv">3</span>, lockout_minutes<span class="op">=</span><span class="dv">30</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> authenticate_user(username, password, max_attempts<span class="op">=</span><span class="dv">3</span>, lockout_minutes<span class="op">=</span><span class="dv">30</span>):</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Authenticate a user against the database.</span></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1510,11 +1513,11 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb42-65"><a href="#cb42-65" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">"success"</span>: <span class="va">False</span>, <span class="st">"user_id"</span>: <span class="va">None</span>, <span class="st">"message"</span>: message}</span>
 <span id="cb42-66"><a href="#cb42-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-67"><a href="#cb42-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: This assumes helper functions get_user_by_username(),</span></span>
-<span id="cb42-68"><a href="#cb42-68" aria-hidden="true" tabindex="-1"></a><span class="co"># verify_password(), and update_user() exist elsewhere</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-68"><a href="#cb42-68" aria-hidden="true" tabindex="-1"></a><span class="co"># verify_password(), and update_user() exist elsewhere</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="game-development-function" class="level3" data-number="11.12.3">
 <h3 data-number="11.12.3" class="anchored" data-anchor-id="game-development-function"><span class="header-section-number">11.12.3</span> Game Development Function</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_damage(attacker, defender, attack_type<span class="op">=</span><span class="st">"normal"</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_damage(attacker, defender, attack_type<span class="op">=</span><span class="st">"normal"</span>):</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate damage for an attack in a game.</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1589,7 +1592,7 @@ Please provide the function code with comments explaining the implementation.</c
 <span id="cb43-73"><a href="#cb43-73" aria-hidden="true" tabindex="-1"></a>        <span class="st">'critical'</span>: is_critical,</span>
 <span id="cb43-74"><a href="#cb43-74" aria-hidden="true" tabindex="-1"></a>        <span class="st">'hit'</span>: <span class="va">True</span>,</span>
 <span id="cb43-75"><a href="#cb43-75" aria-hidden="true" tabindex="-1"></a>        <span class="st">'message'</span>: message</span>
-<span id="cb43-76"><a href="#cb43-76" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-76"><a href="#cb43-76" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>These examples demonstrate how functions in real-world applications handle multiple parameters, process complex logic, implement validation, and return structured results. Notice how each function:</p>
 <ol type="1">
 <li>Has clear documentation</li>
@@ -1721,290 +1724,294 @@ Please provide the function code with comments explaining the implementation.</c
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
           } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
         }
-        return container.innerHTML
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2012,185 +2019,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/08_using_functions.html" class="pagination-link" aria-label="Using Functions - Python's Built-in Powertools">
@@ -2203,7 +2186,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb44" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Creating Functions - Build Your Own Python Tools</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Creating Functions - Build Your Own Python Tools</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter Outline</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understanding the importance of custom functions</span>
@@ -3632,7 +3615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb44-1427"><a href="#cb44-1427" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-1428"><a href="#cb44-1428" aria-hidden="true" tabindex="-1"></a>Custom functions are one of the most powerful tools in programming. They allow you to create your own abstractions and define your own vocabulary for solving problems. By mastering function creation, you've taken a major step toward thinking like a programmer and building more sophisticated applications.</span>
 <span id="cb44-1429"><a href="#cb44-1429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-1430"><a href="#cb44-1430" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore how to make decisions in your code using conditional statements, which will further enhance your chatbot's ability to respond intelligently to different situations.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb44-1430"><a href="#cb44-1430" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore how to make decisions in your code using conditional statements, which will further enhance your chatbot's ability to respond intelligently to different situations.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
