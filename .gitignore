@@ -147,3 +147,5 @@ dmypy.json
 
 CONVERSION_README.md
 CONVERSION_TODO.md
+
+**/*.quarto_ipynb
