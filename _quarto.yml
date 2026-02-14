@@ -40,12 +40,12 @@ book:
     - acknowledgments.qmd
 
   downloads: [pdf, epub]
-  repo-url: https://github.com/michaelborck-books/code-python-consult-ai
+  repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
 
 website:
   favicon: assets/python-logo.png
-  repo-url: https://github.com/michaelborck-books/code-python-consult-ai
+  repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
   open-graph: true
 

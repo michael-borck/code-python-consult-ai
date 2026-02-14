@@ -50,14 +50,20 @@ This interactive guide covers everything from basic Python syntax to more advanc
 
 ## Related Resources {.unnumbered}
 
-This guide is part of a 4-book series designed to help you master modern software development in the AI era:
+This guide is part of a 5-book series designed to help you master modern software development in the AI era:
 
-1. **Think Python, Direct AI: Computational Thinking for Beginners** - An innovative programming textbook that embraces AI as a learning partner. Master Python by learning how to think computationally and direct AI to help you build solutions. Perfect for absolute beginners in the age of AI.
-2. **Code Python, Consult AI: Python Fundamentals for the AI Era** (this book): Learn fundamental Python with AI integration - ideal for those who want a focused introduction to Python fundamentals
-3. **Conversation, Not Delegation: Mastering Human-AI Development**: A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
-4. **Ship It: Python in Production**: Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
+### Foundational Methodology
+- **Conversation, Not Delegation: Mastering Human-AI Development** - A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
 
-**Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship It: Python in Production," while "Conversation, Not Delegation" provides the AI collaboration methodology that enhances all your development work.
+### Python Track
+1. **Think Python, Direct AI: Computational Thinking for Beginners** - An innovative programming textbook that embraces AI as a learning partner. Perfect for absolute beginners in the age of AI.
+2. **Code Python, Consult AI: Python Fundamentals for the AI Era** (this book) - Learn fundamental Python with AI integration - ideal for those who want a focused introduction to Python fundamentals
+3. **Ship Python, Orchestrate AI: Professional Python in the AI Era** - Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
+
+### Web Track
+- **Build Web, Guide AI: Business Web Development with AI** - A practical guide to modern web development with AI as your development partner.
+
+**Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship Python, Orchestrate AI." For web development, see "Build Web, Guide AI." The methodology from "Conversation, Not Delegation" enhances all your development work.
 
 ## How to Use This Guide {.unnumbered}
 
