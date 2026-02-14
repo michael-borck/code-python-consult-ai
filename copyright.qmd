@@ -1,0 +1,49 @@
+# Copyright {.unnumbered .unlisted}
+
+::: {.content-visible when-format="pdf"}
+
+\thispagestyle{empty}
+
+:::
+
+**Code Python, Consult AI: Python Fundamentals for the AI Era**
+
+Copyright 2026 Michael Borck. All rights reserved.
+
+No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the author, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+
+**First Edition, 2026**
+
+While every precaution has been taken in the preparation of this book, the author assumes no responsibility for errors or omissions, or for damages resulting from the use of information contained herein.
+
+---
+
+**License**
+Book content (text, explanations, documentation): Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+Code examples: MIT License
+
+---
+
+**Cover Art**
+Created using AI image generation, with prompts crafted by the author depicting the themes of Python programming and human-AI collaboration.
+
+**Production Notes**
+This book was written in Markdown using Quarto. The text is set in system fonts optimized for screen and print reading. Code examples use a monospace font for clarity.
+
+Editorial assistance provided by Claude (Anthropic). The author reviewed and approved all content.
+
+---
+
+**Online Edition**
+A free online version of this book is available at:
+https://michael-borck.github.io/code-python-consult-ai
+
+---
+
+michael@borck.me
+
+::: {.content-visible when-format="pdf"}
+
+\newpage
+
+:::

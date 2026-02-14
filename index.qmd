@@ -65,6 +65,20 @@ This guide is part of a 5-book series designed to help you master modern softwar
 
 **Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship Python, Orchestrate AI." For web development, see "Build Web, Guide AI." The methodology from "Conversation, Not Delegation" enhances all your development work.
 
+## Source Code & Feedback {.unnumbered}
+
+**Source Code**
+All code examples and supplementary materials are available at:
+https://github.com/michael-borck/code-python-consult-ai
+
+**Feedback and Errata**
+Found an error? Have a suggestion? We welcome your feedback:
+
+- Open an issue: https://github.com/michael-borck/code-python-consult-ai/issues
+- Email: michael@borck.me
+
+Your input helps improve this book for future readers.
+
 ## How to Use This Guide {.unnumbered}
 
 Each chapter builds upon the previous one, with interactive code examples you can run directly in your browser. You can follow along sequentially or jump to specific topics that interest you.

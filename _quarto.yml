@@ -8,6 +8,7 @@ book:
   license: "CC BY-SA 4.0 (content), MIT (code examples)"
   chapters:
     - index.qmd
+    - copyright.qmd
     - chapters/00_python_in_the_age_of_ai.qmd
     - chapters/01_hello_world.qmd
     - chapters/02_basic_python_syntax.qmd
@@ -38,6 +39,7 @@ book:
     - chapters/27_intentional_prompting.qmd
     - chapters/chatbot_project.qmd
     - acknowledgments.qmd
+    - about-author.qmd
 
   downloads: [pdf, epub]
   repo-url: https://github.com/michael-borck/code-python-consult-ai
