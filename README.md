@@ -1,5 +1,9 @@
 # Code Python, Consult AI: Python Fundamentals for the AI Era
 
+<!-- BADGES:START -->
+[![ai](https://img.shields.io/badge/-ai-ff6f00?style=flat-square)](https://github.com/topics/ai) [![beginner-friendly](https://img.shields.io/badge/-beginner--friendly-blue?style=flat-square)](https://github.com/topics/beginner-friendly) [![control-flow](https://img.shields.io/badge/-control--flow-blue?style=flat-square)](https://github.com/topics/control-flow) [![data-structures](https://img.shields.io/badge/-data--structures-blue?style=flat-square)](https://github.com/topics/data-structures) [![exception-handling](https://img.shields.io/badge/-exception--handling-blue?style=flat-square)](https://github.com/topics/exception-handling) [![functions](https://img.shields.io/badge/-functions-blue?style=flat-square)](https://github.com/topics/functions) [![python](https://img.shields.io/badge/-python-3776ab?style=flat-square)](https://github.com/topics/python) [![testing](https://img.shields.io/badge/-testing-blue?style=flat-square)](https://github.com/topics/testing) [![text-manipulation](https://img.shields.io/badge/-text--manipulation-blue?style=flat-square)](https://github.com/topics/text-manipulation) [![coding-fundamentals](https://img.shields.io/badge/-coding--fundamentals-blue?style=flat-square)](https://github.com/topics/coding-fundamentals)
+<!-- BADGES:END -->
+
 This Quarto book introduces the essential components of Python programming with a modern twist for the AI era. The focus is on learning just enough Python to effectively work with AI coding assistants - not becoming a Python expert.
 
 The book teaches fundamental Python concepts and shows how they connect to AI collaboration, enabling you to:
