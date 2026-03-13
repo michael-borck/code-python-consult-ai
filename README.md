@@ -60,7 +60,7 @@ It doesn't cover everything about Python but provides the critical foundation ne
 This book is part of a comprehensive series for mastering modern software development in the AI era:
 
 ### Foundational Methodology
-- **[Conversation, Not Delegation](https://michael-borck.github.io/conversation-not-delegation)**: Mastering Human-AI Development
+- **[Converse Python, Partner AI](https://michael-borck.github.io/converse-python-partner-ai)**: The Python Edition
 
 ### Python Track
 - **[Think Python, Direct AI](https://michael-borck.github.io/think-python-direct-ai)**: Computational Thinking for Beginners

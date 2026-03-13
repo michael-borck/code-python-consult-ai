@@ -23,7 +23,7 @@ When not writing about AI collaboration, Michael works on practical applications
 
 *Foundational Methodology:*
 
-- *Conversation, Not Delegation: Mastering Human-AI Development*
+- *Converse Python, Partner AI: The Python Edition*
 
 *Python Track:*
 

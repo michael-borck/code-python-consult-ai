@@ -53,7 +53,7 @@ This interactive guide covers everything from basic Python syntax to more advanc
 This guide is part of a 5-book series designed to help you master modern software development in the AI era:
 
 ### Foundational Methodology
-- **Conversation, Not Delegation: Mastering Human-AI Development** - A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
+- **Converse Python, Partner AI: The Python Edition** - A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
 
 ### Python Track
 1. **Think Python, Direct AI: Computational Thinking for Beginners** - An innovative programming textbook that embraces AI as a learning partner. Perfect for absolute beginners in the age of AI.
@@ -63,7 +63,7 @@ This guide is part of a 5-book series designed to help you master modern softwar
 ### Web Track
 - **Build Web, Guide AI: Business Web Development with AI** - A practical guide to modern web development with AI as your development partner.
 
-**Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship Python, Orchestrate AI." For web development, see "Build Web, Guide AI." The methodology from "Conversation, Not Delegation" enhances all your development work.
+**Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship Python, Orchestrate AI." For web development, see "Build Web, Guide AI." The methodology from "Converse Python, Partner AI" enhances all your development work.
 
 ## Source Code & Feedback {.unnumbered}
 
