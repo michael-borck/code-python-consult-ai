@@ -15,7 +15,7 @@
 
 By the end of this chapter, you will be able to:
 - Understand the current landscape of AI-assisted Python programming
-- Recognize the importance of fundamental Python knowledge in the AI era
+- recognise the importance of fundamental Python knowledge in the AI era
 - Identify different tools and workflows for Python development with AI
 - Distinguish when to rely on AI assistance versus human expertise
 - Begin forming your own approach to human-AI collaborative programming
@@ -51,7 +51,7 @@ Similarly, in programming:
 - You need to understand what a good solution requires
 - You must identify when AI-generated code has flaws or inefficiencies
 - You're responsible for ensuring the program achieves your actual goals
-- You make the important decisions about design, optimizations, and approaches
+- You make the important decisions about design, optimisations, and approaches
 
 ### The Conversation Gap
 
@@ -197,7 +197,7 @@ Write code normally in your editor, using AI completions and suggestions when he
 Code primarily on your own, but consult AI assistants when stuck or learning new concepts—similar to how you might have used Stack Overflow in the past.
 
 #### 3. The Prototype Pattern
-Use AI to quickly generate a working prototype, then thoroughly review, refactor, and customize it to meet your needs and standards.
+Use AI to quickly generate a working prototype, then thoroughly review, refactor, and customise it to meet your needs and standards.
 
 #### 4. The Learning Loop
 Alternate between writing your own solutions and asking AI for alternative approaches, using the comparison to deepen your understanding.
@@ -248,16 +248,16 @@ def is_prime(n):
 ```
 
 With fundamental knowledge, you can assess:
-- Is this implementation correct? (Yes, it's a standard optimization)
-- Is it efficient? (Yes, it uses the 6k±1 optimization)
+- Is this implementation correct? (Yes, it's a standard optimisation)
+- Is it efficient? (Yes, it uses the 6k±1 optimisation)
 - Does it handle edge cases? (Yes, it checks n ≤ 1)
 - Is it readable and maintainable? (Reasonably so)
 
 Without this knowledge, you'd have to blindly trust the AI's solution.
 
-### Effective Customization
+### Effective customisation
 
-Understanding Python fundamentals allows you to customize AI-generated code for your specific needs:
+Understanding Python fundamentals allows you to customise AI-generated code for your specific needs:
 
 ```python
 # Original AI-generated data processing function
@@ -268,7 +268,7 @@ def process_data(data):
         result[key] = item['value']
     return result
 
-# Your customized version with added features
+# Your customised version with added features
 def process_data(data, default_value=None, transform_func=None):
     result = {}
     for item in data:
@@ -320,7 +320,7 @@ As you work through this book and beyond, consider these guidelines:
 - **Incrementally reduce dependency**: As you gain experience, try solving problems yourself first before consulting AI.
 - **Focus on the "why"**: Use AI to generate the "how" (implementation) while you focus on the "why" (purpose and design).
 
-Remember that the goal is not to minimize your reliance on AI, but to develop a collaborative relationship where both you and the AI contribute your strengths.
+Remember that the goal is not to minimise your reliance on AI, but to develop a collaborative relationship where both you and the AI contribute your strengths.
 
 ## 7. Python: The Default Language of AI
 
@@ -463,16 +463,16 @@ print("=" * 60 + "\n")
 print("Welcome to your Python journey in the age of AI!")
 ```
 
-### Human Role: Evaluation and Customization
+### Human Role: Evaluation and customisation
 
 As the human, you can now evaluate this suggestion:
 
 1. **Does it meet the requirements?** Yes, it includes all the requested features.
 2. **Is it understandable?** Yes, it has clear sections and comments.
 3. **Does it teach good practices?** Yes, it demonstrates imports, variables, formatting, and string manipulation.
-4. **Could it be improved?** Perhaps by adding error handling or more customization options.
+4. **Could it be improved?** Perhaps by adding error handling or more customisation options.
 
-You might decide to customize it by adding a feature to let the user choose the quote category:
+You might decide to customise it by adding a feature to let the user choose the quote category:
 
 ```python
 # Addition to the code above
@@ -503,7 +503,7 @@ This simple example demonstrates the collaboration model:
 
 1. **Human**: Defined the problem and requirements
 2. **AI**: Suggested an implementation
-3. **Human**: Evaluated and customized the solution
+3. **Human**: Evaluated and customised the solution
 4. **Result**: A program better than either might have created alone
 
 Throughout this book, we'll apply this collaborative model to increasingly complex Python concepts and projects.
@@ -516,7 +516,7 @@ Test your understanding of the concepts introduced in this chapter:
    a) To communicate more effectively with AI assistants
    b) To critically evaluate AI-generated code
    c) To eliminate the need for human programming entirely
-   d) To customize AI solutions for specific needs
+   d) To customise AI solutions for specific needs
 
 2. In the human-AI collaboration model, which responsibility belongs primarily to the human?
    a) Remembering exact syntax details
@@ -551,8 +551,8 @@ Test your understanding of the concepts introduced in this chapter:
 
 ## Cross-References
 
-- Next Chapter: [Syntax Safari](02_basic_python_syntax.qmd)
-- Related Topics: [AI Programming Assistants](24_ai_programming_assistants.qmd), [Intentional Prompting](27_intentional_prompting.qmd)
+- Next Chapter: [Syntax Safari](basic_python_syntax.qmd)
+- Related Topics: [AI Programming Assistants](ai_programming_assistants.qmd), [Intentional Prompting](intentional_prompting.qmd)
 
 ***AI Tip: When starting your Python journey, think of AI assistants as collaborative learning partners, not shortcut providers. Ask them not just for code solutions, but also for explanations of why certain approaches work and how different concepts connect.***
 

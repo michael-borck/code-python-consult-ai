@@ -24,7 +24,7 @@ By the end of this chapter, you will be able to:
 
 Python was designed with a clear philosophy: code should be readable, explicit, and simple. Unlike many programming languages that use symbols like curly braces to structure code, Python uses whitespace and indentation to create visual code structure that mirrors logical structure.
 
-This approach, combined with Python's clean syntax, makes it an ideal language for beginners and professionals alike. As Guido van Rossum, Python's creator, emphasized: "Code is read much more often than it is written." Python's syntax is optimized for readability, which becomes increasingly important as your programs grow in complexity.
+This approach, combined with Python's clean syntax, makes it an ideal language for beginners and professionals alike. As Guido van Rossum, Python's creator, emphasized: "Code is read much more often than it is written." Python's syntax is optimised for readability, which becomes increasingly important as your programs grow in complexity.
 
 > **Key Concept**: Python's syntax is designed to make code readable and maintainable. This is especially valuable when working with AI coding assistants, as clearer code produces better AI suggestions and makes it easier to review AI-generated solutions.
 
@@ -289,7 +289,7 @@ This code demonstrates:
 
 > **Project Evolution**: This is just the foundation for our chatbot. In the next chapter, we'll add different data types, and in later chapters, we'll add user interaction, decision logic, and more advanced features.
 
-***AI Tip: When designing a project's structure, focus on clear organization and commenting from the beginning. It's easier to maintain good structure than to fix poor structure later.***
+***AI Tip: When designing a project's structure, focus on clear organisation and commenting from the beginning. It's easier to maintain good structure than to fix poor structure later.***
 
 ## 8. Common Syntax Pitfalls to Avoid
 
@@ -405,11 +405,11 @@ Apply your syntax knowledge with these exercises:
 
 ## Cross-References
 
-- Previous Chapter: [Hello, World!](01_hello_world.qmd) — Your first Python program
-- Next Chapter: [Values](03_values.qmd) — Working with different data types
-- Chatbot Development: Our syntax foundation evolves in [Functions](08_using_functions.qmd) and [Decisions](10_making_decisions.qmd)
-- Related Topics: Style Guide Best Practices in [Getting Help](23_getting_help.qmd)
-- AI Integration: Learn more about coding standards and AI in [AI Programming Assistants](24_ai_programming_assistants.qmd)
+- Previous Chapter: [Hello, World!](hello_world.qmd) — Your first Python program
+- Next Chapter: [Values](values.qmd) — Working with different data types
+- Chatbot Development: Our syntax foundation evolves in [Functions](using_functions.qmd) and [Decisions](making_decisions.qmd)
+- Related Topics: Style Guide Best Practices in [Getting Help](getting_help.qmd)
+- AI Integration: Learn more about coding standards and AI in [AI Programming Assistants](ai_programming_assistants.qmd)
 
 ***AI Collaboration Corner: Debugging Syntax Errors***
 
@@ -444,7 +444,7 @@ The second prompt gives the AI the specific error, the code context, and asks fo
 
 In this chapter, you've learned the fundamental syntax rules that make Python code work. You've explored comments, indentation, line continuation, and naming conventions that form the foundation of readable, maintainable Python code.
 
-For our chatbot project, you've built a structured foundation with proper commenting, function organization, and naming conventions. This structure will make it easier to expand the chatbot as we progress through the book.
+For our chatbot project, you've built a structured foundation with proper commenting, function organisation, and naming conventions. This structure will make it easier to expand the chatbot as we progress through the book.
 
 In the next chapter, we'll explore the different types of values Python can work with, from simple numbers to complex text, further enhancing our chatbot's capabilities.
 

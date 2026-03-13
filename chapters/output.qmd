@@ -63,7 +63,7 @@ age = 30
 print("Name:", name, "Age:", age)  # Displays: Name: Alice Age: 30
 ```
 
-Notice that `print()` automatically adds spaces between multiple items. This behavior can be customized, as we'll see shortly.
+Notice that `print()` automatically adds spaces between multiple items. This behaviour can be customised, as we'll see shortly.
 
 ### Interactive vs. Script Environments
 
@@ -82,7 +82,7 @@ print(age)  # This explicitly shows the value: 21
 
 > **Pro Tip**: When writing code that will be run as a script (not in an interactive environment like Jupyter), always use `print()` to display information. Simply referring to a variable won't show its value when the script runs.
 
-## 3. Customizing Your Output
+## 3. customising Your Output
 
 The `print()` function accepts several parameters that let you control exactly how output appears.
 
@@ -613,7 +613,7 @@ I'm building a Python chatbot and need to design its output formatting. I want:
 2. A consistent visual identity (borders, spacing, etc.)
 3. Examples of how to format timestamps and user information
 
-Please show code examples for each of these needs, optimized for readability on a terminal interface.
+Please show code examples for each of these needs, optimised for readability on a terminal interface.
 ```
 
 **AI Response:**
@@ -1045,11 +1045,11 @@ Create a function that takes a student's name and several test scores, then gene
 
 ## 14. Cross-References
 
-- **Previous Chapter**: [Variables](04_variables.qmd) — Learn how to name and store your data
-- **Next Chapter**: [Input](06_input.qmd) — Get information from users into your programs
-- **Related Topic**: [String Manipulation](13_strings.qmd) — Master text processing techniques
-- **Project Connection**: See how our output system evolves in [Dictionaries](14_dictionaries.qmd) to handle complex message templates
-- **Advanced Application**: In [Python AI Integration](25_python_ai_integration.qmd), we'll use these output techniques to display AI-generated responses
+- **Previous Chapter**: [Variables](variables.qmd) — Learn how to name and store your data
+- **Next Chapter**: [Input](input.qmd) — Get information from users into your programs
+- **Related Topic**: [String Manipulation](strings.qmd) — Master text processing techniques
+- **Project Connection**: See how our output system evolves in [Dictionaries](dictionaries.qmd) to handle complex message templates
+- **Advanced Application**: In [Python AI Integration](python_ai_integration.qmd), we'll use these output techniques to display AI-generated responses
 
 ## 15. Summary
 

@@ -274,7 +274,7 @@ A typical workflow in a Jupyter notebook might look like:
 1. Create a markdown cell to explain your analysis:
 ```markdown
 # Data Analysis Example
-This notebook demonstrates loading and analyzing a CSV file of sales data.
+This notebook demonstrates loading and analysing a CSV file of sales data.
 ```
 
 2. Add a code cell to load and explore data:
@@ -442,7 +442,7 @@ display(output)
 input_box = widgets.HBox([text_input, send_button])
 display(input_box)
 
-# Define interaction behavior
+# Define interaction behaviour
 def on_send_clicked(b):
     user_input = text_input.value
     if not user_input:
@@ -511,8 +511,8 @@ As you continue to develop your chatbot, you'll likely use multiple environments
 
 ## Cross-References
 
-- Previous Chapter: [Orientating Your Objects](20_orientating_your_objects.qmd)
-- Next Chapter: [How to Install Python](22_how_to_install_python_testing.qmd)
+- Previous Chapter: [Orientating Your Objects](orientating_your_objects.qmd)
+- Next Chapter: [How to Install Python](how_to_install_python_testing.qmd)
 - Related Topics: Modules and Packages (Chapter 19), Creating Functions (Chapter 9)
 
 ***AI Tip: When developing complex systems like chatbots, use different Python execution environments for different tasks. Interactive interpreters are great for debugging and testing components, scripts are perfect for deployment, and notebooks excel at documenting your design decisions and showcasing functionality.***

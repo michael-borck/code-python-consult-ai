@@ -17,19 +17,19 @@ By the end of this chapter, you will be able to:
 - Understand what functions are and why they're essential in modern programming
 - Call built-in Python functions with confidence and clarity
 - Pass arguments to functions correctly, including positional and keyword arguments
-- Capture and utilize return values from functions
+- Capture and utilise return values from functions
 - Find help and documentation for Python's built-in functions
 - Incorporate functions into your programming toolkit and workflow
-- Recognize function patterns in AI-generated code
+- recognise function patterns in AI-generated code
 - Apply function concepts to enhance your chatbot project
 
 ## 1. Introduction: Functions as Building Blocks of Modern Code
 
 In today's programming landscape, particularly in the age of AI, understanding functions is more important than ever. Functions are the building blocks that make code modular, reusable, and maintainable. They're like specialized tools in your Python toolkit, each designed to perform a specific task efficiently.
 
-Think of functions as the verbs of programming - they do things. When you work with AI programming assistants or analyze code written by others, recognizing and understanding functions will be crucial to your success. Functions allow programmers to break complex problems into smaller, manageable pieces - a technique that remains essential even when collaborating with AI.
+Think of functions as the verbs of programming - they do things. When you work with AI programming assistants or analyse code written by others, recognising and understanding functions will be crucial to your success. Functions allow programmers to break complex problems into smaller, manageable pieces - a technique that remains essential even when collaborating with AI.
 
-As we progress through this book, you'll see how functions become increasingly important. They're the fundamental organization units of code that both human and AI programmers use to create structured, efficient programs.
+As we progress through this book, you'll see how functions become increasingly important. They're the fundamental organisation units of code that both human and AI programmers use to create structured, efficient programs.
 
 ***AI Tip: When asking an AI assistant about a programming task, try phrasing your request in terms of what function you need. For example, instead of "How do I convert a string to uppercase?", ask "What Python function converts a string to uppercase?" This often gets you more direct, practical answers.***
 
@@ -55,7 +55,7 @@ round(3.14159, 2)               # Rounds number to specified precision (returns 
 
 ### Functions in the Context of AI Programming
 
-In the age of AI programming assistants, functions remain critically important. When an AI assistant generates code for you, it will typically organize that code into functions. Understanding how to read, modify, and work with these functions is an essential skill.
+In the age of AI programming assistants, functions remain critically important. When an AI assistant generates code for you, it will typically organise that code into functions. Understanding how to read, modify, and work with these functions is an essential skill.
 
 ```python
 # Example of AI-generated function structure
@@ -286,7 +286,7 @@ When working with AI programming assistants, understanding functions becomes eve
 
 ### Identifying Functions in AI-Generated Code
 
-AI assistants often organize solutions into functions:
+AI assistants often organise solutions into functions:
 
 ```python
 # AI-generated solution to find prime numbers
@@ -314,7 +314,7 @@ def get_primes_up_to(limit):
     return primes
 ```
 
-Notice how the solution is organized into two functions, each handling a specific part of the problem.
+Notice how the solution is organised into two functions, each handling a specific part of the problem.
 
 ### Asking AI to Explain Functions
 
@@ -331,7 +331,7 @@ def process_data(data, threshold=0.5, normalize=True):
 
 ### Modifying AI-Generated Functions
 
-Often, you'll need to customize functions that AI generates:
+Often, you'll need to customise functions that AI generates:
 
 ```python
 # Original AI-generated function
@@ -504,7 +504,7 @@ else:
     print("I'm still learning and don't know how to respond to that yet.")
 ```
 
-This chatbot is functional but still has its logic all in one place. In Chapter 9, we'll learn to create our own functions to better organize our code and make our chatbot more maintainable.
+This chatbot is functional but still has its logic all in one place. In Chapter 9, we'll learn to create our own functions to better organise our code and make our chatbot more maintainable.
 
 ### Adding a Help Function
 
@@ -574,7 +574,7 @@ This enhanced chatbot now uses functions in several ways:
 3. String functions like `split()` and `strip()`
 4. Type conversion with `int()`
 
-As you learn to create your own functions in the next chapter, you'll be able to make your chatbot even more organized and powerful.
+As you learn to create your own functions in the next chapter, you'll be able to make your chatbot even more organised and powerful.
 
 **Challenges**:
 - Add support for other mathematical operations using the `eval()` function (with appropriate safety measures)
@@ -619,8 +619,8 @@ When you already have code using functions, ask for improvements:
 
 ## Cross-References
 
-- Previous Chapter: [Operators](07_operators.qmd)
-- Next Chapter: [Creating Functions](09_creating_functions.qmd)
+- Previous Chapter: [Operators](operators.qmd)
+- Next Chapter: [Creating Functions](creating_functions.qmd)
 - Related Topics: Input/Output (Chapters 5-6), Types (Chapter 3), AI Programming Assistants (Chapter 24), Python AI Integration (Chapter 25)
 
 ## Further Exploration
@@ -648,7 +648,7 @@ Try exploring these functions using the `help()` function or by asking your AI a
 
 ## Summary
 
-Functions are the building blocks of Python programming, allowing you to perform tasks without understanding all the underlying details. They provide modularity, reusability, and organization to your code.
+Functions are the building blocks of Python programming, allowing you to perform tasks without understanding all the underlying details. They provide modularity, reusability, and organisation to your code.
 
 In this chapter, you've learned:
 - How to call built-in Python functions
@@ -660,4 +660,4 @@ In this chapter, you've learned:
 
 As you progress through this book, functions will become increasingly important, especially when we start creating our own functions in the next chapter. The ability to understand and work with functions is a fundamental skill that will serve you well throughout your Python journey, particularly when collaborating with AI programming assistants.
 
-Remember that both human programmers and AI assistants organize code using functions - they're the universal building blocks of structured programs. By mastering functions, you're taking a significant step toward effective programming in the AI era.
+Remember that both human programmers and AI assistants organise code using functions - they're the universal building blocks of structured programs. By mastering functions, you're taking a significant step toward effective programming in the AI era.

@@ -20,11 +20,11 @@ By the end of this chapter, you will be able to:
 - Implement multiple assignment and value swapping techniques
 - Distinguish between variables and constants
 - Use variables to track state in your chatbot project
-- Recognize common variable-related issues and how to avoid them
+- recognise common variable-related issues and how to avoid them
 
 ## 1. Introduction: Variables as Memory Containers
 
-In programming, variables are named storage locations that hold data values in your computer's memory. Think of them as labeled containers that let you store, access, and modify information throughout your program.
+In programming, variables are named storage locations that hold data values in your computer's memory. Think of them as labelled containers that let you store, access, and modify information throughout your program.
 
 Without variables, we would have to use literal values everywhere, making our code inflexible and difficult to maintain. Variables allow us to:
 
@@ -315,8 +315,8 @@ def process_message(message):
     elif "color" in message:
         last_topic = "color"
 
-        # If user mentions their favorite color, store it
-        if "favorite" in message and "is" in message:
+        # If user mentions their favourite color, store it
+        if "favourite" in message and "is" in message:
             # Simple color extraction (will improve in later chapters)
             words = message.split()
             for i, word in enumerate(words):
@@ -328,7 +328,7 @@ def process_message(message):
     if message_count == 1:
         return f"That's your first message! Thanks for chatting with me."
     elif "color" in message and favorite_color:
-        return f"I remember your favorite color is {favorite_color}!"
+        return f"I remember your favourite color is {favorite_color}!"
     elif last_topic:
         return f"I see we're talking about {last_topic} now."
     else:
@@ -343,7 +343,7 @@ def display_status():
     print(f"Messages received: {message_count}")
     print(f"Last topic: {last_topic if last_topic else 'None'}")
     if favorite_color:
-        print(f"User's favorite color: {favorite_color}")
+        print(f"User's favourite color: {favorite_color}")
     print("=" * 50 + "\n")
 
 # Run a simple chat session
@@ -373,7 +373,7 @@ This enhanced chatbot demonstrates:
 - Using variables to store user information (`user_name`, `favorite_color`)
 - Tracking conversation state (`message_count`, `last_topic`, `greeting_shown`)
 - Updating variables as the conversation progresses
-- Using variables to customize responses
+- Using variables to customise responses
 - Distinguishing between constants (uppercase) and variables (lowercase)
 
 > **Project Evolution**: We're building a chatbot that can remember information across the conversation. In future chapters, we'll enhance this with better input processing, decision logic, and more sophisticated memory management.
@@ -497,11 +497,11 @@ Apply what you've learned with these exercises:
 
 ## Cross-References
 
-- Previous Chapter: [Values](03_values.qmd) — Understanding data types
-- Next Chapter: [Output](05_output.qmd) — Displaying information to users
-- Chatbot Development: See how variables evolve in [Input](06_input.qmd) and [Dictionaries](14_dictionaries.qmd)
-- Related Topics: Learn more about scope in [Creating Functions](09_creating_functions.qmd)
-- AI Integration: See how variables store AI responses in [Python AI Integration](25_python_ai_integration.qmd)
+- Previous Chapter: [Values](values.qmd) — Understanding data types
+- Next Chapter: [Output](output.qmd) — Displaying information to users
+- Chatbot Development: See how variables evolve in [Input](input.qmd) and [Dictionaries](dictionaries.qmd)
+- Related Topics: Learn more about scope in [Creating Functions](creating_functions.qmd)
+- AI Integration: See how variables store AI responses in [Python AI Integration](python_ai_integration.qmd)
 
 ***AI Collaboration Corner: Debugging Variable Issues***
 
@@ -539,6 +539,6 @@ In this chapter, you've learned how variables allow you to store, name, and mani
 
 For our chatbot project, you've implemented a more sophisticated design that uses variables to remember user information and track the conversation state. This memory capability is a fundamental aspect of creating interactive applications that respond intelligently to users.
 
-Understanding variables is essential for effective programming, as they form the backbone of data management in your code. As your programs become more complex, organizing and tracking data through well-named variables will become increasingly important.
+Understanding variables is essential for effective programming, as they form the backbone of data management in your code. As your programs become more complex, organising and tracking data through well-named variables will become increasingly important.
 
 In the next chapter, we'll explore output techniques, learning how to display information to users in effective and formatted ways.

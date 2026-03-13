@@ -115,7 +115,7 @@ print(f"The value is: {age}")
 print(f"The type is: {type(age)}")  # Will always show <class 'str'>
 ```
 
-This behavior is consistent but can cause confusion, especially with numeric input:
+This behaviour is consistent but can cause confusion, especially with numeric input:
 
 ```python
 # This looks like a math operation but won't work as expected
@@ -191,7 +191,7 @@ print("-" * 30)
 
 name = input("What's your name? ")
 destination = input(f"Where would you like to travel, {name}? ")
-travelers = int(input("How many people are traveling? "))
+travelers = int(input("How many people are travelling? "))
 budget = float(input("What's your budget in dollars? $"))
 
 cost_per_person = budget / travelers
@@ -605,7 +605,7 @@ When working with an AI assistant on input handling:
 
 1. **Specify the exact requirements** for each input (type, length, format, valid range)
 
-2. **Describe the user experience** you want to create (error messages, retry behavior)
+2. **Describe the user experience** you want to create (error messages, retry behaviour)
 
 3. **Mention any specific validations** needed (e.g., "must contain at least one number")
 
@@ -1009,11 +1009,11 @@ Create a multiple-choice quiz that:
 
 ## 12. Cross-References
 
-- **Previous Chapter**: [Output](05_output.qmd) — Learn how to display information to users
-- **Next Chapter**: [Operators](07_operators.qmd) — Manipulate data with mathematical and logical operations
-- **Related Topic**: [Error Handling](16_errors_and_exceptions.qmd) — Learn to handle invalid input gracefully
-- **Project Connection**: [Making Decisions](10_making_decisions.qmd) shows how to use input to drive program flow
-- **Advanced Application**: In [Python AI Integration](25_python_ai_integration.qmd), you'll use input to interact with AI services
+- **Previous Chapter**: [Output](output.qmd) — Learn how to display information to users
+- **Next Chapter**: [Operators](operators.qmd) — Manipulate data with mathematical and logical operations
+- **Related Topic**: [Error Handling](errors_and_exceptions.qmd) — Learn to handle invalid input gracefully
+- **Project Connection**: [Making Decisions](making_decisions.qmd) shows how to use input to drive program flow
+- **Advanced Application**: In [Python AI Integration](python_ai_integration.qmd), you'll use input to interact with AI services
 
 ## 13. Summary
 

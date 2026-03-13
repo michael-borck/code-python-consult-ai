@@ -29,7 +29,7 @@ Having explored various ways to run Python code in the previous chapter, it's no
 Python installation might seem straightforward, but there are several considerations that can make a significant difference in your development experience:
 
 - Which Python version should you install?
-- Should you use the official Python distribution or a customized one?
+- Should you use the official Python distribution or a customised one?
 - How can you manage different versions of Python and library dependencies?
 - What additional tools and libraries do you need?
 
@@ -644,12 +644,12 @@ EOF
 python test_setup.py
 ```
 
-This comprehensive setup gives you a solid foundation for your chatbot project, with proper organization, dependency management, and version control from the start.
+This comprehensive setup gives you a solid foundation for your chatbot project, with proper organisation, dependency management, and version control from the start.
 
 ## Cross-References
 
-- Previous Chapter: [How to Run Python Code](21_how_to_run_python_code.qmd)
-- Next Chapter: [Getting Help](23_getting_help.qmd)
+- Previous Chapter: [How to Run Python Code](how_to_run_python_code.qmd)
+- Next Chapter: [Getting Help](getting_help.qmd)
 - Related Topics: Testing (Chapter 18), Modules and Packages (Chapter 19)
 
 ***AI Tip: When setting up a new Python project, ask your AI assistant to help you generate environment setup scripts, directory structures, or configuration files. This can save you time and ensure you follow best practices from the beginning.***
@@ -667,6 +667,6 @@ In this chapter, we've explored the process of setting up a Python development e
 - Troubleshooting common installation issues
 - Creating a structured environment for the chatbot project
 
-By following these guidelines, you'll have a clean, organized Python setup that will serve you well as you continue your programming journey. The isolation provided by environments helps prevent dependency conflicts and makes it easier to work on multiple projects simultaneously.
+By following these guidelines, you'll have a clean, organised Python setup that will serve you well as you continue your programming journey. The isolation provided by environments helps prevent dependency conflicts and makes it easier to work on multiple projects simultaneously.
 
 Remember that proper environment setup is an investment that pays off in reduced troubleshooting time and a more pleasant development experience. Take the time to set things up correctly now, and you'll thank yourself later!

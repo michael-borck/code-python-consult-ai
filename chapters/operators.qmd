@@ -21,7 +21,7 @@ By the end of this chapter, you will be able to:
 
 ## 1. Introduction: Operators as Your Programming Power Tools
 
-Operators are the essential tools that allow you to manipulate data, make decisions, and create dynamic behavior in your programs. Just as physical tools transform raw materials into finished products, operators transform raw data into meaningful information and actions.
+Operators are the essential tools that allow you to manipulate data, make decisions, and create dynamic behaviour in your programs. Just as physical tools transform raw materials into finished products, operators transform raw data into meaningful information and actions.
 
 In programming, operators serve several critical functions:
 
@@ -295,7 +295,7 @@ has_permission = True
 result = has_permission or check_permissions()  # check_permissions() is never called
 ```
 
-This behavior is particularly useful for conditional execution and validation:
+This behaviour is particularly useful for conditional execution and validation:
 
 ```python
 # Using short-circuit to avoid errors
@@ -1039,11 +1039,11 @@ for task in tasks:
     print(f"{task['name']}: {due_info['status']} (Due: {due_info['due_date'].strftime('%Y-%m-%d')})")
 ```
 
-### Optimization with Compound Assignment
+### optimisation with Compound Assignment
 
 ```python
 def analyze_text(text):
-    """Analyze text for character distributions and statistics."""
+    """analyse text for character distributions and statistics."""
     # Initialize counters
     char_count = 0
     word_count = 0
@@ -1185,14 +1185,14 @@ Create a simple calculator that:
 ### Exercise 2: Logical Analyzer
 Create a program that:
 - Takes a sentence from the user
-- Analyzes whether it's a question (ends with ?)
+- analyses whether it's a question (ends with ?)
 - Checks if it contains specific keywords (your choice)
 - Determines the sentiment (positive/negative) based on word presence
 - Reports the analysis with logical explanations
 
 ### Exercise 3: Enhanced Chatbot Conditions
 Expand the chatbot from this chapter to:
-- Recognize at least 5 different question types using operators
+- recognise at least 5 different question types using operators
 - Keep track of time spent in conversation
 - Respond differently if the user asks very short questions
 - Remember previous topics and reference them in responses
@@ -1215,11 +1215,11 @@ Create a user validation system that:
 
 ## 14. Cross-References
 
-- **Previous Chapter**: [Input](06_input.qmd) — Learn how to collect information from users
-- **Next Chapter**: [Functions](08_using_functions.qmd) — Organize code into reusable blocks
-- **Related Topic**: [Making Decisions](10_making_decisions.qmd) — Expand on the conditional logic introduced here
-- **Project Connection**: [Lists](11_lists.qmd) — Learn how operators work with list data structures
-- **Advanced Application**: [Testing](18_testing.qmd) — See how comparison operators are used in test assertions
+- **Previous Chapter**: [Input](input.qmd) — Learn how to collect information from users
+- **Next Chapter**: [Functions](using_functions.qmd) — organise code into reusable blocks
+- **Related Topic**: [Making Decisions](making_decisions.qmd) — Expand on the conditional logic introduced here
+- **Project Connection**: [Lists](lists.qmd) — Learn how operators work with list data structures
+- **Advanced Application**: [Testing](testing.qmd) — See how comparison operators are used in test assertions
 
 ## 15. Summary
 
@@ -1238,4 +1238,4 @@ Operators are the fundamental tools that allow your program to make decisions an
 
 Remember that clear, well-structured operator usage makes your code more readable and maintainable. Using parentheses to clarify precedence, avoiding common pitfalls, and applying operators appropriately will serve you well throughout your Python journey.
 
-In the next chapter, we'll explore functions—the next level of code organization that will help us structure our chatbot's capabilities into reusable, modular components.
+In the next chapter, we'll explore functions—the next level of code organisation that will help us structure our chatbot's capabilities into reusable, modular components.

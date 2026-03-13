@@ -14,7 +14,7 @@
 By the end of this chapter, you will be able to:
 - Understand why testing is crucial for reliable software
 - Create simple tests to verify your code's functionality
-- Use assertions to check code behavior
+- Use assertions to check code behaviour
 - Write basic unit tests with Python's unittest framework
 - Apply test-driven development principles
 - Know when and what to test
@@ -270,7 +270,7 @@ def is_prime(n):
 
 ### Step 3: Refactor if needed
 
-Our implementation is already pretty efficient with the `n**0.5` optimization, but we might add some comments or clearer variable names if needed.
+Our implementation is already pretty efficient with the `n**0.5` optimisation, but we might add some comments or clearer variable names if needed.
 
 ### Benefits of TDD
 
@@ -306,12 +306,12 @@ Ideally, you should:
 
 Here are some practical tips for writing good tests:
 
-1. **Keep tests small and focused**: Each test should verify one specific behavior
+1. **Keep tests small and focused**: Each test should verify one specific behaviour
 2. **Make tests independent**: Tests shouldn't depend on each other
 3. **Use descriptive test names**: Names should explain what's being tested
-4. **Organize tests logically**: Group related tests into classes or modules
+4. **organise tests logically**: Group related tests into classes or modules
 5. **Test both positive and negative cases**: Check that errors are handled correctly
-6. **Avoid testing implementation details**: Test behavior, not how it's implemented
+6. **Avoid testing implementation details**: Test behaviour, not how it's implemented
 7. **Automate tests**: Make them easy to run with a single command
 8. **Maintain your tests**: Keep them up to date as your code evolves
 
@@ -466,7 +466,7 @@ This test suite verifies:
 2. Correct responses to different types of input
 3. Handling of empty input
 4. Conversation history functionality
-5. Pattern matching behavior
+5. Pattern matching behaviour
 
 ### Mock Testing
 
@@ -502,8 +502,8 @@ class TestChatbotWithMocks(unittest.TestCase):
 
 ## Cross-References
 
-- Previous Chapter: [Debugging](17_debugging.qmd)
-- Next Chapter: [Modules and Packages](19_modules_and_packages.qmd)
+- Previous Chapter: [Debugging](debugging.qmd)
+- Next Chapter: [Modules and Packages](modules_and_packages.qmd)
 - Related Topics: Debugging (Chapter 17), Error Handling (Chapter 16)
 
 ***AI Tip: When creating tests, ask your AI assistant to suggest edge cases and boundary conditions you might have overlooked. This can help you create more robust tests.***
@@ -548,7 +548,7 @@ def test_addition_commutative(a, b):
     assert add(a, b) == add(b, a)
 ```
 
-### Behavior-Driven Development (BDD)
+### behaviour-Driven Development (BDD)
 
 BDD uses natural language to describe tests, making them accessible to non-programmers:
 

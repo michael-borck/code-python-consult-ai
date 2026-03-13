@@ -174,10 +174,10 @@ import json
 
 def analyze_image(image_url, api_key=None, endpoint=None):
     """
-    Analyze an image using Azure Computer Vision API.
+    analyse an image using Azure Computer Vision API.
 
     Args:
-        image_url (str): URL of the image to analyze
+        image_url (str): URL of the image to analyse
         api_key (str, optional): Azure API key. If None, uses environment variable.
         endpoint (str, optional): Azure endpoint. If None, uses environment variable.
 
@@ -196,7 +196,7 @@ def analyze_image(image_url, api_key=None, endpoint=None):
             raise ValueError("Endpoint must be provided or set as AZURE_VISION_ENDPOINT environment variable")
 
     # API URL
-    vision_url = f"{endpoint}/vision/v3.2/analyze"
+    vision_url = f"{endpoint}/vision/v3.2/analyse"
 
     # Parameters
     params = {
@@ -411,10 +411,10 @@ import json
 
 def analyze_image(image_url, api_key=None, endpoint=None):
     """
-    Analyze an image using Azure Computer Vision API.
+    analyse an image using Azure Computer Vision API.
 
     Args:
-        image_url (str): URL of the image to analyze
+        image_url (str): URL of the image to analyse
         api_key (str, optional): Azure API key. If None, uses environment variable.
         endpoint (str, optional): Azure endpoint. If None, uses environment variable.
 
@@ -433,7 +433,7 @@ def analyze_image(image_url, api_key=None, endpoint=None):
             raise ValueError("Endpoint must be provided or set as AZURE_VISION_ENDPOINT environment variable")
 
     # API URL
-    vision_url = f"{endpoint}/vision/v3.2/analyze"
+    vision_url = f"{endpoint}/vision/v3.2/analyse"
 
     # Parameters
     params = {
@@ -685,7 +685,7 @@ class MessageUnderstanding:
 
     def analyze_intent(self, message):
         """
-        Analyze the intent of a user message.
+        analyse the intent of a user message.
 
         Args:
             message (str): The user's message
@@ -699,7 +699,7 @@ class MessageUnderstanding:
         try:
             # Create the prompt for intent analysis
             prompt = f"""
-            Analyze the following message and determine the user's intent.
+            analyse the following message and determine the user's intent.
             Return ONLY a JSON object with "intent" and "confidence" fields.
 
             Possible intents: greeting, farewell, question, request, complaint, smalltalk, other
@@ -738,7 +738,7 @@ class MessageUnderstanding:
             return result
 
         except Exception as e:
-            print(f"Error analyzing intent: {e}")
+            print(f"Error analysing intent: {e}")
             return {"intent": "unknown", "confidence": 0.0}
 
     def extract_entities(self, message):
@@ -760,7 +760,7 @@ class MessageUnderstanding:
             Extract entities from the following message.
             Return ONLY a JSON object where keys are entity types and values are the extracted entities.
 
-            Possible entity types: person, location, organization, date_time, product, quantity, other
+            Possible entity types: person, location, organisation, date_time, product, quantity, other
 
             Message: "{message}"
 

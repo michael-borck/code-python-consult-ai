@@ -9,34 +9,34 @@ book:
   chapters:
     - index.qmd
     - copyright.qmd
-    - chapters/00_python_in_the_age_of_ai.qmd
-    - chapters/01_hello_world.qmd
-    - chapters/02_basic_python_syntax.qmd
-    - chapters/03_values.qmd
-    - chapters/04_variables.qmd
-    - chapters/05_output.qmd
-    - chapters/06_input.qmd
-    - chapters/07_operators.qmd
-    - chapters/08_using_functions.qmd
-    - chapters/09_creating_functions.qmd
-    - chapters/10_making_decisions.qmd
-    - chapters/11_lists.qmd
-    - chapters/12_going_loopy.qmd
-    - chapters/13_strings.qmd
-    - chapters/14_dictionaries.qmd
-    - chapters/15_files.qmd
-    - chapters/16_errors_and_exceptions.qmd
-    - chapters/17_debugging.qmd
-    - chapters/18_testing.qmd
-    - chapters/19_modules_and_packages.qmd
-    - chapters/20_orientating_your_objects.qmd
-    - chapters/21_how_to_run_python_code.qmd
-    - chapters/22_how_to_install_python_testing.qmd
-    - chapters/23_getting_help.qmd
-    - chapters/24_ai_programming_assistants.qmd
-    - chapters/25_python_ai_integration.qmd
-    - chapters/26_ai_assistance_tips.qmd
-    - chapters/27_intentional_prompting.qmd
+    - chapters/python_in_the_age_of_ai.qmd
+    - chapters/hello_world.qmd
+    - chapters/basic_python_syntax.qmd
+    - chapters/values.qmd
+    - chapters/variables.qmd
+    - chapters/output.qmd
+    - chapters/input.qmd
+    - chapters/operators.qmd
+    - chapters/using_functions.qmd
+    - chapters/creating_functions.qmd
+    - chapters/making_decisions.qmd
+    - chapters/lists.qmd
+    - chapters/going_loopy.qmd
+    - chapters/strings.qmd
+    - chapters/dictionaries.qmd
+    - chapters/files.qmd
+    - chapters/errors_and_exceptions.qmd
+    - chapters/debugging.qmd
+    - chapters/testing.qmd
+    - chapters/modules_and_packages.qmd
+    - chapters/orientating_your_objects.qmd
+    - chapters/how_to_run_python_code.qmd
+    - chapters/how_to_install_python_testing.qmd
+    - chapters/getting_help.qmd
+    - chapters/ai_programming_assistants.qmd
+    - chapters/python_ai_integration.qmd
+    - chapters/ai_assistance_tips.qmd
+    - chapters/intentional_prompting.qmd
     - chapters/chatbot_project.qmd
     - acknowledgments.qmd
     - about-author.qmd
@@ -51,18 +51,25 @@ website:
   repo-actions: [edit, issue]
   open-graph: true
 
+bibliography: references.bib
+
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
     cover-image: images/cover.png
     code-copy: true
     code-tools: true
     highlight-style: github
     toc: true
+    toc-depth: 3
+    number-sections: true
     downloads: [pdf, epub]
   pdf:
     documentclass: scrbook
     toc: true
+    number-sections: true
     toc-depth: 3
     colorlinks: true
     cover-image: images/cover.png

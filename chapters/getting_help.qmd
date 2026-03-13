@@ -4,7 +4,7 @@
 - Understanding the truth about programming and looking up information
 - Using Python's built-in help system
 - Finding documentation for packages and modules
-- Utilizing online resources effectively
+- utilising online resources effectively
 - Troubleshooting strategies and debugging approaches
 - Learning from communities and forums
 - Getting AI assistance with Python coding
@@ -13,7 +13,7 @@
 ## Learning Objectives
 
 By the end of this chapter, you will be able to:
-- Utilize Python's built-in help functions to find information
+- utilise Python's built-in help functions to find information
 - Find and navigate official documentation for Python and libraries
 - Search effectively for Python solutions online
 - Implement systematic debugging strategies
@@ -38,7 +38,7 @@ As you continue your Python journey, you'll develop a mental index of where to l
 
 ## 2. Python's Built-in Help System
 
-Python comes with excellent built-in tools for finding information about objects, functions, and modules. These are your first line of defense when you need to understand how something works.
+Python comes with excellent built-in tools for finding information about objects, functions, and modules. These are your first line of defence when you need to understand how something works.
 
 ### The `help()` Function
 
@@ -124,7 +124,7 @@ While the built-in help is useful for quick references, comprehensive documentat
 
 ### Python Standard Library Documentation
 
-The official Python documentation at [docs.python.org](https://docs.python.org/) is comprehensive and well-organized:
+The official Python documentation at [docs.python.org](https://docs.python.org/) is comprehensive and well-organised:
 
 - **Python Language Reference**: Details about language syntax and semantics
 - **Python Standard Library**: Documentation for all built-in modules
@@ -379,7 +379,7 @@ AI assistants are particularly helpful for:
 
 1. **Explaining concepts** in different ways until you understand
 2. **Generating code examples** for specific tasks
-3. **Debugging errors** by analyzing error messages
+3. **Debugging errors** by analysing error messages
 4. **Suggesting improvements** to existing code
 5. **Exploring alternatives** when you're stuck on an approach
 6. **Learning best practices** in Python coding
@@ -614,7 +614,7 @@ When you need community help with your chatbot, phrase your questions effectivel
 
 I'm developing a rule-based chatbot in Python and having trouble with pattern matching.
 When users enter a greeting with additional text (e.g., "hello, how's the weather?"),
-my bot isn't recognizing it as a greeting.
+my bot isn't recognising it as a greeting.
 
 ## Current Code
 ```python
@@ -642,8 +642,8 @@ matching unrelated content that happens to contain greeting words.
 
 ## Cross-References
 
-- Previous Chapter: [Installation and Practical Considerations](22_how_to_install_python_testing.qmd)
-- Next Chapter: [Taking it Further](24_ai_programming_assistants.qmd)
+- Previous Chapter: [Installation and Practical Considerations](how_to_install_python_testing.qmd)
+- Next Chapter: [Taking it Further](ai_programming_assistants.qmd)
 - Related Topics: Debugging (Chapter 17), Testing (Chapter 18)
 
 ***AI Tip: When your code produces unexpected results, ask your AI assistant to review your code in segments. Rather than sharing the entire project at once, share specific functions or classes and describe how they're behaving differently than expected. This focused approach leads to more precise assistance and better learning.***

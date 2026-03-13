@@ -83,13 +83,13 @@ Your input helps improve this book for future readers.
 
 Each chapter builds upon the previous one, with interactive code examples you can run directly in your browser. You can follow along sequentially or jump to specific topics that interest you.
 
-The guide is organized into several sections:
+The guide is organised into several sections:
 
 1. **Core Python Fundamentals**: Basic syntax and concepts
 2. **Functions and Control Flow**: How to structure your code
 3. **Data Structures and Iteration**: Working with collections of data
 4. **Working with Files**: Input/output operations
-5. **Code Quality**: Debugging, testing, and organizing code
+5. **Code Quality**: Debugging, testing, and organising code
 6. **Practical Python**: How to run, install, and get help with Python
 7. **Python in the AI Era**: Using AI assistants and integrating AI into your Python apps
 

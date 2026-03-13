@@ -13,7 +13,7 @@ By the end of this chapter, you will be able to:
 - Understand what a "Hello, World!" program is and why it matters
 - Navigate and use a Jupyter Notebook
 - Run your first Python code
-- Recognize basic programming elements like functions and strings
+- recognise basic programming elements like functions and strings
 - Preview the chatbot project you'll build throughout this book
 
 ## 1. Introduction: The Magic of First Code
@@ -63,7 +63,7 @@ Try a specific, action-oriented prompt:
 I'm new to Jupyter Notebooks. Can you provide:
 1. The 5 most useful keyboard shortcuts
 2. How to switch between code and markdown cells
-3. Best practices for organizing my notebook
+3. Best practices for organising my notebook
 4. Common troubleshooting tips for beginners
 ```
 
@@ -85,7 +85,7 @@ This simple line contains several important programming concepts:
 - The entire line is a **statement** - a complete instruction for the computer
 
 When you run this code, Python's interpreter:
-1. Recognizes `print` as a built-in function
+1. recognises `print` as a built-in function
 2. Takes the string `'Hello, world!'` as input
 3. Executes the function, which displays the text
 
@@ -249,10 +249,10 @@ Now it's your turn to experiment with Python's `print()` function:
 
 ## 9. Cross-References
 
-- Next Chapter: [Basic Python Syntax](02_basic_python_syntax.qmd) — Learn the grammar of Python
-- Chatbot Evolution: Watch our chatbot grow in [Input](06_input.qmd) where we add user interaction
-- Advanced Concepts: See how our simple output evolves with [Strings](13_strings.qmd) and [Dictionaries](14_dictionaries.qmd)
-- AI Integration: Later, in [AI Programming Assistants](24_ai_programming_assistants.qmd), we'll enhance our chatbot with AI capabilities
+- Next Chapter: [Basic Python Syntax](basic_python_syntax.qmd) — Learn the grammar of Python
+- Chatbot Evolution: Watch our chatbot grow in [Input](input.qmd) where we add user interaction
+- Advanced Concepts: See how our simple output evolves with [Strings](strings.qmd) and [Dictionaries](dictionaries.qmd)
+- AI Integration: Later, in [AI Programming Assistants](ai_programming_assistants.qmd), we'll enhance our chatbot with AI capabilities
 
 ***AI Collaboration Corner: Extending "Hello, World!"***
 

@@ -1,4 +1,4 @@
-# Dictionaries - Organizing Data with Key-Value Pairs
+# Dictionaries - organising Data with Key-Value Pairs
 
 ## Chapter Outline
 - Understanding dictionary data structure
@@ -18,7 +18,7 @@ By the end of this chapter, you will be able to:
 - Iterate through dictionary keys and values
 - Sort dictionaries by keys or values
 - Apply dictionaries to solve real-world problems
-- Use dictionaries to organize complex data
+- Use dictionaries to organise complex data
 
 ## 1. Introduction: The Power of Key-Value Pairs
 
@@ -315,14 +315,14 @@ Nested dictionaries are extremely useful for representing real-world hierarchica
 ## 10. Common Dictionary Pitfalls
 
 - **KeyError**: Trying to access a non-existent key without using `get()`
-- **Mutating while iterating**: Modifying a dictionary while looping through it can lead to unexpected behavior
+- **Mutating while iterating**: Modifying a dictionary while looping through it can lead to unexpected behaviour
 - **Confusing keys and values**: Remember that `keys()` gives you keys, not values
 - **Shallow vs. deep copying**: Be careful with nested dictionaries, as shallow copies don't copy nested structures
 - **Dictionary equality**: Two dictionaries are equal if they have the same key-value pairs, regardless of order
 
 ## Project Corner: Upgrading Your Chatbot with Dictionaries
 
-Let's enhance our chatbot by using dictionaries to organize response patterns and templates:
+Let's enhance our chatbot by using dictionaries to organise response patterns and templates:
 
 ```python
 import random
@@ -367,7 +367,7 @@ response_templates = {
         "I'm operational and at your service!"
     ],
     "capabilities": [
-        "I can chat about basic topics, remember our conversation, and give responses based on patterns I recognize.",
+        "I can chat about basic topics, remember our conversation, and give responses based on patterns I recognise.",
         "Try asking me who I am, say hello, or just chat naturally!",
         "I can respond to greetings, questions about myself, and basic conversation. I'm also learning new tricks!"
     ],
@@ -482,7 +482,7 @@ while True:
 ```
 
 Our enhanced chatbot now:
-1. Uses dictionaries to organize response patterns and templates
+1. Uses dictionaries to organise response patterns and templates
 2. Tracks conversation statistics in a dictionary
 3. Stores conversation history using dictionaries with timestamps
 4. Provides a stats command to view interaction metrics
@@ -498,11 +498,11 @@ Our enhanced chatbot now:
 
 ## Cross-References
 
-- Previous Chapter: [Strings](13_strings.qmd)
-- Next Chapter: [Files](15_files.qmd)
+- Previous Chapter: [Strings](strings.qmd)
+- Next Chapter: [Files](files.qmd)
 - Related Topics: Lists (Chapter 11), Looping (Chapter 12)
 
-***AI Tip: Ask your AI assistant to suggest ways dictionaries could be used to solve specific data organization problems in your projects.***
+***AI Tip: Ask your AI assistant to suggest ways dictionaries could be used to solve specific data organisation problems in your projects.***
 
 ## Real-World Dictionary Applications
 

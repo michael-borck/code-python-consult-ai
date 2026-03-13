@@ -527,7 +527,7 @@ Just type naturally and I'll try to understand!
     elif "python" in user_input and "?" in user_input:
         return "Python is a versatile programming language known for its readability and ease of use. What specific aspect would you like to know about?"
     elif "function" in user_input and "python" in user_input:
-        return "Functions in Python are defined using the 'def' keyword. They help organize and reuse code."
+        return "Functions in Python are defined using the 'def' keyword. They help organise and reuse code."
     elif "conditional" in user_input or "if statement" in user_input:
         return "Conditional statements in Python, like 'if', 'elif', and 'else', let your programs make decisions based on conditions."
 
@@ -651,7 +651,7 @@ def context_aware_chatbot():
             elif topic == "weather":
                 return "Weather is the state of the atmosphere, including temperature, humidity, wind, etc. Any specific weather phenomenon you're curious about?"
             elif topic == "music":
-                return "Music comes in countless genres from classical to electronic. Do you have a favorite style?"
+                return "Music comes in countless genres from classical to electronic. Do you have a favourite style?"
             else:
                 return f"You wanted to know more about {topic}? What specific aspect interests you?"
 
@@ -1398,7 +1398,7 @@ def update_character_status(character):
     return character.status_effects
 ```
 
-These examples demonstrate how conditionals are used to implement complex business logic, multi-factor decisions, and state-based behaviors in professional applications.
+These examples demonstrate how conditionals are used to implement complex business logic, multi-factor decisions, and state-based behaviours in professional applications.
 
 ## 13. Self-Assessment Quiz
 
@@ -1435,7 +1435,7 @@ Test your understanding of conditional logic in Python:
    d) An `else` clause executes if any condition is `False`
 
 6. What is the "early return" pattern used for?
-   a) Optimizing code execution speed
+   a) optimising code execution speed
    b) Avoiding deeply nested conditional structures
    c) Creating recursive functions
    d) Implementing event loops
@@ -1511,11 +1511,11 @@ Write a program that:
 
 ## 15. Cross-References
 
-- **Previous Chapter**: [Creating Functions](09_creating_functions.qmd) — Build reusable code components
-- **Next Chapter**: [Lists](11_lists.qmd) — Work with collections of data
-- **Related Topic**: [Operators](07_operators.qmd) — Create the boolean expressions used in conditions
-- **Project Connection**: [Going Loopy](12_going_loopy.qmd) — Combines loops and conditionals for powerful control
-- **Advanced Application**: [Error Handling](16_errors_and_exceptions.qmd) — Uses conditionals to manage exceptional cases
+- **Previous Chapter**: [Creating Functions](creating_functions.qmd) — Build reusable code components
+- **Next Chapter**: [Lists](lists.qmd) — Work with collections of data
+- **Related Topic**: [Operators](operators.qmd) — Create the boolean expressions used in conditions
+- **Project Connection**: [Going Loopy](going_loopy.qmd) — Combines loops and conditionals for powerful control
+- **Advanced Application**: [Error Handling](errors_and_exceptions.qmd) — Uses conditionals to manage exceptional cases
 
 ## 16. Summary
 

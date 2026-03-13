@@ -5,7 +5,7 @@
 - Crafting effective prompts for programming tasks
 - Debugging with AI assistance
 - Learning strategies that combine human and AI strengths
-- Customizing AI outputs to match your coding style
+- customising AI outputs to match your coding style
 - Evaluating and refining AI-generated code
 - Building complex Python applications with AI support
 - Enhancing your chatbot with advanced AI interactions
@@ -15,7 +15,7 @@
 By the end of this chapter, you will be able to:
 - Design specific, effective prompts to get high-quality code from AI assistants
 - Use AI tools to accelerate your debugging and problem-solving process
-- Customize AI-generated code to align with your style and project requirements
+- customise AI-generated code to align with your style and project requirements
 - Implement advanced techniques to guide AI outputs for complex Python tasks
 - Critically evaluate and improve AI-generated solutions
 - Build a workflow that combines your creativity with AI efficiency
@@ -24,7 +24,7 @@ By the end of this chapter, you will be able to:
 
 ## 1. Introduction: Beyond Basic AI Interactions
 
-In previous chapters, we explored what AI programming assistants are and how they can assist with basic Python development tasks. Now, we'll dive deeper into advanced techniques that can help you maximize the value of these tools in your programming journey.
+In previous chapters, we explored what AI programming assistants are and how they can assist with basic Python development tasks. Now, we'll dive deeper into advanced techniques that can help you maximise the value of these tools in your programming journey.
 
 Working effectively with AI assistants is becoming a critical skill for modern programmers. Just as knowing how to effectively search for information online revolutionized learning in the early internet era, mastering AI collaboration is transforming how we learn and apply programming skills today.
 
@@ -112,7 +112,7 @@ Ask for explanations alongside code:
 ```
 Show me how to implement a binary search tree in Python, explaining
 each method's purpose and time complexity. Add comments about
-algorithmic choices and potential optimizations.
+algorithmic choices and potential optimisations.
 ```
 
 ## 3. Debugging Strategies with AI Assistance
@@ -289,9 +289,9 @@ Example sequence:
 
 This approach prevents overwhelming jumps from beginner to advanced code.
 
-## 5. Customizing AI-Generated Code
+## 5. customising AI-Generated Code
 
-AI often generates generic solutions that need customization. Here are techniques to guide AI toward your preferred style and project needs:
+AI often generates generic solutions that need customisation. Here are techniques to guide AI toward your preferred style and project needs:
 
 ### Style Templates
 
@@ -340,7 +340,7 @@ In our project, we follow these conventions:
 Please write a class to represent a Customer with name, email, and purchase history attributes.
 ```
 
-### Incremental Customization
+### Incremental customisation
 
 Request changes to AI-generated code in specific steps:
 
@@ -437,8 +437,8 @@ Compare different approaches to the same problem:
 
 ```
 I need to implement a function to find the longest common substring of two strings.
-Please provide two different implementations - one optimized for readability and
-one optimized for performance. Then explain the tradeoffs between them.
+Please provide two different implementations - one optimised for readability and
+one optimised for performance. Then explain the tradeoffs between them.
 ```
 
 ## 7. Building Complex Python Applications with AI Support
@@ -520,7 +520,7 @@ Get AI help with reviewing existing code:
 ```
 Please review this implementation of a caching system and identify:
 1. Any potential bugs or edge cases
-2. Performance optimizations
+2. Performance optimisations
 3. Suggestions for improved readability
 4. Potential memory leaks
 
@@ -542,7 +542,7 @@ Test your understanding of advanced AI assistance techniques:
 2. When asking an AI assistant to help debug your code, which approach is most effective?
    a) Just sharing the error message
    b) Sharing your entire codebase
-   c) Sharing the specific function with the bug, the error message, expected behavior, and attempted inputs
+   c) Sharing the specific function with the bug, the error message, expected behaviour, and attempted inputs
    d) Asking the AI to guess what might be wrong without sharing code
 
 3. Which learning strategy uses AI most effectively for skill development?
@@ -557,7 +557,7 @@ Test your understanding of advanced AI assistance techniques:
    c) Whether it contains security vulnerabilities
    d) Whether it correctly solves the problem
 
-5. Which approach would best help customize AI-generated code to match your project style?
+5. Which approach would best help customise AI-generated code to match your project style?
    a) Repeatedly rejecting code until the AI happens to match your style
    b) Providing an example of your coding style before requesting new code
    c) Editing the code yourself after receiving it
@@ -565,7 +565,7 @@ Test your understanding of advanced AI assistance techniques:
 
 **Answers:**
 1. c) "Using Python 3.10, write a function that sorts a list of dictionaries by their 'date' field (ISO format), with newest dates first, handling missing dates by placing them at the end"
-2. c) Sharing the specific function with the bug, the error message, expected behavior, and attempted inputs
+2. c) Sharing the specific function with the bug, the error message, expected behaviour, and attempted inputs
 3. b) Implementing a solution yourself, then comparing with AI suggestions to learn differences
 4. b) Whether it follows the most recent programming trends
 5. b) Providing an example of your coding style before requesting new code
@@ -743,7 +743,7 @@ This approach uses AI selectively to conserve resources:
 class SelectiveAIManager:
     """
     Manages when to use AI based on conversation complexity and needs.
-    Uses a smart decision system to optimize AI usage.
+    Uses a smart decision system to optimise AI usage.
     """
 
     def __init__(self, openai_api_key, complexity_threshold=0.7):
@@ -758,7 +758,7 @@ class SelectiveAIManager:
             re.compile(r"thanks|thank you", re.IGNORECASE)
         ]
         self.complex_indicators = [
-            "why", "how", "explain", "difference between", "compare", "analyze",
+            "why", "how", "explain", "difference between", "compare", "analyse",
             "best way to", "recommend", "suggest", "think about", "opinion on"
         ]
 
@@ -973,7 +973,7 @@ while True:
     print(f"{bot.name}: {response}")
 ```
 
-## 10. When AI Isn't the Answer: Recognizing the Limits
+## 10. When AI Isn't the Answer: recognising the Limits
 
 While AI assistants can be incredibly powerful, they're not always the best solution. Here are situations where you should rely on your own programming skills:
 
@@ -1025,22 +1025,22 @@ First work to understand the concept, then use AI to deepen your understanding o
 
 ## Cross-References
 
-- Previous Chapter: [Python AI Integration](25_python_ai_integration.qmd)
-- Next Chapter: [Intentional Prompting](27_intentional_prompting.qmd)
+- Previous Chapter: [Python AI Integration](python_ai_integration.qmd)
+- Next Chapter: [Intentional Prompting](intentional_prompting.qmd)
 - Related Topics: AI Programming Assistants (Chapter 24), Debugging (Chapter 17), Getting Help (Chapter 23)
 
 ***AI Tip: To speed up your Python learning, create flashcards with common programming patterns. When faced with a problem, try to recall relevant patterns before asking AI for help. This builds your mental library while still allowing AI to fill gaps.***
 
 ## Summary
 
-Effective use of AI programming assistants requires more than just asking for code. By mastering prompt engineering, developing critical evaluation skills, and building a balanced workflow that combines AI efficiency with human expertise, you can maximize the value of these tools in your Python journey.
+Effective use of AI programming assistants requires more than just asking for code. By mastering prompt engineering, developing critical evaluation skills, and building a balanced workflow that combines AI efficiency with human expertise, you can maximise the value of these tools in your Python journey.
 
 Key takeaways from this chapter include:
 
 - Craft detailed, specific prompts that provide context and constraints
-- Use AI for debugging by clearly describing the problem and expected behavior
+- Use AI for debugging by clearly describing the problem and expected behaviour
 - Develop learning strategies that build your skills alongside AI usage
-- Customize AI-generated code to match your style and project requirements
+- customise AI-generated code to match your style and project requirements
 - Evaluate AI code for correctness, efficiency, security, and maintainability
 - Know when to rely on AI and when to depend on your own programming abilities
 

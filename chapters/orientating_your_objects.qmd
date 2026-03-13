@@ -24,13 +24,13 @@ By the end of this chapter, you will be able to:
 
 You've probably heard the term "object" in a programming context before, but what does it really mean? Let's start by looking at some real-world objects like pens, books, smartphones, and computers.
 
-Objects come in different forms and shapes, but we can classify different versions of the same item into categories or groups. It's why you can go to a furniture store and recognize different items as chairs even if they look very different from one another.
+Objects come in different forms and shapes, but we can classify different versions of the same item into categories or groups. It's why you can go to a furniture store and recognise different items as chairs even if they look very different from one another.
 
-Our brains naturally recognize objects, notice commonalities between them, collect information, and create mental representations for categories. This cognitive process mirrors what we do in object-oriented programming.
+Our brains naturally recognise objects, notice commonalities between them, collect information, and create mental representations for categories. This cognitive process mirrors what we do in object-oriented programming.
 
 In programming, objects can be used to model entities from the real world. Since programs are designed to work and be used in the real world, it helps to mirror reality. Additionally, using objects is a useful way of grouping related data and functionality together.
 
-***AI Tip: When designing classes, ask your AI assistant to help you identify the essential attributes and behaviors that should be included based on your problem description. It can help distinguish between what's necessary and what's optional for your specific use case.***
+***AI Tip: When designing classes, ask your AI assistant to help you identify the essential attributes and behaviours that should be included based on your problem description. It can help distinguish between what's necessary and what's optional for your specific use case.***
 
 ## 2. Understanding Abstraction
 
@@ -44,7 +44,7 @@ This selective focus on essential details is the heart of abstraction. It allows
 2. **Hide implementation details**: Users of our code don't need to know how it works internally
 3. **Create clear interfaces**: Define how other code should interact with our objects
 
-In Python, abstraction is implemented through classes. A class serves as a blueprint or template that defines what attributes and behaviors objects of that type will have.
+In Python, abstraction is implemented through classes. A class serves as a blueprint or template that defines what attributes and behaviours objects of that type will have.
 
 ## 3. Designing Classes
 
@@ -152,9 +152,9 @@ print(my_book.number_of_pages)  # Outputs: 331
 
 Object attributes behave like variables - you can assign new values to them, use them in expressions, and pass them to functions.
 
-## 9. Adding Behavior: Object Methods
+## 9. Adding behaviour: Object Methods
 
-So far, our objects can store data (attributes) but can't do anything. Real-world objects have behaviors: books can be read, cars can be driven, doors can be opened. In programming, we implement behaviors as methods.
+So far, our objects can store data (attributes) but can't do anything. Real-world objects have behaviours: books can be read, cars can be driven, doors can be opened. In programming, we implement behaviours as methods.
 
 A method is simply a function that belongs to a class. Let's add a `read_book` method to our `Book` class:
 
@@ -452,7 +452,7 @@ Test your understanding of object-oriented programming in Python:
 
 ## 14. Project Corner: Enhancing Your Chatbot with Object-Oriented Design
 
-Let's apply object-oriented principles to our chatbot project by creating a well-organized class structure. This approach will make our code more maintainable and extensible.
+Let's apply object-oriented principles to our chatbot project by creating a well-organised class structure. This approach will make our code more maintainable and extensible.
 
 ```python
 class Chatbot:
@@ -764,7 +764,7 @@ This object-oriented approach provides several advantages:
 1. **Modularity**: Each class handles one aspect of functionality
 2. **Extensibility**: New features can be added by creating new subclasses
 3. **Code reuse**: Inheritance allows sharing common functionality
-4. **Clarity**: The code is organized in a logical, structured way
+4. **Clarity**: The code is organised in a logical, structured way
 5. **Maintenance**: Changes to one feature don't affect others
 6. **Testability**: Each class can be tested independently
 
@@ -774,11 +774,11 @@ These advantages become increasingly important as your projects grow in complexi
 
 In our chatbot examples, we've demonstrated several important object-oriented concepts:
 
-1. **Encapsulation**: Bundling data (attributes) and behaviors (methods) together
+1. **Encapsulation**: Bundling data (attributes) and behaviours (methods) together
 2. **Inheritance**: Creating specialized classes (WeatherChatbot, QuizChatbot) from a base class (Chatbot)
-3. **Polymorphism**: Overriding methods (get_response) to provide specialized behavior while maintaining the same interface
+3. **Polymorphism**: Overriding methods (get_response) to provide specialized behaviour while maintaining the same interface
 4. **Composition**: Building complex objects that contain other objects (Chatbot contains conversation history, response patterns, etc.)
-5. **Method Override**: Customizing inherited behavior by providing a new implementation in the subclass
+5. **Method Override**: customising inherited behaviour by providing a new implementation in the subclass
 6. **Multiple Inheritance**: Combining features from multiple parent classes (SuperChatbot)
 
 ## 19. Running the Object-Oriented Chatbot
@@ -827,8 +827,8 @@ Each of these can be implemented as a separate class that inherits from the base
 
 ## Cross-References
 
-- Previous Chapter: [Modules and Packages](19_modules_and_packages.qmd)
-- Next Chapter: [How to Run Python Code](21_how_to_run_python_code.qmd)
+- Previous Chapter: [Modules and Packages](modules_and_packages.qmd)
+- Next Chapter: [How to Run Python Code](how_to_run_python_code.qmd)
 - Related Topics: Functions (Chapter 9), Error Handling (Chapter 16), Modules and Packages (Chapter 19)
 
 ***AI Tip: When designing classes, don't try to add every possible feature at once. Instead, create a minimal viable class that does one thing well, then gradually extend it. AI assistants can help by suggesting how to refactor your code to make it more maintainable as complexity grows.***
@@ -840,12 +840,12 @@ In this chapter, we've explored object-oriented programming in Python, learning 
 1. Create classes to model real-world entities
 2. Instantiate objects from those classes
 3. Work with object attributes and methods
-4. Apply encapsulation to bundle data and behavior
+4. Apply encapsulation to bundle data and behaviour
 5. Use inheritance to create specialized versions of classes
-6. Override methods to customize behavior
+6. Override methods to customise behaviour
 7. Apply object-oriented design to our chatbot project
 
-Object-oriented programming is a powerful paradigm that helps us manage complexity by organizing code into logical, reusable components. As your Python projects grow, these skills will become increasingly valuable in keeping your code maintainable and extensible.
+Object-oriented programming is a powerful paradigm that helps us manage complexity by organising code into logical, reusable components. As your Python projects grow, these skills will become increasingly valuable in keeping your code maintainable and extensible.
 
 The chatbot project now has a solid object-oriented foundation that you can continue to build upon. By understanding how to design classes and how they interact with each other, you've gained powerful tools for structuring larger Python applications.
 

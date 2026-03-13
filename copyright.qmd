@@ -28,7 +28,7 @@ Code examples: MIT License
 Created using AI image generation, with prompts crafted by the author depicting the themes of Python programming and human-AI collaboration.
 
 **Production Notes**
-This book was written in Markdown using Quarto. The text is set in system fonts optimized for screen and print reading. Code examples use a monospace font for clarity.
+This book was written in Markdown using Quarto. The text is set in system fonts optimised for screen and print reading. Code examples use a monospace font for clarity.
 
 Editorial assistance provided by Claude (Anthropic). The author reviewed and approved all content.
 

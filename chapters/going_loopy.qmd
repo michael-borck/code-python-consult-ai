@@ -650,11 +650,11 @@ print(unique_chars)  # {'p', 's', 'i', 'm'}
 
 These comprehensions provide the same benefits for dictionaries and sets that list comprehensions provide for lists.
 
-## 8. Performance and Optimization
+## 8. Performance and optimisation
 
-Loops are fundamental to programming, but they can also be performance bottlenecks, especially when dealing with large data sets. Here are some tips for optimizing loops:
+Loops are fundamental to programming, but they can also be performance bottlenecks, especially when dealing with large data sets. Here are some tips for optimising loops:
 
-### Minimize Work Inside Loops
+### minimise Work Inside Loops
 
 Move operations outside the loop if they don't need to be recalculated each time:
 
@@ -713,7 +713,7 @@ Different types of loops have different performance characteristics:
 - `for item in items` is faster than `for i in range(len(items)): item = items[i]`
 - Avoid modifying a list while iterating over it (use a copy or build a new list)
 
-### Optimize Nested Loops
+### optimise Nested Loops
 
 Nested loops multiply the number of operations, so they can be particularly slow for large data sets:
 
@@ -1399,12 +1399,12 @@ average = sum(numbers) / len(numbers)
 
 ## 13. Cross-References
 
-- **Previous Chapter**: [Lists](11_lists.qmd) - Learn about the data structure often used with loops
-- **Next Chapter**: [Strings](13_strings.qmd) - Explore text manipulation, which often involves loops
+- **Previous Chapter**: [Lists](lists.qmd) - Learn about the data structure often used with loops
+- **Next Chapter**: [Strings](strings.qmd) - Explore text manipulation, which often involves loops
 - **Related Topics**:
-  - [Making Decisions](10_making_decisions.qmd) - Conditions are used in loop control
-  - [Functions](09_creating_functions.qmd) - Combine loops with functions for powerful code
-  - [Dictionaries](14_dictionaries.qmd) - Another collection type you can iterate through
+  - [Making Decisions](making_decisions.qmd) - Conditions are used in loop control
+  - [Functions](creating_functions.qmd) - Combine loops with functions for powerful code
+  - [Dictionaries](dictionaries.qmd) - Another collection type you can iterate through
   - [Project Integration](chatbot_project.qmd) - See how loops are used in the chatbot project
 
 ## 14. Key Takeaways: Why Loops Matter

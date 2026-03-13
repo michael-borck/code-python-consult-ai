@@ -23,6 +23,7 @@ When not writing about AI collaboration, Michael works on practical applications
 
 *Foundational Methodology:*
 
+- *Conversation, Not Delegation: Your Expertise + AI's Breadth = Amplified Thinking*
 - *Converse Python, Partner AI: The Python Edition*
 
 *Python Track:*
@@ -33,3 +34,7 @@ When not writing about AI collaboration, Michael works on practical applications
 *Web Track:*
 
 - *Build Web, Guide AI: Business Web Development with AI*
+
+*For Educators:*
+
+- *Partner, Don't Police: AI in the Business Classroom*

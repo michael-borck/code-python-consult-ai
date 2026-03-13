@@ -15,12 +15,12 @@
 
 By the end of this chapter, you will be able to:
 - Understand what values are and their role in programming
-- Recognize and use Python's fundamental data types
+- recognise and use Python's fundamental data types
 - Apply the `type()` function to identify data types
 - Convert between different data types when needed
 - Choose appropriate data types for different scenarios
 - Begin implementing various data types in your chatbot project
-- Recognize type-related errors and how to fix them
+- recognise type-related errors and how to fix them
 
 ## 1. Introduction: Values as the Foundation of Programming
 
@@ -440,11 +440,11 @@ Practice working with different data types:
 
 ## Cross-References
 
-- Previous Chapter: [Basic Python Syntax](02_basic_python_syntax.qmd) — The grammar of Python
-- Next Chapter: [Variables](04_variables.qmd) — Storing and naming values
-- Chatbot Development: See how we use data types in [Output](05_output.qmd) and [Dictionaries](14_dictionaries.qmd)
-- Related Topics: In-depth coverage in [Strings](13_strings.qmd) and [Lists](11_lists.qmd)
-- AI Integration: Learn about data types in AI contexts in [Python AI Integration](25_python_ai_integration.qmd)
+- Previous Chapter: [Basic Python Syntax](basic_python_syntax.qmd) — The grammar of Python
+- Next Chapter: [Variables](variables.qmd) — Storing and naming values
+- Chatbot Development: See how we use data types in [Output](output.qmd) and [Dictionaries](dictionaries.qmd)
+- Related Topics: In-depth coverage in [Strings](strings.qmd) and [Lists](lists.qmd)
+- AI Integration: Learn about data types in AI contexts in [Python AI Integration](python_ai_integration.qmd)
 
 ***AI Collaboration Corner: Troubleshooting Type Issues***
 
@@ -477,6 +477,6 @@ In this chapter, you've explored the fundamental building blocks of Python progr
 
 For our chatbot project, you've implemented a more sophisticated structure that incorporates different data types to store and display information. This foundation will continue to grow as we add more capabilities in later chapters.
 
-Understanding data types is crucial for effective programming, as it helps you organize information appropriately, prevent errors, and write more efficient code. As your programs become more complex, choosing the right data types will become an increasingly important part of your development process.
+Understanding data types is crucial for effective programming, as it helps you organise information appropriately, prevent errors, and write more efficient code. As your programs become more complex, choosing the right data types will become an increasingly important part of your development process.
 
-In the next chapter, we'll explore variables—how to store, name, and organize your values to make them easily accessible throughout your program.
+In the next chapter, we'll explore variables—how to store, name, and organise your values to make them easily accessible throughout your program.

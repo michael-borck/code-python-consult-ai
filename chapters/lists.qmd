@@ -1,4 +1,4 @@
-# Lists - Organizing Collections of Data
+# Lists - organising Collections of Data
 
 ## Chapter Outline
 - Understanding lists and their importance in programming
@@ -15,7 +15,7 @@ By the end of this chapter, you will be able to:
 - Create and modify Python lists with confidence
 - Add, remove, and update elements in a list using appropriate methods
 - Access specific elements using indexes and slicing
-- Sort and organize list data efficiently
+- Sort and organise list data efficiently
 - Work with lists of different data types
 - Create and manipulate nested lists for multi-dimensional data
 - Use lists to implement history tracking and state management in your chatbot
@@ -59,7 +59,7 @@ With a list, you can:
 - Maintain the order of questions
 - Apply the same operations to all items
 
-Lists are foundational data structures in Python and serve as building blocks for more complex applications. They allow you to organize collections of data in a way that's both powerful and flexible.
+Lists are foundational data structures in Python and serve as building blocks for more complex applications. They allow you to organise collections of data in a way that's both powerful and flexible.
 
 > **Key Concept**: A list in Python is an ordered collection of items that can be of any data type (including other lists). Lists are mutable (changeable), maintain the order of inserted items, and can contain duplicate values.
 
@@ -353,9 +353,9 @@ print(numbers)  # [10, 50]
 | `clear()` | Remove all items | `list.clear()` | None | Empties the list |
 | `del` | Remove by index/slice | `del list[i]` | None | Can delete slices |
 
-## 6. Sorting and Organizing Lists
+## 6. Sorting and organising Lists
 
-Python provides powerful tools for sorting and organizing list content:
+Python provides powerful tools for sorting and organising list content:
 
 ### Basic Sorting
 
@@ -759,7 +759,7 @@ def search_history(keyword):
 def summarize_conversation():
     """Create a simple summary of the conversation."""
     if len(conversation_history) == 0:
-        return "No conversation to summarize."
+        return "No conversation to summarise."
 
     user_msgs = [e for e in conversation_history if e["speaker"] != bot_name]
     bot_msgs = [e for e in conversation_history if e["speaker"] == bot_name]
@@ -835,7 +835,7 @@ mentioned_topics = {
     "chatbot": 0
 }
 
-# Add this function to analyze user input for interests
+# Add this function to analyse user input for interests
 def track_interests(message):
     """Track potential user interests based on their message."""
     # Update mentioned topics count
@@ -857,7 +857,7 @@ if interest_response:
 
 Our chatbot now demonstrates several important uses of lists:
 1. Maintaining conversation history in a structured format
-2. Implementing commands to view, search, and analyze that history
+2. Implementing commands to view, search, and analyse that history
 3. Tracking user interests based on conversation patterns
 4. Creating a summary of the conversation using aggregated data
 
@@ -1202,7 +1202,7 @@ print(list1)  # [1, 2, 3, 4, 5]
 ### 3. Unexpected References
 
 ```python
-# Unexpected behavior with references
+# Unexpected behaviour with references
 original = [1, 2, 3]
 duplicate = original  # Not a copy, just another reference
 duplicate.append(4)
@@ -1297,7 +1297,7 @@ Understanding list performance helps you write more efficient code:
 
 *Amortized constant time - occasionally O(n) when resizing is needed
 
-### Practical Optimization Tips
+### Practical optimisation Tips
 
 For large lists and performance-critical code:
 
@@ -1644,30 +1644,30 @@ Consider these alternatives when:
 
 ## 17. Cross-References
 
-- **Previous Chapter**: [Making Decisions](10_making_decisions.qmd) — Learn how to direct your program's flow
-- **Next Chapter**: [Going Loopy](12_going_loopy.qmd) — Repeat operations with different kinds of loops
-- **Related Topic**: [Strings](13_strings.qmd) — Text manipulation techniques (strings are similar to lists but immutable)
-- **Related Topic**: [Dictionaries](14_dictionaries.qmd) — Key-value mapping for more complex data organization
+- **Previous Chapter**: [Making Decisions](making_decisions.qmd) — Learn how to direct your program's flow
+- **Next Chapter**: [Going Loopy](going_loopy.qmd) — Repeat operations with different kinds of loops
+- **Related Topic**: [Strings](strings.qmd) — Text manipulation techniques (strings are similar to lists but immutable)
+- **Related Topic**: [Dictionaries](dictionaries.qmd) — Key-value mapping for more complex data organisation
 - **Project Application**: [Chatbot Project](chatbot_project.qmd) — See how lists evolve through the chatbot development
-- **Advanced Topic**: [Errors and Exceptions](16_errors_and_exceptions.qmd) — Handle errors when working with lists
+- **Advanced Topic**: [Errors and Exceptions](errors_and_exceptions.qmd) — Handle errors when working with lists
 
 ## 18. Summary: Putting Lists to Work
 
-In this chapter, we've explored Python lists—one of the most versatile and frequently used data structures in Python programming. Lists allow us to organize collections of related data, whether it's a series of messages in a conversation, user preferences, or any group of values that belong together.
+In this chapter, we've explored Python lists—one of the most versatile and frequently used data structures in Python programming. Lists allow us to organise collections of related data, whether it's a series of messages in a conversation, user preferences, or any group of values that belong together.
 
 Key concepts covered include:
 
 - **Creating and initializing lists** using various techniques
 - **Accessing and modifying list elements** with indexing and slicing
 - **Adding and removing elements** using methods like `append()`, `extend()`, `insert()`, `remove()`, and `pop()`
-- **Sorting and organizing list data** with `sort()`, `reverse()`, and other operations
+- **Sorting and organising list data** with `sort()`, `reverse()`, and other operations
 - **Working with nested lists** to create multi-dimensional data structures
 - **Using lists to track conversation history** in our chatbot project
 - **Common mistakes and their solutions** when working with lists
 - **Performance considerations** for efficient list operations
 
-For our chatbot project, lists have enabled a significant advancement: the ability to remember. By tracking conversation history in a list, our chatbot can now recall previous messages, search for keywords, and even analyze patterns in the conversation. This memory capability is fundamental to creating a more engaging and contextually aware chatbot.
+For our chatbot project, lists have enabled a significant advancement: the ability to remember. By tracking conversation history in a list, our chatbot can now recall previous messages, search for keywords, and even analyse patterns in the conversation. This memory capability is fundamental to creating a more engaging and contextually aware chatbot.
 
 As we move forward in our Python journey, lists will continue to be a cornerstone data structure. In the next chapter, we'll learn about loops, which pair naturally with lists to process collections of data efficiently.
 
-The main takeaway: Lists are Python's workhorses for handling collections of items. Mastering lists gives you the power to organize, manipulate, and process related data in clean, efficient ways—an essential skill whether you're building a chatbot, analyzing data, or creating any application that needs to work with multiple values as a unified collection.
+The main takeaway: Lists are Python's workhorses for handling collections of items. Mastering lists gives you the power to organise, manipulate, and process related data in clean, efficient ways—an essential skill whether you're building a chatbot, analysing data, or creating any application that needs to work with multiple values as a unified collection.

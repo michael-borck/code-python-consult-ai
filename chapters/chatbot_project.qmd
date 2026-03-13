@@ -17,7 +17,7 @@ The project follows this progression:
    - input name, say hi {name} etc
 
 2. **Structured Chatbot** (Chapters 8-14)
-   - Using functions to organize code
+   - Using functions to organise code
    - Implementing decision logic with conditionals
    - Storing conversation history in lists
    - Managing response templates with dictionaries
@@ -241,7 +241,7 @@ while True:
 
 **After Chapter 19: Modules and Packages**
 ```python
-# Organize your chatbot into a module structure
+# organise your chatbot into a module structure
 # You would create these files:
 
 # chatbot/response_manager.py
@@ -425,7 +425,7 @@ class AIEnhancedChatbot(Chatbot):
 
 As you become more comfortable with Python, try these challenges to enhance your chatbot further:
 
-1. **Sentiment Analysis**: Analyze the sentiment of user messages and adjust responses accordingly.
+1. **Sentiment Analysis**: analyse the sentiment of user messages and adjust responses accordingly.
 
 2. **Web Integration**: Make your chatbot accessible via a simple web interface using Flask.
 
@@ -442,4 +442,4 @@ As you become more comfortable with Python, try these challenges to enhance your
 3. Test and experiment with the chatbot after each implementation
 4. By the end of the book, you'll have a sophisticated AI-enhanced chatbot built entirely by you!
 
-Remember: This project is meant to be flexible. Feel free to customize your chatbot, add your own features, and make it truly yours!
+Remember: This project is meant to be flexible. Feel free to customise your chatbot, add your own features, and make it truly yours!

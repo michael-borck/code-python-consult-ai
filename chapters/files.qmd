@@ -560,7 +560,7 @@ With these enhancements, our chatbot can now:
 1. Save conversations to text files with timestamps
 2. Load and display previous conversations
 3. List available saved conversation files
-4. Organize saved chats in a dedicated directory
+4. organise saved chats in a dedicated directory
 
 This makes the chatbot more useful, as you can review past interactions and continue conversations later.
 
@@ -573,11 +573,11 @@ This makes the chatbot more useful, as you can review past interactions and cont
 
 ## Cross-References
 
-- Previous Chapter: [Dictionaries](14_dictionaries.qmd)
-- Next Chapter: [Errors and Exceptions](16_errors_and_exceptions.qmd)
+- Previous Chapter: [Dictionaries](dictionaries.qmd)
+- Next Chapter: [Errors and Exceptions](errors_and_exceptions.qmd)
 - Related Topics: Strings (Chapter 13), Error Handling (Chapter 16)
 
-***AI Tip: Ask your AI assistant to suggest file organization strategies for different types of projects, such as data analysis, web development, or scientific computing.***
+***AI Tip: Ask your AI assistant to suggest file organisation strategies for different types of projects, such as data analysis, web development, or scientific computing.***
 
 ## Real-World File Applications
 

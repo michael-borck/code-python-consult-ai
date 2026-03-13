@@ -26,7 +26,7 @@ In the previous chapter, we learned how to use built-in and library functions. N
 
 Creating functions is like gaining a superpower that allows you to:
 
-- **Organize** your code into logical, self-contained units
+- **organise** your code into logical, self-contained units
 - **Reuse** code without copying and pasting (DRY - Don't Repeat Yourself)
 - **Abstract** complex operations behind simple interfaces
 - **Focus** on one problem at a time
@@ -161,7 +161,7 @@ You can make parameters optional by providing default values:
 
 ```python
 def greet(name, greeting="Hello"):
-    """Greet a person with a customizable greeting."""
+    """Greet a person with a customisable greeting."""
     print(f"{greeting}, {name}!")
 
 # Using the default greeting
@@ -270,7 +270,7 @@ result = greet("Frank")
 print(result)  # Output: None
 ```
 
-This behavior explains why `print()` doesn't appear to return anything - it's returning `None` after displaying output.
+This behaviour explains why `print()` doesn't appear to return anything - it's returning `None` after displaying output.
 
 ### Return Early for Validation
 
@@ -441,7 +441,7 @@ def calculate_rectangle_area(width, height):
     return width * height
 ```
 
-### 4. Minimize Side Effects
+### 4. minimise Side Effects
 
 Functions should ideally return values rather than modifying global state:
 
@@ -483,7 +483,7 @@ def divide(a, b):
 
 ## 7. Project Corner: Structuring Your Chatbot with Functions
 
-Now let's apply these principles to enhance our chatbot project with well-designed functions. Previously, we had a simple script; now we'll organize it into modular, reusable components.
+Now let's apply these principles to enhance our chatbot project with well-designed functions. Previously, we had a simple script; now we'll organise it into modular, reusable components.
 
 ### Basic Function-Based Chatbot
 
@@ -733,7 +733,7 @@ def get_response(user_input, user_name):
     # Other response logic...
 ```
 
-This modular approach makes extending your chatbot clean and manageable. Each new capability goes into its own function, keeping your code organized.
+This modular approach makes extending your chatbot clean and manageable. Each new capability goes into its own function, keeping your code organised.
 
 ## 8. AI Collaboration Corner: Designing Better Functions
 
@@ -767,7 +767,7 @@ I'm building a chatbot that needs to process user input and determine sentiment
 (positive/negative/neutral). I want to create a well-designed function that:
 
 1. Takes a message string as input
-2. Analyzes the text for positive and negative keywords
+2. analyses the text for positive and negative keywords
 3. Returns both a sentiment label and a confidence score
 
 Please provide a function with proper documentation, parameter validation, and
@@ -775,15 +775,15 @@ error handling. Also explain any design decisions in your implementation.
 ```
 
 **AI Response:**
-*Here's a well-designed function to analyze sentiment in chatbot messages:*
+*Here's a well-designed function to analyse sentiment in chatbot messages:*
 
 ```python
 def analyze_sentiment(message, custom_keywords=None):
     """
-    Analyze the sentiment of a message as positive, negative, or neutral.
+    analyse the sentiment of a message as positive, negative, or neutral.
 
     Args:
-        message (str): The user message to analyze
+        message (str): The user message to analyse
         custom_keywords (dict, optional): Dictionary with custom 'positive' and
                                          'negative' keyword lists to use instead
                                          of the defaults
@@ -864,8 +864,8 @@ def demo_sentiment_analysis():
 *Design decisions explained:*
 
 1. *Function signature:*
-   - *Primary parameter (`message`) for the text to analyze*
-   - *Optional parameter (`custom_keywords`) for flexibility/customization*
+   - *Primary parameter (`message`) for the text to analyse*
+   - *Optional parameter (`custom_keywords`) for flexibility/customisation*
    - *Return value is a tuple with both result and confidence score*
 
 2. *Robust validation:*
@@ -875,7 +875,7 @@ def demo_sentiment_analysis():
 
 3. *Well-structured implementation:*
    - *Message preprocessing (lowercase, word splitting)*
-   - *Default keywords with option for customization*
+   - *Default keywords with option for customisation*
    - *Explicit algorithm for sentiment determination*
    - *Confidence scoring scaled to a meaningful range*
 
@@ -989,7 +989,7 @@ def calculate_average(numbers):
 ### Function Naming Confusion
 
 ```python
-# Confusing name - doesn't match behavior
+# Confusing name - doesn't match behaviour
 def check_email(email):
     """Validates an email and returns a boolean."""
     return "@" in email and "." in email
@@ -1210,7 +1210,7 @@ def calculate_damage(attacker, defender, attack_type="normal"):
 
     Args:
         attacker (dict): Attacker stats including 'strength', 'level', 'weapon_power'
-        defender (dict): Defender stats including 'defense', 'level', 'resistance'
+        defender (dict): Defender stats including 'defence', 'level', 'resistance'
         attack_type (str, optional): Type of attack - "normal", "critical", or "special".
                                     Defaults to "normal".
 
@@ -1254,8 +1254,8 @@ def calculate_damage(attacker, defender, attack_type="normal"):
     elif attack_type == "special":
         damage_multiplier *= 1.75
 
-    # Apply defender's defense
-    defense_reduction = defender.get('defense', 0) * 0.5
+    # Apply defender's defence
+    defense_reduction = defender.get('defence', 0) * 0.5
     damage = max(1, int((base_damage - defense_reduction) * damage_multiplier))
 
     # Apply damage resistance for special attacks
@@ -1322,7 +1322,7 @@ Test your understanding of Python function creation:
    a) Creating functions with as many features as possible
    b) Using global variables for communication between functions
    c) Having functions perform a single, well-defined task
-   d) Minimizing the number of functions in your program
+   d) minimising the number of functions in your program
 
 6. What is a "docstring" in a Python function?
    a) A special comment that becomes part of the function's help documentation
@@ -1400,11 +1400,11 @@ Ensure the functions work together cohesively and follow good design practices.
 
 ## 13. Cross-References
 
-- **Previous Chapter**: [Functions](08_using_functions.qmd) — Learn how to use built-in and library functions
-- **Next Chapter**: [Making Decisions](10_making_decisions.qmd) — Control program flow with if statements
-- **Related Topic**: [Modules and Packages](19_modules_and_packages.qmd) — Organize your functions into reusable modules
-- **Project Connection**: [Testing](18_testing.qmd) — Learn how to verify your functions work correctly
-- **Advanced Application**: [Object-Oriented Programming](20_orientating_your_objects.qmd) — Combine functions and data into classes
+- **Previous Chapter**: [Functions](using_functions.qmd) — Learn how to use built-in and library functions
+- **Next Chapter**: [Making Decisions](making_decisions.qmd) — Control program flow with if statements
+- **Related Topic**: [Modules and Packages](modules_and_packages.qmd) — organise your functions into reusable modules
+- **Project Connection**: [Testing](testing.qmd) — Learn how to verify your functions work correctly
+- **Advanced Application**: [Object-Oriented Programming](orientating_your_objects.qmd) — Combine functions and data into classes
 
 ## 14. Summary
 

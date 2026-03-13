@@ -30,7 +30,7 @@ Even the most experienced programmers write code with errors. The difference bet
 
 This chapter focuses primarily on runtime errors and how Python's exception handling system allows you to deal with them gracefully.
 
-***AI Tip: Ask your AI assistant to analyze error messages you encounter and explain them in simple terms, highlighting exactly what went wrong and why.***
+***AI Tip: Ask your AI assistant to analyse error messages you encounter and explain them in simple terms, highlighting exactly what went wrong and why.***
 
 ## 2. Understanding Error Types
 
@@ -239,7 +239,7 @@ except ZeroDivisionError:
     result = "Cannot divide by zero"
 ```
 
-Python generally favors the EAFP approach (using try/except) as it's usually cleaner and handles rare edge cases better. However, if checking is simple and the exception would be common, LBYL might be more appropriate.
+Python generally favours the EAFP approach (using try/except) as it's usually cleaner and handles rare edge cases better. However, if checking is simple and the exception would be common, LBYL might be more appropriate.
 
 ## 8. Common Error Handling Patterns
 
@@ -563,8 +563,8 @@ These improvements make the chatbot more robust and user-friendly. When problems
 
 ## Cross-References
 
-- Previous Chapter: [Files](15_files.qmd)
-- Next Chapter: [Debugging](17_debugging.qmd)
+- Previous Chapter: [Files](files.qmd)
+- Next Chapter: [Debugging](debugging.qmd)
 - Related Topics: Files (Chapter 15), Functions (Chapter 9)
 
 ***AI Tip: Ask your AI assistant to help you convert cryptic Python error messages into plain English explanations that include specific suggestions for fixing the problem.***

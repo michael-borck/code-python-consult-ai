@@ -5,7 +5,7 @@
 - Common debugging techniques
 - Using print statements effectively
 - Working with Python's debugger (pdb)
-- Recognizing common bug patterns
+- recognising common bug patterns
 - Debugging strategies for different error types
 - Preventing bugs through better coding practices
 
@@ -15,7 +15,7 @@ By the end of this chapter, you will be able to:
 - Understand the debugging mindset and process
 - Use print statements to inspect your program's state
 - Apply systematic debugging techniques to find errors
-- Recognize and fix common bug patterns
+- recognise and fix common bug patterns
 - Use Python's built-in debugging tools
 - Apply debugging strategies for different types of errors
 - Develop habits that prevent bugs in your code
@@ -40,7 +40,7 @@ As a reminder, there are three main types of errors in programming:
 2. **Runtime Errors/Exceptions**: Code runs but fails during execution (covered in Chapter 16)
 3. **Logical Errors/Bugs**: Code runs without errors but produces incorrect results
 
-Debugging primarily focuses on the third type, which is the most challenging. These errors don't trigger exceptions but produce unexpected or incorrect behaviors.
+Debugging primarily focuses on the third type, which is the most challenging. These errors don't trigger exceptions but produce unexpected or incorrect behaviours.
 
 ### The Debugging Mindset
 
@@ -49,7 +49,7 @@ Effective debugging requires a particular mindset:
 - **Be systematic**: Follow a methodical approach rather than making random changes
 - **Be curious**: Ask "why" repeatedly to get to the root cause
 - **Be patient**: Some bugs take time to find and fix
-- **Be scientific**: Form hypotheses, test them, and analyze results
+- **Be scientific**: Form hypotheses, test them, and analyse results
 - **Be persistent**: Don't give up when the solution isn't immediately obvious
 
 ### The Debugging Process
@@ -248,7 +248,7 @@ When your code runs but gives incorrect results:
 When bugs only appear sometimes:
 
 1. **Look for race conditions** or timing issues
-2. **Check for random inputs or behaviors**
+2. **Check for random inputs or behaviours**
 3. **Search for hidden dependencies** on external factors
 4. **Add extensive logging** to capture the state when the bug occurs
 5. **Try to make the bug reproducible** with specific inputs
@@ -603,8 +603,8 @@ This enhanced chatbot includes:
 
 ## Cross-References
 
-- Previous Chapter: [Errors and Exceptions](16_errors_and_exceptions.qmd)
-- Next Chapter: [Testing](18_testing.qmd)
+- Previous Chapter: [Errors and Exceptions](errors_and_exceptions.qmd)
+- Next Chapter: [Testing](testing.qmd)
 - Related Topics: Errors and Exceptions (Chapter 16), Functions (Chapter 9)
 
 ***AI Tip: When debugging, describe your expectations, what actually happened, and the code you're working with to your AI assistant. It can often spot patterns and suggest debugging approaches you might not have considered.***

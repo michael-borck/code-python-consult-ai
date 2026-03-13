@@ -101,7 +101,7 @@ Start by clarifying what you're trying to accomplish:
 - Are you trying to understand a concept?
 - Do you need implementation help?
 - Are you debugging an issue?
-- Do you want to optimize existing code?
+- Do you want to optimise existing code?
 
 ### Step 2: Provide Context
 
@@ -217,10 +217,10 @@ I'm encountering an issue with my Python code:
 The error I'm getting is:
 [error message]
 
-Expected behavior:
+Expected behaviour:
 [what you expected]
 
-Actual behavior:
+Actual behaviour:
 [what actually happens]
 
 I think the problem might be related to [your hypothesis].
@@ -246,17 +246,17 @@ print(processed)
 The error I'm getting is:
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
 
-Expected behavior:
+Expected behaviour:
 The function should process all items in the list.
 
-Actual behavior:
+Actual behaviour:
 It crashes when it encounters None.
 
 I think the problem might be related to not checking data types.
 Can you help identify and fix the issue?
 ```
 
-### Optimization Prompts
+### optimisation Prompts
 
 When you want to improve existing code:
 
@@ -267,7 +267,7 @@ Here's my current Python implementation:
 [your code here]
 ```
 
-It works correctly, but I'm looking to optimize it for [speed/memory/readability/etc.].
+It works correctly, but I'm looking to optimise it for [speed/memory/readability/etc.].
 Current performance: [metrics if available]
 Target performance: [desired metrics]
 
@@ -288,7 +288,7 @@ def find_duplicates(numbers):
     return duplicates
 ```
 
-It works correctly, but I'm looking to optimize it for speed.
+It works correctly, but I'm looking to optimise it for speed.
 Current performance: O(n²) time complexity
 Target performance: O(n) if possible
 
@@ -580,7 +580,7 @@ I need to implement decision logic for [specific situation].
 The logic should:
 - Evaluate [specific conditions]
 - Handle [number of different cases]
-- Default to [specific behavior]
+- Default to [specific behaviour]
 - Be [maintainability requirements]
 
 What's the most effective approach for this decision structure?
@@ -622,7 +622,7 @@ I need to implement iteration for batch processing large CSV files.
 Requirements:
 - The loop needs to process rows containing financial transactions
 - It should handle malformed rows and continue processing
-- Performance considerations include minimizing memory usage for very large files
+- Performance considerations include minimising memory usage for very large files
 - The implementation should be easy to modify for different file formats
 
 What's the most effective way to implement this in Python?
@@ -648,7 +648,7 @@ Test your understanding of intentional prompting:
    a) A technique where you connect multiple AI assistants together
    b) A method for guiding the AI through a step-by-step reasoning process
    c) A way to create long chains of prompts over time
-   d) A system for organizing programming concepts
+   d) A system for organising programming concepts
 
 4. Which prompting strategy is most appropriate when you want to understand the tradeoffs between different implementation approaches?
    a) Debugging prompts
@@ -890,7 +890,7 @@ As you become more skilled with intentional prompting, it's important to conside
 
 3. **Avoiding Overreliance**: Use AI as a tool to enhance your learning, not replace it. The goal is to become a better programmer, not just someone who can prompt well.
 
-4. **Respect for AI Limitations**: Recognize that AI assistants have limitations and may generate incorrect information. Verify critical information and test generated code.
+4. **Respect for AI Limitations**: recognise that AI assistants have limitations and may generate incorrect information. Verify critical information and test generated code.
 
 ### Best Practices
 
@@ -908,7 +908,7 @@ As you become more skilled with intentional prompting, it's important to conside
 
 ## Cross-References
 
-- Previous Chapter: [AI Assistance Tips](26_ai_assistance_tips.qmd)
+- Previous Chapter: [AI Assistance Tips](ai_assistance_tips.qmd)
 - Related Topics: AI Programming Assistants (Chapter 24), Python AI Integration (Chapter 25), Getting Help (Chapter 23)
 
 ***AI Tip: When reviewing your prompting history, look for patterns in what worked well. Did you get better responses when you provided examples? When you specified constraints? When you broke problems into steps? Identify your personal "prompting style" and refine it over time.***

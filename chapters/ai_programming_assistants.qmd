@@ -17,7 +17,7 @@ By the end of this chapter, you will be able to:
 - Choose the right AI tools for different Python development tasks
 - Formulate effective prompts to get better results from AI assistants
 - Use AI tools to accelerate learning and development
-- Recognize when AI assistance is most (and least) helpful
+- recognise when AI assistance is most (and least) helpful
 - Evaluate the quality of AI-generated code
 - Apply AI assistance to enhance your chatbot project
 - Develop a balanced approach to using AI in your programming workflow
@@ -175,7 +175,7 @@ AI assistants excel at certain programming tasks while being less helpful for ot
 ### Code Improvement
 
 - **Refactoring**: "Refactor this function to improve readability"
-- **Optimization**: "Optimize this code that's calculating Fibonacci numbers"
+- **optimisation**: "optimise this code that's calculating Fibonacci numbers"
 - **Style adherence**: "Update this code to follow PEP 8 guidelines"
 - **Modernization**: "Update this Python 2 code to Python 3 syntax"
 
@@ -243,7 +243,7 @@ Test your understanding of AI programming assistants:
    a) Making fundamental architectural decisions for complex systems
    b) Generating routine boilerplate code
    c) Creating security-critical authentication systems
-   d) Optimizing code when microsecond performance matters
+   d) optimising code when microsecond performance matters
 
 3. What is a common limitation of current AI programming assistants?
    a) They can only generate code in Python
@@ -466,7 +466,7 @@ pattern_matcher.py: Identifies intents and entities from user input
 Classes
 -------
 Chatbot: Main chatbot interface that coordinates all components
-PatternMatcher: Analyzes user input to determine intent
+PatternMatcher: analyses user input to determine intent
 ResponseGenerator: Creates varied, context-appropriate responses
 HistoryManager: Stores and retrieves conversation history
 
@@ -631,7 +631,7 @@ As AI tools become more powerful, focus on skills that complement them:
 
 ## Cross-References
 
-- Previous Chapter: [Getting Help](23_getting_help.qmd)
+- Previous Chapter: [Getting Help](getting_help.qmd)
 - Related Topics: Testing (Chapter 18), Debugging (Chapter 17), Getting Help (Chapter 23)
 
 ***AI Tip: When you need a complex functionality for your Python project, consider using AI tools in a "scaffolding" capacity - have the AI create the initial structure and key functions, then fill in the implementation details yourself. This hybrid approach leverages AI efficiency while ensuring you understand every part of your code.***
