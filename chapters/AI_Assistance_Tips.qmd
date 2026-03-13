@@ -1,0 +1,1049 @@
+# AI Assistance Tips
+
+## Chapter Outline
+- Advanced techniques for AI tool interactions
+- Crafting effective prompts for programming tasks
+- Debugging with AI assistance
+- Learning strategies that combine human and AI strengths
+- customising AI outputs to match your coding style
+- Evaluating and refining AI-generated code
+- Building complex Python applications with AI support
+- Enhancing your chatbot with advanced AI interactions
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+- Design specific, effective prompts to get high-quality code from AI assistants
+- Use AI tools to accelerate your debugging and problem-solving process
+- customise AI-generated code to align with your style and project requirements
+- Implement advanced techniques to guide AI outputs for complex Python tasks
+- Critically evaluate and improve AI-generated solutions
+- Build a workflow that combines your creativity with AI efficiency
+- Apply advanced AI assistance techniques to enhance your chatbot project
+- Know when to rely on AI and when to trust your own programming skills
+
+## 1. Introduction: Beyond Basic AI Interactions
+
+In previous chapters, we explored what AI programming assistants are and how they can assist with basic Python development tasks. Now, we'll dive deeper into advanced techniques that can help you maximise the value of these tools in your programming journey.
+
+Working effectively with AI assistants is becoming a critical skill for modern programmers. Just as knowing how to effectively search for information online revolutionized learning in the early internet era, mastering AI collaboration is transforming how we learn and apply programming skills today.
+
+This chapter focuses on practical techniques to get the most out of your AI assistants, helping you work more efficiently while still developing your own programming expertise.
+
+***AI Tip: Consider AI tools as collaborative partners rather than autonomous solution generators. The quality of your collaboration depends greatly on how you guide, question, and build upon what the AI offers.***
+
+## 2. The Art of Prompt Engineering for Programmers
+
+The quality of responses you get from AI coding assistants depends heavily on the quality of your prompts. Here are advanced techniques specifically for programming contexts:
+
+### Context-Rich Prompts
+
+Provide comprehensive information about your programming environment:
+
+**Basic prompt:**
+```
+Write code to read a CSV file.
+```
+
+**Enhanced prompt:**
+```
+I'm using Python 3.10 with pandas 1.5.0. Write code to read a CSV file
+named 'sales_data.csv' that has columns for 'date', 'product_id',
+'quantity', and 'price'. The date is in format MM/DD/YYYY. Show how
+to read this into a DataFrame and convert the date column to datetime.
+I'm working on a Windows environment.
+```
+
+### Scaffolding Prompts
+
+Provide partial code and ask the AI to fill in specific parts:
+
+```
+I have this function structure:
+
+def analyze_sales(filepath, start_date, end_date):
+    # Need to read the sales CSV
+    # Filter by date range
+    # Calculate total sales and average per day
+    # Return as a dictionary
+    pass
+
+Please implement the body of this function using pandas.
+```
+
+### Constrained Prompts
+
+Set explicit constraints or requirements for the code:
+
+```
+Write a Python function to find prime numbers up to n with these constraints:
+- Must be memory efficient for large values
+- Cannot use any imports
+- Should handle edge cases (n < 2)
+- Include detailed comments explaining the algorithm
+```
+
+### Multi-step Prompts
+
+Break complex tasks into sequential steps with feedback between each:
+
+1. "I need to build a web scraper for product data. Let's start with the basic structure."
+2. After reviewing the response: "Now let's add error handling for network timeouts."
+3. After implementing error handling: "Let's add functionality to save the data to SQLite."
+
+### Style Guidance Prompts
+
+Specify coding style preferences:
+
+```
+Write a Python class to represent a bank account with methods for deposit,
+withdraw, and balance check. Please follow these style guidelines:
+- Use snake_case for methods and variables
+- Include type hints
+- Write docstrings in Google style
+- Implement error handling with custom exceptions
+- Use properties for appropriate attributes
+```
+
+### Learning-Focused Prompts
+
+Ask for explanations alongside code:
+
+```
+Show me how to implement a binary search tree in Python, explaining
+each method's purpose and time complexity. Add comments about
+algorithmic choices and potential optimisations.
+```
+
+## 3. Debugging Strategies with AI Assistance
+
+AI tools can significantly enhance your debugging process:
+
+### Error Message Analysis
+
+When faced with an error, provide both the code and the full error message:
+
+```
+I'm getting this error when running my code:
+
+IndexError: list index out of range
+
+Here's the relevant code:
+```python
+def process_data(items):
+    for i in range(len(items) + 1):
+        result = items[i] * 2
+        print(result)
+```
+
+What's causing this error and how can I fix it?
+```
+
+### Algorithmic Debugging
+
+For logic errors where your code runs but produces incorrect results:
+
+```
+My function should calculate the factorial of a number, but it's giving
+wrong answers for inputs > 10. What's wrong with my implementation?
+
+```python
+def factorial(n):
+    result = 0
+    for i in range(1, n+1):
+        result *= i
+    return result
+```
+
+Expected output for factorial(5) is 120, but I'm getting 0.
+```
+
+### Focused Diagnostics
+
+Ask the AI to help isolate problems in specific parts of your code:
+
+```
+I suspect my data processing function is incorrect. Here's the function:
+```python
+def process_weather_data(data):
+    temperatures = [day['temp'] for day in data if 'temp' in day]
+    avg_temp = sum(temperatures) / len(temperatures)
+    max_temp = max(temperatures)
+    return {
+        'average': round(avg_temp, 1),
+        'maximum': max_temp,
+        'min_max_diff': max_temp - min(temperatures)
+    }
+```
+
+Can you verify the calculation logic and suggest any potential bugs or edge cases?
+```
+
+### Unit Test Generation
+
+Use AI to create tests that might reveal bugs:
+
+```
+I need unit tests to verify this function works correctly:
+```python
+def get_age_category(age):
+    if age < 13:
+        return "Child"
+    elif age < 20:
+        return "Teenager"
+    elif age < 65:
+        return "Adult"
+    else:
+        return "Senior"
+```
+
+Please write pytest tests that cover all branches and edge cases.
+```
+
+### Systematic Program Analysis
+
+For complex bugs, ask the AI to perform a thorough analysis:
+
+```
+My Flask app sometimes gives a 500 error when submitting this form.
+I can't consistently reproduce it, but it happens more often with larger inputs.
+
+Here's my form submission route:
+```python
+@app.route('/submit', methods=['POST'])
+def submit():
+    data = request.form.get('user_text')
+    processed = process_text(data)
+    db.save_entry(processed)
+    return redirect(url_for('thank_you'))
+```
+
+And here's my processing function:
+```python
+def process_text(text):
+    words = text.split()
+    result = []
+    for word in words:
+        if len(word) > 2:
+            cleaned = word.strip('.,:;!?')
+            result.append(cleaned.lower())
+    return ' '.join(result)
+```
+
+Can you identify potential issues that might cause server errors?
+```
+
+## 4. Learning Strategies for the AI Era
+
+Traditional programming learning approaches need adaptation for the AI era. Here are effective strategies:
+
+### The "Explain Then Implement" Method
+
+1. First, implement a solution yourself
+2. Then ask AI to explain your code and suggest improvements
+3. Compare your approach with AI suggestions
+4. Implement an improved version based on what you learned
+
+Example prompt:
+```
+I've written this function to calculate the Fibonacci sequence.
+Can you explain how it works, evaluate its efficiency, and suggest any improvements?
+
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+```
+```
+
+### The "Reverse Engineering" Technique
+
+1. Get AI to generate a solution to a problem
+2. Study the solution without copying it
+3. Close the AI chat and implement your own solution
+4. Compare your implementation with the AI version
+5. Identify differences and learning opportunities
+
+### The "Conceptual First" Approach
+
+1. Ask AI to explain a concept in detail before showing code
+2. Request multiple explanations using different analogies
+3. Then ask for code implementations after you understand the concept
+4. Finally, write your own implementation
+
+Example sequence:
+```
+1. Explain recursive backtracking in plain language
+2. Can you explain it again using a maze-solving analogy?
+3. Now show me a Python implementation for solving Sudoku
+4. [After studying] What are the key elements I should include in my own implementation?
+```
+
+### The "Iterative Refinement" Method
+
+1. Start with a simple implementation
+2. Ask AI to review and suggest one improvement
+3. Implement that improvement yourself
+4. Repeat until your solution is polished
+
+This approach prevents overwhelming jumps from beginner to advanced code.
+
+## 5. customising AI-Generated Code
+
+AI often generates generic solutions that need customisation. Here are techniques to guide AI toward your preferred style and project needs:
+
+### Style Templates
+
+Provide an example of your coding style first:
+
+```
+I write my Python code in this style:
+
+```python
+def calculate_total(items: list[dict]) -> float:
+    """
+    Calculate the total price of all items.
+
+    Args:
+        items: List of item dictionaries with 'price' and 'quantity' keys
+
+    Returns:
+        Total price as float
+
+    Raises:
+        KeyError: If any item is missing required keys
+    """
+    total = 0.0
+    for item in items:
+        total += item["price"] * item["quantity"]
+    return total
+```
+
+Now please write a function that calculates the average price per item following this style.
+```
+
+### Project-Specific Guidelines
+
+Describe your project's conventions and requirements:
+
+```
+In our project, we follow these conventions:
+- Functions use snake_case
+- Classes use PascalCase
+- Constants use SCREAMING_SNAKE_CASE
+- We use explicit type hints
+- We validate all function inputs
+- We use dataclasses for data containers
+- Error messages are detailed and actionable
+
+Please write a class to represent a Customer with name, email, and purchase history attributes.
+```
+
+### Incremental customisation
+
+Request changes to AI-generated code in specific steps:
+
+```
+Perfect, now can you modify this code to:
+1. Add proper error handling for invalid inputs
+2. Include logging statements at key points
+3. Make the function support both file paths and file-like objects
+```
+
+### Template Code Expansion
+
+Provide skeleton code and ask the AI to complete it:
+
+```
+I've started implementing a cache decorator. Can you complete it following
+the same style and adding proper type hints?
+
+```python
+def cached(max_size: int = 100):
+    """
+    Caches function results to avoid redundant calculations.
+
+    Args:
+        max_size: Maximum number of results to store
+
+    Returns:
+        Decorated function with caching
+    """
+    def decorator(func):
+        # TODO: Implement cache storage
+
+        def wrapper(*args, **kwargs):
+            # TODO: Implement cache lookup and update
+            pass
+
+        return wrapper
+    return decorator
+```
+```
+
+## 6. Evaluating and Refining AI-Generated Code
+
+Getting code from AI is just the beginning. Critical evaluation is essential:
+
+### Code Review Checklist
+
+After getting code from an AI assistant, check:
+
+1. **Correctness**: Does it correctly solve the problem?
+2. **Completeness**: Does it handle all required cases?
+3. **Efficiency**: Is the computational and memory complexity appropriate?
+4. **Robustness**: Does it handle edge cases and invalid inputs?
+5. **Security**: Are there potential security vulnerabilities?
+6. **Readability**: Is the code maintainable and well-documented?
+7. **Compatibility**: Does it work with specified Python versions/environments?
+8. **Style consistency**: Does it follow your project's conventions?
+
+### Structured Refinement Requests
+
+If the code needs improvement, make specific requests:
+
+```
+The function works for the basic case, but needs these improvements:
+1. Add error handling for when the input file doesn't exist
+2. The naming of the variable 'x' is unclear - please use more descriptive names
+3. The nested loop can be replaced with a list comprehension for better readability
+4. Add type hints to function parameters and return value
+```
+
+### Testing AI-Generated Code
+
+Always test code thoroughly:
+
+```python
+def test_ai_generated_function():
+    # Test normal case
+    assert calculate_statistics([1, 2, 3, 4, 5]) == {"mean": 3.0, "median": 3, "mode": None, "range": 4}
+
+    # Test edge cases
+    assert calculate_statistics([]) == {"mean": None, "median": None, "mode": None, "range": None}
+    assert calculate_statistics([42]) == {"mean": 42, "median": 42, "mode": 42, "range": 0}
+
+    # Test error cases
+    with pytest.raises(TypeError):
+        calculate_statistics("not a list")
+    with pytest.raises(TypeError):
+        calculate_statistics([1, "two", 3])
+```
+
+### Comparative Evaluation
+
+Compare different approaches to the same problem:
+
+```
+I need to implement a function to find the longest common substring of two strings.
+Please provide two different implementations - one optimised for readability and
+one optimised for performance. Then explain the tradeoffs between them.
+```
+
+## 7. Building Complex Python Applications with AI Support
+
+AI assistants can help with larger projects through these strategies:
+
+### Architecture Design Collaboration
+
+Use AI to explore architectural approaches:
+
+```
+I'm building a data pipeline application that needs to:
+1. Ingest CSV files from an S3 bucket
+2. Clean and transform the data
+3. Store results in PostgreSQL
+4. Generate daily reports
+
+What would be a good architecture for this Python application?
+Please suggest components, their responsibilities, and how they should interact.
+```
+
+### Iterative Development
+
+Build complex applications piece by piece:
+
+```
+For my web scraping project, we've already implemented the basic scraper.
+Now I need to add a component that:
+1. Detects when we're being rate-limited
+2. Implements exponential backoff
+3. Rotates through multiple user agents
+
+Please design this component to integrate with our existing code.
+```
+
+### Documentation Generation
+
+Use AI to create comprehensive documentation:
+
+```
+I've implemented this DatabaseConnector class. Please generate:
+1. Detailed docstrings for each method
+2. A user guide explaining typical usage patterns
+3. An API reference in Markdown format
+
+```python
+class DatabaseConnector:
+    def __init__(self, connection_string, max_connections=5):
+        self.connection_string = connection_string
+        self.pool = create_connection_pool(connection_string, max_connections)
+
+    def execute_query(self, query, parameters=None):
+        with self.pool.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute(query, parameters or ())
+            return cursor.fetchall()
+
+    def execute_transaction(self, queries):
+        with self.pool.get_connection() as conn:
+            try:
+                conn.start_transaction()
+                results = []
+                for query, params in queries:
+                    cursor = conn.cursor()
+                    cursor.execute(query, params or ())
+                    results.append(cursor.fetchall())
+                conn.commit()
+                return results
+            except Exception as e:
+                conn.rollback()
+                raise DatabaseError(f"Transaction failed: {str(e)}")
+```
+```
+
+### Code Review Assistance
+
+Get AI help with reviewing existing code:
+
+```
+Please review this implementation of a caching system and identify:
+1. Any potential bugs or edge cases
+2. Performance optimisations
+3. Suggestions for improved readability
+4. Potential memory leaks
+
+```python
+# Code to review here
+```
+```
+
+## 8. Self-Assessment Quiz
+
+Test your understanding of advanced AI assistance techniques:
+
+1. Which of the following would create the most effective prompt for a programming task?
+   a) "Write code to sort data"
+   b) "Write Python code to sort a list of dictionaries by the 'date' field"
+   c) "Using Python 3.10, write a function that sorts a list of dictionaries by their 'date' field (ISO format), with newest dates first, handling missing dates by placing them at the end"
+   d) "Sort dictionaries by date in descending order"
+
+2. When asking an AI assistant to help debug your code, which approach is most effective?
+   a) Just sharing the error message
+   b) Sharing your entire codebase
+   c) Sharing the specific function with the bug, the error message, expected behaviour, and attempted inputs
+   d) Asking the AI to guess what might be wrong without sharing code
+
+3. Which learning strategy uses AI most effectively for skill development?
+   a) Asking AI to solve all your programming problems
+   b) Implementing a solution yourself, then comparing with AI suggestions to learn differences
+   c) Memorizing AI-generated solutions
+   d) Never using AI to maintain pure self-learning
+
+4. When evaluating AI-generated code, which aspect is LEAST important to check?
+   a) Whether it handles edge cases properly
+   b) Whether it follows the most recent programming trends
+   c) Whether it contains security vulnerabilities
+   d) Whether it correctly solves the problem
+
+5. Which approach would best help customise AI-generated code to match your project style?
+   a) Repeatedly rejecting code until the AI happens to match your style
+   b) Providing an example of your coding style before requesting new code
+   c) Editing the code yourself after receiving it
+   d) Using a completely different AI tool
+
+**Answers:**
+1. c) "Using Python 3.10, write a function that sorts a list of dictionaries by their 'date' field (ISO format), with newest dates first, handling missing dates by placing them at the end"
+2. c) Sharing the specific function with the bug, the error message, expected behaviour, and attempted inputs
+3. b) Implementing a solution yourself, then comparing with AI suggestions to learn differences
+4. b) Whether it follows the most recent programming trends
+5. b) Providing an example of your coding style before requesting new code
+
+## 9. Project Corner: Advanced AI Interactions for Your Chatbot
+
+Let's enhance your chatbot with more sophisticated AI interactions. We'll build on the previous AI-enhanced chatbot implementation with advanced techniques.
+
+### Adding Contextual Memory to Your AI Integration
+
+This code implements a more sophisticated context management system:
+
+```python
+class ContextualMemory:
+    """
+    Maintains contextual information for more coherent AI-assisted conversations.
+    Uses techniques inspired by advanced prompt engineering.
+    """
+
+    def __init__(self, max_history=10, max_facts=20):
+        self.conversation_history = []
+        self.learned_facts = {}
+        self.max_history = max_history
+        self.max_facts = max_facts
+        self.user_preferences = {}
+
+    def add_exchange(self, user_input, bot_response):
+        """Add a conversation exchange to the history."""
+        self.conversation_history.append({
+            "user": user_input,
+            "bot": bot_response,
+            "timestamp": datetime.now().isoformat()
+        })
+
+        # Keep history within size limit
+        if len(self.conversation_history) > self.max_history:
+            self.conversation_history.pop(0)
+
+    def extract_fact(self, entity, fact):
+        """Store a learned fact about the user or topic."""
+        self.learned_facts[entity] = fact
+
+        # Keep facts within size limit
+        if len(self.learned_facts) > self.max_facts:
+            # Remove oldest fact (not optimal but simple)
+            self.learned_facts.pop(next(iter(self.learned_facts)))
+
+    def record_preference(self, category, preference):
+        """Record a user preference."""
+        self.user_preferences[category] = preference
+
+    def get_context_for_ai(self):
+        """Generate a context summary for AI prompt enhancement."""
+        context = "Previous conversation:\n"
+
+        # Add recent exchanges
+        for exchange in self.conversation_history[-3:]:  # Last 3 exchanges
+            context += f"User: {exchange['user']}\n"
+            context += f"Bot: {exchange['bot']}\n"
+
+        # Add relevant facts if available
+        if self.learned_facts:
+            context += "\nRelevant information:\n"
+            for entity, fact in self.learned_facts.items():
+                context += f"- {entity}: {fact}\n"
+
+        # Add user preferences
+        if self.user_preferences:
+            context += "\nUser preferences:\n"
+            for category, preference in self.user_preferences.items():
+                context += f"- {category}: {preference}\n"
+
+        return context
+```
+
+### Pattern-Based AI Fallback
+
+This implementation uses pattern matching first, only calling the AI API when necessary:
+
+```python
+class HybridResponseSystem:
+    """
+    Combines rule-based responses with AI generation for efficiency and cost management.
+    """
+
+    def __init__(self, openai_api_key, rule_templates, bot_name="HybridBot"):
+        self.bot_name = bot_name
+        self.context_memory = ContextualMemory()
+        self.rule_templates = rule_templates
+        self.pattern_matcher = self._compile_patterns()
+        self.openai = openai
+        self.openai.api_key = openai_api_key
+
+    def _compile_patterns(self):
+        """Compile regex patterns from rule templates."""
+        compiled_patterns = {}
+        for intent, patterns in self.rule_templates.items():
+            compiled_patterns[intent] = [
+                re.compile(pattern, re.IGNORECASE)
+                for pattern in patterns
+            ]
+        return compiled_patterns
+
+    def get_response(self, user_input):
+        """Get response using rules first, falling back to AI."""
+        # Try rule-based matching first
+        for intent, patterns in self.pattern_matcher.items():
+            for pattern in patterns:
+                if pattern.search(user_input):
+                    response = self._get_rule_response(intent)
+                    self.context_memory.add_exchange(user_input, response)
+                    return response
+
+        # No rule match found, use AI
+        return self._get_ai_response(user_input)
+
+    def _get_rule_response(self, intent):
+        """Get a response from rule templates."""
+        templates = self.rule_templates.get(f"{intent}_responses",
+                                           ["I understand."])
+        return random.choice(templates)
+
+    def _get_ai_response(self, user_input):
+        """Get a response from the AI service."""
+        context = self.context_memory.get_context_for_ai()
+
+        try:
+            response = self.openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": f"You are {self.bot_name}, a helpful assistant. Respond in a friendly, concise manner. Use the conversation context to provide relevant responses."},
+                    {"role": "user", "content": f"Context:\n{context}\n\nUser's current message: {user_input}"}
+                ],
+                max_tokens=150,
+                temperature=0.7
+            )
+
+            ai_response = response.choices[0].message["content"].strip()
+            self.context_memory.add_exchange(user_input, ai_response)
+
+            # Try to extract facts or preferences from user input
+            self._analyze_for_facts(user_input)
+
+            return ai_response
+
+        except Exception as e:
+            # Fallback response in case of API failure
+            fallback = "I'm having trouble thinking right now. Can you try again or ask something else?"
+            self.context_memory.add_exchange(user_input, fallback)
+            return fallback
+
+    def _analyze_for_facts(self, user_input):
+        """Extract potential facts or preferences from user input."""
+        # Simple fact extraction examples
+        name_match = re.search(r"my name is (\w+)", user_input, re.IGNORECASE)
+        if name_match:
+            self.context_memory.extract_fact("user_name", name_match.group(1))
+
+        like_match = re.search(r"i (?:like|love|enjoy) (.+)", user_input, re.IGNORECASE)
+        if like_match:
+            preference = like_match.group(1).strip()
+            self.context_memory.record_preference("likes", preference)
+
+        dislike_match = re.search(r"i (?:dislike|hate|don't like) (.+)", user_input, re.IGNORECASE)
+        if dislike_match:
+            preference = dislike_match.group(1).strip()
+            self.context_memory.record_preference("dislikes", preference)
+```
+
+### Implementing Selective AI Assistance
+
+This approach uses AI selectively to conserve resources:
+
+```python
+class SelectiveAIManager:
+    """
+    Manages when to use AI based on conversation complexity and needs.
+    Uses a smart decision system to optimise AI usage.
+    """
+
+    def __init__(self, openai_api_key, complexity_threshold=0.7):
+        self.openai = openai
+        self.openai.api_key = openai_api_key
+        self.complexity_threshold = complexity_threshold
+        self.simple_question_patterns = [
+            re.compile(r"what is your name", re.IGNORECASE),
+            re.compile(r"how are you", re.IGNORECASE),
+            re.compile(r"hello|hi|hey", re.IGNORECASE),
+            re.compile(r"bye|goodbye", re.IGNORECASE),
+            re.compile(r"thanks|thank you", re.IGNORECASE)
+        ]
+        self.complex_indicators = [
+            "why", "how", "explain", "difference between", "compare", "analyse",
+            "best way to", "recommend", "suggest", "think about", "opinion on"
+        ]
+
+    def should_use_ai(self, user_input, conversation_history):
+        """Determine if AI should be used for this response."""
+        # Always use rule-based for simple greetings and farewells
+        for pattern in self.simple_question_patterns:
+            if pattern.search(user_input):
+                return False
+
+        # Check for complex question indicators
+        for indicator in self.complex_indicators:
+            if indicator in user_input.lower():
+                return True
+
+        # Check message length - longer messages often need more sophisticated responses
+        if len(user_input.split()) > 15:
+            return True
+
+        # Check if this is a follow-up question that needs context
+        if conversation_history and len(conversation_history) >= 2:
+            return True
+
+        # Default to simple rule-based responses
+        return False
+
+    def generate_ai_response(self, user_input, context=""):
+        """Generate a response using AI."""
+        try:
+            response = self.openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant chatbot. Respond concisely."},
+                    {"role": "user", "content": f"Context: {context}\n\nUser message: {user_input}"}
+                ],
+                max_tokens=100,
+                temperature=0.7
+            )
+            return response.choices[0].message["content"].strip()
+        except Exception:
+            return "I'm having trouble connecting to my thinking system. Let's keep our conversation simple for now."
+```
+
+### Advanced Chatbot Implementation with All Features
+
+Here's how to put all these components together:
+
+```python
+class AdvancedAIChatbot:
+    """
+    Sophisticated chatbot that combines rule-based responses with selective AI usage.
+    Includes contextual memory, sentiment analysis, and adaptive response generation.
+    """
+
+    def __init__(self, name="AI-PyBot", openai_api_key=None):
+        self.name = name
+        self.user_name = None
+        self.context_memory = ContextualMemory()
+
+        # Initialize response templates
+        self.response_templates = {
+            "greeting": ["Hello!", "Hi there!", "Hey! How can I help?"],
+            "greeting_responses": ["Hello!", "Hi there!", "Hey! How can I help?"],
+            "farewell": ["bye", "goodbye", "see you", "exit", "quit"],
+            "farewell_responses": ["Goodbye!", "See you later!", "Until next time!"],
+            "thanks": ["thanks", "thank you", "appreciate"],
+            "thanks_responses": ["You're welcome!", "Happy to help!", "No problem!"],
+            "name": ["your name", "who are you", "what are you called"],
+            "name_responses": [f"I'm {name}, your assistant.", f"My name is {name}.", f"You can call me {name}."]
+        }
+
+        # Initialize selective AI usage manager
+        if openai_api_key:
+            self.ai_manager = SelectiveAIManager(openai_api_key)
+            self.hybrid_response = HybridResponseSystem(openai_api_key, self.response_templates, name)
+            self.ai_available = True
+        else:
+            self.ai_available = False
+
+        # Initialize sentiment tracker
+        self.sentiment_tracker = {
+            "positive": 0,
+            "negative": 0,
+            "questions": 0,
+            "total_interactions": 0
+        }
+
+    def process_message(self, user_input):
+        """Process user message and generate appropriate response."""
+        # Update interaction counter
+        self.sentiment_tracker["total_interactions"] += 1
+
+        # Extract user name if first interaction
+        if not self.user_name and "my name is" in user_input.lower():
+            name_match = re.search(r"my name is (\w+)", user_input, re.IGNORECASE)
+            if name_match:
+                self.user_name = name_match.group(1)
+                self.context_memory.extract_fact("user_name", self.user_name)
+                return f"Nice to meet you, {self.user_name}! How can I help you today?"
+
+        # Update question counter
+        if "?" in user_input:
+            self.sentiment_tracker["questions"] += 1
+
+        # Basic sentiment analysis
+        positive_words = ["good", "great", "awesome", "excellent", "happy", "like", "love"]
+        negative_words = ["bad", "terrible", "awful", "unhappy", "hate", "dislike", "worst"]
+
+        for word in positive_words:
+            if word in user_input.lower():
+                self.sentiment_tracker["positive"] += 1
+                break
+
+        for word in negative_words:
+            if word in user_input.lower():
+                self.sentiment_tracker["negative"] += 1
+                break
+
+        # Choose response strategy
+        if self.ai_available and self.ai_manager.should_use_ai(user_input, self.context_memory.conversation_history):
+            # Use hybrid response system for complex queries
+            response = self.hybrid_response.get_response(user_input)
+        else:
+            # Use rule-based response for simple queries
+            response = self._get_rule_based_response(user_input)
+
+        # Update conversation memory
+        self.context_memory.add_exchange(user_input, response)
+        return response
+
+    def _get_rule_based_response(self, user_input):
+        """Generate a rule-based response."""
+        user_input = user_input.lower()
+
+        # Check each response category
+        for intent, patterns in self.response_templates.items():
+            if intent.endswith("_responses"):
+                continue  # Skip response arrays
+
+            for pattern in patterns:
+                if pattern in user_input:
+                    responses = self.response_templates.get(f"{intent}_responses", ["I understand."])
+                    response = random.choice(responses)
+
+                    # Personalize if user name is known
+                    if self.user_name and intent == "greeting":
+                        response = response.replace("!", f", {self.user_name}!")
+
+                    return response
+
+        # Default responses
+        default_responses = [
+            "I'm not sure I understand. Could you rephrase that?",
+            "I'm still learning. Can you tell me more?",
+            "Interesting. Could you elaborate on that?",
+            "I'm not quite sure how to respond to that."
+        ]
+        return random.choice(default_responses)
+
+    def get_conversation_stats(self):
+        """Get statistics about the conversation."""
+        total = self.sentiment_tracker["total_interactions"]
+        if total == 0:
+            return "We haven't had much of a conversation yet."
+
+        stats = {
+            "total_messages": total,
+            "question_percentage": (self.sentiment_tracker["questions"] / total) * 100 if total > 0 else 0,
+            "positive_sentiment": (self.sentiment_tracker["positive"] / total) * 100 if total > 0 else 0,
+            "negative_sentiment": (self.sentiment_tracker["negative"] / total) * 100 if total > 0 else 0,
+        }
+
+        return f"""Conversation Statistics:
+- Total messages: {stats['total_messages']}
+- Questions asked: {self.sentiment_tracker['questions']} ({stats['question_percentage']:.1f}%)
+- Positive sentiment: {stats['positive_sentiment']:.1f}%
+- Negative sentiment: {stats['negative_sentiment']:.1f}%
+"""
+```
+
+### Using the Advanced AI Chatbot
+
+Here's how to use the advanced chatbot:
+
+```python
+# Initialize the chatbot with an optional OpenAI API key
+import os
+from dotenv import load_dotenv
+
+# Load API key from environment variables
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+# Create the chatbot
+bot = AdvancedAIChatbot(name="PyAssistant", openai_api_key=openai_api_key)
+
+# Example conversation loop
+print(f"{bot.name}: Hello! I'm {bot.name}. What's your name?")
+
+while True:
+    user_input = input("You: ")
+
+    if user_input.lower() in ["exit", "quit", "bye", "goodbye"]:
+        print(f"{bot.name}: Goodbye! It was nice chatting with you.")
+        break
+
+    if user_input.lower() == "stats":
+        print(bot.get_conversation_stats())
+        continue
+
+    response = bot.process_message(user_input)
+    print(f"{bot.name}: {response}")
+```
+
+## 10. When AI Isn't the Answer: recognising the Limits
+
+While AI assistants can be incredibly powerful, they're not always the best solution. Here are situations where you should rely on your own programming skills:
+
+### Security-Critical Code
+
+For authentication, encryption, and access control, avoid direct use of AI-generated code without thorough review. Security vulnerabilities can be subtle and devastating. Instead:
+
+- Understand security principles first
+- Use well-established libraries and patterns
+- Have security experts review critical code
+- Test extensively with security-focused tools
+
+### Novel Solutions and Research
+
+AI assistants excel at known patterns but struggle with truly novel approaches. For cutting-edge research or highly specialized problems:
+
+- Use AI to help understand background material
+- Develop your own innovative solutions
+- Use AI to validate against known approaches
+- Combine human creativity with AI assistance
+
+### Business Logic and Domain Knowledge
+
+In domains with specialized expertise, AI may miss crucial nuances:
+
+- Financial calculations with regulatory requirements
+- Medical data processing with privacy concerns
+- Industry-specific rules and constraints
+- Custom business processes
+
+In these cases, use AI as a coding assistant while you provide the domain expertise.
+
+### When Learning Fundamentals
+
+When first learning programming concepts:
+
+```python
+# Try to understand how this works before asking AI
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+```
+
+First work to understand the concept, then use AI to deepen your understanding or clarify confusion.
+
+## Cross-References
+
+- Previous Chapter: [Python AI Integration](python_ai_integration.qmd)
+- Next Chapter: [Intentional Prompting](intentional_prompting.qmd)
+- Related Topics: AI Programming Assistants (Chapter 24), Debugging (Chapter 17), Getting Help (Chapter 23)
+
+***AI Tip: To speed up your Python learning, create flashcards with common programming patterns. When faced with a problem, try to recall relevant patterns before asking AI for help. This builds your mental library while still allowing AI to fill gaps.***
+
+## Summary
+
+Effective use of AI programming assistants requires more than just asking for code. By mastering prompt engineering, developing critical evaluation skills, and building a balanced workflow that combines AI efficiency with human expertise, you can maximise the value of these tools in your Python journey.
+
+Key takeaways from this chapter include:
+
+- Craft detailed, specific prompts that provide context and constraints
+- Use AI for debugging by clearly describing the problem and expected behaviour
+- Develop learning strategies that build your skills alongside AI usage
+- customise AI-generated code to match your style and project requirements
+- Evaluate AI code for correctness, efficiency, security, and maintainability
+- Know when to rely on AI and when to depend on your own programming abilities
+
+AI programming assistants are most valuable when viewed as collaborators rather than replacements. By providing clear guidance, critically evaluating suggestions, and building upon AI-generated foundations, you can create Python solutions that combine the best of human and machine capabilities.
+
+As you continue developing your chatbot and other Python projects, remember that the goal is not to delegate all programming to AI, but to leverage AI as a tool that amplifies your own growing expertise.
