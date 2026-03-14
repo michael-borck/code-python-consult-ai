@@ -150,3 +150,4 @@ CONVERSION_TODO.md
 
 **/*.quarto_ipynb
 llm.txt
+rag-documents/
