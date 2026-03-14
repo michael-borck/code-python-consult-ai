@@ -4,6 +4,7 @@ project:
 
 book:
   title: "Code Python, Consult AI: Python Fundamentals for the AI Era"
+  favicon: favicon.svg
   author: "Michael Borck"
   license: "CC BY-SA 4.0 (content), MIT (code examples)"
   chapters:
@@ -46,7 +47,6 @@ book:
   repo-actions: [edit, issue]
 
 website:
-  favicon: favicon.svg
   repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
   open-graph: true
