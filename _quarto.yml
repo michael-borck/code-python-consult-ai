@@ -46,7 +46,7 @@ book:
   repo-actions: [edit, issue]
 
 website:
-  favicon: assets/python-logo.png
+  favicon: favicon.svg
   repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
   open-graph: true
