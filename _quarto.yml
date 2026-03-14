@@ -59,6 +59,7 @@ format:
       light: cosmo
       dark: darkly
     cover-image: images/cover.png
+    include-after-body: chatbot.html
     code-copy: true
     code-tools: true
     highlight-style: github
