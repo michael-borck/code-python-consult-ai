@@ -151,3 +151,6 @@ CONVERSION_TODO.md
 **/*.quarto_ipynb
 llm.txt
 rag-documents/
+
+# AnythingLLM workspace config
+.anythingllm.yml
