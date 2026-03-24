@@ -1,71 +1,62 @@
----
-title: "Code Python, Consult AI: Python Fundamentals for the AI Era"
----
+# Preface {.unnumbered}
 
-# The AI-Era Advantage {.unnumbered}
+## Why This Book Exists
 
-Welcome to "Code Python, Consult AI: Python Fundamentals for the AI Era" - a
-comprehensive introduction to Python programming with a modern twist. This
-guide was created specifically for beginners who want to learn just enough
-Python to work effectively in today's AI-assisted programming environment.
+AI can write code. But it does not always write the right code. And if you cannot tell the difference, you have a problem.
 
-"Leverage AI assistants to debug code, explain concepts, and enhance your
-learning, mirroring real-world software development practices."
+This book teaches you enough Python to lead the AI, not follow it. It is not about becoming a full-time software engineer. It is about becoming AI-literate: understanding enough about how code works that you can spot errors, tweak outputs, give better prompts, and take control of your projects instead of relying on guesswork.
 
-This guide recognises that the landscape of programming is changing fast. While
-fundamentals remain essential, the ability to collaborate with AI—using it as a
-learning aid, coding partner, and productivity booster—is a crucial new skill.
+The fundamentals of programming have not changed because AI arrived. If anything, they matter more. The developers who get the most from AI tools are the ones who understand what the tools are producing. This book gives you that understanding.
 
-"Code Python, Consult AI: Python Fundamentals for the AI Era" is your gateway to
-Python programming, tailored for beginners who want to quickly become effective
-in a world where AI is part of everyday coding. You'll master the basics, learn
-to work with AI tools, and gain practical skills that are relevant right now
+## Who This Book Is For
 
-## Why Learn Python Today? {.unnumbered}
+- Beginners who want a focused introduction to Python fundamentals
+- Professionals who need to understand code well enough to work with AI tools effectively
+- Students preparing for courses or careers where Python and AI are standard tools
+- Anyone who tried *Think Python, Direct AI* and is ready for more depth on the language itself
 
-Because knowing the fundamentals of coding makes you 10x faster and smarter with AI tools tomorrow.
+You do not need prior programming experience, but some familiarity with programming concepts will help. If you are a complete beginner who has never thought about programming at all, start with *Think Python, Direct AI* — it builds the mental models this book assumes.
 
-AI can write code, but it doesn't always write the right code. If you blindly copy-paste, you'll spend more time debugging than building.
+## What This Book Is Not
 
-But if you understand Python — even just the basics — you can:
+This is not a computational thinking book. It does not spend time on problem decomposition or algorithmic reasoning — that is what *Think Python, Direct AI* covers. This book assumes you can think about a problem and focuses on giving you the Python to express the solution.
 
-- **Spot errors instantly** instead of wasting time guessing
-- **Tweak AI code** to make it work for your needs
-- **Give better prompts** so AI helps you, not hinders you
-- **Take control of your projects** instead of relying on guesswork
-- **Speak the language of AI** — Python is the default language of AI, and when you ask AI tools to write code, they'll typically respond in Python first
+It is not a professional development practices book. It does not cover project structure, testing frameworks, dependency management, or deployment. That is what *Ship Python, Orchestrate AI* covers. This book focuses on the language.
 
-This isn't about becoming a full-time coder. It's about becoming AI-literate, so you can collaborate with AI instead of depending on it.
+It is not a reference manual. It covers the fundamentals you need to be productive, not every feature Python offers. When you need more, the official documentation and your AI assistant will fill the gaps — and you will be equipped to evaluate what they give you.
 
-**Learn enough Python to lead the AI, not follow it.**
+And it is not a book that treats AI as optional or dangerous. AI is woven throughout as a learning partner. The book teaches you to use AI to explore concepts, debug your code, and deepen your understanding — while always knowing enough to judge the output.
 
-## What's Inside {.unnumbered}
+## If You Are Feeling Uncertain
 
-This interactive guide covers everything from basic Python syntax to more advanced topics like object-oriented programming. It has been updated to include:
+You are not behind. The landscape is shifting fast, and the feeling that everyone else already knows Python is nearly universal and rarely true. You do not need to master everything. You need to learn enough to be dangerous — in the good sense. Enough to read code, modify it, and know when AI is helping versus hallucinating. This book gets you there.
 
-- Traditional Python programming fundamentals
-- Modern AI-assisted programming techniques
-- Tips for using AI coding assistants effectively
-- Examples of Python integration with AI services
+## How This Book Is Structured
 
-## Related Resources {.unnumbered}
+The book covers Python fundamentals in a logical progression:
 
-This guide is part of a 5-book series designed to help you master modern software development in the AI era:
+1. **Core Fundamentals** — values, variables, input, output, operators
+2. **Functions and Control Flow** — structuring your code, making decisions, loops
+3. **Data Structures** — lists, dictionaries, working with collections
+4. **Working with Files** — reading, writing, persistence
+5. **Code Quality** — debugging, testing, organising code
+6. **Python in the AI Era** — using AI assistants effectively, integrating AI into your work
 
-### Foundational Methodology
-- **Converse Python, Partner AI: The Python Edition** - A methodology for effective AI collaboration (human oversight + methodology + LLM = success)
+Each chapter builds on the previous one, with interactive examples you can run directly.
 
-### Python Track
-1. **Think Python, Direct AI: Computational Thinking for Beginners** - An innovative programming textbook that embraces AI as a learning partner. Perfect for absolute beginners in the age of AI.
-2. **Code Python, Consult AI: Python Fundamentals for the AI Era** (this book) - Learn fundamental Python with AI integration - ideal for those who want a focused introduction to Python fundamentals
-3. **Ship Python, Orchestrate AI: Professional Python in the AI Era** - Build professional-grade Python applications with modern tools (uv, ruff, mypy, pytest - simple but not simplistic)
+## The Series
 
-### Web Track
-- **Build Web, Guide AI: Business Web Development with AI** - A practical guide to modern web development with AI as your development partner.
+This book is the second in a Python learning path:
 
-**Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship Python, Orchestrate AI." For web development, see "Build Web, Guide AI." The methodology from "Converse Python, Partner AI" enhances all your development work.
+1. **Think Python, Direct AI** — computational thinking for absolute beginners
+2. **Code Python, Consult AI** (this book) — focused Python fundamentals
+3. **Ship Python, Orchestrate AI** — professional Python development practices and tooling
 
-## Ways to Engage with This Book {.unnumbered}
+Start with *Think Python, Direct AI* if you are a complete beginner. Start here if you have some programming exposure and want to learn Python specifically. Move to *Ship Python, Orchestrate AI* when you are ready for professional workflows.
+
+The methodology behind all three comes from *Conversation, Not Delegation: How to Think With AI, Not Just Use It*. All titles are available at [books.borck.education](https://books.borck.education).
+
+## Ways to Engage with This Book
 
 This book is available in several formats. Pick whichever fits how you work and learn.
 
@@ -78,39 +69,12 @@ This book is available in several formats. Pick whichever fits how you work and 
 
 The online version is always the most current.
 
-## Source Code & Feedback {.unnumbered}
+## Source Code & Feedback
 
-**Source Code**
 All code examples and supplementary materials are available at:
 https://github.com/michael-borck/code-python-consult-ai
 
-**Feedback and Errata**
-Found an error? Have a suggestion? We welcome your feedback:
+Found an error? Have a suggestion?
 
 - Open an issue: https://github.com/michael-borck/code-python-consult-ai/issues
 - Email: michael@borck.me
-
-Your input helps improve this book for future readers.
-
-## How to Use This Guide {.unnumbered}
-
-Each chapter builds upon the previous one, with interactive code examples you can run directly in your browser. You can follow along sequentially or jump to specific topics that interest you.
-
-The guide is organised into several sections:
-
-1. **Core Python Fundamentals**: Basic syntax and concepts
-2. **Functions and Control Flow**: How to structure your code
-3. **Data Structures and Iteration**: Working with collections of data
-4. **Working with Files**: Input/output operations
-5. **Code Quality**: Debugging, testing, and organising code
-6. **Practical Python**: How to run, install, and get help with Python
-7. **Python in the AI Era**: Using AI assistants and integrating AI into your Python apps
-
-## License {.unnumbered}
-
-This book is released under a dual license:
-
-- **Book content** (text, explanations, documentation): [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
-- **Code examples**: [MIT License](https://opensource.org/licenses/MIT)
-
-This means you're free to use all the Python code examples in your own projects without restriction, while the educational content can be shared and adapted with proper attribution. See the full [LICENSE.md](LICENSE.md) for details.
