@@ -41,15 +41,21 @@ book:
     - chapters/chatbot_project.qmd
     - acknowledgments.qmd
     - about-author.qmd
-
-  downloads: [pdf, epub]
   repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
-
-website:
-  repo-url: https://github.com/michael-borck/code-python-consult-ai
-  repo-actions: [edit, issue]
-  open-graph: true
+  other-links:
+    - text: Download PDF
+      icon: file-pdf
+      href: code-python-consult-ai.pdf
+    - text: Download EPUB
+      icon: book
+      href: code-python-consult-ai.epub
+    - text: Download llm.txt
+      icon: robot
+      href: llm.txt
+    - text: DeepWiki
+      icon: search
+      href: https://deepwiki.com/michael-borck/code-python-consult-ai
 
 bibliography: references.bib
 
@@ -66,18 +72,6 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
-    downloads: [pdf, epub]
-  pdf:
-    documentclass: scrbook
-    toc: true
-    number-sections: true
-    toc-depth: 3
-    colorlinks: true
-    cover-image: images/cover.png
-  epub:
-    toc: true
-    toc-depth: 3
-    cover-image: images/cover.png
 
 execute:
   enabled: false

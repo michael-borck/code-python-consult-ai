@@ -64,7 +64,7 @@ This book is available in several formats. Pick whichever fits how you work and 
 - **Read it on paper or e-reader.** Available as a paperback and ebook through Amazon KDP.
 - **Converse with it.** The online edition includes a chatbot grounded in the book's content.
 - **Feed it to your own AI.** The `llm.txt` file provides a clean text version of the entire book, ready to paste into ChatGPT, Claude, or any AI tool.
-- **Run the code.** All code examples are available on GitHub.
+- **Run the code.** All code examples are available on [GitHub](https://github.com/michael-borck/code-python-consult-ai). [DeepWiki](https://deepwiki.com/michael-borck/code-python-consult-ai) provides an AI-navigable view of the repository.
 - **Browse all books.** This book is part of a series. See all titles at [books.borck.education](https://books.borck.education).
 
 The online version is always the most current.
