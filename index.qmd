@@ -65,6 +65,19 @@ This guide is part of a 5-book series designed to help you master modern softwar
 
 **Book Progression**: Start with "Think Python, Direct AI" if you're a complete beginner, or jump into "Code Python, Consult AI" if you want a more focused approach to Python fundamentals. Both books prepare you for the production-focused content in "Ship Python, Orchestrate AI." For web development, see "Build Web, Guide AI." The methodology from "Converse Python, Partner AI" enhances all your development work.
 
+## Ways to Engage with This Book {.unnumbered}
+
+This book is available in several formats. Pick whichever fits how you work and learn.
+
+- **Read it online.** The full book is freely available at the companion website, with dark mode, search, and navigation.
+- **Read it on paper or e-reader.** Available as a paperback and ebook through Amazon KDP.
+- **Converse with it.** The online edition includes a chatbot grounded in the book's content.
+- **Feed it to your own AI.** The `llm.txt` file provides a clean text version of the entire book, ready to paste into ChatGPT, Claude, or any AI tool.
+- **Run the code.** All code examples are available on GitHub.
+- **Browse all books.** This book is part of a series. See all titles at [books.borck.education](https://books.borck.education).
+
+The online version is always the most current.
+
 ## Source Code & Feedback {.unnumbered}
 
 **Source Code**
