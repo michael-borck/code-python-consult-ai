@@ -53,9 +53,15 @@ book:
     - text: Download llm.txt
       icon: robot
       href: llm.txt
+    - text: GitHub
+      icon: github
+      href: https://github.com/michael-borck/code-python-consult-ai
     - text: DeepWiki
       icon: search
       href: https://deepwiki.com/michael-borck/code-python-consult-ai
+    - text: All Books
+      icon: collection
+      href: https://books.borck.education
 
 bibliography: references.bib
 
