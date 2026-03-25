@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - tools/**
 
 book:
   title: "Code Python, Consult AI: Python Fundamentals for the AI Era"
