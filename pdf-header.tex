@@ -1,0 +1,55 @@
+% Prevent images from overflowing margins
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\makeatother
+
+% Prevent long URLs and text from overflowing margins
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-\do.\do:\do_\do\~}
+\sloppy
+
+% Allow code blocks to wrap lines instead of overflowing
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breaksymbol={},commandchars=\\\{\}}
+
+% Truncate long section titles in page headers
+\usepackage{truncate}
+\makeatletter
+\renewcommand{\sectionmark}[1]{\markright{\truncate{0.9\textwidth}{\thesection.\ #1}}}
+\renewcommand{\chaptermark}[1]{\markboth{\truncate{0.9\textwidth}{\chaptername\ \thechapter.\ #1}}{}}
+\makeatother
+
+% Modern ToC styling
+\usepackage{tocloft}
+\usepackage{xcolor}
+
+% Define a muted colour for page numbers and leaders
+\definecolor{tocgray}{gray}{0.45}
+
+% ToC title styling
+\renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries\sffamily}
+\renewcommand{\cftaftertoctitle}{\hfill\mbox{}\vskip 1em}
+
+% Part styling — bold, large, sans-serif
+\renewcommand{\cftpartfont}{\large\bfseries\sffamily}
+\renewcommand{\cftpartpagefont}{\large\bfseries\sffamily}
+\setlength{\cftbeforepartskip}{1.5em}
+
+% Chapter styling — clean sans-serif
+\renewcommand{\cftchapfont}{\normalsize\sffamily}
+\renewcommand{\cftchappagefont}{\normalsize\sffamily\color{tocgray}}
+\renewcommand{\cftchapleader}{\color{tocgray}\cftdotfill{\cftchapdotsep}}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\setlength{\cftbeforechapskip}{0.4em}
+\setlength{\cftchapindent}{0em}
+
+% Section styling (appendices etc.)
+\renewcommand{\cftsecfont}{\small\sffamily}
+\renewcommand{\cftsecpagefont}{\small\sffamily\color{tocgray}}
+\renewcommand{\cftsecleader}{\color{tocgray}\cftdotfill{\cftsecdotsep}}
+\setlength{\cftsecindent}{1.5em}
+\setlength{\cftbeforesecskip}{0.1em}
+
+% Remove bold from chapter numbers in ToC
+\renewcommand{\cftchappresnum}{}
+\renewcommand{\cftchapaftersnum}{\hspace{0.5em}}
