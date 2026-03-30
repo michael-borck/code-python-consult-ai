@@ -10,7 +10,10 @@
 
 % Allow code blocks to wrap lines instead of overflowing
 \usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breaksymbol={},commandchars=\\\{\}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breaksymbol={},breakanywhere=true,commandchars=\\\{\}}
+
+% Force line breaking in ALL verbatim/code environments
+\fvset{breaklines=true,breaksymbol={},breakanywhere=true}
 
 % Truncate long section titles in page headers
 \usepackage{truncate}
