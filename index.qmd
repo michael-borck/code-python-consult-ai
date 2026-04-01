@@ -12,7 +12,6 @@ The fundamentals of programming have not changed because AI arrived. If anything
 
 - Beginners who want a focused introduction to Python fundamentals
 - Professionals who need to understand code well enough to work with AI tools effectively
-- Students preparing for courses or careers where Python and AI are standard tools
 - Anyone who tried *Think Python, Direct AI* and is ready for more depth on the language itself
 
 You do not need prior programming experience, but some familiarity with programming concepts will help. If you are a complete beginner who has never thought about programming at all, start with *Think Python, Direct AI* — it builds the mental models this book assumes.
@@ -42,19 +41,34 @@ The book covers Python fundamentals in a logical progression:
 5. **Code Quality** — debugging, testing, organising code
 6. **Python in the AI Era** — using AI assistants effectively, integrating AI into your work
 
-Each chapter builds on the previous one, with interactive examples you can run directly.
+Each chapter builds on the previous one, with interactive examples you can run directly. A chatbot project evolves across the chapters, giving you a continuous thread to build on as your skills grow.
 
-## The Series
+## Conventions Used in This Book
 
-This book is the second in a Python learning path:
+Code examples appear with syntax highlighting:
 
-1. **Think Python, Direct AI** — computational thinking for absolute beginners
-2. **Code Python, Consult AI** (this book) — focused Python fundamentals
-3. **Ship Python, Orchestrate AI** — professional Python development practices and tooling
+```python
+name = input("What is your name? ")
+print(f"Hello, {name}!")
+```
 
-Start with *Think Python, Direct AI* if you are a complete beginner. Start here if you have some programming exposure and want to learn Python specifically. Move to *Ship Python, Orchestrate AI* when you are ready for professional workflows.
+AI prompts and non-code examples appear as grey monospace blocks:
 
-The methodology behind all three comes from *Conversation, Not Delegation: How to Think With AI, Not Just Use It*. All titles are available at [books.borck.education](https://books.borck.education).
+```text
+Ask your AI: "Explain the difference between
+a list and a dictionary in Python"
+```
+
+Throughout the chapters you will find:
+
+- **AI Tips** — practical advice for using AI with the concept being taught
+- **AI Collaboration Corner** — structured prompts showing how to ask AI for help
+- **Key Concepts** — important ideas highlighted for reference
+- **Project Corner** — where the chatbot project evolves with each new skill
+
+## How This Book Was Written
+
+This book was written through human-AI collaboration. The structure, pedagogy, and editorial decisions were made by the author. Claude (Anthropic) assisted with drafting and refining. Every chapter was reviewed for accuracy. The process demonstrates the book's core message: AI is most useful when you understand what you are asking it to do.
 
 ## Ways to Engage with This Book
 
@@ -64,12 +78,12 @@ This book is available in several formats. Pick whichever fits how you work and 
 - **Read it on paper or e-reader.** Available as a paperback and ebook through Amazon KDP.
 - **Converse with it.** The online edition includes a chatbot grounded in the book's content.
 - **Feed it to your own AI.** The `llm.txt` file provides a clean text version of the entire book, ready to paste into ChatGPT, Claude, or any AI tool.
-- **Run the code.** All code examples are available on [GitHub](https://github.com/michael-borck/code-python-consult-ai). [DeepWiki](https://deepwiki.com/michael-borck/code-python-consult-ai) provides an AI-navigable view of the repository.
+- **Run the code.** Project code is available as Python scripts and Jupyter notebooks on [GitHub](https://github.com/michael-borck/code-python-consult-ai). Notebooks include "Open in Colab" buttons for zero-install coding with Google Gemini. [DeepWiki](https://deepwiki.com/michael-borck/code-python-consult-ai) provides an AI-navigable view of the repository.
 - **Browse all books.** This book is part of a series. See all titles at [books.borck.education](https://books.borck.education).
 
 The online version is always the most current.
 
-## Source Code & Feedback
+### Source Code & Feedback
 
 All code examples and supplementary materials are available at:
 https://github.com/michael-borck/code-python-consult-ai
@@ -78,3 +92,37 @@ Found an error? Have a suggestion?
 
 - Open an issue: https://github.com/michael-borck/code-python-consult-ai/issues
 - Email: michael@borck.me
+
+## The Series
+
+This book is part of a series designed to help you master modern software development in the AI era.
+
+```{mermaid}
+%%| fig-width: 4
+flowchart TD
+    CND["Conversation,<br/>Not Delegation"]
+    CPPA["Converse Python,<br/>Partner AI"]
+    Think["Think Python,<br/>Direct AI"]
+    Code["Code Python,<br/>Consult AI"]
+    Ship["Ship Python,<br/>Orchestrate AI"]
+    Web["Build Web,<br/>Guide AI"]
+    CND --> CPPA
+    CND --> Web
+    CPPA --> Think
+    Think --> Code
+    Code --> Ship
+```
+
+**Conversation, Not Delegation** — the general methodology for working with AI across any discipline.
+
+**Converse Python, Partner AI** — intentional prompting methodology applied to software development.
+
+**Think Python, Direct AI** — computational thinking for absolute beginners.
+
+**Code Python, Consult AI** (this book) — focused Python fundamentals with AI integration.
+
+**Ship Python, Orchestrate AI** — professional Python development practices and tooling.
+
+**Build Web, Guide AI** — web development with AI as your development partner.
+
+All titles are available at [books.borck.education](https://books.borck.education).

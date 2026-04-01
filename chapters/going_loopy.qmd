@@ -339,7 +339,7 @@ for i in range(1, 6):
 ```
 
 This produces:
-```
+```text
 1×1=1   1×2=2   1×3=3   1×4=4   1×5=5
 2×1=2   2×2=4   2×3=6   2×4=8   2×5=10
 3×1=3   3×2=6   3×3=9   3×4=12  3×5=15
@@ -1005,7 +1005,7 @@ When working with AI coding assistants on loop-based problems, specific prompt s
 
 ### Before: Vague Prompting
 
-```
+```text
 Write me a Python loop.
 ```
 
@@ -1020,7 +1020,7 @@ This response is technically correct but extremely basic. Without specifics, the
 
 ### After: Detailed, Goal-Oriented Prompting
 
-```
+```text
 I need a Python function that processes a list of temperature readings (in Celsius).
 The function should:
 1. Filter out invalid readings (below -273.15°C or above 100°C)
@@ -1139,7 +1139,7 @@ When working with AI assistants on loops, use these strategies:
 
 ### Effective Prompt Template for Loop Problems
 
-```
+```text
 I need to implement a [purpose] loop in Python that [main goal].
 
 Input data: [describe the data structure]
@@ -1428,7 +1428,7 @@ In the next chapter, we'll explore how to manipulate strings—text data that yo
 1. **Loop Basics**: Write a function that prints all even numbers between 1 and 20.
 
 2. **Nested Loops**: Create a function that prints a pattern of stars like this:
-   ```
+   ```text
    *
    **
    ***

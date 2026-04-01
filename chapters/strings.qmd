@@ -1153,7 +1153,7 @@ When working with AI coding assistants on string manipulation tasks, the quality
 
 ### Before: Vague Prompting
 
-```
+```text
 I need to work with strings in Python. Can you help me?
 ```
 
@@ -1196,7 +1196,7 @@ This response provides basic string operations, but it's generic and might not a
 
 ### After: Detailed, Problem-Specific Prompting
 
-```
+```text
 I'm building a text processing function for my chatbot that needs to extract structured information from user messages like:
 "remind me to call John at 3pm tomorrow"
 "set meeting with Sarah on Tuesday at 10am"
@@ -1372,7 +1372,7 @@ When asking an AI assistant for help with string manipulation tasks, consider th
 
 ### Effective Prompt Template for String Manipulation
 
-```
+```text
 I need to [describe task] with Python strings.
 
 Input examples:

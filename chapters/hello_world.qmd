@@ -16,6 +16,10 @@ By the end of this chapter, you will be able to:
 - recognise basic programming elements like functions and strings
 - Preview the chatbot project you'll build throughout this book
 
+::: {.callout-tip title="Code available online" icon=true}
+Code examples and Jupyter notebooks for all chapters are available in the `code/` folder on GitHub. Notebooks include "Open in Colab" buttons for zero-install coding. See [books.borck.education](https://books.borck.education) for links.
+:::
+
 ## 1. Introduction: The Magic of First Code
 
 Welcome to your first step in the world of Python programming! The "Hello, World!" program is a time-honored tradition in computer science, dating back to Brian Kernigham's book on the C programming language in 1978. It's a simple yet powerful way to take your first steps into coding.
@@ -39,7 +43,7 @@ print('Hello, world!')
 ```
 
 When you run this cell (by pressing Shift+Enter), you'll see:
-```
+```text
 Hello, world!
 ```
 
@@ -54,12 +58,12 @@ The beauty of Jupyter Notebooks is that you can experiment with code, see the re
 ***AI Collaboration Corner: Jupyter Notebook Help***
 
 When learning Jupyter Notebooks, instead of a generic prompt like:
-```
+```text
 Tell me about Jupyter Notebooks
 ```
 
 Try a specific, action-oriented prompt:
-```
+```text
 I'm new to Jupyter Notebooks. Can you provide:
 1. The 5 most useful keyboard shortcuts
 2. How to switch between code and markdown cells
@@ -99,7 +103,7 @@ Python can also act as a powerful calculator:
 ```
 
 When you run this in a Jupyter Notebook, you'll see:
-```
+```text
 4
 ```
 
@@ -119,7 +123,7 @@ print("As you learn more Python, I'll become smarter too!")
 ```
 
 When you run this code, you'll see:
-```
+```text
 Hello, I'm PyBot!
 I'm your Python-powered digital assistant.
 As you learn more Python, I'll become smarter too!
@@ -258,7 +262,7 @@ Now it's your turn to experiment with Python's `print()` function:
 
 When asking an AI assistant to help you extend your "Hello, World!" program, try a prompt like:
 
-```
+```text
 I've written my first Python program:
 
 print("Hello, world!")

@@ -488,7 +488,7 @@ azure_api_key = os.environ.get("AZURE_API_KEY")
 ```
 
 You would create a `.env` file with your keys:
-```
+```text
 OPENAI_API_KEY=sk-your-key-here
 AZURE_API_KEY=your-azure-key-here
 ```

@@ -20,6 +20,10 @@ By the end of this chapter, you will be able to:
 - Structure your chatbot project using custom functions
 - Debug and refine your functions
 
+::: {.callout-tip title="Code available online" icon=true}
+Code examples and notebooks for all chapters are available on GitHub with "Open in Colab" buttons. See [books.borck.education](https://books.borck.education).
+:::
+
 ## 1. Introduction: Function Creation as a Superpower
 
 In the previous chapter, we learned how to use built-in and library functions. Now, we'll unlock one of Python's most powerful features: the ability to create your own custom functions. This is where programming truly becomes creative – you're no longer limited to what others have built; you can craft tools perfectly tailored to your specific needs.
@@ -741,7 +745,7 @@ Let's explore how AI assistants can help you create better functions in your Pyt
 
 ### Before: Vague Prompting
 
-```
+```text
 Help me create a function in Python.
 ```
 
@@ -762,7 +766,7 @@ This response provides basic information but doesn't address specific function d
 
 ### After: Detailed, Specific Prompting
 
-```
+```text
 I'm building a chatbot that needs to process user input and determine sentiment
 (positive/negative/neutral). I want to create a well-designed function that:
 
@@ -907,7 +911,7 @@ When working with an AI assistant on function design:
 
 For example:
 
-```
+```text
 I need to create a function that validates user registration data with these requirements:
 1. It should check username (letters/numbers only, 3-15 chars), email (must have @ and .),
    and password (8+ chars with at least one number)

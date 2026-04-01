@@ -837,7 +837,7 @@ Let's explore how AI assistants can help you design better conditional logic in 
 
 ### Before: Vague Prompting
 
-```
+```text
 Help me with Python if statements.
 ```
 
@@ -859,7 +859,7 @@ This response provides basic information but doesn't address specific design cha
 
 ### After: Detailed, Specific Prompting
 
-```
+```text
 I'm building a user registration system in Python that needs to validate form
 submissions. I need to create conditional logic that:
 
@@ -1008,7 +1008,7 @@ When working with an AI assistant on conditional logic:
 
 For example:
 
-```
+```text
 I'm writing a discount calculator for an e-commerce site. The rules are:
 - 10% off orders over $100
 - 15% off orders over $200
@@ -1026,7 +1026,7 @@ This specific prompt will yield practical approaches to a real-world conditional
 
 Conditional logic can be tricky to get right. Here's how to use AI effectively when debugging:
 
-```
+```text
 My Python code isn't working as expected. I have this function to determine
 if a user qualifies for free shipping:
 
@@ -1090,7 +1090,7 @@ def qualifies_for_free_shipping(cart_total, is_member, item_count):
 
 For more complex conditional structures, AI can help design decision trees:
 
-```
+```text
 I need to create a loan approval system with these conditions:
 - Credit score must be 650+ for any loan
 - For loans under $10,000: require 1+ year employment

@@ -68,12 +68,12 @@ total += subtotal * tax_rate
 When asking AI to help with code documentation, be specific about your documentation needs:
 
 Instead of:
-```
+```text
 Add comments to my code
 ```
 
 Try:
-```
+```text
 Please add meaningful comments to this code that explain:
 1. The purpose of each function
 2. Any non-obvious logic
@@ -416,12 +416,12 @@ Apply your syntax knowledge with these exercises:
 When asking AI for help with syntax errors, include the error message and surrounding context:
 
 Instead of:
-```
+```text
 My Python code has an error
 ```
 
 Try:
-```
+```text
 I'm getting this syntax error in my Python code:
 
   File "chatbot.py", line 15

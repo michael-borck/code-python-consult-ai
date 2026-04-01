@@ -257,7 +257,7 @@ This will display information about:
 
 Function documentation typically follows this pattern:
 
-```
+```text
 Help on built-in function len in module builtins:
 
 len(obj, /)
@@ -589,7 +589,7 @@ In the age of AI programming assistants, functions play a crucial role in how we
 
 When you need to understand a Python function, specific questions yield better results:
 
-```
+```text
 "What parameters does the sorted() function accept?"
 "Show me examples of using the min() function with different argument types."
 "What's the difference between print() and return in Python?"
@@ -599,7 +599,7 @@ When you need to understand a Python function, specific questions yield better r
 
 AI assistants can suggest appropriate functions for specific tasks:
 
-```
+```text
 "What Python function can I use to find the position of a substring?"
 "Is there a built-in function to calculate the average of a list of numbers?"
 "What's the best function to use for reading a text file in Python?"
@@ -609,7 +609,7 @@ AI assistants can suggest appropriate functions for specific tasks:
 
 When you already have code using functions, ask for improvements:
 
-```
+```text
 "Is there a more efficient way to write this function call?"
 "How can I make this code more readable while keeping the same functionality?"
 "What error handling should I add to this function call?"

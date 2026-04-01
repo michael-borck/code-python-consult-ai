@@ -44,7 +44,7 @@ print("Hello, world!"
 ```
 
 The Python interpreter would respond with something like:
-```
+```text
   File "<stdin>", line 1
     print("Hello, world!"
                         ^
@@ -65,7 +65,7 @@ result = x / y  # ZeroDivisionError
 ```
 
 When you run this, Python raises an exception:
-```
+```text
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ZeroDivisionError: division by zero

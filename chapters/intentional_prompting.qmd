@@ -53,12 +53,12 @@ Intentional prompting means deliberately crafting your requests to AI assistants
 Let's look at the contrast between basic and intentional prompts:
 
 **Basic Prompt:**
-```
+```text
 Write a function to sort a list.
 ```
 
 **Intentional Prompt:**
-```
+```text
 Write a Python function to sort a list of dictionaries by a specific key called 'timestamp',
 with the most recent timestamps first. The function should handle missing keys gracefully by
 placing items without the key at the end. Include error handling for invalid inputs and
@@ -137,7 +137,7 @@ Specify how you want the response structured:
 
 ### Prompt Template for Python Tasks
 
-```
+```text
 I'm working on [brief context about your project/task].
 
 I need to [specific objective] that will [intended purpose].
@@ -163,7 +163,7 @@ Different programming tasks benefit from different prompting approaches. Here ar
 
 When you need to understand Python concepts:
 
-```
+```text
 Could you explain how [concept] works in Python?
 Please include:
 - A simple definition
@@ -174,7 +174,7 @@ Please include:
 ```
 
 Example:
-```
+```text
 Could you explain how Python decorators work?
 Please include:
 - A simple definition
@@ -188,7 +188,7 @@ Please include:
 
 When you need help implementing a specific feature:
 
-```
+```text
 I need to implement [feature] in Python that [does something].
 The inputs will be [describe inputs], and the expected output is [describe output].
 Some constraints are [list any constraints].
@@ -196,7 +196,7 @@ Please show the implementation with explanations for key parts.
 ```
 
 Example:
-```
+```text
 I need to implement a function in Python that calculates the moving average of a time series.
 The inputs will be a list of numeric values and a window size, and the expected output is a list of moving averages.
 Some constraints are that it should handle edge cases like insufficient data points gracefully.
@@ -207,12 +207,12 @@ Please show the implementation with explanations for key parts.
 
 When you need help fixing code issues:
 
-```
+```text
 I'm encountering an issue with my Python code:
 
 ```python
 [your code here]
-```
+```text
 
 The error I'm getting is:
 [error message]
@@ -228,7 +228,7 @@ Can you help identify and fix the issue?
 ```
 
 Example:
-```
+```text
 I'm encountering an issue with my Python code:
 
 ```python
@@ -241,7 +241,7 @@ def process_data(items):
 data = [1, 2, 3, None, 5]
 processed = process_data(data)
 print(processed)
-```
+```text
 
 The error I'm getting is:
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
@@ -260,12 +260,12 @@ Can you help identify and fix the issue?
 
 When you want to improve existing code:
 
-```
+```text
 Here's my current Python implementation:
 
 ```python
 [your code here]
-```
+```text
 
 It works correctly, but I'm looking to optimise it for [speed/memory/readability/etc.].
 Current performance: [metrics if available]
@@ -275,7 +275,7 @@ What changes would you recommend to improve this code while maintaining its func
 ```
 
 Example:
-```
+```text
 Here's my current Python implementation:
 
 ```python
@@ -286,7 +286,7 @@ def find_duplicates(numbers):
             if numbers[i] == numbers[j] and numbers[i] not in duplicates:
                 duplicates.append(numbers[i])
     return duplicates
-```
+```text
 
 It works correctly, but I'm looking to optimise it for speed.
 Current performance: O(n²) time complexity
@@ -299,7 +299,7 @@ What changes would you recommend to improve this code while maintaining its func
 
 When you want to understand different approaches:
 
-```
+```text
 I'm trying to [accomplish task] in Python.
 I know I could use [approach 1] or [approach 2].
 
@@ -314,7 +314,7 @@ And recommend which might be better for my specific situation?
 ```
 
 Example:
-```
+```text
 I'm trying to implement data validation in Python.
 I know I could use traditional if/else validation, dataclasses with type hints, or a dedicated validation library like Pydantic.
 
@@ -336,7 +336,7 @@ As you become more comfortable with basic intentional prompting, you can explore
 
 Guide the AI through a step-by-step reasoning process:
 
-```
+```text
 Let's think through [problem] step by step:
 1. First, what are the inputs and expected outputs?
 2. What are the key algorithmic steps needed?
@@ -351,7 +351,7 @@ This technique is particularly useful for complex problems where breaking down t
 
 Ask for multiple solutions and their trade-offs:
 
-```
+```text
 Could you provide three different ways to implement [feature] in Python?
 For each approach, please explain:
 - How it works
@@ -365,7 +365,7 @@ This helps you understand the solution space better and make informed decisions.
 
 Ask the AI to adopt a specific role or perspective:
 
-```
+```text
 As an experienced Python developer focused on [performance/security/readability/etc.],
 how would you approach [problem]? What considerations would be most important from this perspective?
 ```
@@ -376,7 +376,7 @@ This can yield insights that might not emerge from more general questions.
 
 Start with the structure and gradually fill in details:
 
-```
+```text
 First, let's outline the main components we need for [task]:
 1. What classes should we create?
 2. What will their relationships be?
@@ -391,7 +391,7 @@ This approach works well for larger, more structured programming tasks.
 
 Start with the tests to guide the implementation:
 
-```
+```text
 Before implementing [feature], let's create some tests that define what successful implementation would look like:
 
 ```python
@@ -401,7 +401,7 @@ def test_[feature]_basic_functionality():
 
 def test_[feature]_edge_cases():
     # What should happen with edge cases?
-```
+```text
 
 Now, can you implement code that would pass these tests?
 ```
@@ -428,7 +428,7 @@ Intentional prompting is rarely a one-and-done process. The most effective appro
 ### Example of an Iterative Prompting Session
 
 **Initial Prompt:**
-```
+```text
 I need a Python function to validate email addresses.
 ```
 
@@ -436,7 +436,7 @@ I need a Python function to validate email addresses.
 *[AI provides a simple regex-based email validator]*
 
 **Follow-up Prompt:**
-```
+```text
 Thanks, that's a good start. Can you modify it to also check for valid domains?
 Also, how well does this regex handle international email addresses?
 ```
@@ -445,7 +445,7 @@ Also, how well does this regex handle international email addresses?
 *[AI provides improved validation with domain checking and discusses internationalization issues]*
 
 **Second Follow-up:**
-```
+```text
 This is better, but I'm concerned about maintainability. Could you refactor this
 into a class that could be extended with additional validation rules? Also,
 could you add unit tests for key validation scenarios?
@@ -464,7 +464,7 @@ Different programming fundamentals often benefit from specific prompting approac
 
 Effective prompts for input-related questions:
 
-```
+```text
 I need to implement user input for [specific purpose].
 
 Key requirements:
@@ -476,7 +476,7 @@ Can you show me how to implement this with proper error handling and user feedba
 ```
 
 Example:
-```
+```text
 I need to implement user input for a registration form.
 
 Key requirements:
@@ -491,7 +491,7 @@ Can you show me how to implement this with proper error handling and user feedba
 
 Prompts for output-related questions:
 
-```
+```text
 I need to display [type of data] to users in a [format/style].
 
 Specific requirements:
@@ -503,7 +503,7 @@ Can you show me how to implement this output functionality in Python?
 ```
 
 Example:
-```
+```text
 I need to display tabular data to users in a console application.
 
 Specific requirements:
@@ -518,7 +518,7 @@ Can you show me how to implement this output functionality in Python?
 
 Prompts for data storage questions:
 
-```
+```text
 I need to store and manage [type of data] in my Python application.
 
 Requirements:
@@ -530,7 +530,7 @@ What would be the most appropriate data structure, and how would I implement it?
 ```
 
 Example:
-```
+```text
 I need to store and manage product inventory data in my Python application.
 
 Requirements:
@@ -545,7 +545,7 @@ What would be the most appropriate data structure, and how would I implement it?
 
 Prompts for calculation-related questions:
 
-```
+```text
 I need to implement calculations for [specific purpose].
 
 The calculation should:
@@ -558,7 +558,7 @@ What's the most effective way to implement this in Python?
 ```
 
 Example:
-```
+```text
 I need to implement calculations for a financial dashboard.
 
 The calculation should:
@@ -574,7 +574,7 @@ What's the most effective way to implement this in Python?
 
 Prompts for decision-making code:
 
-```
+```text
 I need to implement decision logic for [specific situation].
 
 The logic should:
@@ -587,7 +587,7 @@ What's the most effective approach for this decision structure?
 ```
 
 Example:
-```
+```text
 I need to implement decision logic for a customer pricing system.
 
 The logic should:
@@ -603,7 +603,7 @@ What's the most effective approach for this decision structure?
 
 Prompts for loop-related questions:
 
-```
+```text
 I need to implement iteration for [specific task].
 
 Requirements:
@@ -616,7 +616,7 @@ What's the most effective way to implement this in Python?
 ```
 
 Example:
-```
+```text
 I need to implement iteration for batch processing large CSV files.
 
 Requirements:
@@ -842,7 +842,7 @@ if __name__ == "__main__":
 
 Sample interactions:
 
-```
+```text
 You: Hi there!
 PyBot: Hello! It's great to meet you. How can I help with your Python questions today?
 
@@ -853,7 +853,7 @@ Here's a simple example:
 ```python
 numbers = [1, 2, 3, 4, 5]
 squares = [x**2 for x in numbers]  # Results in [1, 4, 9, 16, 25]
-```
+```text
 
 List comprehensions are more readable and often faster than traditional for loops. Just be careful not to make them too complex, or they can become difficult to understand.
 
@@ -864,7 +864,7 @@ Corrected version:
 ```python
 my_list = [1, 2, 3]
 print(my_list[2])  # Access the last element
-```
+```text
 
 The problem is that list indices in Python start at 0, so a list with 3 elements has indices 0, 1, and 2. When you tried to access index 3, you went beyond the list's bounds. Always remember that for a list of length n, the valid indices are 0 to n-1.
 ```

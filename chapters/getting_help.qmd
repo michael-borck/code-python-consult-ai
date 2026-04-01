@@ -337,7 +337,7 @@ Asking clear, complete questions increases your chances of getting helpful answe
 
 Example of a good question structure:
 
-```
+```text
 ## Problem Description
 I'm trying to read a CSV file and calculate the average of a specific column, but I'm getting a TypeError.
 
@@ -351,12 +351,12 @@ def calculate_average(filename, column_name):
 
 avg = calculate_average('sales.csv', 'amount')
 print(avg)
-```
+```text
 
 ## Error Message
 ```
 TypeError: 'str' object has no attribute 'mean'
-```
+```text
 
 ## What I've Tried
 - Checked the data types with `data.dtypes` and saw that 'amount' is an object type
@@ -396,7 +396,7 @@ To get the best results from AI assistants:
 
 ### Example AI Prompts for Python Help
 
-```
+```text
 Prompt: "I'm getting this error when trying to use a list comprehension:
 'TypeError: 'int' object is not iterable'. Here's my code:
 numbers = 100
@@ -404,13 +404,13 @@ result = [x for x in numbers if x % 2 == 0]
 What am I doing wrong?"
 ```
 
-```
+```text
 Prompt: "Can you help me understand Python decorators? I know they use the @ symbol,
 but I don't understand how they work or why they're useful. Could you explain the
 concept and show a simple example?"
 ```
 
-```
+```text
 Prompt: "I need to create a function that takes a list of strings and returns
 a dictionary with the count of each unique string. What's the most efficient
 way to do this in Python?"
@@ -609,7 +609,7 @@ When you need help with specific chatbot features, consult these resources:
 
 When you need community help with your chatbot, phrase your questions effectively:
 
-```
+```text
 ## Chatbot Response Issue
 
 I'm developing a rule-based chatbot in Python and having trouble with pattern matching.
@@ -629,7 +629,7 @@ def get_response(self, user_input):
 
     # Other patterns...
     return "I didn't understand that."
-```
+```text
 
 ## What I've Tried
 - Changing `==` to `in` but then it matches too broadly

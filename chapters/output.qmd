@@ -275,7 +275,7 @@ display_user_profile("Alice Johnson", 32, "alice@example.com", "New York, NY")
 ```
 
 This produces:
-```
+```text
 ============================================================
                        USER PROFILE
 ============================================================
@@ -349,7 +349,7 @@ help(print)
 ```
 
 This displays:
-```
+```text
 Help on built-in function print in module builtins:
 
 print(...)
@@ -415,7 +415,7 @@ print("-" * width + "\n")
 ```
 
 This produces a professional-looking interface:
-```
+```text
 ============================================================
                       PyBot v1.0
                 Your Python Learning Assistant
@@ -487,7 +487,7 @@ Available commands:
 ```
 
 Output:
-```
+```text
 PyBot> Hello! How can I help you today?
 [SYSTEM] Processing your request...
 PyBot [ERROR]> I couldn't understand that command.
@@ -596,7 +596,7 @@ Let's explore how AI assistants can help you design better output for your Pytho
 
 ### Before: Vague Prompting
 
-```
+```text
 Help me with Python print formatting.
 ```
 
@@ -607,7 +607,7 @@ This response is correct but generic, requiring more back-and-forth to get speci
 
 ### After: Detailed, Specific Prompting
 
-```
+```text
 I'm building a Python chatbot and need to design its output formatting. I want:
 1. Different visual styles for regular messages, errors, and system notifications
 2. A consistent visual identity (borders, spacing, etc.)
@@ -694,7 +694,7 @@ When working with an AI assistant on output formatting:
 
 For example:
 
-```
+```text
 I'm creating a data analysis report that will be viewed in the terminal.
 I need to display:
 1. A prominent title
@@ -961,7 +961,7 @@ Test your understanding of Python output concepts:
    d) It specifies the maximum length of output
 
 4. How would you print the following on three separate lines:
-   ```
+   ```text
    Line 1
    Line 2
    Line 3

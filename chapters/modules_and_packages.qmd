@@ -345,7 +345,7 @@ This pattern is useful for including test code or example usage in your modules.
 
 A package is a directory containing multiple module files and a special `__init__.py` file (which can be empty):
 
-```
+```text
 my_package/
     __init__.py
     module1.py
@@ -374,7 +374,7 @@ from my_package.subpackage.module3 import another_function
 
 As your projects grow more complex, a clear organisation becomes crucial. Here's a common structure for medium-sized Python projects:
 
-```
+```text
 project_name/
     README.md
     LICENSE
@@ -460,7 +460,7 @@ By following these practices, your code will be more maintainable, reusable, and
 
 Now that you understand modules and packages, let's apply this knowledge to our chatbot project. We'll organise the chatbot into a proper modular structure:
 
-```
+```text
 chatbot/
     __init__.py
     main.py

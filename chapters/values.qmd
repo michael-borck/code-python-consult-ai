@@ -191,12 +191,12 @@ bool("Hello") # True
 When asking AI for help with data types, specify what you're trying to accomplish:
 
 Instead of:
-```
+```text
 How do I convert data types in Python?
 ```
 
 Try:
-```
+```text
 I have user input from a form that looks like:
 user_age = "42"
 user_height = "5.9"
@@ -451,12 +451,12 @@ Practice working with different data types:
 When asking AI for help with type-related errors, provide the error message and context:
 
 Instead of:
-```
+```text
 Why isn't my calculation working?
 ```
 
 Try:
-```
+```text
 I'm trying to calculate a user's age from their birth year:
 
 birth_year = input("Enter your birth year: ")

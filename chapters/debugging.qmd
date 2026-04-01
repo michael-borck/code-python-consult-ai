@@ -318,7 +318,7 @@ def find_highest_scorer(student_scores):
 
 The output reveals our bug:
 
-```
+```text
 Scores received: {'Alice': -10, 'Bob': -5, 'Charlie': -20}
 Checking Alice with score -10
 Current highest: 0 by None

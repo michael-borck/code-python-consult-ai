@@ -260,7 +260,7 @@ print(not (x > 0 and y > 0))  # False
 
 Understanding truth tables helps predict logical operator outcomes:
 
-```
+```text
 AND Truth Table
 A       B       A and B
 True    True    True
@@ -701,7 +701,7 @@ Let's explore how AI assistants can help you use operators effectively in your P
 
 ### Before: Vague Prompting
 
-```
+```text
 Help me with Python operators.
 ```
 
@@ -712,7 +712,7 @@ This response provides a good summary but doesn't offer practical guidance on ho
 
 ### After: Detailed, Specific Prompting
 
-```
+```text
 I'm building a Python application that needs to:
 1. Filter items from a list based on multiple conditions
 2. Calculate totals with different mathematical operations
@@ -830,7 +830,7 @@ When working with an AI assistant on operator-related code:
 
 For example:
 
-```
+```text
 I need to filter a large dataset of user records based on multiple criteria:
 - Users who are active (status="active")
 - AND who are either premium members OR have been members for over 1 year

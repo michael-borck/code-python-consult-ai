@@ -217,12 +217,12 @@ Following this convention helps other programmers (and your future self) underst
 When asking AI for help with variable naming, be specific about your context:
 
 Instead of:
-```
+```text
 What should I name my variables?
 ```
 
 Try:
-```
+```text
 I'm building a shopping cart system with these pieces of data:
 - The items a user has selected to purchase
 - The total price of all items
@@ -508,12 +508,12 @@ Apply what you've learned with these exercises:
 When asking AI for help with variable problems, provide the context around the issue:
 
 Instead of:
-```
+```text
 My code isn't working with variables
 ```
 
 Try:
-```
+```text
 I'm getting this error when running my code:
 
 NameError: name 'user_response' is not defined

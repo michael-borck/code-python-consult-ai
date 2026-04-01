@@ -464,7 +464,7 @@ Let's explore how AI assistants can help you design better input systems for you
 
 ### Before: Vague Prompting
 
-```
+```text
 Help me with Python input.
 ```
 
@@ -475,7 +475,7 @@ This response is technically correct but provides only basic information without
 
 ### After: Detailed, Specific Prompting
 
-```
+```text
 I'm building a Python program that needs to collect and validate user input for:
 1. A username (letters only, 3-15 characters)
 2. An age (must be between 13-120)
@@ -615,7 +615,7 @@ When working with an AI assistant on input handling:
 
 For example:
 
-```
+```text
 I need to collect a valid email address from users in my Python application.
 Please show me code that:
 1. Provides a clear prompt

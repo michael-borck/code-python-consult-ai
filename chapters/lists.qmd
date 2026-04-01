@@ -869,7 +869,7 @@ When working with AI assistants on code involving lists, knowing how to articula
 
 ### Before: Vague Prompting
 
-```
+```text
 Help me make lists for my chatbot.
 ```
 
@@ -891,7 +891,7 @@ This response is correct but generic, requiring more back-and-forth to get speci
 
 ### After: Detailed, Specific Prompting
 
-```
+```text
 I'm building a Python chatbot and need to implement a response history system with the following features:
 1. Store each message with speaker name, content, and timestamp
 2. Implement a search function to find previous messages by keyword
@@ -1140,7 +1140,7 @@ When asking an AI assistant for help with lists, consider these guidelines:
 
 Here's an effective prompt template:
 
-```
+```text
 I'm building a [type of application] that needs to [specific functionality].
 I plan to use Python lists to store [description of data] with the following operations:
 1. [First operation/access pattern]

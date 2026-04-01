@@ -59,13 +59,13 @@ AI coding assistants understand programming languages better than they understan
 
 Consider this exchange:
 
-```
+```text
 Human: Make a program that tells the temperature.
 AI: Here's a program that displays the current CPU temperature:
 ```python
 import psutil
 print(f"Current CPU temperature: {psutil.sensors_temperatures()['coretemp'][0].current}°C")
-```
+```text
 
 H: No, I meant the weather temperature outside.
 AI: I see! Here's a program that checks the current weather temperature:
@@ -81,7 +81,7 @@ def get_weather(city="London"):
 
 city = input("Enter your city: ")
 print(f"Current temperature in {city}: {get_weather(city)}°C")
-```
+```text
 
 Without understanding basic programming concepts like functions, APIs, and data formats, you might not realize this code requires an API key, or that it's using Celsius by default, or that it has error-handling issues. Your ability to direct AI effectively—and assess its output critically—depends on your understanding of programming fundamentals.
 
@@ -146,7 +146,7 @@ for i in range(len(data)-1):
 ```
 
 Which one matches your intention?
-```
+```text
 
 In this interaction, the AI identified the bug and offered multiple solutions, but asked you to make the final decision based on your actual intent—something only you know.
 
@@ -215,14 +215,14 @@ The more you understand Python fundamentals, the more precisely you can direct A
 **Beginner prompt:**
 ```
 Write a program that saves data to a file.
-```
+```text
 
 **Knowledge-informed prompt:**
 ```
 Write a Python function that saves a dictionary to a JSON file with proper error handling.
 The function should take three parameters: the dictionary to save, the filename to save to,
 and an optional parameter to format the JSON with indentation for readability.
-```
+```text
 
 The second prompt, informed by knowledge of Python data structures, file handling, and function design, will yield a much more useful result.
 
@@ -245,7 +245,7 @@ def is_prime(n):
             return False
         i += 6
     return True
-```
+```text
 
 With fundamental knowledge, you can assess:
 - Is this implementation correct? (Yes, it's a standard optimisation)
@@ -282,11 +282,21 @@ def process_data(data, default_value=None, transform_func=None):
             if default_value is not None:
                 result[item.get('id', 'unknown')] = default_value
     return result
-```
+```text
 
 Fundamental knowledge lets you adapt code to handle missing data, add transformation capabilities, and implement error handling.
 
-## 6. Finding the Right Balance
+## 6. Why Not Just Vibe Code?
+
+There is a popular approach called "vibe coding" — prompting AI until something works, without worrying about understanding the code it produces. For quick scripts and throwaway prototypes, it can be genuinely useful.
+
+But vibe coding has a ceiling. When a vibe-coded program breaks, you cannot fix it — you can only paste the error back and hope. When requirements change, you start over. When the project grows beyond a single file, the AI gets stuck too, because it is guessing at the architecture just like you are.
+
+This book teaches you the fundamentals so that when you ask AI for help, you can describe the problem precisely — not "it doesn't work" but "the loop is iterating one too many times because the range should be exclusive." That precision gives the AI the context to actually help rather than guess.
+
+And to be clear: this book does not argue for avoiding AI. AI is your partner through every chapter — use it to explore concepts, test understanding, debug your code. The difference between this approach and vibe coding is not whether you use AI, but whether you are building understanding alongside the code.
+
+## 7. Finding the Right Balance
 
 One of the biggest challenges in AI-assisted programming is finding the right balance between leveraging AI's capabilities and developing your own skills. Here are some guidelines:
 
@@ -461,7 +471,7 @@ print(f"\"{random_quote}\"")
 print("=" * 60 + "\n")
 
 print("Welcome to your Python journey in the age of AI!")
-```
+```text
 
 ### Human Role: Evaluation and customisation
 
@@ -495,7 +505,7 @@ if category not in quote_categories:
     category = random.choice(list(quote_categories.keys()))
 
 random_quote = random.choice(quote_categories[category])
-```
+```text
 
 ### The Collaboration Result
 
