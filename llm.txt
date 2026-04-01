@@ -20,7 +20,6 @@ The fundamentals of programming have not changed because AI arrived. If anything
 
 - Beginners who want a focused introduction to Python fundamentals
 - Professionals who need to understand code well enough to work with AI tools effectively
-- Students preparing for courses or careers where Python and AI are standard tools
 - Anyone who tried Think Python, Direct AI and is ready for more depth on the language itself
 
 You do not need prior programming experience, but some familiarity with programming concepts will help. If you are a complete beginner who has never thought about programming at all, start with Think Python, Direct AI — it builds the mental models this book assumes.
@@ -50,19 +49,24 @@ The book covers Python fundamentals in a logical progression:
 5. Code Quality — debugging, testing, organising code
 6. Python in the AI Era — using AI assistants effectively, integrating AI into your work
 
-Each chapter builds on the previous one, with interactive examples you can run directly.
+Each chapter builds on the previous one, with interactive examples you can run directly. A chatbot project evolves across the chapters, giving you a continuous thread to build on as your skills grow.
 
-## The Series
+## Conventions Used in This Book
 
-This book is the second in a Python learning path:
+Code examples appear with syntax highlighting:
 
-1. Think Python, Direct AI — computational thinking for absolute beginners
-2. Code Python, Consult AI (this book) — focused Python fundamentals
-3. Ship Python, Orchestrate AI — professional Python development practices and tooling
+AI prompts and non-code examples appear as grey monospace blocks:
 
-Start with Think Python, Direct AI if you are a complete beginner. Start here if you have some programming exposure and want to learn Python specifically. Move to Ship Python, Orchestrate AI when you are ready for professional workflows.
+Throughout the chapters you will find:
 
-The methodology behind all three comes from Conversation, Not Delegation: How to Think With AI, Not Just Use It. All titles are available at books.borck.education.
+- AI Tips — practical advice for using AI with the concept being taught
+- AI Collaboration Corner — structured prompts showing how to ask AI for help
+- Key Concepts — important ideas highlighted for reference
+- Project Corner — where the chatbot project evolves with each new skill
+
+## How This Book Was Written
+
+This book was written through human-AI collaboration. The structure, pedagogy, and editorial decisions were made by the author. Claude (Anthropic) assisted with drafting and refining. Every chapter was reviewed for accuracy. The process demonstrates the book's core message: AI is most useful when you understand what you are asking it to do.
 
 ## Ways to Engage with This Book
 
@@ -72,12 +76,12 @@ This book is available in several formats. Pick whichever fits how you work and 
 - Read it on paper or e-reader. Available as a paperback and ebook through Amazon KDP.
 - Converse with it. The online edition includes a chatbot grounded in the book's content.
 - Feed it to your own AI. The `llm.txt` file provides a clean text version of the entire book, ready to paste into ChatGPT, Claude, or any AI tool.
-- Run the code. All code examples are available on GitHub. DeepWiki provides an AI-navigable view of the repository.
+- Run the code. Project code is available as Python scripts and Jupyter notebooks on GitHub. Notebooks include "Open in Colab" buttons for zero-install coding with Google Gemini. DeepWiki provides an AI-navigable view of the repository.
 - Browse all books. This book is part of a series. See all titles at books.borck.education.
 
 The online version is always the most current.
 
-## Source Code & Feedback
+### Source Code & Feedback
 
 All code examples and supplementary materials are available at:
 https://github.com/michael-borck/code-python-consult-ai
@@ -86,6 +90,24 @@ Found an error? Have a suggestion?
 
 - Open an issue: https://github.com/michael-borck/code-python-consult-ai/issues
 - Email: michael@borck.me
+
+## The Series
+
+This book is part of a series designed to help you master modern software development in the AI era.
+
+Conversation, Not Delegation — the general methodology for working with AI across any discipline.
+
+Converse Python, Partner AI — intentional prompting methodology applied to software development.
+
+Think Python, Direct AI — computational thinking for absolute beginners.
+
+Code Python, Consult AI (this book) — focused Python fundamentals with AI integration.
+
+Ship Python, Orchestrate AI — professional Python development practices and tooling.
+
+Build Web, Guide AI — web development with AI as your development partner.
+
+All titles are available at books.borck.education.
 
 ============================================================
 SOURCE: copyright.qmd
@@ -324,7 +346,7 @@ if category not in quote_categories:
     category = random.choice(list(quote_categories.keys()))
 
 random_quote = random.choice(quote_categories[category])
-```
+```text
 
 ### The Collaboration Result
 
@@ -442,6 +464,8 @@ By the end of this chapter, you will be able to:
 - Run your first Python code
 - recognise basic programming elements like functions and strings
 - Preview the chatbot project you'll build throughout this book
+
+Code examples and Jupyter notebooks for all chapters are available in the `code/` folder on GitHub. Notebooks include "Open in Colab" buttons for zero-install coding. See books.borck.education for links.
 
 ## 1. Introduction: The Magic of First Code
 
@@ -2664,6 +2688,8 @@ By the end of this chapter, you will be able to:
 - Apply best practices for function design
 - Structure your chatbot project using custom functions
 - Debug and refine your functions
+
+Code examples and notebooks for all chapters are available on GitHub with "Open in Colab" buttons. See books.borck.education.
 
 ## 1. Introduction: Function Creation as a Superpower
 
@@ -7833,7 +7859,7 @@ avg = calculate_average('sales.csv', 'amount')
 print(avg)
 
 TypeError: 'str' object has no attribute 'mean'
-```
+```text
 
 ## What I've Tried
 - Checked the data types with `data.dtypes` and saw that 'amount' is an object type
@@ -7844,17 +7870,17 @@ TypeError: 'str' object has no attribute 'mean'
 - Python 3.9
 - pandas 1.3.4
 - Windows 10
-
+text
 Prompt: "I'm getting this error when trying to use a list comprehension:
 'TypeError: 'int' object is not iterable'. Here's my code:
 numbers = 100
 result = [x for x in numbers if x % 2 == 0]
 What am I doing wrong?"
-
+text
 Prompt: "Can you help me understand Python decorators? I know they use the @ symbol,
 but I don't understand how they work or why they're useful. Could you explain the
 concept and show a simple example?"
-
+text
 Prompt: "I need to create a function that takes a list of strings and returns
 a dictionary with the count of each unique string. What's the most efficient
 way to do this in Python?"
@@ -7959,7 +7985,7 @@ def get_response(self, user_input):
 
     # Other patterns...
     return "I didn't understand that."
-```
+```text
 
 ## What I've Tried
 - Changing `==` to `in` but then it matches too broadly
@@ -8022,6 +8048,8 @@ By the end of this chapter, you will be able to:
 - Evaluate the quality of AI-generated code
 - Apply AI assistance to enhance your chatbot project
 - Develop a balanced approach to using AI in your programming workflow
+
+Complete code examples and notebooks for all chapters are available on GitHub with "Open in Colab" buttons. See books.borck.education.
 
 ## 1. Introduction: The Rise of AI Programming Assistants
 

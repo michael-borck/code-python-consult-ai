@@ -859,7 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Final highest scorer: </span><span class="sc">{</span>highest_scorer<span class="sc">}</span><span class="ss"> with </span><span class="sc">{</span>highest_score<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> highest_scorer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The output reveals our bug:</p>
-<pre><code>Scores received: {'Alice': -10, 'Bob': -5, 'Charlie': -20}
+<pre class="text"><code>Scores received: {'Alice': -10, 'Bob': -5, 'Charlie': -20}
 Checking Alice with score -10
 Current highest: 0 by None
 Checking Bob with score -5
@@ -1999,7 +1999,7 @@ Final highest scorer: None with 0</code></pre>
 <span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-319"><a href="#cb23-319" aria-hidden="true" tabindex="-1"></a>The output reveals our bug:</span>
 <span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb23-322"><a href="#cb23-322" aria-hidden="true" tabindex="-1"></a><span class="in">Scores received: {'Alice': -10, 'Bob': -5, 'Charlie': -20}</span></span>
 <span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a><span class="in">Checking Alice with score -10</span></span>
 <span id="cb23-324"><a href="#cb23-324" aria-hidden="true" tabindex="-1"></a><span class="in">Current highest: 0 by None</span></span>

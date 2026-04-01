@@ -22,6 +22,10 @@ By the end of this chapter, you will be able to:
 - Apply AI assistance to enhance your chatbot project
 - Develop a balanced approach to using AI in your programming workflow
 
+::: {.callout-tip title="Code available online" icon=true}
+Complete code examples and notebooks for all chapters are available on GitHub with "Open in Colab" buttons. See [books.borck.education](https://books.borck.education).
+:::
+
 ## 1. Introduction: The Rise of AI Programming Assistants
 
 In the evolving landscape of software development, AI programming assistants have emerged as powerful tools that can accelerate learning, boost productivity, and provide on-demand guidance. From suggesting code completions in real-time to generating entire functions based on natural language descriptions, these AI systems are transforming how programmers work.
@@ -97,12 +101,12 @@ The quality of an AI assistant's output depends largely on the quality of your i
 #### Be Specific and Detailed
 
 Instead of:
-```
+```text
 Generate Python code to sort a list.
 ```
 
 Try:
-```
+```text
 Generate Python code that sorts a list of dictionaries by the 'age' field
 in descending order. Each dictionary has 'name', 'age', and 'score' keys.
 ```
@@ -117,7 +121,7 @@ Include:
 - Coding style preferences
 
 Example:
-```
+```text
 I'm using Python 3.9 with pandas 1.3.4. I need a function that:
 1. Reads a CSV file containing student data (name, age, grade)
 2. Filters for students with grade > 80
@@ -482,7 +486,7 @@ bot = Chatbot(name="MyBot")
 
 # Run the interactive chat loop
 bot.run()
-```
+```text
 
 Advanced usage:
 
@@ -511,7 +515,7 @@ bot = Chatbot(
 # Process a specific message
 response = bot.process_message("What's the weather like today?")
 print(response)
-```
+```text
 
 Dependencies
 -----------

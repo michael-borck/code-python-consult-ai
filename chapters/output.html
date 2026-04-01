@@ -834,7 +834,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Using our display function</span></span>
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>display_user_profile(<span class="st">"Alice Johnson"</span>, <span class="dv">32</span>, <span class="st">"alice@example.com"</span>, <span class="st">"New York, NY"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This produces:</p>
-<pre><code>============================================================
+<pre class="text"><code>============================================================
                        USER PROFILE
 ============================================================
   Name:        Alice Johnson
@@ -899,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Learn about the print() function</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">print</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This displays:</p>
-<pre><code>Help on built-in function print in module builtins:
+<pre class="text"><code>Help on built-in function print in module builtins:
 
 print(...)
     print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
@@ -955,7 +955,7 @@ print(...)
 <span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; I'm looking forward to our conversations!"</span>)</span>
 <span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> width <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This produces a professional-looking interface:</p>
-<pre><code>============================================================
+<pre class="text"><code>============================================================
                       PyBot v1.0
                 Your Python Learning Assistant
 ============================================================
@@ -1021,7 +1021,7 @@ PyBot&gt; I'm looking forward to our conversations!
 <span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a><span class="st">- BYE: End the conversation</span></span>
 <span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Output:</p>
-<pre><code>PyBot&gt; Hello! How can I help you today?
+<pre class="text"><code>PyBot&gt; Hello! How can I help you today?
 [SYSTEM] Processing your request...
 PyBot [ERROR]&gt; I couldn't understand that command.
 **************************************************
@@ -1125,13 +1125,13 @@ Available commands:
 <p>Let’s explore how AI assistants can help you design better output for your Python applications.</p>
 <section id="before-vague-prompting" class="level3" data-number="6.11.1">
 <h3 data-number="6.11.1" class="anchored" data-anchor-id="before-vague-prompting"><span class="header-section-number">6.11.1</span> Before: Vague Prompting</h3>
-<pre><code>Help me with Python print formatting.</code></pre>
+<pre class="text"><code>Help me with Python print formatting.</code></pre>
 <p><strong>AI Response:</strong> <em>Python’s print() function is versatile and offers many formatting options. You can use f-strings, format() method, or % formatting. Each approach has its own syntax and benefits. What specific formatting task are you trying to accomplish?</em></p>
 <p>This response is correct but generic, requiring more back-and-forth to get specific help.</p>
 </section>
 <section id="after-detailed-specific-prompting" class="level3" data-number="6.11.2">
 <h3 data-number="6.11.2" class="anchored" data-anchor-id="after-detailed-specific-prompting"><span class="header-section-number">6.11.2</span> After: Detailed, Specific Prompting</h3>
-<pre><code>I'm building a Python chatbot and need to design its output formatting. I want:
+<pre class="text"><code>I'm building a Python chatbot and need to design its output formatting. I want:
 1. Different visual styles for regular messages, errors, and system notifications
 2. A consistent visual identity (borders, spacing, etc.)
 3. Examples of how to format timestamps and user information
@@ -1196,7 +1196,7 @@ Please show code examples for each of these needs, optimised for readability on 
 <li><p><strong>Request alternatives</strong> to compare different approaches</p></li>
 </ol>
 <p>For example:</p>
-<pre><code>I'm creating a data analysis report that will be viewed in the terminal.
+<pre class="text"><code>I'm creating a data analysis report that will be viewed in the terminal.
 I need to display:
 1. A prominent title
 2. Summary statistics (min, max, average)
@@ -1441,7 +1441,7 @@ print() function, focusing on readability and visual hierarchy.</code></pre>
 <li>It specifies the maximum length of output</li>
 </ol></li>
 <li><p>How would you print the following on three separate lines:</p>
-<pre><code>Line 1
+<pre class="text"><code>Line 1
 Line 2
 Line 3</code></pre>
 <ol type="a">
@@ -2291,7 +2291,7 @@ Line 3</code></pre>
 <span id="cb41-275"><a href="#cb41-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb41-276"><a href="#cb41-276" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-277"><a href="#cb41-277" aria-hidden="true" tabindex="-1"></a>This produces:</span>
-<span id="cb41-278"><a href="#cb41-278" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-278"><a href="#cb41-278" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-279"><a href="#cb41-279" aria-hidden="true" tabindex="-1"></a><span class="in">============================================================</span></span>
 <span id="cb41-280"><a href="#cb41-280" aria-hidden="true" tabindex="-1"></a><span class="in">                       USER PROFILE</span></span>
 <span id="cb41-281"><a href="#cb41-281" aria-hidden="true" tabindex="-1"></a><span class="in">============================================================</span></span>
@@ -2365,7 +2365,7 @@ Line 3</code></pre>
 <span id="cb41-349"><a href="#cb41-349" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb41-350"><a href="#cb41-350" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-351"><a href="#cb41-351" aria-hidden="true" tabindex="-1"></a>This displays:</span>
-<span id="cb41-352"><a href="#cb41-352" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-352"><a href="#cb41-352" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-353"><a href="#cb41-353" aria-hidden="true" tabindex="-1"></a><span class="in">Help on built-in function print in module builtins:</span></span>
 <span id="cb41-354"><a href="#cb41-354" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-355"><a href="#cb41-355" aria-hidden="true" tabindex="-1"></a><span class="in">print(...)</span></span>
@@ -2431,7 +2431,7 @@ Line 3</code></pre>
 <span id="cb41-415"><a href="#cb41-415" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb41-416"><a href="#cb41-416" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-417"><a href="#cb41-417" aria-hidden="true" tabindex="-1"></a>This produces a professional-looking interface:</span>
-<span id="cb41-418"><a href="#cb41-418" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-418"><a href="#cb41-418" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-419"><a href="#cb41-419" aria-hidden="true" tabindex="-1"></a><span class="in">============================================================</span></span>
 <span id="cb41-420"><a href="#cb41-420" aria-hidden="true" tabindex="-1"></a><span class="in">                      PyBot v1.0</span></span>
 <span id="cb41-421"><a href="#cb41-421" aria-hidden="true" tabindex="-1"></a><span class="in">                Your Python Learning Assistant</span></span>
@@ -2503,7 +2503,7 @@ Line 3</code></pre>
 <span id="cb41-487"><a href="#cb41-487" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb41-488"><a href="#cb41-488" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-489"><a href="#cb41-489" aria-hidden="true" tabindex="-1"></a>Output:</span>
-<span id="cb41-490"><a href="#cb41-490" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-490"><a href="#cb41-490" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-491"><a href="#cb41-491" aria-hidden="true" tabindex="-1"></a><span class="in">PyBot&gt; Hello! How can I help you today?</span></span>
 <span id="cb41-492"><a href="#cb41-492" aria-hidden="true" tabindex="-1"></a><span class="in">[SYSTEM] Processing your request...</span></span>
 <span id="cb41-493"><a href="#cb41-493" aria-hidden="true" tabindex="-1"></a><span class="in">PyBot [ERROR]&gt; I couldn't understand that command.</span></span>
@@ -2612,7 +2612,7 @@ Line 3</code></pre>
 <span id="cb41-596"><a href="#cb41-596" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-597"><a href="#cb41-597" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before: Vague Prompting</span></span>
 <span id="cb41-598"><a href="#cb41-598" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-599"><a href="#cb41-599" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-599"><a href="#cb41-599" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-600"><a href="#cb41-600" aria-hidden="true" tabindex="-1"></a><span class="in">Help me with Python print formatting.</span></span>
 <span id="cb41-601"><a href="#cb41-601" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb41-602"><a href="#cb41-602" aria-hidden="true" tabindex="-1"></a></span>
@@ -2623,7 +2623,7 @@ Line 3</code></pre>
 <span id="cb41-607"><a href="#cb41-607" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-608"><a href="#cb41-608" aria-hidden="true" tabindex="-1"></a><span class="fu">### After: Detailed, Specific Prompting</span></span>
 <span id="cb41-609"><a href="#cb41-609" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-610"><a href="#cb41-610" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-610"><a href="#cb41-610" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-611"><a href="#cb41-611" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a Python chatbot and need to design its output formatting. I want:</span></span>
 <span id="cb41-612"><a href="#cb41-612" aria-hidden="true" tabindex="-1"></a><span class="in">1. Different visual styles for regular messages, errors, and system notifications</span></span>
 <span id="cb41-613"><a href="#cb41-613" aria-hidden="true" tabindex="-1"></a><span class="in">2. A consistent visual identity (borders, spacing, etc.)</span></span>
@@ -2710,7 +2710,7 @@ Line 3</code></pre>
 <span id="cb41-694"><a href="#cb41-694" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-695"><a href="#cb41-695" aria-hidden="true" tabindex="-1"></a>For example:</span>
 <span id="cb41-696"><a href="#cb41-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-697"><a href="#cb41-697" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-697"><a href="#cb41-697" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb41-698"><a href="#cb41-698" aria-hidden="true" tabindex="-1"></a><span class="in">I'm creating a data analysis report that will be viewed in the terminal.</span></span>
 <span id="cb41-699"><a href="#cb41-699" aria-hidden="true" tabindex="-1"></a><span class="in">I need to display:</span></span>
 <span id="cb41-700"><a href="#cb41-700" aria-hidden="true" tabindex="-1"></a><span class="in">1. A prominent title</span></span>
@@ -2977,7 +2977,7 @@ Line 3</code></pre>
 <span id="cb41-961"><a href="#cb41-961" aria-hidden="true" tabindex="-1"></a>   d) It specifies the maximum length of output</span>
 <span id="cb41-962"><a href="#cb41-962" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-963"><a href="#cb41-963" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>How would you print the following on three separate lines:</span>
-<span id="cb41-964"><a href="#cb41-964" aria-hidden="true" tabindex="-1"></a>   <span class="in">```</span></span>
+<span id="cb41-964"><a href="#cb41-964" aria-hidden="true" tabindex="-1"></a>   <span class="in">```text</span></span>
 <span id="cb41-965"><a href="#cb41-965" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 1</span></span>
 <span id="cb41-966"><a href="#cb41-966" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 2</span></span>
 <span id="cb41-967"><a href="#cb41-967" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 3</span></span>

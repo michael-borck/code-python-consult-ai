@@ -1476,7 +1476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When working with AI assistants on code involving lists, knowing how to articulate your needs and interpret suggestions is crucial. Let’s explore examples of effective collaboration.</p>
 <section id="before-vague-prompting" class="level3" data-number="12.13.1">
 <h3 data-number="12.13.1" class="anchored" data-anchor-id="before-vague-prompting"><span class="header-section-number">12.13.1</span> Before: Vague Prompting</h3>
-<pre><code>Help me make lists for my chatbot.</code></pre>
+<pre class="text"><code>Help me make lists for my chatbot.</code></pre>
 <p><strong>AI Response:</strong> <em>I can help you implement lists in your chatbot. Lists are a fundamental data structure in Python that can store multiple items. For a chatbot, you might want to use lists to store user inputs, chatbot responses, or predefined answers. Here’s a simple example:</em></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Store predefined responses</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>greetings <span class="op">=</span> [<span class="st">"Hello!"</span>, <span class="st">"Hi there!"</span>, <span class="st">"Greetings!"</span>]</span>
@@ -1489,7 +1489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="after-detailed-specific-prompting" class="level3" data-number="12.13.2">
 <h3 data-number="12.13.2" class="anchored" data-anchor-id="after-detailed-specific-prompting"><span class="header-section-number">12.13.2</span> After: Detailed, Specific Prompting</h3>
-<pre><code>I'm building a Python chatbot and need to implement a response history system with the following features:
+<pre class="text"><code>I'm building a Python chatbot and need to implement a response history system with the following features:
 1. Store each message with speaker name, content, and timestamp
 2. Implement a search function to find previous messages by keyword
 3. Allow retrieving the last N messages
@@ -1727,7 +1727,7 @@ Please provide code examples for these features, showing how to structure the da
 </ul></li>
 </ol>
 <p>Here’s an effective prompt template:</p>
-<pre><code>I'm building a [type of application] that needs to [specific functionality].
+<pre class="text"><code>I'm building a [type of application] that needs to [specific functionality].
 I plan to use Python lists to store [description of data] with the following operations:
 1. [First operation/access pattern]
 2. [Second operation/access pattern]
@@ -3603,7 +3603,7 @@ Are there alternative data structures I should consider?</code></pre>
 <span id="cb57-869"><a href="#cb57-869" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-870"><a href="#cb57-870" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before: Vague Prompting</span></span>
 <span id="cb57-871"><a href="#cb57-871" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-872"><a href="#cb57-872" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb57-872"><a href="#cb57-872" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb57-873"><a href="#cb57-873" aria-hidden="true" tabindex="-1"></a><span class="in">Help me make lists for my chatbot.</span></span>
 <span id="cb57-874"><a href="#cb57-874" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb57-875"><a href="#cb57-875" aria-hidden="true" tabindex="-1"></a></span>
@@ -3625,7 +3625,7 @@ Are there alternative data structures I should consider?</code></pre>
 <span id="cb57-891"><a href="#cb57-891" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-892"><a href="#cb57-892" aria-hidden="true" tabindex="-1"></a><span class="fu">### After: Detailed, Specific Prompting</span></span>
 <span id="cb57-893"><a href="#cb57-893" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-894"><a href="#cb57-894" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb57-894"><a href="#cb57-894" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb57-895"><a href="#cb57-895" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a Python chatbot and need to implement a response history system with the following features:</span></span>
 <span id="cb57-896"><a href="#cb57-896" aria-hidden="true" tabindex="-1"></a><span class="in">1. Store each message with speaker name, content, and timestamp</span></span>
 <span id="cb57-897"><a href="#cb57-897" aria-hidden="true" tabindex="-1"></a><span class="in">2. Implement a search function to find previous messages by keyword</span></span>
@@ -3874,7 +3874,7 @@ Are there alternative data structures I should consider?</code></pre>
 <span id="cb57-1140"><a href="#cb57-1140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-1141"><a href="#cb57-1141" aria-hidden="true" tabindex="-1"></a>Here's an effective prompt template:</span>
 <span id="cb57-1142"><a href="#cb57-1142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-1143"><a href="#cb57-1143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb57-1143"><a href="#cb57-1143" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb57-1144"><a href="#cb57-1144" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a [type of application] that needs to [specific functionality].</span></span>
 <span id="cb57-1145"><a href="#cb57-1145" aria-hidden="true" tabindex="-1"></a><span class="in">I plan to use Python lists to store [description of data] with the following operations:</span></span>
 <span id="cb57-1146"><a href="#cb57-1146" aria-hidden="true" tabindex="-1"></a><span class="in">1. [First operation/access pattern]</span></span>

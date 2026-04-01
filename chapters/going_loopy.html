@@ -892,7 +892,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">×</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>i<span class="op">*</span>j<span class="sc">}</span><span class="ss">"</span>, end<span class="op">=</span><span class="st">"</span><span class="ch">\t</span><span class="st">"</span>)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()  <span class="co"># New line after each row</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This produces:</p>
-<pre><code>1×1=1   1×2=2   1×3=3   1×4=4   1×5=5
+<pre class="text"><code>1×1=1   1×2=2   1×3=3   1×4=4   1×5=5
 2×1=2   2×2=4   2×3=6   2×4=8   2×5=10
 3×1=3   3×2=6   3×3=9   3×4=12  3×5=15
 4×1=4   4×2=8   4×3=12  4×4=16  4×5=20
@@ -1444,7 +1444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When working with AI coding assistants on loop-based problems, specific prompt strategies can greatly enhance your productivity. Let’s compare ineffective and effective collaboration approaches.</p>
 <section id="before-vague-prompting" class="level3" data-number="13.12.1">
 <h3 data-number="13.12.1" class="anchored" data-anchor-id="before-vague-prompting"><span class="header-section-number">13.12.1</span> Before: Vague Prompting</h3>
-<pre><code>Write me a Python loop.</code></pre>
+<pre class="text"><code>Write me a Python loop.</code></pre>
 <p><strong>AI Response:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A simple Python loop that prints numbers from 1 to 5</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
@@ -1453,7 +1453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="after-detailed-goal-oriented-prompting" class="level3" data-number="13.12.2">
 <h3 data-number="13.12.2" class="anchored" data-anchor-id="after-detailed-goal-oriented-prompting"><span class="header-section-number">13.12.2</span> After: Detailed, Goal-Oriented Prompting</h3>
-<pre><code>I need a Python function that processes a list of temperature readings (in Celsius).
+<pre class="text"><code>I need a Python function that processes a list of temperature readings (in Celsius).
 The function should:
 1. Filter out invalid readings (below -273.15°C or above 100°C)
 2. Convert each valid reading to Fahrenheit
@@ -1558,7 +1558,7 @@ Please include error handling and comments explaining the loop logic.</code></pr
 </section>
 <section id="effective-prompt-template-for-loop-problems" class="level3" data-number="13.12.4">
 <h3 data-number="13.12.4" class="anchored" data-anchor-id="effective-prompt-template-for-loop-problems"><span class="header-section-number">13.12.4</span> Effective Prompt Template for Loop Problems</h3>
-<pre><code>I need to implement a [purpose] loop in Python that [main goal].
+<pre class="text"><code>I need to implement a [purpose] loop in Python that [main goal].
 
 Input data: [describe the data structure]
 Example: [provide a small example]
@@ -1799,7 +1799,7 @@ Please include clear comments explaining the logic.</code></pre>
 <ol type="1">
 <li><p><strong>Loop Basics</strong>: Write a function that prints all even numbers between 1 and 20.</p></li>
 <li><p><strong>Nested Loops</strong>: Create a function that prints a pattern of stars like this:</p>
-<pre><code>*
+<pre class="text"><code>*
 **
 ***
 ****
@@ -2661,7 +2661,7 @@ Please include clear comments explaining the logic.</code></pre>
 <span id="cb58-339"><a href="#cb58-339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-340"><a href="#cb58-340" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-341"><a href="#cb58-341" aria-hidden="true" tabindex="-1"></a>This produces:</span>
-<span id="cb58-342"><a href="#cb58-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb58-342"><a href="#cb58-342" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb58-343"><a href="#cb58-343" aria-hidden="true" tabindex="-1"></a><span class="in">1×1=1   1×2=2   1×3=3   1×4=4   1×5=5</span></span>
 <span id="cb58-344"><a href="#cb58-344" aria-hidden="true" tabindex="-1"></a><span class="in">2×1=2   2×2=4   2×3=6   2×4=8   2×5=10</span></span>
 <span id="cb58-345"><a href="#cb58-345" aria-hidden="true" tabindex="-1"></a><span class="in">3×1=3   3×2=6   3×3=9   3×4=12  3×5=15</span></span>
@@ -3327,7 +3327,7 @@ Please include clear comments explaining the logic.</code></pre>
 <span id="cb58-1005"><a href="#cb58-1005" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-1006"><a href="#cb58-1006" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before: Vague Prompting</span></span>
 <span id="cb58-1007"><a href="#cb58-1007" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1008"><a href="#cb58-1008" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb58-1008"><a href="#cb58-1008" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb58-1009"><a href="#cb58-1009" aria-hidden="true" tabindex="-1"></a><span class="in">Write me a Python loop.</span></span>
 <span id="cb58-1010"><a href="#cb58-1010" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb58-1011"><a href="#cb58-1011" aria-hidden="true" tabindex="-1"></a></span>
@@ -3342,7 +3342,7 @@ Please include clear comments explaining the logic.</code></pre>
 <span id="cb58-1020"><a href="#cb58-1020" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-1021"><a href="#cb58-1021" aria-hidden="true" tabindex="-1"></a><span class="fu">### After: Detailed, Goal-Oriented Prompting</span></span>
 <span id="cb58-1022"><a href="#cb58-1022" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1023"><a href="#cb58-1023" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb58-1023"><a href="#cb58-1023" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb58-1024"><a href="#cb58-1024" aria-hidden="true" tabindex="-1"></a><span class="in">I need a Python function that processes a list of temperature readings (in Celsius).</span></span>
 <span id="cb58-1025"><a href="#cb58-1025" aria-hidden="true" tabindex="-1"></a><span class="in">The function should:</span></span>
 <span id="cb58-1026"><a href="#cb58-1026" aria-hidden="true" tabindex="-1"></a><span class="in">1. Filter out invalid readings (below -273.15°C or above 100°C)</span></span>
@@ -3461,7 +3461,7 @@ Please include clear comments explaining the logic.</code></pre>
 <span id="cb58-1139"><a href="#cb58-1139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-1140"><a href="#cb58-1140" aria-hidden="true" tabindex="-1"></a><span class="fu">### Effective Prompt Template for Loop Problems</span></span>
 <span id="cb58-1141"><a href="#cb58-1141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1142"><a href="#cb58-1142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb58-1142"><a href="#cb58-1142" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb58-1143"><a href="#cb58-1143" aria-hidden="true" tabindex="-1"></a><span class="in">I need to implement a [purpose] loop in Python that [main goal].</span></span>
 <span id="cb58-1144"><a href="#cb58-1144" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-1145"><a href="#cb58-1145" aria-hidden="true" tabindex="-1"></a><span class="in">Input data: [describe the data structure]</span></span>
@@ -3750,7 +3750,7 @@ Please include clear comments explaining the logic.</code></pre>
 <span id="cb58-1428"><a href="#cb58-1428" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Loop Basics**: Write a function that prints all even numbers between 1 and 20.</span>
 <span id="cb58-1429"><a href="#cb58-1429" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-1430"><a href="#cb58-1430" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Nested Loops**: Create a function that prints a pattern of stars like this:</span>
-<span id="cb58-1431"><a href="#cb58-1431" aria-hidden="true" tabindex="-1"></a>   <span class="in">```</span></span>
+<span id="cb58-1431"><a href="#cb58-1431" aria-hidden="true" tabindex="-1"></a>   <span class="in">```text</span></span>
 <span id="cb58-1432"><a href="#cb58-1432" aria-hidden="true" tabindex="-1"></a><span class="in">   *</span></span>
 <span id="cb58-1433"><a href="#cb58-1433" aria-hidden="true" tabindex="-1"></a><span class="in">   **</span></span>
 <span id="cb58-1434"><a href="#cb58-1434" aria-hidden="true" tabindex="-1"></a><span class="in">   ***</span></span>

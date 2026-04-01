@@ -996,13 +996,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s explore how AI assistants can help you design better input systems for your Python applications.</p>
 <section id="before-vague-prompting" class="level3" data-number="7.9.1">
 <h3 data-number="7.9.1" class="anchored" data-anchor-id="before-vague-prompting"><span class="header-section-number">7.9.1</span> Before: Vague Prompting</h3>
-<pre><code>Help me with Python input.</code></pre>
+<pre class="text"><code>Help me with Python input.</code></pre>
 <p><strong>AI Response:</strong> <em>The input() function in Python allows you to get user input from the console. It takes an optional prompt parameter and returns the user’s input as a string. Remember that you’ll need to convert the input to other types like int or float if you want to perform numerical operations.</em></p>
 <p>This response is technically correct but provides only basic information without addressing specific challenges or use cases.</p>
 </section>
 <section id="after-detailed-specific-prompting" class="level3" data-number="7.9.2">
 <h3 data-number="7.9.2" class="anchored" data-anchor-id="after-detailed-specific-prompting"><span class="header-section-number">7.9.2</span> After: Detailed, Specific Prompting</h3>
-<pre><code>I'm building a Python program that needs to collect and validate user input for:
+<pre class="text"><code>I'm building a Python program that needs to collect and validate user input for:
 1. A username (letters only, 3-15 characters)
 2. An age (must be between 13-120)
 3. A selection from a menu of 5 options
@@ -1123,7 +1123,7 @@ Please show me code examples with proper validation and error handling for each 
 <li><p><strong>Ask for explanations</strong> of the validation techniques used</p></li>
 </ol>
 <p>For example:</p>
-<pre><code>I need to collect a valid email address from users in my Python application.
+<pre class="text"><code>I need to collect a valid email address from users in my Python application.
 Please show me code that:
 1. Provides a clear prompt
 2. Validates that the input matches a basic email format (contains @ and a domain)
@@ -2449,7 +2449,7 @@ Please show me code that:
 <span id="cb29-464"><a href="#cb29-464" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-465"><a href="#cb29-465" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before: Vague Prompting</span></span>
 <span id="cb29-466"><a href="#cb29-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-467"><a href="#cb29-467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb29-467"><a href="#cb29-467" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb29-468"><a href="#cb29-468" aria-hidden="true" tabindex="-1"></a><span class="in">Help me with Python input.</span></span>
 <span id="cb29-469"><a href="#cb29-469" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb29-470"><a href="#cb29-470" aria-hidden="true" tabindex="-1"></a></span>
@@ -2460,7 +2460,7 @@ Please show me code that:
 <span id="cb29-475"><a href="#cb29-475" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-476"><a href="#cb29-476" aria-hidden="true" tabindex="-1"></a><span class="fu">### After: Detailed, Specific Prompting</span></span>
 <span id="cb29-477"><a href="#cb29-477" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-478"><a href="#cb29-478" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb29-478"><a href="#cb29-478" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb29-479"><a href="#cb29-479" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a Python program that needs to collect and validate user input for:</span></span>
 <span id="cb29-480"><a href="#cb29-480" aria-hidden="true" tabindex="-1"></a><span class="in">1. A username (letters only, 3-15 characters)</span></span>
 <span id="cb29-481"><a href="#cb29-481" aria-hidden="true" tabindex="-1"></a><span class="in">2. An age (must be between 13-120)</span></span>
@@ -2600,7 +2600,7 @@ Please show me code that:
 <span id="cb29-615"><a href="#cb29-615" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-616"><a href="#cb29-616" aria-hidden="true" tabindex="-1"></a>For example:</span>
 <span id="cb29-617"><a href="#cb29-617" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-618"><a href="#cb29-618" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb29-618"><a href="#cb29-618" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
 <span id="cb29-619"><a href="#cb29-619" aria-hidden="true" tabindex="-1"></a><span class="in">I need to collect a valid email address from users in my Python application.</span></span>
 <span id="cb29-620"><a href="#cb29-620" aria-hidden="true" tabindex="-1"></a><span class="in">Please show me code that:</span></span>
 <span id="cb29-621"><a href="#cb29-621" aria-hidden="true" tabindex="-1"></a><span class="in">1. Provides a clear prompt</span></span>
