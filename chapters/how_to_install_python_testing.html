@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/python_ai_integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Python AI Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">AI Integrator: Connecting Python Applications to AI Services</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -901,9 +901,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># For Windows (in PowerShell as administrator)</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For Windows (split for readability)</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="va">$conda</span> = <span class="st">"C:\Users\YourUsername\miniconda3"</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="va">$Env</span><span class="ex">:Path</span> = <span class="st">"</span><span class="va">$Env</span><span class="st">:Path;</span><span class="va">$conda</span><span class="st">;</span><span class="va">$conda</span><span class="st">\Scripts"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="va">$conda</span> = <span class="st">"C:\Users\YourUsername\miniconda3"</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="va">$Env</span><span class="ex">:Path</span> = <span class="st">"</span><span class="va">$Env</span><span class="st">:Path;</span><span class="va">$conda</span><span class="st">;</span><span class="va">$conda</span><span class="st">\Scripts"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="permission-errors" class="level3" data-number="23.11.3">
 <h3 data-number="23.11.3" class="anchored" data-anchor-id="permission-errors"><span class="header-section-number">23.11.3</span> Permission Errors</h3>
@@ -2032,310 +2031,309 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-368"><a href="#cb26-368" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
 <span id="cb26-369"><a href="#cb26-369" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-370"><a href="#cb26-370" aria-hidden="true" tabindex="-1"></a><span class="co"># For Windows (in PowerShell as administrator)</span></span>
-<span id="cb26-371"><a href="#cb26-371" aria-hidden="true" tabindex="-1"></a><span class="co"># For Windows (split for readability)</span></span>
-<span id="cb26-372"><a href="#cb26-372" aria-hidden="true" tabindex="-1"></a><span class="va">$conda</span> = <span class="st">"C:\Users\YourUsername\miniconda3"</span></span>
-<span id="cb26-373"><a href="#cb26-373" aria-hidden="true" tabindex="-1"></a><span class="va">$Env</span><span class="ex">:Path</span> = <span class="st">"</span><span class="va">$Env</span><span class="st">:Path;</span><span class="va">$conda</span><span class="st">;</span><span class="va">$conda</span><span class="st">\Scripts"</span></span>
-<span id="cb26-374"><a href="#cb26-374" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-375"><a href="#cb26-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-376"><a href="#cb26-376" aria-hidden="true" tabindex="-1"></a><span class="fu">### Permission Errors</span></span>
-<span id="cb26-377"><a href="#cb26-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-378"><a href="#cb26-378" aria-hidden="true" tabindex="-1"></a>If you encounter permission errors:</span>
-<span id="cb26-379"><a href="#cb26-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-380"><a href="#cb26-380" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-381"><a href="#cb26-381" aria-hidden="true" tabindex="-1"></a><span class="co"># On Linux/macOS</span></span>
-<span id="cb26-382"><a href="#cb26-382" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">$USER</span>:<span class="va">$USER</span> ~/miniconda3</span>
-<span id="cb26-383"><a href="#cb26-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-384"><a href="#cb26-384" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows, run Command Prompt or PowerShell as Administrator</span></span>
-<span id="cb26-385"><a href="#cb26-385" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-386"><a href="#cb26-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-387"><a href="#cb26-387" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Self-Assessment Quiz</span></span>
-<span id="cb26-388"><a href="#cb26-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-389"><a href="#cb26-389" aria-hidden="true" tabindex="-1"></a>Test your understanding of Python installation and environment management:</span>
-<span id="cb26-390"><a href="#cb26-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-391"><a href="#cb26-391" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What is the main advantage of using conda over pip?</span>
-<span id="cb26-392"><a href="#cb26-392" aria-hidden="true" tabindex="-1"></a>   a) conda is faster than pip</span>
-<span id="cb26-393"><a href="#cb26-393" aria-hidden="true" tabindex="-1"></a>   b) conda can install non-Python packages and manage environments</span>
-<span id="cb26-394"><a href="#cb26-394" aria-hidden="true" tabindex="-1"></a>   c) conda works on more operating systems</span>
-<span id="cb26-395"><a href="#cb26-395" aria-hidden="true" tabindex="-1"></a>   d) conda can install more packages than pip</span>
-<span id="cb26-396"><a href="#cb26-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-397"><a href="#cb26-397" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>How do you activate a conda environment called "data_science"?</span>
-<span id="cb26-398"><a href="#cb26-398" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`conda environment data_science`</span></span>
-<span id="cb26-399"><a href="#cb26-399" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`conda start data_science`</span></span>
-<span id="cb26-400"><a href="#cb26-400" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`conda activate data_science`</span></span>
-<span id="cb26-401"><a href="#cb26-401" aria-hidden="true" tabindex="-1"></a>   d) <span class="in">`conda data_science activate`</span></span>
-<span id="cb26-402"><a href="#cb26-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-403"><a href="#cb26-403" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is the recommended way to install a package in an active conda environment?</span>
-<span id="cb26-404"><a href="#cb26-404" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`pip install package_name`</span></span>
-<span id="cb26-405"><a href="#cb26-405" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`conda install package_name`</span></span>
-<span id="cb26-406"><a href="#cb26-406" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`python -m install package_name`</span></span>
-<span id="cb26-407"><a href="#cb26-407" aria-hidden="true" tabindex="-1"></a>   d) <span class="in">`install package_name`</span></span>
-<span id="cb26-408"><a href="#cb26-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-409"><a href="#cb26-409" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Why might you choose Miniconda over the full Anaconda distribution?</span>
-<span id="cb26-410"><a href="#cb26-410" aria-hidden="true" tabindex="-1"></a>   a) Miniconda is more powerful</span>
-<span id="cb26-411"><a href="#cb26-411" aria-hidden="true" tabindex="-1"></a>   b) Miniconda is easier to install</span>
-<span id="cb26-412"><a href="#cb26-412" aria-hidden="true" tabindex="-1"></a>   c) Miniconda provides a minimal base installation that you can build upon</span>
-<span id="cb26-413"><a href="#cb26-413" aria-hidden="true" tabindex="-1"></a>   d) Miniconda works on more platforms</span>
-<span id="cb26-414"><a href="#cb26-414" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-415"><a href="#cb26-415" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What is the purpose of a virtual environment in Python?</span>
-<span id="cb26-416"><a href="#cb26-416" aria-hidden="true" tabindex="-1"></a>   a) To speed up Python code execution</span>
-<span id="cb26-417"><a href="#cb26-417" aria-hidden="true" tabindex="-1"></a>   b) To isolate project dependencies and avoid conflicts</span>
-<span id="cb26-418"><a href="#cb26-418" aria-hidden="true" tabindex="-1"></a>   c) To reduce the size of Python scripts</span>
-<span id="cb26-419"><a href="#cb26-419" aria-hidden="true" tabindex="-1"></a>   d) To enable cross-platform compatibility</span>
-<span id="cb26-420"><a href="#cb26-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-421"><a href="#cb26-421" aria-hidden="true" tabindex="-1"></a>**Answers:**</span>
-<span id="cb26-422"><a href="#cb26-422" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>b) conda can install non-Python packages and manage environments</span>
-<span id="cb26-423"><a href="#cb26-423" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>c) <span class="in">`conda activate data_science`</span></span>
-<span id="cb26-424"><a href="#cb26-424" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>b) <span class="in">`conda install package_name`</span></span>
-<span id="cb26-425"><a href="#cb26-425" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>c) Miniconda provides a minimal base installation that you can build upon</span>
-<span id="cb26-426"><a href="#cb26-426" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>b) To isolate project dependencies and avoid conflicts</span>
-<span id="cb26-427"><a href="#cb26-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-428"><a href="#cb26-428" aria-hidden="true" tabindex="-1"></a><span class="fu">## 11. Project Corner: Setting Up for the Chatbot Project</span></span>
-<span id="cb26-429"><a href="#cb26-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-430"><a href="#cb26-430" aria-hidden="true" tabindex="-1"></a>Let's set up a dedicated environment for our chatbot project:</span>
-<span id="cb26-431"><a href="#cb26-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-432"><a href="#cb26-432" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating a Chatbot Project Environment</span></span>
-<span id="cb26-433"><a href="#cb26-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-434"><a href="#cb26-434" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-435"><a href="#cb26-435" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new environment for the chatbot project</span></span>
-<span id="cb26-436"><a href="#cb26-436" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> chatbot python=3.10</span>
-<span id="cb26-437"><a href="#cb26-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-438"><a href="#cb26-438" aria-hidden="true" tabindex="-1"></a><span class="co"># Activate the environment</span></span>
-<span id="cb26-439"><a href="#cb26-439" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate chatbot</span>
-<span id="cb26-440"><a href="#cb26-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-441"><a href="#cb26-441" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
-<span id="cb26-442"><a href="#cb26-442" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install ipython jupyter</span>
-<span id="cb26-443"><a href="#cb26-443" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install python-dotenv requests</span>
-<span id="cb26-444"><a href="#cb26-444" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-445"><a href="#cb26-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-446"><a href="#cb26-446" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project Directory Structure</span></span>
-<span id="cb26-447"><a href="#cb26-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-448"><a href="#cb26-448" aria-hidden="true" tabindex="-1"></a>Create a structured directory for your chatbot project:</span>
-<span id="cb26-449"><a href="#cb26-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-450"><a href="#cb26-450" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-451"><a href="#cb26-451" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/chatbot_project/<span class="dt">{chatbot</span><span class="op">,</span><span class="dt">data</span><span class="op">,</span><span class="dt">tests</span><span class="op">,</span><span class="dt">docs}</span></span>
-<span id="cb26-452"><a href="#cb26-452" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/chatbot_project</span>
-<span id="cb26-453"><a href="#cb26-453" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-454"><a href="#cb26-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-455"><a href="#cb26-455" aria-hidden="true" tabindex="-1"></a>This creates:</span>
-<span id="cb26-456"><a href="#cb26-456" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/`</span>: For your main module code</span>
-<span id="cb26-457"><a href="#cb26-457" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`data/`</span>: For any data files your chatbot might use</span>
-<span id="cb26-458"><a href="#cb26-458" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`tests/`</span>: For test scripts</span>
-<span id="cb26-459"><a href="#cb26-459" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`docs/`</span>: For documentation</span>
-<span id="cb26-460"><a href="#cb26-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-461"><a href="#cb26-461" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting Up the Module Structure</span></span>
-<span id="cb26-462"><a href="#cb26-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-463"><a href="#cb26-463" aria-hidden="true" tabindex="-1"></a>Create the basic files for your chatbot module:</span>
-<span id="cb26-464"><a href="#cb26-464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-465"><a href="#cb26-465" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-466"><a href="#cb26-466" aria-hidden="true" tabindex="-1"></a><span class="co"># Main package initialization</span></span>
-<span id="cb26-467"><a href="#cb26-467" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/__init__.py</span>
-<span id="cb26-468"><a href="#cb26-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-469"><a href="#cb26-469" aria-hidden="true" tabindex="-1"></a><span class="co"># Module files</span></span>
-<span id="cb26-470"><a href="#cb26-470" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/main.py</span>
-<span id="cb26-471"><a href="#cb26-471" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/response_manager.py</span>
-<span id="cb26-472"><a href="#cb26-472" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/history_manager.py</span>
-<span id="cb26-473"><a href="#cb26-473" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/ui_manager.py</span>
-<span id="cb26-474"><a href="#cb26-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-475"><a href="#cb26-475" aria-hidden="true" tabindex="-1"></a><span class="co"># Test files</span></span>
-<span id="cb26-476"><a href="#cb26-476" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> tests/__init__.py</span>
-<span id="cb26-477"><a href="#cb26-477" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> tests/test_response_manager.py</span>
-<span id="cb26-478"><a href="#cb26-478" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> tests/test_history_manager.py</span>
-<span id="cb26-479"><a href="#cb26-479" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-480"><a href="#cb26-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-481"><a href="#cb26-481" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating a Basic Configuration</span></span>
-<span id="cb26-482"><a href="#cb26-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-483"><a href="#cb26-483" aria-hidden="true" tabindex="-1"></a>Create a configuration file for your chatbot:</span>
-<span id="cb26-484"><a href="#cb26-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-485"><a href="#cb26-485" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-486"><a href="#cb26-486" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a config file</span></span>
-<span id="cb26-487"><a href="#cb26-487" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> chatbot/config.py <span class="op">&lt;&lt; EOF</span></span>
-<span id="cb26-488"><a href="#cb26-488" aria-hidden="true" tabindex="-1"></a><span class="st">"""Configuration settings for the chatbot."""</span></span>
-<span id="cb26-489"><a href="#cb26-489" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-490"><a href="#cb26-490" aria-hidden="true" tabindex="-1"></a><span class="st"># Bot settings</span></span>
-<span id="cb26-491"><a href="#cb26-491" aria-hidden="true" tabindex="-1"></a><span class="st">DEFAULT_BOT_NAME = "PyBot"</span></span>
-<span id="cb26-492"><a href="#cb26-492" aria-hidden="true" tabindex="-1"></a><span class="st">HISTORY_SIZE = 100</span></span>
-<span id="cb26-493"><a href="#cb26-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-494"><a href="#cb26-494" aria-hidden="true" tabindex="-1"></a><span class="st"># Response settings</span></span>
-<span id="cb26-495"><a href="#cb26-495" aria-hidden="true" tabindex="-1"></a><span class="st">RESPONSE_DELAY = 0.5  # Seconds to wait before responding</span></span>
-<span id="cb26-496"><a href="#cb26-496" aria-hidden="true" tabindex="-1"></a><span class="st">DEFAULT_RESPONSES = [</span></span>
-<span id="cb26-497"><a href="#cb26-497" aria-hidden="true" tabindex="-1"></a><span class="st">    "I'm not sure how to respond to that.",</span></span>
-<span id="cb26-498"><a href="#cb26-498" aria-hidden="true" tabindex="-1"></a><span class="st">    "Can you tell me more?",</span></span>
-<span id="cb26-499"><a href="#cb26-499" aria-hidden="true" tabindex="-1"></a><span class="st">    "Interesting, please go on."</span></span>
-<span id="cb26-500"><a href="#cb26-500" aria-hidden="true" tabindex="-1"></a><span class="st">]</span></span>
-<span id="cb26-501"><a href="#cb26-501" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-502"><a href="#cb26-502" aria-hidden="true" tabindex="-1"></a><span class="st"># File paths</span></span>
-<span id="cb26-503"><a href="#cb26-503" aria-hidden="true" tabindex="-1"></a><span class="st">HISTORY_DIRECTORY = "data/history"</span></span>
-<span id="cb26-504"><a href="#cb26-504" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb26-505"><a href="#cb26-505" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-506"><a href="#cb26-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-507"><a href="#cb26-507" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project Environment File</span></span>
-<span id="cb26-508"><a href="#cb26-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-509"><a href="#cb26-509" aria-hidden="true" tabindex="-1"></a>Create a requirements file to document dependencies:</span>
-<span id="cb26-510"><a href="#cb26-510" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-511"><a href="#cb26-511" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-512"><a href="#cb26-512" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a requirements.txt file</span></span>
-<span id="cb26-513"><a href="#cb26-513" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> requirements.txt <span class="op">&lt;&lt; EOF</span></span>
-<span id="cb26-514"><a href="#cb26-514" aria-hidden="true" tabindex="-1"></a><span class="st"># Chatbot project dependencies</span></span>
-<span id="cb26-515"><a href="#cb26-515" aria-hidden="true" tabindex="-1"></a><span class="st">python-dotenv&gt;=0.19.0</span></span>
-<span id="cb26-516"><a href="#cb26-516" aria-hidden="true" tabindex="-1"></a><span class="st">requests&gt;=2.26.0</span></span>
-<span id="cb26-517"><a href="#cb26-517" aria-hidden="true" tabindex="-1"></a><span class="st">pytest&gt;=6.2.5</span></span>
-<span id="cb26-518"><a href="#cb26-518" aria-hidden="true" tabindex="-1"></a><span class="st">black&gt;=21.9b0</span></span>
-<span id="cb26-519"><a href="#cb26-519" aria-hidden="true" tabindex="-1"></a><span class="st">flake8&gt;=3.9.2</span></span>
-<span id="cb26-520"><a href="#cb26-520" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb26-521"><a href="#cb26-521" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-522"><a href="#cb26-522" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-523"><a href="#cb26-523" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting Up Version Control</span></span>
-<span id="cb26-524"><a href="#cb26-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-525"><a href="#cb26-525" aria-hidden="true" tabindex="-1"></a>Initialize a Git repository for your project:</span>
-<span id="cb26-526"><a href="#cb26-526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-527"><a href="#cb26-527" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-528"><a href="#cb26-528" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Git repository</span></span>
-<span id="cb26-529"><a href="#cb26-529" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb26-530"><a href="#cb26-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-531"><a href="#cb26-531" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a .gitignore file</span></span>
-<span id="cb26-532"><a href="#cb26-532" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> .gitignore <span class="op">&lt;&lt; EOF</span></span>
-<span id="cb26-533"><a href="#cb26-533" aria-hidden="true" tabindex="-1"></a><span class="st"># Python</span></span>
-<span id="cb26-534"><a href="#cb26-534" aria-hidden="true" tabindex="-1"></a><span class="st">__pycache__/</span></span>
-<span id="cb26-535"><a href="#cb26-535" aria-hidden="true" tabindex="-1"></a><span class="st">*.py[cod]</span></span>
-<span id="cb26-536"><a href="#cb26-536" aria-hidden="true" tabindex="-1"></a><span class="st">*</span><span class="va">$py</span><span class="st">.class</span></span>
-<span id="cb26-537"><a href="#cb26-537" aria-hidden="true" tabindex="-1"></a><span class="st">*.so</span></span>
-<span id="cb26-538"><a href="#cb26-538" aria-hidden="true" tabindex="-1"></a><span class="st">.Python</span></span>
-<span id="cb26-539"><a href="#cb26-539" aria-hidden="true" tabindex="-1"></a><span class="st">env/</span></span>
-<span id="cb26-540"><a href="#cb26-540" aria-hidden="true" tabindex="-1"></a><span class="st">build/</span></span>
-<span id="cb26-541"><a href="#cb26-541" aria-hidden="true" tabindex="-1"></a><span class="st">develop-eggs/</span></span>
-<span id="cb26-542"><a href="#cb26-542" aria-hidden="true" tabindex="-1"></a><span class="st">dist/</span></span>
-<span id="cb26-543"><a href="#cb26-543" aria-hidden="true" tabindex="-1"></a><span class="st">downloads/</span></span>
-<span id="cb26-544"><a href="#cb26-544" aria-hidden="true" tabindex="-1"></a><span class="st">eggs/</span></span>
-<span id="cb26-545"><a href="#cb26-545" aria-hidden="true" tabindex="-1"></a><span class="st">.eggs/</span></span>
-<span id="cb26-546"><a href="#cb26-546" aria-hidden="true" tabindex="-1"></a><span class="st">lib/</span></span>
-<span id="cb26-547"><a href="#cb26-547" aria-hidden="true" tabindex="-1"></a><span class="st">lib64/</span></span>
-<span id="cb26-548"><a href="#cb26-548" aria-hidden="true" tabindex="-1"></a><span class="st">parts/</span></span>
-<span id="cb26-549"><a href="#cb26-549" aria-hidden="true" tabindex="-1"></a><span class="st">sdist/</span></span>
-<span id="cb26-550"><a href="#cb26-550" aria-hidden="true" tabindex="-1"></a><span class="st">var/</span></span>
-<span id="cb26-551"><a href="#cb26-551" aria-hidden="true" tabindex="-1"></a><span class="st">*.egg-info/</span></span>
-<span id="cb26-552"><a href="#cb26-552" aria-hidden="true" tabindex="-1"></a><span class="st">.installed.cfg</span></span>
-<span id="cb26-553"><a href="#cb26-553" aria-hidden="true" tabindex="-1"></a><span class="st">*.egg</span></span>
-<span id="cb26-554"><a href="#cb26-554" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-555"><a href="#cb26-555" aria-hidden="true" tabindex="-1"></a><span class="st"># Virtual environments</span></span>
-<span id="cb26-556"><a href="#cb26-556" aria-hidden="true" tabindex="-1"></a><span class="st">venv/</span></span>
-<span id="cb26-557"><a href="#cb26-557" aria-hidden="true" tabindex="-1"></a><span class="st">ENV/</span></span>
-<span id="cb26-558"><a href="#cb26-558" aria-hidden="true" tabindex="-1"></a><span class="st">env/</span></span>
-<span id="cb26-559"><a href="#cb26-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-560"><a href="#cb26-560" aria-hidden="true" tabindex="-1"></a><span class="st"># IDE files</span></span>
-<span id="cb26-561"><a href="#cb26-561" aria-hidden="true" tabindex="-1"></a><span class="st">.idea/</span></span>
-<span id="cb26-562"><a href="#cb26-562" aria-hidden="true" tabindex="-1"></a><span class="st">.vscode/</span></span>
-<span id="cb26-563"><a href="#cb26-563" aria-hidden="true" tabindex="-1"></a><span class="st">*.swp</span></span>
-<span id="cb26-564"><a href="#cb26-564" aria-hidden="true" tabindex="-1"></a><span class="st">*.swo</span></span>
-<span id="cb26-565"><a href="#cb26-565" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-566"><a href="#cb26-566" aria-hidden="true" tabindex="-1"></a><span class="st"># Project-specific</span></span>
-<span id="cb26-567"><a href="#cb26-567" aria-hidden="true" tabindex="-1"></a><span class="st">data/history/*.txt</span></span>
-<span id="cb26-568"><a href="#cb26-568" aria-hidden="true" tabindex="-1"></a><span class="st">.env</span></span>
-<span id="cb26-569"><a href="#cb26-569" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb26-570"><a href="#cb26-570" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-571"><a href="#cb26-571" aria-hidden="true" tabindex="-1"></a><span class="co"># Add files and make initial commit</span></span>
-<span id="cb26-572"><a href="#cb26-572" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb26-573"><a href="#cb26-573" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial project setup"</span></span>
-<span id="cb26-574"><a href="#cb26-574" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-575"><a href="#cb26-575" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-576"><a href="#cb26-576" aria-hidden="true" tabindex="-1"></a><span class="fu">### Testing the Setup</span></span>
-<span id="cb26-577"><a href="#cb26-577" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-578"><a href="#cb26-578" aria-hidden="true" tabindex="-1"></a>Create a simple test script:</span>
-<span id="cb26-579"><a href="#cb26-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-580"><a href="#cb26-580" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb26-581"><a href="#cb26-581" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a test script</span></span>
-<span id="cb26-582"><a href="#cb26-582" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> test_setup.py <span class="op">&lt;&lt; EOF</span></span>
-<span id="cb26-583"><a href="#cb26-583" aria-hidden="true" tabindex="-1"></a><span class="st">"""Test the chatbot project setup."""</span></span>
-<span id="cb26-584"><a href="#cb26-584" aria-hidden="true" tabindex="-1"></a><span class="st">import sys</span></span>
-<span id="cb26-585"><a href="#cb26-585" aria-hidden="true" tabindex="-1"></a><span class="st">from pathlib import Path</span></span>
-<span id="cb26-586"><a href="#cb26-586" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-587"><a href="#cb26-587" aria-hidden="true" tabindex="-1"></a><span class="st">def check_structure():</span></span>
-<span id="cb26-588"><a href="#cb26-588" aria-hidden="true" tabindex="-1"></a><span class="st">    """Verify the project structure."""</span></span>
-<span id="cb26-589"><a href="#cb26-589" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Checking project structure...")</span></span>
-<span id="cb26-590"><a href="#cb26-590" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-591"><a href="#cb26-591" aria-hidden="true" tabindex="-1"></a><span class="st">    # Check directories</span></span>
-<span id="cb26-592"><a href="#cb26-592" aria-hidden="true" tabindex="-1"></a><span class="st">    dirs = ["chatbot", "data", "tests", "docs"]</span></span>
-<span id="cb26-593"><a href="#cb26-593" aria-hidden="true" tabindex="-1"></a><span class="st">    for d in dirs:</span></span>
-<span id="cb26-594"><a href="#cb26-594" aria-hidden="true" tabindex="-1"></a><span class="st">        if not Path(d).is_dir():</span></span>
-<span id="cb26-595"><a href="#cb26-595" aria-hidden="true" tabindex="-1"></a><span class="st">            print(f"ERROR: Directory '{d}' not found!")</span></span>
-<span id="cb26-596"><a href="#cb26-596" aria-hidden="true" tabindex="-1"></a><span class="st">            return False</span></span>
-<span id="cb26-597"><a href="#cb26-597" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-598"><a href="#cb26-598" aria-hidden="true" tabindex="-1"></a><span class="st">    # Check key files</span></span>
-<span id="cb26-599"><a href="#cb26-599" aria-hidden="true" tabindex="-1"></a><span class="st">    files = [</span></span>
-<span id="cb26-600"><a href="#cb26-600" aria-hidden="true" tabindex="-1"></a><span class="st">        "chatbot/__init__.py",</span></span>
-<span id="cb26-601"><a href="#cb26-601" aria-hidden="true" tabindex="-1"></a><span class="st">        "chatbot/main.py",</span></span>
-<span id="cb26-602"><a href="#cb26-602" aria-hidden="true" tabindex="-1"></a><span class="st">        "chatbot/response_manager.py",</span></span>
-<span id="cb26-603"><a href="#cb26-603" aria-hidden="true" tabindex="-1"></a><span class="st">        "requirements.txt",</span></span>
-<span id="cb26-604"><a href="#cb26-604" aria-hidden="true" tabindex="-1"></a><span class="st">        ".gitignore"</span></span>
-<span id="cb26-605"><a href="#cb26-605" aria-hidden="true" tabindex="-1"></a><span class="st">    ]</span></span>
-<span id="cb26-606"><a href="#cb26-606" aria-hidden="true" tabindex="-1"></a><span class="st">    for f in files:</span></span>
-<span id="cb26-607"><a href="#cb26-607" aria-hidden="true" tabindex="-1"></a><span class="st">        if not Path(f).is_file():</span></span>
-<span id="cb26-608"><a href="#cb26-608" aria-hidden="true" tabindex="-1"></a><span class="st">            print(f"ERROR: File '{f}' not found!")</span></span>
-<span id="cb26-609"><a href="#cb26-609" aria-hidden="true" tabindex="-1"></a><span class="st">            return False</span></span>
-<span id="cb26-610"><a href="#cb26-610" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-611"><a href="#cb26-611" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Project structure looks good!")</span></span>
-<span id="cb26-612"><a href="#cb26-612" aria-hidden="true" tabindex="-1"></a><span class="st">    return True</span></span>
-<span id="cb26-613"><a href="#cb26-613" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-614"><a href="#cb26-614" aria-hidden="true" tabindex="-1"></a><span class="st">def check_environment():</span></span>
-<span id="cb26-615"><a href="#cb26-615" aria-hidden="true" tabindex="-1"></a><span class="st">    """Verify the Python environment."""</span></span>
-<span id="cb26-616"><a href="#cb26-616" aria-hidden="true" tabindex="-1"></a><span class="st">    print("</span><span class="dt">\n</span><span class="st">Checking Python environment...")</span></span>
-<span id="cb26-617"><a href="#cb26-617" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-618"><a href="#cb26-618" aria-hidden="true" tabindex="-1"></a><span class="st">    # Check Python version</span></span>
-<span id="cb26-619"><a href="#cb26-619" aria-hidden="true" tabindex="-1"></a><span class="st">    py_version = sys.version.split()[0]</span></span>
-<span id="cb26-620"><a href="#cb26-620" aria-hidden="true" tabindex="-1"></a><span class="st">    print(f"Python version: {py_version}")</span></span>
-<span id="cb26-621"><a href="#cb26-621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-622"><a href="#cb26-622" aria-hidden="true" tabindex="-1"></a><span class="st">    # Try importing key packages</span></span>
-<span id="cb26-623"><a href="#cb26-623" aria-hidden="true" tabindex="-1"></a><span class="st">    try:</span></span>
-<span id="cb26-624"><a href="#cb26-624" aria-hidden="true" tabindex="-1"></a><span class="st">        import dotenv</span></span>
-<span id="cb26-625"><a href="#cb26-625" aria-hidden="true" tabindex="-1"></a><span class="st">        print("python-dotenv: Installed")</span></span>
-<span id="cb26-626"><a href="#cb26-626" aria-hidden="true" tabindex="-1"></a><span class="st">    except ImportError:</span></span>
-<span id="cb26-627"><a href="#cb26-627" aria-hidden="true" tabindex="-1"></a><span class="st">        print("WARNING: python-dotenv not installed!")</span></span>
-<span id="cb26-628"><a href="#cb26-628" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-629"><a href="#cb26-629" aria-hidden="true" tabindex="-1"></a><span class="st">    try:</span></span>
-<span id="cb26-630"><a href="#cb26-630" aria-hidden="true" tabindex="-1"></a><span class="st">        import requests</span></span>
-<span id="cb26-631"><a href="#cb26-631" aria-hidden="true" tabindex="-1"></a><span class="st">        print("requests: Installed")</span></span>
-<span id="cb26-632"><a href="#cb26-632" aria-hidden="true" tabindex="-1"></a><span class="st">    except ImportError:</span></span>
-<span id="cb26-633"><a href="#cb26-633" aria-hidden="true" tabindex="-1"></a><span class="st">        print("WARNING: requests not installed!")</span></span>
-<span id="cb26-634"><a href="#cb26-634" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-635"><a href="#cb26-635" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Environment check complete!")</span></span>
-<span id="cb26-636"><a href="#cb26-636" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-637"><a href="#cb26-637" aria-hidden="true" tabindex="-1"></a><span class="st">if __name__ == "__main__":</span></span>
-<span id="cb26-638"><a href="#cb26-638" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Testing Chatbot Project Setup")</span></span>
-<span id="cb26-639"><a href="#cb26-639" aria-hidden="true" tabindex="-1"></a><span class="st">    print("============================")</span></span>
-<span id="cb26-640"><a href="#cb26-640" aria-hidden="true" tabindex="-1"></a><span class="st">    check_structure()</span></span>
-<span id="cb26-641"><a href="#cb26-641" aria-hidden="true" tabindex="-1"></a><span class="st">    check_environment()</span></span>
-<span id="cb26-642"><a href="#cb26-642" aria-hidden="true" tabindex="-1"></a><span class="st">    print("</span><span class="dt">\n</span><span class="st">Setup test complete!")</span></span>
-<span id="cb26-643"><a href="#cb26-643" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb26-644"><a href="#cb26-644" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-645"><a href="#cb26-645" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the test script</span></span>
-<span id="cb26-646"><a href="#cb26-646" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_setup.py</span>
-<span id="cb26-647"><a href="#cb26-647" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb26-648"><a href="#cb26-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-649"><a href="#cb26-649" aria-hidden="true" tabindex="-1"></a>This comprehensive setup gives you a solid foundation for your chatbot project, with proper organisation, dependency management, and version control from the start.</span>
-<span id="cb26-650"><a href="#cb26-650" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-651"><a href="#cb26-651" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-References</span></span>
-<span id="cb26-652"><a href="#cb26-652" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-653"><a href="#cb26-653" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Previous Chapter: <span class="co">[</span><span class="ot">How to Run Python Code</span><span class="co">](how_to_run_python_code.qmd)</span></span>
-<span id="cb26-654"><a href="#cb26-654" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Next Chapter: <span class="co">[</span><span class="ot">Getting Help</span><span class="co">](getting_help.qmd)</span></span>
-<span id="cb26-655"><a href="#cb26-655" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Related Topics: Testing (Chapter 18), Modules and Packages (Chapter 19)</span>
-<span id="cb26-656"><a href="#cb26-656" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-657"><a href="#cb26-657" aria-hidden="true" tabindex="-1"></a>***AI Tip: When setting up a new Python project, ask your AI assistant to help you generate environment setup scripts, directory structures, or configuration files. This can save you time and ensure you follow best practices from the beginning.***</span>
-<span id="cb26-658"><a href="#cb26-658" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-659"><a href="#cb26-659" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb26-660"><a href="#cb26-660" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-661"><a href="#cb26-661" aria-hidden="true" tabindex="-1"></a>In this chapter, we've explored the process of setting up a Python development environment, with a focus on using conda/Miniconda for managing Python installations and environments. We've covered:</span>
-<span id="cb26-662"><a href="#cb26-662" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-663"><a href="#cb26-663" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Different Python installation options and their pros and cons</span>
-<span id="cb26-664"><a href="#cb26-664" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Installing and configuring Miniconda</span>
-<span id="cb26-665"><a href="#cb26-665" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Creating and managing conda environments</span>
-<span id="cb26-666"><a href="#cb26-666" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Installing packages with conda and pip</span>
-<span id="cb26-667"><a href="#cb26-667" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Testing your Python installation</span>
-<span id="cb26-668"><a href="#cb26-668" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Setting up development tools and IDEs</span>
-<span id="cb26-669"><a href="#cb26-669" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Troubleshooting common installation issues</span>
-<span id="cb26-670"><a href="#cb26-670" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Creating a structured environment for the chatbot project</span>
-<span id="cb26-671"><a href="#cb26-671" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-672"><a href="#cb26-672" aria-hidden="true" tabindex="-1"></a>By following these guidelines, you'll have a clean, organised Python setup that will serve you well as you continue your programming journey. The isolation provided by environments helps prevent dependency conflicts and makes it easier to work on multiple projects simultaneously.</span>
-<span id="cb26-673"><a href="#cb26-673" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-674"><a href="#cb26-674" aria-hidden="true" tabindex="-1"></a>Remember that proper environment setup is an investment that pays off in reduced troubleshooting time and a more pleasant development experience. Take the time to set things up correctly now, and you'll thank yourself later!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb26-371"><a href="#cb26-371" aria-hidden="true" tabindex="-1"></a><span class="va">$conda</span> = <span class="st">"C:\Users\YourUsername\miniconda3"</span></span>
+<span id="cb26-372"><a href="#cb26-372" aria-hidden="true" tabindex="-1"></a><span class="va">$Env</span><span class="ex">:Path</span> = <span class="st">"</span><span class="va">$Env</span><span class="st">:Path;</span><span class="va">$conda</span><span class="st">;</span><span class="va">$conda</span><span class="st">\Scripts"</span></span>
+<span id="cb26-373"><a href="#cb26-373" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-374"><a href="#cb26-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-375"><a href="#cb26-375" aria-hidden="true" tabindex="-1"></a><span class="fu">### Permission Errors</span></span>
+<span id="cb26-376"><a href="#cb26-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-377"><a href="#cb26-377" aria-hidden="true" tabindex="-1"></a>If you encounter permission errors:</span>
+<span id="cb26-378"><a href="#cb26-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-379"><a href="#cb26-379" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-380"><a href="#cb26-380" aria-hidden="true" tabindex="-1"></a><span class="co"># On Linux/macOS</span></span>
+<span id="cb26-381"><a href="#cb26-381" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">$USER</span>:<span class="va">$USER</span> ~/miniconda3</span>
+<span id="cb26-382"><a href="#cb26-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-383"><a href="#cb26-383" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows, run Command Prompt or PowerShell as Administrator</span></span>
+<span id="cb26-384"><a href="#cb26-384" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-385"><a href="#cb26-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-386"><a href="#cb26-386" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Self-Assessment Quiz</span></span>
+<span id="cb26-387"><a href="#cb26-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-388"><a href="#cb26-388" aria-hidden="true" tabindex="-1"></a>Test your understanding of Python installation and environment management:</span>
+<span id="cb26-389"><a href="#cb26-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-390"><a href="#cb26-390" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What is the main advantage of using conda over pip?</span>
+<span id="cb26-391"><a href="#cb26-391" aria-hidden="true" tabindex="-1"></a>   a) conda is faster than pip</span>
+<span id="cb26-392"><a href="#cb26-392" aria-hidden="true" tabindex="-1"></a>   b) conda can install non-Python packages and manage environments</span>
+<span id="cb26-393"><a href="#cb26-393" aria-hidden="true" tabindex="-1"></a>   c) conda works on more operating systems</span>
+<span id="cb26-394"><a href="#cb26-394" aria-hidden="true" tabindex="-1"></a>   d) conda can install more packages than pip</span>
+<span id="cb26-395"><a href="#cb26-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-396"><a href="#cb26-396" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>How do you activate a conda environment called "data_science"?</span>
+<span id="cb26-397"><a href="#cb26-397" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`conda environment data_science`</span></span>
+<span id="cb26-398"><a href="#cb26-398" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`conda start data_science`</span></span>
+<span id="cb26-399"><a href="#cb26-399" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`conda activate data_science`</span></span>
+<span id="cb26-400"><a href="#cb26-400" aria-hidden="true" tabindex="-1"></a>   d) <span class="in">`conda data_science activate`</span></span>
+<span id="cb26-401"><a href="#cb26-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-402"><a href="#cb26-402" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is the recommended way to install a package in an active conda environment?</span>
+<span id="cb26-403"><a href="#cb26-403" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`pip install package_name`</span></span>
+<span id="cb26-404"><a href="#cb26-404" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`conda install package_name`</span></span>
+<span id="cb26-405"><a href="#cb26-405" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`python -m install package_name`</span></span>
+<span id="cb26-406"><a href="#cb26-406" aria-hidden="true" tabindex="-1"></a>   d) <span class="in">`install package_name`</span></span>
+<span id="cb26-407"><a href="#cb26-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-408"><a href="#cb26-408" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Why might you choose Miniconda over the full Anaconda distribution?</span>
+<span id="cb26-409"><a href="#cb26-409" aria-hidden="true" tabindex="-1"></a>   a) Miniconda is more powerful</span>
+<span id="cb26-410"><a href="#cb26-410" aria-hidden="true" tabindex="-1"></a>   b) Miniconda is easier to install</span>
+<span id="cb26-411"><a href="#cb26-411" aria-hidden="true" tabindex="-1"></a>   c) Miniconda provides a minimal base installation that you can build upon</span>
+<span id="cb26-412"><a href="#cb26-412" aria-hidden="true" tabindex="-1"></a>   d) Miniconda works on more platforms</span>
+<span id="cb26-413"><a href="#cb26-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-414"><a href="#cb26-414" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What is the purpose of a virtual environment in Python?</span>
+<span id="cb26-415"><a href="#cb26-415" aria-hidden="true" tabindex="-1"></a>   a) To speed up Python code execution</span>
+<span id="cb26-416"><a href="#cb26-416" aria-hidden="true" tabindex="-1"></a>   b) To isolate project dependencies and avoid conflicts</span>
+<span id="cb26-417"><a href="#cb26-417" aria-hidden="true" tabindex="-1"></a>   c) To reduce the size of Python scripts</span>
+<span id="cb26-418"><a href="#cb26-418" aria-hidden="true" tabindex="-1"></a>   d) To enable cross-platform compatibility</span>
+<span id="cb26-419"><a href="#cb26-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-420"><a href="#cb26-420" aria-hidden="true" tabindex="-1"></a>**Answers:**</span>
+<span id="cb26-421"><a href="#cb26-421" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>b) conda can install non-Python packages and manage environments</span>
+<span id="cb26-422"><a href="#cb26-422" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>c) <span class="in">`conda activate data_science`</span></span>
+<span id="cb26-423"><a href="#cb26-423" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>b) <span class="in">`conda install package_name`</span></span>
+<span id="cb26-424"><a href="#cb26-424" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>c) Miniconda provides a minimal base installation that you can build upon</span>
+<span id="cb26-425"><a href="#cb26-425" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>b) To isolate project dependencies and avoid conflicts</span>
+<span id="cb26-426"><a href="#cb26-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-427"><a href="#cb26-427" aria-hidden="true" tabindex="-1"></a><span class="fu">## 11. Project Corner: Setting Up for the Chatbot Project</span></span>
+<span id="cb26-428"><a href="#cb26-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-429"><a href="#cb26-429" aria-hidden="true" tabindex="-1"></a>Let's set up a dedicated environment for our chatbot project:</span>
+<span id="cb26-430"><a href="#cb26-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-431"><a href="#cb26-431" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating a Chatbot Project Environment</span></span>
+<span id="cb26-432"><a href="#cb26-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-433"><a href="#cb26-433" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-434"><a href="#cb26-434" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new environment for the chatbot project</span></span>
+<span id="cb26-435"><a href="#cb26-435" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> chatbot python=3.10</span>
+<span id="cb26-436"><a href="#cb26-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-437"><a href="#cb26-437" aria-hidden="true" tabindex="-1"></a><span class="co"># Activate the environment</span></span>
+<span id="cb26-438"><a href="#cb26-438" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate chatbot</span>
+<span id="cb26-439"><a href="#cb26-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-440"><a href="#cb26-440" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
+<span id="cb26-441"><a href="#cb26-441" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install ipython jupyter</span>
+<span id="cb26-442"><a href="#cb26-442" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install python-dotenv requests</span>
+<span id="cb26-443"><a href="#cb26-443" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-444"><a href="#cb26-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-445"><a href="#cb26-445" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project Directory Structure</span></span>
+<span id="cb26-446"><a href="#cb26-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-447"><a href="#cb26-447" aria-hidden="true" tabindex="-1"></a>Create a structured directory for your chatbot project:</span>
+<span id="cb26-448"><a href="#cb26-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-449"><a href="#cb26-449" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-450"><a href="#cb26-450" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/chatbot_project/<span class="dt">{chatbot</span><span class="op">,</span><span class="dt">data</span><span class="op">,</span><span class="dt">tests</span><span class="op">,</span><span class="dt">docs}</span></span>
+<span id="cb26-451"><a href="#cb26-451" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/chatbot_project</span>
+<span id="cb26-452"><a href="#cb26-452" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-453"><a href="#cb26-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-454"><a href="#cb26-454" aria-hidden="true" tabindex="-1"></a>This creates:</span>
+<span id="cb26-455"><a href="#cb26-455" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/`</span>: For your main module code</span>
+<span id="cb26-456"><a href="#cb26-456" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`data/`</span>: For any data files your chatbot might use</span>
+<span id="cb26-457"><a href="#cb26-457" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`tests/`</span>: For test scripts</span>
+<span id="cb26-458"><a href="#cb26-458" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`docs/`</span>: For documentation</span>
+<span id="cb26-459"><a href="#cb26-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-460"><a href="#cb26-460" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting Up the Module Structure</span></span>
+<span id="cb26-461"><a href="#cb26-461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-462"><a href="#cb26-462" aria-hidden="true" tabindex="-1"></a>Create the basic files for your chatbot module:</span>
+<span id="cb26-463"><a href="#cb26-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-464"><a href="#cb26-464" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-465"><a href="#cb26-465" aria-hidden="true" tabindex="-1"></a><span class="co"># Main package initialization</span></span>
+<span id="cb26-466"><a href="#cb26-466" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/__init__.py</span>
+<span id="cb26-467"><a href="#cb26-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-468"><a href="#cb26-468" aria-hidden="true" tabindex="-1"></a><span class="co"># Module files</span></span>
+<span id="cb26-469"><a href="#cb26-469" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/main.py</span>
+<span id="cb26-470"><a href="#cb26-470" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/response_manager.py</span>
+<span id="cb26-471"><a href="#cb26-471" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/history_manager.py</span>
+<span id="cb26-472"><a href="#cb26-472" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> chatbot/ui_manager.py</span>
+<span id="cb26-473"><a href="#cb26-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-474"><a href="#cb26-474" aria-hidden="true" tabindex="-1"></a><span class="co"># Test files</span></span>
+<span id="cb26-475"><a href="#cb26-475" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> tests/__init__.py</span>
+<span id="cb26-476"><a href="#cb26-476" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> tests/test_response_manager.py</span>
+<span id="cb26-477"><a href="#cb26-477" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> tests/test_history_manager.py</span>
+<span id="cb26-478"><a href="#cb26-478" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-479"><a href="#cb26-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-480"><a href="#cb26-480" aria-hidden="true" tabindex="-1"></a><span class="fu">### Creating a Basic Configuration</span></span>
+<span id="cb26-481"><a href="#cb26-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-482"><a href="#cb26-482" aria-hidden="true" tabindex="-1"></a>Create a configuration file for your chatbot:</span>
+<span id="cb26-483"><a href="#cb26-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-484"><a href="#cb26-484" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-485"><a href="#cb26-485" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a config file</span></span>
+<span id="cb26-486"><a href="#cb26-486" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> chatbot/config.py <span class="op">&lt;&lt; EOF</span></span>
+<span id="cb26-487"><a href="#cb26-487" aria-hidden="true" tabindex="-1"></a><span class="st">"""Configuration settings for the chatbot."""</span></span>
+<span id="cb26-488"><a href="#cb26-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-489"><a href="#cb26-489" aria-hidden="true" tabindex="-1"></a><span class="st"># Bot settings</span></span>
+<span id="cb26-490"><a href="#cb26-490" aria-hidden="true" tabindex="-1"></a><span class="st">DEFAULT_BOT_NAME = "PyBot"</span></span>
+<span id="cb26-491"><a href="#cb26-491" aria-hidden="true" tabindex="-1"></a><span class="st">HISTORY_SIZE = 100</span></span>
+<span id="cb26-492"><a href="#cb26-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-493"><a href="#cb26-493" aria-hidden="true" tabindex="-1"></a><span class="st"># Response settings</span></span>
+<span id="cb26-494"><a href="#cb26-494" aria-hidden="true" tabindex="-1"></a><span class="st">RESPONSE_DELAY = 0.5  # Seconds to wait before responding</span></span>
+<span id="cb26-495"><a href="#cb26-495" aria-hidden="true" tabindex="-1"></a><span class="st">DEFAULT_RESPONSES = [</span></span>
+<span id="cb26-496"><a href="#cb26-496" aria-hidden="true" tabindex="-1"></a><span class="st">    "I'm not sure how to respond to that.",</span></span>
+<span id="cb26-497"><a href="#cb26-497" aria-hidden="true" tabindex="-1"></a><span class="st">    "Can you tell me more?",</span></span>
+<span id="cb26-498"><a href="#cb26-498" aria-hidden="true" tabindex="-1"></a><span class="st">    "Interesting, please go on."</span></span>
+<span id="cb26-499"><a href="#cb26-499" aria-hidden="true" tabindex="-1"></a><span class="st">]</span></span>
+<span id="cb26-500"><a href="#cb26-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-501"><a href="#cb26-501" aria-hidden="true" tabindex="-1"></a><span class="st"># File paths</span></span>
+<span id="cb26-502"><a href="#cb26-502" aria-hidden="true" tabindex="-1"></a><span class="st">HISTORY_DIRECTORY = "data/history"</span></span>
+<span id="cb26-503"><a href="#cb26-503" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
+<span id="cb26-504"><a href="#cb26-504" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-505"><a href="#cb26-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-506"><a href="#cb26-506" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project Environment File</span></span>
+<span id="cb26-507"><a href="#cb26-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-508"><a href="#cb26-508" aria-hidden="true" tabindex="-1"></a>Create a requirements file to document dependencies:</span>
+<span id="cb26-509"><a href="#cb26-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-510"><a href="#cb26-510" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-511"><a href="#cb26-511" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a requirements.txt file</span></span>
+<span id="cb26-512"><a href="#cb26-512" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> requirements.txt <span class="op">&lt;&lt; EOF</span></span>
+<span id="cb26-513"><a href="#cb26-513" aria-hidden="true" tabindex="-1"></a><span class="st"># Chatbot project dependencies</span></span>
+<span id="cb26-514"><a href="#cb26-514" aria-hidden="true" tabindex="-1"></a><span class="st">python-dotenv&gt;=0.19.0</span></span>
+<span id="cb26-515"><a href="#cb26-515" aria-hidden="true" tabindex="-1"></a><span class="st">requests&gt;=2.26.0</span></span>
+<span id="cb26-516"><a href="#cb26-516" aria-hidden="true" tabindex="-1"></a><span class="st">pytest&gt;=6.2.5</span></span>
+<span id="cb26-517"><a href="#cb26-517" aria-hidden="true" tabindex="-1"></a><span class="st">black&gt;=21.9b0</span></span>
+<span id="cb26-518"><a href="#cb26-518" aria-hidden="true" tabindex="-1"></a><span class="st">flake8&gt;=3.9.2</span></span>
+<span id="cb26-519"><a href="#cb26-519" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
+<span id="cb26-520"><a href="#cb26-520" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-521"><a href="#cb26-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-522"><a href="#cb26-522" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting Up Version Control</span></span>
+<span id="cb26-523"><a href="#cb26-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-524"><a href="#cb26-524" aria-hidden="true" tabindex="-1"></a>Initialize a Git repository for your project:</span>
+<span id="cb26-525"><a href="#cb26-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-526"><a href="#cb26-526" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-527"><a href="#cb26-527" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Git repository</span></span>
+<span id="cb26-528"><a href="#cb26-528" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb26-529"><a href="#cb26-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-530"><a href="#cb26-530" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a .gitignore file</span></span>
+<span id="cb26-531"><a href="#cb26-531" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> .gitignore <span class="op">&lt;&lt; EOF</span></span>
+<span id="cb26-532"><a href="#cb26-532" aria-hidden="true" tabindex="-1"></a><span class="st"># Python</span></span>
+<span id="cb26-533"><a href="#cb26-533" aria-hidden="true" tabindex="-1"></a><span class="st">__pycache__/</span></span>
+<span id="cb26-534"><a href="#cb26-534" aria-hidden="true" tabindex="-1"></a><span class="st">*.py[cod]</span></span>
+<span id="cb26-535"><a href="#cb26-535" aria-hidden="true" tabindex="-1"></a><span class="st">*</span><span class="va">$py</span><span class="st">.class</span></span>
+<span id="cb26-536"><a href="#cb26-536" aria-hidden="true" tabindex="-1"></a><span class="st">*.so</span></span>
+<span id="cb26-537"><a href="#cb26-537" aria-hidden="true" tabindex="-1"></a><span class="st">.Python</span></span>
+<span id="cb26-538"><a href="#cb26-538" aria-hidden="true" tabindex="-1"></a><span class="st">env/</span></span>
+<span id="cb26-539"><a href="#cb26-539" aria-hidden="true" tabindex="-1"></a><span class="st">build/</span></span>
+<span id="cb26-540"><a href="#cb26-540" aria-hidden="true" tabindex="-1"></a><span class="st">develop-eggs/</span></span>
+<span id="cb26-541"><a href="#cb26-541" aria-hidden="true" tabindex="-1"></a><span class="st">dist/</span></span>
+<span id="cb26-542"><a href="#cb26-542" aria-hidden="true" tabindex="-1"></a><span class="st">downloads/</span></span>
+<span id="cb26-543"><a href="#cb26-543" aria-hidden="true" tabindex="-1"></a><span class="st">eggs/</span></span>
+<span id="cb26-544"><a href="#cb26-544" aria-hidden="true" tabindex="-1"></a><span class="st">.eggs/</span></span>
+<span id="cb26-545"><a href="#cb26-545" aria-hidden="true" tabindex="-1"></a><span class="st">lib/</span></span>
+<span id="cb26-546"><a href="#cb26-546" aria-hidden="true" tabindex="-1"></a><span class="st">lib64/</span></span>
+<span id="cb26-547"><a href="#cb26-547" aria-hidden="true" tabindex="-1"></a><span class="st">parts/</span></span>
+<span id="cb26-548"><a href="#cb26-548" aria-hidden="true" tabindex="-1"></a><span class="st">sdist/</span></span>
+<span id="cb26-549"><a href="#cb26-549" aria-hidden="true" tabindex="-1"></a><span class="st">var/</span></span>
+<span id="cb26-550"><a href="#cb26-550" aria-hidden="true" tabindex="-1"></a><span class="st">*.egg-info/</span></span>
+<span id="cb26-551"><a href="#cb26-551" aria-hidden="true" tabindex="-1"></a><span class="st">.installed.cfg</span></span>
+<span id="cb26-552"><a href="#cb26-552" aria-hidden="true" tabindex="-1"></a><span class="st">*.egg</span></span>
+<span id="cb26-553"><a href="#cb26-553" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-554"><a href="#cb26-554" aria-hidden="true" tabindex="-1"></a><span class="st"># Virtual environments</span></span>
+<span id="cb26-555"><a href="#cb26-555" aria-hidden="true" tabindex="-1"></a><span class="st">venv/</span></span>
+<span id="cb26-556"><a href="#cb26-556" aria-hidden="true" tabindex="-1"></a><span class="st">ENV/</span></span>
+<span id="cb26-557"><a href="#cb26-557" aria-hidden="true" tabindex="-1"></a><span class="st">env/</span></span>
+<span id="cb26-558"><a href="#cb26-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-559"><a href="#cb26-559" aria-hidden="true" tabindex="-1"></a><span class="st"># IDE files</span></span>
+<span id="cb26-560"><a href="#cb26-560" aria-hidden="true" tabindex="-1"></a><span class="st">.idea/</span></span>
+<span id="cb26-561"><a href="#cb26-561" aria-hidden="true" tabindex="-1"></a><span class="st">.vscode/</span></span>
+<span id="cb26-562"><a href="#cb26-562" aria-hidden="true" tabindex="-1"></a><span class="st">*.swp</span></span>
+<span id="cb26-563"><a href="#cb26-563" aria-hidden="true" tabindex="-1"></a><span class="st">*.swo</span></span>
+<span id="cb26-564"><a href="#cb26-564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-565"><a href="#cb26-565" aria-hidden="true" tabindex="-1"></a><span class="st"># Project-specific</span></span>
+<span id="cb26-566"><a href="#cb26-566" aria-hidden="true" tabindex="-1"></a><span class="st">data/history/*.txt</span></span>
+<span id="cb26-567"><a href="#cb26-567" aria-hidden="true" tabindex="-1"></a><span class="st">.env</span></span>
+<span id="cb26-568"><a href="#cb26-568" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
+<span id="cb26-569"><a href="#cb26-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-570"><a href="#cb26-570" aria-hidden="true" tabindex="-1"></a><span class="co"># Add files and make initial commit</span></span>
+<span id="cb26-571"><a href="#cb26-571" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb26-572"><a href="#cb26-572" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial project setup"</span></span>
+<span id="cb26-573"><a href="#cb26-573" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-574"><a href="#cb26-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-575"><a href="#cb26-575" aria-hidden="true" tabindex="-1"></a><span class="fu">### Testing the Setup</span></span>
+<span id="cb26-576"><a href="#cb26-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-577"><a href="#cb26-577" aria-hidden="true" tabindex="-1"></a>Create a simple test script:</span>
+<span id="cb26-578"><a href="#cb26-578" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-579"><a href="#cb26-579" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb26-580"><a href="#cb26-580" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a test script</span></span>
+<span id="cb26-581"><a href="#cb26-581" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> test_setup.py <span class="op">&lt;&lt; EOF</span></span>
+<span id="cb26-582"><a href="#cb26-582" aria-hidden="true" tabindex="-1"></a><span class="st">"""Test the chatbot project setup."""</span></span>
+<span id="cb26-583"><a href="#cb26-583" aria-hidden="true" tabindex="-1"></a><span class="st">import sys</span></span>
+<span id="cb26-584"><a href="#cb26-584" aria-hidden="true" tabindex="-1"></a><span class="st">from pathlib import Path</span></span>
+<span id="cb26-585"><a href="#cb26-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-586"><a href="#cb26-586" aria-hidden="true" tabindex="-1"></a><span class="st">def check_structure():</span></span>
+<span id="cb26-587"><a href="#cb26-587" aria-hidden="true" tabindex="-1"></a><span class="st">    """Verify the project structure."""</span></span>
+<span id="cb26-588"><a href="#cb26-588" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Checking project structure...")</span></span>
+<span id="cb26-589"><a href="#cb26-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-590"><a href="#cb26-590" aria-hidden="true" tabindex="-1"></a><span class="st">    # Check directories</span></span>
+<span id="cb26-591"><a href="#cb26-591" aria-hidden="true" tabindex="-1"></a><span class="st">    dirs = ["chatbot", "data", "tests", "docs"]</span></span>
+<span id="cb26-592"><a href="#cb26-592" aria-hidden="true" tabindex="-1"></a><span class="st">    for d in dirs:</span></span>
+<span id="cb26-593"><a href="#cb26-593" aria-hidden="true" tabindex="-1"></a><span class="st">        if not Path(d).is_dir():</span></span>
+<span id="cb26-594"><a href="#cb26-594" aria-hidden="true" tabindex="-1"></a><span class="st">            print(f"ERROR: Directory '{d}' not found!")</span></span>
+<span id="cb26-595"><a href="#cb26-595" aria-hidden="true" tabindex="-1"></a><span class="st">            return False</span></span>
+<span id="cb26-596"><a href="#cb26-596" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-597"><a href="#cb26-597" aria-hidden="true" tabindex="-1"></a><span class="st">    # Check key files</span></span>
+<span id="cb26-598"><a href="#cb26-598" aria-hidden="true" tabindex="-1"></a><span class="st">    files = [</span></span>
+<span id="cb26-599"><a href="#cb26-599" aria-hidden="true" tabindex="-1"></a><span class="st">        "chatbot/__init__.py",</span></span>
+<span id="cb26-600"><a href="#cb26-600" aria-hidden="true" tabindex="-1"></a><span class="st">        "chatbot/main.py",</span></span>
+<span id="cb26-601"><a href="#cb26-601" aria-hidden="true" tabindex="-1"></a><span class="st">        "chatbot/response_manager.py",</span></span>
+<span id="cb26-602"><a href="#cb26-602" aria-hidden="true" tabindex="-1"></a><span class="st">        "requirements.txt",</span></span>
+<span id="cb26-603"><a href="#cb26-603" aria-hidden="true" tabindex="-1"></a><span class="st">        ".gitignore"</span></span>
+<span id="cb26-604"><a href="#cb26-604" aria-hidden="true" tabindex="-1"></a><span class="st">    ]</span></span>
+<span id="cb26-605"><a href="#cb26-605" aria-hidden="true" tabindex="-1"></a><span class="st">    for f in files:</span></span>
+<span id="cb26-606"><a href="#cb26-606" aria-hidden="true" tabindex="-1"></a><span class="st">        if not Path(f).is_file():</span></span>
+<span id="cb26-607"><a href="#cb26-607" aria-hidden="true" tabindex="-1"></a><span class="st">            print(f"ERROR: File '{f}' not found!")</span></span>
+<span id="cb26-608"><a href="#cb26-608" aria-hidden="true" tabindex="-1"></a><span class="st">            return False</span></span>
+<span id="cb26-609"><a href="#cb26-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-610"><a href="#cb26-610" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Project structure looks good!")</span></span>
+<span id="cb26-611"><a href="#cb26-611" aria-hidden="true" tabindex="-1"></a><span class="st">    return True</span></span>
+<span id="cb26-612"><a href="#cb26-612" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-613"><a href="#cb26-613" aria-hidden="true" tabindex="-1"></a><span class="st">def check_environment():</span></span>
+<span id="cb26-614"><a href="#cb26-614" aria-hidden="true" tabindex="-1"></a><span class="st">    """Verify the Python environment."""</span></span>
+<span id="cb26-615"><a href="#cb26-615" aria-hidden="true" tabindex="-1"></a><span class="st">    print("</span><span class="dt">\n</span><span class="st">Checking Python environment...")</span></span>
+<span id="cb26-616"><a href="#cb26-616" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-617"><a href="#cb26-617" aria-hidden="true" tabindex="-1"></a><span class="st">    # Check Python version</span></span>
+<span id="cb26-618"><a href="#cb26-618" aria-hidden="true" tabindex="-1"></a><span class="st">    py_version = sys.version.split()[0]</span></span>
+<span id="cb26-619"><a href="#cb26-619" aria-hidden="true" tabindex="-1"></a><span class="st">    print(f"Python version: {py_version}")</span></span>
+<span id="cb26-620"><a href="#cb26-620" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-621"><a href="#cb26-621" aria-hidden="true" tabindex="-1"></a><span class="st">    # Try importing key packages</span></span>
+<span id="cb26-622"><a href="#cb26-622" aria-hidden="true" tabindex="-1"></a><span class="st">    try:</span></span>
+<span id="cb26-623"><a href="#cb26-623" aria-hidden="true" tabindex="-1"></a><span class="st">        import dotenv</span></span>
+<span id="cb26-624"><a href="#cb26-624" aria-hidden="true" tabindex="-1"></a><span class="st">        print("python-dotenv: Installed")</span></span>
+<span id="cb26-625"><a href="#cb26-625" aria-hidden="true" tabindex="-1"></a><span class="st">    except ImportError:</span></span>
+<span id="cb26-626"><a href="#cb26-626" aria-hidden="true" tabindex="-1"></a><span class="st">        print("WARNING: python-dotenv not installed!")</span></span>
+<span id="cb26-627"><a href="#cb26-627" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-628"><a href="#cb26-628" aria-hidden="true" tabindex="-1"></a><span class="st">    try:</span></span>
+<span id="cb26-629"><a href="#cb26-629" aria-hidden="true" tabindex="-1"></a><span class="st">        import requests</span></span>
+<span id="cb26-630"><a href="#cb26-630" aria-hidden="true" tabindex="-1"></a><span class="st">        print("requests: Installed")</span></span>
+<span id="cb26-631"><a href="#cb26-631" aria-hidden="true" tabindex="-1"></a><span class="st">    except ImportError:</span></span>
+<span id="cb26-632"><a href="#cb26-632" aria-hidden="true" tabindex="-1"></a><span class="st">        print("WARNING: requests not installed!")</span></span>
+<span id="cb26-633"><a href="#cb26-633" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-634"><a href="#cb26-634" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Environment check complete!")</span></span>
+<span id="cb26-635"><a href="#cb26-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-636"><a href="#cb26-636" aria-hidden="true" tabindex="-1"></a><span class="st">if __name__ == "__main__":</span></span>
+<span id="cb26-637"><a href="#cb26-637" aria-hidden="true" tabindex="-1"></a><span class="st">    print("Testing Chatbot Project Setup")</span></span>
+<span id="cb26-638"><a href="#cb26-638" aria-hidden="true" tabindex="-1"></a><span class="st">    print("============================")</span></span>
+<span id="cb26-639"><a href="#cb26-639" aria-hidden="true" tabindex="-1"></a><span class="st">    check_structure()</span></span>
+<span id="cb26-640"><a href="#cb26-640" aria-hidden="true" tabindex="-1"></a><span class="st">    check_environment()</span></span>
+<span id="cb26-641"><a href="#cb26-641" aria-hidden="true" tabindex="-1"></a><span class="st">    print("</span><span class="dt">\n</span><span class="st">Setup test complete!")</span></span>
+<span id="cb26-642"><a href="#cb26-642" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
+<span id="cb26-643"><a href="#cb26-643" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-644"><a href="#cb26-644" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the test script</span></span>
+<span id="cb26-645"><a href="#cb26-645" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_setup.py</span>
+<span id="cb26-646"><a href="#cb26-646" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-647"><a href="#cb26-647" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-648"><a href="#cb26-648" aria-hidden="true" tabindex="-1"></a>This comprehensive setup gives you a solid foundation for your chatbot project, with proper organisation, dependency management, and version control from the start.</span>
+<span id="cb26-649"><a href="#cb26-649" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-650"><a href="#cb26-650" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-References</span></span>
+<span id="cb26-651"><a href="#cb26-651" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-652"><a href="#cb26-652" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Previous Chapter: <span class="co">[</span><span class="ot">How to Run Python Code</span><span class="co">](how_to_run_python_code.qmd)</span></span>
+<span id="cb26-653"><a href="#cb26-653" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Next Chapter: <span class="co">[</span><span class="ot">Getting Help</span><span class="co">](getting_help.qmd)</span></span>
+<span id="cb26-654"><a href="#cb26-654" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Related Topics: Testing (Chapter 18), Modules and Packages (Chapter 19)</span>
+<span id="cb26-655"><a href="#cb26-655" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-656"><a href="#cb26-656" aria-hidden="true" tabindex="-1"></a>***AI Tip: When setting up a new Python project, ask your AI assistant to help you generate environment setup scripts, directory structures, or configuration files. This can save you time and ensure you follow best practices from the beginning.***</span>
+<span id="cb26-657"><a href="#cb26-657" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-658"><a href="#cb26-658" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb26-659"><a href="#cb26-659" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-660"><a href="#cb26-660" aria-hidden="true" tabindex="-1"></a>In this chapter, we've explored the process of setting up a Python development environment, with a focus on using conda/Miniconda for managing Python installations and environments. We've covered:</span>
+<span id="cb26-661"><a href="#cb26-661" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-662"><a href="#cb26-662" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Different Python installation options and their pros and cons</span>
+<span id="cb26-663"><a href="#cb26-663" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Installing and configuring Miniconda</span>
+<span id="cb26-664"><a href="#cb26-664" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Creating and managing conda environments</span>
+<span id="cb26-665"><a href="#cb26-665" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Installing packages with conda and pip</span>
+<span id="cb26-666"><a href="#cb26-666" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Testing your Python installation</span>
+<span id="cb26-667"><a href="#cb26-667" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Setting up development tools and IDEs</span>
+<span id="cb26-668"><a href="#cb26-668" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Troubleshooting common installation issues</span>
+<span id="cb26-669"><a href="#cb26-669" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Creating a structured environment for the chatbot project</span>
+<span id="cb26-670"><a href="#cb26-670" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-671"><a href="#cb26-671" aria-hidden="true" tabindex="-1"></a>By following these guidelines, you'll have a clean, organised Python setup that will serve you well as you continue your programming journey. The isolation provided by environments helps prevent dependency conflicts and makes it easier to work on multiple projects simultaneously.</span>
+<span id="cb26-672"><a href="#cb26-672" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-673"><a href="#cb26-673" aria-hidden="true" tabindex="-1"></a>Remember that proper environment setup is an investment that pays off in reduced troubleshooting time and a more pleasant development experience. Take the time to set things up correctly now, and you'll thank yourself later!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

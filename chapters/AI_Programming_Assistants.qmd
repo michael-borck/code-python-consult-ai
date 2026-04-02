@@ -22,10 +22,6 @@ By the end of this chapter, you will be able to:
 - Apply AI assistance to enhance your chatbot project
 - Develop a balanced approach to using AI in your programming workflow
 
-::: {.callout-tip title="Code available online" icon=true}
-Complete code examples and notebooks for all chapters are available on GitHub with "Open in Colab" buttons. See [books.borck.education](https://books.borck.education).
-:::
-
 ## 1. Introduction: The Rise of AI Programming Assistants
 
 In the evolving landscape of software development, AI programming assistants have emerged as powerful tools that can accelerate learning, boost productivity, and provide on-demand guidance. From suggesting code completions in real-time to generating entire functions based on natural language descriptions, these AI systems are transforming how programmers work.
@@ -458,30 +454,20 @@ AI assistants can help you create better documentation for your chatbot:
 Chatbot Package Documentation
 =============================
 
-Modules
--------
-main.py: Entry point for the chatbot application
-response_manager.py: Manages response generation
-history_manager.py: Handles conversation history
-pattern_matcher.py: Identifies intents from input
+Modules: main.py, response_manager.py,
+         history_manager.py, pattern_matcher.py
 
-Classes
--------
-Chatbot: Main chatbot interface
-PatternMatcher: Analyses user input
-ResponseGenerator: Creates context-appropriate responses
-HistoryManager: Stores conversation history
+Classes: Chatbot, PatternMatcher,
+         ResponseGenerator, HistoryManager
 
-Usage
------
+Usage:
     from chatbot.main import Chatbot
     bot = Chatbot(name="MyBot")
     bot.run()
 
-Dependencies
------------
+Dependencies:
 - Python 3.8+
-- No external packages required for core functionality
+- No external packages required
 """
 ```
 
