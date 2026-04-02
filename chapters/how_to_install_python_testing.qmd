@@ -368,7 +368,9 @@ echo 'export PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 # For Windows (in PowerShell as administrator)
-$Env:Path = "$Env:Path;C:\Users\YourUsername\miniconda3;C:\Users\YourUsername\miniconda3\Scripts"
+# For Windows (split for readability)
+$conda = "C:\Users\YourUsername\miniconda3"
+$Env:Path = "$Env:Path;$conda;$conda\Scripts"
 ```
 
 ### Permission Errors

@@ -1,7 +1,3 @@
----
-jupyter: python3
----
-
 # Building Your AI-Enhanced Python Chatbot
 
 This guide outlines an incremental project that spans multiple chapters in the book. As you progress through the Python concepts, you'll apply your knowledge to build a chatbot that becomes increasingly sophisticated.

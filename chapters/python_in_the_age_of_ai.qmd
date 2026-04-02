@@ -73,8 +73,10 @@ AI: I see! Here's a program that checks the current weather temperature:
 import requests
 
 def get_weather(city="London"):
-    api_key = "YOUR_API_KEY_HERE"  # You'll need a free API key from OpenWeatherMap
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    api_key = "YOUR_API_KEY_HERE"
+    base = f"http://api.openweathermap.org"
+    url = f"{base}/data/2.5/weather"
+    url += f"?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data["main"]["temp"]
