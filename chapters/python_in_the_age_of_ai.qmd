@@ -64,9 +64,11 @@ Human: Make a program that tells the temperature.
 AI: Here's a program that displays the current CPU temperature:
 import psutil
 print(f"Current CPU temperature: {psutil.sensors_temperatures()['coretemp'][0].current}°C")
+```
 
 H: No, I meant the weather temperature outside.
 AI: I see! Here's a program that checks the current weather temperature:
+```python
 import requests
 
 def get_weather(city="London"):
@@ -80,6 +82,7 @@ def get_weather(city="London"):
 
 city = input("Enter your city: ")
 print(f"Current temperature in {city}: {get_weather(city)}°C")
+```
 
 Without understanding basic programming concepts like functions, APIs, and data formats, you might not realize this code requires an API key, or that it's using Celsius by default, or that it has error-handling issues. Your ability to direct AI effectively—and assess its output critically—depends on your understanding of programming fundamentals.
 
@@ -119,9 +122,8 @@ Rather than viewing AI as either a magic solution or a mere tool, we advocate fo
 
 The magic happens when these strengths combine. Consider this example of collaborative debugging:
 
-```
+```text
 Human: I keep getting an IndexError when trying to run this code:
-```python
 data = ["apple", "banana", "cherry"]
 for i in range(len(data)):
     print(f"Processing {data[i+1]}")
@@ -144,6 +146,7 @@ for i in range(len(data)-1):
 ```
 
 Which one matches your intention?
+```text
 
 In this interaction, the AI identified the bug and offered multiple solutions, but asked you to make the final decision based on your actual intent—something only you know.
 
@@ -210,19 +213,16 @@ Paradoxically, fundamental programming knowledge becomes more valuable, not less
 The more you understand Python fundamentals, the more precisely you can direct AI assistants. Compare these prompts:
 
 **Beginner prompt:**
-```text
-Write a program that saves data to a file.
 ```
+Write a program that saves data to a file.
+```text
 
 **Knowledge-informed prompt:**
-```text
-Write a Python function that saves a dictionary
-to a JSON file with proper error handling.
-The function should take three parameters: the
-dictionary to save, the filename to save to,
-and an optional parameter to format the JSON
-with indentation for readability.
 ```
+Write a Python function that saves a dictionary to a JSON file with proper error handling.
+The function should take three parameters: the dictionary to save, the filename to save to,
+and an optional parameter to format the JSON with indentation for readability.
+```text
 
 The second prompt, informed by knowledge of Python data structures, file handling, and function design, will yield a much more useful result.
 
@@ -230,7 +230,6 @@ The second prompt, informed by knowledge of Python data structures, file handlin
 
 Fundamental knowledge allows you to critically evaluate AI-generated code:
 
-```python
 # AI-generated function to check if a number is prime
 def is_prime(n):
     if n <= 1:
@@ -269,8 +268,7 @@ def process_data(data):
     return result
 
 # Your customised version with added features
-def process_data(data, default_value=None,
-                 transform_func=None):
+def process_data(data, default_value=None, transform_func=None):
     result = {}
     for item in data:
         try:
@@ -287,17 +285,7 @@ def process_data(data, default_value=None,
 
 Fundamental knowledge lets you adapt code to handle missing data, add transformation capabilities, and implement error handling.
 
-## 6. Why Not Just Vibe Code?
-
-There is a popular approach called "vibe coding" — prompting AI until something works, without worrying about understanding the code it produces. For quick scripts and throwaway prototypes, it can be genuinely useful.
-
-But vibe coding has a ceiling. When a vibe-coded program breaks, you cannot fix it — you can only paste the error back and hope. When requirements change, you start over. When the project grows beyond a single file, the AI gets stuck too, because it is guessing at the architecture just like you are.
-
-This book teaches you the fundamentals so that when you ask AI for help, you can describe the problem precisely — not "it doesn't work" but "the loop is iterating one too many times because the range should be exclusive." That precision gives the AI the context to actually help rather than guess.
-
-And to be clear: this book does not argue for avoiding AI. AI is your partner through every chapter — use it to explore concepts, test understanding, debug your code. The difference between this approach and vibe coding is not whether you use AI, but whether you are building understanding alongside the code.
-
-## 7. Finding the Right Balance
+## 6. Finding the Right Balance
 
 One of the biggest challenges in AI-assisted programming is finding the right balance between leveraging AI's capabilities and developing your own skills. Here are some guidelines:
 
@@ -452,11 +440,11 @@ formatted_time = current_datetime.strftime("%I:%M %p")
 
 # List of inspirational quotes
 quotes = [
-    "The best way to predict the future is "
-    "to invent it. - Alan Kay",
-    "Simple things should be simple. - Alan Kay",
-    "The only way to learn programming is "
-    "to write programs. - Dennis Ritchie",
+    "The best way to predict the future is to invent it. - Alan Kay",
+    "Simple things should be simple, complex things should be possible. - Alan Kay",
+    "The most powerful programming language is Python. - A programmer with good taste",
+    "The only way to learn programming is to write programs. - Dennis Ritchie",
+    "The journey of a thousand miles begins with a single line of code. - Anonymous"
 ]
 
 # Select a random quote
@@ -467,8 +455,11 @@ print("\n" + "=" * 60)
 print(f"Hello, {name}!")
 print(f"Today is {formatted_date}")
 print(f"The current time is {formatted_time}")
-print(f"\nYour quote: \"{random_quote}\"")
+print("\nYour inspirational quote for today:")
+print(f"\"{random_quote}\"")
 print("=" * 60 + "\n")
+
+print("Welcome to your Python journey in the age of AI!")
 ```
 
 ### Human Role: Evaluation and customisation
@@ -486,22 +477,21 @@ You might decide to customise it by adding a feature to let the user choose the 
 # Addition to the code above
 quote_categories = {
     "programming": [
-        "Predict the future by inventing it. - Alan Kay",
-        "Simple things should be simple. - Alan Kay",
+        "The best way to predict the future is to invent it. - Alan Kay",
+        "Simple things should be simple, complex things should be possible. - Alan Kay",
+        "The most powerful programming language is Python. - A programmer with good taste"
     ],
     "motivation": [
-        "Learn programming by writing programs. - Ritchie",
-        "The journey begins with a single line of code.",
+        "The only way to learn programming is to write programs. - Dennis Ritchie",
+        "The journey of a thousand miles begins with a single line of code. - Anonymous",
+        "Whether you think you can or think you can't, you're right. - Henry Ford"
     ]
 }
 
-category = input("Quote type? (programming/motivation): ")
-category = category.lower()
+category = input("What type of quote would you like? (programming/motivation): ").lower()
 if category not in quote_categories:
-    print(f"'{category}' not found. Using random.")
-    category = random.choice(
-        list(quote_categories.keys())
-    )
+    print(f"Category '{category}' not found. Using random category.")
+    category = random.choice(list(quote_categories.keys()))
 
 random_quote = random.choice(quote_categories[category])
 ```

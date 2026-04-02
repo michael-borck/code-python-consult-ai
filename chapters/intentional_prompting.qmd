@@ -207,6 +207,7 @@ When you need help fixing code issues:
 I'm encountering an issue with my Python code:
 
 [your code here]
+```
 
 The error I'm getting is:
 [error message]
@@ -219,12 +220,13 @@ Actual behaviour:
 
 I think the problem might be related to [your hypothesis].
 Can you help identify and fix the issue?
-```
+```text
 
 Example:
-```text
+```
 I'm encountering an issue with my Python code:
 
+```python
 def process_data(items):
     result = []
     for i in range(len(items)):
@@ -234,6 +236,7 @@ def process_data(items):
 data = [1, 2, 3, None, 5]
 processed = process_data(data)
 print(processed)
+```
 
 The error I'm getting is:
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
@@ -246,28 +249,31 @@ It crashes when it encounters None.
 
 I think the problem might be related to not checking data types.
 Can you help identify and fix the issue?
-```
+```text
 
 ### optimisation Prompts
 
 When you want to improve existing code:
 
-```text
+```
 Here's my current Python implementation:
 
+```python
 [your code here]
+```
 
 It works correctly, but I'm looking to optimise it for [speed/memory/readability/etc.].
 Current performance: [metrics if available]
 Target performance: [desired metrics]
 
 What changes would you recommend to improve this code while maintaining its functionality?
-```
+```text
 
 Example:
-```text
+```
 Here's my current Python implementation:
 
+```python
 def find_duplicates(numbers):
     duplicates = []
     for i in range(len(numbers)):
@@ -275,19 +281,20 @@ def find_duplicates(numbers):
             if numbers[i] == numbers[j] and numbers[i] not in duplicates:
                 duplicates.append(numbers[i])
     return duplicates
+```
 
 It works correctly, but I'm looking to optimise it for speed.
 Current performance: O(n²) time complexity
 Target performance: O(n) if possible
 
 What changes would you recommend to improve this code while maintaining its functionality?
-```
+```text
 
 ### Comparison Prompts
 
 When you want to understand different approaches:
 
-```text
+```
 I'm trying to [accomplish task] in Python.
 I know I could use [approach 1] or [approach 2].
 
@@ -299,10 +306,10 @@ Could you compare these approaches in terms of:
 - Potential pitfalls
 
 And recommend which might be better for my specific situation?
-```
+```text
 
 Example:
-```text
+```
 I'm trying to implement data validation in Python.
 I know I could use traditional if/else validation, dataclasses with type hints, or a dedicated validation library like Pydantic.
 
@@ -314,7 +321,7 @@ Could you compare these approaches in terms of:
 - Potential pitfalls
 
 And recommend which might be better for my situation where I'm building a medium-sized web API with complex nested data structures?
-```
+```text
 
 ## 5. Advanced Prompting Techniques
 
@@ -324,14 +331,14 @@ As you become more comfortable with basic intentional prompting, you can explore
 
 Guide the AI through a step-by-step reasoning process:
 
-```text
+```
 Let's think through [problem] step by step:
 1. First, what are the inputs and expected outputs?
 2. What are the key algorithmic steps needed?
 3. What edge cases should we consider?
 4. How should we implement this in Python?
 5. How can we test this implementation?
-```
+```text
 
 This technique is particularly useful for complex problems where breaking down the thought process helps arrive at a better solution.
 
@@ -339,13 +346,13 @@ This technique is particularly useful for complex problems where breaking down t
 
 Ask for multiple solutions and their trade-offs:
 
-```text
+```
 Could you provide three different ways to implement [feature] in Python?
 For each approach, please explain:
 - How it works
 - Its strengths and weaknesses
 - When you would choose this approach over the others
-```
+```text
 
 This helps you understand the solution space better and make informed decisions.
 
@@ -353,10 +360,10 @@ This helps you understand the solution space better and make informed decisions.
 
 Ask the AI to adopt a specific role or perspective:
 
-```text
+```
 As an experienced Python developer focused on [performance/security/readability/etc.],
 how would you approach [problem]? What considerations would be most important from this perspective?
-```
+```text
 
 This can yield insights that might not emerge from more general questions.
 
@@ -364,14 +371,14 @@ This can yield insights that might not emerge from more general questions.
 
 Start with the structure and gradually fill in details:
 
-```text
+```
 First, let's outline the main components we need for [task]:
 1. What classes should we create?
 2. What will their relationships be?
 3. What are the key methods?
 
 Now, for each component, let's detail the implementation.
-```
+```text
 
 This approach works well for larger, more structured programming tasks.
 
@@ -379,18 +386,20 @@ This approach works well for larger, more structured programming tasks.
 
 Start with the tests to guide the implementation:
 
-```text
+```
 Before implementing [feature], let's create some tests that define what successful implementation would look like:
 
+```python
 # Test cases
 def test_[feature]_basic_functionality():
     # What should happen in the normal case?
 
 def test_[feature]_edge_cases():
     # What should happen with edge cases?
+```
 
 Now, can you implement code that would pass these tests?
-```
+```text
 
 This technique helps clarify requirements and ensure the solution addresses the actual needs.
 
@@ -414,28 +423,28 @@ Intentional prompting is rarely a one-and-done process. The most effective appro
 ### Example of an Iterative Prompting Session
 
 **Initial Prompt:**
-```text
-I need a Python function to validate email addresses.
 ```
+I need a Python function to validate email addresses.
+```text
 
 **Initial Response:**
 *[AI provides a simple regex-based email validator]*
 
 **Follow-up Prompt:**
-```text
+```
 Thanks, that's a good start. Can you modify it to also check for valid domains?
 Also, how well does this regex handle international email addresses?
-```
+```text
 
 **Second Response:**
 *[AI provides improved validation with domain checking and discusses internationalization issues]*
 
 **Second Follow-up:**
-```text
+```
 This is better, but I'm concerned about maintainability. Could you refactor this
 into a class that could be extended with additional validation rules? Also,
 could you add unit tests for key validation scenarios?
-```
+```text
 
 **Final Response:**
 *[AI provides a well-structured, testable email validation class]*
@@ -450,7 +459,7 @@ Different programming fundamentals often benefit from specific prompting approac
 
 Effective prompts for input-related questions:
 
-```text
+```
 I need to implement user input for [specific purpose].
 
 Key requirements:
@@ -459,10 +468,10 @@ Key requirements:
 - The validation should [specific validation requirements]
 
 Can you show me how to implement this with proper error handling and user feedback?
-```
+```text
 
 Example:
-```text
+```
 I need to implement user input for a registration form.
 
 Key requirements:
@@ -471,13 +480,13 @@ Key requirements:
 - The validation should give specific error messages for each validation failure
 
 Can you show me how to implement this with proper error handling and user feedback?
-```
+```text
 
 ### 2. OUTPUT: Displaying Results
 
 Prompts for output-related questions:
 
-```text
+```
 I need to display [type of data] to users in a [format/style].
 
 Specific requirements:
@@ -486,10 +495,10 @@ Specific requirements:
 - It needs to handle [edge cases]
 
 Can you show me how to implement this output functionality in Python?
-```
+```text
 
 Example:
-```text
+```
 I need to display tabular data to users in a console application.
 
 Specific requirements:
@@ -498,13 +507,13 @@ Specific requirements:
 - It needs to handle long text that might exceed column width
 
 Can you show me how to implement this output functionality in Python?
-```
+```text
 
 ### 3. STORE: Variable Management and Data Structures
 
 Prompts for data storage questions:
 
-```text
+```
 I need to store and manage [type of data] in my Python application.
 
 Requirements:
@@ -513,10 +522,10 @@ Requirements:
 - The implementation should handle [edge cases]
 
 What would be the most appropriate data structure, and how would I implement it?
-```
+```text
 
 Example:
-```text
+```
 I need to store and manage product inventory data in my Python application.
 
 Requirements:
@@ -525,13 +534,13 @@ Requirements:
 - The implementation should handle product additions, removals, and quantity changes
 
 What would be the most appropriate data structure, and how would I implement it?
-```
+```text
 
 ### 4. CALCULATE: Operations and Expressions
 
 Prompts for calculation-related questions:
 
-```text
+```
 I need to implement calculations for [specific purpose].
 
 The calculation should:
@@ -541,10 +550,10 @@ The calculation should:
 - Achieve [performance requirements]
 
 What's the most effective way to implement this in Python?
-```
+```text
 
 Example:
-```text
+```
 I need to implement calculations for a financial dashboard.
 
 The calculation should:
@@ -554,13 +563,13 @@ The calculation should:
 - Achieve sufficient performance for real-time updates
 
 What's the most effective way to implement this in Python?
-```
+```text
 
 ### 5. DECISIONS: Flow Control and Conditionals
 
 Prompts for decision-making code:
 
-```text
+```
 I need to implement decision logic for [specific situation].
 
 The logic should:
@@ -570,10 +579,10 @@ The logic should:
 - Be [maintainability requirements]
 
 What's the most effective approach for this decision structure?
-```
+```text
 
 Example:
-```text
+```
 I need to implement decision logic for a customer pricing system.
 
 The logic should:
@@ -583,13 +592,13 @@ The logic should:
 - Be easily maintainable when pricing rules change
 
 What's the most effective approach for this decision structure?
-```
+```text
 
 ### 6. REPEAT: Loops and Iteration
 
 Prompts for loop-related questions:
 
-```text
+```
 I need to implement iteration for [specific task].
 
 Requirements:
@@ -599,10 +608,10 @@ Requirements:
 - The implementation should be [maintainability requirements]
 
 What's the most effective way to implement this in Python?
-```
+```text
 
 Example:
-```text
+```
 I need to implement iteration for batch processing large CSV files.
 
 Requirements:
@@ -612,7 +621,7 @@ Requirements:
 - The implementation should be easy to modify for different file formats
 
 What's the most effective way to implement this in Python?
-```
+```text
 
 ## 8. Self-Assessment Quiz
 
@@ -663,7 +672,6 @@ Let's apply intentional prompting to enhance your AI-enabled chatbot project fro
 
 Your chatbot can benefit from intentional prompting when it interacts with AI services. Here's an improved version of the AI integration from the previous chapter:
 
-```python
 import os
 from dotenv import load_dotenv
 import openai
@@ -837,18 +845,16 @@ PyBot: A list comprehension is a concise way to create lists in Python. It's a s
 
 Here's a simple example:
 numbers = [1, 2, 3, 4, 5]
-squares = [x**2 for x in numbers]  # Results in [1, 4, 9, 16, 25]
+squares = [x**2 for x in numbers]
 
-List comprehensions are more readable and often faster than traditional for loops. Just be careful not to make them too complex, or they can become difficult to understand.
+List comprehensions are more readable and often faster than traditional for loops.
 
 You: Can you help me fix this code? my_list = [1,2,3] print(my_list[3])
-PyBot: The issue in your code is an IndexError because you're trying to access an index that doesn't exist.
+PyBot: The issue is an IndexError. List indices start at 0, so a list with 3 elements has indices 0, 1, and 2.
 
 Corrected version:
 my_list = [1, 2, 3]
 print(my_list[2])  # Access the last element
-
-The problem is that list indices in Python start at 0, so a list with 3 elements has indices 0, 1, and 2. When you tried to access index 3, you went beyond the list's bounds. Always remember that for a list of length n, the valid indices are 0 to n-1.
 ```
 
 The intentional prompting approach creates more relevant and helpful AI responses by:

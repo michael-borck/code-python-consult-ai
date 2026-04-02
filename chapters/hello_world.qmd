@@ -16,10 +16,6 @@ By the end of this chapter, you will be able to:
 - recognise basic programming elements like functions and strings
 - Preview the chatbot project you'll build throughout this book
 
-::: {.callout-tip title="Code available online" icon=true}
-Code examples and Jupyter notebooks for all chapters are available in the `code/` folder on GitHub. Notebooks include "Open in Colab" buttons for zero-install coding. See [books.borck.education](https://books.borck.education) for links.
-:::
-
 ## 1. Introduction: The Magic of First Code
 
 Welcome to your first step in the world of Python programming! The "Hello, World!" program is a time-honored tradition in computer science, dating back to Brian Kernigham's book on the C programming language in 1978. It's a simple yet powerful way to take your first steps into coding.

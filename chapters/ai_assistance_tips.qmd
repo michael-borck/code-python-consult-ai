@@ -133,33 +133,37 @@ def process_data(items):
     for i in range(len(items) + 1):
         result = items[i] * 2
         print(result)
+```
 
 What's causing this error and how can I fix it?
-```
+```text
 
 ### Algorithmic Debugging
 
 For logic errors where your code runs but produces incorrect results:
 
-```text
+```
 My function should calculate the factorial of a number, but it's giving
 wrong answers for inputs > 10. What's wrong with my implementation?
 
+```python
 def factorial(n):
     result = 0
     for i in range(1, n+1):
         result *= i
     return result
+```
 
 Expected output for factorial(5) is 120, but I'm getting 0.
-```
+```text
 
 ### Focused Diagnostics
 
 Ask the AI to help isolate problems in specific parts of your code:
 
-```text
+```
 I suspect my data processing function is incorrect. Here's the function:
+```python
 def process_weather_data(data):
     temperatures = [day['temp'] for day in data if 'temp' in day]
     avg_temp = sum(temperatures) / len(temperatures)
@@ -169,16 +173,18 @@ def process_weather_data(data):
         'maximum': max_temp,
         'min_max_diff': max_temp - min(temperatures)
     }
+```
 
 Can you verify the calculation logic and suggest any potential bugs or edge cases?
-```
+```text
 
 ### Unit Test Generation
 
 Use AI to create tests that might reveal bugs:
 
-```text
+```
 I need unit tests to verify this function works correctly:
+```python
 def get_age_category(age):
     if age < 13:
         return "Child"
@@ -188,27 +194,31 @@ def get_age_category(age):
         return "Adult"
     else:
         return "Senior"
+```
 
 Please write pytest tests that cover all branches and edge cases.
-```
+```text
 
 ### Systematic Program Analysis
 
 For complex bugs, ask the AI to perform a thorough analysis:
 
-```text
+```
 My Flask app sometimes gives a 500 error when submitting this form.
 I can't consistently reproduce it, but it happens more often with larger inputs.
 
 Here's my form submission route:
+```python
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.form.get('user_text')
     processed = process_text(data)
     db.save_entry(processed)
     return redirect(url_for('thank_you'))
+```
 
 And here's my processing function:
+```python
 def process_text(text):
     words = text.split()
     result = []
@@ -217,9 +227,10 @@ def process_text(text):
             cleaned = word.strip('.,:;!?')
             result.append(cleaned.lower())
     return ' '.join(result)
+```
 
 Can you identify potential issues that might cause server errors?
-```
+```text
 
 ## 4. Learning Strategies for the AI Era
 
@@ -233,15 +244,17 @@ Traditional programming learning approaches need adaptation for the AI era. Here
 4. Implement an improved version based on what you learned
 
 Example prompt:
-```text
+```
 I've written this function to calculate the Fibonacci sequence.
 Can you explain how it works, evaluate its efficiency, and suggest any improvements?
 
+```python
 def fibonacci(n):
     if n <= 1:
         return n
     return fibonacci(n-1) + fibonacci(n-2)
 ```
+```text
 
 ### The "Reverse Engineering" Technique
 
@@ -259,12 +272,12 @@ def fibonacci(n):
 4. Finally, write your own implementation
 
 Example sequence:
-```text
+```
 1. Explain recursive backtracking in plain language
 2. Can you explain it again using a maze-solving analogy?
 3. Now show me a Python implementation for solving Sudoku
 4. [After studying] What are the key elements I should include in my own implementation?
-```
+```text
 
 ### The "Iterative Refinement" Method
 
@@ -283,9 +296,10 @@ AI often generates generic solutions that need customisation. Here are technique
 
 Provide an example of your coding style first:
 
-```text
+```
 I write my Python code in this style:
 
+```python
 def calculate_total(items: list[dict]) -> float:
     """
     Calculate the total price of all items.
@@ -303,15 +317,16 @@ def calculate_total(items: list[dict]) -> float:
     for item in items:
         total += item["price"] * item["quantity"]
     return total
+```
 
 Now please write a function that calculates the average price per item following this style.
-```
+```text
 
 ### Project-Specific Guidelines
 
 Describe your project's conventions and requirements:
 
-```text
+```
 In our project, we follow these conventions:
 - Functions use snake_case
 - Classes use PascalCase
@@ -322,27 +337,28 @@ In our project, we follow these conventions:
 - Error messages are detailed and actionable
 
 Please write a class to represent a Customer with name, email, and purchase history attributes.
-```
+```text
 
 ### Incremental customisation
 
 Request changes to AI-generated code in specific steps:
 
-```text
+```
 Perfect, now can you modify this code to:
 1. Add proper error handling for invalid inputs
 2. Include logging statements at key points
 3. Make the function support both file paths and file-like objects
-```
+```text
 
 ### Template Code Expansion
 
 Provide skeleton code and ask the AI to complete it:
 
-```text
+```
 I've started implementing a cache decorator. Can you complete it following
 the same style and adding proper type hints?
 
+```python
 def cached(max_size: int = 100):
     """
     Caches function results to avoid redundant calculations.
@@ -363,6 +379,7 @@ def cached(max_size: int = 100):
         return wrapper
     return decorator
 ```
+```text
 
 ## 6. Evaluating and Refining AI-Generated Code
 
@@ -385,19 +402,18 @@ After getting code from an AI assistant, check:
 
 If the code needs improvement, make specific requests:
 
-```text
+```
 The function works for the basic case, but needs these improvements:
 1. Add error handling for when the input file doesn't exist
 2. The naming of the variable 'x' is unclear - please use more descriptive names
 3. The nested loop can be replaced with a list comprehension for better readability
 4. Add type hints to function parameters and return value
-```
+```text
 
 ### Testing AI-Generated Code
 
 Always test code thoroughly:
 
-```python
 def test_ai_generated_function():
     # Test normal case
     assert calculate_statistics([1, 2, 3, 4, 5]) == {"mean": 3.0, "median": 3, "mode": None, "range": 4}
@@ -492,20 +508,23 @@ class DatabaseConnector:
                 conn.rollback()
                 raise DatabaseError(f"Transaction failed: {str(e)}")
 ```
+```text
 
 ### Code Review Assistance
 
 Get AI help with reviewing existing code:
 
-```text
+```
 Please review this implementation of a caching system and identify:
 1. Any potential bugs or edge cases
 2. Performance optimisations
 3. Suggestions for improved readability
 4. Potential memory leaks
 
+```python
 # Code to review here
 ```
+```text
 
 ## 8. Self-Assessment Quiz
 
@@ -556,7 +575,6 @@ Let's enhance your chatbot with more sophisticated AI interactions. We'll build 
 
 This code implements a more sophisticated context management system:
 
-```python
 class ContextualMemory:
     """
     Maintains contextual information for more coherent AI-assisted conversations.

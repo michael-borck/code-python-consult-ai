@@ -368,7 +368,6 @@ echo 'export PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 # For Windows (in PowerShell as administrator)
-# For Windows (split for readability)
 $conda = "C:\Users\YourUsername\miniconda3"
 $Env:Path = "$Env:Path;$conda;$conda\Scripts"
 ```
