@@ -80,6 +80,26 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
+  pdf:
+    documentclass: book
+    toc: true
+    toc-depth: 1
+    number-sections: true
+    hyperrefoptions: draft
+    geometry:
+      - paperwidth=7in
+      - paperheight=10in
+      - inner=1in
+      - outer=0.75in
+      - top=0.75in
+      - bottom=0.75in
+    include-in-header: pdf-header.tex
+    include-before-body:
+      - copyright-page.tex
+  epub:
+    toc: true
+    toc-depth: 1
+    css: epub-styles.css
 
 execute:
   enabled: false
