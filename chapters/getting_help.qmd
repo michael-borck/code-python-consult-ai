@@ -342,7 +342,6 @@ Example of a good question structure:
 I'm trying to read a CSV file and calculate the average of a specific column, but I'm getting a TypeError.
 
 ## My Code
-```python
 import pandas as pd
 
 def calculate_average(filename, column_name):
@@ -351,7 +350,6 @@ def calculate_average(filename, column_name):
 
 avg = calculate_average('sales.csv', 'amount')
 print(avg)
-```text
 
 ## Error Message
 ```
@@ -617,7 +615,6 @@ When users enter a greeting with additional text (e.g., "hello, how's the weathe
 my bot isn't recognising it as a greeting.
 
 ## Current Code
-```python
 def get_response(self, user_input):
     user_input = user_input.lower()
 
@@ -629,7 +626,6 @@ def get_response(self, user_input):
 
     # Other patterns...
     return "I didn't understand that."
-```text
 
 ## What I've Tried
 - Changing `==` to `in` but then it matches too broadly

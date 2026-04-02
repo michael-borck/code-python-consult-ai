@@ -453,75 +453,35 @@ class ResponseGenerator:
 
 AI assistants can help you create better documentation for your chatbot:
 
-```python
+```text
 """
 Chatbot Package Documentation
 =============================
 
-This package implements a conversational chatbot with the following components:
-
 Modules
 -------
 main.py: Entry point for the chatbot application
-response_manager.py: Manages response generation and selection
-history_manager.py: Handles conversation history and persistence
-pattern_matcher.py: Identifies intents and entities from user input
+response_manager.py: Manages response generation
+history_manager.py: Handles conversation history
+pattern_matcher.py: Identifies intents from input
 
 Classes
 -------
-Chatbot: Main chatbot interface that coordinates all components
-PatternMatcher: analyses user input to determine intent
-ResponseGenerator: Creates varied, context-appropriate responses
-HistoryManager: Stores and retrieves conversation history
+Chatbot: Main chatbot interface
+PatternMatcher: Analyses user input
+ResponseGenerator: Creates context-appropriate responses
+HistoryManager: Stores conversation history
 
 Usage
 -----
-Basic usage:
-
-```python
-from chatbot.main import Chatbot
-
-# Create a chatbot instance
-bot = Chatbot(name="MyBot")
-
-# Run the interactive chat loop
-bot.run()
-```text
-
-Advanced usage:
-
-```python
-from chatbot.main import Chatbot
-from chatbot.pattern_matcher import PatternMatcher
-from chatbot.response_generator import ResponseGenerator
-
-# Custom pattern matcher
-custom_matcher = PatternMatcher()
-custom_matcher.add_pattern("weather", r'\b(weather|temperature|forecast)\b')
-
-# Custom response templates
-weather_templates = [
-    "The weather today is {condition} with a temperature of {temperature}.",
-    "Current weather: {condition}, {temperature} degrees."
-]
-
-# Create a chatbot with custom components
-bot = Chatbot(
-    name="WeatherBot",
-    pattern_matcher=custom_matcher,
-    additional_templates={"weather": weather_templates}
-)
-
-# Process a specific message
-response = bot.process_message("What's the weather like today?")
-print(response)
-```text
+    from chatbot.main import Chatbot
+    bot = Chatbot(name="MyBot")
+    bot.run()
 
 Dependencies
 -----------
 - Python 3.8+
 - No external packages required for core functionality
-- Optional: requests (for API integration), sqlite3 (for persistent storage)
 """
 ```
 

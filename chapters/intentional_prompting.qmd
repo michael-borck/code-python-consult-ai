@@ -206,9 +206,7 @@ When you need help fixing code issues:
 ```text
 I'm encountering an issue with my Python code:
 
-```python
 [your code here]
-```text
 
 The error I'm getting is:
 [error message]
@@ -227,7 +225,6 @@ Example:
 ```text
 I'm encountering an issue with my Python code:
 
-```python
 def process_data(items):
     result = []
     for i in range(len(items)):
@@ -237,7 +234,6 @@ def process_data(items):
 data = [1, 2, 3, None, 5]
 processed = process_data(data)
 print(processed)
-```text
 
 The error I'm getting is:
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
@@ -259,9 +255,7 @@ When you want to improve existing code:
 ```text
 Here's my current Python implementation:
 
-```python
 [your code here]
-```text
 
 It works correctly, but I'm looking to optimise it for [speed/memory/readability/etc.].
 Current performance: [metrics if available]
@@ -274,7 +268,6 @@ Example:
 ```text
 Here's my current Python implementation:
 
-```python
 def find_duplicates(numbers):
     duplicates = []
     for i in range(len(numbers)):
@@ -282,7 +275,6 @@ def find_duplicates(numbers):
             if numbers[i] == numbers[j] and numbers[i] not in duplicates:
                 duplicates.append(numbers[i])
     return duplicates
-```text
 
 It works correctly, but I'm looking to optimise it for speed.
 Current performance: O(n²) time complexity
@@ -390,14 +382,12 @@ Start with the tests to guide the implementation:
 ```text
 Before implementing [feature], let's create some tests that define what successful implementation would look like:
 
-```python
 # Test cases
 def test_[feature]_basic_functionality():
     # What should happen in the normal case?
 
 def test_[feature]_edge_cases():
     # What should happen with edge cases?
-```text
 
 Now, can you implement code that would pass these tests?
 ```
@@ -846,10 +836,8 @@ You: What's a list comprehension?
 PyBot: A list comprehension is a concise way to create lists in Python. It's a single line of code that combines a for loop with an expression.
 
 Here's a simple example:
-```python
 numbers = [1, 2, 3, 4, 5]
 squares = [x**2 for x in numbers]  # Results in [1, 4, 9, 16, 25]
-```text
 
 List comprehensions are more readable and often faster than traditional for loops. Just be careful not to make them too complex, or they can become difficult to understand.
 
@@ -857,10 +845,8 @@ You: Can you help me fix this code? my_list = [1,2,3] print(my_list[3])
 PyBot: The issue in your code is an IndexError because you're trying to access an index that doesn't exist.
 
 Corrected version:
-```python
 my_list = [1, 2, 3]
 print(my_list[2])  # Access the last element
-```text
 
 The problem is that list indices in Python start at 0, so a list with 3 elements has indices 0, 1, and 2. When you tried to access index 3, you went beyond the list's bounds. Always remember that for a list of length n, the valid indices are 0 to n-1.
 ```
