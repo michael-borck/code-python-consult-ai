@@ -61,27 +61,39 @@ Consider this exchange:
 
 ```text
 Human: Make a program that tells the temperature.
-AI: Here's a program that displays the current CPU temperature:
-import psutil
-print(f"Current CPU temperature: {psutil.sensors_temperatures()['coretemp'][0].current}°C")
 ```
 
-H: No, I meant the weather temperature outside.
-AI: I see! Here's a program that checks the current weather temperature:
-```python
+```text
+AI: Here's a program that displays the current
+CPU temperature:
+
+import psutil
+temp = psutil.sensors_temperatures()
+print(f"CPU temp: {temp['coretemp'][0].current}°C")
+```
+
+```text
+Human: No, I meant the weather temperature outside.
+```
+
+```text
+AI: I see! Here's a program that checks the
+current weather temperature:
+
 import requests
 
 def get_weather(city="London"):
     api_key = "YOUR_API_KEY_HERE"
-    base = f"http://api.openweathermap.org"
+    base = "http://api.openweathermap.org"
     url = f"{base}/data/2.5/weather"
-    url += f"?q={city}&appid={api_key}&units=metric"
+    url += f"?q={city}&appid={api_key}"
+    url += "&units=metric"
     response = requests.get(url)
     data = response.json()
     return data["main"]["temp"]
 
 city = input("Enter your city: ")
-print(f"Current temperature in {city}: {get_weather(city)}°C")
+print(f"Temperature in {city}: {get_weather(city)}°C")
 ```
 
 Without understanding basic programming concepts like functions, APIs, and data formats, you might not realize this code requires an API key, or that it's using Celsius by default, or that it has error-handling issues. Your ability to direct AI effectively—and assess its output critically—depends on your understanding of programming fundamentals.
@@ -123,30 +135,31 @@ Rather than viewing AI as either a magic solution or a mere tool, we advocate fo
 The magic happens when these strengths combine. Consider this example of collaborative debugging:
 
 ```text
-Human: I keep getting an IndexError when trying to run this code:
+Human: I keep getting an IndexError when trying
+to run this code:
+
 data = ["apple", "banana", "cherry"]
 for i in range(len(data)):
     print(f"Processing {data[i+1]}")
 ```
 
-AI: The issue is in your loop. You're accessing `data[i+1]`, but when `i` equals the last index (2), you'll try to access `data[3]`, which doesn't exist.
+```text
+AI: The issue is in your loop. You're accessing
+data[i+1], but when i equals the last index (2),
+you'll try to access data[3], which doesn't exist.
 
 There are two ways to fix this:
 
-Option 1: Don't add 1 to the index
-```python
+Option 1: Don't add 1 to the index:
 for i in range(len(data)):
     print(f"Processing {data[i]}")
-```
 
-Option 2: If you meant to start from the second item, adjust the range:
-```python
+Option 2: Adjust the range:
 for i in range(len(data)-1):
     print(f"Processing {data[i+1]}")
-```
 
 Which one matches your intention?
-```text
+```
 
 In this interaction, the AI identified the bug and offered multiple solutions, but asked you to make the final decision based on your actual intent—something only you know.
 
@@ -213,16 +226,20 @@ Paradoxically, fundamental programming knowledge becomes more valuable, not less
 The more you understand Python fundamentals, the more precisely you can direct AI assistants. Compare these prompts:
 
 **Beginner prompt:**
-```
-Write a program that saves data to a file.
+
 ```text
+Write a program that saves data to a file.
+```
 
 **Knowledge-informed prompt:**
-```
-Write a Python function that saves a dictionary to a JSON file with proper error handling.
-The function should take three parameters: the dictionary to save, the filename to save to,
-and an optional parameter to format the JSON with indentation for readability.
+
 ```text
+Write a Python function that saves a dictionary
+to a JSON file with proper error handling. The
+function should take three parameters: the
+dictionary to save, the filename, and an optional
+parameter to format the JSON with indentation.
+```
 
 The second prompt, informed by knowledge of Python data structures, file handling, and function design, will yield a much more useful result.
 
@@ -230,6 +247,7 @@ The second prompt, informed by knowledge of Python data structures, file handlin
 
 Fundamental knowledge allows you to critically evaluate AI-generated code:
 
+```python
 # AI-generated function to check if a number is prime
 def is_prime(n):
     if n <= 1:
