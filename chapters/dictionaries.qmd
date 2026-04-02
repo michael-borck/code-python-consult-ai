@@ -34,6 +34,10 @@ Dictionaries are perfect for:
 - Managing configuration settings
 - Building simple databases
 
+::: {.callout-note title="Coming from Think Python?"}
+You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, nested structures, and the many patterns that make dictionaries essential to Python programming.
+:::
+
 ***AI Tip: Ask your AI assistant to suggest dictionary applications specific to your field of interest or to explain how dictionaries compare to similar data structures in other programming languages.***
 
 ## 2. Creating and Initializing Dictionaries

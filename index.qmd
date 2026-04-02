@@ -16,6 +16,8 @@ The fundamentals of programming have not changed because AI arrived. If anything
 
 You do not need prior programming experience, but some familiarity with programming concepts will help. If you are a complete beginner who has never thought about programming at all, start with *Think Python, Direct AI* — it builds the mental models this book assumes.
 
+If you worked through *Think Python, Direct AI*, you have already built projects using most of the concepts in this book. You used variables, functions, lists, and dictionaries — but you used them to solve problems, not to study them. This book makes the implicit explicit. It takes the Python you practiced and gives you the understanding to use it deliberately.
+
 ## What This Book Is Not
 
 This is not a computational thinking book. It does not spend time on problem decomposition or algorithmic reasoning — that is what *Think Python, Direct AI* covers. This book assumes you can think about a problem and focuses on giving you the Python to express the solution.

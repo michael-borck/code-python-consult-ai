@@ -36,6 +36,10 @@ Without variables, we would have to use literal values everywhere, making our co
 
 > **Key Concept**: Variables connect the abstract world of values with meaningful names that make sense to humans. By naming our data, we can work with it more effectively and make our code more understandable.
 
+::: {.callout-note title="Coming from Think Python?"}
+If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practiced.
+:::
+
 ## 2. Creating Variables: The Assignment Statement
 
 In Python, you create a variable by assigning a value using the `=` operator. This process is called assignment:

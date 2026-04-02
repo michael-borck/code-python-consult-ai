@@ -52,6 +52,10 @@ recent_questions = [
 ]
 ```
 
+::: {.callout-note title="Coming from Think Python?"}
+You may recognise lists from projects like the Quiz Game or Contact Book in *Think Python, Direct AI*. There you used lists to store questions or entries. This chapter explores lists more deeply — indexing, slicing, sorting, nesting, and the full set of operations that make lists one of Python's most important data structures.
+:::
+
 With a list, you can:
 - Add new questions with a single operation
 - Remove old questions automatically

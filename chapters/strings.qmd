@@ -39,6 +39,10 @@ Consider how essential string manipulation is for a chatbot:
 
 Without strong string manipulation capabilities, building even a simple chatbot would be nearly impossible. Fortunately, Python excels at text processing, making it ideal for conversational applications.
 
+::: {.callout-note title="Coming from Think Python?"}
+If you worked through *Think Python, Direct AI*, you already used string methods like `.lower()` and `.split()` to process user input in your projects. Here we explore strings more thoroughly — how they work internally, the full range of methods available, and when to reach for each one.
+:::
+
 ## 2. Understanding Strings in Python
 
 At its core, a string in Python is a sequence of characters. But what makes Python strings powerful is how they combine simplicity with sophistication.

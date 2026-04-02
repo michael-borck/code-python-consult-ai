@@ -41,6 +41,10 @@ Creating functions is like gaining a superpower that allows you to:
 
 For our chatbot project, custom functions will take us from a linear script to a well-structured program that's easier to understand, debug, and extend. Creating functions is the first step toward proper software architecture.
 
+::: {.callout-note title="Coming from Think Python?"}
+If you worked through *Think Python, Direct AI*, you already created functions to organise your project code. This chapter gives you the full picture — parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.
+:::
+
 ## 2. Function Definition: The Building Blocks
 
 A function in Python consists of a **header** (the definition line) and a **body** (the indented code block that follows):
