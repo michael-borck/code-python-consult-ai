@@ -129,12 +129,10 @@ I'm getting this error when running my code:
 IndexError: list index out of range
 
 Here's the relevant code:
-```python
 def process_data(items):
     for i in range(len(items) + 1):
         result = items[i] * 2
         print(result)
-```text
 
 What's causing this error and how can I fix it?
 ```
@@ -147,13 +145,11 @@ For logic errors where your code runs but produces incorrect results:
 My function should calculate the factorial of a number, but it's giving
 wrong answers for inputs > 10. What's wrong with my implementation?
 
-```python
 def factorial(n):
     result = 0
     for i in range(1, n+1):
         result *= i
     return result
-```text
 
 Expected output for factorial(5) is 120, but I'm getting 0.
 ```
@@ -164,7 +160,6 @@ Ask the AI to help isolate problems in specific parts of your code:
 
 ```text
 I suspect my data processing function is incorrect. Here's the function:
-```python
 def process_weather_data(data):
     temperatures = [day['temp'] for day in data if 'temp' in day]
     avg_temp = sum(temperatures) / len(temperatures)
@@ -174,7 +169,6 @@ def process_weather_data(data):
         'maximum': max_temp,
         'min_max_diff': max_temp - min(temperatures)
     }
-```text
 
 Can you verify the calculation logic and suggest any potential bugs or edge cases?
 ```
@@ -185,7 +179,6 @@ Use AI to create tests that might reveal bugs:
 
 ```text
 I need unit tests to verify this function works correctly:
-```python
 def get_age_category(age):
     if age < 13:
         return "Child"
@@ -195,7 +188,6 @@ def get_age_category(age):
         return "Adult"
     else:
         return "Senior"
-```text
 
 Please write pytest tests that cover all branches and edge cases.
 ```
@@ -209,17 +201,14 @@ My Flask app sometimes gives a 500 error when submitting this form.
 I can't consistently reproduce it, but it happens more often with larger inputs.
 
 Here's my form submission route:
-```python
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.form.get('user_text')
     processed = process_text(data)
     db.save_entry(processed)
     return redirect(url_for('thank_you'))
-```text
 
 And here's my processing function:
-```python
 def process_text(text):
     words = text.split()
     result = []
@@ -228,7 +217,6 @@ def process_text(text):
             cleaned = word.strip('.,:;!?')
             result.append(cleaned.lower())
     return ' '.join(result)
-```text
 
 Can you identify potential issues that might cause server errors?
 ```
@@ -249,12 +237,10 @@ Example prompt:
 I've written this function to calculate the Fibonacci sequence.
 Can you explain how it works, evaluate its efficiency, and suggest any improvements?
 
-```python
 def fibonacci(n):
     if n <= 1:
         return n
     return fibonacci(n-1) + fibonacci(n-2)
-```text
 ```
 
 ### The "Reverse Engineering" Technique
@@ -300,7 +286,6 @@ Provide an example of your coding style first:
 ```text
 I write my Python code in this style:
 
-```python
 def calculate_total(items: list[dict]) -> float:
     """
     Calculate the total price of all items.
@@ -318,7 +303,6 @@ def calculate_total(items: list[dict]) -> float:
     for item in items:
         total += item["price"] * item["quantity"]
     return total
-```text
 
 Now please write a function that calculates the average price per item following this style.
 ```
@@ -359,7 +343,6 @@ Provide skeleton code and ask the AI to complete it:
 I've started implementing a cache decorator. Can you complete it following
 the same style and adding proper type hints?
 
-```python
 def cached(max_size: int = 100):
     """
     Caches function results to avoid redundant calculations.
@@ -379,7 +362,6 @@ def cached(max_size: int = 100):
 
         return wrapper
     return decorator
-```text
 ```
 
 ## 6. Evaluating and Refining AI-Generated Code
@@ -484,7 +466,6 @@ I've implemented this DatabaseConnector class. Please generate:
 2. A user guide explaining typical usage patterns
 3. An API reference in Markdown format
 
-```python
 class DatabaseConnector:
     def __init__(self, connection_string, max_connections=5):
         self.connection_string = connection_string
@@ -510,7 +491,6 @@ class DatabaseConnector:
             except Exception as e:
                 conn.rollback()
                 raise DatabaseError(f"Transaction failed: {str(e)}")
-```text
 ```
 
 ### Code Review Assistance
@@ -524,9 +504,7 @@ Please review this implementation of a caching system and identify:
 3. Suggestions for improved readability
 4. Potential memory leaks
 
-```python
 # Code to review here
-```text
 ```
 
 ## 8. Self-Assessment Quiz

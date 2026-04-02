@@ -1052,75 +1052,35 @@ in descending order. Each dictionary has 'name', 'age', and 'score' keys.</code>
 <section id="using-ai-to-create-documentation" class="level3" data-number="25.11.4">
 <h3 data-number="25.11.4" class="anchored" data-anchor-id="using-ai-to-create-documentation"><span class="header-section-number">25.11.4</span> Using AI to Create Documentation</h3>
 <p>AI assistants can help you create better documentation for your chatbot:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">Chatbot Package Documentation</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">=============================</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">This package implements a conversational chatbot with the following components:</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">Modules</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">-------</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">main.py: Entry point for the chatbot application</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">response_manager.py: Manages response generation and selection</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">history_manager.py: Handles conversation history and persistence</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">pattern_matcher.py: Identifies intents and entities from user input</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">Classes</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">-------</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">Chatbot: Main chatbot interface that coordinates all components</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">PatternMatcher: analyses user input to determine intent</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">ResponseGenerator: Creates varied, context-appropriate responses</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">HistoryManager: Stores and retrieves conversation history</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">Usage</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">-----</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">Basic usage:</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">```python</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.main import Chatbot</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a chatbot instance</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">bot = Chatbot(name="MyBot")</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the interactive chat loop</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">bot.run()</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">```text</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">Advanced usage:</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co">```python</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.main import Chatbot</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.pattern_matcher import PatternMatcher</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.response_generator import ResponseGenerator</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom pattern matcher</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">custom_matcher = PatternMatcher()</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">custom_matcher.add_pattern("weather", r'</span><span class="ch">\b</span><span class="co">(weather|temperature|forecast)</span><span class="ch">\b</span><span class="co">')</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom response templates</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="co">weather_templates = [</span></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="co">    "The weather today is {condition} with a temperature of {temperature}.",</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co">    "Current weather: {condition}, {temperature} degrees."</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co">]</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a chatbot with custom components</span></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">bot = Chatbot(</span></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">    name="WeatherBot",</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">    pattern_matcher=custom_matcher,</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">    additional_templates={"weather": weather_templates}</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">)</span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Process a specific message</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="co">response = bot.process_message("What's the weather like today?")</span></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co">print(response)</span></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="co">```text</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">Dependencies</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">-----------</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">- Python 3.8+</span></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">- No external packages required for core functionality</span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">- Optional: requests (for API integration), sqlite3 (for persistent storage)</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>"""
+Chatbot Package Documentation
+=============================
+
+Modules
+-------
+main.py: Entry point for the chatbot application
+response_manager.py: Manages response generation
+history_manager.py: Handles conversation history
+pattern_matcher.py: Identifies intents from input
+
+Classes
+-------
+Chatbot: Main chatbot interface
+PatternMatcher: Analyses user input
+ResponseGenerator: Creates context-appropriate responses
+HistoryManager: Stores conversation history
+
+Usage
+-----
+    from chatbot.main import Chatbot
+    bot = Chatbot(name="MyBot")
+    bot.run()
+
+Dependencies
+-----------
+- Python 3.8+
+- No external packages required for core functionality
+"""</code></pre>
 </section>
 <section id="implementing-ai-suggested-improvements" class="level3" data-number="25.11.5">
 <h3 data-number="25.11.5" class="anchored" data-anchor-id="implementing-ai-suggested-improvements"><span class="header-section-number">25.11.5</span> Implementing AI-Suggested Improvements</h3>
@@ -2191,206 +2151,166 @@ in descending order. Each dictionary has 'name', 'age', and 'score' keys.</code>
 <span id="cb9-453"><a href="#cb9-453" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-454"><a href="#cb9-454" aria-hidden="true" tabindex="-1"></a>AI assistants can help you create better documentation for your chatbot:</span>
 <span id="cb9-455"><a href="#cb9-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-456"><a href="#cb9-456" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb9-457"><a href="#cb9-457" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb9-458"><a href="#cb9-458" aria-hidden="true" tabindex="-1"></a><span class="co">Chatbot Package Documentation</span></span>
-<span id="cb9-459"><a href="#cb9-459" aria-hidden="true" tabindex="-1"></a><span class="co">=============================</span></span>
+<span id="cb9-456"><a href="#cb9-456" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb9-457"><a href="#cb9-457" aria-hidden="true" tabindex="-1"></a><span class="in">"""</span></span>
+<span id="cb9-458"><a href="#cb9-458" aria-hidden="true" tabindex="-1"></a><span class="in">Chatbot Package Documentation</span></span>
+<span id="cb9-459"><a href="#cb9-459" aria-hidden="true" tabindex="-1"></a><span class="in">=============================</span></span>
 <span id="cb9-460"><a href="#cb9-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-461"><a href="#cb9-461" aria-hidden="true" tabindex="-1"></a><span class="co">This package implements a conversational chatbot with the following components:</span></span>
-<span id="cb9-462"><a href="#cb9-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-463"><a href="#cb9-463" aria-hidden="true" tabindex="-1"></a><span class="co">Modules</span></span>
-<span id="cb9-464"><a href="#cb9-464" aria-hidden="true" tabindex="-1"></a><span class="co">-------</span></span>
-<span id="cb9-465"><a href="#cb9-465" aria-hidden="true" tabindex="-1"></a><span class="co">main.py: Entry point for the chatbot application</span></span>
-<span id="cb9-466"><a href="#cb9-466" aria-hidden="true" tabindex="-1"></a><span class="co">response_manager.py: Manages response generation and selection</span></span>
-<span id="cb9-467"><a href="#cb9-467" aria-hidden="true" tabindex="-1"></a><span class="co">history_manager.py: Handles conversation history and persistence</span></span>
-<span id="cb9-468"><a href="#cb9-468" aria-hidden="true" tabindex="-1"></a><span class="co">pattern_matcher.py: Identifies intents and entities from user input</span></span>
-<span id="cb9-469"><a href="#cb9-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-470"><a href="#cb9-470" aria-hidden="true" tabindex="-1"></a><span class="co">Classes</span></span>
-<span id="cb9-471"><a href="#cb9-471" aria-hidden="true" tabindex="-1"></a><span class="co">-------</span></span>
-<span id="cb9-472"><a href="#cb9-472" aria-hidden="true" tabindex="-1"></a><span class="co">Chatbot: Main chatbot interface that coordinates all components</span></span>
-<span id="cb9-473"><a href="#cb9-473" aria-hidden="true" tabindex="-1"></a><span class="co">PatternMatcher: analyses user input to determine intent</span></span>
-<span id="cb9-474"><a href="#cb9-474" aria-hidden="true" tabindex="-1"></a><span class="co">ResponseGenerator: Creates varied, context-appropriate responses</span></span>
-<span id="cb9-475"><a href="#cb9-475" aria-hidden="true" tabindex="-1"></a><span class="co">HistoryManager: Stores and retrieves conversation history</span></span>
-<span id="cb9-476"><a href="#cb9-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-477"><a href="#cb9-477" aria-hidden="true" tabindex="-1"></a><span class="co">Usage</span></span>
-<span id="cb9-478"><a href="#cb9-478" aria-hidden="true" tabindex="-1"></a><span class="co">-----</span></span>
-<span id="cb9-479"><a href="#cb9-479" aria-hidden="true" tabindex="-1"></a><span class="co">Basic usage:</span></span>
+<span id="cb9-461"><a href="#cb9-461" aria-hidden="true" tabindex="-1"></a><span class="in">Modules</span></span>
+<span id="cb9-462"><a href="#cb9-462" aria-hidden="true" tabindex="-1"></a><span class="in">-------</span></span>
+<span id="cb9-463"><a href="#cb9-463" aria-hidden="true" tabindex="-1"></a><span class="in">main.py: Entry point for the chatbot application</span></span>
+<span id="cb9-464"><a href="#cb9-464" aria-hidden="true" tabindex="-1"></a><span class="in">response_manager.py: Manages response generation</span></span>
+<span id="cb9-465"><a href="#cb9-465" aria-hidden="true" tabindex="-1"></a><span class="in">history_manager.py: Handles conversation history</span></span>
+<span id="cb9-466"><a href="#cb9-466" aria-hidden="true" tabindex="-1"></a><span class="in">pattern_matcher.py: Identifies intents from input</span></span>
+<span id="cb9-467"><a href="#cb9-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-468"><a href="#cb9-468" aria-hidden="true" tabindex="-1"></a><span class="in">Classes</span></span>
+<span id="cb9-469"><a href="#cb9-469" aria-hidden="true" tabindex="-1"></a><span class="in">-------</span></span>
+<span id="cb9-470"><a href="#cb9-470" aria-hidden="true" tabindex="-1"></a><span class="in">Chatbot: Main chatbot interface</span></span>
+<span id="cb9-471"><a href="#cb9-471" aria-hidden="true" tabindex="-1"></a><span class="in">PatternMatcher: Analyses user input</span></span>
+<span id="cb9-472"><a href="#cb9-472" aria-hidden="true" tabindex="-1"></a><span class="in">ResponseGenerator: Creates context-appropriate responses</span></span>
+<span id="cb9-473"><a href="#cb9-473" aria-hidden="true" tabindex="-1"></a><span class="in">HistoryManager: Stores conversation history</span></span>
+<span id="cb9-474"><a href="#cb9-474" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-475"><a href="#cb9-475" aria-hidden="true" tabindex="-1"></a><span class="in">Usage</span></span>
+<span id="cb9-476"><a href="#cb9-476" aria-hidden="true" tabindex="-1"></a><span class="in">-----</span></span>
+<span id="cb9-477"><a href="#cb9-477" aria-hidden="true" tabindex="-1"></a><span class="in">    from chatbot.main import Chatbot</span></span>
+<span id="cb9-478"><a href="#cb9-478" aria-hidden="true" tabindex="-1"></a><span class="in">    bot = Chatbot(name="MyBot")</span></span>
+<span id="cb9-479"><a href="#cb9-479" aria-hidden="true" tabindex="-1"></a><span class="in">    bot.run()</span></span>
 <span id="cb9-480"><a href="#cb9-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-481"><a href="#cb9-481" aria-hidden="true" tabindex="-1"></a><span class="co">```python</span></span>
-<span id="cb9-482"><a href="#cb9-482" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.main import Chatbot</span></span>
-<span id="cb9-483"><a href="#cb9-483" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-484"><a href="#cb9-484" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a chatbot instance</span></span>
-<span id="cb9-485"><a href="#cb9-485" aria-hidden="true" tabindex="-1"></a><span class="co">bot = Chatbot(name="MyBot")</span></span>
-<span id="cb9-486"><a href="#cb9-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-487"><a href="#cb9-487" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the interactive chat loop</span></span>
-<span id="cb9-488"><a href="#cb9-488" aria-hidden="true" tabindex="-1"></a><span class="co">bot.run()</span></span>
-<span id="cb9-489"><a href="#cb9-489" aria-hidden="true" tabindex="-1"></a><span class="co">```text</span></span>
-<span id="cb9-490"><a href="#cb9-490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-491"><a href="#cb9-491" aria-hidden="true" tabindex="-1"></a><span class="co">Advanced usage:</span></span>
-<span id="cb9-492"><a href="#cb9-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-493"><a href="#cb9-493" aria-hidden="true" tabindex="-1"></a><span class="co">```python</span></span>
-<span id="cb9-494"><a href="#cb9-494" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.main import Chatbot</span></span>
-<span id="cb9-495"><a href="#cb9-495" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.pattern_matcher import PatternMatcher</span></span>
-<span id="cb9-496"><a href="#cb9-496" aria-hidden="true" tabindex="-1"></a><span class="co">from chatbot.response_generator import ResponseGenerator</span></span>
-<span id="cb9-497"><a href="#cb9-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-498"><a href="#cb9-498" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom pattern matcher</span></span>
-<span id="cb9-499"><a href="#cb9-499" aria-hidden="true" tabindex="-1"></a><span class="co">custom_matcher = PatternMatcher()</span></span>
-<span id="cb9-500"><a href="#cb9-500" aria-hidden="true" tabindex="-1"></a><span class="co">custom_matcher.add_pattern("weather", r'</span><span class="ch">\b</span><span class="co">(weather|temperature|forecast)</span><span class="ch">\b</span><span class="co">')</span></span>
-<span id="cb9-501"><a href="#cb9-501" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-502"><a href="#cb9-502" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom response templates</span></span>
-<span id="cb9-503"><a href="#cb9-503" aria-hidden="true" tabindex="-1"></a><span class="co">weather_templates = [</span></span>
-<span id="cb9-504"><a href="#cb9-504" aria-hidden="true" tabindex="-1"></a><span class="co">    "The weather today is {condition} with a temperature of {temperature}.",</span></span>
-<span id="cb9-505"><a href="#cb9-505" aria-hidden="true" tabindex="-1"></a><span class="co">    "Current weather: {condition}, {temperature} degrees."</span></span>
-<span id="cb9-506"><a href="#cb9-506" aria-hidden="true" tabindex="-1"></a><span class="co">]</span></span>
-<span id="cb9-507"><a href="#cb9-507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-508"><a href="#cb9-508" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a chatbot with custom components</span></span>
-<span id="cb9-509"><a href="#cb9-509" aria-hidden="true" tabindex="-1"></a><span class="co">bot = Chatbot(</span></span>
-<span id="cb9-510"><a href="#cb9-510" aria-hidden="true" tabindex="-1"></a><span class="co">    name="WeatherBot",</span></span>
-<span id="cb9-511"><a href="#cb9-511" aria-hidden="true" tabindex="-1"></a><span class="co">    pattern_matcher=custom_matcher,</span></span>
-<span id="cb9-512"><a href="#cb9-512" aria-hidden="true" tabindex="-1"></a><span class="co">    additional_templates={"weather": weather_templates}</span></span>
-<span id="cb9-513"><a href="#cb9-513" aria-hidden="true" tabindex="-1"></a><span class="co">)</span></span>
-<span id="cb9-514"><a href="#cb9-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-515"><a href="#cb9-515" aria-hidden="true" tabindex="-1"></a><span class="co"># Process a specific message</span></span>
-<span id="cb9-516"><a href="#cb9-516" aria-hidden="true" tabindex="-1"></a><span class="co">response = bot.process_message("What's the weather like today?")</span></span>
-<span id="cb9-517"><a href="#cb9-517" aria-hidden="true" tabindex="-1"></a><span class="co">print(response)</span></span>
-<span id="cb9-518"><a href="#cb9-518" aria-hidden="true" tabindex="-1"></a><span class="co">```text</span></span>
-<span id="cb9-519"><a href="#cb9-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-520"><a href="#cb9-520" aria-hidden="true" tabindex="-1"></a><span class="co">Dependencies</span></span>
-<span id="cb9-521"><a href="#cb9-521" aria-hidden="true" tabindex="-1"></a><span class="co">-----------</span></span>
-<span id="cb9-522"><a href="#cb9-522" aria-hidden="true" tabindex="-1"></a><span class="co">- Python 3.8+</span></span>
-<span id="cb9-523"><a href="#cb9-523" aria-hidden="true" tabindex="-1"></a><span class="co">- No external packages required for core functionality</span></span>
-<span id="cb9-524"><a href="#cb9-524" aria-hidden="true" tabindex="-1"></a><span class="co">- Optional: requests (for API integration), sqlite3 (for persistent storage)</span></span>
-<span id="cb9-525"><a href="#cb9-525" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb9-526"><a href="#cb9-526" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-527"><a href="#cb9-527" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-528"><a href="#cb9-528" aria-hidden="true" tabindex="-1"></a><span class="fu">### Implementing AI-Suggested Improvements</span></span>
-<span id="cb9-529"><a href="#cb9-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-530"><a href="#cb9-530" aria-hidden="true" tabindex="-1"></a>After working on your chatbot for a while, you might ask an AI assistant to suggest improvements. Here's an example of implementing such suggestions:</span>
-<span id="cb9-531"><a href="#cb9-531" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-532"><a href="#cb9-532" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb9-533"><a href="#cb9-533" aria-hidden="true" tabindex="-1"></a><span class="co"># Original simple chatbot implementation</span></span>
-<span id="cb9-534"><a href="#cb9-534" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SimpleBot:</span>
-<span id="cb9-535"><a href="#cb9-535" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
-<span id="cb9-536"><a href="#cb9-536" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb9-537"><a href="#cb9-537" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.responses <span class="op">=</span> {</span>
-<span id="cb9-538"><a href="#cb9-538" aria-hidden="true" tabindex="-1"></a>            <span class="st">"hello"</span>: <span class="st">"Hi there!"</span>,</span>
-<span id="cb9-539"><a href="#cb9-539" aria-hidden="true" tabindex="-1"></a>            <span class="st">"how are you"</span>: <span class="st">"I'm good, thanks!"</span>,</span>
-<span id="cb9-540"><a href="#cb9-540" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bye"</span>: <span class="st">"Goodbye!"</span></span>
-<span id="cb9-541"><a href="#cb9-541" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb9-542"><a href="#cb9-542" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-543"><a href="#cb9-543" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_response(<span class="va">self</span>, message):</span>
-<span id="cb9-544"><a href="#cb9-544" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> key, response <span class="kw">in</span> <span class="va">self</span>.responses.items():</span>
-<span id="cb9-545"><a href="#cb9-545" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> key <span class="kw">in</span> message.lower():</span>
-<span id="cb9-546"><a href="#cb9-546" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> response</span>
-<span id="cb9-547"><a href="#cb9-547" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"I don't understand."</span></span>
-<span id="cb9-548"><a href="#cb9-548" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-549"><a href="#cb9-549" aria-hidden="true" tabindex="-1"></a><span class="co"># AI-suggested improved version</span></span>
-<span id="cb9-550"><a href="#cb9-550" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> EnhancedBot:</span>
-<span id="cb9-551"><a href="#cb9-551" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
-<span id="cb9-552"><a href="#cb9-552" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb9-553"><a href="#cb9-553" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.user_name <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb9-554"><a href="#cb9-554" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_start <span class="op">=</span> datetime.now()</span>
-<span id="cb9-555"><a href="#cb9-555" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.message_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-556"><a href="#cb9-556" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.responses <span class="op">=</span> {</span>
-<span id="cb9-557"><a href="#cb9-557" aria-hidden="true" tabindex="-1"></a>            <span class="st">"greeting"</span>: [<span class="st">"Hi there!"</span>, <span class="st">"Hello!"</span>, <span class="st">"Greetings!"</span>],</span>
-<span id="cb9-558"><a href="#cb9-558" aria-hidden="true" tabindex="-1"></a>            <span class="st">"farewell"</span>: [<span class="st">"Goodbye!"</span>, <span class="st">"See you later!"</span>, <span class="st">"Bye for now!"</span>],</span>
-<span id="cb9-559"><a href="#cb9-559" aria-hidden="true" tabindex="-1"></a>            <span class="st">"inquiry"</span>: [<span class="st">"I'm just a chatbot."</span>, <span class="st">"I'm doing well!"</span>, <span class="st">"I exist to chat!"</span>],</span>
-<span id="cb9-560"><a href="#cb9-560" aria-hidden="true" tabindex="-1"></a>            <span class="st">"default"</span>: [<span class="st">"I don't understand."</span>, <span class="st">"Could you rephrase that?"</span>, <span class="st">"I'm not sure what you mean."</span>]</span>
-<span id="cb9-561"><a href="#cb9-561" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb9-562"><a href="#cb9-562" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.patterns <span class="op">=</span> {</span>
-<span id="cb9-563"><a href="#cb9-563" aria-hidden="true" tabindex="-1"></a>            <span class="st">"greeting"</span>: [<span class="st">"hello"</span>, <span class="st">"hi"</span>, <span class="st">"hey"</span>, <span class="st">"greetings"</span>],</span>
-<span id="cb9-564"><a href="#cb9-564" aria-hidden="true" tabindex="-1"></a>            <span class="st">"farewell"</span>: [<span class="st">"bye"</span>, <span class="st">"goodbye"</span>, <span class="st">"see you"</span>, <span class="st">"farewell"</span>],</span>
-<span id="cb9-565"><a href="#cb9-565" aria-hidden="true" tabindex="-1"></a>            <span class="st">"inquiry"</span>: [<span class="st">"how are you"</span>, <span class="st">"what are you"</span>, <span class="st">"who are you"</span>]</span>
-<span id="cb9-566"><a href="#cb9-566" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb9-567"><a href="#cb9-567" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_history <span class="op">=</span> []</span>
+<span id="cb9-481"><a href="#cb9-481" aria-hidden="true" tabindex="-1"></a><span class="in">Dependencies</span></span>
+<span id="cb9-482"><a href="#cb9-482" aria-hidden="true" tabindex="-1"></a><span class="in">-----------</span></span>
+<span id="cb9-483"><a href="#cb9-483" aria-hidden="true" tabindex="-1"></a><span class="in">- Python 3.8+</span></span>
+<span id="cb9-484"><a href="#cb9-484" aria-hidden="true" tabindex="-1"></a><span class="in">- No external packages required for core functionality</span></span>
+<span id="cb9-485"><a href="#cb9-485" aria-hidden="true" tabindex="-1"></a><span class="in">"""</span></span>
+<span id="cb9-486"><a href="#cb9-486" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-487"><a href="#cb9-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-488"><a href="#cb9-488" aria-hidden="true" tabindex="-1"></a><span class="fu">### Implementing AI-Suggested Improvements</span></span>
+<span id="cb9-489"><a href="#cb9-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-490"><a href="#cb9-490" aria-hidden="true" tabindex="-1"></a>After working on your chatbot for a while, you might ask an AI assistant to suggest improvements. Here's an example of implementing such suggestions:</span>
+<span id="cb9-491"><a href="#cb9-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-492"><a href="#cb9-492" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb9-493"><a href="#cb9-493" aria-hidden="true" tabindex="-1"></a><span class="co"># Original simple chatbot implementation</span></span>
+<span id="cb9-494"><a href="#cb9-494" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SimpleBot:</span>
+<span id="cb9-495"><a href="#cb9-495" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb9-496"><a href="#cb9-496" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb9-497"><a href="#cb9-497" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.responses <span class="op">=</span> {</span>
+<span id="cb9-498"><a href="#cb9-498" aria-hidden="true" tabindex="-1"></a>            <span class="st">"hello"</span>: <span class="st">"Hi there!"</span>,</span>
+<span id="cb9-499"><a href="#cb9-499" aria-hidden="true" tabindex="-1"></a>            <span class="st">"how are you"</span>: <span class="st">"I'm good, thanks!"</span>,</span>
+<span id="cb9-500"><a href="#cb9-500" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bye"</span>: <span class="st">"Goodbye!"</span></span>
+<span id="cb9-501"><a href="#cb9-501" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-502"><a href="#cb9-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-503"><a href="#cb9-503" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_response(<span class="va">self</span>, message):</span>
+<span id="cb9-504"><a href="#cb9-504" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> key, response <span class="kw">in</span> <span class="va">self</span>.responses.items():</span>
+<span id="cb9-505"><a href="#cb9-505" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> key <span class="kw">in</span> message.lower():</span>
+<span id="cb9-506"><a href="#cb9-506" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> response</span>
+<span id="cb9-507"><a href="#cb9-507" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"I don't understand."</span></span>
+<span id="cb9-508"><a href="#cb9-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-509"><a href="#cb9-509" aria-hidden="true" tabindex="-1"></a><span class="co"># AI-suggested improved version</span></span>
+<span id="cb9-510"><a href="#cb9-510" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> EnhancedBot:</span>
+<span id="cb9-511"><a href="#cb9-511" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb9-512"><a href="#cb9-512" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb9-513"><a href="#cb9-513" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.user_name <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb9-514"><a href="#cb9-514" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_start <span class="op">=</span> datetime.now()</span>
+<span id="cb9-515"><a href="#cb9-515" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.message_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-516"><a href="#cb9-516" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.responses <span class="op">=</span> {</span>
+<span id="cb9-517"><a href="#cb9-517" aria-hidden="true" tabindex="-1"></a>            <span class="st">"greeting"</span>: [<span class="st">"Hi there!"</span>, <span class="st">"Hello!"</span>, <span class="st">"Greetings!"</span>],</span>
+<span id="cb9-518"><a href="#cb9-518" aria-hidden="true" tabindex="-1"></a>            <span class="st">"farewell"</span>: [<span class="st">"Goodbye!"</span>, <span class="st">"See you later!"</span>, <span class="st">"Bye for now!"</span>],</span>
+<span id="cb9-519"><a href="#cb9-519" aria-hidden="true" tabindex="-1"></a>            <span class="st">"inquiry"</span>: [<span class="st">"I'm just a chatbot."</span>, <span class="st">"I'm doing well!"</span>, <span class="st">"I exist to chat!"</span>],</span>
+<span id="cb9-520"><a href="#cb9-520" aria-hidden="true" tabindex="-1"></a>            <span class="st">"default"</span>: [<span class="st">"I don't understand."</span>, <span class="st">"Could you rephrase that?"</span>, <span class="st">"I'm not sure what you mean."</span>]</span>
+<span id="cb9-521"><a href="#cb9-521" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-522"><a href="#cb9-522" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.patterns <span class="op">=</span> {</span>
+<span id="cb9-523"><a href="#cb9-523" aria-hidden="true" tabindex="-1"></a>            <span class="st">"greeting"</span>: [<span class="st">"hello"</span>, <span class="st">"hi"</span>, <span class="st">"hey"</span>, <span class="st">"greetings"</span>],</span>
+<span id="cb9-524"><a href="#cb9-524" aria-hidden="true" tabindex="-1"></a>            <span class="st">"farewell"</span>: [<span class="st">"bye"</span>, <span class="st">"goodbye"</span>, <span class="st">"see you"</span>, <span class="st">"farewell"</span>],</span>
+<span id="cb9-525"><a href="#cb9-525" aria-hidden="true" tabindex="-1"></a>            <span class="st">"inquiry"</span>: [<span class="st">"how are you"</span>, <span class="st">"what are you"</span>, <span class="st">"who are you"</span>]</span>
+<span id="cb9-526"><a href="#cb9-526" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb9-527"><a href="#cb9-527" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_history <span class="op">=</span> []</span>
+<span id="cb9-528"><a href="#cb9-528" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-529"><a href="#cb9-529" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_response(<span class="va">self</span>, message):</span>
+<span id="cb9-530"><a href="#cb9-530" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.message_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-531"><a href="#cb9-531" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_history.append(<span class="ss">f"User: </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-532"><a href="#cb9-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-533"><a href="#cb9-533" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract user name if not already known</span></span>
+<span id="cb9-534"><a href="#cb9-534" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.user_name <span class="kw">is</span> <span class="va">None</span> <span class="kw">and</span> <span class="st">"my name is"</span> <span class="kw">in</span> message.lower():</span>
+<span id="cb9-535"><a href="#cb9-535" aria-hidden="true" tabindex="-1"></a>            name_match <span class="op">=</span> re.search(<span class="vs">r'my name is </span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>, message, re.IGNORECASE)</span>
+<span id="cb9-536"><a href="#cb9-536" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> name_match:</span>
+<span id="cb9-537"><a href="#cb9-537" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.user_name <span class="op">=</span> name_match.group(<span class="dv">1</span>)</span>
+<span id="cb9-538"><a href="#cb9-538" aria-hidden="true" tabindex="-1"></a>                response <span class="op">=</span> <span class="ss">f"Nice to meet you, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>user_name<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb9-539"><a href="#cb9-539" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.conversation_history.append(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-540"><a href="#cb9-540" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> response</span>
+<span id="cb9-541"><a href="#cb9-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-542"><a href="#cb9-542" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Match patterns</span></span>
+<span id="cb9-543"><a href="#cb9-543" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> category, patterns <span class="kw">in</span> <span class="va">self</span>.patterns.items():</span>
+<span id="cb9-544"><a href="#cb9-544" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> pattern <span class="kw">in</span> patterns:</span>
+<span id="cb9-545"><a href="#cb9-545" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> pattern <span class="kw">in</span> message.lower():</span>
+<span id="cb9-546"><a href="#cb9-546" aria-hidden="true" tabindex="-1"></a>                    response <span class="op">=</span> random.choice(<span class="va">self</span>.responses[category])</span>
+<span id="cb9-547"><a href="#cb9-547" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-548"><a href="#cb9-548" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># Personalize if user name is known</span></span>
+<span id="cb9-549"><a href="#cb9-549" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="va">self</span>.user_name <span class="kw">and</span> category <span class="op">==</span> <span class="st">"greeting"</span>:</span>
+<span id="cb9-550"><a href="#cb9-550" aria-hidden="true" tabindex="-1"></a>                        response <span class="op">=</span> response.replace(<span class="st">"!"</span>, <span class="ss">f", </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb9-551"><a href="#cb9-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-552"><a href="#cb9-552" aria-hidden="true" tabindex="-1"></a>                    <span class="va">self</span>.conversation_history.append(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-553"><a href="#cb9-553" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> response</span>
+<span id="cb9-554"><a href="#cb9-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-555"><a href="#cb9-555" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Default response</span></span>
+<span id="cb9-556"><a href="#cb9-556" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> random.choice(<span class="va">self</span>.responses[<span class="st">"default"</span>])</span>
+<span id="cb9-557"><a href="#cb9-557" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_history.append(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-558"><a href="#cb9-558" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> response</span>
+<span id="cb9-559"><a href="#cb9-559" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-560"><a href="#cb9-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-561"><a href="#cb9-561" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Developing a Balanced Approach to AI Assistance</span></span>
+<span id="cb9-562"><a href="#cb9-562" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-563"><a href="#cb9-563" aria-hidden="true" tabindex="-1"></a>As you continue your Python journey, developing a balanced approach to using AI programming assistants will be crucial. Here are some guidelines for sustainable, effective use:</span>
+<span id="cb9-564"><a href="#cb9-564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-565"><a href="#cb9-565" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Learning Path</span></span>
+<span id="cb9-566"><a href="#cb9-566" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-567"><a href="#cb9-567" aria-hidden="true" tabindex="-1"></a>When using AI assistants for learning Python:</span>
 <span id="cb9-568"><a href="#cb9-568" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-569"><a href="#cb9-569" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_response(<span class="va">self</span>, message):</span>
-<span id="cb9-570"><a href="#cb9-570" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.message_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb9-571"><a href="#cb9-571" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_history.append(<span class="ss">f"User: </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-572"><a href="#cb9-572" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-573"><a href="#cb9-573" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract user name if not already known</span></span>
-<span id="cb9-574"><a href="#cb9-574" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.user_name <span class="kw">is</span> <span class="va">None</span> <span class="kw">and</span> <span class="st">"my name is"</span> <span class="kw">in</span> message.lower():</span>
-<span id="cb9-575"><a href="#cb9-575" aria-hidden="true" tabindex="-1"></a>            name_match <span class="op">=</span> re.search(<span class="vs">r'my name is </span><span class="kw">(</span><span class="dv">\w</span><span class="op">+</span><span class="kw">)</span><span class="vs">'</span>, message, re.IGNORECASE)</span>
-<span id="cb9-576"><a href="#cb9-576" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> name_match:</span>
-<span id="cb9-577"><a href="#cb9-577" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.user_name <span class="op">=</span> name_match.group(<span class="dv">1</span>)</span>
-<span id="cb9-578"><a href="#cb9-578" aria-hidden="true" tabindex="-1"></a>                response <span class="op">=</span> <span class="ss">f"Nice to meet you, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>user_name<span class="sc">}</span><span class="ss">!"</span></span>
-<span id="cb9-579"><a href="#cb9-579" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.conversation_history.append(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-580"><a href="#cb9-580" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> response</span>
-<span id="cb9-581"><a href="#cb9-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-582"><a href="#cb9-582" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Match patterns</span></span>
-<span id="cb9-583"><a href="#cb9-583" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> category, patterns <span class="kw">in</span> <span class="va">self</span>.patterns.items():</span>
-<span id="cb9-584"><a href="#cb9-584" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> pattern <span class="kw">in</span> patterns:</span>
-<span id="cb9-585"><a href="#cb9-585" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> pattern <span class="kw">in</span> message.lower():</span>
-<span id="cb9-586"><a href="#cb9-586" aria-hidden="true" tabindex="-1"></a>                    response <span class="op">=</span> random.choice(<span class="va">self</span>.responses[category])</span>
-<span id="cb9-587"><a href="#cb9-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-588"><a href="#cb9-588" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># Personalize if user name is known</span></span>
-<span id="cb9-589"><a href="#cb9-589" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="va">self</span>.user_name <span class="kw">and</span> category <span class="op">==</span> <span class="st">"greeting"</span>:</span>
-<span id="cb9-590"><a href="#cb9-590" aria-hidden="true" tabindex="-1"></a>                        response <span class="op">=</span> response.replace(<span class="st">"!"</span>, <span class="ss">f", </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb9-591"><a href="#cb9-591" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-592"><a href="#cb9-592" aria-hidden="true" tabindex="-1"></a>                    <span class="va">self</span>.conversation_history.append(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-593"><a href="#cb9-593" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> response</span>
-<span id="cb9-594"><a href="#cb9-594" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-595"><a href="#cb9-595" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Default response</span></span>
-<span id="cb9-596"><a href="#cb9-596" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> random.choice(<span class="va">self</span>.responses[<span class="st">"default"</span>])</span>
-<span id="cb9-597"><a href="#cb9-597" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conversation_history.append(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-598"><a href="#cb9-598" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> response</span>
-<span id="cb9-599"><a href="#cb9-599" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-569"><a href="#cb9-569" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Start with concepts**: First understand the fundamental concepts without AI</span>
+<span id="cb9-570"><a href="#cb9-570" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Use AI for exploration**: Once you grasp basics, use AI to explore variations</span>
+<span id="cb9-571"><a href="#cb9-571" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Challenge yourself**: Try solving problems before asking AI</span>
+<span id="cb9-572"><a href="#cb9-572" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Deconstruct AI solutions**: When AI generates code, understand each line</span>
+<span id="cb9-573"><a href="#cb9-573" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Build your mental model**: Use AI to fill gaps in your knowledge, not replace it</span>
+<span id="cb9-574"><a href="#cb9-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-575"><a href="#cb9-575" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Professional Development</span></span>
+<span id="cb9-576"><a href="#cb9-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-577"><a href="#cb9-577" aria-hidden="true" tabindex="-1"></a>When using AI in professional Python work:</span>
+<span id="cb9-578"><a href="#cb9-578" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-579"><a href="#cb9-579" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Focus on high-level thinking**: Let AI handle routine tasks while you focus on architecture and design</span>
+<span id="cb9-580"><a href="#cb9-580" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Verify critical components**: Double-check important functions, especially those affecting security or core logic</span>
+<span id="cb9-581"><a href="#cb9-581" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Document AI usage**: Note where and how AI assistance was used</span>
+<span id="cb9-582"><a href="#cb9-582" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Learn from AI suggestions**: Study AI-generated solutions to improve your own skills</span>
+<span id="cb9-583"><a href="#cb9-583" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Maintain code ownership**: Ensure you fully understand all code in your project, even if AI-assisted</span>
+<span id="cb9-584"><a href="#cb9-584" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-585"><a href="#cb9-585" aria-hidden="true" tabindex="-1"></a><span class="fu">### Future-Proof Skills</span></span>
+<span id="cb9-586"><a href="#cb9-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-587"><a href="#cb9-587" aria-hidden="true" tabindex="-1"></a>As AI tools become more powerful, focus on skills that complement them:</span>
+<span id="cb9-588"><a href="#cb9-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-589"><a href="#cb9-589" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Problem formulation**: Clearly defining requirements (good prompts)</span>
+<span id="cb9-590"><a href="#cb9-590" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Code evaluation**: Critically assessing generated solutions</span>
+<span id="cb9-591"><a href="#cb9-591" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**System architecture**: High-level design thinking</span>
+<span id="cb9-592"><a href="#cb9-592" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Debugging complex systems**: Identifying root causes across components</span>
+<span id="cb9-593"><a href="#cb9-593" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Communication and collaboration**: Working effectively with others</span>
+<span id="cb9-594"><a href="#cb9-594" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Ethical judgment**: Making appropriate decisions about AI usage</span>
+<span id="cb9-595"><a href="#cb9-595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-596"><a href="#cb9-596" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-References</span></span>
+<span id="cb9-597"><a href="#cb9-597" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-598"><a href="#cb9-598" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Previous Chapter: <span class="co">[</span><span class="ot">Getting Help</span><span class="co">](getting_help.qmd)</span></span>
+<span id="cb9-599"><a href="#cb9-599" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Related Topics: Testing (Chapter 18), Debugging (Chapter 17), Getting Help (Chapter 23)</span>
 <span id="cb9-600"><a href="#cb9-600" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-601"><a href="#cb9-601" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Developing a Balanced Approach to AI Assistance</span></span>
+<span id="cb9-601"><a href="#cb9-601" aria-hidden="true" tabindex="-1"></a>***AI Tip: When you need a complex functionality for your Python project, consider using AI tools in a "scaffolding" capacity - have the AI create the initial structure and key functions, then fill in the implementation details yourself. This hybrid approach leverages AI efficiency while ensuring you understand every part of your code.***</span>
 <span id="cb9-602"><a href="#cb9-602" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-603"><a href="#cb9-603" aria-hidden="true" tabindex="-1"></a>As you continue your Python journey, developing a balanced approach to using AI programming assistants will be crucial. Here are some guidelines for sustainable, effective use:</span>
+<span id="cb9-603"><a href="#cb9-603" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
 <span id="cb9-604"><a href="#cb9-604" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-605"><a href="#cb9-605" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Learning Path</span></span>
+<span id="cb9-605"><a href="#cb9-605" aria-hidden="true" tabindex="-1"></a>AI programming assistants are transforming how we learn and use Python, offering powerful capabilities that can accelerate development and enhance learning. By understanding how to use these tools effectively - crafting good prompts, critically evaluating generated code, and maintaining a balance between AI assistance and personal skill development - you can leverage AI to become a more effective Python programmer.</span>
 <span id="cb9-606"><a href="#cb9-606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-607"><a href="#cb9-607" aria-hidden="true" tabindex="-1"></a>When using AI assistants for learning Python:</span>
+<span id="cb9-607"><a href="#cb9-607" aria-hidden="true" tabindex="-1"></a>Key takeaways from this chapter include:</span>
 <span id="cb9-608"><a href="#cb9-608" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-609"><a href="#cb9-609" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Start with concepts**: First understand the fundamental concepts without AI</span>
-<span id="cb9-610"><a href="#cb9-610" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Use AI for exploration**: Once you grasp basics, use AI to explore variations</span>
-<span id="cb9-611"><a href="#cb9-611" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Challenge yourself**: Try solving problems before asking AI</span>
-<span id="cb9-612"><a href="#cb9-612" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Deconstruct AI solutions**: When AI generates code, understand each line</span>
-<span id="cb9-613"><a href="#cb9-613" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Build your mental model**: Use AI to fill gaps in your knowledge, not replace it</span>
+<span id="cb9-609"><a href="#cb9-609" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI programming assistants excel at tasks like generating boilerplate code, explaining concepts, and suggesting improvements</span>
+<span id="cb9-610"><a href="#cb9-610" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The quality of AI assistance depends greatly on how well you communicate your needs</span>
+<span id="cb9-611"><a href="#cb9-611" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Always critically evaluate AI-generated code for correctness, efficiency, and security</span>
+<span id="cb9-612"><a href="#cb9-612" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use AI tools to enhance your learning process, not replace it</span>
+<span id="cb9-613"><a href="#cb9-613" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Focus on developing high-level skills that complement AI capabilities</span>
 <span id="cb9-614"><a href="#cb9-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-615"><a href="#cb9-615" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Professional Development</span></span>
-<span id="cb9-616"><a href="#cb9-616" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-617"><a href="#cb9-617" aria-hidden="true" tabindex="-1"></a>When using AI in professional Python work:</span>
-<span id="cb9-618"><a href="#cb9-618" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-619"><a href="#cb9-619" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Focus on high-level thinking**: Let AI handle routine tasks while you focus on architecture and design</span>
-<span id="cb9-620"><a href="#cb9-620" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Verify critical components**: Double-check important functions, especially those affecting security or core logic</span>
-<span id="cb9-621"><a href="#cb9-621" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Document AI usage**: Note where and how AI assistance was used</span>
-<span id="cb9-622"><a href="#cb9-622" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Learn from AI suggestions**: Study AI-generated solutions to improve your own skills</span>
-<span id="cb9-623"><a href="#cb9-623" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Maintain code ownership**: Ensure you fully understand all code in your project, even if AI-assisted</span>
-<span id="cb9-624"><a href="#cb9-624" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-625"><a href="#cb9-625" aria-hidden="true" tabindex="-1"></a><span class="fu">### Future-Proof Skills</span></span>
-<span id="cb9-626"><a href="#cb9-626" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-627"><a href="#cb9-627" aria-hidden="true" tabindex="-1"></a>As AI tools become more powerful, focus on skills that complement them:</span>
-<span id="cb9-628"><a href="#cb9-628" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-629"><a href="#cb9-629" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Problem formulation**: Clearly defining requirements (good prompts)</span>
-<span id="cb9-630"><a href="#cb9-630" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Code evaluation**: Critically assessing generated solutions</span>
-<span id="cb9-631"><a href="#cb9-631" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**System architecture**: High-level design thinking</span>
-<span id="cb9-632"><a href="#cb9-632" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Debugging complex systems**: Identifying root causes across components</span>
-<span id="cb9-633"><a href="#cb9-633" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Communication and collaboration**: Working effectively with others</span>
-<span id="cb9-634"><a href="#cb9-634" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Ethical judgment**: Making appropriate decisions about AI usage</span>
-<span id="cb9-635"><a href="#cb9-635" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-636"><a href="#cb9-636" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-References</span></span>
-<span id="cb9-637"><a href="#cb9-637" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-638"><a href="#cb9-638" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Previous Chapter: <span class="co">[</span><span class="ot">Getting Help</span><span class="co">](getting_help.qmd)</span></span>
-<span id="cb9-639"><a href="#cb9-639" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Related Topics: Testing (Chapter 18), Debugging (Chapter 17), Getting Help (Chapter 23)</span>
-<span id="cb9-640"><a href="#cb9-640" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-641"><a href="#cb9-641" aria-hidden="true" tabindex="-1"></a>***AI Tip: When you need a complex functionality for your Python project, consider using AI tools in a "scaffolding" capacity - have the AI create the initial structure and key functions, then fill in the implementation details yourself. This hybrid approach leverages AI efficiency while ensuring you understand every part of your code.***</span>
-<span id="cb9-642"><a href="#cb9-642" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-643"><a href="#cb9-643" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb9-644"><a href="#cb9-644" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-645"><a href="#cb9-645" aria-hidden="true" tabindex="-1"></a>AI programming assistants are transforming how we learn and use Python, offering powerful capabilities that can accelerate development and enhance learning. By understanding how to use these tools effectively - crafting good prompts, critically evaluating generated code, and maintaining a balance between AI assistance and personal skill development - you can leverage AI to become a more effective Python programmer.</span>
-<span id="cb9-646"><a href="#cb9-646" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-647"><a href="#cb9-647" aria-hidden="true" tabindex="-1"></a>Key takeaways from this chapter include:</span>
-<span id="cb9-648"><a href="#cb9-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-649"><a href="#cb9-649" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI programming assistants excel at tasks like generating boilerplate code, explaining concepts, and suggesting improvements</span>
-<span id="cb9-650"><a href="#cb9-650" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The quality of AI assistance depends greatly on how well you communicate your needs</span>
-<span id="cb9-651"><a href="#cb9-651" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Always critically evaluate AI-generated code for correctness, efficiency, and security</span>
-<span id="cb9-652"><a href="#cb9-652" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use AI tools to enhance your learning process, not replace it</span>
-<span id="cb9-653"><a href="#cb9-653" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Focus on developing high-level skills that complement AI capabilities</span>
-<span id="cb9-654"><a href="#cb9-654" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-655"><a href="#cb9-655" aria-hidden="true" tabindex="-1"></a>As AI tools continue to evolve, the ability to work effectively with them will become an increasingly valuable skill for Python developers at all levels. By developing a thoughtful, balanced approach to using these tools, you can harness their power while continuing to grow your own programming abilities.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb9-615"><a href="#cb9-615" aria-hidden="true" tabindex="-1"></a>As AI tools continue to evolve, the ability to work effectively with them will become an increasingly valuable skill for Python developers at all levels. By developing a thoughtful, balanced approach to using these tools, you can harness their power while continuing to grow your own programming abilities.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

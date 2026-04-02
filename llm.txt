@@ -222,24 +222,6 @@ AI coding assistants understand programming languages better than they understan
 
 Consider this exchange:
 
-python
-import psutil
-print(f"Current CPU temperature: {psutil.sensors_temperatures()['coretemp'][0].current}°C")
-python
-import requests
-
-def get_weather(city="London"):
-    api_key = "YOUR_API_KEY_HERE"
-    base = f"http://api.openweathermap.org"
-    url = f"{base}/data/2.5/weather"
-    url += f"?q={city}&appid={api_key}&units=metric"
-    response = requests.get(url)
-    data = response.json()
-    return data["main"]["temp"]
-
-city = input("Enter your city: ")
-print(f"Current temperature in {city}: {get_weather(city)}°C")
-
 Human: I keep getting an IndexError when trying to run this code:
 
 AI: The issue is in your loop. You're accessing `data[i+1]`, but when `i` equals the last index (2), you'll try to access `data[3]`, which doesn't exist.
@@ -252,27 +234,92 @@ Option 2: If you meant to start from the second item, adjust the range:
 
 Which one matches your intention?
 
-Write a program that saves data to a file.
+In this interaction, the AI identified the bug and offered multiple solutions, but asked you to make the final decision based on your actual intent—something only you know.
 
-Write a Python function that saves a dictionary to a JSON file with proper error handling.
-The function should take three parameters: the dictionary to save, the filename to save to,
-and an optional parameter to format the JSON with indentation for readability.
-python
-# AI-generated function to check if a number is prime
-def is_prime(n):
-    if n <= 1:
-        return False
-    if n <= 3:
-        return True
-    if n % 2 == 0 or n % 3 == 0:
-        return False
-    i = 5
-    while i * i <= n:
-        if n % i == 0 or n % (i + 2) == 0:
-            return False
-        i += 6
-    return True
-python
+## 4. Tools and Workflows in the AI Era
+
+The AI revolution has expanded the Python ecosystem with new tools and workflows. Here's a survey of the current landscape:
+
+### Development Environments with AI Integration
+
+Modern development environments increasingly include AI features:
+
+- Visual Studio Code with GitHub Copilot or other AI extensions
+- JetBrains PyCharm with AI Assistant
+- Replit with Ghostwriter
+- Jupyter Notebooks with AI extensions
+
+These integrate AI suggestions directly into your coding workflow, offering completions as you type.
+
+### Standalone AI Assistants
+
+Conversation-based AI tools that can help with coding:
+
+- ChatGPT (OpenAI)
+- Claude (Anthropic)
+- Bard (Google)
+- Copilot Chat (GitHub/Microsoft)
+
+These offer more flexibility for complex questions, explanations, and generating larger code blocks.
+
+### AI-Enhanced Command Line Tools
+
+Command-line interfaces that bring AI to the terminal:
+
+- GitHub Copilot CLI
+- Continue.dev
+- Various custom tools using AI APIs
+
+These tools let you generate and manipulate code through natural language commands.
+
+### Choosing Your Workflow
+
+There's no one-size-fits-all approach to AI-assisted development. Consider these common workflows:
+
+#### 1. The Integrated Flow
+Write code normally in your editor, using AI completions and suggestions when helpful. This maintains your control while providing continuous assistance.
+
+#### 2. The Reference Approach
+Code primarily on your own, but consult AI assistants when stuck or learning new concepts—similar to how you might have used Stack Overflow in the past.
+
+#### 3. The Prototype Pattern
+Use AI to quickly generate a working prototype, then thoroughly review, refactor, and customise it to meet your needs and standards.
+
+#### 4. The Learning Loop
+Alternate between writing your own solutions and asking AI for alternative approaches, using the comparison to deepen your understanding.
+
+In this book, we'll explore different workflows so you can find what works best for your learning style and projects.
+
+## 5. The Value of Fundamentals in AI-Assisted Development
+
+Paradoxically, fundamental programming knowledge becomes more valuable, not less, in the AI era. Here's why:
+
+### Directing with Precision
+
+The more you understand Python fundamentals, the more precisely you can direct AI assistants. Compare these prompts:
+
+Beginner prompt:
+
+Knowledge-informed prompt:
+
+The second prompt, informed by knowledge of Python data structures, file handling, and function design, will yield a much more useful result.
+
+### Critical Evaluation
+
+Fundamental knowledge allows you to critically evaluate AI-generated code:
+
+With fundamental knowledge, you can assess:
+- Is this implementation correct? (Yes, it's a standard optimisation)
+- Is it efficient? (Yes, it uses the 6k±1 optimisation)
+- Does it handle edge cases? (Yes, it checks n ≤ 1)
+- Is it readable and maintainable? (Reasonably so)
+
+Without this knowledge, you'd have to blindly trust the AI's solution.
+
+### Effective customisation
+
+Understanding Python fundamentals allows you to customise AI-generated code for your specific needs:
+
 # Original AI-generated data processing function
 def process_data(data):
     result = {}
@@ -295,7 +342,160 @@ def process_data(data, default_value=None, transform_func=None):
             if default_value is not None:
                 result[item.get('id', 'unknown')] = default_value
     return result
-python
+
+Fundamental knowledge lets you adapt code to handle missing data, add transformation capabilities, and implement error handling.
+
+## 6. Why Not Just Vibe Code?
+
+There is a popular approach called "vibe coding" — prompting AI until something works, without worrying about understanding the code it produces. For quick scripts and throwaway prototypes, it can be genuinely useful.
+
+But vibe coding has a ceiling. When a vibe-coded program breaks, you cannot fix it — you can only paste the error back and hope. When requirements change, you start over. When the project grows beyond a single file, the AI gets stuck too, because it is guessing at the architecture just like you are.
+
+This book teaches you the fundamentals so that when you ask AI for help, you can describe the problem precisely — not "it doesn't work" but "the loop is iterating one too many times because the range should be exclusive." That precision gives the AI the context to actually help rather than guess.
+
+And to be clear: this book does not argue for avoiding AI. AI is your partner through every chapter — use it to explore concepts, test understanding, debug your code. The difference between this approach and vibe coding is not whether you use AI, but whether you are building understanding alongside the code.
+
+## 7. Finding the Right Balance
+
+One of the biggest challenges in AI-assisted programming is finding the right balance between leveraging AI's capabilities and developing your own skills. Here are some guidelines:
+
+### When to Rely on AI Assistance
+
+AI assistants are particularly valuable for:
+
+1. Syntax and boilerplate: Let AI handle repetitive code patterns and tricky syntax details
+2. Learning new concepts: Use AI to explain unfamiliar concepts with examples
+3. Exploring alternatives: Ask AI to suggest different approaches to solve a problem
+4. Debugging help: Get assistance interpreting error messages and finding bugs
+5. Documentation: Generate comments, docstrings, and basic documentation
+
+### When to Rely on Human Expertise
+
+Some aspects of programming remain firmly in the human domain:
+
+1. Problem definition: Clearly defining what you're actually trying to solve
+2. Architectural decisions: Making high-level design choices for your program
+3. Security-critical code: Code that handles authentication, encryption, or sensitive data
+4. Algorithm selection: Choosing the right approach for your specific constraints
+5. Testing strategy: Determining what and how to test
+
+### Practical Guidelines for Balance
+
+As you work through this book and beyond, consider these guidelines:
+
+- Start with understanding: Before asking AI to generate code, make sure you understand what you're trying to accomplish.
+- Review critically: Always review AI-generated code before using it—this reinforces your learning and catches potential issues.
+- Learn from the suggestions: Use AI suggestions as learning opportunities by understanding why the AI chose a particular approach.
+- Incrementally reduce dependency: As you gain experience, try solving problems yourself first before consulting AI.
+- Focus on the "why": Use AI to generate the "how" (implementation) while you focus on the "why" (purpose and design).
+
+Remember that the goal is not to minimise your reliance on AI, but to develop a collaborative relationship where both you and the AI contribute your strengths.
+
+## 7. Python: The Default Language of AI
+
+Python has emerged as the de facto language of artificial intelligence and machine learning for several compelling reasons. This has significant implications for anyone learning to code in the AI era.
+
+### Why Python Dominates AI
+
+Several factors have contributed to Python's dominance in AI:
+
+1. Readability and Simplicity: Python's clean syntax and focus on readability make it accessible to researchers and scientists who aren't primarily programmers.
+
+2. Rich Ecosystem: Python has an unmatched collection of libraries for AI and data science:
+   - NumPy and Pandas for data manipulation
+   - TensorFlow, PyTorch, and scikit-learn for machine learning
+   - NLTK and spaCy for natural language processing
+   - Matplotlib and Seaborn for data visualization
+
+3. Community Support: A vast community develops, maintains, and provides support for Python's AI libraries.
+
+4. Integration Capabilities: Python easily integrates with other languages and technologies, making it ideal for production AI systems.
+
+5. Academic Adoption: Universities and research institutions widely teach and use Python for AI research, creating a self-reinforcing cycle.
+
+### The "Python First" Phenomenon
+
+This dominance has created a "Python First" phenomenon in AI tools and services:
+
+1. AI Code Generation: When you ask an AI assistant to "write code to do X," it will typically provide Python code first, unless you specify another language.
+
+2. Documentation and Examples: AI tools, platforms, and services generally provide Python examples first, followed by other languages.
+
+3. Library Availability: New AI capabilities often appear in Python libraries before being ported to other languages.
+
+4. Job Market Preferences: Employers often list Python as the primary language requirement for AI-related positions.
+
+### Practical Implications for Learners
+
+Python's status as the language of AI has several implications for your learning journey:
+
+1. Transferable Knowledge: Learning Python means your skills will transfer directly to AI tools and platforms.
+
+2. Efficient Communication with AI: Understanding Python helps you communicate more effectively with AI coding assistants.
+
+3. Easier Transitions: If you eventually want to work directly with AI technologies, knowing Python removes a major barrier to entry.
+
+4. Abundance of Resources: You'll find an overwhelming abundance of Python resources for AI-related topics.
+
+Even if you don't plan to become an AI specialist, Python's position as the language of AI means that learning Python fundamentals will help you better understand, use, and communicate with AI systems—a valuable skill in today's technological landscape.
+
+## 8. Setting Expectations for This Book
+
+This book takes a pragmatic approach to teaching Python in the AI era. Here's what you can expect:
+
+### What This Book Will Cover
+
+- Python fundamentals: Core concepts, syntax, and patterns
+- Effective AI collaboration: How to work with AI coding assistants
+- Critical thinking skills: Evaluating and improving code
+- Practical projects: Building real programs, including a chatbot
+- Modern workflows: Tools and practices for Python development
+
+### What This Book Won't Cover
+
+- Everything about Python: We focus on the most important concepts rather than being comprehensive
+- Advanced AI development: We use AI as a tool, not as the subject of our programming
+- Memorization-focused content: We emphasize understanding over rote memorization
+- AI-free approaches: We acknowledge and embrace the reality of AI tools
+
+### How This Book Is Structured
+
+Each chapter follows a consistent pattern:
+
+1. Core concept introduction: Explaining a fundamental Python concept
+2. Practical examples: Showing the concept in action
+3. AI integration tips: Guidance on how AI can help with this concept
+4. Common pitfalls: Issues to watch for, even with AI assistance
+5. Project application: Applying the concept to our ongoing chatbot project
+6. Self-assessment: Checking your understanding
+7. Cross-references: Connections to other related topics
+
+By the end of the book, you'll have both a solid foundation in Python fundamentals and the skills to effectively collaborate with AI coding assistants.
+
+## 9. Your First Python Experience with AI Collaboration
+
+Let's get practical with a simple first exercise that demonstrates the human-AI collaboration model. We'll create a basic "Hello, World!" program with a twist—showing how even simple tasks benefit from both human and AI input.
+
+### The Goal
+
+We want to create a program that:
+1. Greets the user by name
+2. Tells them the current date and time
+3. Provides a random inspirational quote
+
+### Human Role: Defining the Problem
+
+As the human, you define what you want the program to accomplish:
+
+- Personalized greeting with user's name
+- Current date and time information
+- A motivational quote from a small built-in selection
+- Clean, readable output format
+
+### AI Role: Implementation Suggestion
+
+The AI might suggest code like this:
+
 import random
 from datetime import datetime
 
@@ -329,7 +529,18 @@ print(f"\"{random_quote}\"")
 print("=" * 60 + "\n")
 
 print("Welcome to your Python journey in the age of AI!")
-python
+
+### Human Role: Evaluation and customisation
+
+As the human, you can now evaluate this suggestion:
+
+1. Does it meet the requirements? Yes, it includes all the requested features.
+2. Is it understandable? Yes, it has clear sections and comments.
+3. Does it teach good practices? Yes, it demonstrates imports, variables, formatting, and string manipulation.
+4. Could it be improved? Perhaps by adding error handling or more customisation options.
+
+You might decide to customise it by adding a feature to let the user choose the quote category:
+
 # Addition to the code above
 quote_categories = {
     "programming": [
@@ -350,7 +561,6 @@ if category not in quote_categories:
     category = random.choice(list(quote_categories.keys()))
 
 random_quote = random.choice(quote_categories[category])
-```text
 
 ### The Collaboration Result
 
@@ -7862,16 +8072,6 @@ Asking clear, complete questions increases your chances of getting helpful answe
 
 Example of a good question structure:
 
-python
-import pandas as pd
-
-def calculate_average(filename, column_name):
-    data = pd.read_csv(filename)
-    return data[column_name].mean()
-
-avg = calculate_average('sales.csv', 'amount')
-print(avg)
-
 TypeError: 'str' object has no attribute 'mean'
 ```text
 
@@ -7987,7 +8187,14 @@ When you need help with specific chatbot features, consult these resources:
 
 When you need community help with your chatbot, phrase your questions effectively:
 
-python
+```text
+## Chatbot Response Issue
+
+I'm developing a rule-based chatbot in Python and having trouble with pattern matching.
+When users enter a greeting with additional text (e.g., "hello, how's the weather?"),
+my bot isn't recognising it as a greeting.
+
+## Current Code
 def get_response(self, user_input):
     user_input = user_input.lower()
 
@@ -7999,7 +8206,6 @@ def get_response(self, user_input):
 
     # Other patterns...
     return "I didn't understand that."
-```text
 
 ## What I've Tried
 - Changing `==` to `in` but then it matches too broadly
@@ -8317,40 +8523,6 @@ Use AI to generate code that adds variety to your chatbot's responses:
 ### Using AI to Create Documentation
 
 AI assistants can help you create better documentation for your chatbot:
-
-python
-from chatbot.main import Chatbot
-
-# Create a chatbot instance
-bot = Chatbot(name="MyBot")
-
-# Run the interactive chat loop
-bot.run()
-python
-from chatbot.main import Chatbot
-from chatbot.pattern_matcher import PatternMatcher
-from chatbot.response_generator import ResponseGenerator
-
-# Custom pattern matcher
-custom_matcher = PatternMatcher()
-custom_matcher.add_pattern("weather", r'\b(weather|temperature|forecast)\b')
-
-# Custom response templates
-weather_templates = [
-    "The weather today is {condition} with a temperature of {temperature}.",
-    "Current weather: {condition}, {temperature} degrees."
-]
-
-# Create a chatbot with custom components
-bot = Chatbot(
-    name="WeatherBot",
-    pattern_matcher=custom_matcher,
-    additional_templates={"weather": weather_templates}
-)
-
-# Process a specific message
-response = bot.process_message("What's the weather like today?")
-print(response)
 
 ### Implementing AI-Suggested Improvements
 
@@ -8806,48 +8978,21 @@ AI tools can significantly enhance your debugging process:
 
 When faced with an error, provide both the code and the full error message:
 
-python
-def process_data(items):
-    for i in range(len(items) + 1):
-        result = items[i] * 2
-        print(result)
-
 ### Algorithmic Debugging
 
 For logic errors where your code runs but produces incorrect results:
-
-python
-def factorial(n):
-    result = 0
-    for i in range(1, n+1):
-        result *= i
-    return result
 
 ### Focused Diagnostics
 
 Ask the AI to help isolate problems in specific parts of your code:
 
-python
-def process_weather_data(data):
-    temperatures = [day['temp'] for day in data if 'temp' in day]
-    avg_temp = sum(temperatures) / len(temperatures)
-    max_temp = max(temperatures)
-    return {
-        'average': round(avg_temp, 1),
-        'maximum': max_temp,
-        'min_max_diff': max_temp - min(temperatures)
-    }
-
 ### Unit Test Generation
 
 Use AI to create tests that might reveal bugs:
 
-python
-def get_age_category(age):
-    if age  2:
-            cleaned = word.strip('.,:;!?')
-            result.append(cleaned.lower())
-    return ' '.join(result)
+### Systematic Program Analysis
+
+For complex bugs, ask the AI to perform a thorough analysis:
 
 ## 4. Learning Strategies for the AI Era
 
@@ -8861,25 +9006,40 @@ Traditional programming learning approaches need adaptation for the AI era. Here
 4. Implement an improved version based on what you learned
 
 Example prompt:
-python
-def fibonacci(n):
-    if n  float:
-    """
-    Calculate the total price of all items.
 
-    Args:
-        items: List of item dictionaries with 'price' and 'quantity' keys
+### The "Reverse Engineering" Technique
 
-    Returns:
-        Total price as float
+1. Get AI to generate a solution to a problem
+2. Study the solution without copying it
+3. Close the AI chat and implement your own solution
+4. Compare your implementation with the AI version
+5. Identify differences and learning opportunities
 
-    Raises:
-        KeyError: If any item is missing required keys
-    """
-    total = 0.0
-    for item in items:
-        total += item["price"] * item["quantity"]
-    return total
+### The "Conceptual First" Approach
+
+1. Ask AI to explain a concept in detail before showing code
+2. Request multiple explanations using different analogies
+3. Then ask for code implementations after you understand the concept
+4. Finally, write your own implementation
+
+Example sequence:
+
+### The "Iterative Refinement" Method
+
+1. Start with a simple implementation
+2. Ask AI to review and suggest one improvement
+3. Implement that improvement yourself
+4. Repeat until your solution is polished
+
+This approach prevents overwhelming jumps from beginner to advanced code.
+
+## 5. customising AI-Generated Code
+
+AI often generates generic solutions that need customisation. Here are techniques to guide AI toward your preferred style and project needs:
+
+### Style Templates
+
+Provide an example of your coding style first:
 
 ### Project-Specific Guidelines
 
@@ -8892,27 +9052,6 @@ Request changes to AI-generated code in specific steps:
 ### Template Code Expansion
 
 Provide skeleton code and ask the AI to complete it:
-
-python
-def cached(max_size: int = 100):
-    """
-    Caches function results to avoid redundant calculations.
-
-    Args:
-        max_size: Maximum number of results to store
-
-    Returns:
-        Decorated function with caching
-    """
-    def decorator(func):
-        # TODO: Implement cache storage
-
-        def wrapper(args, kwargs):
-            # TODO: Implement cache lookup and update
-            pass
-
-        return wrapper
-    return decorator
 
 ## 6. Evaluating and Refining AI-Generated Code
 
@@ -8959,39 +9098,9 @@ Build complex applications piece by piece:
 
 Use AI to create comprehensive documentation:
 
-python
-class DatabaseConnector:
-    def __init__(self, connection_string, max_connections=5):
-        self.connection_string = connection_string
-        self.pool = create_connection_pool(connection_string, max_connections)
-
-    def execute_query(self, query, parameters=None):
-        with self.pool.get_connection() as conn:
-            cursor = conn.cursor()
-            cursor.execute(query, parameters or ())
-            return cursor.fetchall()
-
-    def execute_transaction(self, queries):
-        with self.pool.get_connection() as conn:
-            try:
-                conn.start_transaction()
-                results = []
-                for query, params in queries:
-                    cursor = conn.cursor()
-                    cursor.execute(query, params or ())
-                    results.append(cursor.fetchall())
-                conn.commit()
-                return results
-            except Exception as e:
-                conn.rollback()
-                raise DatabaseError(f"Transaction failed: {str(e)}")
-
 ### Code Review Assistance
 
 Get AI help with reviewing existing code:
-
-python
-# Code to review here
 
 ## 8. Self-Assessment Quiz
 
@@ -9272,37 +9381,13 @@ Example:
 
 When you need help fixing code issues:
 
-python
-[your code here]
-
 Example:
-python
-def process_data(items):
-    result = []
-    for i in range(len(items)):
-        result.append(items[i] * 2)
-    return result
-
-data = [1, 2, 3, None, 5]
-processed = process_data(data)
-print(processed)
 
 ### optimisation Prompts
 
 When you want to improve existing code:
 
-python
-[your code here]
-
 Example:
-python
-def find_duplicates(numbers):
-    duplicates = []
-    for i in range(len(numbers)):
-        for j in range(i+1, len(numbers)):
-            if numbers[i] == numbers[j] and numbers[i] not in duplicates:
-                duplicates.append(numbers[i])
-    return duplicates
 
 ### Comparison Prompts
 
@@ -9341,14 +9426,6 @@ This approach works well for larger, more structured programming tasks.
 ### Test-Driven Prompting
 
 Start with the tests to guide the implementation:
-
-python
-# Test cases
-def test_[feature]_basic_functionality():
-    # What should happen in the normal case?
-
-def test_[feature]_edge_cases():
-    # What should happen with edge cases?
 
 This technique helps clarify requirements and ensure the solution addresses the actual needs.
 
@@ -9482,13 +9559,6 @@ Your chatbot can benefit from intentional prompting when it interacts with AI se
 Let's try some sample interactions to demonstrate how intentional prompting improves the chatbot:
 
 Sample interactions:
-
-python
-numbers = [1, 2, 3, 4, 5]
-squares = [x2 for x in numbers]  # Results in [1, 4, 9, 16, 25]
-python
-my_list = [1, 2, 3]
-print(my_list[2])  # Access the last element
 
 The intentional prompting approach creates more relevant and helpful AI responses by:
 
