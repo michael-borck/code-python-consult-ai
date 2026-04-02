@@ -230,11 +230,6 @@ def analyze_image(image_url, api_key=None, endpoint=None):
         return None
 ```
 
----
-title: 'AI Integrator: Connecting Python Applications to AI Services'
-jupyter: python3
----
-
 # Python AI Integration
 
 ## Chapter Outline
