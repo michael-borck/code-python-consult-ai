@@ -259,6 +259,7 @@ Without this knowledge, you'd have to blindly trust the AI's solution.
 
 Understanding Python fundamentals allows you to customise AI-generated code for your specific needs:
 
+```python
 # Original AI-generated data processing function
 def process_data(data):
     result = {}
@@ -268,7 +269,8 @@ def process_data(data):
     return result
 
 # Your customised version with added features
-def process_data(data, default_value=None, transform_func=None):
+def process_data(data, default_value=None,
+                 transform_func=None):
     result = {}
     for item in data:
         try:
@@ -281,6 +283,7 @@ def process_data(data, default_value=None, transform_func=None):
             if default_value is not None:
                 result[item.get('id', 'unknown')] = default_value
     return result
+```
 
 Fundamental knowledge lets you adapt code to handle missing data, add transformation capabilities, and implement error handling.
 
@@ -435,6 +438,7 @@ As the human, you define what you want the program to accomplish:
 
 The AI might suggest code like this:
 
+```python
 import random
 from datetime import datetime
 
@@ -448,11 +452,11 @@ formatted_time = current_datetime.strftime("%I:%M %p")
 
 # List of inspirational quotes
 quotes = [
-    "The best way to predict the future is to invent it. - Alan Kay",
-    "Simple things should be simple, complex things should be possible. - Alan Kay",
-    "The most powerful programming language is Python. - A programmer with good taste",
-    "The only way to learn programming is to write programs. - Dennis Ritchie",
-    "The journey of a thousand miles begins with a single line of code. - Anonymous"
+    "The best way to predict the future is "
+    "to invent it. - Alan Kay",
+    "Simple things should be simple. - Alan Kay",
+    "The only way to learn programming is "
+    "to write programs. - Dennis Ritchie",
 ]
 
 # Select a random quote
@@ -463,11 +467,9 @@ print("\n" + "=" * 60)
 print(f"Hello, {name}!")
 print(f"Today is {formatted_date}")
 print(f"The current time is {formatted_time}")
-print("\nYour inspirational quote for today:")
-print(f"\"{random_quote}\"")
+print(f"\nYour quote: \"{random_quote}\"")
 print("=" * 60 + "\n")
-
-print("Welcome to your Python journey in the age of AI!")
+```
 
 ### Human Role: Evaluation and customisation
 
@@ -480,26 +482,29 @@ As the human, you can now evaluate this suggestion:
 
 You might decide to customise it by adding a feature to let the user choose the quote category:
 
+```python
 # Addition to the code above
 quote_categories = {
     "programming": [
-        "The best way to predict the future is to invent it. - Alan Kay",
-        "Simple things should be simple, complex things should be possible. - Alan Kay",
-        "The most powerful programming language is Python. - A programmer with good taste"
+        "Predict the future by inventing it. - Alan Kay",
+        "Simple things should be simple. - Alan Kay",
     ],
     "motivation": [
-        "The only way to learn programming is to write programs. - Dennis Ritchie",
-        "The journey of a thousand miles begins with a single line of code. - Anonymous",
-        "Whether you think you can or think you can't, you're right. - Henry Ford"
+        "Learn programming by writing programs. - Ritchie",
+        "The journey begins with a single line of code.",
     ]
 }
 
-category = input("What type of quote would you like? (programming/motivation): ").lower()
+category = input("Quote type? (programming/motivation): ")
+category = category.lower()
 if category not in quote_categories:
-    print(f"Category '{category}' not found. Using random category.")
-    category = random.choice(list(quote_categories.keys()))
+    print(f"'{category}' not found. Using random.")
+    category = random.choice(
+        list(quote_categories.keys())
+    )
 
 random_quote = random.choice(quote_categories[category])
+```
 
 ### The Collaboration Result
 
