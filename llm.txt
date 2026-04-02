@@ -24,6 +24,8 @@ The fundamentals of programming have not changed because AI arrived. If anything
 
 You do not need prior programming experience, but some familiarity with programming concepts will help. If you are a complete beginner who has never thought about programming at all, start with Think Python, Direct AI — it builds the mental models this book assumes.
 
+If you worked through Think Python, Direct AI, you have already built projects using most of the concepts in this book. You used variables, functions, lists, and dictionaries — but you used them to solve problems, not to study them. This book makes the implicit explicit. It takes the Python you practiced and gives you the understanding to use it deliberately.
+
 ## What This Book Is Not
 
 This is not a computational thinking book. It does not spend time on problem decomposition or algorithmic reasoning — that is what Think Python, Direct AI covers. This book assumes you can think about a problem and focuses on giving you the Python to express the solution.
@@ -1117,6 +1119,8 @@ Without variables, we would have to use literal values everywhere, making our co
 - Make code more readable and maintainable
 
 > Key Concept: Variables connect the abstract world of values with meaningful names that make sense to humans. By naming our data, we can work with it more effectively and make our code more understandable.
+
+If you worked through Think Python, Direct AI, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practiced.
 
 ## 2. Creating Variables: The Assignment Statement
 
@@ -2708,6 +2712,8 @@ Creating functions is like gaining a superpower that allows you to:
 
 For our chatbot project, custom functions will take us from a linear script to a well-structured program that's easier to understand, debug, and extend. Creating functions is the first step toward proper software architecture.
 
+If you worked through Think Python, Direct AI, you already created functions to organise your project code. This chapter gives you the full picture — parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.
+
 ## 2. Function Definition: The Building Blocks
 
 A function in Python consists of a header (the definition line) and a body (the indented code block that follows):
@@ -3544,6 +3550,8 @@ This approach has several problems:
 - There's no easy way to track the order or perform operations on all questions at once
 
 Lists solve these problems elegantly:
+
+You may recognise lists from projects like the Quiz Game or Contact Book in Think Python, Direct AI. There you used lists to store questions or entries. This chapter explores lists more deeply — indexing, slicing, sorting, nesting, and the full set of operations that make lists one of Python's most important data structures.
 
 With a list, you can:
 - Add new questions with a single operation
@@ -4595,6 +4603,8 @@ Consider how essential string manipulation is for a chatbot:
 
 Without strong string manipulation capabilities, building even a simple chatbot would be nearly impossible. Fortunately, Python excels at text processing, making it ideal for conversational applications.
 
+If you worked through Think Python, Direct AI, you already used string methods like `.lower()` and `.split()` to process user input in your projects. Here we explore strings more thoroughly — how they work internally, the full range of methods available, and when to reach for each one.
+
 ## 2. Understanding Strings in Python
 
 At its core, a string in Python is a sequence of characters. But what makes Python strings powerful is how they combine simplicity with sophistication.
@@ -5153,6 +5163,8 @@ Dictionaries are perfect for:
 - Representing real-world objects with attributes
 - Managing configuration settings
 - Building simple databases
+
+You may recognise dictionaries from the Contact Book project in Think Python, Direct AI, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, nested structures, and the many patterns that make dictionaries essential to Python programming.
 
 AI Tip: Ask your AI assistant to suggest dictionary applications specific to your field of interest or to explain how dictionaries compare to similar data structures in other programming languages.
 

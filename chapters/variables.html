@@ -610,6 +610,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><strong>Key Concept</strong>: Variables connect the abstract world of values with meaningful names that make sense to humans. By naming our data, we can work with it more effectively and make our code more understandable.</p>
 </blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="Coming from Think Python?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Coming from Think Python?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you worked through <em>Think Python, Direct AI</em>, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practiced.</p>
+</div>
+</div>
 </section>
 <section id="creating-variables-the-assignment-statement" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="creating-variables-the-assignment-statement"><span class="header-section-number">5.4</span> 2. Creating Variables: The Assignment Statement</h2>
@@ -1569,512 +1582,516 @@ What's causing this error and how should I fix it?</code></pre>
 <span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Key Concept**: Variables connect the abstract world of values with meaningful names that make sense to humans. By naming our data, we can work with it more effectively and make our code more understandable.</span></span>
 <span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Creating Variables: The Assignment Statement</span></span>
-<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>In Python, you create a variable by assigning a value using the <span class="in">`=`</span> operator. This process is called assignment:</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Coming from Think Python?"}</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practiced.</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating variables with different data types</span></span>
-<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="st">"Alice"</span>       <span class="co"># A string variable</span></span>
-<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span>                  <span class="co"># An integer variable</span></span>
-<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="fl">5.9</span>              <span class="co"># A float variable</span></span>
-<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>is_student <span class="op">=</span> <span class="va">True</span>         <span class="co"># A boolean variable</span></span>
-<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>favorite_colors <span class="op">=</span> [<span class="st">"blue"</span>, <span class="st">"green"</span>]  <span class="co"># A list variable</span></span>
-<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>When Python executes an assignment statement:</span>
-<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The expression on the right side is evaluated first</span>
-<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Memory is allocated to store the resulting value</span>
-<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>The variable name on the left is connected to that memory location</span>
-<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dynamic Typing</span></span>
-<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a>Python is a dynamically-typed language, which means the type of a variable is determined by its assigned value, not by an explicit declaration:</span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Creating Variables: The Assignment Statement</span></span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>In Python, you create a variable by assigning a value using the <span class="in">`=`</span> operator. This process is called assignment:</span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating variables with different data types</span></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="st">"Alice"</span>       <span class="co"># A string variable</span></span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span>                  <span class="co"># An integer variable</span></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="fl">5.9</span>              <span class="co"># A float variable</span></span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>is_student <span class="op">=</span> <span class="va">True</span>         <span class="co"># A boolean variable</span></span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>favorite_colors <span class="op">=</span> [<span class="st">"blue"</span>, <span class="st">"green"</span>]  <span class="co"># A list variable</span></span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>When Python executes an assignment statement:</span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The expression on the right side is evaluated first</span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Memory is allocated to store the resulting value</span>
+<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>The variable name on the left is connected to that memory location</span>
 <span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable types are determined by their values</span></span>
-<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>          <span class="co"># x is now an integer</span></span>
-<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class 'int'&gt;</span></span>
-<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"hello"</span>     <span class="co"># x is now a string</span></span>
-<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class 'str'&gt;</span></span>
-<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]   <span class="co"># x is now a list</span></span>
-<span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class 'list'&gt;</span></span>
-<span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dynamic Typing</span></span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>Python is a dynamically-typed language, which means the type of a variable is determined by its assigned value, not by an explicit declaration:</span>
+<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable types are determined by their values</span></span>
+<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>          <span class="co"># x is now an integer</span></span>
+<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class 'int'&gt;</span></span>
+<span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"hello"</span>     <span class="co"># x is now a string</span></span>
+<span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class 'str'&gt;</span></span>
 <span id="cb20-72"><a href="#cb20-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a>The type of a variable can change during program execution as you assign different values to it. This flexibility is powerful but requires careful attention.</span>
-<span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-75"><a href="#cb20-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Variable Naming: Rules and Conventions</span></span>
+<span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]   <span class="co"># x is now a list</span></span>
+<span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class 'list'&gt;</span></span>
+<span id="cb20-75"><a href="#cb20-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-76"><a href="#cb20-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a>Choosing good variable names is essential for writing clear, maintainable code. Python has specific rules and conventions for naming variables:</span>
+<span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a>The type of a variable can change during program execution as you assign different values to it. This flexibility is powerful but requires careful attention.</span>
 <span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rules (These are enforced by Python)</span></span>
+<span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Variable Naming: Rules and Conventions</span></span>
 <span id="cb20-80"><a href="#cb20-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Must start with a letter or underscore (_)</span>
-<span id="cb20-82"><a href="#cb20-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can only contain letters, numbers, and underscores</span>
-<span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cannot be a Python reserved keyword (like <span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`class`</span>, etc.)</span>
-<span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Names are case-sensitive (<span class="in">`name`</span> and <span class="in">`Name`</span> are different variables)</span>
-<span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Valid variable names</span></span>
-<span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a>_hidden <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb20-90"><a href="#cb20-90" aria-hidden="true" tabindex="-1"></a>count_2 <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb20-91"><a href="#cb20-91" aria-hidden="true" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">"Bob"</span></span>
-<span id="cb20-92"><a href="#cb20-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-93"><a href="#cb20-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Invalid variable names</span></span>
-<span id="cb20-94"><a href="#cb20-94" aria-hidden="true" tabindex="-1"></a><span class="co"># 2count = 10        # Cannot start with a number</span></span>
-<span id="cb20-95"><a href="#cb20-95" aria-hidden="true" tabindex="-1"></a><span class="co"># my-variable = 5    # Cannot use hyphens</span></span>
-<span id="cb20-96"><a href="#cb20-96" aria-hidden="true" tabindex="-1"></a><span class="co"># class = "Python"   # Cannot use Python keywords</span></span>
-<span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a><span class="co"># $price = 19.99     # Cannot use special characters</span></span>
-<span id="cb20-98"><a href="#cb20-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-99"><a href="#cb20-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conventions (Best practices recommended by PEP 8)</span></span>
-<span id="cb20-101"><a href="#cb20-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use lowercase letters for variable names</span>
-<span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Separate words with underscores (snake_case)</span>
-<span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Choose descriptive, meaningful names</span>
-<span id="cb20-105"><a href="#cb20-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use plural names for collections</span>
-<span id="cb20-106"><a href="#cb20-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-107"><a href="#cb20-107" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-108"><a href="#cb20-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Following naming conventions (do this)</span></span>
-<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a>items_count <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a>active_users <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
-<span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a>is_registered <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-114"><a href="#cb20-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Not following conventions (avoid these)</span></span>
-<span id="cb20-115"><a href="#cb20-115" aria-hidden="true" tabindex="-1"></a>UserName <span class="op">=</span> <span class="st">"Alice"</span>     <span class="co"># PascalCase is for classes</span></span>
-<span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a>itemscount <span class="op">=</span> <span class="dv">42</span>        <span class="co"># Words run together</span></span>
-<span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>]   <span class="co"># Too short and non-descriptive</span></span>
-<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-120"><a href="#cb20-120" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Readability Tip**: Write code as if someone else will read it later. That someone might be you in six months, struggling to remember what your code does.</span></span>
-<span id="cb20-121"><a href="#cb20-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-122"><a href="#cb20-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Changing Variable Values</span></span>
+<span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a>Choosing good variable names is essential for writing clear, maintainable code. Python has specific rules and conventions for naming variables:</span>
+<span id="cb20-82"><a href="#cb20-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rules (These are enforced by Python)</span></span>
+<span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Must start with a letter or underscore (_)</span>
+<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Can only contain letters, numbers, and underscores</span>
+<span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cannot be a Python reserved keyword (like <span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`class`</span>, etc.)</span>
+<span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Names are case-sensitive (<span class="in">`name`</span> and <span class="in">`Name`</span> are different variables)</span>
+<span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-90"><a href="#cb20-90" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-91"><a href="#cb20-91" aria-hidden="true" tabindex="-1"></a><span class="co"># Valid variable names</span></span>
+<span id="cb20-92"><a href="#cb20-92" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb20-93"><a href="#cb20-93" aria-hidden="true" tabindex="-1"></a>_hidden <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb20-94"><a href="#cb20-94" aria-hidden="true" tabindex="-1"></a>count_2 <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb20-95"><a href="#cb20-95" aria-hidden="true" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">"Bob"</span></span>
+<span id="cb20-96"><a href="#cb20-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Invalid variable names</span></span>
+<span id="cb20-98"><a href="#cb20-98" aria-hidden="true" tabindex="-1"></a><span class="co"># 2count = 10        # Cannot start with a number</span></span>
+<span id="cb20-99"><a href="#cb20-99" aria-hidden="true" tabindex="-1"></a><span class="co"># my-variable = 5    # Cannot use hyphens</span></span>
+<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a><span class="co"># class = "Python"   # Cannot use Python keywords</span></span>
+<span id="cb20-101"><a href="#cb20-101" aria-hidden="true" tabindex="-1"></a><span class="co"># $price = 19.99     # Cannot use special characters</span></span>
+<span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conventions (Best practices recommended by PEP 8)</span></span>
+<span id="cb20-105"><a href="#cb20-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-106"><a href="#cb20-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use lowercase letters for variable names</span>
+<span id="cb20-107"><a href="#cb20-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Separate words with underscores (snake_case)</span>
+<span id="cb20-108"><a href="#cb20-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Choose descriptive, meaningful names</span>
+<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use plural names for collections</span>
+<span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a><span class="co"># Following naming conventions (do this)</span></span>
+<span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb20-114"><a href="#cb20-114" aria-hidden="true" tabindex="-1"></a>items_count <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb20-115"><a href="#cb20-115" aria-hidden="true" tabindex="-1"></a>active_users <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>]</span>
+<span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a>is_registered <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Not following conventions (avoid these)</span></span>
+<span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a>UserName <span class="op">=</span> <span class="st">"Alice"</span>     <span class="co"># PascalCase is for classes</span></span>
+<span id="cb20-120"><a href="#cb20-120" aria-hidden="true" tabindex="-1"></a>itemscount <span class="op">=</span> <span class="dv">42</span>        <span class="co"># Words run together</span></span>
+<span id="cb20-121"><a href="#cb20-121" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>]   <span class="co"># Too short and non-descriptive</span></span>
+<span id="cb20-122"><a href="#cb20-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-123"><a href="#cb20-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-124"><a href="#cb20-124" aria-hidden="true" tabindex="-1"></a>One of the most powerful features of variables is that their values can change during program execution:</span>
+<span id="cb20-124"><a href="#cb20-124" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Readability Tip**: Write code as if someone else will read it later. That someone might be you in six months, struggling to remember what your code does.</span></span>
 <span id="cb20-125"><a href="#cb20-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-126"><a href="#cb20-126" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-127"><a href="#cb20-127" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing a variable's value</span></span>
-<span id="cb20-128"><a href="#cb20-128" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">0</span>           <span class="co"># Initial score</span></span>
-<span id="cb20-129"><a href="#cb20-129" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)        <span class="co"># Output: 0</span></span>
-<span id="cb20-130"><a href="#cb20-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-131"><a href="#cb20-131" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">10</span>          <span class="co"># Score changed</span></span>
-<span id="cb20-132"><a href="#cb20-132" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)        <span class="co"># Output: 10</span></span>
-<span id="cb20-133"><a href="#cb20-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-134"><a href="#cb20-134" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> score <span class="op">+</span> <span class="dv">5</span>   <span class="co"># Update based on current value</span></span>
-<span id="cb20-135"><a href="#cb20-135" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)        <span class="co"># Output: 15</span></span>
-<span id="cb20-136"><a href="#cb20-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-126"><a href="#cb20-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Changing Variable Values</span></span>
+<span id="cb20-127"><a href="#cb20-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-128"><a href="#cb20-128" aria-hidden="true" tabindex="-1"></a>One of the most powerful features of variables is that their values can change during program execution:</span>
+<span id="cb20-129"><a href="#cb20-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-130"><a href="#cb20-130" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-131"><a href="#cb20-131" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing a variable's value</span></span>
+<span id="cb20-132"><a href="#cb20-132" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">0</span>           <span class="co"># Initial score</span></span>
+<span id="cb20-133"><a href="#cb20-133" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)        <span class="co"># Output: 0</span></span>
+<span id="cb20-134"><a href="#cb20-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-135"><a href="#cb20-135" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">10</span>          <span class="co"># Score changed</span></span>
+<span id="cb20-136"><a href="#cb20-136" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)        <span class="co"># Output: 10</span></span>
 <span id="cb20-137"><a href="#cb20-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-138"><a href="#cb20-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### Compound Assignment Operators</span></span>
-<span id="cb20-139"><a href="#cb20-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-140"><a href="#cb20-140" aria-hidden="true" tabindex="-1"></a>Python provides shorthand operators for updating variables:</span>
+<span id="cb20-138"><a href="#cb20-138" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> score <span class="op">+</span> <span class="dv">5</span>   <span class="co"># Update based on current value</span></span>
+<span id="cb20-139"><a href="#cb20-139" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)        <span class="co"># Output: 15</span></span>
+<span id="cb20-140"><a href="#cb20-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-141"><a href="#cb20-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-142"><a href="#cb20-142" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-143"><a href="#cb20-143" aria-hidden="true" tabindex="-1"></a><span class="co"># Compound assignment operators</span></span>
-<span id="cb20-144"><a href="#cb20-144" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb20-145"><a href="#cb20-145" aria-hidden="true" tabindex="-1"></a>count <span class="op">+=</span> <span class="dv">5</span>      <span class="co"># Same as: count = count + 5</span></span>
-<span id="cb20-146"><a href="#cb20-146" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count)    <span class="co"># Output: 15</span></span>
-<span id="cb20-147"><a href="#cb20-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-148"><a href="#cb20-148" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"Hello"</span></span>
-<span id="cb20-149"><a href="#cb20-149" aria-hidden="true" tabindex="-1"></a>message <span class="op">+=</span> <span class="st">" World"</span>  <span class="co"># Same as: message = message + " World"</span></span>
-<span id="cb20-150"><a href="#cb20-150" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)  <span class="co"># Output: Hello World</span></span>
+<span id="cb20-142"><a href="#cb20-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### Compound Assignment Operators</span></span>
+<span id="cb20-143"><a href="#cb20-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-144"><a href="#cb20-144" aria-hidden="true" tabindex="-1"></a>Python provides shorthand operators for updating variables:</span>
+<span id="cb20-145"><a href="#cb20-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-146"><a href="#cb20-146" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-147"><a href="#cb20-147" aria-hidden="true" tabindex="-1"></a><span class="co"># Compound assignment operators</span></span>
+<span id="cb20-148"><a href="#cb20-148" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb20-149"><a href="#cb20-149" aria-hidden="true" tabindex="-1"></a>count <span class="op">+=</span> <span class="dv">5</span>      <span class="co"># Same as: count = count + 5</span></span>
+<span id="cb20-150"><a href="#cb20-150" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count)    <span class="co"># Output: 15</span></span>
 <span id="cb20-151"><a href="#cb20-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-152"><a href="#cb20-152" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb20-153"><a href="#cb20-153" aria-hidden="true" tabindex="-1"></a>num <span class="op">*=</span> <span class="dv">2</span>        <span class="co"># Same as: num = num * 2</span></span>
-<span id="cb20-154"><a href="#cb20-154" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)      <span class="co"># Output: 20</span></span>
+<span id="cb20-152"><a href="#cb20-152" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"Hello"</span></span>
+<span id="cb20-153"><a href="#cb20-153" aria-hidden="true" tabindex="-1"></a>message <span class="op">+=</span> <span class="st">" World"</span>  <span class="co"># Same as: message = message + " World"</span></span>
+<span id="cb20-154"><a href="#cb20-154" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)  <span class="co"># Output: Hello World</span></span>
 <span id="cb20-155"><a href="#cb20-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-156"><a href="#cb20-156" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb20-157"><a href="#cb20-157" aria-hidden="true" tabindex="-1"></a>value <span class="op">-=</span> <span class="dv">25</span>     <span class="co"># Same as: value = value - 25</span></span>
-<span id="cb20-158"><a href="#cb20-158" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(value)    <span class="co"># Output: 75</span></span>
-<span id="cb20-159"><a href="#cb20-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-160"><a href="#cb20-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-161"><a href="#cb20-161" aria-hidden="true" tabindex="-1"></a>Other compound operators include <span class="in">`//=`</span> (floor division), <span class="in">`/=`</span> (division), <span class="in">`%=`</span> (modulo), and <span class="in">`**=`</span> (exponentiation).</span>
-<span id="cb20-162"><a href="#cb20-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-163"><a href="#cb20-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Multiple Assignment and Value Swapping</span></span>
+<span id="cb20-156"><a href="#cb20-156" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb20-157"><a href="#cb20-157" aria-hidden="true" tabindex="-1"></a>num <span class="op">*=</span> <span class="dv">2</span>        <span class="co"># Same as: num = num * 2</span></span>
+<span id="cb20-158"><a href="#cb20-158" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)      <span class="co"># Output: 20</span></span>
+<span id="cb20-159"><a href="#cb20-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-160"><a href="#cb20-160" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb20-161"><a href="#cb20-161" aria-hidden="true" tabindex="-1"></a>value <span class="op">-=</span> <span class="dv">25</span>     <span class="co"># Same as: value = value - 25</span></span>
+<span id="cb20-162"><a href="#cb20-162" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(value)    <span class="co"># Output: 75</span></span>
+<span id="cb20-163"><a href="#cb20-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-164"><a href="#cb20-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-165"><a href="#cb20-165" aria-hidden="true" tabindex="-1"></a>Python allows assigning values to multiple variables in a single statement:</span>
+<span id="cb20-165"><a href="#cb20-165" aria-hidden="true" tabindex="-1"></a>Other compound operators include <span class="in">`//=`</span> (floor division), <span class="in">`/=`</span> (division), <span class="in">`%=`</span> (modulo), and <span class="in">`**=`</span> (exponentiation).</span>
 <span id="cb20-166"><a href="#cb20-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-167"><a href="#cb20-167" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-168"><a href="#cb20-168" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple assignment</span></span>
-<span id="cb20-169"><a href="#cb20-169" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span></span>
-<span id="cb20-170"><a href="#cb20-170" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, y, z)  <span class="co"># Output: 1 2 3</span></span>
-<span id="cb20-171"><a href="#cb20-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-172"><a href="#cb20-172" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning the same value to multiple variables</span></span>
-<span id="cb20-173"><a href="#cb20-173" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b <span class="op">=</span> c <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-174"><a href="#cb20-174" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b, c)  <span class="co"># Output: 0 0 0</span></span>
-<span id="cb20-175"><a href="#cb20-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-176"><a href="#cb20-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-177"><a href="#cb20-177" aria-hidden="true" tabindex="-1"></a>A common use case is swapping variable values:</span>
-<span id="cb20-178"><a href="#cb20-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-179"><a href="#cb20-179" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-180"><a href="#cb20-180" aria-hidden="true" tabindex="-1"></a><span class="co"># Swapping values (traditional way in many languages)</span></span>
-<span id="cb20-181"><a href="#cb20-181" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb20-182"><a href="#cb20-182" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb20-183"><a href="#cb20-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-184"><a href="#cb20-184" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> a</span>
-<span id="cb20-185"><a href="#cb20-185" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b</span>
-<span id="cb20-186"><a href="#cb20-186" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> temp</span>
-<span id="cb20-187"><a href="#cb20-187" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b)  <span class="co"># Output: 10 5</span></span>
-<span id="cb20-188"><a href="#cb20-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-189"><a href="#cb20-189" aria-hidden="true" tabindex="-1"></a><span class="co"># Python's elegant way to swap values</span></span>
-<span id="cb20-190"><a href="#cb20-190" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb20-191"><a href="#cb20-191" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb20-167"><a href="#cb20-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Multiple Assignment and Value Swapping</span></span>
+<span id="cb20-168"><a href="#cb20-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-169"><a href="#cb20-169" aria-hidden="true" tabindex="-1"></a>Python allows assigning values to multiple variables in a single statement:</span>
+<span id="cb20-170"><a href="#cb20-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-171"><a href="#cb20-171" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-172"><a href="#cb20-172" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple assignment</span></span>
+<span id="cb20-173"><a href="#cb20-173" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span></span>
+<span id="cb20-174"><a href="#cb20-174" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, y, z)  <span class="co"># Output: 1 2 3</span></span>
+<span id="cb20-175"><a href="#cb20-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-176"><a href="#cb20-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning the same value to multiple variables</span></span>
+<span id="cb20-177"><a href="#cb20-177" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b <span class="op">=</span> c <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-178"><a href="#cb20-178" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b, c)  <span class="co"># Output: 0 0 0</span></span>
+<span id="cb20-179"><a href="#cb20-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-180"><a href="#cb20-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-181"><a href="#cb20-181" aria-hidden="true" tabindex="-1"></a>A common use case is swapping variable values:</span>
+<span id="cb20-182"><a href="#cb20-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-183"><a href="#cb20-183" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-184"><a href="#cb20-184" aria-hidden="true" tabindex="-1"></a><span class="co"># Swapping values (traditional way in many languages)</span></span>
+<span id="cb20-185"><a href="#cb20-185" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb20-186"><a href="#cb20-186" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb20-187"><a href="#cb20-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-188"><a href="#cb20-188" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> a</span>
+<span id="cb20-189"><a href="#cb20-189" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> b</span>
+<span id="cb20-190"><a href="#cb20-190" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> temp</span>
+<span id="cb20-191"><a href="#cb20-191" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b)  <span class="co"># Output: 10 5</span></span>
 <span id="cb20-192"><a href="#cb20-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-193"><a href="#cb20-193" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> y, x</span>
-<span id="cb20-194"><a href="#cb20-194" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, y)  <span class="co"># Output: 2 1</span></span>
-<span id="cb20-195"><a href="#cb20-195" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-193"><a href="#cb20-193" aria-hidden="true" tabindex="-1"></a><span class="co"># Python's elegant way to swap values</span></span>
+<span id="cb20-194"><a href="#cb20-194" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb20-195"><a href="#cb20-195" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb20-196"><a href="#cb20-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-197"><a href="#cb20-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6. Constants: Variables That Shouldn't Change</span></span>
-<span id="cb20-198"><a href="#cb20-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-199"><a href="#cb20-199" aria-hidden="true" tabindex="-1"></a>Constants are values that should not change during program execution. Python doesn't have built-in constants, but there's a convention to use uppercase names for values that shouldn't be modified:</span>
+<span id="cb20-197"><a href="#cb20-197" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> y, x</span>
+<span id="cb20-198"><a href="#cb20-198" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x, y)  <span class="co"># Output: 2 1</span></span>
+<span id="cb20-199"><a href="#cb20-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-200"><a href="#cb20-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-201"><a href="#cb20-201" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-202"><a href="#cb20-202" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (by convention)</span></span>
-<span id="cb20-203"><a href="#cb20-203" aria-hidden="true" tabindex="-1"></a>PI <span class="op">=</span> <span class="fl">3.14159</span></span>
-<span id="cb20-204"><a href="#cb20-204" aria-hidden="true" tabindex="-1"></a>MAX_RETRY_COUNT <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb20-205"><a href="#cb20-205" aria-hidden="true" tabindex="-1"></a>DEFAULT_USERNAME <span class="op">=</span> <span class="st">"guest"</span></span>
-<span id="cb20-206"><a href="#cb20-206" aria-hidden="true" tabindex="-1"></a>DATABASE_URL <span class="op">=</span> <span class="st">"mongodb://localhost:27017"</span></span>
-<span id="cb20-207"><a href="#cb20-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-208"><a href="#cb20-208" aria-hidden="true" tabindex="-1"></a><span class="co"># Regular variables</span></span>
-<span id="cb20-209"><a href="#cb20-209" aria-hidden="true" tabindex="-1"></a>current_user <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb20-210"><a href="#cb20-210" aria-hidden="true" tabindex="-1"></a>retry_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-211"><a href="#cb20-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-212"><a href="#cb20-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-213"><a href="#cb20-213" aria-hidden="true" tabindex="-1"></a>Following this convention helps other programmers (and your future self) understand which values should remain unchanged.</span>
-<span id="cb20-214"><a href="#cb20-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-215"><a href="#cb20-215" aria-hidden="true" tabindex="-1"></a>***AI Collaboration Corner: Naming Variables***</span>
+<span id="cb20-201"><a href="#cb20-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6. Constants: Variables That Shouldn't Change</span></span>
+<span id="cb20-202"><a href="#cb20-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-203"><a href="#cb20-203" aria-hidden="true" tabindex="-1"></a>Constants are values that should not change during program execution. Python doesn't have built-in constants, but there's a convention to use uppercase names for values that shouldn't be modified:</span>
+<span id="cb20-204"><a href="#cb20-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-205"><a href="#cb20-205" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-206"><a href="#cb20-206" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants (by convention)</span></span>
+<span id="cb20-207"><a href="#cb20-207" aria-hidden="true" tabindex="-1"></a>PI <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb20-208"><a href="#cb20-208" aria-hidden="true" tabindex="-1"></a>MAX_RETRY_COUNT <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb20-209"><a href="#cb20-209" aria-hidden="true" tabindex="-1"></a>DEFAULT_USERNAME <span class="op">=</span> <span class="st">"guest"</span></span>
+<span id="cb20-210"><a href="#cb20-210" aria-hidden="true" tabindex="-1"></a>DATABASE_URL <span class="op">=</span> <span class="st">"mongodb://localhost:27017"</span></span>
+<span id="cb20-211"><a href="#cb20-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-212"><a href="#cb20-212" aria-hidden="true" tabindex="-1"></a><span class="co"># Regular variables</span></span>
+<span id="cb20-213"><a href="#cb20-213" aria-hidden="true" tabindex="-1"></a>current_user <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb20-214"><a href="#cb20-214" aria-hidden="true" tabindex="-1"></a>retry_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-215"><a href="#cb20-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-216"><a href="#cb20-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-217"><a href="#cb20-217" aria-hidden="true" tabindex="-1"></a>When asking AI for help with variable naming, be specific about your context:</span>
+<span id="cb20-217"><a href="#cb20-217" aria-hidden="true" tabindex="-1"></a>Following this convention helps other programmers (and your future self) understand which values should remain unchanged.</span>
 <span id="cb20-218"><a href="#cb20-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-219"><a href="#cb20-219" aria-hidden="true" tabindex="-1"></a>Instead of:</span>
-<span id="cb20-220"><a href="#cb20-220" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb20-221"><a href="#cb20-221" aria-hidden="true" tabindex="-1"></a><span class="in">What should I name my variables?</span></span>
-<span id="cb20-222"><a href="#cb20-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-223"><a href="#cb20-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-224"><a href="#cb20-224" aria-hidden="true" tabindex="-1"></a>Try:</span>
-<span id="cb20-225"><a href="#cb20-225" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb20-226"><a href="#cb20-226" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a shopping cart system with these pieces of data:</span></span>
-<span id="cb20-227"><a href="#cb20-227" aria-hidden="true" tabindex="-1"></a><span class="in">- The items a user has selected to purchase</span></span>
-<span id="cb20-228"><a href="#cb20-228" aria-hidden="true" tabindex="-1"></a><span class="in">- The total price of all items</span></span>
-<span id="cb20-229"><a href="#cb20-229" aria-hidden="true" tabindex="-1"></a><span class="in">- Whether the cart has been checked out</span></span>
-<span id="cb20-230"><a href="#cb20-230" aria-hidden="true" tabindex="-1"></a><span class="in">- The user's shipping address</span></span>
-<span id="cb20-231"><a href="#cb20-231" aria-hidden="true" tabindex="-1"></a><span class="in">- The date when the order was placed</span></span>
-<span id="cb20-232"><a href="#cb20-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-233"><a href="#cb20-233" aria-hidden="true" tabindex="-1"></a><span class="in">Could you suggest clear, descriptive variable names that follow Python</span></span>
-<span id="cb20-234"><a href="#cb20-234" aria-hidden="true" tabindex="-1"></a><span class="in">conventions for these data points? Also, which ones might be good candidates</span></span>
-<span id="cb20-235"><a href="#cb20-235" aria-hidden="true" tabindex="-1"></a><span class="in">for constants instead of variables?</span></span>
-<span id="cb20-236"><a href="#cb20-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-237"><a href="#cb20-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-238"><a href="#cb20-238" aria-hidden="true" tabindex="-1"></a>The second prompt gives specific context about your project and data, leading to more relevant naming suggestions. It also asks for guidance on variables vs. constants, adding another layer of value.</span>
-<span id="cb20-239"><a href="#cb20-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-240"><a href="#cb20-240" aria-hidden="true" tabindex="-1"></a><span class="fu">## 7. Variable Scope: Where Variables Live</span></span>
+<span id="cb20-219"><a href="#cb20-219" aria-hidden="true" tabindex="-1"></a>***AI Collaboration Corner: Naming Variables***</span>
+<span id="cb20-220"><a href="#cb20-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-221"><a href="#cb20-221" aria-hidden="true" tabindex="-1"></a>When asking AI for help with variable naming, be specific about your context:</span>
+<span id="cb20-222"><a href="#cb20-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-223"><a href="#cb20-223" aria-hidden="true" tabindex="-1"></a>Instead of:</span>
+<span id="cb20-224"><a href="#cb20-224" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb20-225"><a href="#cb20-225" aria-hidden="true" tabindex="-1"></a><span class="in">What should I name my variables?</span></span>
+<span id="cb20-226"><a href="#cb20-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-227"><a href="#cb20-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-228"><a href="#cb20-228" aria-hidden="true" tabindex="-1"></a>Try:</span>
+<span id="cb20-229"><a href="#cb20-229" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb20-230"><a href="#cb20-230" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a shopping cart system with these pieces of data:</span></span>
+<span id="cb20-231"><a href="#cb20-231" aria-hidden="true" tabindex="-1"></a><span class="in">- The items a user has selected to purchase</span></span>
+<span id="cb20-232"><a href="#cb20-232" aria-hidden="true" tabindex="-1"></a><span class="in">- The total price of all items</span></span>
+<span id="cb20-233"><a href="#cb20-233" aria-hidden="true" tabindex="-1"></a><span class="in">- Whether the cart has been checked out</span></span>
+<span id="cb20-234"><a href="#cb20-234" aria-hidden="true" tabindex="-1"></a><span class="in">- The user's shipping address</span></span>
+<span id="cb20-235"><a href="#cb20-235" aria-hidden="true" tabindex="-1"></a><span class="in">- The date when the order was placed</span></span>
+<span id="cb20-236"><a href="#cb20-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-237"><a href="#cb20-237" aria-hidden="true" tabindex="-1"></a><span class="in">Could you suggest clear, descriptive variable names that follow Python</span></span>
+<span id="cb20-238"><a href="#cb20-238" aria-hidden="true" tabindex="-1"></a><span class="in">conventions for these data points? Also, which ones might be good candidates</span></span>
+<span id="cb20-239"><a href="#cb20-239" aria-hidden="true" tabindex="-1"></a><span class="in">for constants instead of variables?</span></span>
+<span id="cb20-240"><a href="#cb20-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-241"><a href="#cb20-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-242"><a href="#cb20-242" aria-hidden="true" tabindex="-1"></a>In Python, a variable's scope determines where in your code the variable is accessible:</span>
+<span id="cb20-242"><a href="#cb20-242" aria-hidden="true" tabindex="-1"></a>The second prompt gives specific context about your project and data, leading to more relevant naming suggestions. It also asks for guidance on variables vs. constants, adding another layer of value.</span>
 <span id="cb20-243"><a href="#cb20-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-244"><a href="#cb20-244" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-245"><a href="#cb20-245" aria-hidden="true" tabindex="-1"></a><span class="co"># Global scope (accessible throughout the program)</span></span>
-<span id="cb20-246"><a href="#cb20-246" aria-hidden="true" tabindex="-1"></a>global_var <span class="op">=</span> <span class="st">"I'm available everywhere"</span></span>
+<span id="cb20-244"><a href="#cb20-244" aria-hidden="true" tabindex="-1"></a><span class="fu">## 7. Variable Scope: Where Variables Live</span></span>
+<span id="cb20-245"><a href="#cb20-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-246"><a href="#cb20-246" aria-hidden="true" tabindex="-1"></a>In Python, a variable's scope determines where in your code the variable is accessible:</span>
 <span id="cb20-247"><a href="#cb20-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-248"><a href="#cb20-248" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
-<span id="cb20-249"><a href="#cb20-249" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Local scope (only accessible within this function)</span></span>
-<span id="cb20-250"><a href="#cb20-250" aria-hidden="true" tabindex="-1"></a>    local_var <span class="op">=</span> <span class="st">"I'm only available inside this function"</span></span>
-<span id="cb20-251"><a href="#cb20-251" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(global_var)  <span class="co"># Can access global_var</span></span>
-<span id="cb20-252"><a href="#cb20-252" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(local_var)   <span class="co"># Can access local_var</span></span>
-<span id="cb20-253"><a href="#cb20-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-254"><a href="#cb20-254" aria-hidden="true" tabindex="-1"></a>my_function()</span>
-<span id="cb20-255"><a href="#cb20-255" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(global_var)      <span class="co"># Can access global_var</span></span>
-<span id="cb20-256"><a href="#cb20-256" aria-hidden="true" tabindex="-1"></a><span class="co"># print(local_var)     # Error! Can't access local_var outside the function</span></span>
-<span id="cb20-257"><a href="#cb20-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-258"><a href="#cb20-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-259"><a href="#cb20-259" aria-hidden="true" tabindex="-1"></a>We'll cover scope in more detail when we discuss functions in later chapters.</span>
-<span id="cb20-260"><a href="#cb20-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-261"><a href="#cb20-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## 8. Project Corner: Building Chatbot State with Variables</span></span>
+<span id="cb20-248"><a href="#cb20-248" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-249"><a href="#cb20-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Global scope (accessible throughout the program)</span></span>
+<span id="cb20-250"><a href="#cb20-250" aria-hidden="true" tabindex="-1"></a>global_var <span class="op">=</span> <span class="st">"I'm available everywhere"</span></span>
+<span id="cb20-251"><a href="#cb20-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-252"><a href="#cb20-252" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
+<span id="cb20-253"><a href="#cb20-253" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Local scope (only accessible within this function)</span></span>
+<span id="cb20-254"><a href="#cb20-254" aria-hidden="true" tabindex="-1"></a>    local_var <span class="op">=</span> <span class="st">"I'm only available inside this function"</span></span>
+<span id="cb20-255"><a href="#cb20-255" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(global_var)  <span class="co"># Can access global_var</span></span>
+<span id="cb20-256"><a href="#cb20-256" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(local_var)   <span class="co"># Can access local_var</span></span>
+<span id="cb20-257"><a href="#cb20-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-258"><a href="#cb20-258" aria-hidden="true" tabindex="-1"></a>my_function()</span>
+<span id="cb20-259"><a href="#cb20-259" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(global_var)      <span class="co"># Can access global_var</span></span>
+<span id="cb20-260"><a href="#cb20-260" aria-hidden="true" tabindex="-1"></a><span class="co"># print(local_var)     # Error! Can't access local_var outside the function</span></span>
+<span id="cb20-261"><a href="#cb20-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-262"><a href="#cb20-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-263"><a href="#cb20-263" aria-hidden="true" tabindex="-1"></a>Let's enhance our chatbot by using variables to track the conversation state:</span>
+<span id="cb20-263"><a href="#cb20-263" aria-hidden="true" tabindex="-1"></a>We'll cover scope in more detail when we discuss functions in later chapters.</span>
 <span id="cb20-264"><a href="#cb20-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-265"><a href="#cb20-265" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-266"><a href="#cb20-266" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb20-267"><a href="#cb20-267" aria-hidden="true" tabindex="-1"></a><span class="co">PyBot: A Python chatbot with memory</span></span>
-<span id="cb20-268"><a href="#cb20-268" aria-hidden="true" tabindex="-1"></a><span class="co">Version 0.4: Using variables to track state</span></span>
-<span id="cb20-269"><a href="#cb20-269" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb20-270"><a href="#cb20-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-271"><a href="#cb20-271" aria-hidden="true" tabindex="-1"></a><span class="co"># Bot configuration (constants)</span></span>
-<span id="cb20-272"><a href="#cb20-272" aria-hidden="true" tabindex="-1"></a>BOT_NAME <span class="op">=</span> <span class="st">"PyBot"</span></span>
-<span id="cb20-273"><a href="#cb20-273" aria-hidden="true" tabindex="-1"></a>VERSION <span class="op">=</span> <span class="st">"0.4"</span></span>
-<span id="cb20-274"><a href="#cb20-274" aria-hidden="true" tabindex="-1"></a>CREATOR <span class="op">=</span> <span class="st">"Your Name"</span></span>
-<span id="cb20-275"><a href="#cb20-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-276"><a href="#cb20-276" aria-hidden="true" tabindex="-1"></a><span class="co"># Bot state variables (will change during execution)</span></span>
-<span id="cb20-277"><a href="#cb20-277" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb20-278"><a href="#cb20-278" aria-hidden="true" tabindex="-1"></a>message_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-279"><a href="#cb20-279" aria-hidden="true" tabindex="-1"></a>last_topic <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb20-280"><a href="#cb20-280" aria-hidden="true" tabindex="-1"></a>greeting_shown <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb20-281"><a href="#cb20-281" aria-hidden="true" tabindex="-1"></a>favorite_color <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb20-282"><a href="#cb20-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-283"><a href="#cb20-283" aria-hidden="true" tabindex="-1"></a><span class="co"># Display personalized greeting</span></span>
-<span id="cb20-284"><a href="#cb20-284" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_greeting():</span>
-<span id="cb20-285"><a href="#cb20-285" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display greeting based on chatbot state."""</span></span>
-<span id="cb20-286"><a href="#cb20-286" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> greeting_shown, user_name</span>
-<span id="cb20-287"><a href="#cb20-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-288"><a href="#cb20-288" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> greeting_shown:</span>
-<span id="cb20-289"><a href="#cb20-289" aria-hidden="true" tabindex="-1"></a>        <span class="co"># First-time greeting</span></span>
-<span id="cb20-290"><a href="#cb20-290" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Hello! I'm </span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">, version </span><span class="sc">{</span>VERSION<span class="sc">}</span><span class="ss">."</span>)</span>
-<span id="cb20-291"><a href="#cb20-291" aria-hidden="true" tabindex="-1"></a>        user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What's your name? "</span>)</span>
-<span id="cb20-292"><a href="#cb20-292" aria-hidden="true" tabindex="-1"></a>        user_name <span class="op">=</span> user_input  <span class="co"># Store name in a variable for later use</span></span>
-<span id="cb20-293"><a href="#cb20-293" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Nice to meet you, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb20-294"><a href="#cb20-294" aria-hidden="true" tabindex="-1"></a>        greeting_shown <span class="op">=</span> <span class="va">True</span>  <span class="co"># Update state variable</span></span>
-<span id="cb20-295"><a href="#cb20-295" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb20-296"><a href="#cb20-296" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Returning user greeting</span></span>
-<span id="cb20-297"><a href="#cb20-297" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Welcome back, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb20-298"><a href="#cb20-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-299"><a href="#cb20-299" aria-hidden="true" tabindex="-1"></a><span class="co"># Process user message</span></span>
-<span id="cb20-300"><a href="#cb20-300" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_message(message):</span>
-<span id="cb20-301"><a href="#cb20-301" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Process user message and update state variables."""</span></span>
-<span id="cb20-302"><a href="#cb20-302" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> message_count, last_topic, favorite_color</span>
-<span id="cb20-303"><a href="#cb20-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-304"><a href="#cb20-304" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Increment message counter</span></span>
-<span id="cb20-305"><a href="#cb20-305" aria-hidden="true" tabindex="-1"></a>    message_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb20-306"><a href="#cb20-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-307"><a href="#cb20-307" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to lowercase for easier processing</span></span>
-<span id="cb20-308"><a href="#cb20-308" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> message.lower()</span>
-<span id="cb20-309"><a href="#cb20-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-310"><a href="#cb20-310" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update last topic based on message content</span></span>
-<span id="cb20-311"><a href="#cb20-311" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"weather"</span> <span class="kw">in</span> message:</span>
-<span id="cb20-312"><a href="#cb20-312" aria-hidden="true" tabindex="-1"></a>        last_topic <span class="op">=</span> <span class="st">"weather"</span></span>
-<span id="cb20-313"><a href="#cb20-313" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"food"</span> <span class="kw">in</span> message:</span>
-<span id="cb20-314"><a href="#cb20-314" aria-hidden="true" tabindex="-1"></a>        last_topic <span class="op">=</span> <span class="st">"food"</span></span>
-<span id="cb20-315"><a href="#cb20-315" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"color"</span> <span class="kw">in</span> message:</span>
-<span id="cb20-316"><a href="#cb20-316" aria-hidden="true" tabindex="-1"></a>        last_topic <span class="op">=</span> <span class="st">"color"</span></span>
-<span id="cb20-317"><a href="#cb20-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-318"><a href="#cb20-318" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If user mentions their favourite color, store it</span></span>
-<span id="cb20-319"><a href="#cb20-319" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"favourite"</span> <span class="kw">in</span> message <span class="kw">and</span> <span class="st">"is"</span> <span class="kw">in</span> message:</span>
-<span id="cb20-320"><a href="#cb20-320" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Simple color extraction (will improve in later chapters)</span></span>
-<span id="cb20-321"><a href="#cb20-321" aria-hidden="true" tabindex="-1"></a>            words <span class="op">=</span> message.split()</span>
-<span id="cb20-322"><a href="#cb20-322" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i, word <span class="kw">in</span> <span class="bu">enumerate</span>(words):</span>
-<span id="cb20-323"><a href="#cb20-323" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> word <span class="op">==</span> <span class="st">"is"</span> <span class="kw">and</span> i <span class="op">&lt;</span> <span class="bu">len</span>(words) <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb20-324"><a href="#cb20-324" aria-hidden="true" tabindex="-1"></a>                    favorite_color <span class="op">=</span> words[i <span class="op">+</span> <span class="dv">1</span>].lower()</span>
-<span id="cb20-325"><a href="#cb20-325" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
-<span id="cb20-326"><a href="#cb20-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-327"><a href="#cb20-327" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Respond based on state variables</span></span>
-<span id="cb20-328"><a href="#cb20-328" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> message_count <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb20-329"><a href="#cb20-329" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"That's your first message! Thanks for chatting with me."</span></span>
-<span id="cb20-330"><a href="#cb20-330" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"color"</span> <span class="kw">in</span> message <span class="kw">and</span> favorite_color:</span>
-<span id="cb20-331"><a href="#cb20-331" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"I remember your favourite color is </span><span class="sc">{</span>favorite_color<span class="sc">}</span><span class="ss">!"</span></span>
-<span id="cb20-332"><a href="#cb20-332" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> last_topic:</span>
-<span id="cb20-333"><a href="#cb20-333" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"I see we're talking about </span><span class="sc">{</span>last_topic<span class="sc">}</span><span class="ss"> now."</span></span>
-<span id="cb20-334"><a href="#cb20-334" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb20-335"><a href="#cb20-335" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Thanks for your message. That's </span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss"> messages so far!"</span></span>
-<span id="cb20-336"><a href="#cb20-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-337"><a href="#cb20-337" aria-hidden="true" tabindex="-1"></a><span class="co"># Display chatbot status using state variables</span></span>
-<span id="cb20-338"><a href="#cb20-338" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_status():</span>
-<span id="cb20-339"><a href="#cb20-339" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Show current chatbot state using tracked variables."""</span></span>
-<span id="cb20-340"><a href="#cb20-340" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb20-341"><a href="#cb20-341" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss"> Status:"</span>)</span>
-<span id="cb20-342"><a href="#cb20-342" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"User: </span><span class="sc">{</span>user_name <span class="cf">if</span> user_name <span class="cf">else</span> <span class="st">'Unknown'</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-343"><a href="#cb20-343" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Messages received: </span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-344"><a href="#cb20-344" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Last topic: </span><span class="sc">{</span>last_topic <span class="cf">if</span> last_topic <span class="cf">else</span> <span class="st">'None'</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-345"><a href="#cb20-345" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> favorite_color:</span>
-<span id="cb20-346"><a href="#cb20-346" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"User's favourite color: </span><span class="sc">{</span>favorite_color<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-347"><a href="#cb20-347" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb20-348"><a href="#cb20-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-349"><a href="#cb20-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a simple chat session</span></span>
-<span id="cb20-350"><a href="#cb20-350" aria-hidden="true" tabindex="-1"></a>display_greeting()</span>
-<span id="cb20-351"><a href="#cb20-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-352"><a href="#cb20-352" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate a conversation</span></span>
-<span id="cb20-353"><a href="#cb20-353" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb20-354"><a href="#cb20-354" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get user input</span></span>
-<span id="cb20-355"><a href="#cb20-355" aria-hidden="true" tabindex="-1"></a>    user_message <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; "</span>)</span>
-<span id="cb20-356"><a href="#cb20-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-357"><a href="#cb20-357" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check for exit command</span></span>
-<span id="cb20-358"><a href="#cb20-358" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_message.lower() <span class="kw">in</span> [<span class="st">"exit"</span>, <span class="st">"quit"</span>, <span class="st">"bye"</span>]:</span>
-<span id="cb20-359"><a href="#cb20-359" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Goodbye, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">! It was nice chatting with you."</span>)</span>
-<span id="cb20-360"><a href="#cb20-360" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb20-361"><a href="#cb20-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-362"><a href="#cb20-362" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check for status command</span></span>
-<span id="cb20-363"><a href="#cb20-363" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_message.lower() <span class="op">==</span> <span class="st">"status"</span>:</span>
-<span id="cb20-364"><a href="#cb20-364" aria-hidden="true" tabindex="-1"></a>        display_status()</span>
-<span id="cb20-365"><a href="#cb20-365" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb20-366"><a href="#cb20-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-367"><a href="#cb20-367" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process message and respond</span></span>
-<span id="cb20-368"><a href="#cb20-368" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> process_message(user_message)</span>
-<span id="cb20-369"><a href="#cb20-369" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-370"><a href="#cb20-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-371"><a href="#cb20-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-372"><a href="#cb20-372" aria-hidden="true" tabindex="-1"></a>This enhanced chatbot demonstrates:</span>
-<span id="cb20-373"><a href="#cb20-373" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using variables to store user information (<span class="in">`user_name`</span>, <span class="in">`favorite_color`</span>)</span>
-<span id="cb20-374"><a href="#cb20-374" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tracking conversation state (<span class="in">`message_count`</span>, <span class="in">`last_topic`</span>, <span class="in">`greeting_shown`</span>)</span>
-<span id="cb20-375"><a href="#cb20-375" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Updating variables as the conversation progresses</span>
-<span id="cb20-376"><a href="#cb20-376" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using variables to customise responses</span>
-<span id="cb20-377"><a href="#cb20-377" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Distinguishing between constants (uppercase) and variables (lowercase)</span>
-<span id="cb20-378"><a href="#cb20-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-379"><a href="#cb20-379" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Project Evolution**: We're building a chatbot that can remember information across the conversation. In future chapters, we'll enhance this with better input processing, decision logic, and more sophisticated memory management.</span></span>
-<span id="cb20-380"><a href="#cb20-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-381"><a href="#cb20-381" aria-hidden="true" tabindex="-1"></a><span class="fu">## 9. Common Variable Pitfalls to Avoid</span></span>
+<span id="cb20-265"><a href="#cb20-265" aria-hidden="true" tabindex="-1"></a><span class="fu">## 8. Project Corner: Building Chatbot State with Variables</span></span>
+<span id="cb20-266"><a href="#cb20-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-267"><a href="#cb20-267" aria-hidden="true" tabindex="-1"></a>Let's enhance our chatbot by using variables to track the conversation state:</span>
+<span id="cb20-268"><a href="#cb20-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-269"><a href="#cb20-269" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-270"><a href="#cb20-270" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb20-271"><a href="#cb20-271" aria-hidden="true" tabindex="-1"></a><span class="co">PyBot: A Python chatbot with memory</span></span>
+<span id="cb20-272"><a href="#cb20-272" aria-hidden="true" tabindex="-1"></a><span class="co">Version 0.4: Using variables to track state</span></span>
+<span id="cb20-273"><a href="#cb20-273" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb20-274"><a href="#cb20-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-275"><a href="#cb20-275" aria-hidden="true" tabindex="-1"></a><span class="co"># Bot configuration (constants)</span></span>
+<span id="cb20-276"><a href="#cb20-276" aria-hidden="true" tabindex="-1"></a>BOT_NAME <span class="op">=</span> <span class="st">"PyBot"</span></span>
+<span id="cb20-277"><a href="#cb20-277" aria-hidden="true" tabindex="-1"></a>VERSION <span class="op">=</span> <span class="st">"0.4"</span></span>
+<span id="cb20-278"><a href="#cb20-278" aria-hidden="true" tabindex="-1"></a>CREATOR <span class="op">=</span> <span class="st">"Your Name"</span></span>
+<span id="cb20-279"><a href="#cb20-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-280"><a href="#cb20-280" aria-hidden="true" tabindex="-1"></a><span class="co"># Bot state variables (will change during execution)</span></span>
+<span id="cb20-281"><a href="#cb20-281" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb20-282"><a href="#cb20-282" aria-hidden="true" tabindex="-1"></a>message_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-283"><a href="#cb20-283" aria-hidden="true" tabindex="-1"></a>last_topic <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb20-284"><a href="#cb20-284" aria-hidden="true" tabindex="-1"></a>greeting_shown <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb20-285"><a href="#cb20-285" aria-hidden="true" tabindex="-1"></a>favorite_color <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb20-286"><a href="#cb20-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-287"><a href="#cb20-287" aria-hidden="true" tabindex="-1"></a><span class="co"># Display personalized greeting</span></span>
+<span id="cb20-288"><a href="#cb20-288" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_greeting():</span>
+<span id="cb20-289"><a href="#cb20-289" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display greeting based on chatbot state."""</span></span>
+<span id="cb20-290"><a href="#cb20-290" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> greeting_shown, user_name</span>
+<span id="cb20-291"><a href="#cb20-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-292"><a href="#cb20-292" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> greeting_shown:</span>
+<span id="cb20-293"><a href="#cb20-293" aria-hidden="true" tabindex="-1"></a>        <span class="co"># First-time greeting</span></span>
+<span id="cb20-294"><a href="#cb20-294" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Hello! I'm </span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">, version </span><span class="sc">{</span>VERSION<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb20-295"><a href="#cb20-295" aria-hidden="true" tabindex="-1"></a>        user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What's your name? "</span>)</span>
+<span id="cb20-296"><a href="#cb20-296" aria-hidden="true" tabindex="-1"></a>        user_name <span class="op">=</span> user_input  <span class="co"># Store name in a variable for later use</span></span>
+<span id="cb20-297"><a href="#cb20-297" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Nice to meet you, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb20-298"><a href="#cb20-298" aria-hidden="true" tabindex="-1"></a>        greeting_shown <span class="op">=</span> <span class="va">True</span>  <span class="co"># Update state variable</span></span>
+<span id="cb20-299"><a href="#cb20-299" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-300"><a href="#cb20-300" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Returning user greeting</span></span>
+<span id="cb20-301"><a href="#cb20-301" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Welcome back, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb20-302"><a href="#cb20-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-303"><a href="#cb20-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Process user message</span></span>
+<span id="cb20-304"><a href="#cb20-304" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_message(message):</span>
+<span id="cb20-305"><a href="#cb20-305" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Process user message and update state variables."""</span></span>
+<span id="cb20-306"><a href="#cb20-306" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> message_count, last_topic, favorite_color</span>
+<span id="cb20-307"><a href="#cb20-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-308"><a href="#cb20-308" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Increment message counter</span></span>
+<span id="cb20-309"><a href="#cb20-309" aria-hidden="true" tabindex="-1"></a>    message_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb20-310"><a href="#cb20-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-311"><a href="#cb20-311" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to lowercase for easier processing</span></span>
+<span id="cb20-312"><a href="#cb20-312" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> message.lower()</span>
+<span id="cb20-313"><a href="#cb20-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-314"><a href="#cb20-314" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update last topic based on message content</span></span>
+<span id="cb20-315"><a href="#cb20-315" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"weather"</span> <span class="kw">in</span> message:</span>
+<span id="cb20-316"><a href="#cb20-316" aria-hidden="true" tabindex="-1"></a>        last_topic <span class="op">=</span> <span class="st">"weather"</span></span>
+<span id="cb20-317"><a href="#cb20-317" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"food"</span> <span class="kw">in</span> message:</span>
+<span id="cb20-318"><a href="#cb20-318" aria-hidden="true" tabindex="-1"></a>        last_topic <span class="op">=</span> <span class="st">"food"</span></span>
+<span id="cb20-319"><a href="#cb20-319" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"color"</span> <span class="kw">in</span> message:</span>
+<span id="cb20-320"><a href="#cb20-320" aria-hidden="true" tabindex="-1"></a>        last_topic <span class="op">=</span> <span class="st">"color"</span></span>
+<span id="cb20-321"><a href="#cb20-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-322"><a href="#cb20-322" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If user mentions their favourite color, store it</span></span>
+<span id="cb20-323"><a href="#cb20-323" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"favourite"</span> <span class="kw">in</span> message <span class="kw">and</span> <span class="st">"is"</span> <span class="kw">in</span> message:</span>
+<span id="cb20-324"><a href="#cb20-324" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Simple color extraction (will improve in later chapters)</span></span>
+<span id="cb20-325"><a href="#cb20-325" aria-hidden="true" tabindex="-1"></a>            words <span class="op">=</span> message.split()</span>
+<span id="cb20-326"><a href="#cb20-326" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> i, word <span class="kw">in</span> <span class="bu">enumerate</span>(words):</span>
+<span id="cb20-327"><a href="#cb20-327" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> word <span class="op">==</span> <span class="st">"is"</span> <span class="kw">and</span> i <span class="op">&lt;</span> <span class="bu">len</span>(words) <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb20-328"><a href="#cb20-328" aria-hidden="true" tabindex="-1"></a>                    favorite_color <span class="op">=</span> words[i <span class="op">+</span> <span class="dv">1</span>].lower()</span>
+<span id="cb20-329"><a href="#cb20-329" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
+<span id="cb20-330"><a href="#cb20-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-331"><a href="#cb20-331" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Respond based on state variables</span></span>
+<span id="cb20-332"><a href="#cb20-332" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> message_count <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb20-333"><a href="#cb20-333" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"That's your first message! Thanks for chatting with me."</span></span>
+<span id="cb20-334"><a href="#cb20-334" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">"color"</span> <span class="kw">in</span> message <span class="kw">and</span> favorite_color:</span>
+<span id="cb20-335"><a href="#cb20-335" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"I remember your favourite color is </span><span class="sc">{</span>favorite_color<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb20-336"><a href="#cb20-336" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> last_topic:</span>
+<span id="cb20-337"><a href="#cb20-337" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"I see we're talking about </span><span class="sc">{</span>last_topic<span class="sc">}</span><span class="ss"> now."</span></span>
+<span id="cb20-338"><a href="#cb20-338" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-339"><a href="#cb20-339" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Thanks for your message. That's </span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss"> messages so far!"</span></span>
+<span id="cb20-340"><a href="#cb20-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-341"><a href="#cb20-341" aria-hidden="true" tabindex="-1"></a><span class="co"># Display chatbot status using state variables</span></span>
+<span id="cb20-342"><a href="#cb20-342" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_status():</span>
+<span id="cb20-343"><a href="#cb20-343" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Show current chatbot state using tracked variables."""</span></span>
+<span id="cb20-344"><a href="#cb20-344" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb20-345"><a href="#cb20-345" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss"> Status:"</span>)</span>
+<span id="cb20-346"><a href="#cb20-346" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"User: </span><span class="sc">{</span>user_name <span class="cf">if</span> user_name <span class="cf">else</span> <span class="st">'Unknown'</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-347"><a href="#cb20-347" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Messages received: </span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-348"><a href="#cb20-348" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Last topic: </span><span class="sc">{</span>last_topic <span class="cf">if</span> last_topic <span class="cf">else</span> <span class="st">'None'</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-349"><a href="#cb20-349" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> favorite_color:</span>
+<span id="cb20-350"><a href="#cb20-350" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"User's favourite color: </span><span class="sc">{</span>favorite_color<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-351"><a href="#cb20-351" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb20-352"><a href="#cb20-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-353"><a href="#cb20-353" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a simple chat session</span></span>
+<span id="cb20-354"><a href="#cb20-354" aria-hidden="true" tabindex="-1"></a>display_greeting()</span>
+<span id="cb20-355"><a href="#cb20-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-356"><a href="#cb20-356" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate a conversation</span></span>
+<span id="cb20-357"><a href="#cb20-357" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb20-358"><a href="#cb20-358" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get user input</span></span>
+<span id="cb20-359"><a href="#cb20-359" aria-hidden="true" tabindex="-1"></a>    user_message <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; "</span>)</span>
+<span id="cb20-360"><a href="#cb20-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-361"><a href="#cb20-361" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check for exit command</span></span>
+<span id="cb20-362"><a href="#cb20-362" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_message.lower() <span class="kw">in</span> [<span class="st">"exit"</span>, <span class="st">"quit"</span>, <span class="st">"bye"</span>]:</span>
+<span id="cb20-363"><a href="#cb20-363" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; Goodbye, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">! It was nice chatting with you."</span>)</span>
+<span id="cb20-364"><a href="#cb20-364" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb20-365"><a href="#cb20-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-366"><a href="#cb20-366" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check for status command</span></span>
+<span id="cb20-367"><a href="#cb20-367" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_message.lower() <span class="op">==</span> <span class="st">"status"</span>:</span>
+<span id="cb20-368"><a href="#cb20-368" aria-hidden="true" tabindex="-1"></a>        display_status()</span>
+<span id="cb20-369"><a href="#cb20-369" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb20-370"><a href="#cb20-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-371"><a href="#cb20-371" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Process message and respond</span></span>
+<span id="cb20-372"><a href="#cb20-372" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> process_message(user_message)</span>
+<span id="cb20-373"><a href="#cb20-373" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">&gt; </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-374"><a href="#cb20-374" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-375"><a href="#cb20-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-376"><a href="#cb20-376" aria-hidden="true" tabindex="-1"></a>This enhanced chatbot demonstrates:</span>
+<span id="cb20-377"><a href="#cb20-377" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using variables to store user information (<span class="in">`user_name`</span>, <span class="in">`favorite_color`</span>)</span>
+<span id="cb20-378"><a href="#cb20-378" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tracking conversation state (<span class="in">`message_count`</span>, <span class="in">`last_topic`</span>, <span class="in">`greeting_shown`</span>)</span>
+<span id="cb20-379"><a href="#cb20-379" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Updating variables as the conversation progresses</span>
+<span id="cb20-380"><a href="#cb20-380" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using variables to customise responses</span>
+<span id="cb20-381"><a href="#cb20-381" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Distinguishing between constants (uppercase) and variables (lowercase)</span>
 <span id="cb20-382"><a href="#cb20-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-383"><a href="#cb20-383" aria-hidden="true" tabindex="-1"></a>When working with variables, be aware of these common issues:</span>
+<span id="cb20-383"><a href="#cb20-383" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Project Evolution**: We're building a chatbot that can remember information across the conversation. In future chapters, we'll enhance this with better input processing, decision logic, and more sophisticated memory management.</span></span>
 <span id="cb20-384"><a href="#cb20-384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-385"><a href="#cb20-385" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using Variables Before Assignment</span></span>
+<span id="cb20-385"><a href="#cb20-385" aria-hidden="true" tabindex="-1"></a><span class="fu">## 9. Common Variable Pitfalls to Avoid</span></span>
 <span id="cb20-386"><a href="#cb20-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-387"><a href="#cb20-387" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-388"><a href="#cb20-388" aria-hidden="true" tabindex="-1"></a><span class="co"># Error: Using a variable before assigning it</span></span>
-<span id="cb20-389"><a href="#cb20-389" aria-hidden="true" tabindex="-1"></a><span class="co"># print(unassigned_var)  # NameError: name 'unassigned_var' is not defined</span></span>
+<span id="cb20-387"><a href="#cb20-387" aria-hidden="true" tabindex="-1"></a>When working with variables, be aware of these common issues:</span>
+<span id="cb20-388"><a href="#cb20-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-389"><a href="#cb20-389" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using Variables Before Assignment</span></span>
 <span id="cb20-390"><a href="#cb20-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-391"><a href="#cb20-391" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct approach: Assign first, then use</span></span>
-<span id="cb20-392"><a href="#cb20-392" aria-hidden="true" tabindex="-1"></a>assigned_var <span class="op">=</span> <span class="st">"I exist!"</span></span>
-<span id="cb20-393"><a href="#cb20-393" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(assigned_var)  <span class="co"># Works fine</span></span>
-<span id="cb20-394"><a href="#cb20-394" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-395"><a href="#cb20-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-396"><a href="#cb20-396" aria-hidden="true" tabindex="-1"></a><span class="fu">### Name Shadowing</span></span>
-<span id="cb20-397"><a href="#cb20-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-398"><a href="#cb20-398" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-399"><a href="#cb20-399" aria-hidden="true" tabindex="-1"></a><span class="co"># Shadowing (overriding) variables</span></span>
-<span id="cb20-400"><a href="#cb20-400" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Global name"</span></span>
+<span id="cb20-391"><a href="#cb20-391" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-392"><a href="#cb20-392" aria-hidden="true" tabindex="-1"></a><span class="co"># Error: Using a variable before assigning it</span></span>
+<span id="cb20-393"><a href="#cb20-393" aria-hidden="true" tabindex="-1"></a><span class="co"># print(unassigned_var)  # NameError: name 'unassigned_var' is not defined</span></span>
+<span id="cb20-394"><a href="#cb20-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-395"><a href="#cb20-395" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct approach: Assign first, then use</span></span>
+<span id="cb20-396"><a href="#cb20-396" aria-hidden="true" tabindex="-1"></a>assigned_var <span class="op">=</span> <span class="st">"I exist!"</span></span>
+<span id="cb20-397"><a href="#cb20-397" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(assigned_var)  <span class="co"># Works fine</span></span>
+<span id="cb20-398"><a href="#cb20-398" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-399"><a href="#cb20-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-400"><a href="#cb20-400" aria-hidden="true" tabindex="-1"></a><span class="fu">### Name Shadowing</span></span>
 <span id="cb20-401"><a href="#cb20-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-402"><a href="#cb20-402" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_function():</span>
-<span id="cb20-403"><a href="#cb20-403" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">"Local name"</span>  <span class="co"># Creates a new local variable, doesn't change the global one</span></span>
-<span id="cb20-404"><a href="#cb20-404" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)  <span class="co"># Output: Local name</span></span>
+<span id="cb20-402"><a href="#cb20-402" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-403"><a href="#cb20-403" aria-hidden="true" tabindex="-1"></a><span class="co"># Shadowing (overriding) variables</span></span>
+<span id="cb20-404"><a href="#cb20-404" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Global name"</span></span>
 <span id="cb20-405"><a href="#cb20-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-406"><a href="#cb20-406" aria-hidden="true" tabindex="-1"></a>test_function()</span>
-<span id="cb20-407"><a href="#cb20-407" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)  <span class="co"># Output: Global name (original value unchanged)</span></span>
-<span id="cb20-408"><a href="#cb20-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-406"><a href="#cb20-406" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_function():</span>
+<span id="cb20-407"><a href="#cb20-407" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">"Local name"</span>  <span class="co"># Creates a new local variable, doesn't change the global one</span></span>
+<span id="cb20-408"><a href="#cb20-408" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)  <span class="co"># Output: Local name</span></span>
 <span id="cb20-409"><a href="#cb20-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-410"><a href="#cb20-410" aria-hidden="true" tabindex="-1"></a><span class="fu">### Accidental Reassignment</span></span>
-<span id="cb20-411"><a href="#cb20-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-412"><a href="#cb20-412" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-413"><a href="#cb20-413" aria-hidden="true" tabindex="-1"></a><span class="co"># Accidental type changes</span></span>
-<span id="cb20-414"><a href="#cb20-414" aria-hidden="true" tabindex="-1"></a>user_id <span class="op">=</span> <span class="st">"ABC123"</span>   <span class="co"># String (for an ID code)</span></span>
-<span id="cb20-415"><a href="#cb20-415" aria-hidden="true" tabindex="-1"></a>user_id <span class="op">=</span> <span class="dv">42</span>         <span class="co"># Now it's an integer!</span></span>
-<span id="cb20-416"><a href="#cb20-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-417"><a href="#cb20-417" aria-hidden="true" tabindex="-1"></a><span class="co"># This might cause problems later if code expects a string:</span></span>
-<span id="cb20-418"><a href="#cb20-418" aria-hidden="true" tabindex="-1"></a><span class="co"># message = "User " + user_id  # TypeError: can only concatenate str (not "int") to str</span></span>
-<span id="cb20-419"><a href="#cb20-419" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-410"><a href="#cb20-410" aria-hidden="true" tabindex="-1"></a>test_function()</span>
+<span id="cb20-411"><a href="#cb20-411" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)  <span class="co"># Output: Global name (original value unchanged)</span></span>
+<span id="cb20-412"><a href="#cb20-412" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-413"><a href="#cb20-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-414"><a href="#cb20-414" aria-hidden="true" tabindex="-1"></a><span class="fu">### Accidental Reassignment</span></span>
+<span id="cb20-415"><a href="#cb20-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-416"><a href="#cb20-416" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-417"><a href="#cb20-417" aria-hidden="true" tabindex="-1"></a><span class="co"># Accidental type changes</span></span>
+<span id="cb20-418"><a href="#cb20-418" aria-hidden="true" tabindex="-1"></a>user_id <span class="op">=</span> <span class="st">"ABC123"</span>   <span class="co"># String (for an ID code)</span></span>
+<span id="cb20-419"><a href="#cb20-419" aria-hidden="true" tabindex="-1"></a>user_id <span class="op">=</span> <span class="dv">42</span>         <span class="co"># Now it's an integer!</span></span>
 <span id="cb20-420"><a href="#cb20-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-421"><a href="#cb20-421" aria-hidden="true" tabindex="-1"></a><span class="fu">### Confusing Assignment (=) with Equality (==)</span></span>
-<span id="cb20-422"><a href="#cb20-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-423"><a href="#cb20-423" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb20-424"><a href="#cb20-424" aria-hidden="true" tabindex="-1"></a><span class="co"># Assignment vs. equality comparison</span></span>
-<span id="cb20-425"><a href="#cb20-425" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span>      <span class="co"># Assignment: sets x to 5</span></span>
-<span id="cb20-426"><a href="#cb20-426" aria-hidden="true" tabindex="-1"></a><span class="co"># if x = 10:  # SyntaxError: invalid syntax</span></span>
-<span id="cb20-427"><a href="#cb20-427" aria-hidden="true" tabindex="-1"></a><span class="co">#     print("This is wrong!")</span></span>
-<span id="cb20-428"><a href="#cb20-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-429"><a href="#cb20-429" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct comparison</span></span>
-<span id="cb20-430"><a href="#cb20-430" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">==</span> <span class="dv">10</span>:  <span class="co"># Equality check: is x equal to 10?</span></span>
-<span id="cb20-431"><a href="#cb20-431" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is 10"</span>)</span>
-<span id="cb20-432"><a href="#cb20-432" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb20-433"><a href="#cb20-433" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is not 10"</span>)</span>
-<span id="cb20-434"><a href="#cb20-434" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-435"><a href="#cb20-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-436"><a href="#cb20-436" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Self-Assessment Quiz</span></span>
-<span id="cb20-437"><a href="#cb20-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-438"><a href="#cb20-438" aria-hidden="true" tabindex="-1"></a>Test your understanding of variables:</span>
+<span id="cb20-421"><a href="#cb20-421" aria-hidden="true" tabindex="-1"></a><span class="co"># This might cause problems later if code expects a string:</span></span>
+<span id="cb20-422"><a href="#cb20-422" aria-hidden="true" tabindex="-1"></a><span class="co"># message = "User " + user_id  # TypeError: can only concatenate str (not "int") to str</span></span>
+<span id="cb20-423"><a href="#cb20-423" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-424"><a href="#cb20-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-425"><a href="#cb20-425" aria-hidden="true" tabindex="-1"></a><span class="fu">### Confusing Assignment (=) with Equality (==)</span></span>
+<span id="cb20-426"><a href="#cb20-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-427"><a href="#cb20-427" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb20-428"><a href="#cb20-428" aria-hidden="true" tabindex="-1"></a><span class="co"># Assignment vs. equality comparison</span></span>
+<span id="cb20-429"><a href="#cb20-429" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span>      <span class="co"># Assignment: sets x to 5</span></span>
+<span id="cb20-430"><a href="#cb20-430" aria-hidden="true" tabindex="-1"></a><span class="co"># if x = 10:  # SyntaxError: invalid syntax</span></span>
+<span id="cb20-431"><a href="#cb20-431" aria-hidden="true" tabindex="-1"></a><span class="co">#     print("This is wrong!")</span></span>
+<span id="cb20-432"><a href="#cb20-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-433"><a href="#cb20-433" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct comparison</span></span>
+<span id="cb20-434"><a href="#cb20-434" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">==</span> <span class="dv">10</span>:  <span class="co"># Equality check: is x equal to 10?</span></span>
+<span id="cb20-435"><a href="#cb20-435" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is 10"</span>)</span>
+<span id="cb20-436"><a href="#cb20-436" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb20-437"><a href="#cb20-437" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is not 10"</span>)</span>
+<span id="cb20-438"><a href="#cb20-438" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-439"><a href="#cb20-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-440"><a href="#cb20-440" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Which statement correctly creates a variable in Python?</span>
-<span id="cb20-441"><a href="#cb20-441" aria-hidden="true" tabindex="-1"></a>   a) variable name = "Alice"</span>
-<span id="cb20-442"><a href="#cb20-442" aria-hidden="true" tabindex="-1"></a>   b) name := "Alice"</span>
-<span id="cb20-443"><a href="#cb20-443" aria-hidden="true" tabindex="-1"></a>   c) name = "Alice"</span>
-<span id="cb20-444"><a href="#cb20-444" aria-hidden="true" tabindex="-1"></a>   d) define name = "Alice"</span>
-<span id="cb20-445"><a href="#cb20-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-446"><a href="#cb20-446" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Which of these is NOT a valid variable name in Python?</span>
-<span id="cb20-447"><a href="#cb20-447" aria-hidden="true" tabindex="-1"></a>   a) _user_name</span>
-<span id="cb20-448"><a href="#cb20-448" aria-hidden="true" tabindex="-1"></a>   b) UserName</span>
-<span id="cb20-449"><a href="#cb20-449" aria-hidden="true" tabindex="-1"></a>   c) user123</span>
-<span id="cb20-450"><a href="#cb20-450" aria-hidden="true" tabindex="-1"></a>   d) for</span>
-<span id="cb20-451"><a href="#cb20-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-452"><a href="#cb20-452" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What happens when you assign a new value to an existing variable?</span>
-<span id="cb20-453"><a href="#cb20-453" aria-hidden="true" tabindex="-1"></a>   a) Python creates a new variable with the same name</span>
-<span id="cb20-454"><a href="#cb20-454" aria-hidden="true" tabindex="-1"></a>   b) Python keeps both the old and new values</span>
-<span id="cb20-455"><a href="#cb20-455" aria-hidden="true" tabindex="-1"></a>   c) The old value is discarded and replaced with the new value</span>
-<span id="cb20-456"><a href="#cb20-456" aria-hidden="true" tabindex="-1"></a>   d) Python raises an error unless you use a special reassignment operator</span>
-<span id="cb20-457"><a href="#cb20-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-458"><a href="#cb20-458" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>What does this code do? <span class="in">`x, y = y, x`</span></span>
-<span id="cb20-459"><a href="#cb20-459" aria-hidden="true" tabindex="-1"></a>   a) Creates a tuple containing x and y</span>
-<span id="cb20-460"><a href="#cb20-460" aria-hidden="true" tabindex="-1"></a>   b) Tests if x equals y and assigns the result</span>
-<span id="cb20-461"><a href="#cb20-461" aria-hidden="true" tabindex="-1"></a>   c) Swaps the values of x and y</span>
-<span id="cb20-462"><a href="#cb20-462" aria-hidden="true" tabindex="-1"></a>   d) Raises a syntax error</span>
-<span id="cb20-463"><a href="#cb20-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-464"><a href="#cb20-464" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What's the difference between a variable and a constant in Python?</span>
-<span id="cb20-465"><a href="#cb20-465" aria-hidden="true" tabindex="-1"></a>   a) Variables can be reassigned but constants cannot</span>
-<span id="cb20-466"><a href="#cb20-466" aria-hidden="true" tabindex="-1"></a>   b) Constants are faster than variables</span>
-<span id="cb20-467"><a href="#cb20-467" aria-hidden="true" tabindex="-1"></a>   c) Python doesn't have constants, only a naming convention</span>
-<span id="cb20-468"><a href="#cb20-468" aria-hidden="true" tabindex="-1"></a>   d) Constants must be declared with a special keyword</span>
-<span id="cb20-469"><a href="#cb20-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-470"><a href="#cb20-470" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>In our chatbot project, why do we use variables like <span class="in">`message_count`</span> and <span class="in">`last_topic`</span>?</span>
-<span id="cb20-471"><a href="#cb20-471" aria-hidden="true" tabindex="-1"></a>   a) To make the code run faster</span>
-<span id="cb20-472"><a href="#cb20-472" aria-hidden="true" tabindex="-1"></a>   b) To track the state of the conversation</span>
-<span id="cb20-473"><a href="#cb20-473" aria-hidden="true" tabindex="-1"></a>   c) Because Python requires them</span>
-<span id="cb20-474"><a href="#cb20-474" aria-hidden="true" tabindex="-1"></a>   d) To reduce memory usage</span>
-<span id="cb20-475"><a href="#cb20-475" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-476"><a href="#cb20-476" aria-hidden="true" tabindex="-1"></a>**Answers &amp; Feedback:**</span>
-<span id="cb20-477"><a href="#cb20-477" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>c) name = "Alice" — The standard assignment syntax in Python</span>
-<span id="cb20-478"><a href="#cb20-478" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>d) for — Reserved keywords cannot be used as variable names</span>
-<span id="cb20-479"><a href="#cb20-479" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>c) The old value is discarded and replaced with the new value — Variables can change</span>
-<span id="cb20-480"><a href="#cb20-480" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>c) Swaps the values of x and y — A Python idiom for value swapping</span>
-<span id="cb20-481"><a href="#cb20-481" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>c) Python doesn't have constants, only a naming convention — UPPERCASE names signal constants</span>
-<span id="cb20-482"><a href="#cb20-482" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>b) To track the state of the conversation — Variables maintain information between interactions</span>
-<span id="cb20-483"><a href="#cb20-483" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-484"><a href="#cb20-484" aria-hidden="true" tabindex="-1"></a><span class="fu">## 11. Try It Yourself: Variable Practice</span></span>
-<span id="cb20-485"><a href="#cb20-485" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-486"><a href="#cb20-486" aria-hidden="true" tabindex="-1"></a>Apply what you've learned with these exercises:</span>
+<span id="cb20-440"><a href="#cb20-440" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Self-Assessment Quiz</span></span>
+<span id="cb20-441"><a href="#cb20-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-442"><a href="#cb20-442" aria-hidden="true" tabindex="-1"></a>Test your understanding of variables:</span>
+<span id="cb20-443"><a href="#cb20-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-444"><a href="#cb20-444" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Which statement correctly creates a variable in Python?</span>
+<span id="cb20-445"><a href="#cb20-445" aria-hidden="true" tabindex="-1"></a>   a) variable name = "Alice"</span>
+<span id="cb20-446"><a href="#cb20-446" aria-hidden="true" tabindex="-1"></a>   b) name := "Alice"</span>
+<span id="cb20-447"><a href="#cb20-447" aria-hidden="true" tabindex="-1"></a>   c) name = "Alice"</span>
+<span id="cb20-448"><a href="#cb20-448" aria-hidden="true" tabindex="-1"></a>   d) define name = "Alice"</span>
+<span id="cb20-449"><a href="#cb20-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-450"><a href="#cb20-450" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Which of these is NOT a valid variable name in Python?</span>
+<span id="cb20-451"><a href="#cb20-451" aria-hidden="true" tabindex="-1"></a>   a) _user_name</span>
+<span id="cb20-452"><a href="#cb20-452" aria-hidden="true" tabindex="-1"></a>   b) UserName</span>
+<span id="cb20-453"><a href="#cb20-453" aria-hidden="true" tabindex="-1"></a>   c) user123</span>
+<span id="cb20-454"><a href="#cb20-454" aria-hidden="true" tabindex="-1"></a>   d) for</span>
+<span id="cb20-455"><a href="#cb20-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-456"><a href="#cb20-456" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What happens when you assign a new value to an existing variable?</span>
+<span id="cb20-457"><a href="#cb20-457" aria-hidden="true" tabindex="-1"></a>   a) Python creates a new variable with the same name</span>
+<span id="cb20-458"><a href="#cb20-458" aria-hidden="true" tabindex="-1"></a>   b) Python keeps both the old and new values</span>
+<span id="cb20-459"><a href="#cb20-459" aria-hidden="true" tabindex="-1"></a>   c) The old value is discarded and replaced with the new value</span>
+<span id="cb20-460"><a href="#cb20-460" aria-hidden="true" tabindex="-1"></a>   d) Python raises an error unless you use a special reassignment operator</span>
+<span id="cb20-461"><a href="#cb20-461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-462"><a href="#cb20-462" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>What does this code do? <span class="in">`x, y = y, x`</span></span>
+<span id="cb20-463"><a href="#cb20-463" aria-hidden="true" tabindex="-1"></a>   a) Creates a tuple containing x and y</span>
+<span id="cb20-464"><a href="#cb20-464" aria-hidden="true" tabindex="-1"></a>   b) Tests if x equals y and assigns the result</span>
+<span id="cb20-465"><a href="#cb20-465" aria-hidden="true" tabindex="-1"></a>   c) Swaps the values of x and y</span>
+<span id="cb20-466"><a href="#cb20-466" aria-hidden="true" tabindex="-1"></a>   d) Raises a syntax error</span>
+<span id="cb20-467"><a href="#cb20-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-468"><a href="#cb20-468" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What's the difference between a variable and a constant in Python?</span>
+<span id="cb20-469"><a href="#cb20-469" aria-hidden="true" tabindex="-1"></a>   a) Variables can be reassigned but constants cannot</span>
+<span id="cb20-470"><a href="#cb20-470" aria-hidden="true" tabindex="-1"></a>   b) Constants are faster than variables</span>
+<span id="cb20-471"><a href="#cb20-471" aria-hidden="true" tabindex="-1"></a>   c) Python doesn't have constants, only a naming convention</span>
+<span id="cb20-472"><a href="#cb20-472" aria-hidden="true" tabindex="-1"></a>   d) Constants must be declared with a special keyword</span>
+<span id="cb20-473"><a href="#cb20-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-474"><a href="#cb20-474" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>In our chatbot project, why do we use variables like <span class="in">`message_count`</span> and <span class="in">`last_topic`</span>?</span>
+<span id="cb20-475"><a href="#cb20-475" aria-hidden="true" tabindex="-1"></a>   a) To make the code run faster</span>
+<span id="cb20-476"><a href="#cb20-476" aria-hidden="true" tabindex="-1"></a>   b) To track the state of the conversation</span>
+<span id="cb20-477"><a href="#cb20-477" aria-hidden="true" tabindex="-1"></a>   c) Because Python requires them</span>
+<span id="cb20-478"><a href="#cb20-478" aria-hidden="true" tabindex="-1"></a>   d) To reduce memory usage</span>
+<span id="cb20-479"><a href="#cb20-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-480"><a href="#cb20-480" aria-hidden="true" tabindex="-1"></a>**Answers &amp; Feedback:**</span>
+<span id="cb20-481"><a href="#cb20-481" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>c) name = "Alice" — The standard assignment syntax in Python</span>
+<span id="cb20-482"><a href="#cb20-482" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>d) for — Reserved keywords cannot be used as variable names</span>
+<span id="cb20-483"><a href="#cb20-483" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>c) The old value is discarded and replaced with the new value — Variables can change</span>
+<span id="cb20-484"><a href="#cb20-484" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>c) Swaps the values of x and y — A Python idiom for value swapping</span>
+<span id="cb20-485"><a href="#cb20-485" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>c) Python doesn't have constants, only a naming convention — UPPERCASE names signal constants</span>
+<span id="cb20-486"><a href="#cb20-486" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>b) To track the state of the conversation — Variables maintain information between interactions</span>
 <span id="cb20-487"><a href="#cb20-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-488"><a href="#cb20-488" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create variables to store information about a person (name, age, city, is_student) with appropriate data types.</span>
+<span id="cb20-488"><a href="#cb20-488" aria-hidden="true" tabindex="-1"></a><span class="fu">## 11. Try It Yourself: Variable Practice</span></span>
 <span id="cb20-489"><a href="#cb20-489" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-490"><a href="#cb20-490" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Try swapping the values of two variables using Python's multiple assignment.</span>
+<span id="cb20-490"><a href="#cb20-490" aria-hidden="true" tabindex="-1"></a>Apply what you've learned with these exercises:</span>
 <span id="cb20-491"><a href="#cb20-491" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-492"><a href="#cb20-492" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Create a compound assignment that adds a greeting to a name variable.</span>
+<span id="cb20-492"><a href="#cb20-492" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create variables to store information about a person (name, age, city, is_student) with appropriate data types.</span>
 <span id="cb20-493"><a href="#cb20-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-494"><a href="#cb20-494" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Define three constants representing configuration values for an application.</span>
+<span id="cb20-494"><a href="#cb20-494" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Try swapping the values of two variables using Python's multiple assignment.</span>
 <span id="cb20-495"><a href="#cb20-495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-496"><a href="#cb20-496" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Write a small program that updates a counter variable multiple times and displays it after each update.</span>
+<span id="cb20-496"><a href="#cb20-496" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Create a compound assignment that adds a greeting to a name variable.</span>
 <span id="cb20-497"><a href="#cb20-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-498"><a href="#cb20-498" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-References</span></span>
+<span id="cb20-498"><a href="#cb20-498" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Define three constants representing configuration values for an application.</span>
 <span id="cb20-499"><a href="#cb20-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-500"><a href="#cb20-500" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Previous Chapter: <span class="co">[</span><span class="ot">Values</span><span class="co">](values.qmd)</span> — Understanding data types</span>
-<span id="cb20-501"><a href="#cb20-501" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Next Chapter: <span class="co">[</span><span class="ot">Output</span><span class="co">](output.qmd)</span> — Displaying information to users</span>
-<span id="cb20-502"><a href="#cb20-502" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chatbot Development: See how variables evolve in <span class="co">[</span><span class="ot">Input</span><span class="co">](input.qmd)</span> and <span class="co">[</span><span class="ot">Dictionaries</span><span class="co">](dictionaries.qmd)</span></span>
-<span id="cb20-503"><a href="#cb20-503" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Related Topics: Learn more about scope in <span class="co">[</span><span class="ot">Creating Functions</span><span class="co">](creating_functions.qmd)</span></span>
-<span id="cb20-504"><a href="#cb20-504" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI Integration: See how variables store AI responses in <span class="co">[</span><span class="ot">Python AI Integration</span><span class="co">](python_ai_integration.qmd)</span></span>
-<span id="cb20-505"><a href="#cb20-505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-506"><a href="#cb20-506" aria-hidden="true" tabindex="-1"></a>***AI Collaboration Corner: Debugging Variable Issues***</span>
-<span id="cb20-507"><a href="#cb20-507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-508"><a href="#cb20-508" aria-hidden="true" tabindex="-1"></a>When asking AI for help with variable problems, provide the context around the issue:</span>
+<span id="cb20-500"><a href="#cb20-500" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Write a small program that updates a counter variable multiple times and displays it after each update.</span>
+<span id="cb20-501"><a href="#cb20-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-502"><a href="#cb20-502" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cross-References</span></span>
+<span id="cb20-503"><a href="#cb20-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-504"><a href="#cb20-504" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Previous Chapter: <span class="co">[</span><span class="ot">Values</span><span class="co">](values.qmd)</span> — Understanding data types</span>
+<span id="cb20-505"><a href="#cb20-505" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Next Chapter: <span class="co">[</span><span class="ot">Output</span><span class="co">](output.qmd)</span> — Displaying information to users</span>
+<span id="cb20-506"><a href="#cb20-506" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chatbot Development: See how variables evolve in <span class="co">[</span><span class="ot">Input</span><span class="co">](input.qmd)</span> and <span class="co">[</span><span class="ot">Dictionaries</span><span class="co">](dictionaries.qmd)</span></span>
+<span id="cb20-507"><a href="#cb20-507" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Related Topics: Learn more about scope in <span class="co">[</span><span class="ot">Creating Functions</span><span class="co">](creating_functions.qmd)</span></span>
+<span id="cb20-508"><a href="#cb20-508" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI Integration: See how variables store AI responses in <span class="co">[</span><span class="ot">Python AI Integration</span><span class="co">](python_ai_integration.qmd)</span></span>
 <span id="cb20-509"><a href="#cb20-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-510"><a href="#cb20-510" aria-hidden="true" tabindex="-1"></a>Instead of:</span>
-<span id="cb20-511"><a href="#cb20-511" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb20-512"><a href="#cb20-512" aria-hidden="true" tabindex="-1"></a><span class="in">My code isn't working with variables</span></span>
-<span id="cb20-513"><a href="#cb20-513" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-514"><a href="#cb20-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-515"><a href="#cb20-515" aria-hidden="true" tabindex="-1"></a>Try:</span>
-<span id="cb20-516"><a href="#cb20-516" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb20-517"><a href="#cb20-517" aria-hidden="true" tabindex="-1"></a><span class="in">I'm getting this error when running my code:</span></span>
+<span id="cb20-510"><a href="#cb20-510" aria-hidden="true" tabindex="-1"></a>***AI Collaboration Corner: Debugging Variable Issues***</span>
+<span id="cb20-511"><a href="#cb20-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-512"><a href="#cb20-512" aria-hidden="true" tabindex="-1"></a>When asking AI for help with variable problems, provide the context around the issue:</span>
+<span id="cb20-513"><a href="#cb20-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-514"><a href="#cb20-514" aria-hidden="true" tabindex="-1"></a>Instead of:</span>
+<span id="cb20-515"><a href="#cb20-515" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb20-516"><a href="#cb20-516" aria-hidden="true" tabindex="-1"></a><span class="in">My code isn't working with variables</span></span>
+<span id="cb20-517"><a href="#cb20-517" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-518"><a href="#cb20-518" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-519"><a href="#cb20-519" aria-hidden="true" tabindex="-1"></a><span class="in">NameError: name 'user_response' is not defined</span></span>
-<span id="cb20-520"><a href="#cb20-520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-521"><a href="#cb20-521" aria-hidden="true" tabindex="-1"></a><span class="in">Here's the relevant code section:</span></span>
+<span id="cb20-519"><a href="#cb20-519" aria-hidden="true" tabindex="-1"></a>Try:</span>
+<span id="cb20-520"><a href="#cb20-520" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb20-521"><a href="#cb20-521" aria-hidden="true" tabindex="-1"></a><span class="in">I'm getting this error when running my code:</span></span>
 <span id="cb20-522"><a href="#cb20-522" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-523"><a href="#cb20-523" aria-hidden="true" tabindex="-1"></a><span class="in">def process_input():</span></span>
-<span id="cb20-524"><a href="#cb20-524" aria-hidden="true" tabindex="-1"></a><span class="in">    if user_input == "yes":</span></span>
-<span id="cb20-525"><a href="#cb20-525" aria-hidden="true" tabindex="-1"></a><span class="in">        result = "Affirmative"</span></span>
-<span id="cb20-526"><a href="#cb20-526" aria-hidden="true" tabindex="-1"></a><span class="in">    else:</span></span>
-<span id="cb20-527"><a href="#cb20-527" aria-hidden="true" tabindex="-1"></a><span class="in">        result = "Negative"</span></span>
-<span id="cb20-528"><a href="#cb20-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-529"><a href="#cb20-529" aria-hidden="true" tabindex="-1"></a><span class="in">    return user_response  # This line has the error</span></span>
-<span id="cb20-530"><a href="#cb20-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-531"><a href="#cb20-531" aria-hidden="true" tabindex="-1"></a><span class="in">What's causing this error and how should I fix it?</span></span>
-<span id="cb20-532"><a href="#cb20-532" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb20-533"><a href="#cb20-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-534"><a href="#cb20-534" aria-hidden="true" tabindex="-1"></a>The second prompt shows the specific error, the code context, and lets the AI identify the issue (using an undefined variable name instead of the defined 'result' variable). This leads to a much more helpful response.</span>
-<span id="cb20-535"><a href="#cb20-535" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-536"><a href="#cb20-536" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb20-523"><a href="#cb20-523" aria-hidden="true" tabindex="-1"></a><span class="in">NameError: name 'user_response' is not defined</span></span>
+<span id="cb20-524"><a href="#cb20-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-525"><a href="#cb20-525" aria-hidden="true" tabindex="-1"></a><span class="in">Here's the relevant code section:</span></span>
+<span id="cb20-526"><a href="#cb20-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-527"><a href="#cb20-527" aria-hidden="true" tabindex="-1"></a><span class="in">def process_input():</span></span>
+<span id="cb20-528"><a href="#cb20-528" aria-hidden="true" tabindex="-1"></a><span class="in">    if user_input == "yes":</span></span>
+<span id="cb20-529"><a href="#cb20-529" aria-hidden="true" tabindex="-1"></a><span class="in">        result = "Affirmative"</span></span>
+<span id="cb20-530"><a href="#cb20-530" aria-hidden="true" tabindex="-1"></a><span class="in">    else:</span></span>
+<span id="cb20-531"><a href="#cb20-531" aria-hidden="true" tabindex="-1"></a><span class="in">        result = "Negative"</span></span>
+<span id="cb20-532"><a href="#cb20-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-533"><a href="#cb20-533" aria-hidden="true" tabindex="-1"></a><span class="in">    return user_response  # This line has the error</span></span>
+<span id="cb20-534"><a href="#cb20-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-535"><a href="#cb20-535" aria-hidden="true" tabindex="-1"></a><span class="in">What's causing this error and how should I fix it?</span></span>
+<span id="cb20-536"><a href="#cb20-536" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb20-537"><a href="#cb20-537" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-538"><a href="#cb20-538" aria-hidden="true" tabindex="-1"></a>In this chapter, you've learned how variables allow you to store, name, and manipulate data in your Python programs. You've explored how to create and name variables following Python conventions, how to change their values, and how to use them to track state in your applications.</span>
+<span id="cb20-538"><a href="#cb20-538" aria-hidden="true" tabindex="-1"></a>The second prompt shows the specific error, the code context, and lets the AI identify the issue (using an undefined variable name instead of the defined 'result' variable). This leads to a much more helpful response.</span>
 <span id="cb20-539"><a href="#cb20-539" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-540"><a href="#cb20-540" aria-hidden="true" tabindex="-1"></a>For our chatbot project, you've implemented a more sophisticated design that uses variables to remember user information and track the conversation state. This memory capability is a fundamental aspect of creating interactive applications that respond intelligently to users.</span>
+<span id="cb20-540"><a href="#cb20-540" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
 <span id="cb20-541"><a href="#cb20-541" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-542"><a href="#cb20-542" aria-hidden="true" tabindex="-1"></a>Understanding variables is essential for effective programming, as they form the backbone of data management in your code. As your programs become more complex, organising and tracking data through well-named variables will become increasingly important.</span>
+<span id="cb20-542"><a href="#cb20-542" aria-hidden="true" tabindex="-1"></a>In this chapter, you've learned how variables allow you to store, name, and manipulate data in your Python programs. You've explored how to create and name variables following Python conventions, how to change their values, and how to use them to track state in your applications.</span>
 <span id="cb20-543"><a href="#cb20-543" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-544"><a href="#cb20-544" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore output techniques, learning how to display information to users in effective and formatted ways.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb20-544"><a href="#cb20-544" aria-hidden="true" tabindex="-1"></a>For our chatbot project, you've implemented a more sophisticated design that uses variables to remember user information and track the conversation state. This memory capability is a fundamental aspect of creating interactive applications that respond intelligently to users.</span>
+<span id="cb20-545"><a href="#cb20-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-546"><a href="#cb20-546" aria-hidden="true" tabindex="-1"></a>Understanding variables is essential for effective programming, as they form the backbone of data management in your code. As your programs become more complex, organising and tracking data through well-named variables will become increasingly important.</span>
+<span id="cb20-547"><a href="#cb20-547" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-548"><a href="#cb20-548" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore output techniques, learning how to display information to users in effective and formatted ways.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
