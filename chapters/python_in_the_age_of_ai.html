@@ -481,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/python_ai_integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">AI Integrator: Connecting Python Applications to AI Services</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Python AI Integration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -620,8 +620,10 @@ AI: I see! Here's a program that checks the current weather temperature:
 import requests
 
 def get_weather(city="London"):
-    api_key = "YOUR_API_KEY_HERE"  # You'll need a free API key from OpenWeatherMap
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&amp;appid={api_key}&amp;units=metric"
+    api_key = "YOUR_API_KEY_HERE"
+    base = f"http://api.openweathermap.org"
+    url = f"{base}/data/2.5/weather"
+    url += f"?q={city}&amp;appid={api_key}&amp;units=metric"
     response = requests.get(url)
     data = response.json()
     return data["main"]["temp"]
@@ -1165,7 +1167,7 @@ Welcome to your Python journey in the age of AI—let's get started!
 [&lt;span class='chapter-number'&gt;23&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;Installing Python and Essential Libraries&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9ob3dfdG9faW5zdGFsbF9weXRob25fdGVzdGluZy5odG1sPHNwYW4tY2xhc3M9J2NoYXB0ZXItbnVtYmVyJz4yMzwvc3Bhbj4tLTxzcGFuLWNsYXNzPSdjaGFwdGVyLXRpdGxlJz5JbnN0YWxsaW5nLVB5dGhvbi1hbmQtRXNzZW50aWFsLUxpYnJhcmllczwvc3Bhbj4="}
 [&lt;span class='chapter-number'&gt;24&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;Getting Help with Python&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9nZXR0aW5nX2hlbHAuaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+MjQ8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+R2V0dGluZy1IZWxwLXdpdGgtUHl0aG9uPC9zcGFuPg=="}
 [&lt;span class='chapter-number'&gt;25&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;AI Programming Assistants&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9haV9wcm9ncmFtbWluZ19hc3Npc3RhbnRzLmh0bWw8c3Bhbi1jbGFzcz0nY2hhcHRlci1udW1iZXInPjI1PC9zcGFuPi0tPHNwYW4tY2xhc3M9J2NoYXB0ZXItdGl0bGUnPkFJLVByb2dyYW1taW5nLUFzc2lzdGFudHM8L3NwYW4+"}
-[&lt;span class='chapter-number'&gt;26&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;AI Integrator: Connecting Python Applications to AI Services&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9weXRob25fYWlfaW50ZWdyYXRpb24uaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+MjY8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+QUktSW50ZWdyYXRvcjotQ29ubmVjdGluZy1QeXRob24tQXBwbGljYXRpb25zLXRvLUFJLVNlcnZpY2VzPC9zcGFuPg=="}
+[&lt;span class='chapter-number'&gt;26&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;Python AI Integration&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9weXRob25fYWlfaW50ZWdyYXRpb24uaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+MjY8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+UHl0aG9uLUFJLUludGVncmF0aW9uPC9zcGFuPg=="}
 [&lt;span class='chapter-number'&gt;27&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;AI Assistance Tips&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9haV9hc3Npc3RhbmNlX3RpcHMuaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+Mjc8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+QUktQXNzaXN0YW5jZS1UaXBzPC9zcGFuPg=="}
 [&lt;span class='chapter-number'&gt;28&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;Intentional Prompting&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9pbnRlbnRpb25hbF9wcm9tcHRpbmcuaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+Mjg8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+SW50ZW50aW9uYWwtUHJvbXB0aW5nPC9zcGFuPg=="}
 [&lt;span class='chapter-number'&gt;29&lt;/span&gt;&nbsp; &lt;span class='chapter-title'&gt;Building Your AI-Enhanced Python Chatbot&lt;/span&gt;]{.hidden .quarto-markdown-envelope-contents render-id="cXVhcnRvLWludC1zaWRlYmFyOi9jaGFwdGVycy9jaGF0Ym90X3Byb2plY3QuaHRtbDxzcGFuLWNsYXNzPSdjaGFwdGVyLW51bWJlcic+Mjk8L3NwYW4+LS08c3Bhbi1jbGFzcz0nY2hhcHRlci10aXRsZSc+QnVpbGRpbmctWW91ci1BSS1FbmhhbmNlZC1QeXRob24tQ2hhdGJvdDwvc3Bhbj4="}
@@ -1267,8 +1269,10 @@ AI: I see! Here's a program that checks the current weather temperature:
 import requests
 
 def get_weather(city="London"):
-    api_key = "YOUR_API_KEY_HERE"  # You'll need a free API key from OpenWeatherMap
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&amp;appid={api_key}&amp;units=metric"
+    api_key = "YOUR_API_KEY_HERE"
+    base = f"http://api.openweathermap.org"
+    url = f"{base}/data/2.5/weather"
+    url += f"?q={city}&amp;appid={api_key}&amp;units=metric"
     response = requests.get(url)
     data = response.json()
     return data["main"]["temp"]

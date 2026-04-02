@@ -229,8 +229,10 @@ python
 import requests
 
 def get_weather(city="London"):
-    api_key = "YOUR_API_KEY_HERE"  # You'll need a free API key from OpenWeatherMap
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    api_key = "YOUR_API_KEY_HERE"
+    base = f"http://api.openweathermap.org"
+    url = f"{base}/data/2.5/weather"
+    url += f"?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
     data = response.json()
     return data["main"]["temp"]
@@ -8524,11 +8526,6 @@ Here's a basic example of integrating with OpenAI's API:
 ### Example: Image Analysis with Azure Computer Vision
 
 Here's how you might integrate with Microsoft Azure's Computer Vision service:
-
----
-title: 'AI Integrator: Connecting Python Applications to AI Services'
-jupyter: python3
----
 
 # Python AI Integration
 
