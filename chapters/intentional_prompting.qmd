@@ -249,13 +249,11 @@ It crashes when it encounters None.
 
 I think the problem might be related to not checking data types.
 Can you help identify and fix the issue?
-```text
 
 ### optimisation Prompts
 
 When you want to improve existing code:
 
-```
 Here's my current Python implementation:
 
 ```python
@@ -288,13 +286,11 @@ Current performance: O(n²) time complexity
 Target performance: O(n) if possible
 
 What changes would you recommend to improve this code while maintaining its functionality?
-```text
 
 ### Comparison Prompts
 
 When you want to understand different approaches:
 
-```
 I'm trying to [accomplish task] in Python.
 I know I could use [approach 1] or [approach 2].
 
@@ -321,7 +317,6 @@ Could you compare these approaches in terms of:
 - Potential pitfalls
 
 And recommend which might be better for my situation where I'm building a medium-sized web API with complex nested data structures?
-```text
 
 ## 5. Advanced Prompting Techniques
 
@@ -331,7 +326,6 @@ As you become more comfortable with basic intentional prompting, you can explore
 
 Guide the AI through a step-by-step reasoning process:
 
-```
 Let's think through [problem] step by step:
 1. First, what are the inputs and expected outputs?
 2. What are the key algorithmic steps needed?
@@ -342,11 +336,12 @@ Let's think through [problem] step by step:
 
 This technique is particularly useful for complex problems where breaking down the thought process helps arrive at a better solution.
 
+```
+
 ### Comparative Prompting
 
 Ask for multiple solutions and their trade-offs:
 
-```
 Could you provide three different ways to implement [feature] in Python?
 For each approach, please explain:
 - How it works
@@ -356,22 +351,24 @@ For each approach, please explain:
 
 This helps you understand the solution space better and make informed decisions.
 
+```
+
 ### Role-Based Prompting
 
 Ask the AI to adopt a specific role or perspective:
 
-```
 As an experienced Python developer focused on [performance/security/readability/etc.],
 how would you approach [problem]? What considerations would be most important from this perspective?
 ```text
 
 This can yield insights that might not emerge from more general questions.
 
+```
+
 ### Scaffold-Building Prompts
 
 Start with the structure and gradually fill in details:
 
-```
 First, let's outline the main components we need for [task]:
 1. What classes should we create?
 2. What will their relationships be?
@@ -382,11 +379,12 @@ Now, for each component, let's detail the implementation.
 
 This approach works well for larger, more structured programming tasks.
 
+```
+
 ### Test-Driven Prompting
 
 Start with the tests to guide the implementation:
 
-```
 Before implementing [feature], let's create some tests that define what successful implementation would look like:
 
 ```python
@@ -402,6 +400,8 @@ Now, can you implement code that would pass these tests?
 ```text
 
 This technique helps clarify requirements and ensure the solution addresses the actual needs.
+
+```
 
 ## 6. Iterative Prompting: The Conversation Approach
 
@@ -423,28 +423,22 @@ Intentional prompting is rarely a one-and-done process. The most effective appro
 ### Example of an Iterative Prompting Session
 
 **Initial Prompt:**
-```
 I need a Python function to validate email addresses.
-```text
 
 **Initial Response:**
 *[AI provides a simple regex-based email validator]*
 
 **Follow-up Prompt:**
-```
 Thanks, that's a good start. Can you modify it to also check for valid domains?
 Also, how well does this regex handle international email addresses?
-```text
 
 **Second Response:**
 *[AI provides improved validation with domain checking and discusses internationalization issues]*
 
 **Second Follow-up:**
-```
 This is better, but I'm concerned about maintainability. Could you refactor this
 into a class that could be extended with additional validation rules? Also,
 could you add unit tests for key validation scenarios?
-```text
 
 **Final Response:**
 *[AI provides a well-structured, testable email validation class]*
@@ -459,7 +453,6 @@ Different programming fundamentals often benefit from specific prompting approac
 
 Effective prompts for input-related questions:
 
-```
 I need to implement user input for [specific purpose].
 
 Key requirements:
@@ -480,13 +473,11 @@ Key requirements:
 - The validation should give specific error messages for each validation failure
 
 Can you show me how to implement this with proper error handling and user feedback?
-```text
 
 ### 2. OUTPUT: Displaying Results
 
 Prompts for output-related questions:
 
-```
 I need to display [type of data] to users in a [format/style].
 
 Specific requirements:
@@ -507,13 +498,11 @@ Specific requirements:
 - It needs to handle long text that might exceed column width
 
 Can you show me how to implement this output functionality in Python?
-```text
 
 ### 3. STORE: Variable Management and Data Structures
 
 Prompts for data storage questions:
 
-```
 I need to store and manage [type of data] in my Python application.
 
 Requirements:
@@ -534,13 +523,11 @@ Requirements:
 - The implementation should handle product additions, removals, and quantity changes
 
 What would be the most appropriate data structure, and how would I implement it?
-```text
 
 ### 4. CALCULATE: Operations and Expressions
 
 Prompts for calculation-related questions:
 
-```
 I need to implement calculations for [specific purpose].
 
 The calculation should:
@@ -563,13 +550,11 @@ The calculation should:
 - Achieve sufficient performance for real-time updates
 
 What's the most effective way to implement this in Python?
-```text
 
 ### 5. DECISIONS: Flow Control and Conditionals
 
 Prompts for decision-making code:
 
-```
 I need to implement decision logic for [specific situation].
 
 The logic should:
@@ -592,13 +577,11 @@ The logic should:
 - Be easily maintainable when pricing rules change
 
 What's the most effective approach for this decision structure?
-```text
 
 ### 6. REPEAT: Loops and Iteration
 
 Prompts for loop-related questions:
 
-```
 I need to implement iteration for [specific task].
 
 Requirements:
@@ -621,7 +604,6 @@ Requirements:
 - The implementation should be easy to modify for different file formats
 
 What's the most effective way to implement this in Python?
-```text
 
 ## 8. Self-Assessment Quiz
 
@@ -672,22 +654,31 @@ Let's apply intentional prompting to enhance your AI-enabled chatbot project fro
 
 Your chatbot can benefit from intentional prompting when it interacts with AI services. Here's an improved version of the AI integration from the previous chapter:
 
+```python
 import os
 from dotenv import load_dotenv
 import openai
 
 # Load API key from environment variable
 load_dotenv()
+```
+
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+```python
 class IntentionalPrompter:
     """
+```
+
     A class that crafts intentional prompts for AI interactions
     based on conversation context and user inputs.
     """
 
+```python
     def __init__(self):
         self.prompt_templates = {
+```
+
             "greeting": "The user has greeted the chatbot with: '{user_input}'. "
                         "Respond in a friendly manner. Keep the response brief and personalized.",
 
@@ -707,6 +698,7 @@ class IntentionalPrompter:
                          "Finally, explain what was wrong and the principles behind the fix."
         }
 
+```python
     def detect_intent(self, user_input):
         """Determine the general intent of the user's message."""
         user_input = user_input.lower()
@@ -727,6 +719,8 @@ class IntentionalPrompter:
 
     def craft_prompt(self, user_input, conversation_history=None):
         """
+```
+
         Craft an intentional prompt based on the user's input and conversation history.
         """
         intent = self.detect_intent(user_input)
@@ -749,11 +743,15 @@ class IntentionalPrompter:
 
         return base_prompt
 
+```python
 class EnhancedAIChatbot:
     """
+```
+
     Chatbot enhanced with intentional prompting for better AI interactions.
     """
 
+```python
     def __init__(self, name="PyBot"):
         self.name = name
         self.conversation_history = []
@@ -768,6 +766,8 @@ class EnhancedAIChatbot:
     def add_to_history(self, user_input, bot_response):
         """Add an exchange to the conversation history."""
         self.conversation_history.append({
+```
+
             "user": user_input,
             "bot": bot_response
         })
@@ -776,8 +776,11 @@ class EnhancedAIChatbot:
         if len(self.conversation_history) > 10:
             self.conversation_history.pop(0)
 
+```python
     def get_ai_response(self, user_input):
         """
+```
+
         Get a response from the AI service using intentional prompting.
         """
         if not self.api_key:
@@ -804,6 +807,7 @@ class EnhancedAIChatbot:
         except Exception as e:
             return f"Sorry, I encountered an issue while processing your request: {str(e)}"
 
+```python
     def chat(self):
         """Run an interactive chat session."""
         print(f"{self.name}: Hello! I'm {self.name}, your Python assistant. How can I help you today?")
@@ -821,9 +825,10 @@ class EnhancedAIChatbot:
 
             # Update conversation history
             self.add_to_history(user_input, response)
-```
 
 ### Testing the Enhanced Chatbot
+```
+
 
 Let's try some sample interactions to demonstrate how intentional prompting improves the chatbot:
 

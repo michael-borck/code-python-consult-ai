@@ -1430,11 +1430,12 @@ In the next chapter, we'll explore how to manipulate strings—text data that yo
 2. **Nested Loops**: Create a function that prints a pattern of stars like this:
    ```text
    *
+```
+
    **
    ***
    ****
    *****
-   ```
 
 3. **List Comprehension**: Convert this loop to a list comprehension:
    ```python

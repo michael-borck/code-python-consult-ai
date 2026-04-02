@@ -491,6 +491,8 @@ Output:
 PyBot> Hello! How can I help you today?
 [SYSTEM] Processing your request...
 PyBot [ERROR]> I couldn't understand that command.
+```
+
 **************************************************
 
 ------------------------------------------------------------
@@ -503,7 +505,6 @@ Available commands:
 - BYE: End the conversation
 
 ------------------------------------------------------------
-```
 
 ### Simulating a Complete Conversation
 
