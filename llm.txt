@@ -9363,7 +9363,7 @@ This chapter explores how to move beyond basic questions to create a more effect
 
 AI Tip: Keep a "prompt journal" of your most effective prompts when working on Python projects. This personal library of proven prompts can save you time and help you develop your own prompting style.
 
-## 2. What Is Intentional Prompting?
+## What Is Intentional Prompting?
 
 Intentional prompting means deliberately crafting your requests to AI assistants to get the most useful responses. It's a thoughtful approach that considers:
 
@@ -9407,7 +9407,7 @@ Intentional prompting acknowledges that AI assistants respond differently based 
 - Anchoring: Using examples to illustrate the desired output format
 - Chunking: Breaking complex requests into manageable parts
 
-## 3. Craft Your Prompt: A Step-by-Step Approach
+## Craft Your Prompt: A Step-by-Step Approach
 
 Developing effective prompts is a skill that improves with practice. Here's a framework for creating intentional prompts for Python programming tasks:
 
@@ -9453,7 +9453,7 @@ Specify how you want the response structured:
 
 ### Prompt Template for Python Tasks
 
-## 4. Prompting Patterns for Different Python Tasks
+## Prompting Patterns for Different Python Tasks
 
 Different programming tasks benefit from different prompting approaches. Here are specialized patterns for common Python programming activities:
 
@@ -9547,7 +9547,7 @@ Could you compare these approaches in terms of:
 
 And recommend which might be better for my situation where I'm building a medium-sized web API with complex nested data structures?
 
-## 5. Advanced Prompting Techniques
+## Advanced Prompting Techniques
 
 As you become more comfortable with basic intentional prompting, you can explore more sophisticated techniques to get even better results.
 
@@ -9598,7 +9598,7 @@ Before implementing [feature], let's create some tests that define what successf
 
 Now, can you implement code that would pass these tests?
 
-## 6. Iterative Prompting: The Conversation Approach
+## Iterative Prompting: The Conversation Approach
 
 Intentional prompting is rarely a one-and-done process. The most effective approach is iterative, treating the interaction as a conversation rather than a single question and answer.
 
@@ -9640,7 +9640,7 @@ Final Response:
 
 This iterative approach typically produces much better results than trying to cram all requirements into a single prompt.
 
-## 7. Prompting for the Six Core Programming Foundations
+## Prompting for the Six Core Programming Foundations
 
 Different programming fundamentals often benefit from specific prompting approaches. Here are tailored prompting strategies for each of the six core programming foundations:
 
@@ -9782,7 +9782,7 @@ Requirements:
 
 What's the most effective way to implement this in Python?
 
-## 8. Self-Assessment Quiz
+## Self-Assessment Quiz
 
 Test your understanding of intentional prompting:
 
@@ -9823,7 +9823,7 @@ Answers:
 4. c) Comparison prompts
 5. c) Start with a clear prompt and iteratively refine based on responses
 
-## 9. Project Corner: Enhancing Your Chatbot with Intentional Prompting
+## Project Corner: Enhancing Your Chatbot with Intentional Prompting
 
 Let's apply intentional prompting to enhance your AI-enabled chatbot project from the previous chapters.
 
@@ -9831,89 +9831,7 @@ Let's apply intentional prompting to enhance your AI-enabled chatbot project fro
 
 Your chatbot can benefit from intentional prompting when it interacts with AI services. Here's an improved version of the AI integration from the previous chapter:
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-    A class that crafts intentional prompts for AI interactions
-    based on conversation context and user inputs.
-    """
-
-            "greeting": "The user has greeted the chatbot with: '{user_input}'. "
-                        "Respond in a friendly manner. Keep the response brief and personalized.",
-
-            "question": "The user has asked: '{user_input}'. "
-                        "Provide a helpful, accurate, and concise response. "
-                        "If the question is about Python programming, include a small code example if relevant.",
-
-            "clarification": "The user's message: '{user_input}' is unclear or ambiguous. "
-                             "Ask for clarification in a friendly way. Suggest possible interpretations.",
-
-            "technical": "The user is asking about a technical Python concept: '{user_input}'. "
-                         "Explain it clearly with a simple example. "
-                         "Define any technical terms. Keep the explanation beginner-friendly.",
-
-            "code_help": "The user needs help with this code: '{user_input}'. "
-                         "First identify any issues. Then provide a corrected version. "
-                         "Finally, explain what was wrong and the principles behind the fix."
-        }
-
-        Craft an intentional prompt based on the user's input and conversation history.
-        """
-        intent = self.detect_intent(user_input)
-        base_prompt = self.prompt_templates[intent].format(user_input=user_input)
-
-        # Enhance prompt with conversation context if available
-        if conversation_history and len(conversation_history) > 0:
-            context = "\nRecent conversation context:\n"
-            # Include up to 3 most recent exchanges
-            for i, exchange in enumerate(conversation_history[-3:]):
-                context += f"User: {exchange['user']}\n"
-                context += f"Bot: {exchange['bot']}\n"
-            base_prompt = context + "\n" + base_prompt
-
-        # Add specific instructions based on intent
-        if intent == "technical":
-            base_prompt += "\nInclude at least one practical example. Mention common pitfalls."
-        elif intent == "code_help":
-            base_prompt += "\nMake sure to explain why the solution works, not just what the solution is."
-
-        return base_prompt
-
-    Chatbot enhanced with intentional prompting for better AI interactions.
-    """
-
-            "user": user_input,
-            "bot": bot_response
-        })
-
-        # Keep history at a reasonable size
-        if len(self.conversation_history) > 10:
-            self.conversation_history.pop(0)
-
-        Get a response from the AI service using intentional prompting.
-        """
-        if not self.api_key:
-            return "AI services are not configured. Please set up your API key."
-
-        try:
-            # Craft an intentional prompt
-            prompt = self.prompter.craft_prompt(user_input, self.conversation_history)
-
-            # Get response from OpenAI
-            response = self.openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": f"You are {self.name}, a friendly and helpful assistant for Python programming."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=150,
-                temperature=0.7
-            )
-
-            # Extract and return the response content
-            return response.choices[0].message["content"].strip()
-
-        except Exception as e:
-            return f"Sorry, I encountered an issue while processing your request: {str(e)}"
+### Testing the Enhanced Chatbot
 
 Let's try some sample interactions to demonstrate how intentional prompting improves the chatbot:
 
@@ -9928,7 +9846,7 @@ The intentional prompting approach creates more relevant and helpful AI response
 
 This demonstrates how intentional prompting can significantly improve AI interactions in your own applications.
 
-## 10. Prompting Ethics and Best Practices
+## Prompting Ethics and Best Practices
 
 As you become more skilled with intentional prompting, it's important to consider some ethical guidelines and best practices:
 
