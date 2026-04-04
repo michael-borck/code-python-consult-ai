@@ -6999,7 +6999,7 @@ AI programming assistants are powerful tools that work best when you understand 
 SOURCE: chapters/python_ai_integration.qmd
 ============================================================
 
-# Python AI Integration
+# Connecting Python to AI Services
 
 ## Chapter Outline
 - Understanding the AI integration landscape for Python
@@ -7110,33 +7110,6 @@ Here's a basic example of integrating with OpenAI's API:
 
 Here's how you might integrate with Microsoft Azure's Computer Vision service:
 
----
-title: 'AI Integrator: Connecting Python Applications to AI Services'
-jupyter: python3
----
-
-# Python AI Integration
-
-## Chapter Outline
-- Understanding the AI integration landscape for Python
-- Working with AI APIs and services
-- Using popular Python libraries for AI integration
-- Building text and image processing capabilities
-- Implementing conversational AI in Python applications
-- Handling API authentication and usage limits
-- Testing and troubleshooting AI integrations
-- Enhancing your chatbot with external AI capabilities
-
-## Learning Objectives
-
-By the end of this chapter, you will be able to:
-- Understand the ecosystem of AI services available for Python integration
-- Connect to AI APIs using Python's requests library
-- Implement basic text analysis using natural language processing (NLP) services
-- Use Python to access image recognition and generation capabilities
-- Add conversational AI features to Python applications
-- Handle authentication and API key management securely
-- Test and troubleshoot common AI integration issues
 - Enhance your chatbot with external AI capabilities
 
 ## 1. Introduction: Connecting Python to AI Capabilities
