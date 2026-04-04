@@ -14,8 +14,7 @@ book:
     - index.qmd
     - copyright.qmd
     - chapters/python_in_the_age_of_ai.qmd
-    - chapters/hello_world.qmd
-    - chapters/basic_python_syntax.qmd
+    - chapters/getting_started.qmd
     - chapters/values.qmd
     - chapters/variables.qmd
     - chapters/output.qmd
@@ -34,16 +33,12 @@ book:
     - chapters/testing.qmd
     - chapters/modules_and_packages.qmd
     - chapters/orientating_your_objects.qmd
-    - chapters/how_to_run_python_code.qmd
-    - chapters/how_to_install_python_testing.qmd
-    - chapters/getting_help.qmd
-    - chapters/ai_programming_assistants.qmd
+    - chapters/working_with_ai_assistants.qmd
     - chapters/python_ai_integration.qmd
-    - chapters/ai_assistance_tips.qmd
-    - chapters/intentional_prompting.qmd
-    - chapters/chatbot_project.qmd
     - acknowledgments.qmd
     - about-author.qmd
+  appendices:
+    - appendices/setting_up_python.qmd
   repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
   other-links:

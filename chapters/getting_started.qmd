@@ -1,0 +1,280 @@
+# Getting Started with Python
+
+## Learning Objectives
+
+By the end of this chapter, you will be able to:
+
+- Write and run your first Python program
+- Navigate a Jupyter Notebook
+- Use comments to document your code
+- Apply proper indentation and whitespace
+- Follow Python naming conventions
+- Understand parentheses, brackets, and braces
+
+## 1. Your First Python Program
+
+The "Hello, World!" program is a tradition dating back to 1978. It is the moment you move from theory to practice:
+
+```python
+print('Hello, world!')
+```
+
+This simple line contains several important concepts:
+
+- `print()` is a **function** — a command that performs a specific action
+- The parentheses `()` contain the input to the function
+- `'Hello, world!'` is a **string** — text enclosed in quotation marks
+- The entire line is a **statement** — a complete instruction for the computer
+
+Python can also act as a calculator:
+
+```python
+2 + 2
+```
+
+In a Jupyter Notebook, the last value in a cell is automatically displayed. In regular Python scripts, you need `print()` to see results.
+
+## 2. Working in Jupyter Notebooks
+
+Jupyter Notebooks combine code, output, and documentation in one place. They have three key elements:
+
+- **Markdown Cells** — for writing explanations
+- **Code Cells** — for writing and running Python
+- **Output Area** — displays results below each cell
+
+The essential shortcuts:
+
+| Shortcut | Action |
+|----------|--------|
+| `Shift+Enter` | Run cell and move to next |
+| `Enter` | Edit current cell |
+| `Esc` | Exit edit mode |
+| `A` / `B` | Insert cell above / below |
+| `M` / `Y` | Convert to Markdown / Code |
+
+::: {.callout-tip}
+You can also use Python through the interactive interpreter, IPython, or standalone scripts. See the appendix on Setting Up Python for details on different ways to run Python code.
+:::
+
+## 3. Python's Syntax Philosophy
+
+Python was designed for readability. Unlike languages that use curly braces to structure code, Python uses whitespace and indentation. As Guido van Rossum emphasised: "Code is read much more often than it is written."
+
+::: {.callout-tip title="AI Tip"}
+Clear, well-structured code produces better AI suggestions and makes it easier to review AI-generated solutions.
+:::
+
+## 4. Comments: Documenting Your Code
+
+Comments explain your code in plain language. They are ignored by Python but invaluable for human readers:
+
+```python
+# This is a single-line comment
+
+x = 5  # Inline comment explaining a variable
+
+"""
+This is a docstring — a multi-line string used
+for documentation. Especially useful for
+explaining functions and modules.
+"""
+```
+
+Good comments explain *why* code exists, not just what it does:
+
+```python
+# POOR: Set x to 5
+x = 5
+
+# BETTER: Initialise countdown timer (seconds)
+x = 5
+```
+
+## 5. Statements and Line Continuation
+
+In Python, statements typically end at the end of a line:
+
+```python
+name = "Alice"
+age = 30
+greeting = "Hello"
+```
+
+For longer statements, use implicit continuation within parentheses, brackets, or braces:
+
+```python
+# Preferred: implicit continuation
+coordinates = (40.7128,   # Latitude
+               -74.0060)  # Longitude
+
+shopping_list = [
+    "apples",
+    "bananas",
+    "oranges",
+]
+
+user = {
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com"
+}
+```
+
+## 6. Whitespace and Indentation
+
+Python uses indentation to define code blocks:
+
+```python
+if temperature > 30:
+    print("It's hot outside!")
+    if humidity > 80:
+        print("And it's humid!")
+    print("Consider staying indoors.")
+print("End of weather report.")
+```
+
+The rules:
+
+- Use **4 spaces** per indentation level (PEP 8)
+- Be consistent — do not mix tabs and spaces
+- Every line in the same block must have the same indentation
+
+## 7. Parentheses, Brackets, and Braces
+
+Python uses three types of containers:
+
+```python
+# Parentheses () — grouping, function calls, tuples
+result = 10 * (2 + 3)
+print("Hello!")
+coordinates = (10.5, 20.6)
+
+# Square brackets [] — lists, indexing
+shopping_list = ["milk", "eggs", "bread"]
+first_item = shopping_list[0]
+
+# Curly braces {} — dictionaries, sets
+user = {"name": "Alice", "age": 30}
+unique_numbers = {1, 2, 3, 4, 5}
+```
+
+## 8. Naming Conventions
+
+Python has established naming conventions:
+
+```python
+# Variables and functions: snake_case
+user_name = "Alice"
+def calculate_total(items):
+    pass
+
+# Classes: PascalCase
+class UserAccount:
+    pass
+
+# Constants: UPPER_CASE
+MAX_LOGIN_ATTEMPTS = 3
+PI = 3.14159
+```
+
+::: {.callout-tip}
+Following naming conventions makes your code more readable and professional. It helps other programmers — and AI assistants — understand your code quickly.
+:::
+
+## 9. Common Pitfalls
+
+Even simple programs can trip you up:
+
+**Mismatched quotes:**
+```python
+# Wrong
+message = "Hello, world!'
+
+# Right
+message = "Hello, world!"
+```
+
+**Case sensitivity:**
+```python
+# Wrong — NameError
+Print("Hello!")
+
+# Right
+print("Hello!")
+```
+
+**Missing colons:**
+```python
+# Wrong — SyntaxError
+if x > 10
+    print("Greater")
+
+# Right
+if x > 10:
+    print("Greater")
+```
+
+**Inconsistent indentation:**
+```python
+# Wrong — IndentationError
+if x > 10:
+    print("First line")
+  print("Second line")
+
+# Right
+if x > 10:
+    print("First line")
+    print("Second line")
+```
+
+## 10. Built-in Help
+
+Python has built-in tools for exploring the language:
+
+```python
+help(print)       # Detailed help on any function
+dir(str)          # List all methods on a type
+```
+
+These are useful when you want to quickly check what a function does or what methods are available, without leaving your coding environment.
+
+## 11. Project Corner: Your First Chatbot
+
+Let's create the foundation of the chatbot you will build throughout this book:
+
+```python
+"""
+PyBot: A simple Python chatbot
+Core functionality for our chatbot project.
+"""
+
+# Configuration constants
+BOT_NAME = "PyBot"
+VERSION = "0.2"
+
+def initialize_bot():
+    """Set up the chatbot with initial configuration."""
+    print(f"{BOT_NAME} v{VERSION} initialising...")
+    print("=" * 50)
+    print(f"Welcome to {BOT_NAME}!")
+    print("=" * 50)
+
+def display_greeting():
+    """Display the bot's greeting message."""
+    greeting = (
+        f"Hello! I'm {BOT_NAME}, your friendly "
+        f"Python assistant.\n"
+        f"I'll learn new tricks as you progress "
+        f"through this book!"
+    )
+    print(f"{BOT_NAME}> {greeting}")
+
+initialize_bot()
+display_greeting()
+```
+
+This code demonstrates comments, docstrings, constants with proper naming, functions, indentation, and string formatting. Each chapter will build on this foundation in the Project Corner sections.
+
+## Summary
+
+You have written your first Python program, learned to navigate Jupyter Notebooks, and explored the syntax rules that make Python code work: comments, indentation, line continuation, naming conventions, and container types. These fundamentals form the foundation for everything that follows.

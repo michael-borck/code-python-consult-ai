@@ -1,0 +1,200 @@
+# Setting Up Python
+
+This appendix covers how to install Python, choose an execution environment, and set up your development tools.
+
+## Interpreted vs. Compiled Languages
+
+Python is an *interpreted* language — your code is executed line by line rather than being compiled into machine code first. This makes Python excellent for learning and prototyping because you get immediate feedback.
+
+## Ways to Run Python Code
+
+### The Python Interpreter
+
+The simplest way to run Python is the interactive interpreter. Open a terminal and type:
+
+```bash
+python3
+```
+
+You will see a prompt (`>>>`) where you can type Python statements and see results immediately:
+
+```text
+>>> 2 + 2
+4
+>>> print("Hello!")
+Hello!
+>>> exit()
+```
+
+### IPython
+
+IPython is an enhanced interactive shell with features like tab completion, syntax highlighting, and history search:
+
+```bash
+pip install ipython
+ipython
+```
+
+Useful IPython features:
+
+- **Tab completion** — type the start of a name and press Tab
+- **`?`** — append to any object for documentation (`print?`)
+- **`%timeit`** — measure execution time of a statement
+
+### Python Scripts
+
+For larger programs, save your code in `.py` files and run them:
+
+```bash
+python3 my_script.py
+```
+
+On macOS/Linux, you can make scripts directly executable:
+
+```python
+#!/usr/bin/env python3
+"""My first script."""
+print("Hello from a script!")
+```
+
+```bash
+chmod +x my_script.py
+./my_script.py
+```
+
+### Jupyter Notebooks
+
+Jupyter Notebooks combine code, output, and documentation in one file. They are ideal for learning, data analysis, and experimentation:
+
+```bash
+pip install jupyter
+jupyter notebook
+```
+
+This opens a browser-based interface where you can create and run notebooks.
+
+### Choosing the Right Environment
+
+| Environment | Best For |
+|-------------|----------|
+| Interpreter | Quick calculations, testing ideas |
+| IPython | Interactive exploration, debugging |
+| Scripts | Reusable programs, automation |
+| Jupyter | Learning, data analysis, sharing |
+
+## Installing Python
+
+### Recommended: Miniconda
+
+Miniconda provides Python plus the `conda` package manager in a lightweight install:
+
+1. Download from [docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+2. Run the installer and follow the prompts
+3. Verify the installation:
+
+```bash
+python --version
+conda --version
+```
+
+### Alternative: Official Python
+
+Download from [python.org](https://www.python.org/downloads/) if you prefer a minimal install without conda.
+
+### Managing Packages with pip
+
+pip is Python's standard package installer:
+
+```bash
+# Install a package
+pip install requests
+
+# Install a specific version
+pip install pandas==2.0.0
+
+# Install from a requirements file
+pip install -r requirements.txt
+
+# List installed packages
+pip list
+```
+
+### Virtual Environments
+
+Virtual environments isolate each project's dependencies:
+
+```bash
+# Create a virtual environment
+python3 -m venv .venv
+
+# Activate it
+# macOS/Linux:
+source .venv/bin/activate
+# Windows:
+.venv\Scripts\activate
+
+# Install packages (isolated to this environment)
+pip install pytest
+
+# Deactivate when done
+deactivate
+```
+
+::: {.callout-tip}
+Always use a virtual environment for each project. Add `.venv/` to your `.gitignore` file.
+:::
+
+## Useful Libraries by Domain
+
+| Domain | Libraries |
+|--------|-----------|
+| Data Science | pandas, numpy, matplotlib |
+| Web Development | Flask, Django, FastAPI |
+| Automation | requests, beautifulsoup4, selenium |
+| Testing | pytest, coverage |
+
+Install what you need as you go — do not install everything at once.
+
+## Setting Up an IDE
+
+**VS Code** is recommended for beginners:
+
+1. Install from [code.visualstudio.com](https://code.visualstudio.com/)
+2. Install the Python extension
+3. Open your project folder
+4. Select your Python interpreter (bottom status bar)
+
+**PyCharm** is a full-featured alternative with built-in Python support.
+
+**Jupyter Lab** extends Jupyter Notebooks with a more complete IDE-like interface:
+
+```bash
+pip install jupyterlab
+jupyter lab
+```
+
+## Troubleshooting
+
+**"command not found" errors:**
+
+```bash
+# macOS/Linux: add to your PATH
+echo 'export PATH="$HOME/miniconda3/bin:$PATH"' \
+    >> ~/.bashrc
+source ~/.bashrc
+
+# Windows (PowerShell as administrator):
+$conda = "C:\Users\YourUsername\miniconda3"
+$Env:Path = "$Env:Path;$conda;$conda\Scripts"
+```
+
+**Package conflicts:** Use virtual environments to isolate projects.
+
+**Permission errors:**
+
+```bash
+# macOS/Linux
+sudo chown -R $USER:$USER ~/miniconda3
+```
+
+**Mixed Python versions:** Use `python3` explicitly rather than `python` to ensure you are using the correct version.

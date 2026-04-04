@@ -568,8 +568,8 @@ Test your understanding of the concepts introduced in this chapter:
 
 ## Cross-References
 
-- Next Chapter: [Syntax Safari](basic_python_syntax.qmd)
-- Related Topics: [AI Programming Assistants](ai_programming_assistants.qmd), [Intentional Prompting](intentional_prompting.qmd)
+- Next Chapter: [Getting Started with Python](getting_started.qmd)
+- Related Topics: [Working with AI Assistants](working_with_ai_assistants.qmd)
 
 ***AI Tip: When starting your Python journey, think of AI assistants as collaborative learning partners, not shortcut providers. Ask them not just for code solutions, but also for explanations of why certain approaches work and how different concepts connect.***
 

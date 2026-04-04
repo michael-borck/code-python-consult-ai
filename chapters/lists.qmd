@@ -1652,7 +1652,7 @@ Consider these alternatives when:
 - **Next Chapter**: [Going Loopy](going_loopy.qmd) — Repeat operations with different kinds of loops
 - **Related Topic**: [Strings](strings.qmd) — Text manipulation techniques (strings are similar to lists but immutable)
 - **Related Topic**: [Dictionaries](dictionaries.qmd) — Key-value mapping for more complex data organisation
-- **Project Application**: [Chatbot Project](chatbot_project.qmd) — See how lists evolve through the chatbot development
+- **AI Integration**: [Working with AI Assistants](working_with_ai_assistants.qmd) — Use AI to help with list operations
 - **Advanced Topic**: [Errors and Exceptions](errors_and_exceptions.qmd) — Handle errors when working with lists
 
 ## 18. Summary: Putting Lists to Work

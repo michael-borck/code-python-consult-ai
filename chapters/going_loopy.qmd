@@ -1405,7 +1405,7 @@ average = sum(numbers) / len(numbers)
   - [Making Decisions](making_decisions.qmd) - Conditions are used in loop control
   - [Functions](creating_functions.qmd) - Combine loops with functions for powerful code
   - [Dictionaries](dictionaries.qmd) - Another collection type you can iterate through
-  - [Project Integration](chatbot_project.qmd) - See how loops are used in the chatbot project
+  - [Working with AI](working_with_ai_assistants.qmd) - Use AI to help write and debug loops
 
 ## 14. Key Takeaways: Why Loops Matter
 

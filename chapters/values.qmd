@@ -440,7 +440,7 @@ Practice working with different data types:
 
 ## Cross-References
 
-- Previous Chapter: [Basic Python Syntax](basic_python_syntax.qmd) — The grammar of Python
+- Previous Chapter: [Getting Started](getting_started.qmd) — Your first Python program and syntax basics
 - Next Chapter: [Variables](variables.qmd) — Storing and naming values
 - Chatbot Development: See how we use data types in [Output](output.qmd) and [Dictionaries](dictionaries.qmd)
 - Related Topics: In-depth coverage in [Strings](strings.qmd) and [Lists](lists.qmd)

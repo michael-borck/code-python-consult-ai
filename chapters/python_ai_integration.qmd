@@ -1099,8 +1099,8 @@ class CostTrackingAI:
 
 ## Cross-References
 
-- Previous Chapter: [AI Programming Assistants](AI_Programming_Assistants.qmd)
-- Next Chapter: [AI Assistance Tips](AI_Assistance_Tips.qmd)
+- Previous Chapter: [Working with AI Assistants](working_with_ai_assistants.qmd)
+- Appendix: [Setting Up Python](../appendices/setting_up_python.qmd)
 - Related Topics: Object-Oriented Programming (Chapter 20), Modules and Packages (Chapter 19)
 
 ***AI Tip: When integrating AI APIs with Python, follow the "graceful degradation" pattern - design your system to work in a reduced capacity when AI services are unavailable or when rate limits are reached. This ensures your application remains functional even when AI services are temporarily inaccessible.***
