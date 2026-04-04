@@ -1799,11 +1799,8 @@ Please include clear comments explaining the logic.</code></pre>
 <ol type="1">
 <li><p><strong>Loop Basics</strong>: Write a function that prints all even numbers between 1 and 20.</p></li>
 <li><p><strong>Nested Loops</strong>: Create a function that prints a pattern of stars like this:</p>
-<pre class="text"><code>*
-**
-***
-****
-*****</code></pre></li>
+<pre class="text"><code>*</code></pre>
+<p><strong> </strong><em> </em><strong><em> </em></strong>**</p></li>
 <li><p><strong>List Comprehension</strong>: Convert this loop to a list comprehension:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>cubes <span class="op">=</span> []</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
@@ -3752,55 +3749,56 @@ Please include clear comments explaining the logic.</code></pre>
 <span id="cb58-1430"><a href="#cb58-1430" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Nested Loops**: Create a function that prints a pattern of stars like this:</span>
 <span id="cb58-1431"><a href="#cb58-1431" aria-hidden="true" tabindex="-1"></a>   <span class="in">```text</span></span>
 <span id="cb58-1432"><a href="#cb58-1432" aria-hidden="true" tabindex="-1"></a><span class="in">   *</span></span>
-<span id="cb58-1433"><a href="#cb58-1433" aria-hidden="true" tabindex="-1"></a><span class="in">   **</span></span>
-<span id="cb58-1434"><a href="#cb58-1434" aria-hidden="true" tabindex="-1"></a><span class="in">   ***</span></span>
-<span id="cb58-1435"><a href="#cb58-1435" aria-hidden="true" tabindex="-1"></a><span class="in">   ****</span></span>
-<span id="cb58-1436"><a href="#cb58-1436" aria-hidden="true" tabindex="-1"></a><span class="in">   *****</span></span>
-<span id="cb58-1437"><a href="#cb58-1437" aria-hidden="true" tabindex="-1"></a><span class="in">   ```</span></span>
-<span id="cb58-1438"><a href="#cb58-1438" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1439"><a href="#cb58-1439" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**List Comprehension**: Convert this loop to a list comprehension:</span>
-<span id="cb58-1440"><a href="#cb58-1440" aria-hidden="true" tabindex="-1"></a>   <span class="in">```python</span></span>
-<span id="cb58-1441"><a href="#cb58-1441" aria-hidden="true" tabindex="-1"></a>   cubes <span class="op">=</span> []</span>
-<span id="cb58-1442"><a href="#cb58-1442" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
-<span id="cb58-1443"><a href="#cb58-1443" aria-hidden="true" tabindex="-1"></a>       <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb58-1444"><a href="#cb58-1444" aria-hidden="true" tabindex="-1"></a>           cubes.append(i<span class="op">**</span><span class="dv">3</span>)</span>
-<span id="cb58-1445"><a href="#cb58-1445" aria-hidden="true" tabindex="-1"></a>   <span class="in">```</span></span>
-<span id="cb58-1446"><a href="#cb58-1446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1447"><a href="#cb58-1447" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Break and Continue**: Write a function that finds the first prime number greater than a given number.</span>
-<span id="cb58-1448"><a href="#cb58-1448" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1449"><a href="#cb58-1449" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Accumulation**: Write a function that calculates the factorial of a number using a loop.</span>
-<span id="cb58-1450"><a href="#cb58-1450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1451"><a href="#cb58-1451" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Processing Strings**: Write a function that counts the number of vowels in a string.</span>
-<span id="cb58-1452"><a href="#cb58-1452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1453"><a href="#cb58-1453" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Interactive Program**: Create a simple number guessing game where the user has to guess a random number between 1 and 100.</span>
-<span id="cb58-1454"><a href="#cb58-1454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1455"><a href="#cb58-1455" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Loops with Dictionaries**: Write a function that counts the frequency of each word in a sentence.</span>
-<span id="cb58-1456"><a href="#cb58-1456" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1457"><a href="#cb58-1457" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>**Error Handling in Loops**: Create a function that calculates the average of a list of numbers, ignoring any non-numeric values.</span>
-<span id="cb58-1458"><a href="#cb58-1458" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1459"><a href="#cb58-1459" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>**Chatbot Enhancement**: Add a feature to your chatbot that plays a "20 Questions" game with the user.</span>
-<span id="cb58-1460"><a href="#cb58-1460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1461"><a href="#cb58-1461" aria-hidden="true" tabindex="-1"></a><span class="fu">## 16. Summary: The Power of Looping in Python</span></span>
-<span id="cb58-1462"><a href="#cb58-1462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1463"><a href="#cb58-1463" aria-hidden="true" tabindex="-1"></a>In this chapter, we've explored Python's loop structures, which allow you to perform repeated operations efficiently and elegantly. Loops are a fundamental concept in programming, enabling you to process collections of data, respond to user input, and automate repetitive tasks.</span>
-<span id="cb58-1464"><a href="#cb58-1464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1433"><a href="#cb58-1433" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb58-1434"><a href="#cb58-1434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1435"><a href="#cb58-1435" aria-hidden="true" tabindex="-1"></a>   **</span>
+<span id="cb58-1436"><a href="#cb58-1436" aria-hidden="true" tabindex="-1"></a>   ***</span>
+<span id="cb58-1437"><a href="#cb58-1437" aria-hidden="true" tabindex="-1"></a>   ****</span>
+<span id="cb58-1438"><a href="#cb58-1438" aria-hidden="true" tabindex="-1"></a>   *****</span>
+<span id="cb58-1439"><a href="#cb58-1439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1440"><a href="#cb58-1440" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**List Comprehension**: Convert this loop to a list comprehension:</span>
+<span id="cb58-1441"><a href="#cb58-1441" aria-hidden="true" tabindex="-1"></a>   <span class="in">```python</span></span>
+<span id="cb58-1442"><a href="#cb58-1442" aria-hidden="true" tabindex="-1"></a>   cubes <span class="op">=</span> []</span>
+<span id="cb58-1443"><a href="#cb58-1443" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb58-1444"><a href="#cb58-1444" aria-hidden="true" tabindex="-1"></a>       <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb58-1445"><a href="#cb58-1445" aria-hidden="true" tabindex="-1"></a>           cubes.append(i<span class="op">**</span><span class="dv">3</span>)</span>
+<span id="cb58-1446"><a href="#cb58-1446" aria-hidden="true" tabindex="-1"></a>   <span class="in">```</span></span>
+<span id="cb58-1447"><a href="#cb58-1447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1448"><a href="#cb58-1448" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Break and Continue**: Write a function that finds the first prime number greater than a given number.</span>
+<span id="cb58-1449"><a href="#cb58-1449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1450"><a href="#cb58-1450" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Accumulation**: Write a function that calculates the factorial of a number using a loop.</span>
+<span id="cb58-1451"><a href="#cb58-1451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1452"><a href="#cb58-1452" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Processing Strings**: Write a function that counts the number of vowels in a string.</span>
+<span id="cb58-1453"><a href="#cb58-1453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1454"><a href="#cb58-1454" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Interactive Program**: Create a simple number guessing game where the user has to guess a random number between 1 and 100.</span>
+<span id="cb58-1455"><a href="#cb58-1455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1456"><a href="#cb58-1456" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Loops with Dictionaries**: Write a function that counts the frequency of each word in a sentence.</span>
+<span id="cb58-1457"><a href="#cb58-1457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1458"><a href="#cb58-1458" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>**Error Handling in Loops**: Create a function that calculates the average of a list of numbers, ignoring any non-numeric values.</span>
+<span id="cb58-1459"><a href="#cb58-1459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1460"><a href="#cb58-1460" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>**Chatbot Enhancement**: Add a feature to your chatbot that plays a "20 Questions" game with the user.</span>
+<span id="cb58-1461"><a href="#cb58-1461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1462"><a href="#cb58-1462" aria-hidden="true" tabindex="-1"></a><span class="fu">## 16. Summary: The Power of Looping in Python</span></span>
+<span id="cb58-1463"><a href="#cb58-1463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1464"><a href="#cb58-1464" aria-hidden="true" tabindex="-1"></a>In this chapter, we've explored Python's loop structures, which allow you to perform repeated operations efficiently and elegantly. Loops are a fundamental concept in programming, enabling you to process collections of data, respond to user input, and automate repetitive tasks.</span>
 <span id="cb58-1465"><a href="#cb58-1465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1466"><a href="#cb58-1466" aria-hidden="true" tabindex="-1"></a>Key concepts we've covered include:</span>
-<span id="cb58-1467"><a href="#cb58-1467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1468"><a href="#cb58-1468" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**For loops** for iterating through sequences with a known number of elements</span>
-<span id="cb58-1469"><a href="#cb58-1469" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**While loops** for repetition based on a condition</span>
-<span id="cb58-1470"><a href="#cb58-1470" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Loop control** using <span class="in">`break`</span> and <span class="in">`continue`</span> statements</span>
-<span id="cb58-1471"><a href="#cb58-1471" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Nested loops** for handling multi-dimensional data or complex patterns</span>
-<span id="cb58-1472"><a href="#cb58-1472" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**List comprehensions** for concise, elegant loop operations</span>
-<span id="cb58-1473"><a href="#cb58-1473" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Common loop patterns** like accumulation, filtering, and transformation</span>
-<span id="cb58-1474"><a href="#cb58-1474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Performance considerations** for efficient loop design</span>
-<span id="cb58-1475"><a href="#cb58-1475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Practical applications** of loops in our chatbot project</span>
-<span id="cb58-1476"><a href="#cb58-1476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1477"><a href="#cb58-1477" aria-hidden="true" tabindex="-1"></a>Your chatbot project has been significantly enhanced with loops. The main conversation loop keeps your bot running and responsive to user input. Other loops help manage conversation history, process user commands, and implement interactive features like games and quizzes.</span>
-<span id="cb58-1478"><a href="#cb58-1478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1479"><a href="#cb58-1479" aria-hidden="true" tabindex="-1"></a>As you progress in your Python journey, you'll find that loops appear in virtually every program you write. They're the mechanism that allows your code to scale from handling a few items to processing millions. They transform static programs into dynamic, responsive applications that can adapt to varying inputs and conditions.</span>
-<span id="cb58-1480"><a href="#cb58-1480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-1481"><a href="#cb58-1481" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore string manipulation, building on your loop knowledge to process and transform text data—a critical skill for developing conversational interfaces like our chatbot.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb58-1466"><a href="#cb58-1466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1467"><a href="#cb58-1467" aria-hidden="true" tabindex="-1"></a>Key concepts we've covered include:</span>
+<span id="cb58-1468"><a href="#cb58-1468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1469"><a href="#cb58-1469" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**For loops** for iterating through sequences with a known number of elements</span>
+<span id="cb58-1470"><a href="#cb58-1470" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**While loops** for repetition based on a condition</span>
+<span id="cb58-1471"><a href="#cb58-1471" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Loop control** using <span class="in">`break`</span> and <span class="in">`continue`</span> statements</span>
+<span id="cb58-1472"><a href="#cb58-1472" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Nested loops** for handling multi-dimensional data or complex patterns</span>
+<span id="cb58-1473"><a href="#cb58-1473" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**List comprehensions** for concise, elegant loop operations</span>
+<span id="cb58-1474"><a href="#cb58-1474" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Common loop patterns** like accumulation, filtering, and transformation</span>
+<span id="cb58-1475"><a href="#cb58-1475" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Performance considerations** for efficient loop design</span>
+<span id="cb58-1476"><a href="#cb58-1476" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Practical applications** of loops in our chatbot project</span>
+<span id="cb58-1477"><a href="#cb58-1477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1478"><a href="#cb58-1478" aria-hidden="true" tabindex="-1"></a>Your chatbot project has been significantly enhanced with loops. The main conversation loop keeps your bot running and responsive to user input. Other loops help manage conversation history, process user commands, and implement interactive features like games and quizzes.</span>
+<span id="cb58-1479"><a href="#cb58-1479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1480"><a href="#cb58-1480" aria-hidden="true" tabindex="-1"></a>As you progress in your Python journey, you'll find that loops appear in virtually every program you write. They're the mechanism that allows your code to scale from handling a few items to processing millions. They transform static programs into dynamic, responsive applications that can adapt to varying inputs and conditions.</span>
+<span id="cb58-1481"><a href="#cb58-1481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-1482"><a href="#cb58-1482" aria-hidden="true" tabindex="-1"></a>In the next chapter, we'll explore string manipulation, building on your loop knowledge to process and transform text data—a critical skill for developing conversational interfaces like our chatbot.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

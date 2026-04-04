@@ -222,9 +222,6 @@ AI coding assistants understand programming languages better than they understan
 
 Consider this exchange:
 
-H: No, I meant the weather temperature outside.
-AI: I see! Here's a program that checks the current weather temperature:
-
 Without understanding basic programming concepts like functions, APIs, and data formats, you might not realize this code requires an API key, or that it's using Celsius by default, or that it has error-handling issues. Your ability to direct AI effectively—and assess its output critically—depends on your understanding of programming fundamentals.
 
 ### The AI Limitations Reality
@@ -263,21 +260,79 @@ Rather than viewing AI as either a magic solution or a mere tool, we advocate fo
 
 The magic happens when these strengths combine. Consider this example of collaborative debugging:
 
-AI: The issue is in your loop. You're accessing `data[i+1]`, but when `i` equals the last index (2), you'll try to access `data[3]`, which doesn't exist.
+In this interaction, the AI identified the bug and offered multiple solutions, but asked you to make the final decision based on your actual intent—something only you know.
 
-There are two ways to fix this:
+## 4. Tools and Workflows in the AI Era
 
-Option 1: Don't add 1 to the index
+The AI revolution has expanded the Python ecosystem with new tools and workflows. Here's a survey of the current landscape:
 
-Option 2: If you meant to start from the second item, adjust the range:
+### Development Environments with AI Integration
 
-Which one matches your intention?
+Modern development environments increasingly include AI features:
 
-Write a program that saves data to a file.
+- Visual Studio Code with GitHub Copilot or other AI extensions
+- JetBrains PyCharm with AI Assistant
+- Replit with Ghostwriter
+- Jupyter Notebooks with AI extensions
 
-Write a Python function that saves a dictionary to a JSON file with proper error handling.
-The function should take three parameters: the dictionary to save, the filename to save to,
-and an optional parameter to format the JSON with indentation for readability.
+These integrate AI suggestions directly into your coding workflow, offering completions as you type.
+
+### Standalone AI Assistants
+
+Conversation-based AI tools that can help with coding:
+
+- ChatGPT (OpenAI)
+- Claude (Anthropic)
+- Bard (Google)
+- Copilot Chat (GitHub/Microsoft)
+
+These offer more flexibility for complex questions, explanations, and generating larger code blocks.
+
+### AI-Enhanced Command Line Tools
+
+Command-line interfaces that bring AI to the terminal:
+
+- GitHub Copilot CLI
+- Continue.dev
+- Various custom tools using AI APIs
+
+These tools let you generate and manipulate code through natural language commands.
+
+### Choosing Your Workflow
+
+There's no one-size-fits-all approach to AI-assisted development. Consider these common workflows:
+
+#### 1. The Integrated Flow
+Write code normally in your editor, using AI completions and suggestions when helpful. This maintains your control while providing continuous assistance.
+
+#### 2. The Reference Approach
+Code primarily on your own, but consult AI assistants when stuck or learning new concepts—similar to how you might have used Stack Overflow in the past.
+
+#### 3. The Prototype Pattern
+Use AI to quickly generate a working prototype, then thoroughly review, refactor, and customise it to meet your needs and standards.
+
+#### 4. The Learning Loop
+Alternate between writing your own solutions and asking AI for alternative approaches, using the comparison to deepen your understanding.
+
+In this book, we'll explore different workflows so you can find what works best for your learning style and projects.
+
+## 5. The Value of Fundamentals in AI-Assisted Development
+
+Paradoxically, fundamental programming knowledge becomes more valuable, not less, in the AI era. Here's why:
+
+### Directing with Precision
+
+The more you understand Python fundamentals, the more precisely you can direct AI assistants. Compare these prompts:
+
+Beginner prompt:
+
+Knowledge-informed prompt:
+
+The second prompt, informed by knowledge of Python data structures, file handling, and function design, will yield a much more useful result.
+
+### Critical Evaluation
+
+Fundamental knowledge allows you to critically evaluate AI-generated code:
 
 With fundamental knowledge, you can assess:
 - Is this implementation correct? (Yes, it's a standard optimisation)
@@ -1542,6 +1597,17 @@ This produces a professional-looking interface:
 In a real chatbot, different types of messages serve different purposes. Let's create specific formatting for each message type:
 
 Output:
+
+------------------------------------------------------------
+                        PyBot HELP
+------------------------------------------------------------
+
+Available commands:
+- HELLO: Greet the chatbot
+- HELP: Show this help message
+- BYE: End the conversation
+
+------------------------------------------------------------
 
 ### Simulating a Complete Conversation
 
@@ -4611,6 +4677,11 @@ In the next chapter, we'll explore how to manipulate strings—text data that yo
 1. Loop Basics: Write a function that prints all even numbers between 1 and 20.
 
 2. Nested Loops: Create a function that prints a pattern of stars like this:
+   
+
+   
+   
+   
    
 
 3. List Comprehension: Convert this loop to a list comprehension:
@@ -7953,7 +8024,10 @@ Asking clear, complete questions increases your chances of getting helpful answe
 
 Example of a good question structure:
 
-## Error Message
+## Problem Description
+I'm trying to read a CSV file and calculate the average of a specific column, but I'm getting a TypeError.
+
+## My Code
 
 ## What I've Tried
 - Checked the data types with `data.dtypes` and saw that 'amount' is an object type
@@ -7965,20 +8039,44 @@ Example of a good question structure:
 - pandas 1.3.4
 - Windows 10
 
+## 8. Leveraging AI for Python Help
+
+AI assistants like large language models have become valuable tools for Python developers.
+
+### When to Use AI Assistants
+
+AI assistants are particularly helpful for:
+
+1. Explaining concepts in different ways until you understand
+2. Generating code examples for specific tasks
+3. Debugging errors by analysing error messages
+4. Suggesting improvements to existing code
+5. Exploring alternatives when you're stuck on an approach
+6. Learning best practices in Python coding
+
+### Effective Prompting for Python Help
+
+To get the best results from AI assistants:
+
+1. Be specific about your goal: "I need to parse a date string in format 'YYYY-MM-DD' into a datetime object"
+2. Include relevant context: Share your code, error messages, and environment
+3. Ask for step-by-step explanations: "Can you explain how dictionaries work in Python with examples?"
+4. Request multiple approaches: "What are different ways to iterate through a nested dictionary?"
+5. Specify constraints: "I need a solution that works with Python 3.8 without external libraries"
+
+### Example AI Prompts for Python Help
+
 Prompt: "I'm getting this error when trying to use a list comprehension:
 'TypeError: 'int' object is not iterable'. Here's my code:
 numbers = 100
 result = [x for x in numbers if x % 2 == 0]
 What am I doing wrong?"
-
 Prompt: "Can you help me understand Python decorators? I know they use the @ symbol,
 but I don't understand how they work or why they're useful. Could you explain the
 concept and show a simple example?"
-
 Prompt: "I need to create a function that takes a list of strings and returns
 a dictionary with the count of each unique string. What's the most efficient
 way to do this in Python?"
-```text
 
 ## 9. Self-Assessment Quiz
 
@@ -8029,8 +8127,6 @@ As you work on your chatbot project, you'll inevitably encounter challenges that
 
 Start by adding comprehensive docstrings to your chatbot code to make it self-documenting:
 
-class Chatbot:
-    """
     A simple rule-based chatbot that can respond to user inputs.
 
     This chatbot uses pattern matching to identify user intents and
@@ -8043,8 +8139,6 @@ class Chatbot:
         conversation_history (list): Record of the conversation
     """
 
-    def __init__(self, name="PyBot"):
-        """
         Initialize a new Chatbot instance.
 
         Args:
@@ -8055,8 +8149,6 @@ class Chatbot:
         self.conversation_history = []
         # ... rest of initialization code
 
-    def get_response(self, user_input):
-        """
         Generate a response based on the user's input.
 
         Args:
@@ -8066,7 +8158,6 @@ class Chatbot:
             str: The chatbot's response
         """
         # ... response generation code
-```
 
 With good documentation, you (and others) can use `help(Chatbot)` or `help(Chatbot.get_response)` to understand how your code works.
 
@@ -8106,7 +8197,6 @@ When you need help with specific chatbot features, consult these resources:
 
 When you need community help with your chatbot, phrase your questions effectively:
 
-```text
 ## Chatbot Response Issue
 
 I'm developing a rule-based chatbot in Python and having trouble with pattern matching.
@@ -8114,26 +8204,13 @@ When users enter a greeting with additional text (e.g., "hello, how's the weathe
 my bot isn't recognising it as a greeting.
 
 ## Current Code
-def get_response(self, user_input):
-    user_input = user_input.lower()
 
-    # Check for greetings
-    greeting_patterns = ["hello", "hi", "hey", "howdy"]
-    for pattern in greeting_patterns:
-        if user_input == pattern:  # This is the problem line
-            return f"Hello there, {self.user_name}!"
-
-    # Other patterns...
-    return "I didn't understand that."
-
-## What I've Tried
 - Changing `==` to `in` but then it matches too broadly
 - Using regular expressions but struggling with the pattern
 
 ## What I Need
 I need a way to identify greetings at the beginning of messages without
 matching unrelated content that happens to contain greeting words.
-```
 
 ## Cross-References
 
@@ -8902,18 +8979,34 @@ When faced with an error, provide both the code and the full error message:
 
 What's causing this error and how can I fix it?
 
+### Algorithmic Debugging
+
+For logic errors where your code runs but produces incorrect results:
+
 My function should calculate the factorial of a number, but it's giving
 wrong answers for inputs > 10. What's wrong with my implementation?
 
 Expected output for factorial(5) is 120, but I'm getting 0.
 
+### Focused Diagnostics
+
+Ask the AI to help isolate problems in specific parts of your code:
+
 I suspect my data processing function is incorrect. Here's the function:
 
 Can you verify the calculation logic and suggest any potential bugs or edge cases?
 
+### Unit Test Generation
+
+Use AI to create tests that might reveal bugs:
+
 I need unit tests to verify this function works correctly:
 
 Please write pytest tests that cover all branches and edge cases.
+
+### Systematic Program Analysis
+
+For complex bugs, ask the AI to perform a thorough analysis:
 
 My Flask app sometimes gives a 500 error when submitting this form.
 I can't consistently reproduce it, but it happens more often with larger inputs.
@@ -8924,17 +9017,66 @@ And here's my processing function:
 
 Can you identify potential issues that might cause server errors?
 
+## 4. Learning Strategies for the AI Era
+
+Traditional programming learning approaches need adaptation for the AI era. Here are effective strategies:
+
+### The "Explain Then Implement" Method
+
+1. First, implement a solution yourself
+2. Then ask AI to explain your code and suggest improvements
+3. Compare your approach with AI suggestions
+4. Implement an improved version based on what you learned
+
+Example prompt:
 I've written this function to calculate the Fibonacci sequence.
 Can you explain how it works, evaluate its efficiency, and suggest any improvements?
 
+### The "Reverse Engineering" Technique
+
+1. Get AI to generate a solution to a problem
+2. Study the solution without copying it
+3. Close the AI chat and implement your own solution
+4. Compare your implementation with the AI version
+5. Identify differences and learning opportunities
+
+### The "Conceptual First" Approach
+
+1. Ask AI to explain a concept in detail before showing code
+2. Request multiple explanations using different analogies
+3. Then ask for code implementations after you understand the concept
+4. Finally, write your own implementation
+
+Example sequence:
 1. Explain recursive backtracking in plain language
 2. Can you explain it again using a maze-solving analogy?
 3. Now show me a Python implementation for solving Sudoku
 4. [After studying] What are the key elements I should include in my own implementation?
 
+### The "Iterative Refinement" Method
+
+1. Start with a simple implementation
+2. Ask AI to review and suggest one improvement
+3. Implement that improvement yourself
+4. Repeat until your solution is polished
+
+This approach prevents overwhelming jumps from beginner to advanced code.
+
+## 5. customising AI-Generated Code
+
+AI often generates generic solutions that need customisation. Here are techniques to guide AI toward your preferred style and project needs:
+
+### Style Templates
+
+Provide an example of your coding style first:
+
 I write my Python code in this style:
 
 Now please write a function that calculates the average price per item following this style.
+
+### Project-Specific Guidelines
+
+Describe your project's conventions and requirements:
 
 In our project, we follow these conventions:
 - Functions use snake_case
@@ -8947,13 +9089,42 @@ In our project, we follow these conventions:
 
 Please write a class to represent a Customer with name, email, and purchase history attributes.
 
+### Incremental customisation
+
+Request changes to AI-generated code in specific steps:
+
 Perfect, now can you modify this code to:
 1. Add proper error handling for invalid inputs
 2. Include logging statements at key points
 3. Make the function support both file paths and file-like objects
 
+### Template Code Expansion
+
+Provide skeleton code and ask the AI to complete it:
+
 I've started implementing a cache decorator. Can you complete it following
 the same style and adding proper type hints?
+
+## 6. Evaluating and Refining AI-Generated Code
+
+Getting code from AI is just the beginning. Critical evaluation is essential:
+
+### Code Review Checklist
+
+After getting code from an AI assistant, check:
+
+1. Correctness: Does it correctly solve the problem?
+2. Completeness: Does it handle all required cases?
+3. Efficiency: Is the computational and memory complexity appropriate?
+4. Robustness: Does it handle edge cases and invalid inputs?
+5. Security: Are there potential security vulnerabilities?
+6. Readability: Is the code maintainable and well-documented?
+7. Compatibility: Does it work with specified Python versions/environments?
+8. Style consistency: Does it follow your project's conventions?
+
+### Structured Refinement Requests
+
+If the code needs improvement, make specific requests:
 
 The function works for the basic case, but needs these improvements:
 1. Add error handling for when the input file doesn't exist
@@ -8961,7 +9132,9 @@ The function works for the basic case, but needs these improvements:
 3. The nested loop can be replaced with a list comprehension for better readability
 4. Add type hints to function parameters and return value
 
-### Comparative Evaluation
+### Testing AI-Generated Code
+
+Always test code thoroughly:
 
 Compare different approaches to the same problem:
 
@@ -8981,11 +9154,94 @@ Build complex applications piece by piece:
 
 Use AI to create comprehensive documentation:
 
+### Code Review Assistance
+
+Get AI help with reviewing existing code:
+
 Please review this implementation of a caching system and identify:
 1. Any potential bugs or edge cases
 2. Performance optimisations
 3. Suggestions for improved readability
 4. Potential memory leaks
+
+## 8. Self-Assessment Quiz
+
+Test your understanding of advanced AI assistance techniques:
+
+1. Which of the following would create the most effective prompt for a programming task?
+   a) "Write code to sort data"
+   b) "Write Python code to sort a list of dictionaries by the 'date' field"
+   c) "Using Python 3.10, write a function that sorts a list of dictionaries by their 'date' field (ISO format), with newest dates first, handling missing dates by placing them at the end"
+   d) "Sort dictionaries by date in descending order"
+
+2. When asking an AI assistant to help debug your code, which approach is most effective?
+   a) Just sharing the error message
+   b) Sharing your entire codebase
+   c) Sharing the specific function with the bug, the error message, expected behaviour, and attempted inputs
+   d) Asking the AI to guess what might be wrong without sharing code
+
+3. Which learning strategy uses AI most effectively for skill development?
+   a) Asking AI to solve all your programming problems
+   b) Implementing a solution yourself, then comparing with AI suggestions to learn differences
+   c) Memorizing AI-generated solutions
+   d) Never using AI to maintain pure self-learning
+
+4. When evaluating AI-generated code, which aspect is LEAST important to check?
+   a) Whether it handles edge cases properly
+   b) Whether it follows the most recent programming trends
+   c) Whether it contains security vulnerabilities
+   d) Whether it correctly solves the problem
+
+5. Which approach would best help customise AI-generated code to match your project style?
+   a) Repeatedly rejecting code until the AI happens to match your style
+   b) Providing an example of your coding style before requesting new code
+   c) Editing the code yourself after receiving it
+   d) Using a completely different AI tool
+
+Answers:
+1. c) "Using Python 3.10, write a function that sorts a list of dictionaries by their 'date' field (ISO format), with newest dates first, handling missing dates by placing them at the end"
+2. c) Sharing the specific function with the bug, the error message, expected behaviour, and attempted inputs
+3. b) Implementing a solution yourself, then comparing with AI suggestions to learn differences
+4. b) Whether it follows the most recent programming trends
+5. b) Providing an example of your coding style before requesting new code
+
+## 9. Project Corner: Advanced AI Interactions for Your Chatbot
+
+Let's enhance your chatbot with more sophisticated AI interactions. We'll build on the previous AI-enhanced chatbot implementation with advanced techniques.
+
+### Adding Contextual Memory to Your AI Integration
+
+This code implements a more sophisticated context management system:
+
+    Maintains contextual information for more coherent AI-assisted conversations.
+    Uses techniques inspired by advanced prompt engineering.
+    """
+
+            "user": user_input,
+            "bot": bot_response,
+            "timestamp": datetime.now().isoformat()
+        })
+
+        # Keep history within size limit
+        if len(self.conversation_history) > self.max_history:
+            self.conversation_history.pop(0)
+
+            context += f"User: {exchange['user']}\n"
+            context += f"Bot: {exchange['bot']}\n"
+
+        # Add relevant facts if available
+        if self.learned_facts:
+            context += "\nRelevant information:\n"
+            for entity, fact in self.learned_facts.items():
+                context += f"- {entity}: {fact}\n"
+
+        # Add user preferences
+        if self.user_preferences:
+            context += "\nUser preferences:\n"
+            for category, preference in self.user_preferences.items():
+                context += f"- {category}: {preference}\n"
+
+        return context
 
 ### Pattern-Based AI Fallback
 
@@ -9243,6 +9499,10 @@ It crashes when it encounters None.
 I think the problem might be related to not checking data types.
 Can you help identify and fix the issue?
 
+### optimisation Prompts
+
+When you want to improve existing code:
+
 Here's my current Python implementation:
 
 It works correctly, but I'm looking to optimise it for [speed/memory/readability/etc.].
@@ -9258,6 +9518,10 @@ Current performance: O(n²) time complexity
 Target performance: O(n) if possible
 
 What changes would you recommend to improve this code while maintaining its functionality?
+
+### Comparison Prompts
+
+When you want to understand different approaches:
 
 I'm trying to [accomplish task] in Python.
 I know I could use [approach 1] or [approach 2].
@@ -9283,6 +9547,14 @@ Could you compare these approaches in terms of:
 
 And recommend which might be better for my situation where I'm building a medium-sized web API with complex nested data structures?
 
+## 5. Advanced Prompting Techniques
+
+As you become more comfortable with basic intentional prompting, you can explore more sophisticated techniques to get even better results.
+
+### Chain-of-Thought Prompting
+
+Guide the AI through a step-by-step reasoning process:
+
 Let's think through [problem] step by step:
 1. First, what are the inputs and expected outputs?
 2. What are the key algorithmic steps needed?
@@ -9290,14 +9562,26 @@ Let's think through [problem] step by step:
 4. How should we implement this in Python?
 5. How can we test this implementation?
 
+### Comparative Prompting
+
+Ask for multiple solutions and their trade-offs:
+
 Could you provide three different ways to implement [feature] in Python?
 For each approach, please explain:
 - How it works
 - Its strengths and weaknesses
 - When you would choose this approach over the others
 
+### Role-Based Prompting
+
+Ask the AI to adopt a specific role or perspective:
+
 As an experienced Python developer focused on [performance/security/readability/etc.],
 how would you approach [problem]? What considerations would be most important from this perspective?
+
+### Scaffold-Building Prompts
+
+Start with the structure and gradually fill in details:
 
 First, let's outline the main components we need for [task]:
 1. What classes should we create?
@@ -9306,18 +9590,63 @@ First, let's outline the main components we need for [task]:
 
 Now, for each component, let's detail the implementation.
 
+### Test-Driven Prompting
+
+Start with the tests to guide the implementation:
+
 Before implementing [feature], let's create some tests that define what successful implementation would look like:
 
 Now, can you implement code that would pass these tests?
 
+## 6. Iterative Prompting: The Conversation Approach
+
+Intentional prompting is rarely a one-and-done process. The most effective approach is iterative, treating the interaction as a conversation rather than a single question and answer.
+
+### The Iterative Prompting Workflow
+
+1. Start with a clear but concise prompt
+2. Evaluate the response:
+   - Does it address your needs?
+   - Are there unclear parts?
+   - Are there missing requirements?
+3. Follow up with refinements:
+   - "Can you modify X to handle Y?"
+   - "I notice this doesn't address Z. Could you update it?"
+   - "This looks good, but can you explain this part in more detail?"
+4. Iterate until satisfied
+
+### Example of an Iterative Prompting Session
+
+Initial Prompt:
 I need a Python function to validate email addresses.
 
+Initial Response:
+[AI provides a simple regex-based email validator]
+
+Follow-up Prompt:
 Thanks, that's a good start. Can you modify it to also check for valid domains?
 Also, how well does this regex handle international email addresses?
 
+Second Response:
+[AI provides improved validation with domain checking and discusses internationalization issues]
+
+Second Follow-up:
 This is better, but I'm concerned about maintainability. Could you refactor this
 into a class that could be extended with additional validation rules? Also,
 could you add unit tests for key validation scenarios?
+
+Final Response:
+[AI provides a well-structured, testable email validation class]
+
+This iterative approach typically produces much better results than trying to cram all requirements into a single prompt.
+
+## 7. Prompting for the Six Core Programming Foundations
+
+Different programming fundamentals often benefit from specific prompting approaches. Here are tailored prompting strategies for each of the six core programming foundations:
+
+### 1. INPUT: Getting Data Into Your Program
+
+Effective prompts for input-related questions:
 
 I need to implement user input for [specific purpose].
 
@@ -9337,6 +9666,10 @@ Key requirements:
 
 Can you show me how to implement this with proper error handling and user feedback?
 
+### 2. OUTPUT: Displaying Results
+
+Prompts for output-related questions:
+
 I need to display [type of data] to users in a [format/style].
 
 Specific requirements:
@@ -9355,6 +9688,10 @@ Specific requirements:
 
 Can you show me how to implement this output functionality in Python?
 
+### 3. STORE: Variable Management and Data Structures
+
+Prompts for data storage questions:
+
 I need to store and manage [type of data] in my Python application.
 
 Requirements:
@@ -9372,6 +9709,10 @@ Requirements:
 - The implementation should handle product additions, removals, and quantity changes
 
 What would be the most appropriate data structure, and how would I implement it?
+
+### 4. CALCULATE: Operations and Expressions
+
+Prompts for calculation-related questions:
 
 I need to implement calculations for [specific purpose].
 
@@ -9393,6 +9734,10 @@ The calculation should:
 
 What's the most effective way to implement this in Python?
 
+### 5. DECISIONS: Flow Control and Conditionals
+
+Prompts for decision-making code:
+
 I need to implement decision logic for [specific situation].
 
 The logic should:
@@ -9412,6 +9757,10 @@ The logic should:
 - Be easily maintainable when pricing rules change
 
 What's the most effective approach for this decision structure?
+
+### 6. REPEAT: Loops and Iteration
+
+Prompts for loop-related questions:
 
 I need to implement iteration for [specific task].
 
@@ -9433,7 +9782,138 @@ Requirements:
 
 What's the most effective way to implement this in Python?
 
-### Testing the Enhanced Chatbot
+## 8. Self-Assessment Quiz
+
+Test your understanding of intentional prompting:
+
+1. What is the main difference between basic and intentional prompting?
+   a) Intentional prompts are always longer
+   b) Intentional prompts are crafted with specific goals and context in mind
+   c) Intentional prompts always include code examples
+   d) Intentional prompts only work with certain AI assistants
+
+2. Which of the following is NOT typically included in an effective prompt for programming help?
+   a) The specific objective you're trying to achieve
+   b) Relevant context about your project
+   c) Your personal opinion about AI's capabilities
+   d) Constraints or requirements for the solution
+
+3. What is "chain-of-thought" prompting?
+   a) A technique where you connect multiple AI assistants together
+   b) A method for guiding the AI through a step-by-step reasoning process
+   c) A way to create long chains of prompts over time
+   d) A system for organising programming concepts
+
+4. Which prompting strategy is most appropriate when you want to understand the tradeoffs between different implementation approaches?
+   a) Debugging prompts
+   b) Implementation prompts
+   c) Comparison prompts
+   d) Concept exploration prompts
+
+5. What is the recommended workflow for complex programming questions?
+   a) Write one extremely detailed prompt that covers everything
+   b) Use multiple AI assistants simultaneously with the same prompt
+   c) Start with a clear prompt and iteratively refine based on responses
+   d) Always begin with "As an expert Python developer..."
+
+Answers:
+1. b) Intentional prompts are crafted with specific goals and context in mind
+2. c) Your personal opinion about AI's capabilities
+3. b) A method for guiding the AI through a step-by-step reasoning process
+4. c) Comparison prompts
+5. c) Start with a clear prompt and iteratively refine based on responses
+
+## 9. Project Corner: Enhancing Your Chatbot with Intentional Prompting
+
+Let's apply intentional prompting to enhance your AI-enabled chatbot project from the previous chapters.
+
+### Using Intentional Prompting to Improve Response Generation
+
+Your chatbot can benefit from intentional prompting when it interacts with AI services. Here's an improved version of the AI integration from the previous chapter:
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+    A class that crafts intentional prompts for AI interactions
+    based on conversation context and user inputs.
+    """
+
+            "greeting": "The user has greeted the chatbot with: '{user_input}'. "
+                        "Respond in a friendly manner. Keep the response brief and personalized.",
+
+            "question": "The user has asked: '{user_input}'. "
+                        "Provide a helpful, accurate, and concise response. "
+                        "If the question is about Python programming, include a small code example if relevant.",
+
+            "clarification": "The user's message: '{user_input}' is unclear or ambiguous. "
+                             "Ask for clarification in a friendly way. Suggest possible interpretations.",
+
+            "technical": "The user is asking about a technical Python concept: '{user_input}'. "
+                         "Explain it clearly with a simple example. "
+                         "Define any technical terms. Keep the explanation beginner-friendly.",
+
+            "code_help": "The user needs help with this code: '{user_input}'. "
+                         "First identify any issues. Then provide a corrected version. "
+                         "Finally, explain what was wrong and the principles behind the fix."
+        }
+
+        Craft an intentional prompt based on the user's input and conversation history.
+        """
+        intent = self.detect_intent(user_input)
+        base_prompt = self.prompt_templates[intent].format(user_input=user_input)
+
+        # Enhance prompt with conversation context if available
+        if conversation_history and len(conversation_history) > 0:
+            context = "\nRecent conversation context:\n"
+            # Include up to 3 most recent exchanges
+            for i, exchange in enumerate(conversation_history[-3:]):
+                context += f"User: {exchange['user']}\n"
+                context += f"Bot: {exchange['bot']}\n"
+            base_prompt = context + "\n" + base_prompt
+
+        # Add specific instructions based on intent
+        if intent == "technical":
+            base_prompt += "\nInclude at least one practical example. Mention common pitfalls."
+        elif intent == "code_help":
+            base_prompt += "\nMake sure to explain why the solution works, not just what the solution is."
+
+        return base_prompt
+
+    Chatbot enhanced with intentional prompting for better AI interactions.
+    """
+
+            "user": user_input,
+            "bot": bot_response
+        })
+
+        # Keep history at a reasonable size
+        if len(self.conversation_history) > 10:
+            self.conversation_history.pop(0)
+
+        Get a response from the AI service using intentional prompting.
+        """
+        if not self.api_key:
+            return "AI services are not configured. Please set up your API key."
+
+        try:
+            # Craft an intentional prompt
+            prompt = self.prompter.craft_prompt(user_input, self.conversation_history)
+
+            # Get response from OpenAI
+            response = self.openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": f"You are {self.name}, a friendly and helpful assistant for Python programming."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=150,
+                temperature=0.7
+            )
+
+            # Extract and return the response content
+            return response.choices[0].message["content"].strip()
+
+        except Exception as e:
+            return f"Sorry, I encountered an issue while processing your request: {str(e)}"
 
 Let's try some sample interactions to demonstrate how intentional prompting improves the chatbot:
 

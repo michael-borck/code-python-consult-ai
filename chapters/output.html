@@ -1023,19 +1023,17 @@ PyBot&gt; I'm looking forward to our conversations!
 <p>Output:</p>
 <pre class="text"><code>PyBot&gt; Hello! How can I help you today?
 [SYSTEM] Processing your request...
-PyBot [ERROR]&gt; I couldn't understand that command.
-**************************************************
-
-------------------------------------------------------------
-                        PyBot HELP
-------------------------------------------------------------
-
-Available commands:
-- HELLO: Greet the chatbot
-- HELP: Show this help message
-- BYE: End the conversation
-
-------------------------------------------------------------</code></pre>
+PyBot [ERROR]&gt; I couldn't understand that command.</code></pre>
+<hr>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">PyBot HELP</td>
+</tr>
+</tbody>
+</table>
+<p>Available commands: - HELLO: Greet the chatbot - HELP: Show this help message - BYE: End the conversation</p>
+<hr>
 </section>
 <section id="simulating-a-complete-conversation" class="level3" data-number="6.10.3">
 <h3 data-number="6.10.3" class="anchored" data-anchor-id="simulating-a-complete-conversation"><span class="header-section-number">6.10.3</span> Simulating a Complete Conversation</h3>
@@ -2507,582 +2505,583 @@ Line 3</code></pre>
 <span id="cb41-491"><a href="#cb41-491" aria-hidden="true" tabindex="-1"></a><span class="in">PyBot&gt; Hello! How can I help you today?</span></span>
 <span id="cb41-492"><a href="#cb41-492" aria-hidden="true" tabindex="-1"></a><span class="in">[SYSTEM] Processing your request...</span></span>
 <span id="cb41-493"><a href="#cb41-493" aria-hidden="true" tabindex="-1"></a><span class="in">PyBot [ERROR]&gt; I couldn't understand that command.</span></span>
-<span id="cb41-494"><a href="#cb41-494" aria-hidden="true" tabindex="-1"></a><span class="in">**************************************************</span></span>
+<span id="cb41-494"><a href="#cb41-494" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb41-495"><a href="#cb41-495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-496"><a href="#cb41-496" aria-hidden="true" tabindex="-1"></a><span class="in">------------------------------------------------------------</span></span>
-<span id="cb41-497"><a href="#cb41-497" aria-hidden="true" tabindex="-1"></a><span class="in">                        PyBot HELP</span></span>
-<span id="cb41-498"><a href="#cb41-498" aria-hidden="true" tabindex="-1"></a><span class="in">------------------------------------------------------------</span></span>
-<span id="cb41-499"><a href="#cb41-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-500"><a href="#cb41-500" aria-hidden="true" tabindex="-1"></a><span class="in">Available commands:</span></span>
-<span id="cb41-501"><a href="#cb41-501" aria-hidden="true" tabindex="-1"></a><span class="in">- HELLO: Greet the chatbot</span></span>
-<span id="cb41-502"><a href="#cb41-502" aria-hidden="true" tabindex="-1"></a><span class="in">- HELP: Show this help message</span></span>
-<span id="cb41-503"><a href="#cb41-503" aria-hidden="true" tabindex="-1"></a><span class="in">- BYE: End the conversation</span></span>
-<span id="cb41-504"><a href="#cb41-504" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-505"><a href="#cb41-505" aria-hidden="true" tabindex="-1"></a><span class="in">------------------------------------------------------------</span></span>
-<span id="cb41-506"><a href="#cb41-506" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-507"><a href="#cb41-507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-508"><a href="#cb41-508" aria-hidden="true" tabindex="-1"></a><span class="fu">### Simulating a Complete Conversation</span></span>
-<span id="cb41-509"><a href="#cb41-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-510"><a href="#cb41-510" aria-hidden="true" tabindex="-1"></a>Let's put it all together to simulate a complete chatbot conversation:</span>
-<span id="cb41-511"><a href="#cb41-511" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-512"><a href="#cb41-512" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-513"><a href="#cb41-513" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb41-514"><a href="#cb41-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-515"><a href="#cb41-515" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_chatbot_conversation():</span>
-<span id="cb41-516"><a href="#cb41-516" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate a conversation with our chatbot using different output techniques."""</span></span>
-<span id="cb41-517"><a href="#cb41-517" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
-<span id="cb41-518"><a href="#cb41-518" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">60</span></span>
-<span id="cb41-519"><a href="#cb41-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-520"><a href="#cb41-520" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Welcome screen</span></span>
-<span id="cb41-521"><a href="#cb41-521" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> width)</span>
-<span id="cb41-522"><a href="#cb41-522" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> Chat Simulation"</span>.center(width))</span>
-<span id="cb41-523"><a href="#cb41-523" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width)</span>
-<span id="cb41-524"><a href="#cb41-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-525"><a href="#cb41-525" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initial greeting</span></span>
-<span id="cb41-526"><a href="#cb41-526" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Hello! I'm </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">, your Python assistant."</span>)</span>
-<span id="cb41-527"><a href="#cb41-527" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
-<span id="cb41-528"><a href="#cb41-528" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; What's your name?"</span>)</span>
-<span id="cb41-529"><a href="#cb41-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-530"><a href="#cb41-530" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simulate user input</span></span>
-<span id="cb41-531"><a href="#cb41-531" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
-<span id="cb41-532"><a href="#cb41-532" aria-hidden="true" tabindex="-1"></a>    user_name <span class="op">=</span> <span class="st">"Alex"</span></span>
-<span id="cb41-533"><a href="#cb41-533" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; My name is </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">."</span>)</span>
-<span id="cb41-534"><a href="#cb41-534" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-535"><a href="#cb41-535" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bot response with formatted output</span></span>
-<span id="cb41-536"><a href="#cb41-536" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
-<span id="cb41-537"><a href="#cb41-537" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Nice to meet you, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb41-538"><a href="#cb41-538" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.8</span>)</span>
-<span id="cb41-539"><a href="#cb41-539" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; I can help you learn Python concepts."</span>)</span>
-<span id="cb41-540"><a href="#cb41-540" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-541"><a href="#cb41-541" aria-hidden="true" tabindex="-1"></a>    <span class="co"># System message</span></span>
-<span id="cb41-542"><a href="#cb41-542" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.2</span>)</span>
-<span id="cb41-543"><a href="#cb41-543" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"[SYSTEM] </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> is retrieving information..."</span>)</span>
-<span id="cb41-544"><a href="#cb41-544" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
-<span id="cb41-545"><a href="#cb41-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-546"><a href="#cb41-546" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Information display with structure</span></span>
-<span id="cb41-547"><a href="#cb41-547" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Here are today's Python topics:"</span>)</span>
-<span id="cb41-548"><a href="#cb41-548" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • Variables and data types"</span>)</span>
-<span id="cb41-549"><a href="#cb41-549" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • Input and output techniques"</span>)</span>
-<span id="cb41-550"><a href="#cb41-550" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • String formatting with f-strings"</span>)</span>
-<span id="cb41-551"><a href="#cb41-551" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • Basic control structures"</span>)</span>
-<span id="cb41-552"><a href="#cb41-552" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-553"><a href="#cb41-553" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Error message simulation</span></span>
-<span id="cb41-554"><a href="#cb41-554" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
-<span id="cb41-555"><a href="#cb41-555" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; Can you write my homework for me?"</span>)</span>
-<span id="cb41-556"><a href="#cb41-556" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.2</span>)</span>
-<span id="cb41-557"><a href="#cb41-557" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> [ERROR]&gt; I'm designed to help you learn, not to do your work for you."</span>)</span>
-<span id="cb41-558"><a href="#cb41-558" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"*"</span> <span class="op">*</span> <span class="dv">65</span>)</span>
-<span id="cb41-559"><a href="#cb41-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-560"><a href="#cb41-560" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Help message</span></span>
-<span id="cb41-561"><a href="#cb41-561" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
-<span id="cb41-562"><a href="#cb41-562" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; help"</span>)</span>
-<span id="cb41-563"><a href="#cb41-563" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
-<span id="cb41-564"><a href="#cb41-564" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> width)</span>
-<span id="cb41-565"><a href="#cb41-565" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> HELP"</span>.center(width))</span>
-<span id="cb41-566"><a href="#cb41-566" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> width)</span>
-<span id="cb41-567"><a href="#cb41-567" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"""</span></span>
-<span id="cb41-568"><a href="#cb41-568" aria-hidden="true" tabindex="-1"></a><span class="st">Commands you can try:</span></span>
-<span id="cb41-569"><a href="#cb41-569" aria-hidden="true" tabindex="-1"></a><span class="st">- ASK [question]: Ask me about Python</span></span>
-<span id="cb41-570"><a href="#cb41-570" aria-hidden="true" tabindex="-1"></a><span class="st">- TOPICS: Show available topics</span></span>
-<span id="cb41-571"><a href="#cb41-571" aria-hidden="true" tabindex="-1"></a><span class="st">- EXAMPLE [topic]: Get an example about a topic</span></span>
-<span id="cb41-572"><a href="#cb41-572" aria-hidden="true" tabindex="-1"></a><span class="st">- BYE: End our conversation</span></span>
-<span id="cb41-573"><a href="#cb41-573" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span>)</span>
-<span id="cb41-574"><a href="#cb41-574" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> width)</span>
-<span id="cb41-575"><a href="#cb41-575" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-576"><a href="#cb41-576" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ending the conversation</span></span>
-<span id="cb41-577"><a href="#cb41-577" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
-<span id="cb41-578"><a href="#cb41-578" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; bye"</span>)</span>
-<span id="cb41-579"><a href="#cb41-579" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
-<span id="cb41-580"><a href="#cb41-580" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Goodbye, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">! Happy coding!"</span>)</span>
-<span id="cb41-581"><a href="#cb41-581" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> width)</span>
-<span id="cb41-582"><a href="#cb41-582" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"End of simulation"</span>.center(width))</span>
-<span id="cb41-583"><a href="#cb41-583" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-584"><a href="#cb41-584" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-585"><a href="#cb41-585" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the simulation</span></span>
-<span id="cb41-586"><a href="#cb41-586" aria-hidden="true" tabindex="-1"></a>simulate_chatbot_conversation()</span>
-<span id="cb41-587"><a href="#cb41-587" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-588"><a href="#cb41-588" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-589"><a href="#cb41-589" aria-hidden="true" tabindex="-1"></a>This demonstration shows how effective output techniques can create an engaging, user-friendly conversational interface. As we progress through the book, we'll expand our chatbot with real interactive capabilities.</span>
-<span id="cb41-590"><a href="#cb41-590" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-591"><a href="#cb41-591" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Project Evolution**: In this chapter, we're focusing on the output side of our chatbot. In Chapter 6, we'll add user input capabilities, and in later chapters, we'll implement logic to make the chatbot truly interactive.</span></span>
-<span id="cb41-592"><a href="#cb41-592" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-593"><a href="#cb41-593" aria-hidden="true" tabindex="-1"></a><span class="fu">## 9. AI Collaboration Corner: Designing Effective Output</span></span>
-<span id="cb41-594"><a href="#cb41-594" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-595"><a href="#cb41-595" aria-hidden="true" tabindex="-1"></a>Let's explore how AI assistants can help you design better output for your Python applications.</span>
-<span id="cb41-596"><a href="#cb41-596" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-597"><a href="#cb41-597" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before: Vague Prompting</span></span>
-<span id="cb41-598"><a href="#cb41-598" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-599"><a href="#cb41-599" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb41-600"><a href="#cb41-600" aria-hidden="true" tabindex="-1"></a><span class="in">Help me with Python print formatting.</span></span>
-<span id="cb41-601"><a href="#cb41-601" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-602"><a href="#cb41-602" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-603"><a href="#cb41-603" aria-hidden="true" tabindex="-1"></a>**AI Response:**</span>
-<span id="cb41-604"><a href="#cb41-604" aria-hidden="true" tabindex="-1"></a>*Python's print() function is versatile and offers many formatting options. You can use f-strings, format() method, or % formatting. Each approach has its own syntax and benefits. What specific formatting task are you trying to accomplish?*</span>
-<span id="cb41-605"><a href="#cb41-605" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-606"><a href="#cb41-606" aria-hidden="true" tabindex="-1"></a>This response is correct but generic, requiring more back-and-forth to get specific help.</span>
-<span id="cb41-607"><a href="#cb41-607" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-608"><a href="#cb41-608" aria-hidden="true" tabindex="-1"></a><span class="fu">### After: Detailed, Specific Prompting</span></span>
-<span id="cb41-609"><a href="#cb41-609" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-610"><a href="#cb41-610" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb41-611"><a href="#cb41-611" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a Python chatbot and need to design its output formatting. I want:</span></span>
-<span id="cb41-612"><a href="#cb41-612" aria-hidden="true" tabindex="-1"></a><span class="in">1. Different visual styles for regular messages, errors, and system notifications</span></span>
-<span id="cb41-613"><a href="#cb41-613" aria-hidden="true" tabindex="-1"></a><span class="in">2. A consistent visual identity (borders, spacing, etc.)</span></span>
-<span id="cb41-614"><a href="#cb41-614" aria-hidden="true" tabindex="-1"></a><span class="in">3. Examples of how to format timestamps and user information</span></span>
-<span id="cb41-615"><a href="#cb41-615" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-616"><a href="#cb41-616" aria-hidden="true" tabindex="-1"></a><span class="in">Please show code examples for each of these needs, optimised for readability on a terminal interface.</span></span>
-<span id="cb41-617"><a href="#cb41-617" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-618"><a href="#cb41-618" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-619"><a href="#cb41-619" aria-hidden="true" tabindex="-1"></a>**AI Response:**</span>
-<span id="cb41-620"><a href="#cb41-620" aria-hidden="true" tabindex="-1"></a>*Here's a comprehensive approach to designing your chatbot's output formatting:*</span>
-<span id="cb41-621"><a href="#cb41-621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-622"><a href="#cb41-622" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-623"><a href="#cb41-623" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb41-624"><a href="#cb41-624" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb41-625"><a href="#cb41-625" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-626"><a href="#cb41-626" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_regular_message(bot_name, message):</span>
-<span id="cb41-627"><a href="#cb41-627" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format a regular conversational message."""</span></span>
-<span id="cb41-628"><a href="#cb41-628" aria-hidden="true" tabindex="-1"></a>    timestamp <span class="op">=</span> datetime.now().strftime(<span class="st">"%H:%M:%S"</span>)</span>
-<span id="cb41-629"><a href="#cb41-629" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>timestamp<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb41-630"><a href="#cb41-630" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-631"><a href="#cb41-631" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_error_message(bot_name, error):</span>
-<span id="cb41-632"><a href="#cb41-632" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format an error message with visual emphasis."""</span></span>
-<span id="cb41-633"><a href="#cb41-633" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="bu">len</span>(error) <span class="op">+</span> <span class="dv">10</span></span>
-<span id="cb41-634"><a href="#cb41-634" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"""</span></span>
-<span id="cb41-635"><a href="#cb41-635" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span><span class="st">'!'</span> <span class="op">*</span> width<span class="sc">}</span></span>
-<span id="cb41-636"><a href="#cb41-636" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> ERROR: </span><span class="sc">{</span>error<span class="sc">}</span></span>
-<span id="cb41-637"><a href="#cb41-637" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span><span class="st">'!'</span> <span class="op">*</span> width<span class="sc">}</span></span>
-<span id="cb41-638"><a href="#cb41-638" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
-<span id="cb41-639"><a href="#cb41-639" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-640"><a href="#cb41-640" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_system_notification(notification):</span>
-<span id="cb41-641"><a href="#cb41-641" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format a system notification or status update."""</span></span>
-<span id="cb41-642"><a href="#cb41-642" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"[SYSTEM] </span><span class="sc">{</span>notification<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb41-643"><a href="#cb41-643" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-644"><a href="#cb41-644" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_user_info(user_name, user_level, last_active):</span>
-<span id="cb41-645"><a href="#cb41-645" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format user information in a structured display."""</span></span>
-<span id="cb41-646"><a href="#cb41-646" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"""</span></span>
-<span id="cb41-647"><a href="#cb41-647" aria-hidden="true" tabindex="-1"></a><span class="ss">┌─── User Profile ───┐</span></span>
-<span id="cb41-648"><a href="#cb41-648" aria-hidden="true" tabindex="-1"></a><span class="ss">│ Name: </span><span class="sc">{</span>user_name<span class="sc">:&lt;12}</span><span class="ss"> │</span></span>
-<span id="cb41-649"><a href="#cb41-649" aria-hidden="true" tabindex="-1"></a><span class="ss">│ Level: </span><span class="sc">{</span>user_level<span class="sc">:&lt;11}</span><span class="ss"> │</span></span>
-<span id="cb41-650"><a href="#cb41-650" aria-hidden="true" tabindex="-1"></a><span class="ss">│ Last seen: </span><span class="sc">{</span>last_active<span class="sc">:&lt;8}</span><span class="ss"> │</span></span>
-<span id="cb41-651"><a href="#cb41-651" aria-hidden="true" tabindex="-1"></a><span class="ss">└────────────────────┘</span></span>
-<span id="cb41-652"><a href="#cb41-652" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
-<span id="cb41-653"><a href="#cb41-653" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-654"><a href="#cb41-654" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage:</span></span>
-<span id="cb41-655"><a href="#cb41-655" aria-hidden="true" tabindex="-1"></a>bot_name <span class="op">=</span> <span class="st">"ChatPy"</span></span>
-<span id="cb41-656"><a href="#cb41-656" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_regular_message(bot_name, <span class="st">"Hello! How can I help you today?"</span>))</span>
-<span id="cb41-657"><a href="#cb41-657" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_error_message(bot_name, <span class="st">"Could not process that request"</span>))</span>
-<span id="cb41-658"><a href="#cb41-658" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_system_notification(<span class="st">"Updating knowledge base..."</span>))</span>
-<span id="cb41-659"><a href="#cb41-659" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_user_info(<span class="st">"Alex"</span>, <span class="st">"Beginner"</span>, <span class="st">"2 days ago"</span>))</span>
-<span id="cb41-660"><a href="#cb41-660" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-661"><a href="#cb41-661" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-662"><a href="#cb41-662" aria-hidden="true" tabindex="-1"></a>*This design creates distinct visual styles for different message types:*</span>
-<span id="cb41-663"><a href="#cb41-663" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Regular messages include timestamps for conversation flow*</span>
-<span id="cb41-664"><a href="#cb41-664" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Error messages stand out with exclamation borders*</span>
-<span id="cb41-665"><a href="#cb41-665" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*System notifications use square brackets as a subtle indicator*</span>
-<span id="cb41-666"><a href="#cb41-666" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*User info appears in a box-drawing frame*</span>
-<span id="cb41-667"><a href="#cb41-667" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-668"><a href="#cb41-668" aria-hidden="true" tabindex="-1"></a>*For consistency, you could also create a config dictionary with your visual elements:*</span>
-<span id="cb41-669"><a href="#cb41-669" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-670"><a href="#cb41-670" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-671"><a href="#cb41-671" aria-hidden="true" tabindex="-1"></a>CHAT_STYLE <span class="op">=</span> {</span>
-<span id="cb41-672"><a href="#cb41-672" aria-hidden="true" tabindex="-1"></a>    <span class="st">"primary_color"</span>: <span class="st">"*"</span>,   <span class="co"># For main headers</span></span>
-<span id="cb41-673"><a href="#cb41-673" aria-hidden="true" tabindex="-1"></a>    <span class="st">"secondary_color"</span>: <span class="st">"-"</span>, <span class="co"># For sub-headers</span></span>
-<span id="cb41-674"><a href="#cb41-674" aria-hidden="true" tabindex="-1"></a>    <span class="st">"regular_prefix"</span>: <span class="st">"&gt;"</span>,  <span class="co"># For regular messages</span></span>
-<span id="cb41-675"><a href="#cb41-675" aria-hidden="true" tabindex="-1"></a>    <span class="st">"width"</span>: <span class="dv">60</span>            <span class="co"># Consistent width for formatting</span></span>
-<span id="cb41-676"><a href="#cb41-676" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb41-677"><a href="#cb41-677" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-678"><a href="#cb41-678" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-679"><a href="#cb41-679" aria-hidden="true" tabindex="-1"></a>*This approach creates a consistent visual language that users will quickly learn to navigate.*</span>
-<span id="cb41-680"><a href="#cb41-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-681"><a href="#cb41-681" aria-hidden="true" tabindex="-1"></a><span class="fu">### How to Craft Effective Prompts for Output Design</span></span>
-<span id="cb41-682"><a href="#cb41-682" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-683"><a href="#cb41-683" aria-hidden="true" tabindex="-1"></a>When working with an AI assistant on output formatting:</span>
-<span id="cb41-684"><a href="#cb41-684" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-685"><a href="#cb41-685" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Be specific about the context and purpose** of your output (e.g., terminal application, log file, chatbot interface)</span>
-<span id="cb41-686"><a href="#cb41-686" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-687"><a href="#cb41-687" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Describe the visual hierarchy** you want to establish (what should stand out, what should be subtle)</span>
-<span id="cb41-688"><a href="#cb41-688" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-689"><a href="#cb41-689" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Ask for specific techniques** rather than general advice (e.g., "How can I create boxed text in a terminal?" rather than "How should I format output?")</span>
-<span id="cb41-690"><a href="#cb41-690" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-691"><a href="#cb41-691" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Include examples of your current output** if you're trying to improve existing code</span>
-<span id="cb41-692"><a href="#cb41-692" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-693"><a href="#cb41-693" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Request alternatives** to compare different approaches</span>
-<span id="cb41-694"><a href="#cb41-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-695"><a href="#cb41-695" aria-hidden="true" tabindex="-1"></a>For example:</span>
-<span id="cb41-696"><a href="#cb41-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-697"><a href="#cb41-697" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb41-698"><a href="#cb41-698" aria-hidden="true" tabindex="-1"></a><span class="in">I'm creating a data analysis report that will be viewed in the terminal.</span></span>
-<span id="cb41-699"><a href="#cb41-699" aria-hidden="true" tabindex="-1"></a><span class="in">I need to display:</span></span>
-<span id="cb41-700"><a href="#cb41-700" aria-hidden="true" tabindex="-1"></a><span class="in">1. A prominent title</span></span>
-<span id="cb41-701"><a href="#cb41-701" aria-hidden="true" tabindex="-1"></a><span class="in">2. Summary statistics (min, max, average)</span></span>
-<span id="cb41-702"><a href="#cb41-702" aria-hidden="true" tabindex="-1"></a><span class="in">3. Data warnings when values exceed thresholds</span></span>
-<span id="cb41-703"><a href="#cb41-703" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-704"><a href="#cb41-704" aria-hidden="true" tabindex="-1"></a><span class="in">Show me 2-3 different ways to format this information using Python's</span></span>
-<span id="cb41-705"><a href="#cb41-705" aria-hidden="true" tabindex="-1"></a><span class="in">print() function, focusing on readability and visual hierarchy.</span></span>
-<span id="cb41-706"><a href="#cb41-706" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-707"><a href="#cb41-707" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-708"><a href="#cb41-708" aria-hidden="true" tabindex="-1"></a>This specific prompt will yield practical designs tailored to your exact needs.</span>
-<span id="cb41-709"><a href="#cb41-709" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-710"><a href="#cb41-710" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Common Output Pitfalls to Avoid</span></span>
-<span id="cb41-711"><a href="#cb41-711" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-712"><a href="#cb41-712" aria-hidden="true" tabindex="-1"></a>As you develop your output systems, watch for these common issues:</span>
-<span id="cb41-713"><a href="#cb41-713" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-714"><a href="#cb41-714" aria-hidden="true" tabindex="-1"></a><span class="fu">### Type Conversion Errors</span></span>
-<span id="cb41-715"><a href="#cb41-715" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-716"><a href="#cb41-716" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-717"><a href="#cb41-717" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect</span></span>
-<span id="cb41-718"><a href="#cb41-718" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">30</span></span>
-<span id="cb41-719"><a href="#cb41-719" aria-hidden="true" tabindex="-1"></a><span class="co"># print("You are " + age + " years old.")  # TypeError: can't concatenate str and int</span></span>
-<span id="cb41-720"><a href="#cb41-720" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-721"><a href="#cb41-721" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct approaches</span></span>
-<span id="cb41-722"><a href="#cb41-722" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"You are "</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">" years old."</span>)  <span class="co"># Explicit conversion</span></span>
-<span id="cb41-723"><a href="#cb41-723" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"You are </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old."</span>)           <span class="co"># f-strings handle conversion</span></span>
-<span id="cb41-724"><a href="#cb41-724" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-725"><a href="#cb41-725" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-726"><a href="#cb41-726" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inconsistent Formatting</span></span>
-<span id="cb41-727"><a href="#cb41-727" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-728"><a href="#cb41-728" aria-hidden="true" tabindex="-1"></a>Inconsistent formatting confuses users and looks unprofessional:</span>
-<span id="cb41-729"><a href="#cb41-729" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-730"><a href="#cb41-730" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-731"><a href="#cb41-731" aria-hidden="true" tabindex="-1"></a><span class="co"># Inconsistent formatting - bad practice</span></span>
-<span id="cb41-732"><a href="#cb41-732" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Name: "</span> <span class="op">+</span> user_name)</span>
-<span id="cb41-733"><a href="#cb41-733" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Age: </span><span class="sc">{</span>user_age<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-734"><a href="#cb41-734" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Location:"</span>, user_location)</span>
-<span id="cb41-735"><a href="#cb41-735" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-736"><a href="#cb41-736" aria-hidden="true" tabindex="-1"></a><span class="co"># Consistent formatting - good practice</span></span>
-<span id="cb41-737"><a href="#cb41-737" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Name: </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-738"><a href="#cb41-738" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Age: </span><span class="sc">{</span>user_age<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-739"><a href="#cb41-739" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Location: </span><span class="sc">{</span>user_location<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-740"><a href="#cb41-740" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-741"><a href="#cb41-741" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-742"><a href="#cb41-742" aria-hidden="true" tabindex="-1"></a><span class="fu">### Neglecting Edge Cases</span></span>
-<span id="cb41-743"><a href="#cb41-743" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-744"><a href="#cb41-744" aria-hidden="true" tabindex="-1"></a>Always consider how your output will handle extreme values or unexpected input:</span>
-<span id="cb41-745"><a href="#cb41-745" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-746"><a href="#cb41-746" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-747"><a href="#cb41-747" aria-hidden="true" tabindex="-1"></a><span class="co"># Potential issues with long input</span></span>
-<span id="cb41-748"><a href="#cb41-748" aria-hidden="true" tabindex="-1"></a>username <span class="op">=</span> <span class="st">"TheVeryLongUsernameWithManyCharactersThatMightBreakFormatting"</span></span>
-<span id="cb41-749"><a href="#cb41-749" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-750"><a href="#cb41-750" aria-hidden="true" tabindex="-1"></a><span class="co"># Poor handling - will break your layout</span></span>
-<span id="cb41-751"><a href="#cb41-751" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"|</span><span class="sc">{</span>username<span class="sc">:20}</span><span class="ss">|"</span>)  <span class="co"># |TheVeryLongUsernamew|  (truncated)</span></span>
-<span id="cb41-752"><a href="#cb41-752" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-753"><a href="#cb41-753" aria-hidden="true" tabindex="-1"></a><span class="co"># Better approach - handle long inputs gracefully</span></span>
-<span id="cb41-754"><a href="#cb41-754" aria-hidden="true" tabindex="-1"></a>max_length <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb41-755"><a href="#cb41-755" aria-hidden="true" tabindex="-1"></a>display_name <span class="op">=</span> username[:max_length<span class="op">-</span><span class="dv">3</span>] <span class="op">+</span> <span class="st">"..."</span> <span class="cf">if</span> <span class="bu">len</span>(username) <span class="op">&gt;</span> max_length <span class="cf">else</span> username</span>
-<span id="cb41-756"><a href="#cb41-756" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"|</span><span class="sc">{</span>display_name<span class="sc">:20}</span><span class="ss">|"</span>)  <span class="co"># |TheVeryLongUserna...|</span></span>
-<span id="cb41-757"><a href="#cb41-757" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-758"><a href="#cb41-758" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-759"><a href="#cb41-759" aria-hidden="true" tabindex="-1"></a><span class="fu">### Forgetting to Flush Output</span></span>
-<span id="cb41-760"><a href="#cb41-760" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-761"><a href="#cb41-761" aria-hidden="true" tabindex="-1"></a>For real-time updates (like progress indicators), remember to flush the output buffer:</span>
-<span id="cb41-762"><a href="#cb41-762" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-763"><a href="#cb41-763" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-764"><a href="#cb41-764" aria-hidden="true" tabindex="-1"></a><span class="co"># Without flush, dots might appear all at once</span></span>
-<span id="cb41-765"><a href="#cb41-765" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb41-766"><a href="#cb41-766" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"."</span>, end<span class="op">=</span><span class="st">""</span>)</span>
-<span id="cb41-767"><a href="#cb41-767" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb41-768"><a href="#cb41-768" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-769"><a href="#cb41-769" aria-hidden="true" tabindex="-1"></a><span class="co"># With flush, dots appear as they're printed</span></span>
-<span id="cb41-770"><a href="#cb41-770" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb41-771"><a href="#cb41-771" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"."</span>, end<span class="op">=</span><span class="st">""</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb41-772"><a href="#cb41-772" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb41-773"><a href="#cb41-773" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-774"><a href="#cb41-774" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-775"><a href="#cb41-775" aria-hidden="true" tabindex="-1"></a><span class="fu">### Hard-Coding Values That Should Be Variables</span></span>
-<span id="cb41-776"><a href="#cb41-776" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-777"><a href="#cb41-777" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-778"><a href="#cb41-778" aria-hidden="true" tabindex="-1"></a><span class="co"># Hard-coded values - harder to maintain</span></span>
-<span id="cb41-779"><a href="#cb41-779" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to ChatPy v1.0!"</span>)</span>
-<span id="cb41-780"><a href="#cb41-780" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ChatPy&gt; How can I help you?"</span>)</span>
-<span id="cb41-781"><a href="#cb41-781" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-782"><a href="#cb41-782" aria-hidden="true" tabindex="-1"></a><span class="co"># Better approach - use variables</span></span>
-<span id="cb41-783"><a href="#cb41-783" aria-hidden="true" tabindex="-1"></a>bot_name <span class="op">=</span> <span class="st">"ChatPy"</span></span>
-<span id="cb41-784"><a href="#cb41-784" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="st">"1.0"</span></span>
-<span id="cb41-785"><a href="#cb41-785" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Welcome to </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> v</span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb41-786"><a href="#cb41-786" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; How can I help you?"</span>)</span>
-<span id="cb41-787"><a href="#cb41-787" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-788"><a href="#cb41-788" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-789"><a href="#cb41-789" aria-hidden="true" tabindex="-1"></a><span class="fu">## 11. Real-World Output Examples</span></span>
-<span id="cb41-790"><a href="#cb41-790" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-791"><a href="#cb41-791" aria-hidden="true" tabindex="-1"></a>Let's examine how output techniques are used in professional applications:</span>
-<span id="cb41-792"><a href="#cb41-792" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-793"><a href="#cb41-793" aria-hidden="true" tabindex="-1"></a><span class="fu">### Command-Line Interface (CLI) Tools</span></span>
-<span id="cb41-794"><a href="#cb41-794" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-795"><a href="#cb41-795" aria-hidden="true" tabindex="-1"></a>CLI tools need clear, structured output to guide users:</span>
-<span id="cb41-796"><a href="#cb41-796" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-797"><a href="#cb41-797" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-798"><a href="#cb41-798" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_help_menu(command<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb41-799"><a href="#cb41-799" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display a help menu similar to professional CLI tools."""</span></span>
-<span id="cb41-800"><a href="#cb41-800" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb41-801"><a href="#cb41-801" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Main help menu</span></span>
-<span id="cb41-802"><a href="#cb41-802" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">FILE MANAGER - Available Commands</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-803"><a href="#cb41-803" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  list          List files in current directory"</span>)</span>
-<span id="cb41-804"><a href="#cb41-804" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  search TEXT   Search for files containing TEXT"</span>)</span>
-<span id="cb41-805"><a href="#cb41-805" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  copy SRC DST  Copy file from SRC to DST"</span>)</span>
-<span id="cb41-806"><a href="#cb41-806" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  help COMMAND  Show help for specific command</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-807"><a href="#cb41-807" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Use 'exit' to quit the program</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-808"><a href="#cb41-808" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"search"</span>:</span>
-<span id="cb41-809"><a href="#cb41-809" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Command-specific help</span></span>
-<span id="cb41-810"><a href="#cb41-810" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">SEARCH COMMAND</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-811"><a href="#cb41-811" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  search TEXT   Search for files containing TEXT"</span>)</span>
-<span id="cb41-812"><a href="#cb41-812" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Options:"</span>)</span>
-<span id="cb41-813"><a href="#cb41-813" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  -i            Case-insensitive search"</span>)</span>
-<span id="cb41-814"><a href="#cb41-814" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  -r            Recursive search in subdirectories</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-815"><a href="#cb41-815" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Example: search -i -r 'python'"</span>)</span>
-<span id="cb41-816"><a href="#cb41-816" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-817"><a href="#cb41-817" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb41-818"><a href="#cb41-818" aria-hidden="true" tabindex="-1"></a>display_help_menu()</span>
-<span id="cb41-819"><a href="#cb41-819" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-820"><a href="#cb41-820" aria-hidden="true" tabindex="-1"></a>display_help_menu(<span class="st">"search"</span>)</span>
-<span id="cb41-821"><a href="#cb41-821" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-822"><a href="#cb41-822" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-823"><a href="#cb41-823" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Analysis Reports</span></span>
-<span id="cb41-824"><a href="#cb41-824" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-825"><a href="#cb41-825" aria-hidden="true" tabindex="-1"></a>Data analysis tools often display tabular data and statistics:</span>
-<span id="cb41-826"><a href="#cb41-826" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-827"><a href="#cb41-827" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-828"><a href="#cb41-828" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_data_summary(dataset_name, data_points, statistics):</span>
-<span id="cb41-829"><a href="#cb41-829" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display a professional data analysis summary."""</span></span>
-<span id="cb41-830"><a href="#cb41-830" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">70</span></span>
-<span id="cb41-831"><a href="#cb41-831" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-832"><a href="#cb41-832" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Header with dataset information</span></span>
-<span id="cb41-833"><a href="#cb41-833" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> width)</span>
-<span id="cb41-834"><a href="#cb41-834" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>dataset_name<span class="sc">}</span><span class="ss"> Analysis Summary "</span>.center(width, <span class="st">"="</span>))</span>
-<span id="cb41-835"><a href="#cb41-835" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width)</span>
-<span id="cb41-836"><a href="#cb41-836" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-837"><a href="#cb41-837" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dataset information</span></span>
-<span id="cb41-838"><a href="#cb41-838" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Dataset contains </span><span class="sc">{</span>data_points<span class="sc">}</span><span class="ss"> data points</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-839"><a href="#cb41-839" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-840"><a href="#cb41-840" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Statistics table</span></span>
-<span id="cb41-841"><a href="#cb41-841" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> (width <span class="op">-</span> <span class="dv">2</span>))</span>
-<span id="cb41-842"><a href="#cb41-842" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span><span class="st">'Statistic'</span><span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span><span class="st">'Value'</span><span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span><span class="st">'Interpretation'</span><span class="sc">:&lt;25}</span><span class="ss">"</span>)</span>
-<span id="cb41-843"><a href="#cb41-843" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> (width <span class="op">-</span> <span class="dv">2</span>))</span>
-<span id="cb41-844"><a href="#cb41-844" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-845"><a href="#cb41-845" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> stat, values <span class="kw">in</span> statistics.items():</span>
-<span id="cb41-846"><a href="#cb41-846" aria-hidden="true" tabindex="-1"></a>        value, interpretation <span class="op">=</span> values</span>
-<span id="cb41-847"><a href="#cb41-847" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Format numbers with commas and appropriate decimal places</span></span>
-<span id="cb41-848"><a href="#cb41-848" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(value, <span class="bu">float</span>):</span>
-<span id="cb41-849"><a href="#cb41-849" aria-hidden="true" tabindex="-1"></a>            formatted_value <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:,.2f}</span><span class="ss">"</span></span>
-<span id="cb41-850"><a href="#cb41-850" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">isinstance</span>(value, <span class="bu">int</span>):</span>
-<span id="cb41-851"><a href="#cb41-851" aria-hidden="true" tabindex="-1"></a>            formatted_value <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:,}</span><span class="ss">"</span></span>
-<span id="cb41-852"><a href="#cb41-852" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb41-853"><a href="#cb41-853" aria-hidden="true" tabindex="-1"></a>            formatted_value <span class="op">=</span> value</span>
-<span id="cb41-854"><a href="#cb41-854" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-855"><a href="#cb41-855" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>stat<span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span>formatted_value<span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span>interpretation<span class="sc">:&lt;25}</span><span class="ss">"</span>)</span>
-<span id="cb41-856"><a href="#cb41-856" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-857"><a href="#cb41-857" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> (width <span class="op">-</span> <span class="dv">2</span>))</span>
-<span id="cb41-858"><a href="#cb41-858" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-859"><a href="#cb41-859" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Footer with timestamp</span></span>
-<span id="cb41-860"><a href="#cb41-860" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb41-861"><a href="#cb41-861" aria-hidden="true" tabindex="-1"></a>    timestamp <span class="op">=</span> datetime.now().strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
-<span id="cb41-862"><a href="#cb41-862" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> width)</span>
-<span id="cb41-863"><a href="#cb41-863" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" Report generated: </span><span class="sc">{</span>timestamp<span class="sc">}</span><span class="ss"> "</span>.center(width, <span class="st">"-"</span>))</span>
-<span id="cb41-864"><a href="#cb41-864" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-865"><a href="#cb41-865" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-866"><a href="#cb41-866" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb41-867"><a href="#cb41-867" aria-hidden="true" tabindex="-1"></a>sample_stats <span class="op">=</span> {</span>
-<span id="cb41-868"><a href="#cb41-868" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mean"</span>: [<span class="fl">42.5</span>, <span class="st">"Within expected range"</span>],</span>
-<span id="cb41-869"><a href="#cb41-869" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Median"</span>: [<span class="fl">38.0</span>, <span class="st">"Lower than previous month"</span>],</span>
-<span id="cb41-870"><a href="#cb41-870" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Std Deviation"</span>: [<span class="fl">12.34</span>, <span class="st">"High variance detected"</span>],</span>
-<span id="cb41-871"><a href="#cb41-871" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Min Value"</span>: [<span class="dv">10</span>, <span class="st">"No outliers detected"</span>],</span>
-<span id="cb41-872"><a href="#cb41-872" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Max Value"</span>: [<span class="dv">95</span>, <span class="st">"Investigate high values"</span>],</span>
-<span id="cb41-873"><a href="#cb41-873" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Total"</span>: [<span class="dv">1250000</span>, <span class="st">"Exceeds quarterly target"</span>]</span>
-<span id="cb41-874"><a href="#cb41-874" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb41-875"><a href="#cb41-875" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-876"><a href="#cb41-876" aria-hidden="true" tabindex="-1"></a>display_data_summary(<span class="st">"Customer Engagement"</span>, <span class="dv">2500</span>, sample_stats)</span>
-<span id="cb41-877"><a href="#cb41-877" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-878"><a href="#cb41-878" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-879"><a href="#cb41-879" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interactive Applications</span></span>
-<span id="cb41-880"><a href="#cb41-880" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-881"><a href="#cb41-881" aria-hidden="true" tabindex="-1"></a>Interactive applications need responsive, clear output:</span>
-<span id="cb41-882"><a href="#cb41-882" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-883"><a href="#cb41-883" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb41-884"><a href="#cb41-884" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_interactive_menu():</span>
-<span id="cb41-885"><a href="#cb41-885" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate an interactive menu system with user feedback."""</span></span>
-<span id="cb41-886"><a href="#cb41-886" aria-hidden="true" tabindex="-1"></a>    options <span class="op">=</span> [<span class="st">"View Profile"</span>, <span class="st">"Settings"</span>, <span class="st">"Help"</span>, <span class="st">"Exit"</span>]</span>
-<span id="cb41-887"><a href="#cb41-887" aria-hidden="true" tabindex="-1"></a>    selected <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb41-888"><a href="#cb41-888" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-889"><a href="#cb41-889" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb41-890"><a href="#cb41-890" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Clear the display (this would clear the terminal in a real application)</span></span>
-<span id="cb41-891"><a href="#cb41-891" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">*</span> <span class="dv">5</span>)</span>
-<span id="cb41-892"><a href="#cb41-892" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-893"><a href="#cb41-893" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display title</span></span>
-<span id="cb41-894"><a href="#cb41-894" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
-<span id="cb41-895"><a href="#cb41-895" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"INTERACTIVE MENU DEMO"</span>.center(<span class="dv">40</span>))</span>
-<span id="cb41-896"><a href="#cb41-896" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-897"><a href="#cb41-897" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-898"><a href="#cb41-898" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display options with selected item highlighted</span></span>
-<span id="cb41-899"><a href="#cb41-899" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, option <span class="kw">in</span> <span class="bu">enumerate</span>(options):</span>
-<span id="cb41-900"><a href="#cb41-900" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">==</span> selected:</span>
-<span id="cb41-901"><a href="#cb41-901" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f" &gt; </span><span class="sc">{</span>option<span class="sc">}</span><span class="ss"> &lt;"</span>.center(<span class="dv">40</span>))</span>
-<span id="cb41-902"><a href="#cb41-902" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb41-903"><a href="#cb41-903" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"   </span><span class="sc">{</span>option<span class="sc">}</span><span class="ss">   "</span>.center(<span class="dv">40</span>))</span>
-<span id="cb41-904"><a href="#cb41-904" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-905"><a href="#cb41-905" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display navigation instructions</span></span>
-<span id="cb41-906"><a href="#cb41-906" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">40</span>)</span>
-<span id="cb41-907"><a href="#cb41-907" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Navigation: [N]ext, [P]revious, [S]elect, [Q]uit"</span>)</span>
-<span id="cb41-908"><a href="#cb41-908" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">40</span>)</span>
-<span id="cb41-909"><a href="#cb41-909" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-910"><a href="#cb41-910" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Simulate user input (in a real app, you'd get actual input)</span></span>
-<span id="cb41-911"><a href="#cb41-911" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> random</span>
-<span id="cb41-912"><a href="#cb41-912" aria-hidden="true" tabindex="-1"></a>        choice <span class="op">=</span> random.choice([<span class="st">'n'</span>, <span class="st">'p'</span>, <span class="st">'s'</span>, <span class="st">'q'</span>])</span>
-<span id="cb41-913"><a href="#cb41-913" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-914"><a href="#cb41-914" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Process the simulated choice</span></span>
-<span id="cb41-915"><a href="#cb41-915" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> choice <span class="op">==</span> <span class="st">'n'</span>:</span>
-<span id="cb41-916"><a href="#cb41-916" aria-hidden="true" tabindex="-1"></a>            selected <span class="op">=</span> (selected <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="bu">len</span>(options)</span>
-<span id="cb41-917"><a href="#cb41-917" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[SYSTEM] Selected next item"</span>)</span>
-<span id="cb41-918"><a href="#cb41-918" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">'p'</span>:</span>
-<span id="cb41-919"><a href="#cb41-919" aria-hidden="true" tabindex="-1"></a>            selected <span class="op">=</span> (selected <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="bu">len</span>(options)</span>
-<span id="cb41-920"><a href="#cb41-920" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[SYSTEM] Selected previous item"</span>)</span>
-<span id="cb41-921"><a href="#cb41-921" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">'s'</span>:</span>
-<span id="cb41-922"><a href="#cb41-922" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">[SYSTEM] You selected: </span><span class="sc">{</span>options[selected]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-923"><a href="#cb41-923" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> options[selected] <span class="op">==</span> <span class="st">"Exit"</span>:</span>
-<span id="cb41-924"><a href="#cb41-924" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-<span id="cb41-925"><a href="#cb41-925" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">'q'</span>:</span>
-<span id="cb41-926"><a href="#cb41-926" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[SYSTEM] Quitting demo..."</span>)</span>
-<span id="cb41-927"><a href="#cb41-927" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb41-928"><a href="#cb41-928" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-929"><a href="#cb41-929" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Pause to see the output (only for simulation)</span></span>
-<span id="cb41-930"><a href="#cb41-930" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> time</span>
-<span id="cb41-931"><a href="#cb41-931" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">1.5</span>)</span>
-<span id="cb41-932"><a href="#cb41-932" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-933"><a href="#cb41-933" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Interactive menu demo finished</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-934"><a href="#cb41-934" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-935"><a href="#cb41-935" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the interactive menu simulation</span></span>
-<span id="cb41-936"><a href="#cb41-936" aria-hidden="true" tabindex="-1"></a><span class="co"># simulate_interactive_menu()  # Commented out to avoid long output</span></span>
-<span id="cb41-937"><a href="#cb41-937" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb41-938"><a href="#cb41-938" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-939"><a href="#cb41-939" aria-hidden="true" tabindex="-1"></a>These examples demonstrate how professional applications use structured output to create effective user experiences. The techniques are the same as those we've covered—just applied with consistency and purpose.</span>
-<span id="cb41-940"><a href="#cb41-940" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-941"><a href="#cb41-941" aria-hidden="true" tabindex="-1"></a><span class="fu">## 12. Self-Assessment Quiz</span></span>
-<span id="cb41-942"><a href="#cb41-942" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-943"><a href="#cb41-943" aria-hidden="true" tabindex="-1"></a>Test your understanding of Python output concepts:</span>
-<span id="cb41-944"><a href="#cb41-944" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-945"><a href="#cb41-945" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What will this code display? <span class="in">`print("A", "B", "C", sep="/")`</span></span>
-<span id="cb41-946"><a href="#cb41-946" aria-hidden="true" tabindex="-1"></a>   a) A B C</span>
-<span id="cb41-947"><a href="#cb41-947" aria-hidden="true" tabindex="-1"></a>   b) A/B/C</span>
-<span id="cb41-948"><a href="#cb41-948" aria-hidden="true" tabindex="-1"></a>   c) "A"/"B"/"C"</span>
-<span id="cb41-949"><a href="#cb41-949" aria-hidden="true" tabindex="-1"></a>   d) A \ B \ C</span>
-<span id="cb41-950"><a href="#cb41-950" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-951"><a href="#cb41-951" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Which of these correctly formats a float to show exactly 3 decimal places?</span>
-<span id="cb41-952"><a href="#cb41-952" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`print("Value: %.3f" % value)`</span></span>
-<span id="cb41-953"><a href="#cb41-953" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`print("Value: {:.3f}".format(value))`</span></span>
-<span id="cb41-954"><a href="#cb41-954" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`print(f"Value: {value:.3f}")`</span></span>
-<span id="cb41-955"><a href="#cb41-955" aria-hidden="true" tabindex="-1"></a>   d) All of the above</span>
-<span id="cb41-956"><a href="#cb41-956" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-957"><a href="#cb41-957" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What's the purpose of the <span class="in">`end`</span> parameter in the <span class="in">`print()`</span> function?</span>
-<span id="cb41-958"><a href="#cb41-958" aria-hidden="true" tabindex="-1"></a>   a) It marks the end of the program</span>
-<span id="cb41-959"><a href="#cb41-959" aria-hidden="true" tabindex="-1"></a>   b) It controls what's printed after all other arguments</span>
-<span id="cb41-960"><a href="#cb41-960" aria-hidden="true" tabindex="-1"></a>   c) It terminates a loop after printing</span>
-<span id="cb41-961"><a href="#cb41-961" aria-hidden="true" tabindex="-1"></a>   d) It specifies the maximum length of output</span>
-<span id="cb41-962"><a href="#cb41-962" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-963"><a href="#cb41-963" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>How would you print the following on three separate lines:</span>
-<span id="cb41-964"><a href="#cb41-964" aria-hidden="true" tabindex="-1"></a>   <span class="in">```text</span></span>
-<span id="cb41-965"><a href="#cb41-965" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 1</span></span>
-<span id="cb41-966"><a href="#cb41-966" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 2</span></span>
-<span id="cb41-967"><a href="#cb41-967" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 3</span></span>
-<span id="cb41-968"><a href="#cb41-968" aria-hidden="true" tabindex="-1"></a><span class="in">   ```</span></span>
-<span id="cb41-969"><a href="#cb41-969" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`print("Line 1", "Line 2", "Line 3")`</span></span>
-<span id="cb41-970"><a href="#cb41-970" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`print("Line 1\nLine 2\nLine 3")`</span></span>
-<span id="cb41-971"><a href="#cb41-971" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`print("Line 1/Line 2/Line 3", sep="\n")`</span></span>
-<span id="cb41-972"><a href="#cb41-972" aria-hidden="true" tabindex="-1"></a>   d) Both b and c</span>
-<span id="cb41-973"><a href="#cb41-973" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-974"><a href="#cb41-974" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What happens when the <span class="in">`flush=True`</span> parameter is used with <span class="in">`print()`</span>?</span>
-<span id="cb41-975"><a href="#cb41-975" aria-hidden="true" tabindex="-1"></a>   a) The output is cleared after printing</span>
-<span id="cb41-976"><a href="#cb41-976" aria-hidden="true" tabindex="-1"></a>   b) The output buffer is immediately written to the destination</span>
-<span id="cb41-977"><a href="#cb41-977" aria-hidden="true" tabindex="-1"></a>   c) All previous output is erased</span>
-<span id="cb41-978"><a href="#cb41-978" aria-hidden="true" tabindex="-1"></a>   d) The terminal window is refreshed</span>
-<span id="cb41-979"><a href="#cb41-979" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-980"><a href="#cb41-980" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>In the context of chatbot development, why is formatting output important?</span>
-<span id="cb41-981"><a href="#cb41-981" aria-hidden="true" tabindex="-1"></a>   a) It makes the code run faster</span>
-<span id="cb41-982"><a href="#cb41-982" aria-hidden="true" tabindex="-1"></a>   b) It creates a more engaging user experience</span>
-<span id="cb41-983"><a href="#cb41-983" aria-hidden="true" tabindex="-1"></a>   c) It reduces memory usage</span>
-<span id="cb41-984"><a href="#cb41-984" aria-hidden="true" tabindex="-1"></a>   d) It has no practical benefit</span>
-<span id="cb41-985"><a href="#cb41-985" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-986"><a href="#cb41-986" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Which approach to string formatting is recommended in modern Python (3.6+)?</span>
-<span id="cb41-987"><a href="#cb41-987" aria-hidden="true" tabindex="-1"></a>   a) String concatenation with <span class="in">`+`</span></span>
-<span id="cb41-988"><a href="#cb41-988" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`%`</span> formatting</span>
-<span id="cb41-989"><a href="#cb41-989" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`.format()`</span> method</span>
-<span id="cb41-990"><a href="#cb41-990" aria-hidden="true" tabindex="-1"></a>   d) F-strings (formatted string literals)</span>
-<span id="cb41-991"><a href="#cb41-991" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-992"><a href="#cb41-992" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>What's the output of this code? <span class="in">`print(f"{'Python':^10}")`</span></span>
-<span id="cb41-993"><a href="#cb41-993" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`Python    `</span></span>
-<span id="cb41-994"><a href="#cb41-994" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`    Python`</span></span>
-<span id="cb41-995"><a href="#cb41-995" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`  Python  `</span></span>
-<span id="cb41-996"><a href="#cb41-996" aria-hidden="true" tabindex="-1"></a>   d) <span class="in">`Python`</span></span>
-<span id="cb41-997"><a href="#cb41-997" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-998"><a href="#cb41-998" aria-hidden="true" tabindex="-1"></a>**Answers:**</span>
-<span id="cb41-999"><a href="#cb41-999" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>b) A/B/C - The <span class="in">`sep`</span> parameter defines what goes between items.</span>
-<span id="cb41-1000"><a href="#cb41-1000" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>d) All of the above - These are different styles of string formatting, all achieving the same result.</span>
-<span id="cb41-1001"><a href="#cb41-1001" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>b) It controls what's printed after all other arguments - By default, this is a newline character.</span>
-<span id="cb41-1002"><a href="#cb41-1002" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>d) Both b and c - Both methods produce three lines of output.</span>
-<span id="cb41-1003"><a href="#cb41-1003" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>b) The output buffer is immediately written to the destination - Useful for real-time updates.</span>
-<span id="cb41-1004"><a href="#cb41-1004" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>b) It creates a more engaging user experience - Good formatting makes interaction natural and intuitive.</span>
-<span id="cb41-1005"><a href="#cb41-1005" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>d) F-strings (formatted string literals) - They're readable, concise, and efficient.</span>
-<span id="cb41-1006"><a href="#cb41-1006" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>c) <span class="in">`  Python  `</span> - The <span class="in">`^10`</span> centers "Python" in a field width of 10 characters.</span>
-<span id="cb41-1007"><a href="#cb41-1007" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1008"><a href="#cb41-1008" aria-hidden="true" tabindex="-1"></a><span class="fu">## 13. Try It Yourself: Output Exercises</span></span>
-<span id="cb41-1009"><a href="#cb41-1009" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1010"><a href="#cb41-1010" aria-hidden="true" tabindex="-1"></a>Practice your output skills with these exercises:</span>
-<span id="cb41-1011"><a href="#cb41-1011" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1012"><a href="#cb41-1012" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 1: Chatbot Introduction</span></span>
-<span id="cb41-1013"><a href="#cb41-1013" aria-hidden="true" tabindex="-1"></a>Create a well-formatted introduction for your own chatbot, including:</span>
-<span id="cb41-1014"><a href="#cb41-1014" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A decorative banner with the bot's name</span>
-<span id="cb41-1015"><a href="#cb41-1015" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A multi-line introduction describing its capabilities</span>
-<span id="cb41-1016"><a href="#cb41-1016" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>At least one use of visual structure (borders, alignment, etc.)</span>
-<span id="cb41-1017"><a href="#cb41-1017" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1018"><a href="#cb41-1018" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2: Formatting Different Data Types</span></span>
-<span id="cb41-1019"><a href="#cb41-1019" aria-hidden="true" tabindex="-1"></a>Write a program that creates and formats output for:</span>
-<span id="cb41-1020"><a href="#cb41-1020" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A price (use 2 decimal places)</span>
-<span id="cb41-1021"><a href="#cb41-1021" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A percentage (include the % symbol)</span>
-<span id="cb41-1022"><a href="#cb41-1022" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A large number with thousands separators</span>
-<span id="cb41-1023"><a href="#cb41-1023" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A date in a readable format</span>
-<span id="cb41-1024"><a href="#cb41-1024" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1025"><a href="#cb41-1025" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 3: Progress Indicator</span></span>
-<span id="cb41-1026"><a href="#cb41-1026" aria-hidden="true" tabindex="-1"></a>Create a loop that simulates a task with 10 steps, displaying progress using:</span>
-<span id="cb41-1027"><a href="#cb41-1027" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A textual counter (Step X of Y)</span>
-<span id="cb41-1028"><a href="#cb41-1028" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A visual progress bar made of characters</span>
-<span id="cb41-1029"><a href="#cb41-1029" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A percentage complete indicator</span>
-<span id="cb41-1030"><a href="#cb41-1030" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1031"><a href="#cb41-1031" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 4: Rich Chatbot Messages</span></span>
-<span id="cb41-1032"><a href="#cb41-1032" aria-hidden="true" tabindex="-1"></a>Expand your chatbot's message system to include:</span>
-<span id="cb41-1033"><a href="#cb41-1033" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Regular conversational messages</span>
-<span id="cb41-1034"><a href="#cb41-1034" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Error messages (visually distinct)</span>
-<span id="cb41-1035"><a href="#cb41-1035" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>System notifications</span>
-<span id="cb41-1036"><a href="#cb41-1036" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Help messages with a structured format</span>
-<span id="cb41-1037"><a href="#cb41-1037" aria-hidden="true" tabindex="-1"></a>Test each type with sample messages.</span>
-<span id="cb41-1038"><a href="#cb41-1038" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1039"><a href="#cb41-1039" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 5: Data Report Generator</span></span>
-<span id="cb41-1040"><a href="#cb41-1040" aria-hidden="true" tabindex="-1"></a>Create a function that takes a student's name and several test scores, then generates a well-formatted report showing:</span>
-<span id="cb41-1041"><a href="#cb41-1041" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The student's name in a header</span>
-<span id="cb41-1042"><a href="#cb41-1042" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each test score with a label</span>
-<span id="cb41-1043"><a href="#cb41-1043" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The average score</span>
-<span id="cb41-1044"><a href="#cb41-1044" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A visual indicator of performance (e.g., stars or other characters)</span>
-<span id="cb41-1045"><a href="#cb41-1045" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1046"><a href="#cb41-1046" aria-hidden="true" tabindex="-1"></a><span class="fu">## 14. Cross-References</span></span>
-<span id="cb41-1047"><a href="#cb41-1047" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1048"><a href="#cb41-1048" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Previous Chapter**: <span class="co">[</span><span class="ot">Variables</span><span class="co">](variables.qmd)</span> — Learn how to name and store your data</span>
-<span id="cb41-1049"><a href="#cb41-1049" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Next Chapter**: <span class="co">[</span><span class="ot">Input</span><span class="co">](input.qmd)</span> — Get information from users into your programs</span>
-<span id="cb41-1050"><a href="#cb41-1050" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Related Topic**: <span class="co">[</span><span class="ot">String Manipulation</span><span class="co">](strings.qmd)</span> — Master text processing techniques</span>
-<span id="cb41-1051"><a href="#cb41-1051" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Project Connection**: See how our output system evolves in <span class="co">[</span><span class="ot">Dictionaries</span><span class="co">](dictionaries.qmd)</span> to handle complex message templates</span>
-<span id="cb41-1052"><a href="#cb41-1052" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Advanced Application**: In <span class="co">[</span><span class="ot">Python AI Integration</span><span class="co">](python_ai_integration.qmd)</span>, we'll use these output techniques to display AI-generated responses</span>
-<span id="cb41-1053"><a href="#cb41-1053" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1054"><a href="#cb41-1054" aria-hidden="true" tabindex="-1"></a><span class="fu">## 15. Summary</span></span>
-<span id="cb41-1055"><a href="#cb41-1055" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1056"><a href="#cb41-1056" aria-hidden="true" tabindex="-1"></a>In this chapter, you've learned the essential skills for making your Python programs communicate effectively with users:</span>
-<span id="cb41-1057"><a href="#cb41-1057" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1058"><a href="#cb41-1058" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The versatile <span class="in">`print()`</span> function and its parameters for controlling output</span>
-<span id="cb41-1059"><a href="#cb41-1059" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiple string formatting approaches, from basic concatenation to powerful f-strings</span>
-<span id="cb41-1060"><a href="#cb41-1060" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Techniques for creating visual structure in text-based interfaces</span>
-<span id="cb41-1061"><a href="#cb41-1061" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Special characters and escape sequences for advanced formatting</span>
-<span id="cb41-1062"><a href="#cb41-1062" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using the <span class="in">`help()`</span> function to discover Python's capabilities</span>
-<span id="cb41-1063"><a href="#cb41-1063" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Professional output patterns used in real-world applications</span>
-<span id="cb41-1064"><a href="#cb41-1064" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1065"><a href="#cb41-1065" aria-hidden="true" tabindex="-1"></a>For our chatbot project, you've implemented the first critical component—the ability to display messages in a consistent, user-friendly format. While our chatbot can only "speak" for now, in the next chapter, we'll add the ability for it to "listen" by learning about user input.</span>
-<span id="cb41-1066"><a href="#cb41-1066" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1067"><a href="#cb41-1067" aria-hidden="true" tabindex="-1"></a>Remember that clear, well-formatted output is the foundation of user interaction in your programs. As we progress through the book, you'll see how these output techniques combine with other Python concepts to create increasingly sophisticated applications.</span>
-<span id="cb41-1068"><a href="#cb41-1068" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-1069"><a href="#cb41-1069" aria-hidden="true" tabindex="-1"></a>Whether you're building a simple script, a data visualization tool, or our chatbot project, the ability to produce clear, structured output will remain one of your most valuable programming skills.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb41-496"><a href="#cb41-496" aria-hidden="true" tabindex="-1"></a>**************************************************</span>
+<span id="cb41-497"><a href="#cb41-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-498"><a href="#cb41-498" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------</span>
+<span id="cb41-499"><a href="#cb41-499" aria-hidden="true" tabindex="-1"></a><span class="in">                        PyBot HELP</span></span>
+<span id="cb41-500"><a href="#cb41-500" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------</span>
+<span id="cb41-501"><a href="#cb41-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-502"><a href="#cb41-502" aria-hidden="true" tabindex="-1"></a>Available commands:</span>
+<span id="cb41-503"><a href="#cb41-503" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>HELLO: Greet the chatbot</span>
+<span id="cb41-504"><a href="#cb41-504" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>HELP: Show this help message</span>
+<span id="cb41-505"><a href="#cb41-505" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>BYE: End the conversation</span>
+<span id="cb41-506"><a href="#cb41-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-507"><a href="#cb41-507" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------</span>
+<span id="cb41-508"><a href="#cb41-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-509"><a href="#cb41-509" aria-hidden="true" tabindex="-1"></a><span class="fu">### Simulating a Complete Conversation</span></span>
+<span id="cb41-510"><a href="#cb41-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-511"><a href="#cb41-511" aria-hidden="true" tabindex="-1"></a>Let's put it all together to simulate a complete chatbot conversation:</span>
+<span id="cb41-512"><a href="#cb41-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-513"><a href="#cb41-513" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-514"><a href="#cb41-514" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb41-515"><a href="#cb41-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-516"><a href="#cb41-516" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_chatbot_conversation():</span>
+<span id="cb41-517"><a href="#cb41-517" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate a conversation with our chatbot using different output techniques."""</span></span>
+<span id="cb41-518"><a href="#cb41-518" aria-hidden="true" tabindex="-1"></a>    bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
+<span id="cb41-519"><a href="#cb41-519" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">60</span></span>
+<span id="cb41-520"><a href="#cb41-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-521"><a href="#cb41-521" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Welcome screen</span></span>
+<span id="cb41-522"><a href="#cb41-522" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> width)</span>
+<span id="cb41-523"><a href="#cb41-523" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> Chat Simulation"</span>.center(width))</span>
+<span id="cb41-524"><a href="#cb41-524" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width)</span>
+<span id="cb41-525"><a href="#cb41-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-526"><a href="#cb41-526" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initial greeting</span></span>
+<span id="cb41-527"><a href="#cb41-527" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Hello! I'm </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">, your Python assistant."</span>)</span>
+<span id="cb41-528"><a href="#cb41-528" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb41-529"><a href="#cb41-529" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; What's your name?"</span>)</span>
+<span id="cb41-530"><a href="#cb41-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-531"><a href="#cb41-531" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simulate user input</span></span>
+<span id="cb41-532"><a href="#cb41-532" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
+<span id="cb41-533"><a href="#cb41-533" aria-hidden="true" tabindex="-1"></a>    user_name <span class="op">=</span> <span class="st">"Alex"</span></span>
+<span id="cb41-534"><a href="#cb41-534" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; My name is </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb41-535"><a href="#cb41-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-536"><a href="#cb41-536" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bot response with formatted output</span></span>
+<span id="cb41-537"><a href="#cb41-537" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb41-538"><a href="#cb41-538" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Nice to meet you, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb41-539"><a href="#cb41-539" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.8</span>)</span>
+<span id="cb41-540"><a href="#cb41-540" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; I can help you learn Python concepts."</span>)</span>
+<span id="cb41-541"><a href="#cb41-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-542"><a href="#cb41-542" aria-hidden="true" tabindex="-1"></a>    <span class="co"># System message</span></span>
+<span id="cb41-543"><a href="#cb41-543" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.2</span>)</span>
+<span id="cb41-544"><a href="#cb41-544" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"[SYSTEM] </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> is retrieving information..."</span>)</span>
+<span id="cb41-545"><a href="#cb41-545" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
+<span id="cb41-546"><a href="#cb41-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-547"><a href="#cb41-547" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Information display with structure</span></span>
+<span id="cb41-548"><a href="#cb41-548" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Here are today's Python topics:"</span>)</span>
+<span id="cb41-549"><a href="#cb41-549" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • Variables and data types"</span>)</span>
+<span id="cb41-550"><a href="#cb41-550" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • Input and output techniques"</span>)</span>
+<span id="cb41-551"><a href="#cb41-551" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • String formatting with f-strings"</span>)</span>
+<span id="cb41-552"><a href="#cb41-552" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  • Basic control structures"</span>)</span>
+<span id="cb41-553"><a href="#cb41-553" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-554"><a href="#cb41-554" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Error message simulation</span></span>
+<span id="cb41-555"><a href="#cb41-555" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
+<span id="cb41-556"><a href="#cb41-556" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; Can you write my homework for me?"</span>)</span>
+<span id="cb41-557"><a href="#cb41-557" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.2</span>)</span>
+<span id="cb41-558"><a href="#cb41-558" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> [ERROR]&gt; I'm designed to help you learn, not to do your work for you."</span>)</span>
+<span id="cb41-559"><a href="#cb41-559" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"*"</span> <span class="op">*</span> <span class="dv">65</span>)</span>
+<span id="cb41-560"><a href="#cb41-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-561"><a href="#cb41-561" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Help message</span></span>
+<span id="cb41-562"><a href="#cb41-562" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
+<span id="cb41-563"><a href="#cb41-563" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; help"</span>)</span>
+<span id="cb41-564"><a href="#cb41-564" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb41-565"><a href="#cb41-565" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> width)</span>
+<span id="cb41-566"><a href="#cb41-566" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> HELP"</span>.center(width))</span>
+<span id="cb41-567"><a href="#cb41-567" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> width)</span>
+<span id="cb41-568"><a href="#cb41-568" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"""</span></span>
+<span id="cb41-569"><a href="#cb41-569" aria-hidden="true" tabindex="-1"></a><span class="st">Commands you can try:</span></span>
+<span id="cb41-570"><a href="#cb41-570" aria-hidden="true" tabindex="-1"></a><span class="st">- ASK [question]: Ask me about Python</span></span>
+<span id="cb41-571"><a href="#cb41-571" aria-hidden="true" tabindex="-1"></a><span class="st">- TOPICS: Show available topics</span></span>
+<span id="cb41-572"><a href="#cb41-572" aria-hidden="true" tabindex="-1"></a><span class="st">- EXAMPLE [topic]: Get an example about a topic</span></span>
+<span id="cb41-573"><a href="#cb41-573" aria-hidden="true" tabindex="-1"></a><span class="st">- BYE: End our conversation</span></span>
+<span id="cb41-574"><a href="#cb41-574" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span>)</span>
+<span id="cb41-575"><a href="#cb41-575" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> width)</span>
+<span id="cb41-576"><a href="#cb41-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-577"><a href="#cb41-577" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ending the conversation</span></span>
+<span id="cb41-578"><a href="#cb41-578" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">1.5</span>)</span>
+<span id="cb41-579"><a href="#cb41-579" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">&gt; bye"</span>)</span>
+<span id="cb41-580"><a href="#cb41-580" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb41-581"><a href="#cb41-581" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; Goodbye, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">! Happy coding!"</span>)</span>
+<span id="cb41-582"><a href="#cb41-582" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> width)</span>
+<span id="cb41-583"><a href="#cb41-583" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"End of simulation"</span>.center(width))</span>
+<span id="cb41-584"><a href="#cb41-584" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-585"><a href="#cb41-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-586"><a href="#cb41-586" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the simulation</span></span>
+<span id="cb41-587"><a href="#cb41-587" aria-hidden="true" tabindex="-1"></a>simulate_chatbot_conversation()</span>
+<span id="cb41-588"><a href="#cb41-588" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-589"><a href="#cb41-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-590"><a href="#cb41-590" aria-hidden="true" tabindex="-1"></a>This demonstration shows how effective output techniques can create an engaging, user-friendly conversational interface. As we progress through the book, we'll expand our chatbot with real interactive capabilities.</span>
+<span id="cb41-591"><a href="#cb41-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-592"><a href="#cb41-592" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Project Evolution**: In this chapter, we're focusing on the output side of our chatbot. In Chapter 6, we'll add user input capabilities, and in later chapters, we'll implement logic to make the chatbot truly interactive.</span></span>
+<span id="cb41-593"><a href="#cb41-593" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-594"><a href="#cb41-594" aria-hidden="true" tabindex="-1"></a><span class="fu">## 9. AI Collaboration Corner: Designing Effective Output</span></span>
+<span id="cb41-595"><a href="#cb41-595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-596"><a href="#cb41-596" aria-hidden="true" tabindex="-1"></a>Let's explore how AI assistants can help you design better output for your Python applications.</span>
+<span id="cb41-597"><a href="#cb41-597" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-598"><a href="#cb41-598" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before: Vague Prompting</span></span>
+<span id="cb41-599"><a href="#cb41-599" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-600"><a href="#cb41-600" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb41-601"><a href="#cb41-601" aria-hidden="true" tabindex="-1"></a><span class="in">Help me with Python print formatting.</span></span>
+<span id="cb41-602"><a href="#cb41-602" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-603"><a href="#cb41-603" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-604"><a href="#cb41-604" aria-hidden="true" tabindex="-1"></a>**AI Response:**</span>
+<span id="cb41-605"><a href="#cb41-605" aria-hidden="true" tabindex="-1"></a>*Python's print() function is versatile and offers many formatting options. You can use f-strings, format() method, or % formatting. Each approach has its own syntax and benefits. What specific formatting task are you trying to accomplish?*</span>
+<span id="cb41-606"><a href="#cb41-606" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-607"><a href="#cb41-607" aria-hidden="true" tabindex="-1"></a>This response is correct but generic, requiring more back-and-forth to get specific help.</span>
+<span id="cb41-608"><a href="#cb41-608" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-609"><a href="#cb41-609" aria-hidden="true" tabindex="-1"></a><span class="fu">### After: Detailed, Specific Prompting</span></span>
+<span id="cb41-610"><a href="#cb41-610" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-611"><a href="#cb41-611" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb41-612"><a href="#cb41-612" aria-hidden="true" tabindex="-1"></a><span class="in">I'm building a Python chatbot and need to design its output formatting. I want:</span></span>
+<span id="cb41-613"><a href="#cb41-613" aria-hidden="true" tabindex="-1"></a><span class="in">1. Different visual styles for regular messages, errors, and system notifications</span></span>
+<span id="cb41-614"><a href="#cb41-614" aria-hidden="true" tabindex="-1"></a><span class="in">2. A consistent visual identity (borders, spacing, etc.)</span></span>
+<span id="cb41-615"><a href="#cb41-615" aria-hidden="true" tabindex="-1"></a><span class="in">3. Examples of how to format timestamps and user information</span></span>
+<span id="cb41-616"><a href="#cb41-616" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-617"><a href="#cb41-617" aria-hidden="true" tabindex="-1"></a><span class="in">Please show code examples for each of these needs, optimised for readability on a terminal interface.</span></span>
+<span id="cb41-618"><a href="#cb41-618" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-619"><a href="#cb41-619" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-620"><a href="#cb41-620" aria-hidden="true" tabindex="-1"></a>**AI Response:**</span>
+<span id="cb41-621"><a href="#cb41-621" aria-hidden="true" tabindex="-1"></a>*Here's a comprehensive approach to designing your chatbot's output formatting:*</span>
+<span id="cb41-622"><a href="#cb41-622" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-623"><a href="#cb41-623" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-624"><a href="#cb41-624" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb41-625"><a href="#cb41-625" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb41-626"><a href="#cb41-626" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-627"><a href="#cb41-627" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_regular_message(bot_name, message):</span>
+<span id="cb41-628"><a href="#cb41-628" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format a regular conversational message."""</span></span>
+<span id="cb41-629"><a href="#cb41-629" aria-hidden="true" tabindex="-1"></a>    timestamp <span class="op">=</span> datetime.now().strftime(<span class="st">"%H:%M:%S"</span>)</span>
+<span id="cb41-630"><a href="#cb41-630" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>timestamp<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb41-631"><a href="#cb41-631" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-632"><a href="#cb41-632" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_error_message(bot_name, error):</span>
+<span id="cb41-633"><a href="#cb41-633" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format an error message with visual emphasis."""</span></span>
+<span id="cb41-634"><a href="#cb41-634" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="bu">len</span>(error) <span class="op">+</span> <span class="dv">10</span></span>
+<span id="cb41-635"><a href="#cb41-635" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"""</span></span>
+<span id="cb41-636"><a href="#cb41-636" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span><span class="st">'!'</span> <span class="op">*</span> width<span class="sc">}</span></span>
+<span id="cb41-637"><a href="#cb41-637" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> ERROR: </span><span class="sc">{</span>error<span class="sc">}</span></span>
+<span id="cb41-638"><a href="#cb41-638" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span><span class="st">'!'</span> <span class="op">*</span> width<span class="sc">}</span></span>
+<span id="cb41-639"><a href="#cb41-639" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb41-640"><a href="#cb41-640" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-641"><a href="#cb41-641" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_system_notification(notification):</span>
+<span id="cb41-642"><a href="#cb41-642" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format a system notification or status update."""</span></span>
+<span id="cb41-643"><a href="#cb41-643" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"[SYSTEM] </span><span class="sc">{</span>notification<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb41-644"><a href="#cb41-644" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-645"><a href="#cb41-645" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_user_info(user_name, user_level, last_active):</span>
+<span id="cb41-646"><a href="#cb41-646" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Format user information in a structured display."""</span></span>
+<span id="cb41-647"><a href="#cb41-647" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"""</span></span>
+<span id="cb41-648"><a href="#cb41-648" aria-hidden="true" tabindex="-1"></a><span class="ss">┌─── User Profile ───┐</span></span>
+<span id="cb41-649"><a href="#cb41-649" aria-hidden="true" tabindex="-1"></a><span class="ss">│ Name: </span><span class="sc">{</span>user_name<span class="sc">:&lt;12}</span><span class="ss"> │</span></span>
+<span id="cb41-650"><a href="#cb41-650" aria-hidden="true" tabindex="-1"></a><span class="ss">│ Level: </span><span class="sc">{</span>user_level<span class="sc">:&lt;11}</span><span class="ss"> │</span></span>
+<span id="cb41-651"><a href="#cb41-651" aria-hidden="true" tabindex="-1"></a><span class="ss">│ Last seen: </span><span class="sc">{</span>last_active<span class="sc">:&lt;8}</span><span class="ss"> │</span></span>
+<span id="cb41-652"><a href="#cb41-652" aria-hidden="true" tabindex="-1"></a><span class="ss">└────────────────────┘</span></span>
+<span id="cb41-653"><a href="#cb41-653" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb41-654"><a href="#cb41-654" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-655"><a href="#cb41-655" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage:</span></span>
+<span id="cb41-656"><a href="#cb41-656" aria-hidden="true" tabindex="-1"></a>bot_name <span class="op">=</span> <span class="st">"ChatPy"</span></span>
+<span id="cb41-657"><a href="#cb41-657" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_regular_message(bot_name, <span class="st">"Hello! How can I help you today?"</span>))</span>
+<span id="cb41-658"><a href="#cb41-658" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_error_message(bot_name, <span class="st">"Could not process that request"</span>))</span>
+<span id="cb41-659"><a href="#cb41-659" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_system_notification(<span class="st">"Updating knowledge base..."</span>))</span>
+<span id="cb41-660"><a href="#cb41-660" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(format_user_info(<span class="st">"Alex"</span>, <span class="st">"Beginner"</span>, <span class="st">"2 days ago"</span>))</span>
+<span id="cb41-661"><a href="#cb41-661" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-662"><a href="#cb41-662" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-663"><a href="#cb41-663" aria-hidden="true" tabindex="-1"></a>*This design creates distinct visual styles for different message types:*</span>
+<span id="cb41-664"><a href="#cb41-664" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Regular messages include timestamps for conversation flow*</span>
+<span id="cb41-665"><a href="#cb41-665" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Error messages stand out with exclamation borders*</span>
+<span id="cb41-666"><a href="#cb41-666" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*System notifications use square brackets as a subtle indicator*</span>
+<span id="cb41-667"><a href="#cb41-667" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*User info appears in a box-drawing frame*</span>
+<span id="cb41-668"><a href="#cb41-668" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-669"><a href="#cb41-669" aria-hidden="true" tabindex="-1"></a>*For consistency, you could also create a config dictionary with your visual elements:*</span>
+<span id="cb41-670"><a href="#cb41-670" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-671"><a href="#cb41-671" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-672"><a href="#cb41-672" aria-hidden="true" tabindex="-1"></a>CHAT_STYLE <span class="op">=</span> {</span>
+<span id="cb41-673"><a href="#cb41-673" aria-hidden="true" tabindex="-1"></a>    <span class="st">"primary_color"</span>: <span class="st">"*"</span>,   <span class="co"># For main headers</span></span>
+<span id="cb41-674"><a href="#cb41-674" aria-hidden="true" tabindex="-1"></a>    <span class="st">"secondary_color"</span>: <span class="st">"-"</span>, <span class="co"># For sub-headers</span></span>
+<span id="cb41-675"><a href="#cb41-675" aria-hidden="true" tabindex="-1"></a>    <span class="st">"regular_prefix"</span>: <span class="st">"&gt;"</span>,  <span class="co"># For regular messages</span></span>
+<span id="cb41-676"><a href="#cb41-676" aria-hidden="true" tabindex="-1"></a>    <span class="st">"width"</span>: <span class="dv">60</span>            <span class="co"># Consistent width for formatting</span></span>
+<span id="cb41-677"><a href="#cb41-677" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-678"><a href="#cb41-678" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-679"><a href="#cb41-679" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-680"><a href="#cb41-680" aria-hidden="true" tabindex="-1"></a>*This approach creates a consistent visual language that users will quickly learn to navigate.*</span>
+<span id="cb41-681"><a href="#cb41-681" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-682"><a href="#cb41-682" aria-hidden="true" tabindex="-1"></a><span class="fu">### How to Craft Effective Prompts for Output Design</span></span>
+<span id="cb41-683"><a href="#cb41-683" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-684"><a href="#cb41-684" aria-hidden="true" tabindex="-1"></a>When working with an AI assistant on output formatting:</span>
+<span id="cb41-685"><a href="#cb41-685" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-686"><a href="#cb41-686" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Be specific about the context and purpose** of your output (e.g., terminal application, log file, chatbot interface)</span>
+<span id="cb41-687"><a href="#cb41-687" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-688"><a href="#cb41-688" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Describe the visual hierarchy** you want to establish (what should stand out, what should be subtle)</span>
+<span id="cb41-689"><a href="#cb41-689" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-690"><a href="#cb41-690" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Ask for specific techniques** rather than general advice (e.g., "How can I create boxed text in a terminal?" rather than "How should I format output?")</span>
+<span id="cb41-691"><a href="#cb41-691" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-692"><a href="#cb41-692" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Include examples of your current output** if you're trying to improve existing code</span>
+<span id="cb41-693"><a href="#cb41-693" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-694"><a href="#cb41-694" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Request alternatives** to compare different approaches</span>
+<span id="cb41-695"><a href="#cb41-695" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-696"><a href="#cb41-696" aria-hidden="true" tabindex="-1"></a>For example:</span>
+<span id="cb41-697"><a href="#cb41-697" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-698"><a href="#cb41-698" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb41-699"><a href="#cb41-699" aria-hidden="true" tabindex="-1"></a><span class="in">I'm creating a data analysis report that will be viewed in the terminal.</span></span>
+<span id="cb41-700"><a href="#cb41-700" aria-hidden="true" tabindex="-1"></a><span class="in">I need to display:</span></span>
+<span id="cb41-701"><a href="#cb41-701" aria-hidden="true" tabindex="-1"></a><span class="in">1. A prominent title</span></span>
+<span id="cb41-702"><a href="#cb41-702" aria-hidden="true" tabindex="-1"></a><span class="in">2. Summary statistics (min, max, average)</span></span>
+<span id="cb41-703"><a href="#cb41-703" aria-hidden="true" tabindex="-1"></a><span class="in">3. Data warnings when values exceed thresholds</span></span>
+<span id="cb41-704"><a href="#cb41-704" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-705"><a href="#cb41-705" aria-hidden="true" tabindex="-1"></a><span class="in">Show me 2-3 different ways to format this information using Python's</span></span>
+<span id="cb41-706"><a href="#cb41-706" aria-hidden="true" tabindex="-1"></a><span class="in">print() function, focusing on readability and visual hierarchy.</span></span>
+<span id="cb41-707"><a href="#cb41-707" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-708"><a href="#cb41-708" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-709"><a href="#cb41-709" aria-hidden="true" tabindex="-1"></a>This specific prompt will yield practical designs tailored to your exact needs.</span>
+<span id="cb41-710"><a href="#cb41-710" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-711"><a href="#cb41-711" aria-hidden="true" tabindex="-1"></a><span class="fu">## 10. Common Output Pitfalls to Avoid</span></span>
+<span id="cb41-712"><a href="#cb41-712" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-713"><a href="#cb41-713" aria-hidden="true" tabindex="-1"></a>As you develop your output systems, watch for these common issues:</span>
+<span id="cb41-714"><a href="#cb41-714" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-715"><a href="#cb41-715" aria-hidden="true" tabindex="-1"></a><span class="fu">### Type Conversion Errors</span></span>
+<span id="cb41-716"><a href="#cb41-716" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-717"><a href="#cb41-717" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-718"><a href="#cb41-718" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect</span></span>
+<span id="cb41-719"><a href="#cb41-719" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb41-720"><a href="#cb41-720" aria-hidden="true" tabindex="-1"></a><span class="co"># print("You are " + age + " years old.")  # TypeError: can't concatenate str and int</span></span>
+<span id="cb41-721"><a href="#cb41-721" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-722"><a href="#cb41-722" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct approaches</span></span>
+<span id="cb41-723"><a href="#cb41-723" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"You are "</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">" years old."</span>)  <span class="co"># Explicit conversion</span></span>
+<span id="cb41-724"><a href="#cb41-724" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"You are </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old."</span>)           <span class="co"># f-strings handle conversion</span></span>
+<span id="cb41-725"><a href="#cb41-725" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-726"><a href="#cb41-726" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-727"><a href="#cb41-727" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inconsistent Formatting</span></span>
+<span id="cb41-728"><a href="#cb41-728" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-729"><a href="#cb41-729" aria-hidden="true" tabindex="-1"></a>Inconsistent formatting confuses users and looks unprofessional:</span>
+<span id="cb41-730"><a href="#cb41-730" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-731"><a href="#cb41-731" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-732"><a href="#cb41-732" aria-hidden="true" tabindex="-1"></a><span class="co"># Inconsistent formatting - bad practice</span></span>
+<span id="cb41-733"><a href="#cb41-733" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Name: "</span> <span class="op">+</span> user_name)</span>
+<span id="cb41-734"><a href="#cb41-734" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Age: </span><span class="sc">{</span>user_age<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-735"><a href="#cb41-735" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Location:"</span>, user_location)</span>
+<span id="cb41-736"><a href="#cb41-736" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-737"><a href="#cb41-737" aria-hidden="true" tabindex="-1"></a><span class="co"># Consistent formatting - good practice</span></span>
+<span id="cb41-738"><a href="#cb41-738" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Name: </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-739"><a href="#cb41-739" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Age: </span><span class="sc">{</span>user_age<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-740"><a href="#cb41-740" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Location: </span><span class="sc">{</span>user_location<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-741"><a href="#cb41-741" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-742"><a href="#cb41-742" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-743"><a href="#cb41-743" aria-hidden="true" tabindex="-1"></a><span class="fu">### Neglecting Edge Cases</span></span>
+<span id="cb41-744"><a href="#cb41-744" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-745"><a href="#cb41-745" aria-hidden="true" tabindex="-1"></a>Always consider how your output will handle extreme values or unexpected input:</span>
+<span id="cb41-746"><a href="#cb41-746" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-747"><a href="#cb41-747" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-748"><a href="#cb41-748" aria-hidden="true" tabindex="-1"></a><span class="co"># Potential issues with long input</span></span>
+<span id="cb41-749"><a href="#cb41-749" aria-hidden="true" tabindex="-1"></a>username <span class="op">=</span> <span class="st">"TheVeryLongUsernameWithManyCharactersThatMightBreakFormatting"</span></span>
+<span id="cb41-750"><a href="#cb41-750" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-751"><a href="#cb41-751" aria-hidden="true" tabindex="-1"></a><span class="co"># Poor handling - will break your layout</span></span>
+<span id="cb41-752"><a href="#cb41-752" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"|</span><span class="sc">{</span>username<span class="sc">:20}</span><span class="ss">|"</span>)  <span class="co"># |TheVeryLongUsernamew|  (truncated)</span></span>
+<span id="cb41-753"><a href="#cb41-753" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-754"><a href="#cb41-754" aria-hidden="true" tabindex="-1"></a><span class="co"># Better approach - handle long inputs gracefully</span></span>
+<span id="cb41-755"><a href="#cb41-755" aria-hidden="true" tabindex="-1"></a>max_length <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb41-756"><a href="#cb41-756" aria-hidden="true" tabindex="-1"></a>display_name <span class="op">=</span> username[:max_length<span class="op">-</span><span class="dv">3</span>] <span class="op">+</span> <span class="st">"..."</span> <span class="cf">if</span> <span class="bu">len</span>(username) <span class="op">&gt;</span> max_length <span class="cf">else</span> username</span>
+<span id="cb41-757"><a href="#cb41-757" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"|</span><span class="sc">{</span>display_name<span class="sc">:20}</span><span class="ss">|"</span>)  <span class="co"># |TheVeryLongUserna...|</span></span>
+<span id="cb41-758"><a href="#cb41-758" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-759"><a href="#cb41-759" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-760"><a href="#cb41-760" aria-hidden="true" tabindex="-1"></a><span class="fu">### Forgetting to Flush Output</span></span>
+<span id="cb41-761"><a href="#cb41-761" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-762"><a href="#cb41-762" aria-hidden="true" tabindex="-1"></a>For real-time updates (like progress indicators), remember to flush the output buffer:</span>
+<span id="cb41-763"><a href="#cb41-763" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-764"><a href="#cb41-764" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-765"><a href="#cb41-765" aria-hidden="true" tabindex="-1"></a><span class="co"># Without flush, dots might appear all at once</span></span>
+<span id="cb41-766"><a href="#cb41-766" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb41-767"><a href="#cb41-767" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"."</span>, end<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb41-768"><a href="#cb41-768" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb41-769"><a href="#cb41-769" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-770"><a href="#cb41-770" aria-hidden="true" tabindex="-1"></a><span class="co"># With flush, dots appear as they're printed</span></span>
+<span id="cb41-771"><a href="#cb41-771" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb41-772"><a href="#cb41-772" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"."</span>, end<span class="op">=</span><span class="st">""</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb41-773"><a href="#cb41-773" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb41-774"><a href="#cb41-774" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-775"><a href="#cb41-775" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-776"><a href="#cb41-776" aria-hidden="true" tabindex="-1"></a><span class="fu">### Hard-Coding Values That Should Be Variables</span></span>
+<span id="cb41-777"><a href="#cb41-777" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-778"><a href="#cb41-778" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-779"><a href="#cb41-779" aria-hidden="true" tabindex="-1"></a><span class="co"># Hard-coded values - harder to maintain</span></span>
+<span id="cb41-780"><a href="#cb41-780" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to ChatPy v1.0!"</span>)</span>
+<span id="cb41-781"><a href="#cb41-781" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ChatPy&gt; How can I help you?"</span>)</span>
+<span id="cb41-782"><a href="#cb41-782" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-783"><a href="#cb41-783" aria-hidden="true" tabindex="-1"></a><span class="co"># Better approach - use variables</span></span>
+<span id="cb41-784"><a href="#cb41-784" aria-hidden="true" tabindex="-1"></a>bot_name <span class="op">=</span> <span class="st">"ChatPy"</span></span>
+<span id="cb41-785"><a href="#cb41-785" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="st">"1.0"</span></span>
+<span id="cb41-786"><a href="#cb41-786" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Welcome to </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss"> v</span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb41-787"><a href="#cb41-787" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">&gt; How can I help you?"</span>)</span>
+<span id="cb41-788"><a href="#cb41-788" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-789"><a href="#cb41-789" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-790"><a href="#cb41-790" aria-hidden="true" tabindex="-1"></a><span class="fu">## 11. Real-World Output Examples</span></span>
+<span id="cb41-791"><a href="#cb41-791" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-792"><a href="#cb41-792" aria-hidden="true" tabindex="-1"></a>Let's examine how output techniques are used in professional applications:</span>
+<span id="cb41-793"><a href="#cb41-793" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-794"><a href="#cb41-794" aria-hidden="true" tabindex="-1"></a><span class="fu">### Command-Line Interface (CLI) Tools</span></span>
+<span id="cb41-795"><a href="#cb41-795" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-796"><a href="#cb41-796" aria-hidden="true" tabindex="-1"></a>CLI tools need clear, structured output to guide users:</span>
+<span id="cb41-797"><a href="#cb41-797" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-798"><a href="#cb41-798" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-799"><a href="#cb41-799" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_help_menu(command<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb41-800"><a href="#cb41-800" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display a help menu similar to professional CLI tools."""</span></span>
+<span id="cb41-801"><a href="#cb41-801" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb41-802"><a href="#cb41-802" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Main help menu</span></span>
+<span id="cb41-803"><a href="#cb41-803" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">FILE MANAGER - Available Commands</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-804"><a href="#cb41-804" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  list          List files in current directory"</span>)</span>
+<span id="cb41-805"><a href="#cb41-805" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  search TEXT   Search for files containing TEXT"</span>)</span>
+<span id="cb41-806"><a href="#cb41-806" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  copy SRC DST  Copy file from SRC to DST"</span>)</span>
+<span id="cb41-807"><a href="#cb41-807" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  help COMMAND  Show help for specific command</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-808"><a href="#cb41-808" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Use 'exit' to quit the program</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-809"><a href="#cb41-809" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"search"</span>:</span>
+<span id="cb41-810"><a href="#cb41-810" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Command-specific help</span></span>
+<span id="cb41-811"><a href="#cb41-811" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">SEARCH COMMAND</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-812"><a href="#cb41-812" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  search TEXT   Search for files containing TEXT"</span>)</span>
+<span id="cb41-813"><a href="#cb41-813" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Options:"</span>)</span>
+<span id="cb41-814"><a href="#cb41-814" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  -i            Case-insensitive search"</span>)</span>
+<span id="cb41-815"><a href="#cb41-815" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"  -r            Recursive search in subdirectories</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-816"><a href="#cb41-816" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Example: search -i -r 'python'"</span>)</span>
+<span id="cb41-817"><a href="#cb41-817" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-818"><a href="#cb41-818" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb41-819"><a href="#cb41-819" aria-hidden="true" tabindex="-1"></a>display_help_menu()</span>
+<span id="cb41-820"><a href="#cb41-820" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-821"><a href="#cb41-821" aria-hidden="true" tabindex="-1"></a>display_help_menu(<span class="st">"search"</span>)</span>
+<span id="cb41-822"><a href="#cb41-822" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-823"><a href="#cb41-823" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-824"><a href="#cb41-824" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Analysis Reports</span></span>
+<span id="cb41-825"><a href="#cb41-825" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-826"><a href="#cb41-826" aria-hidden="true" tabindex="-1"></a>Data analysis tools often display tabular data and statistics:</span>
+<span id="cb41-827"><a href="#cb41-827" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-828"><a href="#cb41-828" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-829"><a href="#cb41-829" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> display_data_summary(dataset_name, data_points, statistics):</span>
+<span id="cb41-830"><a href="#cb41-830" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Display a professional data analysis summary."""</span></span>
+<span id="cb41-831"><a href="#cb41-831" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">70</span></span>
+<span id="cb41-832"><a href="#cb41-832" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-833"><a href="#cb41-833" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Header with dataset information</span></span>
+<span id="cb41-834"><a href="#cb41-834" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> width)</span>
+<span id="cb41-835"><a href="#cb41-835" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>dataset_name<span class="sc">}</span><span class="ss"> Analysis Summary "</span>.center(width, <span class="st">"="</span>))</span>
+<span id="cb41-836"><a href="#cb41-836" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width)</span>
+<span id="cb41-837"><a href="#cb41-837" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-838"><a href="#cb41-838" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dataset information</span></span>
+<span id="cb41-839"><a href="#cb41-839" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Dataset contains </span><span class="sc">{</span>data_points<span class="sc">}</span><span class="ss"> data points</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb41-840"><a href="#cb41-840" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-841"><a href="#cb41-841" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Statistics table</span></span>
+<span id="cb41-842"><a href="#cb41-842" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> (width <span class="op">-</span> <span class="dv">2</span>))</span>
+<span id="cb41-843"><a href="#cb41-843" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span><span class="st">'Statistic'</span><span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span><span class="st">'Value'</span><span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span><span class="st">'Interpretation'</span><span class="sc">:&lt;25}</span><span class="ss">"</span>)</span>
+<span id="cb41-844"><a href="#cb41-844" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> (width <span class="op">-</span> <span class="dv">2</span>))</span>
+<span id="cb41-845"><a href="#cb41-845" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-846"><a href="#cb41-846" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> stat, values <span class="kw">in</span> statistics.items():</span>
+<span id="cb41-847"><a href="#cb41-847" aria-hidden="true" tabindex="-1"></a>        value, interpretation <span class="op">=</span> values</span>
+<span id="cb41-848"><a href="#cb41-848" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Format numbers with commas and appropriate decimal places</span></span>
+<span id="cb41-849"><a href="#cb41-849" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(value, <span class="bu">float</span>):</span>
+<span id="cb41-850"><a href="#cb41-850" aria-hidden="true" tabindex="-1"></a>            formatted_value <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:,.2f}</span><span class="ss">"</span></span>
+<span id="cb41-851"><a href="#cb41-851" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">isinstance</span>(value, <span class="bu">int</span>):</span>
+<span id="cb41-852"><a href="#cb41-852" aria-hidden="true" tabindex="-1"></a>            formatted_value <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:,}</span><span class="ss">"</span></span>
+<span id="cb41-853"><a href="#cb41-853" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb41-854"><a href="#cb41-854" aria-hidden="true" tabindex="-1"></a>            formatted_value <span class="op">=</span> value</span>
+<span id="cb41-855"><a href="#cb41-855" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-856"><a href="#cb41-856" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" </span><span class="sc">{</span>stat<span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span>formatted_value<span class="sc">:&lt;20}</span><span class="ss"> | </span><span class="sc">{</span>interpretation<span class="sc">:&lt;25}</span><span class="ss">"</span>)</span>
+<span id="cb41-857"><a href="#cb41-857" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-858"><a href="#cb41-858" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" "</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> (width <span class="op">-</span> <span class="dv">2</span>))</span>
+<span id="cb41-859"><a href="#cb41-859" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-860"><a href="#cb41-860" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Footer with timestamp</span></span>
+<span id="cb41-861"><a href="#cb41-861" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb41-862"><a href="#cb41-862" aria-hidden="true" tabindex="-1"></a>    timestamp <span class="op">=</span> datetime.now().strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>)</span>
+<span id="cb41-863"><a href="#cb41-863" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> width)</span>
+<span id="cb41-864"><a href="#cb41-864" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f" Report generated: </span><span class="sc">{</span>timestamp<span class="sc">}</span><span class="ss"> "</span>.center(width, <span class="st">"-"</span>))</span>
+<span id="cb41-865"><a href="#cb41-865" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> width <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-866"><a href="#cb41-866" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-867"><a href="#cb41-867" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb41-868"><a href="#cb41-868" aria-hidden="true" tabindex="-1"></a>sample_stats <span class="op">=</span> {</span>
+<span id="cb41-869"><a href="#cb41-869" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mean"</span>: [<span class="fl">42.5</span>, <span class="st">"Within expected range"</span>],</span>
+<span id="cb41-870"><a href="#cb41-870" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Median"</span>: [<span class="fl">38.0</span>, <span class="st">"Lower than previous month"</span>],</span>
+<span id="cb41-871"><a href="#cb41-871" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Std Deviation"</span>: [<span class="fl">12.34</span>, <span class="st">"High variance detected"</span>],</span>
+<span id="cb41-872"><a href="#cb41-872" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Min Value"</span>: [<span class="dv">10</span>, <span class="st">"No outliers detected"</span>],</span>
+<span id="cb41-873"><a href="#cb41-873" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Max Value"</span>: [<span class="dv">95</span>, <span class="st">"Investigate high values"</span>],</span>
+<span id="cb41-874"><a href="#cb41-874" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Total"</span>: [<span class="dv">1250000</span>, <span class="st">"Exceeds quarterly target"</span>]</span>
+<span id="cb41-875"><a href="#cb41-875" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-876"><a href="#cb41-876" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-877"><a href="#cb41-877" aria-hidden="true" tabindex="-1"></a>display_data_summary(<span class="st">"Customer Engagement"</span>, <span class="dv">2500</span>, sample_stats)</span>
+<span id="cb41-878"><a href="#cb41-878" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-879"><a href="#cb41-879" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-880"><a href="#cb41-880" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interactive Applications</span></span>
+<span id="cb41-881"><a href="#cb41-881" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-882"><a href="#cb41-882" aria-hidden="true" tabindex="-1"></a>Interactive applications need responsive, clear output:</span>
+<span id="cb41-883"><a href="#cb41-883" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-884"><a href="#cb41-884" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb41-885"><a href="#cb41-885" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_interactive_menu():</span>
+<span id="cb41-886"><a href="#cb41-886" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate an interactive menu system with user feedback."""</span></span>
+<span id="cb41-887"><a href="#cb41-887" aria-hidden="true" tabindex="-1"></a>    options <span class="op">=</span> [<span class="st">"View Profile"</span>, <span class="st">"Settings"</span>, <span class="st">"Help"</span>, <span class="st">"Exit"</span>]</span>
+<span id="cb41-888"><a href="#cb41-888" aria-hidden="true" tabindex="-1"></a>    selected <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb41-889"><a href="#cb41-889" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-890"><a href="#cb41-890" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb41-891"><a href="#cb41-891" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Clear the display (this would clear the terminal in a real application)</span></span>
+<span id="cb41-892"><a href="#cb41-892" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">*</span> <span class="dv">5</span>)</span>
+<span id="cb41-893"><a href="#cb41-893" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-894"><a href="#cb41-894" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display title</span></span>
+<span id="cb41-895"><a href="#cb41-895" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb41-896"><a href="#cb41-896" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"INTERACTIVE MENU DEMO"</span>.center(<span class="dv">40</span>))</span>
+<span id="cb41-897"><a href="#cb41-897" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-898"><a href="#cb41-898" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-899"><a href="#cb41-899" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display options with selected item highlighted</span></span>
+<span id="cb41-900"><a href="#cb41-900" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, option <span class="kw">in</span> <span class="bu">enumerate</span>(options):</span>
+<span id="cb41-901"><a href="#cb41-901" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">==</span> selected:</span>
+<span id="cb41-902"><a href="#cb41-902" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f" &gt; </span><span class="sc">{</span>option<span class="sc">}</span><span class="ss"> &lt;"</span>.center(<span class="dv">40</span>))</span>
+<span id="cb41-903"><a href="#cb41-903" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb41-904"><a href="#cb41-904" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"   </span><span class="sc">{</span>option<span class="sc">}</span><span class="ss">   "</span>.center(<span class="dv">40</span>))</span>
+<span id="cb41-905"><a href="#cb41-905" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-906"><a href="#cb41-906" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Display navigation instructions</span></span>
+<span id="cb41-907"><a href="#cb41-907" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"-"</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb41-908"><a href="#cb41-908" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Navigation: [N]ext, [P]revious, [S]elect, [Q]uit"</span>)</span>
+<span id="cb41-909"><a href="#cb41-909" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb41-910"><a href="#cb41-910" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-911"><a href="#cb41-911" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Simulate user input (in a real app, you'd get actual input)</span></span>
+<span id="cb41-912"><a href="#cb41-912" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> random</span>
+<span id="cb41-913"><a href="#cb41-913" aria-hidden="true" tabindex="-1"></a>        choice <span class="op">=</span> random.choice([<span class="st">'n'</span>, <span class="st">'p'</span>, <span class="st">'s'</span>, <span class="st">'q'</span>])</span>
+<span id="cb41-914"><a href="#cb41-914" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-915"><a href="#cb41-915" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Process the simulated choice</span></span>
+<span id="cb41-916"><a href="#cb41-916" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> choice <span class="op">==</span> <span class="st">'n'</span>:</span>
+<span id="cb41-917"><a href="#cb41-917" aria-hidden="true" tabindex="-1"></a>            selected <span class="op">=</span> (selected <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="bu">len</span>(options)</span>
+<span id="cb41-918"><a href="#cb41-918" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[SYSTEM] Selected next item"</span>)</span>
+<span id="cb41-919"><a href="#cb41-919" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">'p'</span>:</span>
+<span id="cb41-920"><a href="#cb41-920" aria-hidden="true" tabindex="-1"></a>            selected <span class="op">=</span> (selected <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="bu">len</span>(options)</span>
+<span id="cb41-921"><a href="#cb41-921" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[SYSTEM] Selected previous item"</span>)</span>
+<span id="cb41-922"><a href="#cb41-922" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">'s'</span>:</span>
+<span id="cb41-923"><a href="#cb41-923" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">[SYSTEM] You selected: </span><span class="sc">{</span>options[selected]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb41-924"><a href="#cb41-924" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> options[selected] <span class="op">==</span> <span class="st">"Exit"</span>:</span>
+<span id="cb41-925"><a href="#cb41-925" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb41-926"><a href="#cb41-926" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> choice <span class="op">==</span> <span class="st">'q'</span>:</span>
+<span id="cb41-927"><a href="#cb41-927" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[SYSTEM] Quitting demo..."</span>)</span>
+<span id="cb41-928"><a href="#cb41-928" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb41-929"><a href="#cb41-929" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-930"><a href="#cb41-930" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Pause to see the output (only for simulation)</span></span>
+<span id="cb41-931"><a href="#cb41-931" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> time</span>
+<span id="cb41-932"><a href="#cb41-932" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">1.5</span>)</span>
+<span id="cb41-933"><a href="#cb41-933" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-934"><a href="#cb41-934" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Interactive menu demo finished</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb41-935"><a href="#cb41-935" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-936"><a href="#cb41-936" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the interactive menu simulation</span></span>
+<span id="cb41-937"><a href="#cb41-937" aria-hidden="true" tabindex="-1"></a><span class="co"># simulate_interactive_menu()  # Commented out to avoid long output</span></span>
+<span id="cb41-938"><a href="#cb41-938" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb41-939"><a href="#cb41-939" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-940"><a href="#cb41-940" aria-hidden="true" tabindex="-1"></a>These examples demonstrate how professional applications use structured output to create effective user experiences. The techniques are the same as those we've covered—just applied with consistency and purpose.</span>
+<span id="cb41-941"><a href="#cb41-941" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-942"><a href="#cb41-942" aria-hidden="true" tabindex="-1"></a><span class="fu">## 12. Self-Assessment Quiz</span></span>
+<span id="cb41-943"><a href="#cb41-943" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-944"><a href="#cb41-944" aria-hidden="true" tabindex="-1"></a>Test your understanding of Python output concepts:</span>
+<span id="cb41-945"><a href="#cb41-945" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-946"><a href="#cb41-946" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What will this code display? <span class="in">`print("A", "B", "C", sep="/")`</span></span>
+<span id="cb41-947"><a href="#cb41-947" aria-hidden="true" tabindex="-1"></a>   a) A B C</span>
+<span id="cb41-948"><a href="#cb41-948" aria-hidden="true" tabindex="-1"></a>   b) A/B/C</span>
+<span id="cb41-949"><a href="#cb41-949" aria-hidden="true" tabindex="-1"></a>   c) "A"/"B"/"C"</span>
+<span id="cb41-950"><a href="#cb41-950" aria-hidden="true" tabindex="-1"></a>   d) A \ B \ C</span>
+<span id="cb41-951"><a href="#cb41-951" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-952"><a href="#cb41-952" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Which of these correctly formats a float to show exactly 3 decimal places?</span>
+<span id="cb41-953"><a href="#cb41-953" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`print("Value: %.3f" % value)`</span></span>
+<span id="cb41-954"><a href="#cb41-954" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`print("Value: {:.3f}".format(value))`</span></span>
+<span id="cb41-955"><a href="#cb41-955" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`print(f"Value: {value:.3f}")`</span></span>
+<span id="cb41-956"><a href="#cb41-956" aria-hidden="true" tabindex="-1"></a>   d) All of the above</span>
+<span id="cb41-957"><a href="#cb41-957" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-958"><a href="#cb41-958" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What's the purpose of the <span class="in">`end`</span> parameter in the <span class="in">`print()`</span> function?</span>
+<span id="cb41-959"><a href="#cb41-959" aria-hidden="true" tabindex="-1"></a>   a) It marks the end of the program</span>
+<span id="cb41-960"><a href="#cb41-960" aria-hidden="true" tabindex="-1"></a>   b) It controls what's printed after all other arguments</span>
+<span id="cb41-961"><a href="#cb41-961" aria-hidden="true" tabindex="-1"></a>   c) It terminates a loop after printing</span>
+<span id="cb41-962"><a href="#cb41-962" aria-hidden="true" tabindex="-1"></a>   d) It specifies the maximum length of output</span>
+<span id="cb41-963"><a href="#cb41-963" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-964"><a href="#cb41-964" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>How would you print the following on three separate lines:</span>
+<span id="cb41-965"><a href="#cb41-965" aria-hidden="true" tabindex="-1"></a>   <span class="in">```text</span></span>
+<span id="cb41-966"><a href="#cb41-966" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 1</span></span>
+<span id="cb41-967"><a href="#cb41-967" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 2</span></span>
+<span id="cb41-968"><a href="#cb41-968" aria-hidden="true" tabindex="-1"></a><span class="in">   Line 3</span></span>
+<span id="cb41-969"><a href="#cb41-969" aria-hidden="true" tabindex="-1"></a><span class="in">   ```</span></span>
+<span id="cb41-970"><a href="#cb41-970" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`print("Line 1", "Line 2", "Line 3")`</span></span>
+<span id="cb41-971"><a href="#cb41-971" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`print("Line 1\nLine 2\nLine 3")`</span></span>
+<span id="cb41-972"><a href="#cb41-972" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`print("Line 1/Line 2/Line 3", sep="\n")`</span></span>
+<span id="cb41-973"><a href="#cb41-973" aria-hidden="true" tabindex="-1"></a>   d) Both b and c</span>
+<span id="cb41-974"><a href="#cb41-974" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-975"><a href="#cb41-975" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What happens when the <span class="in">`flush=True`</span> parameter is used with <span class="in">`print()`</span>?</span>
+<span id="cb41-976"><a href="#cb41-976" aria-hidden="true" tabindex="-1"></a>   a) The output is cleared after printing</span>
+<span id="cb41-977"><a href="#cb41-977" aria-hidden="true" tabindex="-1"></a>   b) The output buffer is immediately written to the destination</span>
+<span id="cb41-978"><a href="#cb41-978" aria-hidden="true" tabindex="-1"></a>   c) All previous output is erased</span>
+<span id="cb41-979"><a href="#cb41-979" aria-hidden="true" tabindex="-1"></a>   d) The terminal window is refreshed</span>
+<span id="cb41-980"><a href="#cb41-980" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-981"><a href="#cb41-981" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>In the context of chatbot development, why is formatting output important?</span>
+<span id="cb41-982"><a href="#cb41-982" aria-hidden="true" tabindex="-1"></a>   a) It makes the code run faster</span>
+<span id="cb41-983"><a href="#cb41-983" aria-hidden="true" tabindex="-1"></a>   b) It creates a more engaging user experience</span>
+<span id="cb41-984"><a href="#cb41-984" aria-hidden="true" tabindex="-1"></a>   c) It reduces memory usage</span>
+<span id="cb41-985"><a href="#cb41-985" aria-hidden="true" tabindex="-1"></a>   d) It has no practical benefit</span>
+<span id="cb41-986"><a href="#cb41-986" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-987"><a href="#cb41-987" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Which approach to string formatting is recommended in modern Python (3.6+)?</span>
+<span id="cb41-988"><a href="#cb41-988" aria-hidden="true" tabindex="-1"></a>   a) String concatenation with <span class="in">`+`</span></span>
+<span id="cb41-989"><a href="#cb41-989" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`%`</span> formatting</span>
+<span id="cb41-990"><a href="#cb41-990" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`.format()`</span> method</span>
+<span id="cb41-991"><a href="#cb41-991" aria-hidden="true" tabindex="-1"></a>   d) F-strings (formatted string literals)</span>
+<span id="cb41-992"><a href="#cb41-992" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-993"><a href="#cb41-993" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>What's the output of this code? <span class="in">`print(f"{'Python':^10}")`</span></span>
+<span id="cb41-994"><a href="#cb41-994" aria-hidden="true" tabindex="-1"></a>   a) <span class="in">`Python    `</span></span>
+<span id="cb41-995"><a href="#cb41-995" aria-hidden="true" tabindex="-1"></a>   b) <span class="in">`    Python`</span></span>
+<span id="cb41-996"><a href="#cb41-996" aria-hidden="true" tabindex="-1"></a>   c) <span class="in">`  Python  `</span></span>
+<span id="cb41-997"><a href="#cb41-997" aria-hidden="true" tabindex="-1"></a>   d) <span class="in">`Python`</span></span>
+<span id="cb41-998"><a href="#cb41-998" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-999"><a href="#cb41-999" aria-hidden="true" tabindex="-1"></a>**Answers:**</span>
+<span id="cb41-1000"><a href="#cb41-1000" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>b) A/B/C - The <span class="in">`sep`</span> parameter defines what goes between items.</span>
+<span id="cb41-1001"><a href="#cb41-1001" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>d) All of the above - These are different styles of string formatting, all achieving the same result.</span>
+<span id="cb41-1002"><a href="#cb41-1002" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>b) It controls what's printed after all other arguments - By default, this is a newline character.</span>
+<span id="cb41-1003"><a href="#cb41-1003" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>d) Both b and c - Both methods produce three lines of output.</span>
+<span id="cb41-1004"><a href="#cb41-1004" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>b) The output buffer is immediately written to the destination - Useful for real-time updates.</span>
+<span id="cb41-1005"><a href="#cb41-1005" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>b) It creates a more engaging user experience - Good formatting makes interaction natural and intuitive.</span>
+<span id="cb41-1006"><a href="#cb41-1006" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>d) F-strings (formatted string literals) - They're readable, concise, and efficient.</span>
+<span id="cb41-1007"><a href="#cb41-1007" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>c) <span class="in">`  Python  `</span> - The <span class="in">`^10`</span> centers "Python" in a field width of 10 characters.</span>
+<span id="cb41-1008"><a href="#cb41-1008" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1009"><a href="#cb41-1009" aria-hidden="true" tabindex="-1"></a><span class="fu">## 13. Try It Yourself: Output Exercises</span></span>
+<span id="cb41-1010"><a href="#cb41-1010" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1011"><a href="#cb41-1011" aria-hidden="true" tabindex="-1"></a>Practice your output skills with these exercises:</span>
+<span id="cb41-1012"><a href="#cb41-1012" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1013"><a href="#cb41-1013" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 1: Chatbot Introduction</span></span>
+<span id="cb41-1014"><a href="#cb41-1014" aria-hidden="true" tabindex="-1"></a>Create a well-formatted introduction for your own chatbot, including:</span>
+<span id="cb41-1015"><a href="#cb41-1015" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A decorative banner with the bot's name</span>
+<span id="cb41-1016"><a href="#cb41-1016" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A multi-line introduction describing its capabilities</span>
+<span id="cb41-1017"><a href="#cb41-1017" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>At least one use of visual structure (borders, alignment, etc.)</span>
+<span id="cb41-1018"><a href="#cb41-1018" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1019"><a href="#cb41-1019" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 2: Formatting Different Data Types</span></span>
+<span id="cb41-1020"><a href="#cb41-1020" aria-hidden="true" tabindex="-1"></a>Write a program that creates and formats output for:</span>
+<span id="cb41-1021"><a href="#cb41-1021" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A price (use 2 decimal places)</span>
+<span id="cb41-1022"><a href="#cb41-1022" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A percentage (include the % symbol)</span>
+<span id="cb41-1023"><a href="#cb41-1023" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A large number with thousands separators</span>
+<span id="cb41-1024"><a href="#cb41-1024" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A date in a readable format</span>
+<span id="cb41-1025"><a href="#cb41-1025" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1026"><a href="#cb41-1026" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 3: Progress Indicator</span></span>
+<span id="cb41-1027"><a href="#cb41-1027" aria-hidden="true" tabindex="-1"></a>Create a loop that simulates a task with 10 steps, displaying progress using:</span>
+<span id="cb41-1028"><a href="#cb41-1028" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A textual counter (Step X of Y)</span>
+<span id="cb41-1029"><a href="#cb41-1029" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A visual progress bar made of characters</span>
+<span id="cb41-1030"><a href="#cb41-1030" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A percentage complete indicator</span>
+<span id="cb41-1031"><a href="#cb41-1031" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1032"><a href="#cb41-1032" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 4: Rich Chatbot Messages</span></span>
+<span id="cb41-1033"><a href="#cb41-1033" aria-hidden="true" tabindex="-1"></a>Expand your chatbot's message system to include:</span>
+<span id="cb41-1034"><a href="#cb41-1034" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Regular conversational messages</span>
+<span id="cb41-1035"><a href="#cb41-1035" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Error messages (visually distinct)</span>
+<span id="cb41-1036"><a href="#cb41-1036" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>System notifications</span>
+<span id="cb41-1037"><a href="#cb41-1037" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Help messages with a structured format</span>
+<span id="cb41-1038"><a href="#cb41-1038" aria-hidden="true" tabindex="-1"></a>Test each type with sample messages.</span>
+<span id="cb41-1039"><a href="#cb41-1039" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1040"><a href="#cb41-1040" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise 5: Data Report Generator</span></span>
+<span id="cb41-1041"><a href="#cb41-1041" aria-hidden="true" tabindex="-1"></a>Create a function that takes a student's name and several test scores, then generates a well-formatted report showing:</span>
+<span id="cb41-1042"><a href="#cb41-1042" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The student's name in a header</span>
+<span id="cb41-1043"><a href="#cb41-1043" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each test score with a label</span>
+<span id="cb41-1044"><a href="#cb41-1044" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The average score</span>
+<span id="cb41-1045"><a href="#cb41-1045" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A visual indicator of performance (e.g., stars or other characters)</span>
+<span id="cb41-1046"><a href="#cb41-1046" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1047"><a href="#cb41-1047" aria-hidden="true" tabindex="-1"></a><span class="fu">## 14. Cross-References</span></span>
+<span id="cb41-1048"><a href="#cb41-1048" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1049"><a href="#cb41-1049" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Previous Chapter**: <span class="co">[</span><span class="ot">Variables</span><span class="co">](variables.qmd)</span> — Learn how to name and store your data</span>
+<span id="cb41-1050"><a href="#cb41-1050" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Next Chapter**: <span class="co">[</span><span class="ot">Input</span><span class="co">](input.qmd)</span> — Get information from users into your programs</span>
+<span id="cb41-1051"><a href="#cb41-1051" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Related Topic**: <span class="co">[</span><span class="ot">String Manipulation</span><span class="co">](strings.qmd)</span> — Master text processing techniques</span>
+<span id="cb41-1052"><a href="#cb41-1052" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Project Connection**: See how our output system evolves in <span class="co">[</span><span class="ot">Dictionaries</span><span class="co">](dictionaries.qmd)</span> to handle complex message templates</span>
+<span id="cb41-1053"><a href="#cb41-1053" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Advanced Application**: In <span class="co">[</span><span class="ot">Python AI Integration</span><span class="co">](python_ai_integration.qmd)</span>, we'll use these output techniques to display AI-generated responses</span>
+<span id="cb41-1054"><a href="#cb41-1054" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1055"><a href="#cb41-1055" aria-hidden="true" tabindex="-1"></a><span class="fu">## 15. Summary</span></span>
+<span id="cb41-1056"><a href="#cb41-1056" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1057"><a href="#cb41-1057" aria-hidden="true" tabindex="-1"></a>In this chapter, you've learned the essential skills for making your Python programs communicate effectively with users:</span>
+<span id="cb41-1058"><a href="#cb41-1058" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1059"><a href="#cb41-1059" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The versatile <span class="in">`print()`</span> function and its parameters for controlling output</span>
+<span id="cb41-1060"><a href="#cb41-1060" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiple string formatting approaches, from basic concatenation to powerful f-strings</span>
+<span id="cb41-1061"><a href="#cb41-1061" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Techniques for creating visual structure in text-based interfaces</span>
+<span id="cb41-1062"><a href="#cb41-1062" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Special characters and escape sequences for advanced formatting</span>
+<span id="cb41-1063"><a href="#cb41-1063" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using the <span class="in">`help()`</span> function to discover Python's capabilities</span>
+<span id="cb41-1064"><a href="#cb41-1064" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Professional output patterns used in real-world applications</span>
+<span id="cb41-1065"><a href="#cb41-1065" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1066"><a href="#cb41-1066" aria-hidden="true" tabindex="-1"></a>For our chatbot project, you've implemented the first critical component—the ability to display messages in a consistent, user-friendly format. While our chatbot can only "speak" for now, in the next chapter, we'll add the ability for it to "listen" by learning about user input.</span>
+<span id="cb41-1067"><a href="#cb41-1067" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1068"><a href="#cb41-1068" aria-hidden="true" tabindex="-1"></a>Remember that clear, well-formatted output is the foundation of user interaction in your programs. As we progress through the book, you'll see how these output techniques combine with other Python concepts to create increasingly sophisticated applications.</span>
+<span id="cb41-1069"><a href="#cb41-1069" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-1070"><a href="#cb41-1070" aria-hidden="true" tabindex="-1"></a>Whether you're building a simple script, a data visualization tool, or our chatbot project, the ability to produce clear, structured output will remain one of your most valuable programming skills.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
