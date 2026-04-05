@@ -36,7 +36,7 @@ Building Session — you open a fresh AI conversation with clear context and dir
 
 Quick Reference — a minimal syntax card for future reference.
 
-This structure comes from the Converse Python, Partner AI methodology, which separates thinking from building. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound — each session starts from zero.
+The two-chat structure used in every chapter comes from the Conversation, Not Delegation framework and is detailed in Converse Python, Partner AI. You do not need to read either to use this book — the method is built into every chapter. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound — each session starts from zero.
 
 ## Who This Book Is For
 
