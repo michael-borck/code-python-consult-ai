@@ -5,7 +5,8 @@ project:
     - tools/**
 
 book:
-  title: "Code Python, Consult AI: Python Fundamentals for the AI Era"
+  title: "Code Python, Consult AI"
+  subtitle: "Python Fundamentals for the AI Era"
   cover-image: cover.png
   favicon: favicon.svg
   author: "Michael Borck"
