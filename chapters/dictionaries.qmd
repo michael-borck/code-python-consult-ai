@@ -1,585 +1,196 @@
-# Dictionaries - organising Data with Key-Value Pairs
+# Dictionaries
 
-## Chapter Outline
-- Understanding dictionary data structure
-- Creating and accessing dictionaries
-- Modifying dictionary content
-- Dictionary methods and operations
-- Iterating through dictionaries
-- Nested dictionaries
-- Dictionary applications
+## The Wall
 
-## Learning Objectives
+AI used a dictionary when a list would have worked, and you did not know enough to question it. In another case, your code crashed with `KeyError: 'username'` because the dictionary did not have the key AI assumed existed. You had no idea how to check whether a key exists before accessing it.
 
-By the end of this chapter, you will be able to:
-- Create and initialize Python dictionaries
-- Access, add, and modify dictionary values
-- Remove elements from dictionaries using various methods
-- Iterate through dictionary keys and values
-- Sort dictionaries by keys or values
-- Apply dictionaries to solve real-world problems
-- Use dictionaries to organise complex data
+Dictionaries are how AI organises structured data — user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.
 
-## 1. Introduction: The Power of Key-Value Pairs
-
-Dictionaries are one of Python's most versatile and powerful data structures. Unlike lists, which store items in a specific order accessible by index, dictionaries store data in key-value pairs, allowing you to access values based on meaningful keys rather than numerical positions.
-
-Think of a Python dictionary like a real-world dictionary, where you look up the definition (value) of a word (key). Just as each word in a dictionary has a unique definition, each key in a Python dictionary must be unique.
-
-Dictionaries are perfect for:
-- Storing related pieces of information
-- Creating lookup tables
-- Counting occurrences of items
-- Representing real-world objects with attributes
-- Managing configuration settings
-- Building simple databases
+This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, nested structures, and the many patterns that make dictionaries essential to Python programming.
+You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, and the patterns that make them essential.
 :::
 
-***AI Tip: Ask your AI assistant to suggest dictionary applications specific to your field of interest or to explain how dictionaries compare to similar data structures in other programming languages.***
+## Thinking Session
 
-## 2. Creating and Initializing Dictionaries
+### Getting Oriented
 
-There are several ways to create dictionaries in Python:
+::: {.callout-note title="Thinking Session Prompt"}
+Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write `user = {"name": "Alice", "age": 30}` — how does Python find values by key?
+:::
+
+Your AI should explain: dictionaries map keys to values, lists map indexes to values. Use a dictionary when you need to look things up by name, not by position. Keys must be immutable (strings, numbers, tuples) and unique. If your AI does not mention that dictionaries are unordered in older Python but ordered by insertion in Python 3.7+, that is a useful detail.
+
+### Go Deeper
+
+::: {.callout-note title="Thinking Session Prompt"}
+What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between `user["name"]` and `user.get("name")` — and why does AI sometimes use one versus the other?
+:::
+
+::: {.callout-tip title="What to Look For"}
+The critical difference: `user["name"]` raises `KeyError` if the key does not exist. `user.get("name")` returns `None` (or a default you specify). AI should use `.get()` for keys that might not exist. If your AI does not emphasise this, it is the single most important dictionary concept.
+:::
+
+::: {.callout-note title="Thinking Session Prompt"}
+How do I loop through a dictionary in Python? What do I get when I use a for loop directly on a dictionary? And what is the items() method for?
+:::
+
+### Challenge It
+
+::: {.callout-note title="Thinking Session Prompt"}
+What happens with each of these?
 
 ```python
-# Empty dictionary
-empty_dict = {}
-
-# Dictionary with initial values
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23}
-
-# Using the dict() constructor
-contact = dict(name='Alice', phone='555-1234', email='alice@example.com')
-
-# Creating from two lists (zip creates pairs from two sequences)
-keys = ['apple', 'banana', 'cherry']
-values = [1.99, 0.99, 2.49]
-fruit_prices = dict(zip(keys, values))
+data = {"a": 1, "b": 2}
+data["c"]
+data.get("c")
+data.get("c", 0)
+"a" in data
+1 in data
+data["a"] = 10
+data.update({"b": 20, "d": 4})
 ```
+:::
 
-A few important points to remember:
-- Dictionary keys must be immutable (strings, numbers, or tuples, not lists)
-- Values can be any type (numbers, strings, lists, other dictionaries, etc.)
-- Keys are case-sensitive (`'name'` and `'Name'` are different keys)
-- Dictionaries are unordered in Python versions before 3.7 (ordered since 3.7)
+::: {.callout-tip title="What to Look For"}
+`data["c"]` raises `KeyError`. `data.get("c")` returns `None`. `data.get("c", 0)` returns `0`. `"a" in data` is `True` (checks keys). `1 in data` is `False` (1 is a value, not a key). `data["a"] = 10` updates the value. `data.update(...)` merges two dictionaries.
+:::
 
-## 3. Accessing Dictionary Elements
+### What You Should Have Learned
 
-You can access dictionary values using their keys in square brackets or with the `get()` method:
+- Dictionaries map keys to values: `{"key": value}`
+- Use `dict[key]` when you know the key exists, `.get(key)` when you do not
+- `in` checks keys, not values
+- `items()` gives key-value pairs for looping
+- Keys must be immutable; values can be anything
+- Dictionaries are mutable — you can add, change, and remove entries
 
-```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23}
+## The Gap
 
-# Using square brackets
-print(student['Name'])  # Output: Michael
+Dictionaries are how your chatbot will map keywords to responses — instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.
 
-# Using get() method
-print(student.get('Age'))  # Output: 23
-```
+In the Building Session, you will replace the if/elif response logic with a dictionary-based approach.
 
-The key difference between these methods is how they handle missing keys:
+## Building Session
 
-```python
-# Using square brackets with a non-existent key
-# print(student['Height'])  # Raises KeyError
+### The Spec
 
-# Using get() with a non-existent key
-print(student.get('Height'))  # Output: None
+Restructure your chatbot's responses using dictionaries:
 
-# Using get() with a default value
-print(student.get('Height', 'Not specified'))  # Output: Not specified
-```
+- Map response categories to lists of possible responses
+- Map keywords to categories
+- Use `.get()` with a default for unknown categories
+- Add a "topics" command that shows all known categories
 
-The `get()` method is often preferred for accessing dictionary values because it provides a safer way to handle missing keys without causing errors.
+### Prompt It
 
-## 4. Modifying Dictionary Content
+::: {.callout-note title="Building Session Prompt"}
+Update my chatbot to v1.4. Replace the if/elif response chain with dictionaries:
 
-Dictionaries are mutable, meaning you can change, add, or remove their key-value pairs after creation.
+- Create a RESPONSES dict mapping categories ("greeting", "question", "farewell", "default") to lists of response strings
+- Create a KEYWORDS dict mapping trigger words to categories (e.g., "hello" → "greeting", "bye" → "farewell")
+- Write a classify_input(text) function that checks each word against KEYWORDS and returns the category (default to "default")
+- Update get_response() to use the dictionaries instead of if/elif
+- Add a "topics" command that shows all response categories and their keyword triggers
 
-### Adding or Updating Elements
+Keep existing features.
+:::
 
-You can add new key-value pairs or update existing values:
+### Read the Code
 
-```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23}
-
-# Adding a new key-value pair
-student['Height'] = 5.8
-print(student)  # Output: {'Name': 'Michael', 'Sex': 'Male', 'Age': 23, 'Height': 5.8}
-
-# Updating an existing value
-student['Age'] = 24
-print(student)  # Output: {'Name': 'Michael', 'Sex': 'Male', 'Age': 24, 'Height': 5.8}
-```
-
-### Removing Elements
-
-Python provides multiple ways to remove elements from dictionaries:
+Your AI will produce something like this:
 
 ```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23, 'Height': 5.8, 'Occupation': 'Student'}
-
-# del - Remove a specific key-value pair
-del student['Name']
-print(student)  # {'Sex': 'Male', 'Age': 23, 'Height': 5.8, 'Occupation': 'Student'}
-
-# pop() - Remove a specific key and return its value
-sex = student.pop('Sex')
-print(sex)      # Output: Male
-print(student)  # {'Age': 23, 'Height': 5.8, 'Occupation': 'Student'}
-
-# popitem() - Remove the last inserted key-value pair
-item = student.popitem()  # In Python 3.7+, removes the last item
-print(item)     # Output: ('Occupation', 'Student')
-print(student)  # {'Age': 23, 'Height': 5.8}
-
-# clear() - Remove all key-value pairs
-student.clear()
-print(student)  # Output: {}
-```
-
-Each removal method has its specific use:
-- `del` - When you just want to remove a key
-- `pop()` - When you want to remove a key and use its value
-- `popitem()` - When you want to process items one by one
-- `clear()` - When you want to empty the entire dictionary
-
-## 5. Dictionary Methods and Operations
-
-Dictionaries come with a rich set of built-in methods that make them even more powerful:
-
-### Getting Dictionary Information
-
-```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23, 'Height': 5.8, 'Occupation': 'Student'}
-
-# Get all keys
-print(student.keys())  # Output: dict_keys(['Name', 'Sex', 'Age', 'Height', 'Occupation'])
-
-# Get all values
-print(student.values())  # Output: dict_values(['Michael', 'Male', 23, 5.8, 'Student'])
-
-# Get all key-value pairs as tuples
-print(student.items())  # Output: dict_items([('Name', 'Michael'), ('Sex', 'Male'), ...])
-
-# Get the number of key-value pairs
-print(len(student))  # Output: 5
-```
-
-### Copying Dictionaries
-
-```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23}
-
-# Shallow copy (creates a new dictionary with references to the same values)
-student_copy = student.copy()
-
-# Alternative way to create a shallow copy
-student_copy2 = dict(student)
-```
-
-Note that these methods create shallow copies. For nested dictionaries, you might need a deep copy.
-
-## 6. Iterating Through Dictionaries
-
-There are several ways to loop through dictionaries:
-
-```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23, 'Height': 5.8, 'Occupation': 'Student'}
-
-# Iterate through keys (default)
-for key in student:
-    print(key)  # Output: Name, Sex, Age, Height, Occupation
-
-# Iterate through keys explicitly
-for key in student.keys():
-    print(key)  # Output: Name, Sex, Age, Height, Occupation
-
-# Iterate through values
-for value in student.values():
-    print(value)  # Output: Michael, Male, 23, 5.8, Student
-
-# Iterate through key-value pairs
-for key, value in student.items():
-    print(f"{key}: {value}")
-```
-
-### Sorting Dictionaries
-
-Dictionaries themselves are not sortable, but you can sort their keys or items:
-
-```python
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23, 'Height': 5.8, 'Occupation': 'Student'}
-
-# Get sorted keys
-sorted_keys = sorted(student.keys())
-print(sorted_keys)  # Output: ['Age', 'Height', 'Name', 'Occupation', 'Sex']
-
-# Get sorted keys in reverse order
-sorted_keys_reverse = sorted(student.keys(), reverse=True)
-print(sorted_keys_reverse)  # Output: ['Sex', 'Occupation', 'Name', 'Height', 'Age']
-
-# Iterate through dictionary in sorted order
-for key in sorted(student.keys()):
-    print(f"{key}: {student[key]}")
-```
-
-## 7. Dictionary Comprehensions
-
-Just like list comprehensions, Python offers dictionary comprehensions for creating dictionaries concisely:
-
-```python
-# Create a dictionary of squares
-squares = {x: x**2 for x in range(1, 6)}
-print(squares)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-
-# Filter items with a condition
-even_squares = {x: x**2 for x in range(1, 11) if x % 2 == 0}
-print(even_squares)  # Output: {2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
-
-# Transform an existing dictionary
-student = {'Name': 'Michael', 'Sex': 'Male', 'Age': 23}
-uppercase_dict = {k.upper(): v for k, v in student.items()}
-print(uppercase_dict)  # Output: {'NAME': 'Michael', 'SEX': 'Male', 'AGE': 23}
-```
-
-## 8. Nested Dictionaries
-
-Dictionaries can contain other dictionaries as values, allowing you to represent complex hierarchical data:
-
-```python
-# A dictionary of students
-students = {
-    'S001': {'name': 'Alice', 'age': 20, 'grades': {'math': 85, 'science': 90}},
-    'S002': {'name': 'Bob', 'age': 21, 'grades': {'math': 92, 'science': 88}},
-    'S003': {'name': 'Charlie', 'age': 19, 'grades': {'math': 78, 'science': 85}}
+RESPONSES = {
+    "greeting": [
+        "Hello! Great to hear from you.",
+        "Hi there! What's on your mind?",
+    ],
+    "question": [
+        "Good question! Let me think...",
+        "That's interesting — I'm learning too.",
+    ],
+    "farewell": [
+        "Goodbye! It was nice chatting.",
+        "See you later!",
+    ],
+    "default": [
+        "Tell me more about that.",
+        "Interesting! Go on...",
+    ],
 }
 
-# Accessing nested values
-print(students['S001']['name'])              # Output: Alice
-print(students['S002']['grades']['math'])    # Output: 92
-
-# Modifying nested values
-students['S003']['grades']['science'] = 87
-```
-
-Nested dictionaries are extremely useful for representing real-world hierarchical data like organizational structures, product catalogs, or student records.
-
-## 9. Self-Assessment Quiz
-
-1. What will be the output of the following code?
-   ```python
-   d = {'a': 1, 'b': 2}
-   print(d.get('c', 'Not found'))
-   ```
-   a) KeyError: 'c'
-   b) None
-   c) 'Not found'
-   d) False
-
-2. Which method would you use to remove a key-value pair from a dictionary and return the value?
-   a) `remove()`
-   b) `delete()`
-   c) `pop()`
-   d) `discard()`
-
-3. What happens if you try to access a key that doesn't exist in a dictionary using square bracket notation (`dict[key]`)?
-   a) It returns None
-   b) It returns a default value
-   c) It raises a KeyError
-   d) It adds the key with a None value
-
-4. Which of the following is NOT a valid dictionary key type?
-   a) Integer
-   b) String
-   c) List
-   d) Tuple
-
-5. What will the following code print?
-   ```python
-   d = {'a': 1, 'b': 2, 'c': 3}
-   for key in sorted(d):
-       print(key, end=' ')
-   ```
-   a) a b c
-   b) 1 2 3
-   c) a 1 b 2 c 3
-   d) The code will raise an error
-
-**Answers & Feedback:**
-1. c) 'Not found' — The get() method returns the specified default value when the key is not found
-2. c) `pop()` — This removes the key and returns its value
-3. c) It raises a KeyError — Unlike get(), direct access requires the key to exist
-4. c) List — Lists are mutable, so they can't be dictionary keys
-5. a) a b c — This code sorts the keys alphabetically and prints them
-
-## 10. Common Dictionary Pitfalls
-
-- **KeyError**: Trying to access a non-existent key without using `get()`
-- **Mutating while iterating**: Modifying a dictionary while looping through it can lead to unexpected behaviour
-- **Confusing keys and values**: Remember that `keys()` gives you keys, not values
-- **Shallow vs. deep copying**: Be careful with nested dictionaries, as shallow copies don't copy nested structures
-- **Dictionary equality**: Two dictionaries are equal if they have the same key-value pairs, regardless of order
-
-## Project Corner: Upgrading Your Chatbot with Dictionaries
-
-Let's enhance our chatbot by using dictionaries to organise response patterns and templates:
-
-```python
-import random
-
-# Using dictionaries for more sophisticated response patterns
-response_patterns = {
-    "greetings": ["hello", "hi", "hey", "howdy", "hola", "morning", "evening"],
-    "farewells": ["bye", "goodbye", "see you", "cya", "farewell", "exit"],
-    "gratitude": ["thanks", "thank you", "appreciate", "grateful"],
-    "bot_questions": ["who are you", "what are you", "your name", "your purpose"],
-    "user_questions": ["how are you", "what's up", "how do you feel"],
-    "capabilities": ["what can you do", "help", "functions", "abilities", "commands"]
+KEYWORDS = {
+    "hello": "greeting",
+    "hi": "greeting",
+    "hey": "greeting",
+    "bye": "farewell",
+    "goodbye": "farewell",
+    "quit": "farewell",
 }
 
-response_templates = {
-    "greetings": [
-        "Hello there! How can I help you today?",
-        "Hi! Nice to chat with you!",
-        "Hey! How's your day going?",
-        "Greetings! What's on your mind?"
-    ],
-    "farewells": [
-        "Goodbye! Come back soon!",
-        "See you later! Have a great day!",
-        "Until next time! Take care!",
-        "Farewell! It was nice chatting with you!"
-    ],
-    "gratitude": [
-        "You're welcome!",
-        "Happy to help!",
-        "My pleasure!",
-        "No problem at all!"
-    ],
-    "bot_questions": [
-        f"I'm PyBot, a simple chatbot built with Python!",
-        "I'm a demonstration chatbot for the Python Jumpstart book.",
-        "I'm your friendly Python-powered conversation partner!"
-    ],
-    "user_questions": [
-        "I'm functioning well, thanks for asking!",
-        "I'm here and ready to chat!",
-        "I'm operational and at your service!"
-    ],
-    "capabilities": [
-        "I can chat about basic topics, remember our conversation, and give responses based on patterns I recognise.",
-        "Try asking me who I am, say hello, or just chat naturally!",
-        "I can respond to greetings, questions about myself, and basic conversation. I'm also learning new tricks!"
-    ],
-    "unknown": [
-        "I'm not sure I understand. Can you rephrase that?",
-        "Hmm, I'm still learning and don't quite understand that.",
-        "That's beyond my current capabilities, but I'm always learning!",
-        "Interesting, tell me more about that."
-    ]
-}
 
-# User stats dictionary to track interaction metrics
-user_stats = {
-    "message_count": 0,
-    "question_count": 0,
-    "greeting_count": 0,
-    "command_count": 0,
-    "start_time": None,
-    "topics": {}  # Count topics discussed
-}
+def classify_input(text):
+    """Map input to a response category."""
+    words = text.lower().split()
+    for word in words:
+        if word in KEYWORDS:
+            return KEYWORDS[word]
+    if "?" in text:
+        return "question"
+    return "default"
+
 
 def get_response(user_input):
-    """Get a response using dictionary-based pattern matching."""
-    user_input = user_input.lower().strip()
-
-    # Update stats
-    user_stats["message_count"] += 1
-    if user_input.endswith("?"):
-        user_stats["question_count"] += 1
-
-    # Check for special commands
-    if user_input == "stats":
-        user_stats["command_count"] += 1
-        return f"""
-Conversation Stats:
-- Messages sent: {user_stats['message_count']}
-- Questions asked: {user_stats['question_count']}
-- Greetings: {user_stats['greeting_count']}
-- Commands used: {user_stats['command_count']}
-- Topics mentioned: {', '.join(user_stats['topics'].keys()) if user_stats['topics'] else 'None'}
-        """.strip()
-
-    # Check for patterns in our response dictionary
-    for category, patterns in response_patterns.items():
-        for pattern in patterns:
-            if pattern in user_input:
-                # Update stats for this topic/category
-                if category in user_stats["topics"]:
-                    user_stats["topics"][category] += 1
-                else:
-                    user_stats["topics"][category] = 1
-
-                if category == "greetings":
-                    user_stats["greeting_count"] += 1
-
-                # Return a random response from the matching category
-                return random.choice(response_templates[category])
-
-    # No pattern matched, return an unknown response
-    return random.choice(response_templates["unknown"])
-
-# Main chat loop
-bot_name = "PyBot"
-print(f"Hello! I'm {bot_name}. Type 'bye' to exit or 'stats' for conversation statistics.")
-user_name = input("What's your name? ").strip()
-print(f"Nice to meet you, {user_name}!")
-
-from datetime import datetime
-user_stats["start_time"] = datetime.now()
-
-conversation_history = []
-
-def save_to_history(speaker, text):
-    """Save an utterance to conversation history."""
-    timestamp = datetime.now().strftime("%H:%M:%S")
-    conversation_history.append({
-        "speaker": speaker,
-        "text": text,
-        "timestamp": timestamp
-    })
-
-def show_history():
-    """Display the conversation history."""
-    print("\n----- Conversation History -----")
-    for entry in conversation_history:
-        print(f"[{entry['timestamp']}] {entry['speaker']}: {entry['text']}")
-    print("-------------------------------\n")
-
-# Save initial greeting
-save_to_history(bot_name, f"Nice to meet you, {user_name}!")
-
-while True:
-    user_input = input(f"{user_name}> ")
-    save_to_history(user_name, user_input)
-
-    if user_input.lower() in ["bye", "exit", "quit", "goodbye"]:
-        duration = datetime.now() - user_stats["start_time"]
-        minutes = int(duration.total_seconds() // 60)
-        seconds = int(duration.total_seconds() % 60)
-
-        response = f"Goodbye, {user_name}! We chatted for {minutes} minutes and {seconds} seconds."
-        print(f"{bot_name}> {response}")
-        save_to_history(bot_name, response)
-        break
-    elif user_input.lower() == "history":
-        show_history()
-        continue
-
-    response = get_response(user_input)
-    print(f"{bot_name}> {response}")
-    save_to_history(bot_name, response)
+    """Get a response using dictionary lookup."""
+    category = classify_input(user_input)
+    responses = RESPONSES.get(category, RESPONSES["default"])
+    return random.choice(responses), category == "farewell"
 ```
 
-Our enhanced chatbot now:
-1. Uses dictionaries to organise response patterns and templates
-2. Tracks conversation statistics in a dictionary
-3. Stores conversation history using dictionaries with timestamps
-4. Provides a stats command to view interaction metrics
-5. Measures conversation duration
-6. Has more diverse response categories
+::: {.callout-tip title="What to Notice"}
+The if/elif chain is gone — replaced by dictionary lookups. Adding a new response category means adding entries to `RESPONSES` and `KEYWORDS`, not modifying logic. `RESPONSES.get(category, RESPONSES["default"])` uses `.get()` with a fallback. This is how AI structures most configurable systems.
+:::
 
-**Challenges**:
-- Add a "mood" system that changes response tone based on user interaction
-- Create a knowledge dictionary where the chatbot can remember facts about the user
-- Implement a frequency-based suggestion system for common user questions
-- Allow the user to teach the chatbot new response patterns
-- Create a persistent settings dictionary that can be saved and loaded
+### Stretch It
 
-## Cross-References
+::: {.callout-note title="Building Session Prompt"}
+Add a "learn" command that lets the user teach the bot a new keyword-category mapping. Store it in the KEYWORDS dictionary. Test it by teaching a new keyword and then using it.
+:::
 
-- Previous Chapter: [Strings](strings.qmd)
-- Next Chapter: [Files](files.qmd)
-- Related Topics: Lists (Chapter 11), Looping (Chapter 12)
+## Your Chatbot So Far
 
-***AI Tip: Ask your AI assistant to suggest ways dictionaries could be used to solve specific data organisation problems in your projects.***
+- Ch 1-12: Full features with functions, loops, text processing
+- Ch 13: String pattern matching
+- **Ch 14: Dictionary-based responses, keyword classification, configurable categories**
 
-## Real-World Dictionary Applications
+## Quick Reference
 
-Dictionaries are foundational to many programming tasks. Here are some common real-world applications:
+```python
+# Create
+user = {"name": "Alice", "age": 30}
+empty = {}
 
-1. **Configuration Settings**: Storing application settings in a hierarchical structure.
-   ```python
-   app_config = {
-       "user": {
-           "name": "Default User",
-           "theme": "dark",
-           "notifications": True
-       },
-       "system": {
-           "max_threads": 4,
-           "log_level": "info",
-           "debug_mode": False
-       }
-   }
-   ```
+# Access
+user["name"]                # "Alice" (KeyError if missing)
+user.get("name")            # "Alice" (None if missing)
+user.get("role", "guest")   # "guest" (default)
 
-2. **Data Transformation**: Converting between different data formats.
-   ```python
-   # Convert user data to API format
-   user = {"first_name": "John", "last_name": "Doe", "age": 30}
-   api_data = {
-       "user": {
-           "name": f"{user['first_name']} {user['last_name']}",
-           "metadata": {"age": user["age"]}
-       }
-   }
-   ```
+# Modify
+user["email"] = "a@b.com"   # add/update
+user.update({"age": 31})    # merge
+del user["age"]              # delete
+user.pop("age", None)        # delete (no error if missing)
 
-3. **Caching**: Storing computed results for quick access.
-   ```python
-   # A simple function memoization
-   fibonacci_cache = {}
+# Check
+"name" in user               # True (checks keys)
 
-   def fibonacci(n):
-       if n in fibonacci_cache:
-           return fibonacci_cache[n]
+# Loop
+for key in user:             # keys only
+for key, value in user.items():  # both
+for value in user.values():      # values only
 
-       if n <= 1:
-           result = n
-       else:
-           result = fibonacci(n-1) + fibonacci(n-2)
-
-       fibonacci_cache[n] = result
-       return result
-   ```
-
-4. **Counting and Statistics**: Tracking occurrences of items.
-   ```python
-   # Count word frequency in a text
-   text = "the quick brown fox jumps over the lazy dog"
-   word_count = {}
-
-   for word in text.split():
-       if word in word_count:
-           word_count[word] += 1
-       else:
-           word_count[word] = 1
-   ```
-
-5. **Lookup Tables**: Creating mappings for faster operation.
-   ```python
-   # Month name to number mapping
-   month_to_num = {
-       "January": 1, "February": 2, "March": 3,
-       "April": 4, "May": 5, "June": 6,
-       "July": 7, "August": 8, "September": 9,
-       "October": 10, "November": 11, "December": 12
-   }
-   ```
-
-These examples show why dictionaries are one of Python's most useful and versatile data structures. As you continue your Python journey, you'll find countless ways to apply them to make your code more efficient, readable, and powerful.
+# Comprehension
+squares = {x: x**2 for x in range(5)}
+```
