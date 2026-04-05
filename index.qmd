@@ -113,6 +113,24 @@ Found an error? Have a suggestion?
 
 This book is part of a series designed to help you master modern software development in the AI era.
 
+::: {.content-hidden when-format="epub"}
+```{mermaid}
+%%| fig-width: 4
+flowchart TD
+    CND["Conversation,<br/>Not Delegation"]
+    CPPA["Converse Python,<br/>Partner AI"]
+    Think["Think Python,<br/>Direct AI"]
+    Code["Code Python,<br/>Consult AI"]
+    Ship["Ship Python,<br/>Orchestrate AI"]
+    Web["Build Web,<br/>Guide AI"]
+    CND --> CPPA
+    CND --> Web
+    CPPA --> Think
+    Think --> Code
+    Code --> Ship
+```
+:::
+
 **Conversation, Not Delegation** — the general methodology for working with AI across any discipline.
 
 **Converse Python, Partner AI** — intentional prompting methodology applied to software development.
