@@ -2,50 +2,74 @@
 
 ## Why This Book Exists
 
-AI can write code. But it does not always write the right code. And if you cannot tell the difference, you have a problem.
+You have been using AI to write code. Maybe it started with a simple request — "build me a web scraper" or "make a script that renames these files" — and it worked. Then you got more ambitious. The code got longer. And at some point, you hit the wall.
 
-This book teaches you enough Python to lead the AI, not follow it. It is not about becoming a full-time software engineer. It is about becoming AI-literate: understanding enough about how code works that you can spot errors, tweak outputs, give better prompts, and take control of your projects instead of relying on guesswork.
+The wall is that moment when AI gives you code and you cannot tell whether it is correct. You paste an error back in and get a different error. You ask for a fix and the whole approach changes. You cannot tell which variables matter, what the logic is doing, or why it broke.
 
-The fundamentals of programming have not changed because AI arrived. If anything, they matter more. The developers who get the most from AI tools are the ones who understand what the tools are producing. This book gives you that understanding.
+This book exists because of the wall.
+
+But the wall is not the only reason to learn Python. AI keeps getting smarter, and the wall keeps moving further out. What does not move is curiosity. The desire to understand what is happening under the hood — not because you have to, but because you want to. Because knowing how code works makes you better at directing AI, better at evaluating its output, and better at building things that actually do what you need.
+
+Whether you hit the wall and need to get past it, or you are simply curious about how the code works, this book gives you that understanding.
+
+## How This Book Works
+
+This is not a traditional Python textbook. You will not read pages of explanations and then try exercises at the end. Instead, you will learn through conversation with AI.
+
+Every chapter follows the same pattern:
+
+**The Wall** — a specific vibe-coding failure you will recognise. AI produced code that broke or confused you, and you could not diagnose why. This is the concept you are about to learn.
+
+**Thinking Session** — you open a conversation with your AI assistant and explore the concept. Guided prompts help you ask the right questions, push back on oversimplified answers, and build genuine understanding. No code writing yet — just thinking.
+
+**The Gap** — a brief pause where the author connects what you learned to what you are about to build.
+
+**Building Session** — you open a fresh AI conversation with clear context and direct AI to build something specific. The chatbot project evolves with each chapter, and you understand every line of what AI produces because you explored the concept first.
+
+**Quick Reference** — a minimal syntax card for future reference.
+
+This structure comes from the *Converse Python, Partner AI* methodology, which separates thinking from building. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound — each session starts from zero.
 
 ## Who This Book Is For
 
-- Beginners who want a focused introduction to Python fundamentals
-- Professionals who need to understand code well enough to work with AI tools effectively
-- Anyone who tried *Think Python, Direct AI* and is ready for more depth on the language itself
+- People who have used AI to write code and want to understand what it produces
+- Professionals who need enough Python to evaluate, modify, and direct AI-generated code
+- Anyone curious about how programming works under the hood
+- Readers of *Think Python, Direct AI* ready for deeper language knowledge
 
-You do not need prior programming experience, but some familiarity with programming concepts will help. If you are a complete beginner who has never thought about programming at all, start with *Think Python, Direct AI* — it builds the mental models this book assumes.
+If you worked through *Think Python, Direct AI*, you already used variables, functions, lists, and dictionaries to build projects. This book makes that knowledge systematic — you understand how Python works, not just how to use it.
 
-If you worked through *Think Python, Direct AI*, you have already built projects using most of the concepts in this book. You used variables, functions, lists, and dictionaries — but you used them to solve problems, not to study them. This book makes the implicit explicit. It takes the Python you practiced and gives you the understanding to use it deliberately.
+If you are starting fresh, the book stands on its own. Each chapter's Thinking Session builds understanding from the ground up through AI conversation.
 
 ## What This Book Is Not
 
-This is not a computational thinking book. It does not spend time on problem decomposition or algorithmic reasoning — that is what *Think Python, Direct AI* covers. This book assumes you can think about a problem and focuses on giving you the Python to express the solution.
+This is not a computer science textbook. It does not cover algorithms, data structures theory, or computational thinking — that is what *Think Python, Direct AI* covers.
 
-It is not a professional development practices book. It does not cover project structure, testing frameworks, dependency management, or deployment. That is what *Ship Python, Orchestrate AI* covers. This book focuses on the language.
+It is not a professional practices book. Project structure, testing frameworks, deployment, and CI/CD are covered in *Ship Python, Orchestrate AI*.
 
-It is not a reference manual. It covers the fundamentals you need to be productive, not every feature Python offers. When you need more, the official documentation and your AI assistant will fill the gaps — and you will be equipped to evaluate what they give you.
+It is not a reference manual. It covers the fundamentals you need to read and direct AI-generated code. When you need more, your AI assistant and the official documentation will fill the gaps — and you will be equipped to evaluate what they give you.
 
-And it is not a book that treats AI as optional or dangerous. AI is woven throughout as a learning partner. The book teaches you to use AI to explore concepts, debug your code, and deepen your understanding — while always knowing enough to judge the output.
+## The Chatbot Project
 
-## If You Are Feeling Uncertain
+Across every chapter, you build a chatbot that grows from a 10-line echo script to a full-featured conversational program. By the end:
 
-You are not behind. The landscape is shifting fast, and the feeling that everyone else already knows Python is nearly universal and rarely true. You do not need to master everything. You need to learn enough to be dangerous — in the good sense. Enough to read code, modify it, and know when AI is helping versus hallucinating. This book gets you there.
+- It remembers your name and tracks conversations
+- It matches keywords and categorises messages
+- It picks responses from configurable dictionaries
+- It saves conversation history to files
+- It handles errors gracefully
+- It has a test suite
+- It is structured as a proper Python package with classes
 
-## How This Book Is Structured
-
-The book covers Python fundamentals in a logical progression:
-
-1. **Core Fundamentals** — values, variables, input, output, operators
-2. **Functions and Control Flow** — structuring your code, making decisions, loops
-3. **Data Structures** — lists, dictionaries, working with collections
-4. **Working with Files** — reading, writing, persistence
-5. **Code Quality** — debugging, testing, organising code
-6. **Python in the AI Era** — using AI assistants effectively, integrating AI into your work
-
-Each chapter builds on the previous one, with interactive examples you can run directly. A chatbot project evolves across the chapters, giving you a continuous thread to build on as your skills grow.
+You build this through AI conversation, not by copying code from a textbook. Each Building Session adds one feature, and you understand every line because you explored the underlying concept in the Thinking Session first.
 
 ## Conventions Used in This Book
+
+AI prompts appear in callout boxes:
+
+::: {.callout-note title="Thinking Session Prompt"}
+What is the difference between a list and a dictionary in Python? When should I use each one?
+:::
 
 Code examples appear with syntax highlighting:
 
@@ -54,33 +78,23 @@ name = input("What is your name? ")
 print(f"Hello, {name}!")
 ```
 
-AI prompts and non-code examples appear as grey monospace blocks:
+Author guidance appears in tip boxes:
 
-```text
-Ask your AI: "Explain the difference between
-a list and a dictionary in Python"
-```
-
-Throughout the chapters you will find:
-
-- **AI Tips** — practical advice for using AI with the concept being taught
-- **AI Collaboration Corner** — structured prompts showing how to ask AI for help
-- **Key Concepts** — important ideas highlighted for reference
-- **Project Corner** — where the chatbot project evolves with each new skill
+::: {.callout-tip title="What to Look For"}
+Your AI should explain that lists are ordered by position and dictionaries are ordered by key.
+:::
 
 ## How This Book Was Written
 
-This book was written through human-AI collaboration. The structure, pedagogy, and editorial decisions were made by the author. Claude (Anthropic) assisted with drafting and refining. Every chapter was reviewed for accuracy. The process demonstrates the book's core message: AI is most useful when you understand what you are asking it to do.
+This book was written through human-AI collaboration using the methodology it teaches. The structure, pedagogy, and editorial decisions were made by the author. Claude (Anthropic) assisted with drafting and refining. The process demonstrates the book's core message: AI is most useful when you understand what you are asking it to do.
 
 ## Ways to Engage with This Book
-
-This book is available in several formats. Pick whichever fits how you work and learn.
 
 - **Read it online.** The full book is freely available at the companion website, with dark mode, search, and navigation.
 - **Read it on paper or e-reader.** Available as a paperback and ebook through Amazon KDP.
 - **Converse with it.** The online edition includes a chatbot grounded in the book's content.
 - **Feed it to your own AI.** The `llm.txt` file provides a clean text version of the entire book, ready to paste into ChatGPT, Claude, or any AI tool.
-- **Run the code.** Project code is available as Python scripts and Jupyter notebooks on [GitHub](https://github.com/michael-borck/code-python-consult-ai). Notebooks include "Open in Colab" buttons for zero-install coding with Google Gemini. [DeepWiki](https://deepwiki.com/michael-borck/code-python-consult-ai) provides an AI-navigable view of the repository.
+- **Run the code.** Project code is available on [GitHub](https://github.com/michael-borck/code-python-consult-ai). [DeepWiki](https://deepwiki.com/michael-borck/code-python-consult-ai) provides an AI-navigable view of the repository.
 - **Browse all books.** This book is part of a series. See all titles at [books.borck.education](https://books.borck.education).
 
 The online version is always the most current.
@@ -121,7 +135,7 @@ flowchart TD
 
 **Think Python, Direct AI** — computational thinking for absolute beginners.
 
-**Code Python, Consult AI** (this book) — focused Python fundamentals with AI integration.
+**Code Python, Consult AI** (this book) — Python fundamentals through AI conversation.
 
 **Ship Python, Orchestrate AI** — professional Python development practices and tooling.
 
