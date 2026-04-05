@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI's loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code — `for i in range(len(data)):` — and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.
+AI's loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code, `for i in range(len(data)):`, and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.
 
 Loops are where AI makes off-by-one errors, forgets break conditions, and creates unnecessarily complex iterations. If you cannot trace through a loop manually, you will never spot these bugs.
 
@@ -13,19 +13,19 @@ This chapter fixes that.
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What are the two types of loops in Python — for and while? When should I use each one? And why does AI-generated code sometimes use `for i in range(len(items)):` instead of just `for item in items:`? Is the longer version ever better?
+What are the two types of loops in Python, for and while? When should I use each one? And why does AI-generated code sometimes use `for i in range(len(items)):` instead of just `for item in items:`? Is the longer version ever better?
 :::
 
-Your AI should explain: `for` iterates over a sequence (use when you know what you are iterating over), `while` repeats until a condition is false (use when you do not know how many times). The `range(len())` pattern gives you the index — sometimes needed, but `enumerate()` is better for that.
+Your AI should explain: `for` iterates over a sequence (use when you know what you are iterating over), `while` repeats until a condition is false (use when you do not know how many times). The `range(len())` pattern gives you the index, sometimes needed, but `enumerate()` is better for that.
 
 ### Go Deeper
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop — that seems strange. When would you actually use it?
+Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop. That seems strange. When would you actually use it?
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`break` exits the loop immediately. `continue` skips to the next iteration. The `else` on a loop runs only if the loop completed without `break` — it is useful for "search" patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop `else`, the concept is probably not important enough to use.
+`break` exits the loop immediately. `continue` skips to the next iteration. The `else` on a loop runs only if the loop completed without `break`. It is useful for "search" patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop `else`, the concept is probably not important enough to use.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
@@ -57,7 +57,7 @@ for i in range(10):
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Loop 1: no `break` — it runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: `total = i` overwrites instead of accumulating — should be `total += i`. These are all bugs AI generates regularly.
+Loop 1: no `break`. It runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: `total = i` overwrites instead of accumulating, should be `total += i`. These are all bugs AI generates regularly.
 :::
 
 ### What You Should Have Learned
@@ -73,7 +73,7 @@ Loop 1: no `break` — it runs forever. Loop 2: modifying a list while iterating
 
 You can now trace through any loop AI generates and predict its behaviour. You know the difference between accumulating (`+=`) and overwriting (`=`). You know why modifying a list during iteration is dangerous. When AI gives you a loop, you can verify it will terminate and process every item exactly once.
 
-In the Building Session, you will add word processing to your chatbot — iterating through user input to extract meaning.
+In the Building Session, you will add word processing to your chatbot, iterating through user input to extract meaning.
 
 ## Building Session
 
@@ -150,7 +150,7 @@ def run_quiz(bot_name):
 ### Stretch It
 
 ::: {.callout-note title="Building Session Prompt"}
-Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions — which is more readable?
+Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions, which is more readable?
 :::
 
 ## Your Chatbot So Far

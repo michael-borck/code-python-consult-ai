@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI used `class` and `self` everywhere and you had no idea why. It wrote `self.name`, `self.history`, `self.respond()` — every variable and function had `self` stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.
+AI used `class` and `self` everywhere and you had no idea why. It wrote `self.name`, `self.history`, `self.respond()`, every variable and function had `self` stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.
 
 You tried changing `self.name` to just `name` and everything broke. You did not know why `self` was necessary or what it represented.
 
@@ -16,20 +16,20 @@ This chapter fixes that.
 Explain Python classes and objects to me without jargon. I see AI using `class Chatbot:` and `self.name` constantly. What does `self` actually mean? Why can I not just use regular variables and functions? Give me a concrete example where a class is clearly better than functions.
 :::
 
-Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. `self` refers to the specific instance — if you create two chatbots, `self.name` is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.
+Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. `self` refers to the specific instance, if you create two chatbots, `self.name` is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.
 
 ### Go Deeper
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Walk me through the parts of a Python class: `__init__`, methods, attributes, and the `self` parameter. Why does every method take `self` as the first parameter? What is `__init__` and when does it run? Show me with a simple example — not a theoretical one.
+Walk me through the parts of a Python class: `__init__`, methods, attributes, and the `self` parameter. Why does every method take `self` as the first parameter? What is `__init__` and when does it run? Show me with a simple example, not a theoretical one.
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`__init__` is called automatically when you create an instance (`bot = Chatbot("PyBot")`). `self` is the instance being created or operated on — Python passes it automatically. Attributes set in `__init__` (like `self.name = name`) persist on the object. Methods are functions that operate on the object's data.
+`__init__` is called automatically when you create an instance (`bot = Chatbot("PyBot")`). `self` is the instance being created or operated on. Python passes it automatically. Attributes set in `__init__` (like `self.name = name`) persist on the object. Methods are functions that operate on the object's data.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What is inheritance in Python? AI sometimes writes `class EnhancedBot(Chatbot):` — what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?
+What is inheritance in Python? AI sometimes writes `class EnhancedBot(Chatbot):`, what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?
 :::
 
 ### Challenge It
@@ -50,7 +50,7 @@ class Counter:
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Three bugs: (1) `increment` uses `count` instead of `self.count` — it tries to modify a local variable that does not exist. (2) `get_count` is missing `self` parameter — it cannot be called as a method. (3) `count = 0` at the class level is a class variable shared by all instances — it should be `self.count = 0` in `__init__` for per-instance counting.
+Three bugs: (1) `increment` uses `count` instead of `self.count`. It tries to modify a local variable that does not exist. (2) `get_count` is missing `self` parameter. It cannot be called as a method. (3) `count = 0` at the class level is a class variable shared by all instances. It should be `self.count = 0` in `__init__` for per-instance counting.
 :::
 
 ### What You Should Have Learned
@@ -86,13 +86,13 @@ Refactor your chatbot into a class:
 Refactor my chatbot to v2.0 using a class. Create a Chatbot class that:
 
 - __init__(self, name, version) sets up: self.name, self.version, self.history (loaded from file), self.responses (the dictionary), self.keywords (the dictionary), self.message_count, self.debug_mode
-- greet(self) — displays the welcome screen
-- get_user_name(self) — asks for and validates the user's name
-- classify(self, text) — classifies input using self.keywords
-- respond(self, user_input) — returns (response, should_exit)
-- save_history(self) — saves self.history to JSON
-- load_history(self) — loads history from JSON
-- run(self) — the main conversation loop
+- greet(self), displays the welcome screen
+- get_user_name(self), asks for and validates the user's name
+- classify(self, text), classifies input using self.keywords
+- respond(self, user_input), returns (response, should_exit)
+- save_history(self), saves self.history to JSON
+- load_history(self), loads history from JSON
+- run(self). The main conversation loop
 
 Entry point:
     bot = Chatbot("PyBot", "2.0")
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 ```
 
 ::: {.callout-tip title="What to Notice"}
-All state lives on `self` — `self.history`, `self.keywords`, `self.message_count`. Methods access this shared state through `self`. You could create two chatbots with different names: `bot1 = Chatbot("PyBot", "2.0")` and `bot2 = Chatbot("Helper", "1.0")` — each has its own state. The `if __name__ == "__main__"` guard means this file works both as a script and as an importable module.
+All state lives on `self`: `self.history`, `self.keywords`, `self.message_count`. Methods access this shared state through `self`. You could create two chatbots with different names: `bot1 = Chatbot("PyBot", "2.0")` and `bot2 = Chatbot("Helper", "1.0")`. Each has its own state. The `if __name__ == "__main__"` guard means this file works both as a script and as an importable module.
 :::
 
 ### Stretch It
@@ -215,7 +215,7 @@ Create an EnhancedBot class that inherits from Chatbot and adds a mood system. O
 
 Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.
 
-More importantly, you built it through conversation with AI — directing it, questioning it, and understanding every line it produced.
+More importantly, you built it through conversation with AI, directing it, questioning it, and understanding every line it produced.
 
 ## Quick Reference
 

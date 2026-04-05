@@ -1,6 +1,6 @@
 # Acknowledgments {.unnumbered}
 
-This book grew out of teaching materials — handouts, exercises, lab worksheets — developed over years of introducing students to programming. Those materials were refined semester by semester as students showed me which explanations landed and which ones needed rethinking. The book is better for every student who said "I still don't get it" and forced a clearer explanation.
+This book grew out of teaching materials, handouts, exercises, lab worksheets, developed over years of introducing students to programming. Those materials were refined semester by semester as students showed me which explanations landed and which ones needed rethinking. The book is better for every student who said "I still don't get it" and forced a clearer explanation.
 
 Colleagues who teach introductory programming provided the kind of honest feedback that improves books: what was missing, what was unnecessary, and where the difficulty curve was wrong.
 

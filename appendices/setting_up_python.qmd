@@ -4,7 +4,7 @@ This appendix covers how to install Python, choose an execution environment, and
 
 ## Interpreted vs. Compiled Languages
 
-Python is an *interpreted* language — your code is executed line by line rather than being compiled into machine code first. This makes Python excellent for learning and prototyping because you get immediate feedback.
+Python is an *interpreted* language, your code is executed line by line rather than being compiled into machine code first. This makes Python excellent for learning and prototyping because you get immediate feedback.
 
 ## Ways to Run Python Code
 
@@ -37,9 +37,9 @@ ipython
 
 Useful IPython features:
 
-- **Tab completion** — type the start of a name and press Tab
-- **`?`** — append to any object for documentation (`print?`)
-- **`%timeit`** — measure execution time of a statement
+- **Tab completion**: type the start of a name and press Tab
+- **`?`**: append to any object for documentation (`print?`)
+- **`%timeit`**: measure execution time of a statement
 
 ### Python Scripts
 
@@ -153,7 +153,7 @@ Always use a virtual environment for each project. Add `.venv/` to your `.gitign
 | Automation | requests, beautifulsoup4, selenium |
 | Testing | pytest, coverage |
 
-Install what you need as you go — do not install everything at once.
+Install what you need as you go, do not install everything at once.
 
 ## Setting Up an IDE
 

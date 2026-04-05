@@ -4,12 +4,12 @@
 
 AI used a dictionary when a list would have worked, and you did not know enough to question it. In another case, your code crashed with `KeyError: 'username'` because the dictionary did not have the key AI assumed existed. You had no idea how to check whether a key exists before accessing it.
 
-Dictionaries are how AI organises structured data — user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.
+Dictionaries are how AI organises structured data, user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.
 
 This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, and the patterns that make them essential.
+You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly, how they work, the full range of methods, and the patterns that make them essential.
 :::
 
 ## Thinking Session
@@ -17,7 +17,7 @@ You may recognise dictionaries from the Contact Book project in *Think Python, D
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write `user = {"name": "Alice", "age": 30}` — how does Python find values by key?
+Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write `user = {"name": "Alice", "age": 30}`, how does Python find values by key?
 :::
 
 Your AI should explain: dictionaries map keys to values, lists map indexes to values. Use a dictionary when you need to look things up by name, not by position. Keys must be immutable (strings, numbers, tuples) and unique. If your AI does not mention that dictionaries are unordered in older Python but ordered by insertion in Python 3.7+, that is a useful detail.
@@ -25,7 +25,7 @@ Your AI should explain: dictionaries map keys to values, lists map indexes to va
 ### Go Deeper
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between `user["name"]` and `user.get("name")` — and why does AI sometimes use one versus the other?
+What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between `user["name"]` and `user.get("name")`, and why does AI sometimes use one versus the other?
 :::
 
 ::: {.callout-tip title="What to Look For"}
@@ -64,11 +64,11 @@ data.update({"b": 20, "d": 4})
 - `in` checks keys, not values
 - `items()` gives key-value pairs for looping
 - Keys must be immutable; values can be anything
-- Dictionaries are mutable — you can add, change, and remove entries
+- Dictionaries are mutable. You can add, change, and remove entries
 
 ## The Gap
 
-Dictionaries are how your chatbot will map keywords to responses — instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.
+Dictionaries are how your chatbot will map keywords to responses, instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.
 
 In the Building Session, you will replace the if/elif response logic with a dictionary-based approach.
 
@@ -109,7 +109,7 @@ RESPONSES = {
     ],
     "question": [
         "Good question! Let me think...",
-        "That's interesting — I'm learning too.",
+        "That's interesting. I'm learning too.",
     ],
     "farewell": [
         "Goodbye! It was nice chatting.",
@@ -150,7 +150,7 @@ def get_response(user_input):
 ```
 
 ::: {.callout-tip title="What to Notice"}
-The if/elif chain is gone — replaced by dictionary lookups. Adding a new response category means adding entries to `RESPONSES` and `KEYWORDS`, not modifying logic. `RESPONSES.get(category, RESPONSES["default"])` uses `.get()` with a fallback. This is how AI structures most configurable systems.
+The if/elif chain is gone, replaced by dictionary lookups. Adding a new response category means adding entries to `RESPONSES` and `KEYWORDS`, not modifying logic. `RESPONSES.get(category, RESPONSES["default"])` uses `.get()` with a fallback. This is how AI structures most configurable systems.
 :::
 
 ### Stretch It

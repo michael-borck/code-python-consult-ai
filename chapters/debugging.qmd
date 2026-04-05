@@ -4,7 +4,7 @@
 
 You pasted an error message into AI and it gave you a "fix" that introduced a different error. You pasted that error in and got yet another fix. Three rounds later, the code was completely different from what you started with and you had no idea what changed or why.
 
-The problem was not AI's debugging ability — it was that you could not isolate the bug yourself. You gave AI the entire program and said "fix it" instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.
+The problem was not AI's debugging ability. It was that you could not isolate the bug yourself. You gave AI the entire program and said "fix it" instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.
 
 This chapter fixes that.
 
@@ -21,7 +21,7 @@ Your AI should explain: print debugging (adding `print()` statements to trace va
 ### Go Deeper
 
 ::: {.callout-note title="Thinking Session Prompt"}
-When I have a bug, what is a systematic process for finding it? Not just "add print statements everywhere" — give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?
+When I have a bug, what is a systematic process for finding it? Not just "add print statements everywhere", give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?
 :::
 
 ::: {.callout-tip title="What to Look For"}
@@ -35,7 +35,7 @@ How should I use AI for debugging effectively? What information should I include
 ### Challenge It
 
 ::: {.callout-note title="Thinking Session Prompt"}
-This code is supposed to count vowels in a string but returns the wrong number. Debug it — do not just fix it, explain how you would find the bug step by step.
+This code is supposed to count vowels in a string but returns the wrong number. Debug it, do not just fix it, explain how you would find the bug step by step.
 
 ```python
 def count_vowels(text):
@@ -52,7 +52,7 @@ print(f"Vowels: {result}")  # Expected: 3, Got: 3
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Trick question — this code is actually correct for lowercase vowels. But it misses uppercase vowels. `"Hello World"` has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is `text.lower()` or `vowels = "aeiouAEIOU"`. The lesson: always clarify what "correct" means.
+Trick question. This code is actually correct for lowercase vowels. But it misses uppercase vowels. `"Hello World"` has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is `text.lower()` or `vowels = "aeiouAEIOU"`. The lesson: always clarify what "correct" means.
 :::
 
 ### What You Should Have Learned
@@ -61,7 +61,7 @@ Trick question — this code is actually correct for lowercase vowels. But it mi
 - Print debugging: add `print(f"DEBUG: {variable=}")` at key points
 - `pdb`: `breakpoint()` in your code to pause and inspect
 - When asking AI for help: include the error, the relevant code, what you expected, and what you tried
-- Do not ask AI to "fix my code" — ask it to explain why a specific line produces a specific result
+- Do not ask AI to "fix my code", ask it to explain why a specific line produces a specific result
 
 ## The Gap
 
@@ -127,7 +127,7 @@ def debug_log(*args):
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. This pattern — a function that conditionally prints — is how professional code handles debug output.
+`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.
 :::
 
 ### Stretch It

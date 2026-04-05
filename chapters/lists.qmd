@@ -9,7 +9,7 @@ Lists are Python's workhorse data structure. AI uses them in nearly every non-tr
 This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-You may recognise lists from projects like the Quiz Game or Contact Book in *Think Python, Direct AI*. There you used lists to store questions or entries. This chapter explores lists more deeply — indexing, slicing, methods, and the patterns that make lists essential.
+You may recognise lists from projects like the Quiz Game or Contact Book in *Think Python, Direct AI*. There you used lists to store questions or entries. This chapter explores lists more deeply, indexing, slicing, methods, and the patterns that make lists essential.
 :::
 
 ## Thinking Session
@@ -17,7 +17,7 @@ You may recognise lists from projects like the Quiz Game or Contact Book in *Thi
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Explain Python lists to me. Not just "an ordered collection" — I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.
+Explain Python lists to me. Not just "an ordered collection". I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.
 :::
 
 Your AI should cover indexing (starts at 0), negative indexing (`-1` is last item), `IndexError` for out-of-range access, and the key difference: lists are mutable (you can change items), strings are not.
@@ -29,7 +29,7 @@ What are the most important list methods? I keep seeing append(), extend(), inse
 :::
 
 ::: {.callout-tip title="What to Look For"}
-The key distinction: `append()`, `extend()`, `insert()`, `remove()`, `pop()`, `sort()`, `reverse()` all modify the list in place and return `None`. `sorted()` returns a new list. AI sometimes writes `my_list = my_list.sort()` — this sets `my_list` to `None`. If your AI does not mention this trap, ask about it.
+The key distinction: `append()`, `extend()`, `insert()`, `remove()`, `pop()`, `sort()`, `reverse()` all modify the list in place and return `None`. `sorted()` returns a new list. AI sometimes writes `my_list = my_list.sort()`. This sets `my_list` to `None`. If your AI does not mention this trap, ask about it.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
@@ -53,7 +53,7 @@ combined = [1, 2] + 3
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Line 2: `append()` returns `None`, so `items` becomes `None`. Fix: just `items.append(4)`. Line 5: same issue — `sort()` returns `None`. Fix: `data.sort()` alone, or `data = sorted(data)`. Line 7: cannot add an integer to a list. Fix: `[1, 2] + [3]` or `[1, 2].append(3)`.
+Line 2: `append()` returns `None`, so `items` becomes `None`. Fix: just `items.append(4)`. Line 5: same issue. `sort()` returns `None`. Fix: `data.sort()` alone, or `data = sorted(data)`. Line 7: cannot add an integer to a list. Fix: `[1, 2] + [3]` or `[1, 2].append(3)`.
 :::
 
 ### What You Should Have Learned
@@ -118,7 +118,7 @@ def get_response(user_input):
         return "Good question! Let me think...", False
     else:
         return random.choice([
-            f"Interesting — '{user_input}'.",
+            f"Interesting. '{user_input}'.",
             "Tell me more about that.",
             "I see. Go on...",
             "That's a new one for me!",
@@ -126,7 +126,7 @@ def get_response(user_input):
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`random.choice()` picks one item from a list — this gives varied responses. The conversation history uses `append()` to add entries (in the main loop, not shown here). `history[-5:]` slices the last 5 items. Lists grow dynamically — no need to declare a size.
+`random.choice()` picks one item from a list. This gives varied responses. The conversation history uses `append()` to add entries (in the main loop, not shown here). `history[-5:]` slices the last 5 items. Lists grow dynamically. No need to declare a size.
 :::
 
 ### Stretch It

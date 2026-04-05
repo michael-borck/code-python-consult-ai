@@ -25,7 +25,7 @@ When I look at AI-generated Python code, I notice it uses indentation to structu
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Your AI should explain that Python uses indentation to define code blocks — it is not decorative, it is structural. A misplaced space causes an `IndentationError`. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.
+Your AI should explain that Python uses indentation to define code blocks. It is not decorative, it is structural. A misplaced space causes an `IndentationError`. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
@@ -62,7 +62,7 @@ If any of these are unclear, continue the conversation with your AI before movin
 
 ## The Gap
 
-You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean — even before you understand what the code does.
+You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean, even before you understand what the code does.
 
 In the Building Session, you will set up your Python environment and add proper structure to the chatbot from Chapter 1: comments, named constants, and clear formatting.
 
@@ -98,7 +98,7 @@ Improve it by adding:
 - A module docstring at the top describing the program
 - BOT_NAME and VERSION as constants (uppercase)
 - Inline comments explaining the while loop and the break
-- Keep it simple — no functions, no imports
+- Keep it simple. No functions, no imports
 :::
 
 ### Read the Code
@@ -119,7 +119,7 @@ VERSION = "0.2"
 print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
 print("Type 'quit' to exit.")
 
-# Main conversation loop — runs until user quits
+# Main conversation loop (runs until user quits)
 while True:
     user_input = input("You: ")
 
@@ -131,7 +131,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `VERSION` are uppercase — the naming convention signals these are constants that should not change. The comments explain *why* (the loop runs until quit) not *what* (print prints). The `break` comment is useful because `break` is a keyword you might not recognise yet.
+The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `VERSION` are uppercase. The naming convention signals these are constants that should not change. The comments explain *why* (the loop runs until quit) not *what* (print prints). The `break` comment is useful because `break` is a keyword you might not recognise yet.
 :::
 
 ### Stretch It
@@ -140,7 +140,7 @@ The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `
 Add a comment block after the constants that lists what the chatbot can do in this version. Format it as a multi-line comment. Also add a `# TODO:` comment listing two features we will add in future chapters.
 :::
 
-Read the result. `# TODO:` comments are a convention for marking planned work — you will see these frequently in AI-generated code and in professional projects.
+Read the result. `# TODO:` comments are a convention for marking planned work. You will see these frequently in AI-generated code and in professional projects.
 
 ## Your Chatbot So Far
 

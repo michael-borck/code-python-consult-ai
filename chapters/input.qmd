@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it — it added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.
+AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it. It added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.
 
 AI's default approach to user input is either "assume it is perfect" or "catch everything and ignore it." Neither is acceptable. You need to understand how `input()` works and how to validate what comes back.
 
@@ -16,7 +16,7 @@ This chapter fixes that.
 How does Python's input() function work? I know it reads from the keyboard, but what type does it return? And what happens if the user types nothing and just presses Enter?
 :::
 
-Your AI should emphasise that `input()` always returns a string — even if the user types a number. An empty Enter returns an empty string `""`, not None. This is the source of most input-related bugs in AI-generated code.
+Your AI should emphasise that `input()` always returns a string, even if the user types a number. An empty Enter returns an empty string `""`, not None. This is the source of most input-related bugs in AI-generated code.
 
 ### Go Deeper
 
@@ -50,7 +50,7 @@ if age > 0 and age < 150:
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`age` is a string (from `input()`), so `age > 0` compares a string to an integer — this raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
+`age` is a string (from `input()`), so `age > 0` compares a string to an integer. This raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
 :::
 
 ### What You Should Have Learned
@@ -87,7 +87,7 @@ Update my chatbot to v0.6. Add input validation:
 - Use .strip() on all input to handle accidental spaces
 - Use .lower() for command matching (quit, help)
 - Add a "help" command that lists: quit, help
-- When checking for numbers, if conversion fails, respond with a message about the input being text — do not silently ignore it
+- When checking for numbers, if conversion fails, respond with a message about the input being text, do not silently ignore it
 
 Keep the existing features from v0.5 (welcome screen, name, message count, number recognition).
 :::
@@ -136,13 +136,13 @@ while True:
         number = int(user_input)
         response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
     except ValueError:
-        response = f"Interesting — '{user_input}'"
+        response = f"Interesting. '{user_input}'"
 
     print(f"{BOT_NAME}: {response} (msg #{message_count})")
 ```
 
 ::: {.callout-tip title="What to Notice"}
-The name input uses a `while not user_name` loop — keeps asking until something is entered. `.strip()` is called on every `input()` to remove accidental spaces. `command = user_input.lower()` creates a normalised version for comparison without changing the display. `continue` skips to the next loop iteration for empty input and help commands.
+The name input uses a `while not user_name` loop, keeps asking until something is entered. `.strip()` is called on every `input()` to remove accidental spaces. `command = user_input.lower()` creates a normalised version for comparison without changing the display. `continue` skips to the next loop iteration for empty input and help commands.
 :::
 
 ### Stretch It
@@ -176,7 +176,7 @@ while True:
     value = input("Enter a number: ").strip()
     try:
         number = int(value)
-        break                    # valid — exit loop
+        break                    # valid, exit loop
     except ValueError:
         print("That's not a number. Try again.")
 

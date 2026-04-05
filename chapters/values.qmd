@@ -2,9 +2,9 @@
 
 ## The Wall
 
-You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with `TypeError: can't multiply sequence by non-int of type 'float'`. You had no idea what a "sequence" was or why multiplying was a problem — the formula looked right.
+You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with `TypeError: can't multiply sequence by non-int of type 'float'`. You had no idea what a "sequence" was or why multiplying was a problem. The formula looked right.
 
-The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between `"72"` and `72`, you cannot spot this in AI-generated code — and AI generates this bug constantly.
+The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between `"72"` and `72`, you cannot spot this in AI-generated code, and AI generates this bug constantly.
 
 This chapter fixes that.
 
@@ -16,12 +16,12 @@ This chapter fixes that.
 In Python, what is the difference between the number 42 and the text "42"? Why does Python treat them differently, and what goes wrong when you mix them up? Give me examples of errors that happen when types get confused.
 :::
 
-Your AI should explain that `42` is an integer and `"42"` is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back — dynamic typing means variables can change type, not that types do not matter.
+Your AI should explain that `42` is an integer and `"42"` is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back, dynamic typing means variables can change type, not that types do not matter.
 
 ### Go Deeper
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What are the main data types in Python? I do not need all of them — just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.
+What are the main data types in Python? I do not need all of them. Just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.
 :::
 
 ::: {.callout-tip title="What to Look For"}
@@ -53,14 +53,14 @@ What will each of these produce, and why?
 - Python has distinct types: int, float, str, bool, None
 - `"42"` and `42` are fundamentally different
 - Type conversion is explicit: `int()`, `float()`, `str()`
-- Conversion can fail — `int("hello")` crashes
+- Conversion can fail: `int("hello")` crashes
 - The `type()` function tells you what you are working with
 
 ## The Gap
 
 When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.
 
-In the Building Session, you will make your chatbot respond differently to numbers versus text — the first step toward intelligent responses.
+In the Building Session, you will make your chatbot respond differently to numbers versus text. The first step toward intelligent responses.
 
 ## Building Session
 
@@ -100,7 +100,7 @@ Update to v0.3. Add logic that:
 - Prints the type of the input in parentheses after the response
 - Use a try/except for the conversion (just the basic pattern)
 
-Keep it simple — no functions yet, keep the while loop structure.
+Keep it simple. No functions yet, keep the while loop structure.
 :::
 
 ### Read the Code
@@ -138,7 +138,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-Line 16 uses `int(user_input)` — explicit type conversion. If it fails, the `except ValueError` catches it and the code falls through to the string handling. `type(number).__name__` gives the type as a readable string. The `%` operator checks even/odd — you will learn more about operators in Chapter 7.
+Line 16 uses `int(user_input)`, explicit type conversion. If it fails, the `except ValueError` catches it and the code falls through to the string handling. `type(number).__name__` gives the type as a readable string. The `%` operator checks even/odd. You will learn more about operators in Chapter 7.
 :::
 
 ### Stretch It

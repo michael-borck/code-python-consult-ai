@@ -25,7 +25,7 @@ Explain the different ways to import in Python: `import module`, `from module im
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`import module` is safest — you always see where things come from (`module.function()`). `from module import function` is fine for specific, well-known names. `from module import *` is dangerous — it pollutes your namespace and you cannot tell where names come from. `import module as alias` is conventional for some libraries (`import numpy as np`).
+`import module` is safest. You always see where things come from (`module.function()`). `from module import function` is fine for specific, well-known names. `from module import *` is dangerous. It pollutes your namespace and you cannot tell where names come from. `import module as alias` is conventional for some libraries (`import numpy as np`).
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
@@ -46,7 +46,7 @@ import pandas  # never installed
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Line 1: `import *` imports everything from os — pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script — relative imports depend on the project structure and whether you are running as a script or module. Line 4: `ModuleNotFoundError` if pandas is not installed. AI frequently imports packages it assumes are installed.
+Line 1: `import *` imports everything from os, pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script, relative imports depend on the project structure and whether you are running as a script or module. Line 4: `ModuleNotFoundError` if pandas is not installed. AI frequently imports packages it assumes are installed.
 :::
 
 ### What You Should Have Learned
@@ -70,13 +70,13 @@ In the Building Session, you will split your chatbot into a proper package.
 
 Split your chatbot into a package with multiple modules:
 
-- `chatbot/` — the package directory
-- `chatbot/__init__.py` — package marker
-- `chatbot/config.py` — constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)
-- `chatbot/responses.py` — classify_input() and get_response()
-- `chatbot/history.py` — load_history() and save_history()
-- `chatbot/main.py` — the main loop
-- `run.py` — entry point that imports and runs main()
+- `chatbot/`. The package directory
+- `chatbot/__init__.py`, package marker
+- `chatbot/config.py`, constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)
+- `chatbot/responses.py`, classify_input() and get_response()
+- `chatbot/history.py`, load_history() and save_history()
+- `chatbot/main.py`. The main loop
+- `run.py`, entry point that imports and runs main()
 
 ### Prompt It
 
@@ -86,9 +86,9 @@ Restructure my chatbot into a package for v1.9. Create this structure:
 chatbot/
     __init__.py      (empty or with version)
     config.py        (BOT_NAME, VERSION, RESPONSES dict, KEYWORDS dict)
-    responses.py     (classify_input, get_response — imports from config)
-    history.py       (load_history, save_history — imports json)
-    main.py          (main function — imports from other modules)
+    responses.py     (classify_input, get_response, imports from config)
+    history.py       (load_history, save_history, imports json)
+    main.py          (main function, imports from other modules)
 run.py               (entry point: from chatbot.main import main; main())
 
 Show me the import statements for each file and the key functions. Keep the existing features from v1.7.
@@ -148,7 +148,7 @@ if __name__ == "__main__":
 ```
 
 ::: {.callout-tip title="What to Notice"}
-Each file imports only what it needs. `config.py` has no imports — it is pure data. `responses.py` imports from `config` using the package path `from chatbot.config import ...`. `run.py` is the entry point — one line. The `__init__.py` file can be empty; it just tells Python this directory is a package.
+Each file imports only what it needs. `config.py` has no imports. It is pure data. `responses.py` imports from `config` using the package path `from chatbot.config import ...`. `run.py` is the entry point, one line. The `__init__.py` file can be empty; it just tells Python this directory is a package.
 :::
 
 ### Stretch It

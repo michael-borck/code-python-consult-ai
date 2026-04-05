@@ -4,12 +4,12 @@
 
 AI's string slicing gave you the wrong substring. It used `text[3:7]` and you expected 4 characters but got something different. In another case, AI used `.split()`, `.join()`, `.replace()`, and `.strip()` in a chain so long you could not tell what the final result would be without running it.
 
-Strings are the most common data type in AI-generated code — every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.
+Strings are the most common data type in AI-generated code, every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.
 
 This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-If you worked through *Think Python, Direct AI*, you already used string methods like `.lower()` and `.split()` to process user input in your projects. Here we explore strings more thoroughly — how they work internally, the full range of methods, and when to reach for each one.
+If you worked through *Think Python, Direct AI*, you already used string methods like `.lower()` and `.split()` to process user input in your projects. Here we explore strings more thoroughly, how they work internally, the full range of methods, and when to reach for each one.
 :::
 
 ## Thinking Session
@@ -20,7 +20,7 @@ If you worked through *Think Python, Direct AI*, you already used string methods
 Explain Python strings in depth. I know they are text in quotes, but I want to understand: are they like lists? Can I change individual characters? How does indexing and slicing work on strings compared to lists?
 :::
 
-Your AI should explain that strings are immutable sequences — you can index and slice them like lists, but you cannot change individual characters. `text[0] = "X"` fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.
+Your AI should explain that strings are immutable sequences. You can index and slice them like lists, but you cannot change individual characters. `text[0] = "X"` fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.
 
 ### Go Deeper
 
@@ -29,7 +29,7 @@ What are the most useful string methods in Python? Focus on the ones that AI use
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Key pattern: all string methods return new strings (strings are immutable). `text.split()` returns a list. `" ".join(words)` returns a string. `text.replace("old", "new")` returns a new string — the original is unchanged. If your AI implies these modify the original string, that is wrong.
+Key pattern: all string methods return new strings (strings are immutable). `text.split()` returns a list. `" ".join(words)` returns a string. `text.replace("old", "new")` returns a new string. The original is unchanged. If your AI implies these modify the original string, that is wrong.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
@@ -54,12 +54,12 @@ What does each line produce?
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`split()` gives `["hello", "world"]`. `join()` gives `"hello world"`. `strip()` gives `"hello"`. `replace()` gives `"hello Python"`. `[1:4]` gives `"ell"` (index 1, 2, 3 — stop is exclusive). `[::-1]` gives `"olleh"` (reversed). `title()` gives `"Hello World"`. `count("o")` gives `1`.
+`split()` gives `["hello", "world"]`. `join()` gives `"hello world"`. `strip()` gives `"hello"`. `replace()` gives `"hello Python"`. `[1:4]` gives `"ell"` (index 1, 2, 3, stop is exclusive). `[::-1]` gives `"olleh"` (reversed). `title()` gives `"Hello World"`. `count("o")` gives `1`.
 :::
 
 ### What You Should Have Learned
 
-- Strings are immutable — all methods return new strings
+- Strings are immutable, all methods return new strings
 - Indexing and slicing work like lists: `text[start:stop:step]`
 - `split()` makes a list, `join()` makes a string
 - `strip()` removes whitespace, `replace()` substitutes text
@@ -120,7 +120,7 @@ def format_repeat(text):
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`" ".join(text.split())` is a common idiom — it splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". `text[::-1]` reverses the string. `"\n".join(lines)` joins a list of strings with newlines between them. All these methods return new strings — the original is never modified.
+`" ".join(text.split())` is a common idiom. It splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". `text[::-1]` reverses the string. `"\n".join(lines)` joins a list of strings with newlines between them. All these methods return new strings. The original is never modified.
 :::
 
 ### Stretch It

@@ -2,7 +2,7 @@
 
 ## The Wall
 
-Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to "make it look nicer" and got code full of `f"{value:>10.2f}"` — formatting syntax that looked like someone spilled punctuation on the keyboard.
+Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to "make it look nicer" and got code full of `f"{value:>10.2f}"`, formatting syntax that looked like someone spilled punctuation on the keyboard.
 
 You need to understand `print()` and string formatting, not because you will memorise every format code, but because AI uses them constantly and you need to know what you are looking at when you modify the output.
 
@@ -16,12 +16,12 @@ This chapter fixes that.
 How does Python's print() function work beyond the basics? I know `print("hello")` prints text, but AI-generated code uses things like `sep=`, `end=`, and `f""` strings. Explain what these do and when they matter.
 :::
 
-Your AI should cover three things: `print()` parameters (`sep` changes what goes between items, `end` changes what goes at the end — default is newline), f-strings (formatted string literals that embed expressions in `{}`), and format specifications (the `:` syntax inside `{}`).
+Your AI should cover three things: `print()` parameters (`sep` changes what goes between items, `end` changes what goes at the end, default is newline), f-strings (formatted string literals that embed expressions in `{}`), and format specifications (the `:` syntax inside `{}`).
 
 ### Go Deeper
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Show me how f-strings work in Python. I want to understand the syntax inside the curly braces — how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.
+Show me how f-strings work in Python. I want to understand the syntax inside the curly braces, how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.
 :::
 
 ::: {.callout-tip title="What to Look For"}
@@ -132,7 +132,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`{BOT_NAME:^{WIDTH}}` centres the text in a field of WIDTH characters. `{:>{WIDTH // 2}}` right-aligns in half the width. `"=" * WIDTH` repeats the character — a common pattern for separator lines. The `WIDTH` constant means you change one number to adjust all formatting.
+`{BOT_NAME:^{WIDTH}}` centres the text in a field of WIDTH characters. `{:>{WIDTH // 2}}` right-aligns in half the width. `"=" * WIDTH` repeats the character. A common pattern for separator lines. The `WIDTH` constant means you change one number to adjust all formatting.
 :::
 
 ### Stretch It

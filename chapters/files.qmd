@@ -4,7 +4,7 @@
 
 AI wrote code that saved data to a file. You ran it, saw "Data saved!", and felt good. Then you restarted the program and the data was gone. It turned out AI opened the file with `"w"` (write mode) instead of `"a"` (append mode), so every run erased the previous data.
 
-In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with `FileNotFoundError` — on the user's machine, not yours, because the file was in your test folder.
+In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with `FileNotFoundError`, on the user's machine, not yours, because the file was in your test folder.
 
 This chapter fixes that.
 
@@ -16,7 +16,7 @@ This chapter fixes that.
 How does file I/O work in Python? Explain the open/read/write/close pattern. What are the different file modes (r, w, a, x) and when would I use each? Why does AI-generated code always use `with open()` instead of calling open() and close() separately?
 :::
 
-Your AI should explain that `with open()` is a context manager that automatically closes the file even if an error occurs. The modes matter: `"r"` reads, `"w"` writes (erases existing content), `"a"` appends, `"x"` creates (fails if file exists). AI should always use `with` — if it does not, that is a code smell.
+Your AI should explain that `with open()` is a context manager that automatically closes the file even if an error occurs. The modes matter: `"r"` reads, `"w"` writes (erases existing content), `"a"` appends, `"x"` creates (fails if file exists). AI should always use `with`, if it does not, that is a code smell.
 
 ### Go Deeper
 
@@ -46,12 +46,12 @@ f.close()
 :::
 
 ::: {.callout-tip title="What to Look For"}
-If the program crashes between `open()` and `close()`, the file is never properly closed, potentially losing data. The fix is `with open("data.txt", "w") as f:` — the `with` block guarantees closure. Also, `"w"` mode erases existing content — if that is not intended, use `"a"`.
+If the program crashes between `open()` and `close()`, the file is never properly closed, potentially losing data. The fix is `with open("data.txt", "w") as f:`. The `with` block guarantees closure. Also, `"w"` mode erases existing content, if that is not intended, use `"a"`.
 :::
 
 ### What You Should Have Learned
 
-- Always use `with open()` — it handles closing automatically
+- Always use `with open()`. It handles closing automatically
 - File modes: `"r"` read, `"w"` write (erases), `"a"` append
 - `read()` gets all content, iterate for line-by-line processing
 - JSON is the standard format for structured data: `json.load()` / `json.dump()`
@@ -59,7 +59,7 @@ If the program crashes between `open()` and `close()`, the file is never properl
 
 ## The Gap
 
-Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append — and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.
+Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append, and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.
 
 In the Building Session, you will give your chatbot persistent memory.
 

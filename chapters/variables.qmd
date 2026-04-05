@@ -2,14 +2,14 @@
 
 ## The Wall
 
-You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with `user_name`, `bot_name`, `message_count`, `last_response`, `_internal_state`, and `MAX_RETRIES`. It worked — until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.
+You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with `user_name`, `bot_name`, `message_count`, `last_response`, `_internal_state`, and `MAX_RETRIES`. It worked, until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.
 
 You could not tell which variables mattered, which were temporary, and which were constants you should not touch. Without understanding how variables work, AI-generated code is a minefield of names you cannot safely modify.
 
 This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practised.
+If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic, explaining the rules and patterns behind what you practised.
 :::
 
 ## Thinking Session
@@ -17,10 +17,10 @@ If you worked through *Think Python, Direct AI*, you already used variables in p
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write `x = 5`. Also explain why Python lets me write `x = 5` and then `x = "hello"` on the next line — is that a feature or a problem?
+Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write `x = 5`. Also explain why Python lets me write `x = 5` and then `x = "hello"` on the next line, is that a feature or a problem?
 :::
 
-Your AI should talk about name binding — `x = 5` binds the name `x` to the integer object `5`. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.
+Your AI should talk about name binding. `x = 5` binds the name `x` to the integer object `5`. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.
 
 ### Go Deeper
 
@@ -29,11 +29,11 @@ Show me three examples where choosing bad variable names would make AI-generated
 :::
 
 ::: {.callout-tip title="What to Look For"}
-The pattern: `snake_case` for variables and functions, `UPPER_CASE` for constants, `PascalCase` for classes. These are not just style — they carry meaning. When you see `MAX_RETRIES` in AI-generated code, the uppercase tells you it is a constant that should not change.
+The pattern: `snake_case` for variables and functions, `UPPER_CASE` for constants, `PascalCase` for classes. These are not just style. They carry meaning. When you see `MAX_RETRIES` in AI-generated code, the uppercase tells you it is a constant that should not change.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What is the difference between `x = 5` and `x == 5`? When I am reading AI-generated code, how do I know which one I am looking at? And what about `x += 1` — what does that do?
+What is the difference between `x = 5` and `x == 5`? When I am reading AI-generated code, how do I know which one I am looking at? And what about `x += 1`, what does that do?
 :::
 
 ### Challenge It
@@ -50,7 +50,7 @@ def greet():
 :::
 
 ::: {.callout-tip title="What to Look For"}
-This is a scope trap. The `name = name + "!"` inside the function creates a local variable that shadows the global one. Python sees the assignment and treats `name` as local for the entire function — so `print(name)` fails with `UnboundLocalError`. AI generates this pattern regularly.
+This is a scope trap. The `name = name + "!"` inside the function creates a local variable that shadows the global one. Python sees the assignment and treats `name` as local for the entire function, so `print(name)` fails with `UnboundLocalError`. AI generates this pattern regularly.
 :::
 
 ### What You Should Have Learned
@@ -58,14 +58,14 @@ This is a scope trap. The `name = name + "!"` inside the function creates a loca
 - Variables are names bound to objects, not boxes holding values
 - Assignment (`=`) vs equality (`==`) vs augmented assignment (`+=`)
 - Python naming conventions: snake_case, UPPER_CASE, PascalCase
-- Dynamic typing means variables can change type — powerful but requires attention
+- Dynamic typing means variables can change type, powerful but requires attention
 - Scope exists and can cause subtle bugs
 
 ## The Gap
 
 You can now read AI-generated code and understand what the variable names mean, why they are structured the way they are, and what happens when values change. That is the difference between someone who copies AI output and someone who can safely modify it.
 
-In the Building Session, you will add memory to your chatbot — and understand every variable AI creates.
+In the Building Session, you will add memory to your chatbot, and understand every variable AI creates.
 
 ## Building Session
 
@@ -108,7 +108,7 @@ Add these features using variables:
 - Include user's name and count in responses
 - Update VERSION to "0.4"
 
-Keep it simple — no functions, no classes.
+Keep it simple. No functions, no classes.
 :::
 
 ### Read the Code
@@ -147,7 +147,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`user_name` stores the result of `input()` — it persists across the entire loop. `message_count` starts at `0` and uses `+= 1` to increment. Both `BOT_NAME` and `VERSION` are constants (uppercase) set once and never changed. The f-strings reference these variables by name — change the variable, change every response.
+`user_name` stores the result of `input()`. It persists across the entire loop. `message_count` starts at `0` and uses `+= 1` to increment. Both `BOT_NAME` and `VERSION` are constants (uppercase) set once and never changed. The f-strings reference these variables by name, change the variable, change every response.
 :::
 
 ### Stretch It

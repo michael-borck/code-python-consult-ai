@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path — the obvious, expected inputs — and missed every edge case.
+AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path. The obvious, expected inputs, and missed every edge case.
 
 You asked AI to "add tests" and it generated tests that passed trivially. One test checked that `add(2, 3)` returns `5`. It did not test what happens when you pass `None`, a string, or a negative number. The tests gave you false confidence.
 
@@ -13,7 +13,7 @@ This chapter fixes that.
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest — why do Python developers prefer it over the built-in unittest module?
+Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest, why do Python developers prefer it over the built-in unittest module?
 :::
 
 Your AI should explain: good tests check edge cases, not just happy paths. A test is useful if its failure tells you something is broken. pytest is preferred because it uses plain `assert` statements instead of special methods (`assertEqual`, `assertTrue`), making tests more readable.
@@ -48,17 +48,17 @@ def test_average():
 :::
 
 ::: {.callout-tip title="What to Look For"}
-The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug — it crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.
+The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug. It crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.
 :::
 
 ### What You Should Have Learned
 
 - Good tests check edge cases, not just expected inputs
-- pytest uses plain `assert` — simple and readable
+- pytest uses plain `assert`, simple and readable
 - Test files: `tests/test_*.py`, functions: `test_*()`
-- Arrange, Act, Assert — the test structure pattern
+- Arrange, Act, Assert. The test structure pattern
 - Edge case checklist: empty input, None, wrong type, boundary values, single item
-- Tests give confidence to modify code — that is their real value
+- Tests give confidence to modify code. That is their real value
 
 ## The Gap
 
@@ -88,7 +88,7 @@ Create a test file `tests/test_chatbot.py` for my chatbot. Write pytest tests fo
 - classify_input("random text") should return "default"
 - classify_input("") should return "default" (not crash)
 - get_response() should return a tuple of (str, bool)
-- get_response("bye") should return (str, True) — the exit flag
+- get_response("bye") should return (str, True). The exit flag
 
 Use the arrange/act/assert pattern. Include at least one test that checks an edge case AI would miss.
 :::

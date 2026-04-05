@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI wrapped everything in `try: ... except: pass` and your errors vanished. The program did not crash anymore, but it also did not work — it silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.
+AI wrapped everything in `try: ... except: pass` and your errors vanished. The program did not crash anymore, but it also did not work. It silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.
 
 Or the opposite: AI did not add error handling at all, and the program crashed on the first unexpected input with a traceback you could not read.
 
@@ -13,7 +13,7 @@ This chapter fixes that.
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message — I want to be able to look at AI-generated tracebacks and immediately find the problem.
+What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message. I want to be able to look at AI-generated tracebacks and immediately find the problem.
 :::
 
 Your AI should explain: syntax errors are caught before the code runs (missing colons, bad indentation), exceptions happen during execution (dividing by zero, missing keys, wrong types). The traceback reads bottom-up: the last line is the error, the lines above show the call stack. The file name and line number tell you exactly where to look.
@@ -48,21 +48,21 @@ except:
 :::
 
 ::: {.callout-tip title="What to Look For"}
-Three problems: (1) bare `except:` catches everything including KeyboardInterrupt and SystemExit. (2) `pass` silently swallows errors — you will never know something went wrong. (3) the try block is too broad — it should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.
+Three problems: (1) bare `except:` catches everything including KeyboardInterrupt and SystemExit. (2) `pass` silently swallows errors. You will never know something went wrong. (3) the try block is too broad. It should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.
 :::
 
 ### What You Should Have Learned
 
-- Syntax errors vs exceptions — different causes, different fixes
+- Syntax errors vs exceptions, different causes, different fixes
 - How to read a traceback: bottom-up, file + line number
 - The common exceptions: TypeError, ValueError, KeyError, IndexError
 - try/except should catch specific exceptions, not bare except
-- Never use `except: pass` — at minimum, log the error
+- Never use `except: pass`, at minimum, log the error
 - `finally` runs whether or not an exception occurred
 
 ## The Gap
 
-You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill — bad error handling is worse than no error handling.
+You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill, bad error handling is worse than no error handling.
 
 In the Building Session, you will add proper error handling to your chatbot.
 
@@ -132,7 +132,7 @@ def main():
 ```
 
 ::: {.callout-tip title="What to Notice"}
-Each `except` catches a specific exception with a helpful message. `KeyboardInterrupt` is caught separately — it is not a bug, it is a user action. The `finally` block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.
+Each `except` catches a specific exception with a helpful message. `KeyboardInterrupt` is caught separately. It is not a bug, it is a user action. The `finally` block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.
 :::
 
 ### Stretch It

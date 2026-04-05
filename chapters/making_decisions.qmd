@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI generated a chain of `if`, `elif`, and `else` statements. The logic was wrong — it matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.
+AI generated a chain of `if`, `elif`, and `else` statements. The logic was wrong. It matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.
 
 Conditional logic is where AI makes its most subtle mistakes. The code runs, the syntax is valid, but the logic is backwards. If you cannot trace through conditions yourself, you will never catch these bugs.
 
@@ -16,7 +16,7 @@ This chapter fixes that.
 Explain Python's if, elif, and else statements. I want to understand: how does Python decide which branch to take? What happens if multiple conditions are true? And what is the difference between separate if statements and an if/elif chain?
 :::
 
-Your AI should explain that `elif` chains are mutually exclusive — only the first true condition executes. Separate `if` statements each evaluate independently. This distinction is critical: AI sometimes uses separate `if` statements when it should use `elif`, causing multiple branches to fire.
+Your AI should explain that `elif` chains are mutually exclusive, only the first true condition executes. Separate `if` statements each evaluate independently. This distinction is critical: AI sometimes uses separate `if` statements when it should use `elif`, causing multiple branches to fire.
 
 ### Go Deeper
 
@@ -49,13 +49,13 @@ if temperature > 10:
 :::
 
 ::: {.callout-tip title="What to Look For"}
-It prints "Hot", "Warm", and "Mild" — all three. The programmer probably wanted only "Hot". The fix is `elif` instead of separate `if` statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.
+It prints "Hot", "Warm", and "Mild", all three. The programmer probably wanted only "Hot". The fix is `elif` instead of separate `if` statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.
 :::
 
 ### What You Should Have Learned
 
-- `if/elif/else` chains are mutually exclusive — only one branch runs
-- Separate `if` statements are independent — multiple can run
+- `if/elif/else` chains are mutually exclusive, only one branch runs
+- Separate `if` statements are independent, multiple can run
 - Guard clauses simplify deeply nested logic
 - Truthy/falsy: empty collections, 0, None, "" are all falsy
 - Ternary: `x = "yes" if condition else "no"`
@@ -64,7 +64,7 @@ It prints "Hot", "Warm", and "Mild" — all three. The programmer probably wante
 
 When you read AI-generated conditional logic, you can now trace the flow. You know whether conditions are mutually exclusive or independent. You can spot when AI should have used `elif` instead of `if`, or when a deeply nested block could be flattened with guard clauses.
 
-In the Building Session, you will add categorised responses to your chatbot — different behaviour for greetings, questions, farewells, and default cases.
+In the Building Session, you will add categorised responses to your chatbot, different behaviour for greetings, questions, farewells, and default cases.
 
 ## Building Session
 
@@ -116,11 +116,11 @@ def get_response(user_input):
             parity = "even" if number % 2 == 0 else "odd"
             return f"{number} is {parity}.", False
         except ValueError:
-            return f"Interesting — '{user_input}'.", False
+            return f"Interesting. '{user_input}'.", False
 ```
 
 ::: {.callout-tip title="What to Notice"}
-The `elif` chain ensures only one category matches. Farewells are checked first — if someone says "bye", that takes priority over everything else. `.startswith()` can take a tuple of options. The function returns a tuple `(response, should_exit)` — the boolean flag lets the caller decide what to do.
+The `elif` chain ensures only one category matches. Farewells are checked first, if someone says "bye", that takes priority over everything else. `.startswith()` can take a tuple of options. The function returns a tuple `(response, should_exit)`. The boolean flag lets the caller decide what to do.
 :::
 
 ### Stretch It

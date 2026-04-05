@@ -13,7 +13,7 @@ This chapter fixes that.
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What are the most commonly used built-in functions in Python? Not all of them — just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.
+What are the most commonly used built-in functions in Python? Not all of them. Just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.
 :::
 
 Your AI should cover: `print()`, `input()`, `len()`, `type()`, `int()`, `float()`, `str()`, `range()`, `list()`, `sorted()`, `enumerate()`, `zip()`, `max()`, `min()`, `sum()`. You already know some of these from earlier chapters. The new ones matter because AI uses them as building blocks.
@@ -25,7 +25,7 @@ Explain range(), enumerate(), and zip() in Python. These appear in AI-generated 
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`range(5)` produces `0, 1, 2, 3, 4`. `enumerate(items)` produces `(0, "first"), (1, "second"), ...` — index and value together. `zip(list1, list2)` pairs elements from two lists. These are the three loop helpers AI reaches for constantly.
+`range(5)` produces `0, 1, 2, 3, 4`. `enumerate(items)` produces `(0, "first"), (1, "second"), ...`, index and value together. `zip(list1, list2)` pairs elements from two lists. These are the three loop helpers AI reaches for constantly.
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
@@ -49,7 +49,7 @@ list(zip([1, 2], ["x", "y"]))
 :::
 
 ::: {.callout-tip title="What to Look For"}
-`len("hello")` is `5`. `len([1, 2, 3])` is `3`. `list(range(3))` is `[0, 1, 2]`. `sorted([3, 1, 2])` is `[1, 2, 3]`. `sorted("python")` is `['h', 'n', 'o', 'p', 't', 'y']` — it sorts characters. `enumerate` gives `[(0, 'a'), (1, 'b'), (2, 'c')]`. `zip` gives `[(1, 'x'), (2, 'y')]`.
+`len("hello")` is `5`. `len([1, 2, 3])` is `3`. `list(range(3))` is `[0, 1, 2]`. `sorted([3, 1, 2])` is `[1, 2, 3]`. `sorted("python")` is `['h', 'n', 'o', 'p', 't', 'y']`. It sorts characters. `enumerate` gives `[(0, 'a'), (1, 'b'), (2, 'c')]`. `zip` gives `[(1, 'x'), (2, 'y')]`.
 :::
 
 ### What You Should Have Learned
@@ -58,11 +58,11 @@ list(zip([1, 2], ["x", "y"]))
 - Methods are called on objects with `object.method(arguments)`
 - `len()`, `type()`, `range()`, `sorted()` work on many types
 - `enumerate()` and `zip()` are loop helpers you will see everywhere
-- Functions return values — you can store the result or use it inline
+- Functions return values. You can store the result or use it inline
 
 ## The Gap
 
-You now have a vocabulary of the built-in functions AI reaches for most often. When you see `sorted(data, key=lambda x: x["age"])` in AI-generated code, you know `sorted()` returns a new sorted list, `key` tells it what to sort by, and `lambda` creates a small anonymous function. You may not understand `lambda` fully yet — but you know what the overall line does.
+You now have a vocabulary of the built-in functions AI reaches for most often. When you see `sorted(data, key=lambda x: x["age"])` in AI-generated code, you know `sorted()` returns a new sorted list, `key` tells it what to sort by, and `lambda` creates a small anonymous function. You may not understand `lambda` fully yet, but you know what the overall line does.
 
 In the Building Session, you will use built-in functions to add text processing to your chatbot.
 
@@ -144,7 +144,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`.split()` breaks a string into a list of words. `len(words)` counts them. `set()` stores unique values — `unique_words.update()` adds without duplicates. `sorted()` returns a sorted list, and `[-5:]` takes the last 5 items. `max(message_count, 1)` prevents division by zero.
+`.split()` breaks a string into a list of words. `len(words)` counts them. `set()` stores unique values. `unique_words.update()` adds without duplicates. `sorted()` returns a sorted list, and `[-5:]` takes the last 5 items. `max(message_count, 1)` prevents division by zero.
 :::
 
 ### Stretch It

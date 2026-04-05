@@ -9,7 +9,7 @@ You asked AI to "add functions" and it created functions with names like `proces
 This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-If you worked through *Think Python, Direct AI*, you already created functions to organise your project code. This chapter gives you the full picture — parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.
+If you worked through *Think Python, Direct AI*, you already created functions to organise your project code. This chapter gives you the full picture, parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.
 :::
 
 ## Thinking Session
@@ -20,7 +20,7 @@ If you worked through *Think Python, Direct AI*, you already created functions t
 Why do we use functions in Python? I understand they group code, but what is the real benefit? Explain it from the perspective of someone who mostly reads and modifies AI-generated code. When should something be a function and when is it fine as inline code?
 :::
 
-Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions — `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
+Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions. `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
 
 ### Go Deeper
 
@@ -33,7 +33,7 @@ Key points: `def` defines a function, parameters are the names in the definition
 :::
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse — can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.
+What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse, can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.
 :::
 
 ### Challenge It
@@ -54,7 +54,7 @@ print(f"Average: {result}")
 :::
 
 ::: {.callout-tip title="What to Look For"}
-The function calculates the average but never returns it. `result` will be `None`. The fix is adding `return average` at the end. AI generates this bug when it forgets the return statement — the code runs without error but produces `None` instead of the actual value.
+The function calculates the average but never returns it. `result` will be `None`. The fix is adding `return average` at the end. AI generates this bug when it forgets the return statement. The code runs without error but produces `None` instead of the actual value.
 :::
 
 ### What You Should Have Learned
@@ -68,7 +68,7 @@ The function calculates the average but never returns it. `result` will be `None
 
 ## The Gap
 
-Functions are how AI organises code — and how you should evaluate whether it organised it well. A function named `process_data()` that does five things is poorly designed. A function named `clean_user_input()` that strips whitespace and lowercases text is well designed. You can now tell the difference.
+Functions are how AI organises code, and how you should evaluate whether it organised it well. A function named `process_data()` that does five things is poorly designed. A function named `clean_user_input()` that strips whitespace and lowercases text is well designed. You can now tell the difference.
 
 In the Building Session, you will refactor your chatbot from one long block into clean, named functions.
 
@@ -78,20 +78,20 @@ In the Building Session, you will refactor your chatbot from one long block into
 
 Refactor your chatbot into functions:
 
-- `display_welcome()` — shows the welcome banner
-- `get_user_name()` — asks for and validates the name
-- `get_response(user_input, message_count)` — returns the response string
-- `main()` — the main loop that ties everything together
+- `display_welcome()`, shows the welcome banner
+- `get_user_name()`, asks for and validates the name
+- `get_response(user_input, message_count)`, returns the response string
+- `main()`. The main loop that ties everything together
 
 ### Prompt It
 
 ::: {.callout-note title="Building Session Prompt"}
 Refactor my chatbot to v0.9 using functions. Split the code into:
 
-- display_welcome(bot_name, version) — prints the welcome screen
-- get_user_name(bot_name) — asks for name, validates it is not empty, returns the name
-- get_response(user_input, message_count) — takes the input and count, returns a response string (handles questions, keywords, numbers, default)
-- main() — the main loop that calls the other functions
+- display_welcome(bot_name, version), prints the welcome screen
+- get_user_name(bot_name), asks for name, validates it is not empty, returns the name
+- get_response(user_input, message_count), takes the input and count, returns a response string (handles questions, keywords, numbers, default)
+- main(). The main loop that calls the other functions
 
 Each function should have a one-line docstring. Call main() at the bottom with the if __name__ == "__main__" guard.
 
@@ -166,13 +166,13 @@ if __name__ == "__main__":
 ```
 
 ::: {.callout-tip title="What to Notice"}
-Each function does one thing. `get_user_name()` returns a string — it handles its own validation loop. `get_response()` takes input and returns a response — it does not print anything. `main()` orchestrates the flow. The `if __name__ == "__main__"` guard means this file can be imported without running the chatbot — useful for testing.
+Each function does one thing. `get_user_name()` returns a string. It handles its own validation loop. `get_response()` takes input and returns a response. It does not print anything. `main()` orchestrates the flow. The `if __name__ == "__main__"` guard means this file can be imported without running the chatbot, useful for testing.
 :::
 
 ### Stretch It
 
 ::: {.callout-note title="Building Session Prompt"}
-Add a `display_stats(message_count, user_name)` function that is called when the user types "stats". Also add a `display_help()` function that lists all available commands. Both should return None — they print directly.
+Add a `display_stats(message_count, user_name)` function that is called when the user types "stats". Also add a `display_help()` function that lists all available commands. Both should return None. They print directly.
 :::
 
 ## Your Chatbot So Far

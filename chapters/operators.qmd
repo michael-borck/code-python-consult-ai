@@ -2,7 +2,7 @@
 
 ## The Wall
 
-AI gave you a calculation that used `//` and `%` and you thought `//` was a comment. It was not — it was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.
+AI gave you a calculation that used `//` and `%` and you thought `//` was a comment. It was not. It was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.
 
 In another case, AI wrote `if x and y > 10:` and you assumed it checked whether both x and y were greater than 10. It did not. It checked whether x was truthy and y was greater than 10. Subtle, silent, wrong.
 
@@ -13,7 +13,7 @@ This chapter fixes that.
 ### Getting Oriented
 
 ::: {.callout-note title="Thinking Session Prompt"}
-What operators does Python have beyond the basic +, -, *, /? I keep seeing //, %, **, and, or, not, ==, !=, is, in — can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.
+What operators does Python have beyond the basic +, -, *, /? I keep seeing //, %, **, and, or, not, ==, !=, is, in, can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.
 :::
 
 Your AI should group them: arithmetic (`+`, `-`, `*`, `/`, `//`, `%`, `**`), comparison (`==`, `!=`, `<`, `>`, `<=`, `>=`), logical (`and`, `or`, `not`), membership (`in`, `not in`), and identity (`is`, `is not`). If it lists bitwise operators, you can skip those for now.
@@ -57,13 +57,13 @@ True + True
 
 - `//` is integer division, `%` is remainder, `**` is exponentiation
 - `==` checks value, `is` checks identity (use `is` for None)
-- `and` and `or` short-circuit — they do not always evaluate both sides
+- `and` and `or` short-circuit. They do not always evaluate both sides
 - `in` checks membership in strings, lists, and dictionaries
 - Empty strings, zero, None, and empty collections are all falsy
 
 ## The Gap
 
-Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see `if count % 5 == 0:` you know it checks whether count is a multiple of 5. When you see `if name and len(name) > 0:` you know the `and` short-circuits — if name is empty, it never checks the length.
+Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see `if count % 5 == 0:` you know it checks whether count is a multiple of 5. When you see `if name and len(name) > 0:` you know the `and` short-circuits, if name is empty, it never checks the length.
 
 In the Building Session, you will add smarter response logic to your chatbot based on message properties.
 
@@ -138,7 +138,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`"?" in user_input` uses the `in` operator for substring check. `message_count % 5 == 0` uses modulo to detect every 5th message. `has_asked_question = True` is a boolean flag — it starts `False` and flips once. The `or` in the keyword check means either match triggers the response.
+`"?" in user_input` uses the `in` operator for substring check. `message_count % 5 == 0` uses modulo to detect every 5th message. `has_asked_question = True` is a boolean flag. It starts `False` and flips once. The `or` in the keyword check means either match triggers the response.
 :::
 
 ### Stretch It
