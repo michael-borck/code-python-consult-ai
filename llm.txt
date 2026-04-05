@@ -1,4 +1,5 @@
-CODE PYTHON, CONSULT AI: PYTHON FUNDAMENTALS FOR THE AI ERA
+CODE PYTHON, CONSULT AI
+Python Fundamentals for the AI Era
 By Michael Borck
 ============================================================
 

@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "",
     "text": "Preface",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#why-this-book-exists",
     "href": "index.html#why-this-book-exists",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "Why This Book Exists",
     "text": "Why This Book Exists\nYou have been using AI to write code. Maybe it started with a simple request — “build me a web scraper” or “make a script that renames these files” — and it worked. Then you got more ambitious. The code got longer. And at some point, you hit the wall.\nThe wall is that moment when AI gives you code and you cannot tell whether it is correct. You paste an error back in and get a different error. You ask for a fix and the whole approach changes. You cannot tell which variables matter, what the logic is doing, or why it broke.\nThis book exists because of the wall.\nBut the wall is not the only reason to learn Python. AI keeps getting smarter, and the wall keeps moving further out. What does not move is curiosity. The desire to understand what is happening under the hood — not because you have to, but because you want to. Because knowing how code works makes you better at directing AI, better at evaluating its output, and better at building things that actually do what you need.\nWhether you hit the wall and need to get past it, or you are simply curious about how the code works, this book gives you that understanding.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#how-this-book-works",
     "href": "index.html#how-this-book-works",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "How This Book Works",
     "text": "How This Book Works\nThis is not a traditional Python textbook. You will not read pages of explanations and then try exercises at the end. Instead, you will learn through conversation with AI.\nEvery chapter follows the same pattern:\nThe Wall — a specific vibe-coding failure you will recognise. AI produced code that broke or confused you, and you could not diagnose why. This is the concept you are about to learn.\nThinking Session — you open a conversation with your AI assistant and explore the concept. Guided prompts help you ask the right questions, push back on oversimplified answers, and build genuine understanding. No code writing yet — just thinking.\nThe Gap — a brief pause where the author connects what you learned to what you are about to build.\nBuilding Session — you open a fresh AI conversation with clear context and direct AI to build something specific. The chatbot project evolves with each chapter, and you understand every line of what AI produces because you explored the concept first.\nQuick Reference — a minimal syntax card for future reference.\nThe two-chat structure used in every chapter comes from the Conversation, Not Delegation framework and is detailed in Converse Python, Partner AI. You do not need to read either to use this book — the method is built into every chapter. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound — each session starts from zero.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#who-this-book-is-for",
     "href": "index.html#who-this-book-is-for",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "Who This Book Is For",
     "text": "Who This Book Is For\n\nPeople who have used AI to write code and want to understand what it produces\nProfessionals who need enough Python to evaluate, modify, and direct AI-generated code\nAnyone curious about how programming works under the hood\nReaders of Think Python, Direct AI ready for deeper language knowledge\n\nIf you worked through Think Python, Direct AI, you already used variables, functions, lists, and dictionaries to build projects. This book makes that knowledge systematic — you understand how Python works, not just how to use it.\nIf you are starting fresh, the book stands on its own. Each chapter’s Thinking Session builds understanding from the ground up through AI conversation.",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "index.html#what-this-book-is-not",
     "href": "index.html#what-this-book-is-not",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "What This Book Is Not",
     "text": "What This Book Is Not\nThis is not a computer science textbook. It does not cover algorithms, data structures theory, or computational thinking — that is what Think Python, Direct AI covers.\nIt is not a professional practices book. Project structure, testing frameworks, deployment, and CI/CD are covered in Ship Python, Orchestrate AI.\nIt is not a reference manual. It covers the fundamentals you need to read and direct AI-generated code. When you need more, your AI assistant and the official documentation will fill the gaps — and you will be equipped to evaluate what they give you.",
     "crumbs": [
@@ -52,7 +52,7 @@
   {
     "objectID": "index.html#the-chatbot-project",
     "href": "index.html#the-chatbot-project",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "The Chatbot Project",
     "text": "The Chatbot Project\nAcross every chapter, you build a chatbot that grows from a 10-line echo script to a full-featured conversational program. By the end:\n\nIt remembers your name and tracks conversations\nIt matches keywords and categorises messages\nIt picks responses from configurable dictionaries\nIt saves conversation history to files\nIt handles errors gracefully\nIt has a test suite\nIt is structured as a proper Python package with classes\n\nYou build this through AI conversation, not by copying code from a textbook. Each Building Session adds one feature, and you understand every line because you explored the underlying concept in the Thinking Session first.",
     "crumbs": [
@@ -62,7 +62,7 @@
   {
     "objectID": "index.html#conventions-used-in-this-book",
     "href": "index.html#conventions-used-in-this-book",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "Conventions Used in This Book",
     "text": "Conventions Used in This Book\nAI prompts appear in callout boxes:\n\n\n\n\n\n\nNoteThinking Session Prompt\n\n\n\nWhat is the difference between a list and a dictionary in Python? When should I use each one?\n\n\nCode examples appear with syntax highlighting:\nname = input(\"What is your name? \")\nprint(f\"Hello, {name}!\")\nAuthor guidance appears in tip boxes:\n\n\n\n\n\n\nTipWhat to Look For\n\n\n\nYour AI should explain that lists are ordered by position and dictionaries are ordered by key.",
     "crumbs": [
@@ -72,7 +72,7 @@
   {
     "objectID": "index.html#how-this-book-was-written",
     "href": "index.html#how-this-book-was-written",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "How This Book Was Written",
     "text": "How This Book Was Written\nThis book was written through human-AI collaboration using the methodology it teaches. The structure, pedagogy, and editorial decisions were made by the author. Claude (Anthropic) assisted with drafting and refining. The process demonstrates the book’s core message: AI is most useful when you understand what you are asking it to do.",
     "crumbs": [
@@ -82,7 +82,7 @@
   {
     "objectID": "index.html#ways-to-engage-with-this-book",
     "href": "index.html#ways-to-engage-with-this-book",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "Ways to Engage with This Book",
     "text": "Ways to Engage with This Book\n\nRead it online. The full book is freely available at the companion website, with dark mode, search, and navigation.\nRead it on paper or e-reader. Available as a paperback and ebook through Amazon KDP.\nConverse with it. The online edition includes a chatbot grounded in the book’s content.\nFeed it to your own AI. The llm.txt file provides a clean text version of the entire book, ready to paste into ChatGPT, Claude, or any AI tool.\nRun the code. Project code is available on GitHub. DeepWiki provides an AI-navigable view of the repository.\nBrowse all books. This book is part of a series. See all titles at books.borck.education.\n\nThe online version is always the most current.\n\nSource Code & Feedback\nAll code examples and supplementary materials are available at: https://github.com/michael-borck/code-python-consult-ai\nFound an error? Have a suggestion?\n\nOpen an issue: https://github.com/michael-borck/code-python-consult-ai/issues\nEmail: michael@borck.me",
     "crumbs": [
@@ -92,7 +92,7 @@
   {
     "objectID": "index.html#the-series",
     "href": "index.html#the-series",
-    "title": "Code Python, Consult AI: Python Fundamentals for the AI Era",
+    "title": "Code Python, Consult AI",
     "section": "The Series",
     "text": "The Series\nThis book is part of a series designed to help you master modern software development in the AI era.\n\n\n\n\n\nflowchart TD\n    CND[\"Conversation,&lt;br/&gt;Not Delegation\"]\n    CPPA[\"Converse Python,&lt;br/&gt;Partner AI\"]\n    Think[\"Think Python,&lt;br/&gt;Direct AI\"]\n    Code[\"Code Python,&lt;br/&gt;Consult AI\"]\n    Ship[\"Ship Python,&lt;br/&gt;Orchestrate AI\"]\n    Web[\"Build Web,&lt;br/&gt;Guide AI\"]\n    CND --&gt; CPPA\n    CND --&gt; Web\n    CPPA --&gt; Think\n    Think --&gt; Code\n    Code --&gt; Ship\n\n\n\n\n\n\nConversation, Not Delegation — the general methodology for working with AI across any discipline.\nConverse Python, Partner AI — intentional prompting methodology applied to software development.\nThink Python, Direct AI — computational thinking for absolute beginners.\nCode Python, Consult AI (this book) — Python fundamentals through AI conversation.\nShip Python, Orchestrate AI — professional Python development practices and tooling.\nBuild Web, Guide AI — web development with AI as your development partner.\nAll titles are available at books.borck.education.",
     "crumbs": [
