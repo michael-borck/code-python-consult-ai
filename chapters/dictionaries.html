@@ -532,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-wall" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">14.1</span> The Wall</h2>
 <p>AI used a dictionary when a list would have worked, and you did not know enough to question it. In another case, your code crashed with <code>KeyError: 'username'</code> because the dictionary did not have the key AI assumed existed. You had no idea how to check whether a key exists before accessing it.</p>
-<p>Dictionaries are how AI organises structured data — user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.</p>
+<p>Dictionaries are how AI organises structured data, user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.</p>
 <p>This chapter fixes that.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Coming from Think Python?">
 <div class="callout-header d-flex align-content-center">
@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may recognise dictionaries from the Contact Book project in <em>Think Python, Direct AI</em>, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, and the patterns that make them essential.</p>
+<p>You may recognise dictionaries from the Contact Book project in <em>Think Python, Direct AI</em>, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly, how they work, the full range of methods, and the patterns that make them essential.</p>
 </div>
 </div>
 </section>
@@ -562,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write <code>user = {"name": "Alice", "age": 30}</code> — how does Python find values by key?</p>
+<p>Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write <code>user = {"name": "Alice", "age": 30}</code>, how does Python find values by key?</p>
 </div>
 </div>
 <p>Your AI should explain: dictionaries map keys to values, lists map indexes to values. Use a dictionary when you need to look things up by name, not by position. Keys must be immutable (strings, numbers, tuples) and unique. If your AI does not mention that dictionaries are unordered in older Python but ordered by insertion in Python 3.7+, that is a useful detail.</p>
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between <code>user["name"]</code> and <code>user.get("name")</code> — and why does AI sometimes use one versus the other?</p>
+<p>What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between <code>user["name"]</code> and <code>user.get("name")</code>, and why does AI sometimes use one versus the other?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Look For">
@@ -654,13 +654,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>in</code> checks keys, not values</li>
 <li><code>items()</code> gives key-value pairs for looping</li>
 <li>Keys must be immutable; values can be anything</li>
-<li>Dictionaries are mutable — you can add, change, and remove entries</li>
+<li>Dictionaries are mutable. You can add, change, and remove entries</li>
 </ul>
 </section>
 </section>
 <section id="the-gap" class="level2" data-number="14.3">
 <h2 data-number="14.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">14.3</span> The Gap</h2>
-<p>Dictionaries are how your chatbot will map keywords to responses — instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.</p>
+<p>Dictionaries are how your chatbot will map keywords to responses, instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.</p>
 <p>In the Building Session, you will replace the if/elif response logic with a dictionary-based approach.</p>
 </section>
 <section id="building-session" class="level2" data-number="14.4">
@@ -709,7 +709,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ],</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"question"</span>: [</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Good question! Let me think..."</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"That's interesting — I'm learning too."</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"That's interesting. I'm learning too."</span>,</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    ],</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"farewell"</span>: [</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Goodbye! It was nice chatting."</span>,</span>
@@ -757,7 +757,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The if/elif chain is gone — replaced by dictionary lookups. Adding a new response category means adding entries to <code>RESPONSES</code> and <code>KEYWORDS</code>, not modifying logic. <code>RESPONSES.get(category, RESPONSES["default"])</code> uses <code>.get()</code> with a fallback. This is how AI structures most configurable systems.</p>
+<p>The if/elif chain is gone, replaced by dictionary lookups. Adding a new response category means adding entries to <code>RESPONSES</code> and <code>KEYWORDS</code>, not modifying logic. <code>RESPONSES.get(category, RESPONSES["default"])</code> uses <code>.get()</code> with a fallback. This is how AI structures most configurable systems.</p>
 </div>
 </div>
 </section>
@@ -1304,12 +1304,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI used a dictionary when a list would have worked, and you did not know enough to question it. In another case, your code crashed with <span class="in">`KeyError: 'username'`</span> because the dictionary did not have the key AI assumed existed. You had no idea how to check whether a key exists before accessing it.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Dictionaries are how AI organises structured data — user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Dictionaries are how AI organises structured data, user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Coming from Think Python?"}</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, and the patterns that make them essential.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>You may recognise dictionaries from the Contact Book project in *Think Python, Direct AI*, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly, how they work, the full range of methods, and the patterns that make them essential.</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thinking Session</span></span>
@@ -1317,7 +1317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write <span class="in">`user = {"name": "Alice", "age": 30}`</span> — how does Python find values by key?</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write <span class="in">`user = {"name": "Alice", "age": 30}`</span>, how does Python find values by key?</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Your AI should explain: dictionaries map keys to values, lists map indexes to values. Use a dictionary when you need to look things up by name, not by position. Keys must be immutable (strings, numbers, tuples) and unique. If your AI does not mention that dictionaries are unordered in older Python but ordered by insertion in Python 3.7+, that is a useful detail.</span>
@@ -1325,7 +1325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between <span class="in">`user["name"]`</span> and <span class="in">`user.get("name")`</span> — and why does AI sometimes use one versus the other?</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between <span class="in">`user["name"]`</span> and <span class="in">`user.get("name")`</span>, and why does AI sometimes use one versus the other?</span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
@@ -1364,11 +1364,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`in`</span> checks keys, not values</span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`items()`</span> gives key-value pairs for looping</span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keys must be immutable; values can be anything</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dictionaries are mutable — you can add, change, and remove entries</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dictionaries are mutable. You can add, change, and remove entries</span>
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>Dictionaries are how your chatbot will map keywords to responses — instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>Dictionaries are how your chatbot will map keywords to responses, instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.</span>
 <span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will replace the if/elif response logic with a dictionary-based approach.</span>
 <span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
@@ -1409,7 +1409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>    ],</span>
 <span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>    <span class="st">"question"</span>: [</span>
 <span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Good question! Let me think..."</span>,</span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>        <span class="st">"That's interesting — I'm learning too."</span>,</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>        <span class="st">"That's interesting. I'm learning too."</span>,</span>
 <span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>    ],</span>
 <span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    <span class="st">"farewell"</span>: [</span>
 <span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Goodbye! It was nice chatting."</span>,</span>
@@ -1450,7 +1450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>The if/elif chain is gone — replaced by dictionary lookups. Adding a new response category means adding entries to <span class="in">`RESPONSES`</span> and <span class="in">`KEYWORDS`</span>, not modifying logic. <span class="in">`RESPONSES.get(category, RESPONSES["default"])`</span> uses <span class="in">`.get()`</span> with a fallback. This is how AI structures most configurable systems.</span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>The if/elif chain is gone, replaced by dictionary lookups. Adding a new response category means adding entries to <span class="in">`RESPONSES`</span> and <span class="in">`KEYWORDS`</span>, not modifying logic. <span class="in">`RESPONSES.get(category, RESPONSES["default"])`</span> uses <span class="in">`.get()`</span> with a fallback. This is how AI structures most configurable systems.</span>
 <span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

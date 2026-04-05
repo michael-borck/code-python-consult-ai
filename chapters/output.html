@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">5.1</span> The Wall</h2>
-<p>Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to “make it look nicer” and got code full of <code>f"{value:&gt;10.2f}"</code> — formatting syntax that looked like someone spilled punctuation on the keyboard.</p>
+<p>Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to “make it look nicer” and got code full of <code>f"{value:&gt;10.2f}"</code>, formatting syntax that looked like someone spilled punctuation on the keyboard.</p>
 <p>You need to understand <code>print()</code> and string formatting, not because you will memorise every format code, but because AI uses them constantly and you need to know what you are looking at when you modify the output.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>How does Python’s print() function work beyond the basics? I know <code>print("hello")</code> prints text, but AI-generated code uses things like <code>sep=</code>, <code>end=</code>, and <code>f""</code> strings. Explain what these do and when they matter.</p>
 </div>
 </div>
-<p>Your AI should cover three things: <code>print()</code> parameters (<code>sep</code> changes what goes between items, <code>end</code> changes what goes at the end — default is newline), f-strings (formatted string literals that embed expressions in <code>{}</code>), and format specifications (the <code>:</code> syntax inside <code>{}</code>).</p>
+<p>Your AI should cover three things: <code>print()</code> parameters (<code>sep</code> changes what goes between items, <code>end</code> changes what goes at the end, default is newline), f-strings (formatted string literals that embed expressions in <code>{}</code>), and format specifications (the <code>:</code> syntax inside <code>{}</code>).</p>
 </section>
 <section id="go-deeper" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">5.2.2</span> Go Deeper</h3>
@@ -566,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Show me how f-strings work in Python. I want to understand the syntax inside the curly braces — how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.</p>
+<p>Show me how f-strings work in Python. I want to understand the syntax inside the curly braces, how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Look For">
@@ -730,7 +730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>{BOT_NAME:^{WIDTH}}</code> centres the text in a field of WIDTH characters. <code>{:&gt;{WIDTH // 2}}</code> right-aligns in half the width. <code>"=" * WIDTH</code> repeats the character — a common pattern for separator lines. The <code>WIDTH</code> constant means you change one number to adjust all formatting.</p>
+<p><code>{BOT_NAME:^{WIDTH}}</code> centres the text in a field of WIDTH characters. <code>{:&gt;{WIDTH // 2}}</code> right-aligns in half the width. <code>"=" * WIDTH</code> repeats the character. A common pattern for separator lines. The <code>WIDTH</code> constant means you change one number to adjust all formatting.</p>
 </div>
 </div>
 </section>
@@ -1269,7 +1269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to "make it look nicer" and got code full of <span class="in">`f"{value:&gt;10.2f}"`</span> — formatting syntax that looked like someone spilled punctuation on the keyboard.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to "make it look nicer" and got code full of <span class="in">`f"{value:&gt;10.2f}"`</span>, formatting syntax that looked like someone spilled punctuation on the keyboard.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>You need to understand <span class="in">`print()`</span> and string formatting, not because you will memorise every format code, but because AI uses them constantly and you need to know what you are looking at when you modify the output.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1283,12 +1283,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>How does Python's print() function work beyond the basics? I know <span class="in">`print("hello")`</span> prints text, but AI-generated code uses things like <span class="in">`sep=`</span>, <span class="in">`end=`</span>, and <span class="in">`f""`</span> strings. Explain what these do and when they matter.</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should cover three things: <span class="in">`print()`</span> parameters (<span class="in">`sep`</span> changes what goes between items, <span class="in">`end`</span> changes what goes at the end — default is newline), f-strings (formatted string literals that embed expressions in <span class="in">`{}`</span>), and format specifications (the <span class="in">`:`</span> syntax inside <span class="in">`{}`</span>).</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should cover three things: <span class="in">`print()`</span> parameters (<span class="in">`sep`</span> changes what goes between items, <span class="in">`end`</span> changes what goes at the end, default is newline), f-strings (formatted string literals that embed expressions in <span class="in">`{}`</span>), and format specifications (the <span class="in">`:`</span> syntax inside <span class="in">`{}`</span>).</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Show me how f-strings work in Python. I want to understand the syntax inside the curly braces — how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Show me how f-strings work in Python. I want to understand the syntax inside the curly braces, how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
@@ -1399,7 +1399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="in">`{BOT_NAME:^{WIDTH}}`</span> centres the text in a field of WIDTH characters. <span class="in">`{:&gt;{WIDTH // 2}}`</span> right-aligns in half the width. <span class="in">`"=" * WIDTH`</span> repeats the character — a common pattern for separator lines. The <span class="in">`WIDTH`</span> constant means you change one number to adjust all formatting.</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="in">`{BOT_NAME:^{WIDTH}}`</span> centres the text in a field of WIDTH characters. <span class="in">`{:&gt;{WIDTH // 2}}`</span> right-aligns in half the width. <span class="in">`"=" * WIDTH`</span> repeats the character. A common pattern for separator lines. The <span class="in">`WIDTH`</span> constant means you change one number to adjust all formatting.</span>
 <span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

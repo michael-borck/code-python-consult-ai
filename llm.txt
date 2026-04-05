@@ -11,13 +11,13 @@ SOURCE: index.qmd
 
 ## Why This Book Exists
 
-You have been using AI to write code. Maybe it started with a simple request — "build me a web scraper" or "make a script that renames these files" — and it worked. Then you got more ambitious. The code got longer. And at some point, you hit the wall.
+You have been using AI to write code. Maybe it started with a simple request, "build me a web scraper" or "make a script that renames these files", and it worked. Then you got more ambitious. The code got longer. And at some point, you hit the wall.
 
 The wall is that moment when AI gives you code and you cannot tell whether it is correct. You paste an error back in and get a different error. You ask for a fix and the whole approach changes. You cannot tell which variables matter, what the logic is doing, or why it broke.
 
 This book exists because of the wall.
 
-But the wall is not the only reason to learn Python. AI keeps getting smarter, and the wall keeps moving further out. What does not move is curiosity. The desire to understand what is happening under the hood — not because you have to, but because you want to. Because knowing how code works makes you better at directing AI, better at evaluating its output, and better at building things that actually do what you need.
+But the wall is not the only reason to learn Python. AI keeps getting smarter, and the wall keeps moving further out. What does not move is curiosity. The desire to understand what is happening under the hood, not because you have to, but because you want to. Because knowing how code works makes you better at directing AI, better at evaluating its output, and better at building things that actually do what you need.
 
 Whether you hit the wall and need to get past it, or you are simply curious about how the code works, this book gives you that understanding.
 
@@ -27,17 +27,17 @@ This is not a traditional Python textbook. You will not read pages of explanatio
 
 Every chapter follows the same pattern:
 
-The Wall — a specific vibe-coding failure you will recognise. AI produced code that broke or confused you, and you could not diagnose why. This is the concept you are about to learn.
+The Wall. A specific vibe-coding failure you will recognise. AI produced code that broke or confused you, and you could not diagnose why. This is the concept you are about to learn.
 
-Thinking Session — you open a conversation with your AI assistant and explore the concept. Guided prompts help you ask the right questions, push back on oversimplified answers, and build genuine understanding. No code writing yet — just thinking.
+Thinking Session. You open a conversation with your AI assistant and explore the concept. Guided prompts help you ask the right questions, push back on oversimplified answers, and build genuine understanding. No code writing yet. Just thinking.
 
-The Gap — a brief pause where the author connects what you learned to what you are about to build.
+The Gap. A brief pause where the author connects what you learned to what you are about to build.
 
-Building Session — you open a fresh AI conversation with clear context and direct AI to build something specific. The chatbot project evolves with each chapter, and you understand every line of what AI produces because you explored the concept first.
+Building Session. You open a fresh AI conversation with clear context and direct AI to build something specific. The chatbot project evolves with each chapter, and you understand every line of what AI produces because you explored the concept first.
 
-Quick Reference — a minimal syntax card for future reference.
+Quick Reference. A minimal syntax card for future reference.
 
-The two-chat structure used in every chapter comes from the Conversation, Not Delegation framework and is detailed in Converse Python, Partner AI. You do not need to read either to use this book — the method is built into every chapter. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound — each session starts from zero.
+The two-chat structure used in every chapter comes from the Conversation, Not Delegation framework and is detailed in Converse Python, Partner AI. You do not need to read either to use this book. The method is built into every chapter. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound. Each session starts from zero.
 
 ## Who This Book Is For
 
@@ -46,17 +46,17 @@ The two-chat structure used in every chapter comes from the Conversation, Not De
 - Anyone curious about how programming works under the hood
 - Readers of Think Python, Direct AI ready for deeper language knowledge
 
-If you worked through Think Python, Direct AI, you already used variables, functions, lists, and dictionaries to build projects. This book makes that knowledge systematic — you understand how Python works, not just how to use it.
+If you worked through Think Python, Direct AI, you already used variables, functions, lists, and dictionaries to build projects. This book makes that knowledge systematic. You understand how Python works, not just how to use it.
 
 If you are starting fresh, the book stands on its own. Each chapter's Thinking Session builds understanding from the ground up through AI conversation.
 
 ## What This Book Is Not
 
-This is not a computer science textbook. It does not cover algorithms, data structures theory, or computational thinking — that is what Think Python, Direct AI covers.
+This is not a computer science textbook. It does not cover algorithms, data structures theory, or computational thinking. That is what Think Python, Direct AI covers.
 
 It is not a professional practices book. Project structure, testing frameworks, deployment, and CI/CD are covered in Ship Python, Orchestrate AI.
 
-It is not a reference manual. It covers the fundamentals you need to read and direct AI-generated code. When you need more, your AI assistant and the official documentation will fill the gaps — and you will be equipped to evaluate what they give you.
+It is not a reference manual. It covers the fundamentals you need to read and direct AI-generated code. When you need more, your AI assistant and the official documentation will fill the gaps, and you will be equipped to evaluate what they give you.
 
 ## The Chatbot Project
 
@@ -113,17 +113,17 @@ Found an error? Have a suggestion?
 
 This book is part of a series designed to help you master modern software development in the AI era.
 
-Conversation, Not Delegation — the general methodology for working with AI across any discipline.
+Conversation, Not Delegation. The general methodology for working with AI across any discipline.
 
-Converse Python, Partner AI — intentional prompting methodology applied to software development.
+Converse Python, Partner AI: intentional prompting methodology applied to software development.
 
-Think Python, Direct AI — computational thinking for absolute beginners.
+Think Python, Direct AI: computational thinking for absolute beginners.
 
-Code Python, Consult AI (this book) — Python fundamentals through AI conversation.
+Code Python, Consult AI (this book). Python fundamentals through AI conversation.
 
-Ship Python, Orchestrate AI — professional Python development practices and tooling.
+Ship Python, Orchestrate AI: professional Python development practices and tooling.
 
-Build Web, Guide AI — web development with AI as your development partner.
+Build Web, Guide AI: web development with AI as your development partner.
 
 All titles are available at books.borck.education.
 
@@ -183,7 +183,7 @@ SOURCE: chapters/after_vibe_coding.qmd
 
 You discovered AI-assisted coding. You typed a few sentences into ChatGPT or Claude or Gemini, and it gave you working Python code. You ran it. It worked. You felt powerful.
 
-You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code — you just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.
+You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code. You just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.
 
 This is vibe coding. Code by feel, prompt until something works, do not worry about understanding the details. For simple, self-contained scripts, it is genuinely effective.
 
@@ -195,11 +195,11 @@ The AI gave you code with ten variables and you could not tell which ones matter
 
 The problem was not AI. The problem was that you could not read the code it produced. You could not tell correct from plausible. You could not describe what was wrong precisely enough for AI to actually help.
 
-This is the wall every vibe coder hits. Not on day one — on day thirty, or day sixty, when the code gets complex enough that "just make it work" stops working.
+This is the wall every vibe coder hits. Not on day one, on day thirty, or day sixty, when the code gets complex enough that "just make it work" stops working.
 
 ## What This Book Does
 
-This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer — to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.
+This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.
 
 You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:
 
@@ -211,7 +211,7 @@ The Gap. Step back. Reflect on what you learned. Decide what matters for what yo
 
 Chat 2: Building Session. Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.
 
-This is the difference between vibe coding and intentional prompting. Vibe coding does not compound — each session starts from zero. Understanding compounds — each concept makes the next one easier.
+This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.
 
 ## Your First Thinking Session
 
@@ -227,7 +227,7 @@ Now push back:
 
 You listed five concepts. But when I look at AI-generated Python code, I also see things like try/except, import statements, and classes. Where do those fit? Are they more or less important than the five you listed?
 
-Your AI should explain that the first five concepts are foundational — everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.
+Your AI should explain that the first five concepts are foundational, everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.
 
 This is what a Thinking Session feels like: exploring, questioning, building a mental map. You are not trying to write code yet. You are trying to understand the territory.
 
@@ -242,25 +242,25 @@ Write me a minimal Python chatbot that runs in a terminal. It should:
 - Echo the message back with a simple response
 - Exit when the user types "quit"
 
-Keep it under 15 lines. Use only basic Python — no imports, no classes, no functions beyond print() and input().
+Keep it under 15 lines. Use only basic Python. No imports, no classes, no functions beyond print() and input().
 
 Your AI will produce something like this:
 
-Even in 10 lines, you can see several concepts: a variable (`bot_name`), a string with formatting (`f"..."`), a loop (`while True`), a decision (`if`), and a way to stop (`break`). You do not need to understand all of these yet — each chapter covers one. By the end of the book, you will understand every line.
+Even in 10 lines, you can see several concepts: a variable (`bot_name`), a string with formatting (`f"..."`), a loop (`while True`), a decision (`if`), and a way to stop (`break`). You do not need to understand all of these yet. Each chapter covers one. By the end of the book, you will understand every line.
 
-Run this code. Talk to it. It is not smart — it just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.
+Run this code. Talk to it. It is not smart. It just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.
 
 ## What You Need
 
 - Python installed. If you do not have it yet, see the appendix on Setting Up Python.
-- An AI assistant. Any will do — ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.
-- A willingness to read code. Not just run it — read it, question it, understand it. That is the skill this book teaches.
+- An AI assistant. Any will do. ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.
+- A willingness to read code. Not just run it, read it, question it, understand it. That is the skill this book teaches.
 
 ## How This Book Is Different
 
 There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.
 
-Every chapter follows the same two-chat structure. By the end, you will not just know Python — you will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.
+Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.
 
 That is the skill that outlasts any specific tool or framework.
 
@@ -290,7 +290,7 @@ Your AI should explain three main approaches: the interactive interpreter (type 
 
 When I look at AI-generated Python code, I notice it uses indentation to structure things, unlike other languages that use curly braces. Why does Python do this? What happens if I get the indentation wrong? Show me an example of code that breaks because of indentation.
 
-Your AI should explain that Python uses indentation to define code blocks — it is not decorative, it is structural. A misplaced space causes an `IndentationError`. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.
+Your AI should explain that Python uses indentation to define code blocks. It is not decorative, it is structural. A misplaced space causes an `IndentationError`. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.
 
 AI-generated code often has comments like `# This is a comment` and names like `user_name` or `MAX_RETRIES`. Are there rules for how to name things in Python? What conventions do Python programmers follow, and why should I care when I am mostly reading AI-generated code?
 
@@ -320,7 +320,7 @@ If any of these are unclear, continue the conversation with your AI before movin
 
 ## The Gap
 
-You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean — even before you understand what the code does.
+You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean, even before you understand what the code does.
 
 In the Building Session, you will set up your Python environment and add proper structure to the chatbot from Chapter 1: comments, named constants, and clear formatting.
 
@@ -343,19 +343,19 @@ Improve it by adding:
 - A module docstring at the top describing the program
 - BOT_NAME and VERSION as constants (uppercase)
 - Inline comments explaining the while loop and the break
-- Keep it simple — no functions, no imports
+- Keep it simple. No functions, no imports
 
 ### Read the Code
 
 Your AI will produce something like this:
 
-The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `VERSION` are uppercase — the naming convention signals these are constants that should not change. The comments explain why (the loop runs until quit) not what (print prints). The `break` comment is useful because `break` is a keyword you might not recognise yet.
+The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `VERSION` are uppercase. The naming convention signals these are constants that should not change. The comments explain why (the loop runs until quit) not what (print prints). The `break` comment is useful because `break` is a keyword you might not recognise yet.
 
 ### Stretch It
 
 Add a comment block after the constants that lists what the chatbot can do in this version. Format it as a multi-line comment. Also add a `# TODO:` comment listing two features we will add in future chapters.
 
-Read the result. `# TODO:` comments are a convention for marking planned work — you will see these frequently in AI-generated code and in professional projects.
+Read the result. `# TODO:` comments are a convention for marking planned work. You will see these frequently in AI-generated code and in professional projects.
 
 ## Your Chatbot So Far
 
@@ -377,9 +377,9 @@ SOURCE: chapters/values.qmd
 
 ## The Wall
 
-You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with `TypeError: can't multiply sequence by non-int of type 'float'`. You had no idea what a "sequence" was or why multiplying was a problem — the formula looked right.
+You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with `TypeError: can't multiply sequence by non-int of type 'float'`. You had no idea what a "sequence" was or why multiplying was a problem. The formula looked right.
 
-The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between `"72"` and `72`, you cannot spot this in AI-generated code — and AI generates this bug constantly.
+The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between `"72"` and `72`, you cannot spot this in AI-generated code, and AI generates this bug constantly.
 
 This chapter fixes that.
 
@@ -389,11 +389,11 @@ This chapter fixes that.
 
 In Python, what is the difference between the number 42 and the text "42"? Why does Python treat them differently, and what goes wrong when you mix them up? Give me examples of errors that happen when types get confused.
 
-Your AI should explain that `42` is an integer and `"42"` is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back — dynamic typing means variables can change type, not that types do not matter.
+Your AI should explain that `42` is an integer and `"42"` is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back, dynamic typing means variables can change type, not that types do not matter.
 
 ### Go Deeper
 
-What are the main data types in Python? I do not need all of them — just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.
+What are the main data types in Python? I do not need all of them. Just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.
 
 Your AI should cover: `int` (integers), `float` (decimals), `str` (text), `bool` (True/False), and `None`. The gotchas matter: float division can produce unexpected precision (`0.1 + 0.2` is not `0.3`), booleans are actually integers (`True + True` is `2`), and `None` is not the same as `0` or `""`.
 
@@ -416,14 +416,14 @@ What will each of these produce, and why?
 - Python has distinct types: int, float, str, bool, None
 - `"42"` and `42` are fundamentally different
 - Type conversion is explicit: `int()`, `float()`, `str()`
-- Conversion can fail — `int("hello")` crashes
+- Conversion can fail: `int("hello")` crashes
 - The `type()` function tells you what you are working with
 
 ## The Gap
 
 When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.
 
-In the Building Session, you will make your chatbot respond differently to numbers versus text — the first step toward intelligent responses.
+In the Building Session, you will make your chatbot respond differently to numbers versus text. The first step toward intelligent responses.
 
 ## Building Session
 
@@ -446,13 +446,13 @@ Update to v0.3. Add logic that:
 - Prints the type of the input in parentheses after the response
 - Use a try/except for the conversion (just the basic pattern)
 
-Keep it simple — no functions yet, keep the while loop structure.
+Keep it simple. No functions yet, keep the while loop structure.
 
 ### Read the Code
 
 Your AI will produce something like this:
 
-Line 16 uses `int(user_input)` — explicit type conversion. If it fails, the `except ValueError` catches it and the code falls through to the string handling. `type(number).__name__` gives the type as a readable string. The `%` operator checks even/odd — you will learn more about operators in Chapter 7.
+Line 16 uses `int(user_input)`, explicit type conversion. If it fails, the `except ValueError` catches it and the code falls through to the string handling. `type(number).__name__` gives the type as a readable string. The `%` operator checks even/odd. You will learn more about operators in Chapter 7.
 
 ### Stretch It
 
@@ -474,49 +474,49 @@ SOURCE: chapters/variables.qmd
 
 ## The Wall
 
-You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with `user_name`, `bot_name`, `message_count`, `last_response`, `_internal_state`, and `MAX_RETRIES`. It worked — until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.
+You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with `user_name`, `bot_name`, `message_count`, `last_response`, `_internal_state`, and `MAX_RETRIES`. It worked, until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.
 
 You could not tell which variables mattered, which were temporary, and which were constants you should not touch. Without understanding how variables work, AI-generated code is a minefield of names you cannot safely modify.
 
 This chapter fixes that.
 
-If you worked through Think Python, Direct AI, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practised.
+If you worked through Think Python, Direct AI, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic, explaining the rules and patterns behind what you practised.
 
 ## Thinking Session
 
 ### Getting Oriented
 
-Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write `x = 5`. Also explain why Python lets me write `x = 5` and then `x = "hello"` on the next line — is that a feature or a problem?
+Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write `x = 5`. Also explain why Python lets me write `x = 5` and then `x = "hello"` on the next line, is that a feature or a problem?
 
-Your AI should talk about name binding — `x = 5` binds the name `x` to the integer object `5`. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.
+Your AI should talk about name binding. `x = 5` binds the name `x` to the integer object `5`. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.
 
 ### Go Deeper
 
 Show me three examples where choosing bad variable names would make AI-generated code confusing to modify. Then show the same code with good names. What naming conventions does Python use?
 
-The pattern: `snake_case` for variables and functions, `UPPER_CASE` for constants, `PascalCase` for classes. These are not just style — they carry meaning. When you see `MAX_RETRIES` in AI-generated code, the uppercase tells you it is a constant that should not change.
+The pattern: `snake_case` for variables and functions, `UPPER_CASE` for constants, `PascalCase` for classes. These are not just style. They carry meaning. When you see `MAX_RETRIES` in AI-generated code, the uppercase tells you it is a constant that should not change.
 
-What is the difference between `x = 5` and `x == 5`? When I am reading AI-generated code, how do I know which one I am looking at? And what about `x += 1` — what does that do?
+What is the difference between `x = 5` and `x == 5`? When I am reading AI-generated code, how do I know which one I am looking at? And what about `x += 1`, what does that do?
 
 ### Challenge It
 
 What is wrong with this code, and why would AI likely generate it?
 
-This is a scope trap. The `name = name + "!"` inside the function creates a local variable that shadows the global one. Python sees the assignment and treats `name` as local for the entire function — so `print(name)` fails with `UnboundLocalError`. AI generates this pattern regularly.
+This is a scope trap. The `name = name + "!"` inside the function creates a local variable that shadows the global one. Python sees the assignment and treats `name` as local for the entire function, so `print(name)` fails with `UnboundLocalError`. AI generates this pattern regularly.
 
 ### What You Should Have Learned
 
 - Variables are names bound to objects, not boxes holding values
 - Assignment (`=`) vs equality (`==`) vs augmented assignment (`+=`)
 - Python naming conventions: snake_case, UPPER_CASE, PascalCase
-- Dynamic typing means variables can change type — powerful but requires attention
+- Dynamic typing means variables can change type, powerful but requires attention
 - Scope exists and can cause subtle bugs
 
 ## The Gap
 
 You can now read AI-generated code and understand what the variable names mean, why they are structured the way they are, and what happens when values change. That is the difference between someone who copies AI output and someone who can safely modify it.
 
-In the Building Session, you will add memory to your chatbot — and understand every variable AI creates.
+In the Building Session, you will add memory to your chatbot, and understand every variable AI creates.
 
 ## Building Session
 
@@ -539,13 +539,13 @@ Add these features using variables:
 - Include user's name and count in responses
 - Update VERSION to "0.4"
 
-Keep it simple — no functions, no classes.
+Keep it simple. No functions, no classes.
 
 ### Read the Code
 
 Your AI will produce something like this:
 
-`user_name` stores the result of `input()` — it persists across the entire loop. `message_count` starts at `0` and uses `+= 1` to increment. Both `BOT_NAME` and `VERSION` are constants (uppercase) set once and never changed. The f-strings reference these variables by name — change the variable, change every response.
+`user_name` stores the result of `input()`. It persists across the entire loop. `message_count` starts at `0` and uses `+= 1` to increment. Both `BOT_NAME` and `VERSION` are constants (uppercase) set once and never changed. The f-strings reference these variables by name, change the variable, change every response.
 
 ### Stretch It
 
@@ -570,7 +570,7 @@ SOURCE: chapters/output.qmd
 
 ## The Wall
 
-Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to "make it look nicer" and got code full of `f"{value:>10.2f}"` — formatting syntax that looked like someone spilled punctuation on the keyboard.
+Your AI-generated program ran without errors but the output was a mess. Numbers had too many decimal places. Columns did not line up. There were no blank lines between sections and everything ran together. You asked AI to "make it look nicer" and got code full of `f"{value:>10.2f}"`, formatting syntax that looked like someone spilled punctuation on the keyboard.
 
 You need to understand `print()` and string formatting, not because you will memorise every format code, but because AI uses them constantly and you need to know what you are looking at when you modify the output.
 
@@ -582,11 +582,11 @@ This chapter fixes that.
 
 How does Python's print() function work beyond the basics? I know `print("hello")` prints text, but AI-generated code uses things like `sep=`, `end=`, and `f""` strings. Explain what these do and when they matter.
 
-Your AI should cover three things: `print()` parameters (`sep` changes what goes between items, `end` changes what goes at the end — default is newline), f-strings (formatted string literals that embed expressions in `{}`), and format specifications (the `:` syntax inside `{}`).
+Your AI should cover three things: `print()` parameters (`sep` changes what goes between items, `end` changes what goes at the end, default is newline), f-strings (formatted string literals that embed expressions in `{}`), and format specifications (the `:` syntax inside `{}`).
 
 ### Go Deeper
 
-Show me how f-strings work in Python. I want to understand the syntax inside the curly braces — how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.
+Show me how f-strings work in Python. I want to understand the syntax inside the curly braces, how do I control decimal places, alignment, padding, and width? Give me examples I would actually use, not theoretical ones.
 
 Key patterns: `{value:.2f}` for 2 decimal places, `{text:20}` for right-aligned, `{text:^20}` for centred. These appear in AI-generated table output, reports, and formatted displays.
 
@@ -638,7 +638,7 @@ Use f-strings with format specifications for the alignment. Keep the rest of the
 
 Your AI will produce something like this:
 
-`{BOT_NAME:^{WIDTH}}` centres the text in a field of WIDTH characters. `{:>{WIDTH // 2}}` right-aligns in half the width. `"=" * WIDTH` repeats the character — a common pattern for separator lines. The `WIDTH` constant means you change one number to adjust all formatting.
+`{BOT_NAME:^{WIDTH}}` centres the text in a field of WIDTH characters. `{:>{WIDTH // 2}}` right-aligns in half the width. `"=" * WIDTH` repeats the character. A common pattern for separator lines. The `WIDTH` constant means you change one number to adjust all formatting.
 
 ### Stretch It
 
@@ -662,7 +662,7 @@ SOURCE: chapters/input.qmd
 
 ## The Wall
 
-AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it — it added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.
+AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it. It added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.
 
 AI's default approach to user input is either "assume it is perfect" or "catch everything and ignore it." Neither is acceptable. You need to understand how `input()` works and how to validate what comes back.
 
@@ -674,7 +674,7 @@ This chapter fixes that.
 
 How does Python's input() function work? I know it reads from the keyboard, but what type does it return? And what happens if the user types nothing and just presses Enter?
 
-Your AI should emphasise that `input()` always returns a string — even if the user types a number. An empty Enter returns an empty string `""`, not None. This is the source of most input-related bugs in AI-generated code.
+Your AI should emphasise that `input()` always returns a string, even if the user types a number. An empty Enter returns an empty string `""`, not None. This is the source of most input-related bugs in AI-generated code.
 
 ### Go Deeper
 
@@ -693,7 +693,7 @@ When I look at AI-generated code, I often see `input().strip().lower()` chained 
 
 What is wrong with this input validation code?
 
-`age` is a string (from `input()`), so `age > 0` compares a string to an integer — this raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
+`age` is a string (from `input()`), so `age > 0` compares a string to an integer. This raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
 
 ### What You Should Have Learned
 
@@ -728,7 +728,7 @@ Update my chatbot to v0.6. Add input validation:
 - Use .strip() on all input to handle accidental spaces
 - Use .lower() for command matching (quit, help)
 - Add a "help" command that lists: quit, help
-- When checking for numbers, if conversion fails, respond with a message about the input being text — do not silently ignore it
+- When checking for numbers, if conversion fails, respond with a message about the input being text, do not silently ignore it
 
 Keep the existing features from v0.5 (welcome screen, name, message count, number recognition).
 
@@ -736,7 +736,7 @@ Keep the existing features from v0.5 (welcome screen, name, message count, numbe
 
 Your AI will produce something like this:
 
-The name input uses a `while not user_name` loop — keeps asking until something is entered. `.strip()` is called on every `input()` to remove accidental spaces. `command = user_input.lower()` creates a normalised version for comparison without changing the display. `continue` skips to the next loop iteration for empty input and help commands.
+The name input uses a `while not user_name` loop, keeps asking until something is entered. `.strip()` is called on every `input()` to remove accidental spaces. `command = user_input.lower()` creates a normalised version for comparison without changing the display. `continue` skips to the next loop iteration for empty input and help commands.
 
 ### Stretch It
 
@@ -761,7 +761,7 @@ SOURCE: chapters/operators.qmd
 
 ## The Wall
 
-AI gave you a calculation that used `//` and `%` and you thought `//` was a comment. It was not — it was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.
+AI gave you a calculation that used `//` and `%` and you thought `//` was a comment. It was not. It was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.
 
 In another case, AI wrote `if x and y > 10:` and you assumed it checked whether both x and y were greater than 10. It did not. It checked whether x was truthy and y was greater than 10. Subtle, silent, wrong.
 
@@ -771,7 +771,7 @@ This chapter fixes that.
 
 ### Getting Oriented
 
-What operators does Python have beyond the basic +, -, , /? I keep seeing //, %, , and, or, not, ==, !=, is, in — can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.
+What operators does Python have beyond the basic +, -, , /? I keep seeing //, %, , and, or, not, ==, !=, is, in, can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.
 
 Your AI should group them: arithmetic (`+`, `-`, ``, `/`, `//`, `%`, ``), comparison (`==`, `!=`, ``, `=`), logical (`and`, `or`, `not`), membership (`in`, `not in`), and identity (`is`, `is not`). If it lists bitwise operators, you can skip those for now.
 
@@ -793,13 +793,13 @@ What does each of these evaluate to, and why?
 
 - `//` is integer division, `%` is remainder, `` is exponentiation
 - `==` checks value, `is` checks identity (use `is` for None)
-- `and` and `or` short-circuit — they do not always evaluate both sides
+- `and` and `or` short-circuit. They do not always evaluate both sides
 - `in` checks membership in strings, lists, and dictionaries
 - Empty strings, zero, None, and empty collections are all falsy
 
 ## The Gap
 
-Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see `if count % 5 == 0:` you know it checks whether count is a multiple of 5. When you see `if name and len(name) > 0:` you know the `and` short-circuits — if name is empty, it never checks the length.
+Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see `if count % 5 == 0:` you know it checks whether count is a multiple of 5. When you see `if name and len(name) > 0:` you know the `and` short-circuits, if name is empty, it never checks the length.
 
 In the Building Session, you will add smarter response logic to your chatbot based on message properties.
 
@@ -830,7 +830,7 @@ Keep the existing features from v0.6.
 
 Your AI will produce something like this:
 
-`"?" in user_input` uses the `in` operator for substring check. `message_count % 5 == 0` uses modulo to detect every 5th message. `has_asked_question = True` is a boolean flag — it starts `False` and flips once. The `or` in the keyword check means either match triggers the response.
+`"?" in user_input` uses the `in` operator for substring check. `message_count % 5 == 0` uses modulo to detect every 5th message. `has_asked_question = True` is a boolean flag. It starts `False` and flips once. The `or` in the keyword check means either match triggers the response.
 
 ### Stretch It
 
@@ -863,7 +863,7 @@ This chapter fixes that.
 
 ### Getting Oriented
 
-What are the most commonly used built-in functions in Python? Not all of them — just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.
+What are the most commonly used built-in functions in Python? Not all of them. Just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.
 
 Your AI should cover: `print()`, `input()`, `len()`, `type()`, `int()`, `float()`, `str()`, `range()`, `list()`, `sorted()`, `enumerate()`, `zip()`, `max()`, `min()`, `sum()`. You already know some of these from earlier chapters. The new ones matter because AI uses them as building blocks.
 
@@ -871,7 +871,7 @@ Your AI should cover: `print()`, `input()`, `len()`, `type()`, `int()`, `float()
 
 Explain range(), enumerate(), and zip() in Python. These appear in AI-generated loops all the time and I do not fully understand them. Show me what each one produces and when I would choose one over another.
 
-`range(5)` produces `0, 1, 2, 3, 4`. `enumerate(items)` produces `(0, "first"), (1, "second"), ...` — index and value together. `zip(list1, list2)` pairs elements from two lists. These are the three loop helpers AI reaches for constantly.
+`range(5)` produces `0, 1, 2, 3, 4`. `enumerate(items)` produces `(0, "first"), (1, "second"), ...`, index and value together. `zip(list1, list2)` pairs elements from two lists. These are the three loop helpers AI reaches for constantly.
 
 I see AI using `.lower()`, `.strip()`, `.split()`, `.join()`, `.replace()` on strings. Are these functions or something else? What is the difference between `len(text)` and `text.lower()`?
 
@@ -879,7 +879,7 @@ I see AI using `.lower()`, `.strip()`, `.split()`, `.join()`, `.replace()` on st
 
 What does each line produce?
 
-`len("hello")` is `5`. `len([1, 2, 3])` is `3`. `list(range(3))` is `[0, 1, 2]`. `sorted([3, 1, 2])` is `[1, 2, 3]`. `sorted("python")` is `['h', 'n', 'o', 'p', 't', 'y']` — it sorts characters. `enumerate` gives `[(0, 'a'), (1, 'b'), (2, 'c')]`. `zip` gives `[(1, 'x'), (2, 'y')]`.
+`len("hello")` is `5`. `len([1, 2, 3])` is `3`. `list(range(3))` is `[0, 1, 2]`. `sorted([3, 1, 2])` is `[1, 2, 3]`. `sorted("python")` is `['h', 'n', 'o', 'p', 't', 'y']`. It sorts characters. `enumerate` gives `[(0, 'a'), (1, 'b'), (2, 'c')]`. `zip` gives `[(1, 'x'), (2, 'y')]`.
 
 ### What You Should Have Learned
 
@@ -887,11 +887,11 @@ What does each line produce?
 - Methods are called on objects with `object.method(arguments)`
 - `len()`, `type()`, `range()`, `sorted()` work on many types
 - `enumerate()` and `zip()` are loop helpers you will see everywhere
-- Functions return values — you can store the result or use it inline
+- Functions return values. You can store the result or use it inline
 
 ## The Gap
 
-You now have a vocabulary of the built-in functions AI reaches for most often. When you see `sorted(data, key=lambda x: x["age"])` in AI-generated code, you know `sorted()` returns a new sorted list, `key` tells it what to sort by, and `lambda` creates a small anonymous function. You may not understand `lambda` fully yet — but you know what the overall line does.
+You now have a vocabulary of the built-in functions AI reaches for most often. When you see `sorted(data, key=lambda x: x["age"])` in AI-generated code, you know `sorted()` returns a new sorted list, `key` tells it what to sort by, and `lambda` creates a small anonymous function. You may not understand `lambda` fully yet, but you know what the overall line does.
 
 In the Building Session, you will use built-in functions to add text processing to your chatbot.
 
@@ -921,7 +921,7 @@ Keep the existing features from v0.7.
 
 Your AI will produce something like this:
 
-`.split()` breaks a string into a list of words. `len(words)` counts them. `set()` stores unique values — `unique_words.update()` adds without duplicates. `sorted()` returns a sorted list, and `[-5:]` takes the last 5 items. `max(message_count, 1)` prevents division by zero.
+`.split()` breaks a string into a list of words. `len(words)` counts them. `set()` stores unique values. `unique_words.update()` adds without duplicates. `sorted()` returns a sorted list, and `[-5:]` takes the last 5 items. `max(message_count, 1)` prevents division by zero.
 
 ### Stretch It
 
@@ -950,7 +950,7 @@ You asked AI to "add functions" and it created functions with names like `proces
 
 This chapter fixes that.
 
-If you worked through Think Python, Direct AI, you already created functions to organise your project code. This chapter gives you the full picture — parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.
+If you worked through Think Python, Direct AI, you already created functions to organise your project code. This chapter gives you the full picture, parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.
 
 ## Thinking Session
 
@@ -958,7 +958,7 @@ If you worked through Think Python, Direct AI, you already created functions to 
 
 Why do we use functions in Python? I understand they group code, but what is the real benefit? Explain it from the perspective of someone who mostly reads and modifies AI-generated code. When should something be a function and when is it fine as inline code?
 
-Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions — `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
+Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions. `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
 
 ### Go Deeper
 
@@ -966,13 +966,13 @@ Explain Python function syntax step by step: def, parameters, default values, re
 
 Key points: `def` defines a function, parameters are the names in the definition, arguments are the values passed when calling it. Default parameters use `=` in the definition. A function without `return` returns `None` implicitly. Docstrings go right after `def` as a triple-quoted string.
 
-What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse — can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.
+What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse, can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.
 
 ### Challenge It
 
 What is wrong with this function, and how would you fix it?
 
-The function calculates the average but never returns it. `result` will be `None`. The fix is adding `return average` at the end. AI generates this bug when it forgets the return statement — the code runs without error but produces `None` instead of the actual value.
+The function calculates the average but never returns it. `result` will be `None`. The fix is adding `return average` at the end. AI generates this bug when it forgets the return statement. The code runs without error but produces `None` instead of the actual value.
 
 ### What You Should Have Learned
 
@@ -985,7 +985,7 @@ The function calculates the average but never returns it. `result` will be `None
 
 ## The Gap
 
-Functions are how AI organises code — and how you should evaluate whether it organised it well. A function named `process_data()` that does five things is poorly designed. A function named `clean_user_input()` that strips whitespace and lowercases text is well designed. You can now tell the difference.
+Functions are how AI organises code, and how you should evaluate whether it organised it well. A function named `process_data()` that does five things is poorly designed. A function named `clean_user_input()` that strips whitespace and lowercases text is well designed. You can now tell the difference.
 
 In the Building Session, you will refactor your chatbot from one long block into clean, named functions.
 
@@ -995,19 +995,19 @@ In the Building Session, you will refactor your chatbot from one long block into
 
 Refactor your chatbot into functions:
 
-- `display_welcome()` — shows the welcome banner
-- `get_user_name()` — asks for and validates the name
-- `get_response(user_input, message_count)` — returns the response string
-- `main()` — the main loop that ties everything together
+- `display_welcome()`, shows the welcome banner
+- `get_user_name()`, asks for and validates the name
+- `get_response(user_input, message_count)`, returns the response string
+- `main()`. The main loop that ties everything together
 
 ### Prompt It
 
 Refactor my chatbot to v0.9 using functions. Split the code into:
 
-- display_welcome(bot_name, version) — prints the welcome screen
-- get_user_name(bot_name) — asks for name, validates it is not empty, returns the name
-- get_response(user_input, message_count) — takes the input and count, returns a response string (handles questions, keywords, numbers, default)
-- main() — the main loop that calls the other functions
+- display_welcome(bot_name, version), prints the welcome screen
+- get_user_name(bot_name), asks for name, validates it is not empty, returns the name
+- get_response(user_input, message_count), takes the input and count, returns a response string (handles questions, keywords, numbers, default)
+- main(). The main loop that calls the other functions
 
 Each function should have a one-line docstring. Call main() at the bottom with the if __name__ == "__main__" guard.
 
@@ -1017,11 +1017,11 @@ Keep all existing features from v0.8.
 
 Your AI will produce something like this:
 
-Each function does one thing. `get_user_name()` returns a string — it handles its own validation loop. `get_response()` takes input and returns a response — it does not print anything. `main()` orchestrates the flow. The `if __name__ == "__main__"` guard means this file can be imported without running the chatbot — useful for testing.
+Each function does one thing. `get_user_name()` returns a string. It handles its own validation loop. `get_response()` takes input and returns a response. It does not print anything. `main()` orchestrates the flow. The `if __name__ == "__main__"` guard means this file can be imported without running the chatbot, useful for testing.
 
 ### Stretch It
 
-Add a `display_stats(message_count, user_name)` function that is called when the user types "stats". Also add a `display_help()` function that lists all available commands. Both should return None — they print directly.
+Add a `display_stats(message_count, user_name)` function that is called when the user types "stats". Also add a `display_help()` function that lists all available commands. Both should return None. They print directly.
 
 ## Your Chatbot So Far
 
@@ -1039,7 +1039,7 @@ SOURCE: chapters/making_decisions.qmd
 
 ## The Wall
 
-AI generated a chain of `if`, `elif`, and `else` statements. The logic was wrong — it matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.
+AI generated a chain of `if`, `elif`, and `else` statements. The logic was wrong. It matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.
 
 Conditional logic is where AI makes its most subtle mistakes. The code runs, the syntax is valid, but the logic is backwards. If you cannot trace through conditions yourself, you will never catch these bugs.
 
@@ -1051,7 +1051,7 @@ This chapter fixes that.
 
 Explain Python's if, elif, and else statements. I want to understand: how does Python decide which branch to take? What happens if multiple conditions are true? And what is the difference between separate if statements and an if/elif chain?
 
-Your AI should explain that `elif` chains are mutually exclusive — only the first true condition executes. Separate `if` statements each evaluate independently. This distinction is critical: AI sometimes uses separate `if` statements when it should use `elif`, causing multiple branches to fire.
+Your AI should explain that `elif` chains are mutually exclusive, only the first true condition executes. Separate `if` statements each evaluate independently. This distinction is critical: AI sometimes uses separate `if` statements when it should use `elif`, causing multiple branches to fire.
 
 ### Go Deeper
 
@@ -1065,12 +1065,12 @@ What values are "truthy" and "falsy" in Python? AI writes things like `if items:
 
 What does this code print, and why is it probably a bug?
 
-It prints "Hot", "Warm", and "Mild" — all three. The programmer probably wanted only "Hot". The fix is `elif` instead of separate `if` statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.
+It prints "Hot", "Warm", and "Mild", all three. The programmer probably wanted only "Hot". The fix is `elif` instead of separate `if` statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.
 
 ### What You Should Have Learned
 
-- `if/elif/else` chains are mutually exclusive — only one branch runs
-- Separate `if` statements are independent — multiple can run
+- `if/elif/else` chains are mutually exclusive, only one branch runs
+- Separate `if` statements are independent, multiple can run
 - Guard clauses simplify deeply nested logic
 - Truthy/falsy: empty collections, 0, None, "" are all falsy
 - Ternary: `x = "yes" if condition else "no"`
@@ -1079,7 +1079,7 @@ It prints "Hot", "Warm", and "Mild" — all three. The programmer probably wante
 
 When you read AI-generated conditional logic, you can now trace the flow. You know whether conditions are mutually exclusive or independent. You can spot when AI should have used `elif` instead of `if`, or when a deeply nested block could be flattened with guard clauses.
 
-In the Building Session, you will add categorised responses to your chatbot — different behaviour for greetings, questions, farewells, and default cases.
+In the Building Session, you will add categorised responses to your chatbot, different behaviour for greetings, questions, farewells, and default cases.
 
 ## Building Session
 
@@ -1111,7 +1111,7 @@ Update the main() function to handle the tuple return.
 
 Your AI will produce something like this:
 
-The `elif` chain ensures only one category matches. Farewells are checked first — if someone says "bye", that takes priority over everything else. `.startswith()` can take a tuple of options. The function returns a tuple `(response, should_exit)` — the boolean flag lets the caller decide what to do.
+The `elif` chain ensures only one category matches. Farewells are checked first, if someone says "bye", that takes priority over everything else. `.startswith()` can take a tuple of options. The function returns a tuple `(response, should_exit)`. The boolean flag lets the caller decide what to do.
 
 ### Stretch It
 
@@ -1139,13 +1139,13 @@ Lists are Python's workhorse data structure. AI uses them in nearly every non-tr
 
 This chapter fixes that.
 
-You may recognise lists from projects like the Quiz Game or Contact Book in Think Python, Direct AI. There you used lists to store questions or entries. This chapter explores lists more deeply — indexing, slicing, methods, and the patterns that make lists essential.
+You may recognise lists from projects like the Quiz Game or Contact Book in Think Python, Direct AI. There you used lists to store questions or entries. This chapter explores lists more deeply, indexing, slicing, methods, and the patterns that make lists essential.
 
 ## Thinking Session
 
 ### Getting Oriented
 
-Explain Python lists to me. Not just "an ordered collection" — I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.
+Explain Python lists to me. Not just "an ordered collection". I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.
 
 Your AI should cover indexing (starts at 0), negative indexing (`-1` is last item), `IndexError` for out-of-range access, and the key difference: lists are mutable (you can change items), strings are not.
 
@@ -1153,7 +1153,7 @@ Your AI should cover indexing (starts at 0), negative indexing (`-1` is last ite
 
 What are the most important list methods? I keep seeing append(), extend(), insert(), remove(), pop(), sort(), and reverse() in AI-generated code. Explain each one and, critically, tell me which ones modify the list in place versus returning a new list.
 
-The key distinction: `append()`, `extend()`, `insert()`, `remove()`, `pop()`, `sort()`, `reverse()` all modify the list in place and return `None`. `sorted()` returns a new list. AI sometimes writes `my_list = my_list.sort()` — this sets `my_list` to `None`. If your AI does not mention this trap, ask about it.
+The key distinction: `append()`, `extend()`, `insert()`, `remove()`, `pop()`, `sort()`, `reverse()` all modify the list in place and return `None`. `sorted()` returns a new list. AI sometimes writes `my_list = my_list.sort()`. This sets `my_list` to `None`. If your AI does not mention this trap, ask about it.
 
 What is list slicing in Python? I see notation like `items[1:3]`, `items[:5]`, `items[::2]` in AI-generated code. Explain the slice notation and give me practical examples.
 
@@ -1161,7 +1161,7 @@ What is list slicing in Python? I see notation like `items[1:3]`, `items[:5]`, `
 
 What is wrong with each of these, and what should they be?
 
-Line 2: `append()` returns `None`, so `items` becomes `None`. Fix: just `items.append(4)`. Line 5: same issue — `sort()` returns `None`. Fix: `data.sort()` alone, or `data = sorted(data)`. Line 7: cannot add an integer to a list. Fix: `[1, 2] + [3]` or `[1, 2].append(3)`.
+Line 2: `append()` returns `None`, so `items` becomes `None`. Fix: just `items.append(4)`. Line 5: same issue. `sort()` returns `None`. Fix: `data.sort()` alone, or `data = sorted(data)`. Line 7: cannot add an integer to a list. Fix: `[1, 2] + [3]` or `[1, 2].append(3)`.
 
 ### What You Should Have Learned
 
@@ -1204,7 +1204,7 @@ Keep the categorised response system from v1.0.
 
 Your AI will produce something like this:
 
-`random.choice()` picks one item from a list — this gives varied responses. The conversation history uses `append()` to add entries (in the main loop, not shown here). `history[-5:]` slices the last 5 items. Lists grow dynamically — no need to declare a size.
+`random.choice()` picks one item from a list. This gives varied responses. The conversation history uses `append()` to add entries (in the main loop, not shown here). `history[-5:]` slices the last 5 items. Lists grow dynamically. No need to declare a size.
 
 ### Stretch It
 
@@ -1226,7 +1226,7 @@ SOURCE: chapters/going_loopy.qmd
 
 ## The Wall
 
-AI's loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code — `for i in range(len(data)):` — and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.
+AI's loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code, `for i in range(len(data)):`, and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.
 
 Loops are where AI makes off-by-one errors, forgets break conditions, and creates unnecessarily complex iterations. If you cannot trace through a loop manually, you will never spot these bugs.
 
@@ -1236,15 +1236,15 @@ This chapter fixes that.
 
 ### Getting Oriented
 
-What are the two types of loops in Python — for and while? When should I use each one? And why does AI-generated code sometimes use `for i in range(len(items)):` instead of just `for item in items:`? Is the longer version ever better?
+What are the two types of loops in Python, for and while? When should I use each one? And why does AI-generated code sometimes use `for i in range(len(items)):` instead of just `for item in items:`? Is the longer version ever better?
 
-Your AI should explain: `for` iterates over a sequence (use when you know what you are iterating over), `while` repeats until a condition is false (use when you do not know how many times). The `range(len())` pattern gives you the index — sometimes needed, but `enumerate()` is better for that.
+Your AI should explain: `for` iterates over a sequence (use when you know what you are iterating over), `while` repeats until a condition is false (use when you do not know how many times). The `range(len())` pattern gives you the index, sometimes needed, but `enumerate()` is better for that.
 
 ### Go Deeper
 
-Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop — that seems strange. When would you actually use it?
+Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop. That seems strange. When would you actually use it?
 
-`break` exits the loop immediately. `continue` skips to the next iteration. The `else` on a loop runs only if the loop completed without `break` — it is useful for "search" patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop `else`, the concept is probably not important enough to use.
+`break` exits the loop immediately. `continue` skips to the next iteration. The `else` on a loop runs only if the loop completed without `break`. It is useful for "search" patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop `else`, the concept is probably not important enough to use.
 
 What are common loop patterns in Python? I see AI using counting loops, accumulator loops, search loops, and filter loops. Show me one example of each and tell me when to recognise each pattern.
 
@@ -1252,7 +1252,7 @@ What are common loop patterns in Python? I see AI using counting loops, accumula
 
 What is wrong with each of these loops?
 
-Loop 1: no `break` — it runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: `total = i` overwrites instead of accumulating — should be `total += i`. These are all bugs AI generates regularly.
+Loop 1: no `break`. It runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: `total = i` overwrites instead of accumulating, should be `total += i`. These are all bugs AI generates regularly.
 
 ### What You Should Have Learned
 
@@ -1267,7 +1267,7 @@ Loop 1: no `break` — it runs forever. Loop 2: modifying a list while iterating
 
 You can now trace through any loop AI generates and predict its behaviour. You know the difference between accumulating (`+=`) and overwriting (`=`). You know why modifying a list during iteration is dangerous. When AI gives you a loop, you can verify it will terminate and process every item exactly once.
 
-In the Building Session, you will add word processing to your chatbot — iterating through user input to extract meaning.
+In the Building Session, you will add word processing to your chatbot, iterating through user input to extract meaning.
 
 ## Building Session
 
@@ -1299,7 +1299,7 @@ Your AI will produce something like this:
 
 ### Stretch It
 
-Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions — which is more readable?
+Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions, which is more readable?
 
 ## Your Chatbot So Far
 
@@ -1319,11 +1319,11 @@ SOURCE: chapters/strings.qmd
 
 AI's string slicing gave you the wrong substring. It used `text[3:7]` and you expected 4 characters but got something different. In another case, AI used `.split()`, `.join()`, `.replace()`, and `.strip()` in a chain so long you could not tell what the final result would be without running it.
 
-Strings are the most common data type in AI-generated code — every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.
+Strings are the most common data type in AI-generated code, every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.
 
 This chapter fixes that.
 
-If you worked through Think Python, Direct AI, you already used string methods like `.lower()` and `.split()` to process user input in your projects. Here we explore strings more thoroughly — how they work internally, the full range of methods, and when to reach for each one.
+If you worked through Think Python, Direct AI, you already used string methods like `.lower()` and `.split()` to process user input in your projects. Here we explore strings more thoroughly, how they work internally, the full range of methods, and when to reach for each one.
 
 ## Thinking Session
 
@@ -1331,13 +1331,13 @@ If you worked through Think Python, Direct AI, you already used string methods l
 
 Explain Python strings in depth. I know they are text in quotes, but I want to understand: are they like lists? Can I change individual characters? How does indexing and slicing work on strings compared to lists?
 
-Your AI should explain that strings are immutable sequences — you can index and slice them like lists, but you cannot change individual characters. `text[0] = "X"` fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.
+Your AI should explain that strings are immutable sequences. You can index and slice them like lists, but you cannot change individual characters. `text[0] = "X"` fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.
 
 ### Go Deeper
 
 What are the most useful string methods in Python? Focus on the ones that AI uses most: split(), join(), strip(), replace(), startswith(), endswith(), find(), upper(), lower(), count(). For each one, show me what it does and what it returns.
 
-Key pattern: all string methods return new strings (strings are immutable). `text.split()` returns a list. `" ".join(words)` returns a string. `text.replace("old", "new")` returns a new string — the original is unchanged. If your AI implies these modify the original string, that is wrong.
+Key pattern: all string methods return new strings (strings are immutable). `text.split()` returns a list. `" ".join(words)` returns a string. `text.replace("old", "new")` returns a new string. The original is unchanged. If your AI implies these modify the original string, that is wrong.
 
 Explain string slicing in Python. What does `text[2:5]` give me? What about `text[::-1]`? I want to be able to look at any slice notation in AI-generated code and predict the result.
 
@@ -1345,11 +1345,11 @@ Explain string slicing in Python. What does `text[2:5]` give me? What about `tex
 
 What does each line produce?
 
-`split()` gives `["hello", "world"]`. `join()` gives `"hello world"`. `strip()` gives `"hello"`. `replace()` gives `"hello Python"`. `[1:4]` gives `"ell"` (index 1, 2, 3 — stop is exclusive). `[::-1]` gives `"olleh"` (reversed). `title()` gives `"Hello World"`. `count("o")` gives `1`.
+`split()` gives `["hello", "world"]`. `join()` gives `"hello world"`. `strip()` gives `"hello"`. `replace()` gives `"hello Python"`. `[1:4]` gives `"ell"` (index 1, 2, 3, stop is exclusive). `[::-1]` gives `"olleh"` (reversed). `title()` gives `"Hello World"`. `count("o")` gives `1`.
 
 ### What You Should Have Learned
 
-- Strings are immutable — all methods return new strings
+- Strings are immutable, all methods return new strings
 - Indexing and slicing work like lists: `text[start:stop:step]`
 - `split()` makes a list, `join()` makes a string
 - `strip()` removes whitespace, `replace()` substitutes text
@@ -1388,7 +1388,7 @@ Keep existing features.
 
 Your AI will produce something like this:
 
-`" ".join(text.split())` is a common idiom — it splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". `text[::-1]` reverses the string. `"\n".join(lines)` joins a list of strings with newlines between them. All these methods return new strings — the original is never modified.
+`" ".join(text.split())` is a common idiom. It splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". `text[::-1]` reverses the string. `"\n".join(lines)` joins a list of strings with newlines between them. All these methods return new strings. The original is never modified.
 
 ### Stretch It
 
@@ -1412,23 +1412,23 @@ SOURCE: chapters/dictionaries.qmd
 
 AI used a dictionary when a list would have worked, and you did not know enough to question it. In another case, your code crashed with `KeyError: 'username'` because the dictionary did not have the key AI assumed existed. You had no idea how to check whether a key exists before accessing it.
 
-Dictionaries are how AI organises structured data — user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.
+Dictionaries are how AI organises structured data, user profiles, configuration, API responses, keyword mappings. If you cannot read dictionary operations, you cannot work with most real-world AI-generated code.
 
 This chapter fixes that.
 
-You may recognise dictionaries from the Contact Book project in Think Python, Direct AI, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly — how they work, the full range of methods, and the patterns that make them essential.
+You may recognise dictionaries from the Contact Book project in Think Python, Direct AI, where you used them to store names and phone numbers. Here we explore dictionaries more thoroughly, how they work, the full range of methods, and the patterns that make them essential.
 
 ## Thinking Session
 
 ### Getting Oriented
 
-Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write `user = {"name": "Alice", "age": 30}` — how does Python find values by key?
+Explain Python dictionaries. How are they different from lists? When should I use a dictionary instead of a list? And what actually happens when I write `user = {"name": "Alice", "age": 30}`, how does Python find values by key?
 
 Your AI should explain: dictionaries map keys to values, lists map indexes to values. Use a dictionary when you need to look things up by name, not by position. Keys must be immutable (strings, numbers, tuples) and unique. If your AI does not mention that dictionaries are unordered in older Python but ordered by insertion in Python 3.7+, that is a useful detail.
 
 ### Go Deeper
 
-What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between `user["name"]` and `user.get("name")` — and why does AI sometimes use one versus the other?
+What are the most important dictionary methods? I see AI using get(), keys(), values(), items(), update(), and pop(). Explain each one. Specifically, what is the difference between `user["name"]` and `user.get("name")`, and why does AI sometimes use one versus the other?
 
 The critical difference: `user["name"]` raises `KeyError` if the key does not exist. `user.get("name")` returns `None` (or a default you specify). AI should use `.get()` for keys that might not exist. If your AI does not emphasise this, it is the single most important dictionary concept.
 
@@ -1447,11 +1447,11 @@ What happens with each of these?
 - `in` checks keys, not values
 - `items()` gives key-value pairs for looping
 - Keys must be immutable; values can be anything
-- Dictionaries are mutable — you can add, change, and remove entries
+- Dictionaries are mutable. You can add, change, and remove entries
 
 ## The Gap
 
-Dictionaries are how your chatbot will map keywords to responses — instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.
+Dictionaries are how your chatbot will map keywords to responses, instead of long if/elif chains, you look up the response by category. This is the pattern AI uses in most structured programs: configuration as dictionaries, response templates as dictionaries, user data as dictionaries.
 
 In the Building Session, you will replace the if/elif response logic with a dictionary-based approach.
 
@@ -1482,7 +1482,7 @@ Keep existing features.
 
 Your AI will produce something like this:
 
-The if/elif chain is gone — replaced by dictionary lookups. Adding a new response category means adding entries to `RESPONSES` and `KEYWORDS`, not modifying logic. `RESPONSES.get(category, RESPONSES["default"])` uses `.get()` with a fallback. This is how AI structures most configurable systems.
+The if/elif chain is gone, replaced by dictionary lookups. Adding a new response category means adding entries to `RESPONSES` and `KEYWORDS`, not modifying logic. `RESPONSES.get(category, RESPONSES["default"])` uses `.get()` with a fallback. This is how AI structures most configurable systems.
 
 ### Stretch It
 
@@ -1506,7 +1506,7 @@ SOURCE: chapters/files.qmd
 
 AI wrote code that saved data to a file. You ran it, saw "Data saved!", and felt good. Then you restarted the program and the data was gone. It turned out AI opened the file with `"w"` (write mode) instead of `"a"` (append mode), so every run erased the previous data.
 
-In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with `FileNotFoundError` — on the user's machine, not yours, because the file was in your test folder.
+In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with `FileNotFoundError`, on the user's machine, not yours, because the file was in your test folder.
 
 This chapter fixes that.
 
@@ -1516,7 +1516,7 @@ This chapter fixes that.
 
 How does file I/O work in Python? Explain the open/read/write/close pattern. What are the different file modes (r, w, a, x) and when would I use each? Why does AI-generated code always use `with open()` instead of calling open() and close() separately?
 
-Your AI should explain that `with open()` is a context manager that automatically closes the file even if an error occurs. The modes matter: `"r"` reads, `"w"` writes (erases existing content), `"a"` appends, `"x"` creates (fails if file exists). AI should always use `with` — if it does not, that is a code smell.
+Your AI should explain that `with open()` is a context manager that automatically closes the file even if an error occurs. The modes matter: `"r"` reads, `"w"` writes (erases existing content), `"a"` appends, `"x"` creates (fails if file exists). AI should always use `with`, if it does not, that is a code smell.
 
 ### Go Deeper
 
@@ -1530,11 +1530,11 @@ How do I work with JSON files in Python? AI-generated code often saves configura
 
 What is wrong with this code?
 
-If the program crashes between `open()` and `close()`, the file is never properly closed, potentially losing data. The fix is `with open("data.txt", "w") as f:` — the `with` block guarantees closure. Also, `"w"` mode erases existing content — if that is not intended, use `"a"`.
+If the program crashes between `open()` and `close()`, the file is never properly closed, potentially losing data. The fix is `with open("data.txt", "w") as f:`. The `with` block guarantees closure. Also, `"w"` mode erases existing content, if that is not intended, use `"a"`.
 
 ### What You Should Have Learned
 
-- Always use `with open()` — it handles closing automatically
+- Always use `with open()`. It handles closing automatically
 - File modes: `"r"` read, `"w"` write (erases), `"a"` append
 - `read()` gets all content, iterate for line-by-line processing
 - JSON is the standard format for structured data: `json.load()` / `json.dump()`
@@ -1542,7 +1542,7 @@ If the program crashes between `open()` and `close()`, the file is never properl
 
 ## The Gap
 
-Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append — and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.
+Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append, and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.
 
 In the Building Session, you will give your chatbot persistent memory.
 
@@ -1595,7 +1595,7 @@ SOURCE: chapters/errors_and_exceptions.qmd
 
 ## The Wall
 
-AI wrapped everything in `try: ... except: pass` and your errors vanished. The program did not crash anymore, but it also did not work — it silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.
+AI wrapped everything in `try: ... except: pass` and your errors vanished. The program did not crash anymore, but it also did not work. It silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.
 
 Or the opposite: AI did not add error handling at all, and the program crashed on the first unexpected input with a traceback you could not read.
 
@@ -1605,7 +1605,7 @@ This chapter fixes that.
 
 ### Getting Oriented
 
-What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message — I want to be able to look at AI-generated tracebacks and immediately find the problem.
+What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message. I want to be able to look at AI-generated tracebacks and immediately find the problem.
 
 Your AI should explain: syntax errors are caught before the code runs (missing colons, bad indentation), exceptions happen during execution (dividing by zero, missing keys, wrong types). The traceback reads bottom-up: the last line is the error, the lines above show the call stack. The file name and line number tell you exactly where to look.
 
@@ -1621,20 +1621,20 @@ Explain Python's try/except properly. What is the right way to use it? Why is `e
 
 What is wrong with this error handling?
 
-Three problems: (1) bare `except:` catches everything including KeyboardInterrupt and SystemExit. (2) `pass` silently swallows errors — you will never know something went wrong. (3) the try block is too broad — it should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.
+Three problems: (1) bare `except:` catches everything including KeyboardInterrupt and SystemExit. (2) `pass` silently swallows errors. You will never know something went wrong. (3) the try block is too broad. It should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.
 
 ### What You Should Have Learned
 
-- Syntax errors vs exceptions — different causes, different fixes
+- Syntax errors vs exceptions, different causes, different fixes
 - How to read a traceback: bottom-up, file + line number
 - The common exceptions: TypeError, ValueError, KeyError, IndexError
 - try/except should catch specific exceptions, not bare except
-- Never use `except: pass` — at minimum, log the error
+- Never use `except: pass`, at minimum, log the error
 - `finally` runs whether or not an exception occurred
 
 ## The Gap
 
-You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill — bad error handling is worse than no error handling.
+You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill, bad error handling is worse than no error handling.
 
 In the Building Session, you will add proper error handling to your chatbot.
 
@@ -1665,7 +1665,7 @@ Keep existing features.
 
 Your AI will produce something like this:
 
-Each `except` catches a specific exception with a helpful message. `KeyboardInterrupt` is caught separately — it is not a bug, it is a user action. The `finally` block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.
+Each `except` catches a specific exception with a helpful message. `KeyboardInterrupt` is caught separately. It is not a bug, it is a user action. The `finally` block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.
 
 ### Stretch It
 
@@ -1689,7 +1689,7 @@ SOURCE: chapters/debugging.qmd
 
 You pasted an error message into AI and it gave you a "fix" that introduced a different error. You pasted that error in and got yet another fix. Three rounds later, the code was completely different from what you started with and you had no idea what changed or why.
 
-The problem was not AI's debugging ability — it was that you could not isolate the bug yourself. You gave AI the entire program and said "fix it" instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.
+The problem was not AI's debugging ability. It was that you could not isolate the bug yourself. You gave AI the entire program and said "fix it" instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.
 
 This chapter fixes that.
 
@@ -1703,7 +1703,7 @@ Your AI should explain: print debugging (adding `print()` statements to trace va
 
 ### Go Deeper
 
-When I have a bug, what is a systematic process for finding it? Not just "add print statements everywhere" — give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?
+When I have a bug, what is a systematic process for finding it? Not just "add print statements everywhere", give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?
 
 A good debugging process: (1) reproduce the bug reliably, (2) form a hypothesis about what is wrong, (3) test the hypothesis by checking values at specific points, (4) fix the smallest thing possible, (5) verify the fix did not break something else. This is scientific method applied to code.
 
@@ -1711,9 +1711,9 @@ How should I use AI for debugging effectively? What information should I include
 
 ### Challenge It
 
-This code is supposed to count vowels in a string but returns the wrong number. Debug it — do not just fix it, explain how you would find the bug step by step.
+This code is supposed to count vowels in a string but returns the wrong number. Debug it, do not just fix it, explain how you would find the bug step by step.
 
-Trick question — this code is actually correct for lowercase vowels. But it misses uppercase vowels. `"Hello World"` has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is `text.lower()` or `vowels = "aeiouAEIOU"`. The lesson: always clarify what "correct" means.
+Trick question. This code is actually correct for lowercase vowels. But it misses uppercase vowels. `"Hello World"` has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is `text.lower()` or `vowels = "aeiouAEIOU"`. The lesson: always clarify what "correct" means.
 
 ### What You Should Have Learned
 
@@ -1721,7 +1721,7 @@ Trick question — this code is actually correct for lowercase vowels. But it mi
 - Print debugging: add `print(f"DEBUG: {variable=}")` at key points
 - `pdb`: `breakpoint()` in your code to pause and inspect
 - When asking AI for help: include the error, the relevant code, what you expected, and what you tried
-- Do not ask AI to "fix my code" — ask it to explain why a specific line produces a specific result
+- Do not ask AI to "fix my code", ask it to explain why a specific line produces a specific result
 
 ## The Gap
 
@@ -1758,7 +1758,7 @@ Keep existing features.
 
 Your AI will produce something like this:
 
-`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. This pattern — a function that conditionally prints — is how professional code handles debug output.
+`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.
 
 ### Stretch It
 
@@ -1780,7 +1780,7 @@ SOURCE: chapters/testing.qmd
 
 ## The Wall
 
-AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path — the obvious, expected inputs — and missed every edge case.
+AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path. The obvious, expected inputs, and missed every edge case.
 
 You asked AI to "add tests" and it generated tests that passed trivially. One test checked that `add(2, 3)` returns `5`. It did not test what happens when you pass `None`, a string, or a negative number. The tests gave you false confidence.
 
@@ -1790,7 +1790,7 @@ This chapter fixes that.
 
 ### Getting Oriented
 
-Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest — why do Python developers prefer it over the built-in unittest module?
+Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest, why do Python developers prefer it over the built-in unittest module?
 
 Your AI should explain: good tests check edge cases, not just happy paths. A test is useful if its failure tells you something is broken. pytest is preferred because it uses plain `assert` statements instead of special methods (`assertEqual`, `assertTrue`), making tests more readable.
 
@@ -1806,16 +1806,16 @@ What are edge cases and how do I identify them? When AI generates a function, wh
 
 Here is a function and its AI-generated tests. Are the tests good enough?
 
-The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug — it crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.
+The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug. It crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.
 
 ### What You Should Have Learned
 
 - Good tests check edge cases, not just expected inputs
-- pytest uses plain `assert` — simple and readable
+- pytest uses plain `assert`, simple and readable
 - Test files: `tests/test_.py`, functions: `test_()`
-- Arrange, Act, Assert — the test structure pattern
+- Arrange, Act, Assert. The test structure pattern
 - Edge case checklist: empty input, None, wrong type, boundary values, single item
-- Tests give confidence to modify code — that is their real value
+- Tests give confidence to modify code. That is their real value
 
 ## The Gap
 
@@ -1844,7 +1844,7 @@ Create a test file `tests/test_chatbot.py` for my chatbot. Write pytest tests fo
 - classify_input("random text") should return "default"
 - classify_input("") should return "default" (not crash)
 - get_response() should return a tuple of (str, bool)
-- get_response("bye") should return (str, True) — the exit flag
+- get_response("bye") should return (str, True). The exit flag
 
 Use the arrange/act/assert pattern. Include at least one test that checks an edge case AI would miss.
 
@@ -1892,7 +1892,7 @@ Your AI should explain: the standard library (json, os, sys, datetime, random, p
 
 Explain the different ways to import in Python: `import module`, `from module import function`, `from module import *`, and `import module as alias`. When does AI use each one? Which are considered good practice and which should I avoid?
 
-`import module` is safest — you always see where things come from (`module.function()`). `from module import function` is fine for specific, well-known names. `from module import *` is dangerous — it pollutes your namespace and you cannot tell where names come from. `import module as alias` is conventional for some libraries (`import numpy as np`).
+`import module` is safest. You always see where things come from (`module.function()`). `from module import function` is fine for specific, well-known names. `from module import *` is dangerous. It pollutes your namespace and you cannot tell where names come from. `import module as alias` is conventional for some libraries (`import numpy as np`).
 
 How do I organise my own code into multiple files? If I have a chatbot with separate files for responses, history, and the main loop, how do I import between them? What is `__init__.py` and why does AI put it in directories?
 
@@ -1900,7 +1900,7 @@ How do I organise my own code into multiple files? If I have a chatbot with sepa
 
 What is wrong with these imports?
 
-Line 1: `import *` imports everything from os — pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script — relative imports depend on the project structure and whether you are running as a script or module. Line 4: `ModuleNotFoundError` if pandas is not installed. AI frequently imports packages it assumes are installed.
+Line 1: `import *` imports everything from os, pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script, relative imports depend on the project structure and whether you are running as a script or module. Line 4: `ModuleNotFoundError` if pandas is not installed. AI frequently imports packages it assumes are installed.
 
 ### What You Should Have Learned
 
@@ -1923,13 +1923,13 @@ In the Building Session, you will split your chatbot into a proper package.
 
 Split your chatbot into a package with multiple modules:
 
-- `chatbot/` — the package directory
-- `chatbot/__init__.py` — package marker
-- `chatbot/config.py` — constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)
-- `chatbot/responses.py` — classify_input() and get_response()
-- `chatbot/history.py` — load_history() and save_history()
-- `chatbot/main.py` — the main loop
-- `run.py` — entry point that imports and runs main()
+- `chatbot/`. The package directory
+- `chatbot/__init__.py`, package marker
+- `chatbot/config.py`, constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)
+- `chatbot/responses.py`, classify_input() and get_response()
+- `chatbot/history.py`, load_history() and save_history()
+- `chatbot/main.py`. The main loop
+- `run.py`, entry point that imports and runs main()
 
 ### Prompt It
 
@@ -1938,9 +1938,9 @@ Restructure my chatbot into a package for v1.9. Create this structure:
 chatbot/
     __init__.py      (empty or with version)
     config.py        (BOT_NAME, VERSION, RESPONSES dict, KEYWORDS dict)
-    responses.py     (classify_input, get_response — imports from config)
-    history.py       (load_history, save_history — imports json)
-    main.py          (main function — imports from other modules)
+    responses.py     (classify_input, get_response, imports from config)
+    history.py       (load_history, save_history, imports json)
+    main.py          (main function, imports from other modules)
 run.py               (entry point: from chatbot.main import main; main())
 
 Show me the import statements for each file and the key functions. Keep the existing features from v1.7.
@@ -1949,7 +1949,7 @@ Show me the import statements for each file and the key functions. Keep the exis
 
 Your AI will produce something like this:
 
-Each file imports only what it needs. `config.py` has no imports — it is pure data. `responses.py` imports from `config` using the package path `from chatbot.config import ...`. `run.py` is the entry point — one line. The `__init__.py` file can be empty; it just tells Python this directory is a package.
+Each file imports only what it needs. `config.py` has no imports. It is pure data. `responses.py` imports from `config` using the package path `from chatbot.config import ...`. `run.py` is the entry point, one line. The `__init__.py` file can be empty; it just tells Python this directory is a package.
 
 ### Stretch It
 
@@ -1971,7 +1971,7 @@ SOURCE: chapters/orientating_your_objects.qmd
 
 ## The Wall
 
-AI used `class` and `self` everywhere and you had no idea why. It wrote `self.name`, `self.history`, `self.respond()` — every variable and function had `self` stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.
+AI used `class` and `self` everywhere and you had no idea why. It wrote `self.name`, `self.history`, `self.respond()`, every variable and function had `self` stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.
 
 You tried changing `self.name` to just `name` and everything broke. You did not know why `self` was necessary or what it represented.
 
@@ -1983,21 +1983,21 @@ This chapter fixes that.
 
 Explain Python classes and objects to me without jargon. I see AI using `class Chatbot:` and `self.name` constantly. What does `self` actually mean? Why can I not just use regular variables and functions? Give me a concrete example where a class is clearly better than functions.
 
-Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. `self` refers to the specific instance — if you create two chatbots, `self.name` is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.
+Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. `self` refers to the specific instance, if you create two chatbots, `self.name` is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.
 
 ### Go Deeper
 
-Walk me through the parts of a Python class: `__init__`, methods, attributes, and the `self` parameter. Why does every method take `self` as the first parameter? What is `__init__` and when does it run? Show me with a simple example — not a theoretical one.
+Walk me through the parts of a Python class: `__init__`, methods, attributes, and the `self` parameter. Why does every method take `self` as the first parameter? What is `__init__` and when does it run? Show me with a simple example, not a theoretical one.
 
-`__init__` is called automatically when you create an instance (`bot = Chatbot("PyBot")`). `self` is the instance being created or operated on — Python passes it automatically. Attributes set in `__init__` (like `self.name = name`) persist on the object. Methods are functions that operate on the object's data.
+`__init__` is called automatically when you create an instance (`bot = Chatbot("PyBot")`). `self` is the instance being created or operated on. Python passes it automatically. Attributes set in `__init__` (like `self.name = name`) persist on the object. Methods are functions that operate on the object's data.
 
-What is inheritance in Python? AI sometimes writes `class EnhancedBot(Chatbot):` — what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?
+What is inheritance in Python? AI sometimes writes `class EnhancedBot(Chatbot):`, what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?
 
 ### Challenge It
 
 What is wrong with this class?
 
-Three bugs: (1) `increment` uses `count` instead of `self.count` — it tries to modify a local variable that does not exist. (2) `get_count` is missing `self` parameter — it cannot be called as a method. (3) `count = 0` at the class level is a class variable shared by all instances — it should be `self.count = 0` in `__init__` for per-instance counting.
+Three bugs: (1) `increment` uses `count` instead of `self.count`. It tries to modify a local variable that does not exist. (2) `get_count` is missing `self` parameter. It cannot be called as a method. (3) `count = 0` at the class level is a class variable shared by all instances. It should be `self.count = 0` in `__init__` for per-instance counting.
 
 ### What You Should Have Learned
 
@@ -2031,13 +2031,13 @@ Refactor your chatbot into a class:
 Refactor my chatbot to v2.0 using a class. Create a Chatbot class that:
 
 - __init__(self, name, version) sets up: self.name, self.version, self.history (loaded from file), self.responses (the dictionary), self.keywords (the dictionary), self.message_count, self.debug_mode
-- greet(self) — displays the welcome screen
-- get_user_name(self) — asks for and validates the user's name
-- classify(self, text) — classifies input using self.keywords
-- respond(self, user_input) — returns (response, should_exit)
-- save_history(self) — saves self.history to JSON
-- load_history(self) — loads history from JSON
-- run(self) — the main conversation loop
+- greet(self), displays the welcome screen
+- get_user_name(self), asks for and validates the user's name
+- classify(self, text), classifies input using self.keywords
+- respond(self, user_input), returns (response, should_exit)
+- save_history(self), saves self.history to JSON
+- load_history(self), loads history from JSON
+- run(self). The main conversation loop
 
 Entry point:
     bot = Chatbot("PyBot", "2.0")
@@ -2047,7 +2047,7 @@ Entry point:
 
 Your AI will produce something like this:
 
-All state lives on `self` — `self.history`, `self.keywords`, `self.message_count`. Methods access this shared state through `self`. You could create two chatbots with different names: `bot1 = Chatbot("PyBot", "2.0")` and `bot2 = Chatbot("Helper", "1.0")` — each has its own state. The `if __name__ == "__main__"` guard means this file works both as a script and as an importable module.
+All state lives on `self`: `self.history`, `self.keywords`, `self.message_count`. Methods access this shared state through `self`. You could create two chatbots with different names: `bot1 = Chatbot("PyBot", "2.0")` and `bot2 = Chatbot("Helper", "1.0")`. Each has its own state. The `if __name__ == "__main__"` guard means this file works both as a script and as an importable module.
 
 ### Stretch It
 
@@ -2061,7 +2061,7 @@ Create an EnhancedBot class that inherits from Chatbot and adds a mood system. O
 
 Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.
 
-More importantly, you built it through conversation with AI — directing it, questioning it, and understanding every line it produced.
+More importantly, you built it through conversation with AI, directing it, questioning it, and understanding every line it produced.
 
 ## Quick Reference
 
@@ -2071,7 +2071,7 @@ SOURCE: acknowledgments.qmd
 
 # Acknowledgments 
 
-This book grew out of teaching materials — handouts, exercises, lab worksheets — developed over years of introducing students to programming. Those materials were refined semester by semester as students showed me which explanations landed and which ones needed rethinking. The book is better for every student who said "I still don't get it" and forced a clearer explanation.
+This book grew out of teaching materials, handouts, exercises, lab worksheets, developed over years of introducing students to programming. Those materials were refined semester by semester as students showed me which explanations landed and which ones needed rethinking. The book is better for every student who said "I still don't get it" and forced a clearer explanation.
 
 Colleagues who teach introductory programming provided the kind of honest feedback that improves books: what was missing, what was unnecessary, and where the difficulty curve was wrong.
 
@@ -2134,7 +2134,7 @@ This appendix covers how to install Python, choose an execution environment, and
 
 ## Interpreted vs. Compiled Languages
 
-Python is an interpreted language — your code is executed line by line rather than being compiled into machine code first. This makes Python excellent for learning and prototyping because you get immediate feedback.
+Python is an interpreted language, your code is executed line by line rather than being compiled into machine code first. This makes Python excellent for learning and prototyping because you get immediate feedback.
 
 ## Ways to Run Python Code
 
@@ -2150,9 +2150,9 @@ IPython is an enhanced interactive shell with features like tab completion, synt
 
 Useful IPython features:
 
-- Tab completion — type the start of a name and press Tab
-- `?` — append to any object for documentation (`print?`)
-- `%timeit` — measure execution time of a statement
+- Tab completion: type the start of a name and press Tab
+- `?`: append to any object for documentation (`print?`)
+- `%timeit`: measure execution time of a statement
 
 ### Python Scripts
 
@@ -2208,7 +2208,7 @@ Always use a virtual environment for each project. Add `.venv/` to your `.gitign
 | Automation | requests, beautifulsoup4, selenium |
 | Testing | pytest, coverage |
 
-Install what you need as you go — do not install everything at once.
+Install what you need as you go, do not install everything at once.
 
 ## Setting Up an IDE
 

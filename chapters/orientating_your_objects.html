@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">20.1</span> The Wall</h2>
-<p>AI used <code>class</code> and <code>self</code> everywhere and you had no idea why. It wrote <code>self.name</code>, <code>self.history</code>, <code>self.respond()</code> — every variable and function had <code>self</code> stuck on the front. You asked AI why and got a lecture about “object-oriented programming” and “encapsulation” that did not help you understand the actual code.</p>
+<p>AI used <code>class</code> and <code>self</code> everywhere and you had no idea why. It wrote <code>self.name</code>, <code>self.history</code>, <code>self.respond()</code>, every variable and function had <code>self</code> stuck on the front. You asked AI why and got a lecture about “object-oriented programming” and “encapsulation” that did not help you understand the actual code.</p>
 <p>You tried changing <code>self.name</code> to just <code>name</code> and everything broke. You did not know why <code>self</code> was necessary or what it represented.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Explain Python classes and objects to me without jargon. I see AI using <code>class Chatbot:</code> and <code>self.name</code> constantly. What does <code>self</code> actually mean? Why can I not just use regular variables and functions? Give me a concrete example where a class is clearly better than functions.</p>
 </div>
 </div>
-<p>Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. <code>self</code> refers to the specific instance — if you create two chatbots, <code>self.name</code> is different for each one. Without classes, you would need separate variables for each chatbot’s name, history, and settings. If your AI starts with abstract theory about “blueprints” and “objects,” ask for a concrete example first.</p>
+<p>Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. <code>self</code> refers to the specific instance, if you create two chatbots, <code>self.name</code> is different for each one. Without classes, you would need separate variables for each chatbot’s name, history, and settings. If your AI starts with abstract theory about “blueprints” and “objects,” ask for a concrete example first.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="20.2.2">
 <h3 data-number="20.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">20.2.2</span> Go Deeper</h3>
@@ -566,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Walk me through the parts of a Python class: <code>__init__</code>, methods, attributes, and the <code>self</code> parameter. Why does every method take <code>self</code> as the first parameter? What is <code>__init__</code> and when does it run? Show me with a simple example — not a theoretical one.</p>
+<p>Walk me through the parts of a Python class: <code>__init__</code>, methods, attributes, and the <code>self</code> parameter. Why does every method take <code>self</code> as the first parameter? What is <code>__init__</code> and when does it run? Show me with a simple example, not a theoretical one.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Look For">
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>__init__</code> is called automatically when you create an instance (<code>bot = Chatbot("PyBot")</code>). <code>self</code> is the instance being created or operated on — Python passes it automatically. Attributes set in <code>__init__</code> (like <code>self.name = name</code>) persist on the object. Methods are functions that operate on the object’s data.</p>
+<p><code>__init__</code> is called automatically when you create an instance (<code>bot = Chatbot("PyBot")</code>). <code>self</code> is the instance being created or operated on. Python passes it automatically. Attributes set in <code>__init__</code> (like <code>self.name = name</code>) persist on the object. Methods are functions that operate on the object’s data.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -592,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is inheritance in Python? AI sometimes writes <code>class EnhancedBot(Chatbot):</code> — what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?</p>
+<p>What is inheritance in Python? AI sometimes writes <code>class EnhancedBot(Chatbot):</code>, what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?</p>
 </div>
 </div>
 </section>
@@ -629,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Three bugs: (1) <code>increment</code> uses <code>count</code> instead of <code>self.count</code> — it tries to modify a local variable that does not exist. (2) <code>get_count</code> is missing <code>self</code> parameter — it cannot be called as a method. (3) <code>count = 0</code> at the class level is a class variable shared by all instances — it should be <code>self.count = 0</code> in <code>__init__</code> for per-instance counting.</p>
+<p>Three bugs: (1) <code>increment</code> uses <code>count</code> instead of <code>self.count</code>. It tries to modify a local variable that does not exist. (2) <code>get_count</code> is missing <code>self</code> parameter. It cannot be called as a method. (3) <code>count = 0</code> at the class level is a class variable shared by all instances. It should be <code>self.count = 0</code> in <code>__init__</code> for per-instance counting.</p>
 </div>
 </div>
 </section>
@@ -678,13 +678,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Refactor my chatbot to v2.0 using a class. Create a Chatbot class that:</p>
 <ul>
 <li><strong>init</strong>(self, name, version) sets up: self.name, self.version, self.history (loaded from file), self.responses (the dictionary), self.keywords (the dictionary), self.message_count, self.debug_mode</li>
-<li>greet(self) — displays the welcome screen</li>
-<li>get_user_name(self) — asks for and validates the user’s name</li>
-<li>classify(self, text) — classifies input using self.keywords</li>
-<li>respond(self, user_input) — returns (response, should_exit)</li>
-<li>save_history(self) — saves self.history to JSON</li>
-<li>load_history(self) — loads history from JSON</li>
-<li>run(self) — the main conversation loop</li>
+<li>greet(self), displays the welcome screen</li>
+<li>get_user_name(self), asks for and validates the user’s name</li>
+<li>classify(self, text), classifies input using self.keywords</li>
+<li>respond(self, user_input), returns (response, should_exit)</li>
+<li>save_history(self), saves self.history to JSON</li>
+<li>load_history(self), loads history from JSON</li>
+<li>run(self). The main conversation loop</li>
 </ul>
 <p>Entry point: bot = Chatbot(“PyBot”, “2.0”) bot.run()</p>
 </div>
@@ -794,7 +794,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>All state lives on <code>self</code> — <code>self.history</code>, <code>self.keywords</code>, <code>self.message_count</code>. Methods access this shared state through <code>self</code>. You could create two chatbots with different names: <code>bot1 = Chatbot("PyBot", "2.0")</code> and <code>bot2 = Chatbot("Helper", "1.0")</code> — each has its own state. The <code>if __name__ == "__main__"</code> guard means this file works both as a script and as an importable module.</p>
+<p>All state lives on <code>self</code>: <code>self.history</code>, <code>self.keywords</code>, <code>self.message_count</code>. Methods access this shared state through <code>self</code>. You could create two chatbots with different names: <code>bot1 = Chatbot("PyBot", "2.0")</code> and <code>bot2 = Chatbot("Helper", "1.0")</code>. Each has its own state. The <code>if __name__ == "__main__"</code> guard means this file works both as a script and as an importable module.</p>
 </div>
 </div>
 </section>
@@ -823,7 +823,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Ch 20: Refactored into a Chatbot class with all features</strong></li>
 </ul>
 <p>Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.</p>
-<p>More importantly, you built it through conversation with AI — directing it, questioning it, and understanding every line it produced.</p>
+<p>More importantly, you built it through conversation with AI, directing it, questioning it, and understanding every line it produced.</p>
 </section>
 <section id="quick-reference" class="level2" data-number="20.6">
 <h2 data-number="20.6" class="anchored" data-anchor-id="quick-reference"><span class="header-section-number">20.6</span> Quick Reference</h2>
@@ -1347,7 +1347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI used <span class="in">`class`</span> and <span class="in">`self`</span> everywhere and you had no idea why. It wrote <span class="in">`self.name`</span>, <span class="in">`self.history`</span>, <span class="in">`self.respond()`</span> — every variable and function had <span class="in">`self`</span> stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI used <span class="in">`class`</span> and <span class="in">`self`</span> everywhere and you had no idea why. It wrote <span class="in">`self.name`</span>, <span class="in">`self.history`</span>, <span class="in">`self.respond()`</span>, every variable and function had <span class="in">`self`</span> stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>You tried changing <span class="in">`self.name`</span> to just <span class="in">`name`</span> and everything broke. You did not know why <span class="in">`self`</span> was necessary or what it represented.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1361,20 +1361,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Explain Python classes and objects to me without jargon. I see AI using <span class="in">`class Chatbot:`</span> and <span class="in">`self.name`</span> constantly. What does <span class="in">`self`</span> actually mean? Why can I not just use regular variables and functions? Give me a concrete example where a class is clearly better than functions.</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. <span class="in">`self`</span> refers to the specific instance — if you create two chatbots, <span class="in">`self.name`</span> is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. <span class="in">`self`</span> refers to the specific instance, if you create two chatbots, <span class="in">`self.name`</span> is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Walk me through the parts of a Python class: <span class="in">`__init__`</span>, methods, attributes, and the <span class="in">`self`</span> parameter. Why does every method take <span class="in">`self`</span> as the first parameter? What is <span class="in">`__init__`</span> and when does it run? Show me with a simple example — not a theoretical one.</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Walk me through the parts of a Python class: <span class="in">`__init__`</span>, methods, attributes, and the <span class="in">`self`</span> parameter. Why does every method take <span class="in">`self`</span> as the first parameter? What is <span class="in">`__init__`</span> and when does it run? Show me with a simple example, not a theoretical one.</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">`__init__`</span> is called automatically when you create an instance (<span class="in">`bot = Chatbot("PyBot")`</span>). <span class="in">`self`</span> is the instance being created or operated on — Python passes it automatically. Attributes set in <span class="in">`__init__`</span> (like <span class="in">`self.name = name`</span>) persist on the object. Methods are functions that operate on the object's data.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">`__init__`</span> is called automatically when you create an instance (<span class="in">`bot = Chatbot("PyBot")`</span>). <span class="in">`self`</span> is the instance being created or operated on. Python passes it automatically. Attributes set in <span class="in">`__init__`</span> (like <span class="in">`self.name = name`</span>) persist on the object. Methods are functions that operate on the object's data.</span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>What is inheritance in Python? AI sometimes writes <span class="in">`class EnhancedBot(Chatbot):`</span> — what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>What is inheritance in Python? AI sometimes writes <span class="in">`class EnhancedBot(Chatbot):`</span>, what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge It</span></span>
@@ -1395,7 +1395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>Three bugs: (1) <span class="in">`increment`</span> uses <span class="in">`count`</span> instead of <span class="in">`self.count`</span> — it tries to modify a local variable that does not exist. (2) <span class="in">`get_count`</span> is missing <span class="in">`self`</span> parameter — it cannot be called as a method. (3) <span class="in">`count = 0`</span> at the class level is a class variable shared by all instances — it should be <span class="in">`self.count = 0`</span> in <span class="in">`__init__`</span> for per-instance counting.</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>Three bugs: (1) <span class="in">`increment`</span> uses <span class="in">`count`</span> instead of <span class="in">`self.count`</span>. It tries to modify a local variable that does not exist. (2) <span class="in">`get_count`</span> is missing <span class="in">`self`</span> parameter. It cannot be called as a method. (3) <span class="in">`count = 0`</span> at the class level is a class variable shared by all instances. It should be <span class="in">`self.count = 0`</span> in <span class="in">`__init__`</span> for per-instance counting.</span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1431,13 +1431,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>Refactor my chatbot to v2.0 using a class. Create a Chatbot class that:</span>
 <span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>__init__(self, name, version) sets up: self.name, self.version, self.history (loaded from file), self.responses (the dictionary), self.keywords (the dictionary), self.message_count, self.debug_mode</span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>greet(self) — displays the welcome screen</span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_user_name(self) — asks for and validates the user's name</span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>classify(self, text) — classifies input using self.keywords</span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>respond(self, user_input) — returns (response, should_exit)</span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>save_history(self) — saves self.history to JSON</span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>load_history(self) — loads history from JSON</span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>run(self) — the main conversation loop</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>greet(self), displays the welcome screen</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_user_name(self), asks for and validates the user's name</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>classify(self, text), classifies input using self.keywords</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>respond(self, user_input), returns (response, should_exit)</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>save_history(self), saves self.history to JSON</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>load_history(self), loads history from JSON</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>run(self). The main conversation loop</span>
 <span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>Entry point:</span>
 <span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>    bot = Chatbot("PyBot", "2.0")</span>
@@ -1543,7 +1543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-200"><a href="#cb4-200" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a>All state lives on <span class="in">`self`</span> — <span class="in">`self.history`</span>, <span class="in">`self.keywords`</span>, <span class="in">`self.message_count`</span>. Methods access this shared state through <span class="in">`self`</span>. You could create two chatbots with different names: <span class="in">`bot1 = Chatbot("PyBot", "2.0")`</span> and <span class="in">`bot2 = Chatbot("Helper", "1.0")`</span> — each has its own state. The <span class="in">`if __name__ == "__main__"`</span> guard means this file works both as a script and as an importable module.</span>
+<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a>All state lives on <span class="in">`self`</span>: <span class="in">`self.history`</span>, <span class="in">`self.keywords`</span>, <span class="in">`self.message_count`</span>. Methods access this shared state through <span class="in">`self`</span>. You could create two chatbots with different names: <span class="in">`bot1 = Chatbot("PyBot", "2.0")`</span> and <span class="in">`bot2 = Chatbot("Helper", "1.0")`</span>. Each has its own state. The <span class="in">`if __name__ == "__main__"`</span> guard means this file works both as a script and as an importable module.</span>
 <span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
@@ -1560,7 +1560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-215"><a href="#cb4-215" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-216"><a href="#cb4-216" aria-hidden="true" tabindex="-1"></a>Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.</span>
 <span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a>More importantly, you built it through conversation with AI — directing it, questioning it, and understanding every line it produced.</span>
+<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a>More importantly, you built it through conversation with AI, directing it, questioning it, and understanding every line it produced.</span>
 <span id="cb4-219"><a href="#cb4-219" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-220"><a href="#cb4-220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Reference</span></span>
 <span id="cb4-221"><a href="#cb4-221" aria-hidden="true" tabindex="-1"></a></span>

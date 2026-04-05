@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you worked through <em>Think Python, Direct AI</em>, you already created functions to organise your project code. This chapter gives you the full picture — parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.</p>
+<p>If you worked through <em>Think Python, Direct AI</em>, you already created functions to organise your project code. This chapter gives you the full picture, parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.</p>
 </div>
 </div>
 </section>
@@ -565,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Why do we use functions in Python? I understand they group code, but what is the real benefit? Explain it from the perspective of someone who mostly reads and modifies AI-generated code. When should something be a function and when is it fine as inline code?</p>
 </div>
 </div>
-<p>Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions — <code>get_response(message)</code> tells you what happens without reading the implementation. If your AI only talks about “avoiding code duplication,” push for the readability and testability angles.</p>
+<p>Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions. <code>get_response(message)</code> tells you what happens without reading the implementation. If your AI only talks about “avoiding code duplication,” push for the readability and testability angles.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="9.2.2">
 <h3 data-number="9.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">9.2.2</span> Go Deeper</h3>
@@ -605,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse — can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.</p>
+<p>What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse, can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.</p>
 </div>
 </div>
 </section>
@@ -642,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The function calculates the average but never returns it. <code>result</code> will be <code>None</code>. The fix is adding <code>return average</code> at the end. AI generates this bug when it forgets the return statement — the code runs without error but produces <code>None</code> instead of the actual value.</p>
+<p>The function calculates the average but never returns it. <code>result</code> will be <code>None</code>. The fix is adding <code>return average</code> at the end. AI generates this bug when it forgets the return statement. The code runs without error but produces <code>None</code> instead of the actual value.</p>
 </div>
 </div>
 </section>
@@ -660,7 +660,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-gap" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">9.3</span> The Gap</h2>
-<p>Functions are how AI organises code — and how you should evaluate whether it organised it well. A function named <code>process_data()</code> that does five things is poorly designed. A function named <code>clean_user_input()</code> that strips whitespace and lowercases text is well designed. You can now tell the difference.</p>
+<p>Functions are how AI organises code, and how you should evaluate whether it organised it well. A function named <code>process_data()</code> that does five things is poorly designed. A function named <code>clean_user_input()</code> that strips whitespace and lowercases text is well designed. You can now tell the difference.</p>
 <p>In the Building Session, you will refactor your chatbot from one long block into clean, named functions.</p>
 </section>
 <section id="building-session" class="level2" data-number="9.4">
@@ -669,10 +669,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="9.4.1" class="anchored" data-anchor-id="the-spec"><span class="header-section-number">9.4.1</span> The Spec</h3>
 <p>Refactor your chatbot into functions:</p>
 <ul>
-<li><code>display_welcome()</code> — shows the welcome banner</li>
-<li><code>get_user_name()</code> — asks for and validates the name</li>
-<li><code>get_response(user_input, message_count)</code> — returns the response string</li>
-<li><code>main()</code> — the main loop that ties everything together</li>
+<li><code>display_welcome()</code>, shows the welcome banner</li>
+<li><code>get_user_name()</code>, asks for and validates the name</li>
+<li><code>get_response(user_input, message_count)</code>, returns the response string</li>
+<li><code>main()</code>. The main loop that ties everything together</li>
 </ul>
 </section>
 <section id="prompt-it" class="level3" data-number="9.4.2">
@@ -689,10 +689,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>Refactor my chatbot to v0.9 using functions. Split the code into:</p>
 <ul>
-<li>display_welcome(bot_name, version) — prints the welcome screen</li>
-<li>get_user_name(bot_name) — asks for name, validates it is not empty, returns the name</li>
-<li>get_response(user_input, message_count) — takes the input and count, returns a response string (handles questions, keywords, numbers, default)</li>
-<li>main() — the main loop that calls the other functions</li>
+<li>display_welcome(bot_name, version), prints the welcome screen</li>
+<li>get_user_name(bot_name), asks for name, validates it is not empty, returns the name</li>
+<li>get_response(user_input, message_count), takes the input and count, returns a response string (handles questions, keywords, numbers, default)</li>
+<li>main(). The main loop that calls the other functions</li>
 </ul>
 <p>Each function should have a one-line docstring. Call main() at the bottom with the if <strong>name</strong> == “<strong>main</strong>” guard.</p>
 <p>Keep all existing features from v0.8.</p>
@@ -772,7 +772,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each function does one thing. <code>get_user_name()</code> returns a string — it handles its own validation loop. <code>get_response()</code> takes input and returns a response — it does not print anything. <code>main()</code> orchestrates the flow. The <code>if __name__ == "__main__"</code> guard means this file can be imported without running the chatbot — useful for testing.</p>
+<p>Each function does one thing. <code>get_user_name()</code> returns a string. It handles its own validation loop. <code>get_response()</code> takes input and returns a response. It does not print anything. <code>main()</code> orchestrates the flow. The <code>if __name__ == "__main__"</code> guard means this file can be imported without running the chatbot, useful for testing.</p>
 </div>
 </div>
 </section>
@@ -788,7 +788,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Add a <code>display_stats(message_count, user_name)</code> function that is called when the user types “stats”. Also add a <code>display_help()</code> function that lists all available commands. Both should return None — they print directly.</p>
+<p>Add a <code>display_stats(message_count, user_name)</code> function that is called when the user types “stats”. Also add a <code>display_help()</code> function that lists all available commands. Both should return None. They print directly.</p>
 </div>
 </div>
 </section>
@@ -1320,7 +1320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Coming from Think Python?"}</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already created functions to organise your project code. This chapter gives you the full picture — parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already created functions to organise your project code. This chapter gives you the full picture, parameter types, return values, scope rules, and design principles that turn functions from something you use into something you understand.</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thinking Session</span></span>
@@ -1331,7 +1331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Why do we use functions in Python? I understand they group code, but what is the real benefit? Explain it from the perspective of someone who mostly reads and modifies AI-generated code. When should something be a function and when is it fine as inline code?</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions — <span class="in">`get_response(message)`</span> tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions. <span class="in">`get_response(message)`</span> tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -1344,7 +1344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse — can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>What is variable scope in Python? If I define a variable inside a function, can I use it outside? What about the reverse, can a function see variables defined outside it? This confuses me in AI-generated code because sometimes functions use variables I cannot find defined inside them.</span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge It</span></span>
@@ -1365,7 +1365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>The function calculates the average but never returns it. <span class="in">`result`</span> will be <span class="in">`None`</span>. The fix is adding <span class="in">`return average`</span> at the end. AI generates this bug when it forgets the return statement — the code runs without error but produces <span class="in">`None`</span> instead of the actual value.</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>The function calculates the average but never returns it. <span class="in">`result`</span> will be <span class="in">`None`</span>. The fix is adding <span class="in">`return average`</span> at the end. AI generates this bug when it forgets the return statement. The code runs without error but produces <span class="in">`None`</span> instead of the actual value.</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1379,7 +1379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>Functions are how AI organises code — and how you should evaluate whether it organised it well. A function named <span class="in">`process_data()`</span> that does five things is poorly designed. A function named <span class="in">`clean_user_input()`</span> that strips whitespace and lowercases text is well designed. You can now tell the difference.</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>Functions are how AI organises code, and how you should evaluate whether it organised it well. A function named <span class="in">`process_data()`</span> that does five things is poorly designed. A function named <span class="in">`clean_user_input()`</span> that strips whitespace and lowercases text is well designed. You can now tell the difference.</span>
 <span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will refactor your chatbot from one long block into clean, named functions.</span>
 <span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
@@ -1389,20 +1389,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>Refactor your chatbot into functions:</span>
 <span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`display_welcome()`</span> — shows the welcome banner</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`get_user_name()`</span> — asks for and validates the name</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`get_response(user_input, message_count)`</span> — returns the response string</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`main()`</span> — the main loop that ties everything together</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`display_welcome()`</span>, shows the welcome banner</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`get_user_name()`</span>, asks for and validates the name</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`get_response(user_input, message_count)`</span>, returns the response string</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`main()`</span>. The main loop that ties everything together</span>
 <span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prompt It</span></span>
 <span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
 <span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>Refactor my chatbot to v0.9 using functions. Split the code into:</span>
 <span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>display_welcome(bot_name, version) — prints the welcome screen</span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_user_name(bot_name) — asks for name, validates it is not empty, returns the name</span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_response(user_input, message_count) — takes the input and count, returns a response string (handles questions, keywords, numbers, default)</span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>main() — the main loop that calls the other functions</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>display_welcome(bot_name, version), prints the welcome screen</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_user_name(bot_name), asks for name, validates it is not empty, returns the name</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_response(user_input, message_count), takes the input and count, returns a response string (handles questions, keywords, numbers, default)</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>main(). The main loop that calls the other functions</span>
 <span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>Each function should have a one-line docstring. Call main() at the bottom with the if __name__ == "__main__" guard.</span>
 <span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
@@ -1477,13 +1477,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>Each function does one thing. <span class="in">`get_user_name()`</span> returns a string — it handles its own validation loop. <span class="in">`get_response()`</span> takes input and returns a response — it does not print anything. <span class="in">`main()`</span> orchestrates the flow. The <span class="in">`if __name__ == "__main__"`</span> guard means this file can be imported without running the chatbot — useful for testing.</span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>Each function does one thing. <span class="in">`get_user_name()`</span> returns a string. It handles its own validation loop. <span class="in">`get_response()`</span> takes input and returns a response. It does not print anything. <span class="in">`main()`</span> orchestrates the flow. The <span class="in">`if __name__ == "__main__"`</span> guard means this file can be imported without running the chatbot, useful for testing.</span>
 <span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
 <span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>Add a <span class="in">`display_stats(message_count, user_name)`</span> function that is called when the user types "stats". Also add a <span class="in">`display_help()`</span> function that lists all available commands. Both should return None — they print directly.</span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>Add a <span class="in">`display_stats(message_count, user_name)`</span> function that is called when the user types "stats". Also add a <span class="in">`display_help()`</span> function that lists all available commands. Both should return None. They print directly.</span>
 <span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>

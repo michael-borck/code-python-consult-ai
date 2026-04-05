@@ -532,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-wall" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">17.1</span> The Wall</h2>
 <p>You pasted an error message into AI and it gave you a “fix” that introduced a different error. You pasted that error in and got yet another fix. Three rounds later, the code was completely different from what you started with and you had no idea what changed or why.</p>
-<p>The problem was not AI’s debugging ability — it was that you could not isolate the bug yourself. You gave AI the entire program and said “fix it” instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.</p>
+<p>The problem was not AI’s debugging ability. It was that you could not isolate the bug yourself. You gave AI the entire program and said “fix it” instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.</p>
 <p>This chapter fixes that.</p>
 </section>
 <section id="thinking-session" class="level2" data-number="17.2">
@@ -566,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When I have a bug, what is a systematic process for finding it? Not just “add print statements everywhere” — give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?</p>
+<p>When I have a bug, what is a systematic process for finding it? Not just “add print statements everywhere”, give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Look For">
@@ -608,7 +608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This code is supposed to count vowels in a string but returns the wrong number. Debug it — do not just fix it, explain how you would find the bug step by step.</p>
+<p>This code is supposed to count vowels in a string but returns the wrong number. Debug it, do not just fix it, explain how you would find the bug step by step.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_vowels(text):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    vowels <span class="op">=</span> <span class="st">"aeiou"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
@@ -631,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Trick question — this code is actually correct for lowercase vowels. But it misses uppercase vowels. <code>"Hello World"</code> has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count “E” too, the fix is <code>text.lower()</code> or <code>vowels = "aeiouAEIOU"</code>. The lesson: always clarify what “correct” means.</p>
+<p>Trick question. This code is actually correct for lowercase vowels. But it misses uppercase vowels. <code>"Hello World"</code> has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count “E” too, the fix is <code>text.lower()</code> or <code>vowels = "aeiouAEIOU"</code>. The lesson: always clarify what “correct” means.</p>
 </div>
 </div>
 </section>
@@ -642,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Print debugging: add <code>print(f"DEBUG: {variable=}")</code> at key points</li>
 <li><code>pdb</code>: <code>breakpoint()</code> in your code to pause and inspect</li>
 <li>When asking AI for help: include the error, the relevant code, what you expected, and what you tried</li>
-<li>Do not ask AI to “fix my code” — ask it to explain why a specific line produces a specific result</li>
+<li>Do not ask AI to “fix my code”, ask it to explain why a specific line produces a specific result</li>
 </ul>
 </section>
 </section>
@@ -722,7 +722,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>debug_log()</code> uses <code>*args</code> to accept any number of arguments, just like <code>print()</code>. The <code>[DEBUG]</code> prefix makes debug output instantly recognisable. The toggle uses <code>not debug_mode</code> to flip the boolean. This pattern — a function that conditionally prints — is how professional code handles debug output.</p>
+<p><code>debug_log()</code> uses <code>*args</code> to accept any number of arguments, just like <code>print()</code>. The <code>[DEBUG]</code> prefix makes debug output instantly recognisable. The toggle uses <code>not debug_mode</code> to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.</p>
 </div>
 </div>
 </section>
@@ -1260,7 +1260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>You pasted an error message into AI and it gave you a "fix" that introduced a different error. You pasted that error in and got yet another fix. Three rounds later, the code was completely different from what you started with and you had no idea what changed or why.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>The problem was not AI's debugging ability — it was that you could not isolate the bug yourself. You gave AI the entire program and said "fix it" instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>The problem was not AI's debugging ability. It was that you could not isolate the bug yourself. You gave AI the entire program and said "fix it" instead of identifying which specific part was failing. AI cannot debug effectively without precise context, and you could not provide that context.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -1277,7 +1277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>When I have a bug, what is a systematic process for finding it? Not just "add print statements everywhere" — give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>When I have a bug, what is a systematic process for finding it? Not just "add print statements everywhere", give me a step-by-step method. How do I narrow down which function, which line, which variable is causing the problem?</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
@@ -1291,7 +1291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge It</span></span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>This code is supposed to count vowels in a string but returns the wrong number. Debug it — do not just fix it, explain how you would find the bug step by step.</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>This code is supposed to count vowels in a string but returns the wrong number. Debug it, do not just fix it, explain how you would find the bug step by step.</span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_vowels(text):</span>
@@ -1308,7 +1308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>Trick question — this code is actually correct for lowercase vowels. But it misses uppercase vowels. <span class="in">`"Hello World"`</span> has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is <span class="in">`text.lower()`</span> or <span class="in">`vowels = "aeiouAEIOU"`</span>. The lesson: always clarify what "correct" means.</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>Trick question. This code is actually correct for lowercase vowels. But it misses uppercase vowels. <span class="in">`"Hello World"`</span> has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is <span class="in">`text.lower()`</span> or <span class="in">`vowels = "aeiouAEIOU"`</span>. The lesson: always clarify what "correct" means.</span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1317,7 +1317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print debugging: add <span class="in">`print(f"DEBUG: {variable=}")`</span> at key points</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pdb`</span>: <span class="in">`breakpoint()`</span> in your code to pause and inspect</span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>When asking AI for help: include the error, the relevant code, what you expected, and what you tried</span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do not ask AI to "fix my code" — ask it to explain why a specific line produces a specific result</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do not ask AI to "fix my code", ask it to explain why a specific line produces a specific result</span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
@@ -1383,7 +1383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="in">`debug_log()`</span> uses <span class="in">`*args`</span> to accept any number of arguments, just like <span class="in">`print()`</span>. The <span class="in">`[DEBUG]`</span> prefix makes debug output instantly recognisable. The toggle uses <span class="in">`not debug_mode`</span> to flip the boolean. This pattern — a function that conditionally prints — is how professional code handles debug output.</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="in">`debug_log()`</span> uses <span class="in">`*args`</span> to accept any number of arguments, just like <span class="in">`print()`</span>. The <span class="in">`[DEBUG]`</span> prefix makes debug output instantly recognisable. The toggle uses <span class="in">`not debug_mode`</span> to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.</span>
 <span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

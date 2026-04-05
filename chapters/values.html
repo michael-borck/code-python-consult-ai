@@ -531,8 +531,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">3.1</span> The Wall</h2>
-<p>You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with <code>TypeError: can't multiply sequence by non-int of type 'float'</code>. You had no idea what a “sequence” was or why multiplying was a problem — the formula looked right.</p>
-<p>The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between <code>"72"</code> and <code>72</code>, you cannot spot this in AI-generated code — and AI generates this bug constantly.</p>
+<p>You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with <code>TypeError: can't multiply sequence by non-int of type 'float'</code>. You had no idea what a “sequence” was or why multiplying was a problem. The formula looked right.</p>
+<p>The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between <code>"72"</code> and <code>72</code>, you cannot spot this in AI-generated code, and AI generates this bug constantly.</p>
 <p>This chapter fixes that.</p>
 </section>
 <section id="thinking-session" class="level2" data-number="3.2">
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In Python, what is the difference between the number 42 and the text “42”? Why does Python treat them differently, and what goes wrong when you mix them up? Give me examples of errors that happen when types get confused.</p>
 </div>
 </div>
-<p>Your AI should explain that <code>42</code> is an integer and <code>"42"</code> is a string, and that Python does not automatically convert between them. If your AI says “Python is dynamically typed so it handles this for you,” push back — dynamic typing means variables can change type, not that types do not matter.</p>
+<p>Your AI should explain that <code>42</code> is an integer and <code>"42"</code> is a string, and that Python does not automatically convert between them. If your AI says “Python is dynamically typed so it handles this for you,” push back, dynamic typing means variables can change type, not that types do not matter.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">3.2.2</span> Go Deeper</h3>
@@ -566,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What are the main data types in Python? I do not need all of them — just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.</p>
+<p>What are the main data types in Python? I do not need all of them. Just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Look For">
@@ -636,7 +636,7 @@ float("hello")</code></pre>
 <li>Python has distinct types: int, float, str, bool, None</li>
 <li><code>"42"</code> and <code>42</code> are fundamentally different</li>
 <li>Type conversion is explicit: <code>int()</code>, <code>float()</code>, <code>str()</code></li>
-<li>Conversion can fail — <code>int("hello")</code> crashes</li>
+<li>Conversion can fail: <code>int("hello")</code> crashes</li>
 <li>The <code>type()</code> function tells you what you are working with</li>
 </ul>
 </section>
@@ -644,7 +644,7 @@ float("hello")</code></pre>
 <section id="the-gap" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">3.3</span> The Gap</h2>
 <p>When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.</p>
-<p>In the Building Session, you will make your chatbot respond differently to numbers versus text — the first step toward intelligent responses.</p>
+<p>In the Building Session, you will make your chatbot respond differently to numbers versus text. The first step toward intelligent responses.</p>
 </section>
 <section id="building-session" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="building-session"><span class="header-section-number">3.4</span> Building Session</h2>
@@ -684,7 +684,7 @@ float("hello")</code></pre>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Update to v0.3. Add logic that: - Tries to convert the input to a number using int() - If it succeeds, responds with whether the number is even or odd - If it fails, treats the input as text and echoes it - Prints the type of the input in parentheses after the response - Use a try/except for the conversion (just the basic pattern)</p>
-<p>Keep it simple — no functions yet, keep the while loop structure.</p>
+<p>Keep it simple. No functions yet, keep the while loop structure.</p>
 </div>
 </div>
 </section>
@@ -728,7 +728,7 @@ float("hello")</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Line 16 uses <code>int(user_input)</code> — explicit type conversion. If it fails, the <code>except ValueError</code> catches it and the code falls through to the string handling. <code>type(number).__name__</code> gives the type as a readable string. The <code>%</code> operator checks even/odd — you will learn more about operators in Chapter 7.</p>
+<p>Line 16 uses <code>int(user_input)</code>, explicit type conversion. If it fails, the <code>except ValueError</code> catches it and the code falls through to the string handling. <code>type(number).__name__</code> gives the type as a readable string. The <code>%</code> operator checks even/odd. You will learn more about operators in Chapter 7.</p>
 </div>
 </div>
 </section>
@@ -1266,9 +1266,9 @@ float("hello")</code></pre>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with <span class="in">`TypeError: can't multiply sequence by non-int of type 'float'`</span>. You had no idea what a "sequence" was or why multiplying was a problem — the formula looked right.</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with <span class="in">`TypeError: can't multiply sequence by non-int of type 'float'`</span>. You had no idea what a "sequence" was or why multiplying was a problem. The formula looked right.</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between <span class="in">`"72"`</span> and <span class="in">`72`</span>, you cannot spot this in AI-generated code — and AI generates this bug constantly.</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between <span class="in">`"72"`</span> and <span class="in">`72`</span>, you cannot spot this in AI-generated code, and AI generates this bug constantly.</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -1280,12 +1280,12 @@ float("hello")</code></pre>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>In Python, what is the difference between the number 42 and the text "42"? Why does Python treat them differently, and what goes wrong when you mix them up? Give me examples of errors that happen when types get confused.</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain that <span class="in">`42`</span> is an integer and <span class="in">`"42"`</span> is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back — dynamic typing means variables can change type, not that types do not matter.</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain that <span class="in">`42`</span> is an integer and <span class="in">`"42"`</span> is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back, dynamic typing means variables can change type, not that types do not matter.</span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>What are the main data types in Python? I do not need all of them — just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>What are the main data types in Python? I do not need all of them. Just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.</span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
@@ -1317,14 +1317,14 @@ float("hello")</code></pre>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Python has distinct types: int, float, str, bool, None</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`"42"`</span> and <span class="in">`42`</span> are fundamentally different</span>
 <span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Type conversion is explicit: <span class="in">`int()`</span>, <span class="in">`float()`</span>, <span class="in">`str()`</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conversion can fail — <span class="in">`int("hello")`</span> crashes</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conversion can fail: <span class="in">`int("hello")`</span> crashes</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The <span class="in">`type()`</span> function tells you what you are working with</span>
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.</span>
 <span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will make your chatbot respond differently to numbers versus text — the first step toward intelligent responses.</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will make your chatbot respond differently to numbers versus text. The first step toward intelligent responses.</span>
 <span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building Session</span></span>
 <span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
@@ -1364,7 +1364,7 @@ float("hello")</code></pre>
 <span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prints the type of the input in parentheses after the response</span>
 <span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use a try/except for the conversion (just the basic pattern)</span>
 <span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>Keep it simple — no functions yet, keep the while loop structure.</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>Keep it simple. No functions yet, keep the while loop structure.</span>
 <span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the Code</span></span>
@@ -1402,7 +1402,7 @@ float("hello")</code></pre>
 <span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>Line 16 uses <span class="in">`int(user_input)`</span> — explicit type conversion. If it fails, the <span class="in">`except ValueError`</span> catches it and the code falls through to the string handling. <span class="in">`type(number).__name__`</span> gives the type as a readable string. The <span class="in">`%`</span> operator checks even/odd — you will learn more about operators in Chapter 7.</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>Line 16 uses <span class="in">`int(user_input)`</span>, explicit type conversion. If it fails, the <span class="in">`except ValueError`</span> catches it and the code falls through to the string handling. <span class="in">`type(number).__name__`</span> gives the type as a readable string. The <span class="in">`%`</span> operator checks even/odd. You will learn more about operators in Chapter 7.</span>
 <span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

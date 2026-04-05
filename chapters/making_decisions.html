@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">10.1</span> The Wall</h2>
-<p>AI generated a chain of <code>if</code>, <code>elif</code>, and <code>else</code> statements. The logic was wrong — it matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.</p>
+<p>AI generated a chain of <code>if</code>, <code>elif</code>, and <code>else</code> statements. The logic was wrong. It matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.</p>
 <p>Conditional logic is where AI makes its most subtle mistakes. The code runs, the syntax is valid, but the logic is backwards. If you cannot trace through conditions yourself, you will never catch these bugs.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Explain Python’s if, elif, and else statements. I want to understand: how does Python decide which branch to take? What happens if multiple conditions are true? And what is the difference between separate if statements and an if/elif chain?</p>
 </div>
 </div>
-<p>Your AI should explain that <code>elif</code> chains are mutually exclusive — only the first true condition executes. Separate <code>if</code> statements each evaluate independently. This distinction is critical: AI sometimes uses separate <code>if</code> statements when it should use <code>elif</code>, causing multiple branches to fire.</p>
+<p>Your AI should explain that <code>elif</code> chains are mutually exclusive, only the first true condition executes. Separate <code>if</code> statements each evaluate independently. This distinction is critical: AI sometimes uses separate <code>if</code> statements when it should use <code>elif</code>, causing multiple branches to fire.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">10.2.2</span> Go Deeper</h3>
@@ -628,15 +628,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It prints “Hot”, “Warm”, and “Mild” — all three. The programmer probably wanted only “Hot”. The fix is <code>elif</code> instead of separate <code>if</code> statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.</p>
+<p>It prints “Hot”, “Warm”, and “Mild”, all three. The programmer probably wanted only “Hot”. The fix is <code>elif</code> instead of separate <code>if</code> statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.</p>
 </div>
 </div>
 </section>
 <section id="what-you-should-have-learned" class="level3" data-number="10.2.4">
 <h3 data-number="10.2.4" class="anchored" data-anchor-id="what-you-should-have-learned"><span class="header-section-number">10.2.4</span> What You Should Have Learned</h3>
 <ul>
-<li><code>if/elif/else</code> chains are mutually exclusive — only one branch runs</li>
-<li>Separate <code>if</code> statements are independent — multiple can run</li>
+<li><code>if/elif/else</code> chains are mutually exclusive, only one branch runs</li>
+<li>Separate <code>if</code> statements are independent, multiple can run</li>
 <li>Guard clauses simplify deeply nested logic</li>
 <li>Truthy/falsy: empty collections, 0, None, “” are all falsy</li>
 <li>Ternary: <code>x = "yes" if condition else "no"</code></li>
@@ -646,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-gap" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">10.3</span> The Gap</h2>
 <p>When you read AI-generated conditional logic, you can now trace the flow. You know whether conditions are mutually exclusive or independent. You can spot when AI should have used <code>elif</code> instead of <code>if</code>, or when a deeply nested block could be flattened with guard clauses.</p>
-<p>In the Building Session, you will add categorised responses to your chatbot — different behaviour for greetings, questions, farewells, and default cases.</p>
+<p>In the Building Session, you will add categorised responses to your chatbot, different behaviour for greetings, questions, farewells, and default cases.</p>
 </section>
 <section id="building-session" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="building-session"><span class="header-section-number">10.4</span> Building Session</h2>
@@ -706,7 +706,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            parity <span class="op">=</span> <span class="st">"even"</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"odd"</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>number<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>parity<span class="sc">}</span><span class="ss">."</span>, <span class="va">False</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"Interesting — '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>, <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"Interesting. '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>, <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Notice">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -717,7 +717,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <code>elif</code> chain ensures only one category matches. Farewells are checked first — if someone says “bye”, that takes priority over everything else. <code>.startswith()</code> can take a tuple of options. The function returns a tuple <code>(response, should_exit)</code> — the boolean flag lets the caller decide what to do.</p>
+<p>The <code>elif</code> chain ensures only one category matches. Farewells are checked first, if someone says “bye”, that takes priority over everything else. <code>.startswith()</code> can take a tuple of options. The function returns a tuple <code>(response, should_exit)</code>. The boolean flag lets the caller decide what to do.</p>
 </div>
 </div>
 </section>
@@ -1258,7 +1258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI generated a chain of <span class="in">`if`</span>, <span class="in">`elif`</span>, and <span class="in">`else`</span> statements. The logic was wrong — it matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI generated a chain of <span class="in">`if`</span>, <span class="in">`elif`</span>, and <span class="in">`else`</span> statements. The logic was wrong. It matched the first condition when it should have matched the third. You could not trace through the conditions to find the bug because you did not understand how Python evaluates them. You rearranged the order and broke something else.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Conditional logic is where AI makes its most subtle mistakes. The code runs, the syntax is valid, but the logic is backwards. If you cannot trace through conditions yourself, you will never catch these bugs.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1272,7 +1272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Explain Python's if, elif, and else statements. I want to understand: how does Python decide which branch to take? What happens if multiple conditions are true? And what is the difference between separate if statements and an if/elif chain?</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain that <span class="in">`elif`</span> chains are mutually exclusive — only the first true condition executes. Separate <span class="in">`if`</span> statements each evaluate independently. This distinction is critical: AI sometimes uses separate <span class="in">`if`</span> statements when it should use <span class="in">`elif`</span>, causing multiple branches to fire.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain that <span class="in">`elif`</span> chains are mutually exclusive, only the first true condition executes. Separate <span class="in">`if`</span> statements each evaluate independently. This distinction is critical: AI sometimes uses separate <span class="in">`if`</span> statements when it should use <span class="in">`elif`</span>, causing multiple branches to fire.</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
@@ -1305,13 +1305,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>It prints "Hot", "Warm", and "Mild" — all three. The programmer probably wanted only "Hot". The fix is <span class="in">`elif`</span> instead of separate <span class="in">`if`</span> statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>It prints "Hot", "Warm", and "Mild", all three. The programmer probably wanted only "Hot". The fix is <span class="in">`elif`</span> instead of separate <span class="in">`if`</span> statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.</span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`if/elif/else`</span> chains are mutually exclusive — only one branch runs</span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Separate <span class="in">`if`</span> statements are independent — multiple can run</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`if/elif/else`</span> chains are mutually exclusive, only one branch runs</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Separate <span class="in">`if`</span> statements are independent, multiple can run</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Guard clauses simplify deeply nested logic</span>
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Truthy/falsy: empty collections, 0, None, "" are all falsy</span>
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ternary: <span class="in">`x = "yes" if condition else "no"`</span></span>
@@ -1320,7 +1320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>When you read AI-generated conditional logic, you can now trace the flow. You know whether conditions are mutually exclusive or independent. You can spot when AI should have used <span class="in">`elif`</span> instead of <span class="in">`if`</span>, or when a deeply nested block could be flattened with guard clauses.</span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add categorised responses to your chatbot — different behaviour for greetings, questions, farewells, and default cases.</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add categorised responses to your chatbot, different behaviour for greetings, questions, farewells, and default cases.</span>
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building Session</span></span>
 <span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
@@ -1372,11 +1372,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>            parity <span class="op">=</span> <span class="st">"even"</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"odd"</span></span>
 <span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>number<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>parity<span class="sc">}</span><span class="ss">."</span>, <span class="va">False</span></span>
 <span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"Interesting — '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>, <span class="va">False</span></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"Interesting. '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>, <span class="va">False</span></span>
 <span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>The <span class="in">`elif`</span> chain ensures only one category matches. Farewells are checked first — if someone says "bye", that takes priority over everything else. <span class="in">`.startswith()`</span> can take a tuple of options. The function returns a tuple <span class="in">`(response, should_exit)`</span> — the boolean flag lets the caller decide what to do.</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>The <span class="in">`elif`</span> chain ensures only one category matches. Farewells are checked first, if someone says "bye", that takes priority over everything else. <span class="in">`.startswith()`</span> can take a tuple of options. The function returns a tuple <span class="in">`(response, should_exit)`</span>. The boolean flag lets the caller decide what to do.</span>
 <span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

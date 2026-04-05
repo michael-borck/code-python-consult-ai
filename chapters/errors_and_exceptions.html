@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="16.1">
 <h2 data-number="16.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">16.1</span> The Wall</h2>
-<p>AI wrapped everything in <code>try: ... except: pass</code> and your errors vanished. The program did not crash anymore, but it also did not work — it silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.</p>
+<p>AI wrapped everything in <code>try: ... except: pass</code> and your errors vanished. The program did not crash anymore, but it also did not work. It silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.</p>
 <p>Or the opposite: AI did not add error handling at all, and the program crashed on the first unexpected input with a traceback you could not read.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message — I want to be able to look at AI-generated tracebacks and immediately find the problem.</p>
+<p>What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message. I want to be able to look at AI-generated tracebacks and immediately find the problem.</p>
 </div>
 </div>
 <p>Your AI should explain: syntax errors are caught before the code runs (missing colons, bad indentation), exceptions happen during execution (dividing by zero, missing keys, wrong types). The traceback reads bottom-up: the last line is the error, the lines above show the call stack. The file name and line number tell you exactly where to look.</p>
@@ -627,25 +627,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Three problems: (1) bare <code>except:</code> catches everything including KeyboardInterrupt and SystemExit. (2) <code>pass</code> silently swallows errors — you will never know something went wrong. (3) the try block is too broad — it should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.</p>
+<p>Three problems: (1) bare <code>except:</code> catches everything including KeyboardInterrupt and SystemExit. (2) <code>pass</code> silently swallows errors. You will never know something went wrong. (3) the try block is too broad. It should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.</p>
 </div>
 </div>
 </section>
 <section id="what-you-should-have-learned" class="level3" data-number="16.2.4">
 <h3 data-number="16.2.4" class="anchored" data-anchor-id="what-you-should-have-learned"><span class="header-section-number">16.2.4</span> What You Should Have Learned</h3>
 <ul>
-<li>Syntax errors vs exceptions — different causes, different fixes</li>
+<li>Syntax errors vs exceptions, different causes, different fixes</li>
 <li>How to read a traceback: bottom-up, file + line number</li>
 <li>The common exceptions: TypeError, ValueError, KeyError, IndexError</li>
 <li>try/except should catch specific exceptions, not bare except</li>
-<li>Never use <code>except: pass</code> — at minimum, log the error</li>
+<li>Never use <code>except: pass</code>, at minimum, log the error</li>
 <li><code>finally</code> runs whether or not an exception occurred</li>
 </ul>
 </section>
 </section>
 <section id="the-gap" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">16.3</span> The Gap</h2>
-<p>You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill — bad error handling is worse than no error handling.</p>
+<p>You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill, bad error handling is worse than no error handling.</p>
 <p>In the Building Session, you will add proper error handling to your chatbot.</p>
 </section>
 <section id="building-session" class="level2" data-number="16.4">
@@ -730,7 +730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each <code>except</code> catches a specific exception with a helpful message. <code>KeyboardInterrupt</code> is caught separately — it is not a bug, it is a user action. The <code>finally</code> block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.</p>
+<p>Each <code>except</code> catches a specific exception with a helpful message. <code>KeyboardInterrupt</code> is caught separately. It is not a bug, it is a user action. The <code>finally</code> block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.</p>
 </div>
 </div>
 </section>
@@ -1276,7 +1276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI wrapped everything in <span class="in">`try: ... except: pass`</span> and your errors vanished. The program did not crash anymore, but it also did not work — it silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI wrapped everything in <span class="in">`try: ... except: pass`</span> and your errors vanished. The program did not crash anymore, but it also did not work. It silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Or the opposite: AI did not add error handling at all, and the program crashed on the first unexpected input with a traceback you could not read.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1287,7 +1287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message — I want to be able to look at AI-generated tracebacks and immediately find the problem.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message. I want to be able to look at AI-generated tracebacks and immediately find the problem.</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain: syntax errors are caught before the code runs (missing colons, bad indentation), exceptions happen during execution (dividing by zero, missing keys, wrong types). The traceback reads bottom-up: the last line is the error, the lines above show the call stack. The file name and line number tell you exactly where to look.</span>
@@ -1322,21 +1322,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>Three problems: (1) bare <span class="in">`except:`</span> catches everything including KeyboardInterrupt and SystemExit. (2) <span class="in">`pass`</span> silently swallows errors — you will never know something went wrong. (3) the try block is too broad — it should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>Three problems: (1) bare <span class="in">`except:`</span> catches everything including KeyboardInterrupt and SystemExit. (2) <span class="in">`pass`</span> silently swallows errors. You will never know something went wrong. (3) the try block is too broad. It should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.</span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Syntax errors vs exceptions — different causes, different fixes</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Syntax errors vs exceptions, different causes, different fixes</span>
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How to read a traceback: bottom-up, file + line number</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The common exceptions: TypeError, ValueError, KeyError, IndexError</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>try/except should catch specific exceptions, not bare except</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Never use <span class="in">`except: pass`</span> — at minimum, log the error</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Never use <span class="in">`except: pass`</span>, at minimum, log the error</span>
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`finally`</span> runs whether or not an exception occurred</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill — bad error handling is worse than no error handling.</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill, bad error handling is worse than no error handling.</span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add proper error handling to your chatbot.</span>
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
@@ -1406,7 +1406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>Each <span class="in">`except`</span> catches a specific exception with a helpful message. <span class="in">`KeyboardInterrupt`</span> is caught separately — it is not a bug, it is a user action. The <span class="in">`finally`</span> block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>Each <span class="in">`except`</span> catches a specific exception with a helpful message. <span class="in">`KeyboardInterrupt`</span> is caught separately. It is not a bug, it is a user action. The <span class="in">`finally`</span> block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.</span>
 <span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

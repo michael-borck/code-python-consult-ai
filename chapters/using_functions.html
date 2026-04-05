@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What are the most commonly used built-in functions in Python? Not all of them — just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.</p>
+<p>What are the most commonly used built-in functions in Python? Not all of them. Just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.</p>
 </div>
 </div>
 <p>Your AI should cover: <code>print()</code>, <code>input()</code>, <code>len()</code>, <code>type()</code>, <code>int()</code>, <code>float()</code>, <code>str()</code>, <code>range()</code>, <code>list()</code>, <code>sorted()</code>, <code>enumerate()</code>, <code>zip()</code>, <code>max()</code>, <code>min()</code>, <code>sum()</code>. You already know some of these from earlier chapters. The new ones matter because AI uses them as building blocks.</p>
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>range(5)</code> produces <code>0, 1, 2, 3, 4</code>. <code>enumerate(items)</code> produces <code>(0, "first"), (1, "second"), ...</code> — index and value together. <code>zip(list1, list2)</code> pairs elements from two lists. These are the three loop helpers AI reaches for constantly.</p>
+<p><code>range(5)</code> produces <code>0, 1, 2, 3, 4</code>. <code>enumerate(items)</code> produces <code>(0, "first"), (1, "second"), ...</code>, index and value together. <code>zip(list1, list2)</code> pairs elements from two lists. These are the three loop helpers AI reaches for constantly.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -628,7 +628,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>len("hello")</code> is <code>5</code>. <code>len([1, 2, 3])</code> is <code>3</code>. <code>list(range(3))</code> is <code>[0, 1, 2]</code>. <code>sorted([3, 1, 2])</code> is <code>[1, 2, 3]</code>. <code>sorted("python")</code> is <code>['h', 'n', 'o', 'p', 't', 'y']</code> — it sorts characters. <code>enumerate</code> gives <code>[(0, 'a'), (1, 'b'), (2, 'c')]</code>. <code>zip</code> gives <code>[(1, 'x'), (2, 'y')]</code>.</p>
+<p><code>len("hello")</code> is <code>5</code>. <code>len([1, 2, 3])</code> is <code>3</code>. <code>list(range(3))</code> is <code>[0, 1, 2]</code>. <code>sorted([3, 1, 2])</code> is <code>[1, 2, 3]</code>. <code>sorted("python")</code> is <code>['h', 'n', 'o', 'p', 't', 'y']</code>. It sorts characters. <code>enumerate</code> gives <code>[(0, 'a'), (1, 'b'), (2, 'c')]</code>. <code>zip</code> gives <code>[(1, 'x'), (2, 'y')]</code>.</p>
 </div>
 </div>
 </section>
@@ -639,13 +639,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Methods are called on objects with <code>object.method(arguments)</code></li>
 <li><code>len()</code>, <code>type()</code>, <code>range()</code>, <code>sorted()</code> work on many types</li>
 <li><code>enumerate()</code> and <code>zip()</code> are loop helpers you will see everywhere</li>
-<li>Functions return values — you can store the result or use it inline</li>
+<li>Functions return values. You can store the result or use it inline</li>
 </ul>
 </section>
 </section>
 <section id="the-gap" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">8.3</span> The Gap</h2>
-<p>You now have a vocabulary of the built-in functions AI reaches for most often. When you see <code>sorted(data, key=lambda x: x["age"])</code> in AI-generated code, you know <code>sorted()</code> returns a new sorted list, <code>key</code> tells it what to sort by, and <code>lambda</code> creates a small anonymous function. You may not understand <code>lambda</code> fully yet — but you know what the overall line does.</p>
+<p>You now have a vocabulary of the built-in functions AI reaches for most often. When you see <code>sorted(data, key=lambda x: x["age"])</code> in AI-generated code, you know <code>sorted()</code> returns a new sorted list, <code>key</code> tells it what to sort by, and <code>lambda</code> creates a small anonymous function. You may not understand <code>lambda</code> fully yet, but you know what the overall line does.</p>
 <p>In the Building Session, you will use built-in functions to add text processing to your chatbot.</p>
 </section>
 <section id="building-session" class="level2" data-number="8.4">
@@ -742,7 +742,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>.split()</code> breaks a string into a list of words. <code>len(words)</code> counts them. <code>set()</code> stores unique values — <code>unique_words.update()</code> adds without duplicates. <code>sorted()</code> returns a sorted list, and <code>[-5:]</code> takes the last 5 items. <code>max(message_count, 1)</code> prevents division by zero.</p>
+<p><code>.split()</code> breaks a string into a list of words. <code>len(words)</code> counts them. <code>set()</code> stores unique values. <code>unique_words.update()</code> adds without duplicates. <code>sorted()</code> returns a sorted list, and <code>[-5:]</code> takes the last 5 items. <code>max(message_count, 1)</code> prevents division by zero.</p>
 </div>
 </div>
 </section>
@@ -1297,7 +1297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What are the most commonly used built-in functions in Python? Not all of them — just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What are the most commonly used built-in functions in Python? Not all of them. Just the 10-15 that appear most often in AI-generated code. For each one, tell me what it does, what it returns, and give me a one-line example.</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should cover: <span class="in">`print()`</span>, <span class="in">`input()`</span>, <span class="in">`len()`</span>, <span class="in">`type()`</span>, <span class="in">`int()`</span>, <span class="in">`float()`</span>, <span class="in">`str()`</span>, <span class="in">`range()`</span>, <span class="in">`list()`</span>, <span class="in">`sorted()`</span>, <span class="in">`enumerate()`</span>, <span class="in">`zip()`</span>, <span class="in">`max()`</span>, <span class="in">`min()`</span>, <span class="in">`sum()`</span>. You already know some of these from earlier chapters. The new ones matter because AI uses them as building blocks.</span>
@@ -1309,7 +1309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">`range(5)`</span> produces <span class="in">`0, 1, 2, 3, 4`</span>. <span class="in">`enumerate(items)`</span> produces <span class="in">`(0, "first"), (1, "second"), ...`</span> — index and value together. <span class="in">`zip(list1, list2)`</span> pairs elements from two lists. These are the three loop helpers AI reaches for constantly.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">`range(5)`</span> produces <span class="in">`0, 1, 2, 3, 4`</span>. <span class="in">`enumerate(items)`</span> produces <span class="in">`(0, "first"), (1, "second"), ...`</span>, index and value together. <span class="in">`zip(list1, list2)`</span> pairs elements from two lists. These are the three loop helpers AI reaches for constantly.</span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
@@ -1333,7 +1333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">`len("hello")`</span> is <span class="in">`5`</span>. <span class="in">`len([1, 2, 3])`</span> is <span class="in">`3`</span>. <span class="in">`list(range(3))`</span> is <span class="in">`[0, 1, 2]`</span>. <span class="in">`sorted([3, 1, 2])`</span> is <span class="in">`[1, 2, 3]`</span>. <span class="in">`sorted("python")`</span> is <span class="in">`['h', 'n', 'o', 'p', 't', 'y']`</span> — it sorts characters. <span class="in">`enumerate`</span> gives <span class="in">`[(0, 'a'), (1, 'b'), (2, 'c')]`</span>. <span class="in">`zip`</span> gives <span class="in">`[(1, 'x'), (2, 'y')]`</span>.</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">`len("hello")`</span> is <span class="in">`5`</span>. <span class="in">`len([1, 2, 3])`</span> is <span class="in">`3`</span>. <span class="in">`list(range(3))`</span> is <span class="in">`[0, 1, 2]`</span>. <span class="in">`sorted([3, 1, 2])`</span> is <span class="in">`[1, 2, 3]`</span>. <span class="in">`sorted("python")`</span> is <span class="in">`['h', 'n', 'o', 'p', 't', 'y']`</span>. It sorts characters. <span class="in">`enumerate`</span> gives <span class="in">`[(0, 'a'), (1, 'b'), (2, 'c')]`</span>. <span class="in">`zip`</span> gives <span class="in">`[(1, 'x'), (2, 'y')]`</span>.</span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1342,11 +1342,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Methods are called on objects with <span class="in">`object.method(arguments)`</span></span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`len()`</span>, <span class="in">`type()`</span>, <span class="in">`range()`</span>, <span class="in">`sorted()`</span> work on many types</span>
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`enumerate()`</span> and <span class="in">`zip()`</span> are loop helpers you will see everywhere</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Functions return values — you can store the result or use it inline</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Functions return values. You can store the result or use it inline</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>You now have a vocabulary of the built-in functions AI reaches for most often. When you see <span class="in">`sorted(data, key=lambda x: x["age"])`</span> in AI-generated code, you know <span class="in">`sorted()`</span> returns a new sorted list, <span class="in">`key`</span> tells it what to sort by, and <span class="in">`lambda`</span> creates a small anonymous function. You may not understand <span class="in">`lambda`</span> fully yet — but you know what the overall line does.</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>You now have a vocabulary of the built-in functions AI reaches for most often. When you see <span class="in">`sorted(data, key=lambda x: x["age"])`</span> in AI-generated code, you know <span class="in">`sorted()`</span> returns a new sorted list, <span class="in">`key`</span> tells it what to sort by, and <span class="in">`lambda`</span> creates a small anonymous function. You may not understand <span class="in">`lambda`</span> fully yet, but you know what the overall line does.</span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will use built-in functions to add text processing to your chatbot.</span>
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
@@ -1428,7 +1428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="in">`.split()`</span> breaks a string into a list of words. <span class="in">`len(words)`</span> counts them. <span class="in">`set()`</span> stores unique values — <span class="in">`unique_words.update()`</span> adds without duplicates. <span class="in">`sorted()`</span> returns a sorted list, and <span class="in">`[-5:]`</span> takes the last 5 items. <span class="in">`max(message_count, 1)`</span> prevents division by zero.</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="in">`.split()`</span> breaks a string into a list of words. <span class="in">`len(words)`</span> counts them. <span class="in">`set()`</span> stores unique values. <span class="in">`unique_words.update()`</span> adds without duplicates. <span class="in">`sorted()`</span> returns a sorted list, and <span class="in">`[-5:]`</span> takes the last 5 items. <span class="in">`max(message_count, 1)`</span> prevents division by zero.</span>
 <span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

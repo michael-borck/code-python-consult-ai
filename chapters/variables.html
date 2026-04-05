@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">4.1</span> The Wall</h2>
-<p>You asked AI to “make a chatbot that remembers the user’s name.” It gave you 40 lines of code with <code>user_name</code>, <code>bot_name</code>, <code>message_count</code>, <code>last_response</code>, <code>_internal_state</code>, and <code>MAX_RETRIES</code>. It worked — until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.</p>
+<p>You asked AI to “make a chatbot that remembers the user’s name.” It gave you 40 lines of code with <code>user_name</code>, <code>bot_name</code>, <code>message_count</code>, <code>last_response</code>, <code>_internal_state</code>, and <code>MAX_RETRIES</code>. It worked, until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.</p>
 <p>You could not tell which variables mattered, which were temporary, and which were constants you should not touch. Without understanding how variables work, AI-generated code is a minefield of names you cannot safely modify.</p>
 <p>This chapter fixes that.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Coming from Think Python?">
@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you worked through <em>Think Python, Direct AI</em>, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practised.</p>
+<p>If you worked through <em>Think Python, Direct AI</em>, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic, explaining the rules and patterns behind what you practised.</p>
 </div>
 </div>
 </section>
@@ -562,10 +562,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Explain Python variables to me, but do not use the “box that holds a value” metaphor. I want to understand what actually happens when I write <code>x = 5</code>. Also explain why Python lets me write <code>x = 5</code> and then <code>x = "hello"</code> on the next line — is that a feature or a problem?</p>
+<p>Explain Python variables to me, but do not use the “box that holds a value” metaphor. I want to understand what actually happens when I write <code>x = 5</code>. Also explain why Python lets me write <code>x = 5</code> and then <code>x = "hello"</code> on the next line, is that a feature or a problem?</p>
 </div>
 </div>
-<p>Your AI should talk about name binding — <code>x = 5</code> binds the name <code>x</code> to the integer object <code>5</code>. The “box” metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.</p>
+<p>Your AI should talk about name binding. <code>x = 5</code> binds the name <code>x</code> to the integer object <code>5</code>. The “box” metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">4.2.2</span> Go Deeper</h3>
@@ -592,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The pattern: <code>snake_case</code> for variables and functions, <code>UPPER_CASE</code> for constants, <code>PascalCase</code> for classes. These are not just style — they carry meaning. When you see <code>MAX_RETRIES</code> in AI-generated code, the uppercase tells you it is a constant that should not change.</p>
+<p>The pattern: <code>snake_case</code> for variables and functions, <code>UPPER_CASE</code> for constants, <code>PascalCase</code> for classes. These are not just style. They carry meaning. When you see <code>MAX_RETRIES</code> in AI-generated code, the uppercase tells you it is a constant that should not change.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -605,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is the difference between <code>x = 5</code> and <code>x == 5</code>? When I am reading AI-generated code, how do I know which one I am looking at? And what about <code>x += 1</code> — what does that do?</p>
+<p>What is the difference between <code>x = 5</code> and <code>x == 5</code>? When I am reading AI-generated code, how do I know which one I am looking at? And what about <code>x += 1</code>, what does that do?</p>
 </div>
 </div>
 </section>
@@ -638,7 +638,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a scope trap. The <code>name = name + "!"</code> inside the function creates a local variable that shadows the global one. Python sees the assignment and treats <code>name</code> as local for the entire function — so <code>print(name)</code> fails with <code>UnboundLocalError</code>. AI generates this pattern regularly.</p>
+<p>This is a scope trap. The <code>name = name + "!"</code> inside the function creates a local variable that shadows the global one. Python sees the assignment and treats <code>name</code> as local for the entire function, so <code>print(name)</code> fails with <code>UnboundLocalError</code>. AI generates this pattern regularly.</p>
 </div>
 </div>
 </section>
@@ -648,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Variables are names bound to objects, not boxes holding values</li>
 <li>Assignment (<code>=</code>) vs equality (<code>==</code>) vs augmented assignment (<code>+=</code>)</li>
 <li>Python naming conventions: snake_case, UPPER_CASE, PascalCase</li>
-<li>Dynamic typing means variables can change type — powerful but requires attention</li>
+<li>Dynamic typing means variables can change type, powerful but requires attention</li>
 <li>Scope exists and can cause subtle bugs</li>
 </ul>
 </section>
@@ -656,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-gap" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">4.3</span> The Gap</h2>
 <p>You can now read AI-generated code and understand what the variable names mean, why they are structured the way they are, and what happens when values change. That is the difference between someone who copies AI output and someone who can safely modify it.</p>
-<p>In the Building Session, you will add memory to your chatbot — and understand every variable AI creates.</p>
+<p>In the Building Session, you will add memory to your chatbot, and understand every variable AI creates.</p>
 </section>
 <section id="building-session" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="building-session"><span class="header-section-number">4.4</span> Building Session</h2>
@@ -700,7 +700,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Add these features using variables: - Ask the user’s name at the start, store in user_name - Add message_count that increments each turn - Include user’s name and count in responses - Update VERSION to “0.4”</p>
-<p>Keep it simple — no functions, no classes.</p>
+<p>Keep it simple. No functions, no classes.</p>
 </div>
 </div>
 </section>
@@ -745,7 +745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>user_name</code> stores the result of <code>input()</code> — it persists across the entire loop. <code>message_count</code> starts at <code>0</code> and uses <code>+= 1</code> to increment. Both <code>BOT_NAME</code> and <code>VERSION</code> are constants (uppercase) set once and never changed. The f-strings reference these variables by name — change the variable, change every response.</p>
+<p><code>user_name</code> stores the result of <code>input()</code>. It persists across the entire loop. <code>message_count</code> starts at <code>0</code> and uses <code>+= 1</code> to increment. Both <code>BOT_NAME</code> and <code>VERSION</code> are constants (uppercase) set once and never changed. The f-strings reference these variables by name, change the variable, change every response.</p>
 </div>
 </div>
 </section>
@@ -1282,14 +1282,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with <span class="in">`user_name`</span>, <span class="in">`bot_name`</span>, <span class="in">`message_count`</span>, <span class="in">`last_response`</span>, <span class="in">`_internal_state`</span>, and <span class="in">`MAX_RETRIES`</span>. It worked — until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with <span class="in">`user_name`</span>, <span class="in">`bot_name`</span>, <span class="in">`message_count`</span>, <span class="in">`last_response`</span>, <span class="in">`_internal_state`</span>, and <span class="in">`MAX_RETRIES`</span>. It worked, until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>You could not tell which variables mattered, which were temporary, and which were constants you should not touch. Without understanding how variables work, AI-generated code is a minefield of names you cannot safely modify.</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Coming from Think Python?"}</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practised.</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic, explaining the rules and patterns behind what you practised.</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thinking Session</span></span>
@@ -1297,10 +1297,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write <span class="in">`x = 5`</span>. Also explain why Python lets me write <span class="in">`x = 5`</span> and then <span class="in">`x = "hello"`</span> on the next line — is that a feature or a problem?</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write <span class="in">`x = 5`</span>. Also explain why Python lets me write <span class="in">`x = 5`</span> and then <span class="in">`x = "hello"`</span> on the next line, is that a feature or a problem?</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>Your AI should talk about name binding — <span class="in">`x = 5`</span> binds the name <span class="in">`x`</span> to the integer object <span class="in">`5`</span>. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>Your AI should talk about name binding. <span class="in">`x = 5`</span> binds the name <span class="in">`x`</span> to the integer object <span class="in">`5`</span>. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -1309,11 +1309,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>The pattern: <span class="in">`snake_case`</span> for variables and functions, <span class="in">`UPPER_CASE`</span> for constants, <span class="in">`PascalCase`</span> for classes. These are not just style — they carry meaning. When you see <span class="in">`MAX_RETRIES`</span> in AI-generated code, the uppercase tells you it is a constant that should not change.</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>The pattern: <span class="in">`snake_case`</span> for variables and functions, <span class="in">`UPPER_CASE`</span> for constants, <span class="in">`PascalCase`</span> for classes. These are not just style. They carry meaning. When you see <span class="in">`MAX_RETRIES`</span> in AI-generated code, the uppercase tells you it is a constant that should not change.</span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>What is the difference between <span class="in">`x = 5`</span> and <span class="in">`x == 5`</span>? When I am reading AI-generated code, how do I know which one I am looking at? And what about <span class="in">`x += 1`</span> — what does that do?</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>What is the difference between <span class="in">`x = 5`</span> and <span class="in">`x == 5`</span>? When I am reading AI-generated code, how do I know which one I am looking at? And what about <span class="in">`x += 1`</span>, what does that do?</span>
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge It</span></span>
@@ -1330,7 +1330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>This is a scope trap. The <span class="in">`name = name + "!"`</span> inside the function creates a local variable that shadows the global one. Python sees the assignment and treats <span class="in">`name`</span> as local for the entire function — so <span class="in">`print(name)`</span> fails with <span class="in">`UnboundLocalError`</span>. AI generates this pattern regularly.</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>This is a scope trap. The <span class="in">`name = name + "!"`</span> inside the function creates a local variable that shadows the global one. Python sees the assignment and treats <span class="in">`name`</span> as local for the entire function, so <span class="in">`print(name)`</span> fails with <span class="in">`UnboundLocalError`</span>. AI generates this pattern regularly.</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1338,14 +1338,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Variables are names bound to objects, not boxes holding values</span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assignment (<span class="in">`=`</span>) vs equality (<span class="in">`==`</span>) vs augmented assignment (<span class="in">`+=`</span>)</span>
 <span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Python naming conventions: snake_case, UPPER_CASE, PascalCase</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dynamic typing means variables can change type — powerful but requires attention</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dynamic typing means variables can change type, powerful but requires attention</span>
 <span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Scope exists and can cause subtle bugs</span>
 <span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>You can now read AI-generated code and understand what the variable names mean, why they are structured the way they are, and what happens when values change. That is the difference between someone who copies AI output and someone who can safely modify it.</span>
 <span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add memory to your chatbot — and understand every variable AI creates.</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add memory to your chatbot, and understand every variable AI creates.</span>
 <span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building Session</span></span>
 <span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
@@ -1388,7 +1388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Include user's name and count in responses</span>
 <span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Update VERSION to "0.4"</span>
 <span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>Keep it simple — no functions, no classes.</span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>Keep it simple. No functions, no classes.</span>
 <span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the Code</span></span>
@@ -1427,7 +1427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="in">`user_name`</span> stores the result of <span class="in">`input()`</span> — it persists across the entire loop. <span class="in">`message_count`</span> starts at <span class="in">`0`</span> and uses <span class="in">`+= 1`</span> to increment. Both <span class="in">`BOT_NAME`</span> and <span class="in">`VERSION`</span> are constants (uppercase) set once and never changed. The f-strings reference these variables by name — change the variable, change every response.</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="in">`user_name`</span> stores the result of <span class="in">`input()`</span>. It persists across the entire loop. <span class="in">`message_count`</span> starts at <span class="in">`0`</span> and uses <span class="in">`+= 1`</span> to increment. Both <span class="in">`BOT_NAME`</span> and <span class="in">`VERSION`</span> are constants (uppercase) set once and never changed. The f-strings reference these variables by name, change the variable, change every response.</span>
 <span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

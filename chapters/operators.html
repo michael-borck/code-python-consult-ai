@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">7.1</span> The Wall</h2>
-<p>AI gave you a calculation that used <code>//</code> and <code>%</code> and you thought <code>//</code> was a comment. It was not — it was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.</p>
+<p>AI gave you a calculation that used <code>//</code> and <code>%</code> and you thought <code>//</code> was a comment. It was not. It was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.</p>
 <p>In another case, AI wrote <code>if x and y &gt; 10:</code> and you assumed it checked whether both x and y were greater than 10. It did not. It checked whether x was truthy and y was greater than 10. Subtle, silent, wrong.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What operators does Python have beyond the basic +, -, *, /? I keep seeing //, %, **, and, or, not, ==, !=, is, in — can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.</p>
+<p>What operators does Python have beyond the basic +, -, *, /? I keep seeing //, %, **, and, or, not, ==, !=, is, in, can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.</p>
 </div>
 </div>
 <p>Your AI should group them: arithmetic (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code>, <code>%</code>, <code>**</code>), comparison (<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>), logical (<code>and</code>, <code>or</code>, <code>not</code>), membership (<code>in</code>, <code>not in</code>), and identity (<code>is</code>, <code>is not</code>). If it lists bitwise operators, you can skip those for now.</p>
@@ -638,7 +638,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>//</code> is integer division, <code>%</code> is remainder, <code>**</code> is exponentiation</li>
 <li><code>==</code> checks value, <code>is</code> checks identity (use <code>is</code> for None)</li>
-<li><code>and</code> and <code>or</code> short-circuit — they do not always evaluate both sides</li>
+<li><code>and</code> and <code>or</code> short-circuit. They do not always evaluate both sides</li>
 <li><code>in</code> checks membership in strings, lists, and dictionaries</li>
 <li>Empty strings, zero, None, and empty collections are all falsy</li>
 </ul>
@@ -646,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-gap" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">7.3</span> The Gap</h2>
-<p>Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see <code>if count % 5 == 0:</code> you know it checks whether count is a multiple of 5. When you see <code>if name and len(name) &gt; 0:</code> you know the <code>and</code> short-circuits — if name is empty, it never checks the length.</p>
+<p>Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see <code>if count % 5 == 0:</code> you know it checks whether count is a multiple of 5. When you see <code>if name and len(name) &gt; 0:</code> you know the <code>and</code> short-circuits, if name is empty, it never checks the length.</p>
 <p>In the Building Session, you will add smarter response logic to your chatbot based on message properties.</p>
 </section>
 <section id="building-session" class="level2" data-number="7.4">
@@ -736,7 +736,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>"?" in user_input</code> uses the <code>in</code> operator for substring check. <code>message_count % 5 == 0</code> uses modulo to detect every 5th message. <code>has_asked_question = True</code> is a boolean flag — it starts <code>False</code> and flips once. The <code>or</code> in the keyword check means either match triggers the response.</p>
+<p><code>"?" in user_input</code> uses the <code>in</code> operator for substring check. <code>message_count % 5 == 0</code> uses modulo to detect every 5th message. <code>has_asked_question = True</code> is a boolean flag. It starts <code>False</code> and flips once. The <code>or</code> in the keyword check means either match triggers the response.</p>
 </div>
 </div>
 </section>
@@ -1280,7 +1280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI gave you a calculation that used <span class="in">`//`</span> and <span class="in">`%`</span> and you thought <span class="in">`//`</span> was a comment. It was not — it was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI gave you a calculation that used <span class="in">`//`</span> and <span class="in">`%`</span> and you thought <span class="in">`//`</span> was a comment. It was not. It was integer division. The result was wrong because you did not know what the operators did, so you could not tell whether AI had used the right ones.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>In another case, AI wrote <span class="in">`if x and y &gt; 10:`</span> and you assumed it checked whether both x and y were greater than 10. It did not. It checked whether x was truthy and y was greater than 10. Subtle, silent, wrong.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1291,7 +1291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What operators does Python have beyond the basic +, -, *, /? I keep seeing //, %, **, and, or, not, ==, !=, is, in — can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What operators does Python have beyond the basic +, -, *, /? I keep seeing //, %, **, and, or, not, ==, !=, is, in, can you organise them into categories and explain when each one is used? Focus on the ones that AI uses most often in generated code.</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should group them: arithmetic (<span class="in">`+`</span>, <span class="in">`-`</span>, <span class="in">`*`</span>, <span class="in">`/`</span>, <span class="in">`//`</span>, <span class="in">`%`</span>, <span class="in">`**`</span>), comparison (<span class="in">`==`</span>, <span class="in">`!=`</span>, <span class="in">`&lt;`</span>, <span class="in">`&gt;`</span>, <span class="in">`&lt;=`</span>, <span class="in">`&gt;=`</span>), logical (<span class="in">`and`</span>, <span class="in">`or`</span>, <span class="in">`not`</span>), membership (<span class="in">`in`</span>, <span class="in">`not in`</span>), and identity (<span class="in">`is`</span>, <span class="in">`is not`</span>). If it lists bitwise operators, you can skip those for now.</span>
@@ -1335,13 +1335,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`//`</span> is integer division, <span class="in">`%`</span> is remainder, <span class="in">`**`</span> is exponentiation</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`==`</span> checks value, <span class="in">`is`</span> checks identity (use <span class="in">`is`</span> for None)</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`and`</span> and <span class="in">`or`</span> short-circuit — they do not always evaluate both sides</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`and`</span> and <span class="in">`or`</span> short-circuit. They do not always evaluate both sides</span>
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`in`</span> checks membership in strings, lists, and dictionaries</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Empty strings, zero, None, and empty collections are all falsy</span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see <span class="in">`if count % 5 == 0:`</span> you know it checks whether count is a multiple of 5. When you see <span class="in">`if name and len(name) &gt; 0:`</span> you know the <span class="in">`and`</span> short-circuits — if name is empty, it never checks the length.</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>Operators are the glue in AI-generated code. Every condition, every calculation, every loop test uses them. Now when you see <span class="in">`if count % 5 == 0:`</span> you know it checks whether count is a multiple of 5. When you see <span class="in">`if name and len(name) &gt; 0:`</span> you know the <span class="in">`and`</span> short-circuits, if name is empty, it never checks the length.</span>
 <span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add smarter response logic to your chatbot based on message properties.</span>
 <span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
@@ -1416,7 +1416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="in">`"?" in user_input`</span> uses the <span class="in">`in`</span> operator for substring check. <span class="in">`message_count % 5 == 0`</span> uses modulo to detect every 5th message. <span class="in">`has_asked_question = True`</span> is a boolean flag — it starts <span class="in">`False`</span> and flips once. The <span class="in">`or`</span> in the keyword check means either match triggers the response.</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="in">`"?" in user_input`</span> uses the <span class="in">`in`</span> operator for substring check. <span class="in">`message_count % 5 == 0`</span> uses modulo to detect every 5th message. <span class="in">`has_asked_question = True`</span> is a boolean flag. It starts <span class="in">`False`</span> and flips once. The <span class="in">`or`</span> in the keyword check means either match triggers the response.</span>
 <span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

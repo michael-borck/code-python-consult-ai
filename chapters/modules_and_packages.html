@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>import module</code> is safest — you always see where things come from (<code>module.function()</code>). <code>from module import function</code> is fine for specific, well-known names. <code>from module import *</code> is dangerous — it pollutes your namespace and you cannot tell where names come from. <code>import module as alias</code> is conventional for some libraries (<code>import numpy as np</code>).</p>
+<p><code>import module</code> is safest. You always see where things come from (<code>module.function()</code>). <code>from module import function</code> is fine for specific, well-known names. <code>from module import *</code> is dangerous. It pollutes your namespace and you cannot tell where names come from. <code>import module as alias</code> is conventional for some libraries (<code>import numpy as np</code>).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -625,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Line 1: <code>import *</code> imports everything from os — pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script — relative imports depend on the project structure and whether you are running as a script or module. Line 4: <code>ModuleNotFoundError</code> if pandas is not installed. AI frequently imports packages it assumes are installed.</p>
+<p>Line 1: <code>import *</code> imports everything from os, pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script, relative imports depend on the project structure and whether you are running as a script or module. Line 4: <code>ModuleNotFoundError</code> if pandas is not installed. AI frequently imports packages it assumes are installed.</p>
 </div>
 </div>
 </section>
@@ -652,13 +652,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="19.4.1" class="anchored" data-anchor-id="the-spec"><span class="header-section-number">19.4.1</span> The Spec</h3>
 <p>Split your chatbot into a package with multiple modules:</p>
 <ul>
-<li><code>chatbot/</code> — the package directory</li>
-<li><code>chatbot/__init__.py</code> — package marker</li>
-<li><code>chatbot/config.py</code> — constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)</li>
-<li><code>chatbot/responses.py</code> — classify_input() and get_response()</li>
-<li><code>chatbot/history.py</code> — load_history() and save_history()</li>
-<li><code>chatbot/main.py</code> — the main loop</li>
-<li><code>run.py</code> — entry point that imports and runs main()</li>
+<li><code>chatbot/</code>. The package directory</li>
+<li><code>chatbot/__init__.py</code>, package marker</li>
+<li><code>chatbot/config.py</code>, constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)</li>
+<li><code>chatbot/responses.py</code>, classify_input() and get_response()</li>
+<li><code>chatbot/history.py</code>, load_history() and save_history()</li>
+<li><code>chatbot/main.py</code>. The main loop</li>
+<li><code>run.py</code>, entry point that imports and runs main()</li>
 </ul>
 </section>
 <section id="prompt-it" class="level3" data-number="19.4.2">
@@ -674,7 +674,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <p>Restructure my chatbot into a package for v1.9. Create this structure:</p>
-<p>chatbot/ <strong>init</strong>.py (empty or with version) config.py (BOT_NAME, VERSION, RESPONSES dict, KEYWORDS dict) responses.py (classify_input, get_response — imports from config) history.py (load_history, save_history — imports json) main.py (main function — imports from other modules) run.py (entry point: from chatbot.main import main; main())</p>
+<p>chatbot/ <strong>init</strong>.py (empty or with version) config.py (BOT_NAME, VERSION, RESPONSES dict, KEYWORDS dict) responses.py (classify_input, get_response, imports from config) history.py (load_history, save_history, imports json) main.py (main function, imports from other modules) run.py (entry point: from chatbot.main import main; main())</p>
 <p>Show me the import statements for each file and the key functions. Keep the existing features from v1.7.</p>
 </div>
 </div>
@@ -732,7 +732,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each file imports only what it needs. <code>config.py</code> has no imports — it is pure data. <code>responses.py</code> imports from <code>config</code> using the package path <code>from chatbot.config import ...</code>. <code>run.py</code> is the entry point — one line. The <code>__init__.py</code> file can be empty; it just tells Python this directory is a package.</p>
+<p>Each file imports only what it needs. <code>config.py</code> has no imports. It is pure data. <code>responses.py</code> imports from <code>config</code> using the package path <code>from chatbot.config import ...</code>. <code>run.py</code> is the entry point, one line. The <code>__init__.py</code> file can be empty; it just tells Python this directory is a package.</p>
 </div>
 </div>
 </section>
@@ -1299,7 +1299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="in">`import module`</span> is safest — you always see where things come from (<span class="in">`module.function()`</span>). <span class="in">`from module import function`</span> is fine for specific, well-known names. <span class="in">`from module import *`</span> is dangerous — it pollutes your namespace and you cannot tell where names come from. <span class="in">`import module as alias`</span> is conventional for some libraries (<span class="in">`import numpy as np`</span>).</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="in">`import module`</span> is safest. You always see where things come from (<span class="in">`module.function()`</span>). <span class="in">`from module import function`</span> is fine for specific, well-known names. <span class="in">`from module import *`</span> is dangerous. It pollutes your namespace and you cannot tell where names come from. <span class="in">`import module as alias`</span> is conventional for some libraries (<span class="in">`import numpy as np`</span>).</span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
@@ -1320,7 +1320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>Line 1: <span class="in">`import *`</span> imports everything from os — pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script — relative imports depend on the project structure and whether you are running as a script or module. Line 4: <span class="in">`ModuleNotFoundError`</span> if pandas is not installed. AI frequently imports packages it assumes are installed.</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>Line 1: <span class="in">`import *`</span> imports everything from os, pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script, relative imports depend on the project structure and whether you are running as a script or module. Line 4: <span class="in">`ModuleNotFoundError`</span> if pandas is not installed. AI frequently imports packages it assumes are installed.</span>
 <span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1344,13 +1344,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>Split your chatbot into a package with multiple modules:</span>
 <span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/`</span> — the package directory</span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/__init__.py`</span> — package marker</span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/config.py`</span> — constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)</span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/responses.py`</span> — classify_input() and get_response()</span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/history.py`</span> — load_history() and save_history()</span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/main.py`</span> — the main loop</span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`run.py`</span> — entry point that imports and runs main()</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/`</span>. The package directory</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/__init__.py`</span>, package marker</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/config.py`</span>, constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/responses.py`</span>, classify_input() and get_response()</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/history.py`</span>, load_history() and save_history()</span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`chatbot/main.py`</span>. The main loop</span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`run.py`</span>, entry point that imports and runs main()</span>
 <span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prompt It</span></span>
 <span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
@@ -1360,9 +1360,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>chatbot/</span>
 <span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>    __init__.py      (empty or with version)</span>
 <span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>    config.py        (BOT_NAME, VERSION, RESPONSES dict, KEYWORDS dict)</span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>    responses.py     (classify_input, get_response — imports from config)</span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>    history.py       (load_history, save_history — imports json)</span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>    main.py          (main function — imports from other modules)</span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>    responses.py     (classify_input, get_response, imports from config)</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>    history.py       (load_history, save_history, imports json)</span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>    main.py          (main function, imports from other modules)</span>
 <span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>run.py               (entry point: from chatbot.main import main; main())</span>
 <span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>Show me the import statements for each file and the key functions. Keep the existing features from v1.7.</span>
@@ -1422,7 +1422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>Each file imports only what it needs. <span class="in">`config.py`</span> has no imports — it is pure data. <span class="in">`responses.py`</span> imports from <span class="in">`config`</span> using the package path <span class="in">`from chatbot.config import ...`</span>. <span class="in">`run.py`</span> is the entry point — one line. The <span class="in">`__init__.py`</span> file can be empty; it just tells Python this directory is a package.</span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>Each file imports only what it needs. <span class="in">`config.py`</span> has no imports. It is pure data. <span class="in">`responses.py`</span> imports from <span class="in">`config`</span> using the package path <span class="in">`from chatbot.config import ...`</span>. <span class="in">`run.py`</span> is the entry point, one line. The <span class="in">`__init__.py`</span> file can be empty; it just tells Python this directory is a package.</span>
 <span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

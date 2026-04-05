@@ -532,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-wall" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">15.1</span> The Wall</h2>
 <p>AI wrote code that saved data to a file. You ran it, saw “Data saved!”, and felt good. Then you restarted the program and the data was gone. It turned out AI opened the file with <code>"w"</code> (write mode) instead of <code>"a"</code> (append mode), so every run erased the previous data.</p>
-<p>In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with <code>FileNotFoundError</code> — on the user’s machine, not yours, because the file was in your test folder.</p>
+<p>In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with <code>FileNotFoundError</code>, on the user’s machine, not yours, because the file was in your test folder.</p>
 <p>This chapter fixes that.</p>
 </section>
 <section id="thinking-session" class="level2" data-number="15.2">
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>How does file I/O work in Python? Explain the open/read/write/close pattern. What are the different file modes (r, w, a, x) and when would I use each? Why does AI-generated code always use <code>with open()</code> instead of calling open() and close() separately?</p>
 </div>
 </div>
-<p>Your AI should explain that <code>with open()</code> is a context manager that automatically closes the file even if an error occurs. The modes matter: <code>"r"</code> reads, <code>"w"</code> writes (erases existing content), <code>"a"</code> appends, <code>"x"</code> creates (fails if file exists). AI should always use <code>with</code> — if it does not, that is a code smell.</p>
+<p>Your AI should explain that <code>with open()</code> is a context manager that automatically closes the file even if an error occurs. The modes matter: <code>"r"</code> reads, <code>"w"</code> writes (erases existing content), <code>"a"</code> appends, <code>"x"</code> creates (fails if file exists). AI should always use <code>with</code>, if it does not, that is a code smell.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="15.2.2">
 <h3 data-number="15.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">15.2.2</span> Go Deeper</h3>
@@ -625,14 +625,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If the program crashes between <code>open()</code> and <code>close()</code>, the file is never properly closed, potentially losing data. The fix is <code>with open("data.txt", "w") as f:</code> — the <code>with</code> block guarantees closure. Also, <code>"w"</code> mode erases existing content — if that is not intended, use <code>"a"</code>.</p>
+<p>If the program crashes between <code>open()</code> and <code>close()</code>, the file is never properly closed, potentially losing data. The fix is <code>with open("data.txt", "w") as f:</code>. The <code>with</code> block guarantees closure. Also, <code>"w"</code> mode erases existing content, if that is not intended, use <code>"a"</code>.</p>
 </div>
 </div>
 </section>
 <section id="what-you-should-have-learned" class="level3" data-number="15.2.4">
 <h3 data-number="15.2.4" class="anchored" data-anchor-id="what-you-should-have-learned"><span class="header-section-number">15.2.4</span> What You Should Have Learned</h3>
 <ul>
-<li>Always use <code>with open()</code> — it handles closing automatically</li>
+<li>Always use <code>with open()</code>. It handles closing automatically</li>
 <li>File modes: <code>"r"</code> read, <code>"w"</code> write (erases), <code>"a"</code> append</li>
 <li><code>read()</code> gets all content, iterate for line-by-line processing</li>
 <li>JSON is the standard format for structured data: <code>json.load()</code> / <code>json.dump()</code></li>
@@ -642,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-gap" class="level2" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">15.3</span> The Gap</h2>
-<p>Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append — and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.</p>
+<p>Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append, and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.</p>
 <p>In the Building Session, you will give your chatbot persistent memory.</p>
 </section>
 <section id="building-session" class="level2" data-number="15.4">
@@ -1260,7 +1260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI wrote code that saved data to a file. You ran it, saw "Data saved!", and felt good. Then you restarted the program and the data was gone. It turned out AI opened the file with <span class="in">`"w"`</span> (write mode) instead of <span class="in">`"a"`</span> (append mode), so every run erased the previous data.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with <span class="in">`FileNotFoundError`</span> — on the user's machine, not yours, because the file was in your test folder.</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with <span class="in">`FileNotFoundError`</span>, on the user's machine, not yours, because the file was in your test folder.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -1272,7 +1272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>How does file I/O work in Python? Explain the open/read/write/close pattern. What are the different file modes (r, w, a, x) and when would I use each? Why does AI-generated code always use <span class="in">`with open()`</span> instead of calling open() and close() separately?</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain that <span class="in">`with open()`</span> is a context manager that automatically closes the file even if an error occurs. The modes matter: <span class="in">`"r"`</span> reads, <span class="in">`"w"`</span> writes (erases existing content), <span class="in">`"a"`</span> appends, <span class="in">`"x"`</span> creates (fails if file exists). AI should always use <span class="in">`with`</span> — if it does not, that is a code smell.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain that <span class="in">`with open()`</span> is a context manager that automatically closes the file even if an error occurs. The modes matter: <span class="in">`"r"`</span> reads, <span class="in">`"w"`</span> writes (erases existing content), <span class="in">`"a"`</span> appends, <span class="in">`"x"`</span> creates (fails if file exists). AI should always use <span class="in">`with`</span>, if it does not, that is a code smell.</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
@@ -1302,12 +1302,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>If the program crashes between <span class="in">`open()`</span> and <span class="in">`close()`</span>, the file is never properly closed, potentially losing data. The fix is <span class="in">`with open("data.txt", "w") as f:`</span> — the <span class="in">`with`</span> block guarantees closure. Also, <span class="in">`"w"`</span> mode erases existing content — if that is not intended, use <span class="in">`"a"`</span>.</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>If the program crashes between <span class="in">`open()`</span> and <span class="in">`close()`</span>, the file is never properly closed, potentially losing data. The fix is <span class="in">`with open("data.txt", "w") as f:`</span>. The <span class="in">`with`</span> block guarantees closure. Also, <span class="in">`"w"`</span> mode erases existing content, if that is not intended, use <span class="in">`"a"`</span>.</span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Always use <span class="in">`with open()`</span> — it handles closing automatically</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Always use <span class="in">`with open()`</span>. It handles closing automatically</span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>File modes: <span class="in">`"r"`</span> read, <span class="in">`"w"`</span> write (erases), <span class="in">`"a"`</span> append</span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`read()`</span> gets all content, iterate for line-by-line processing</span>
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>JSON is the standard format for structured data: <span class="in">`json.load()`</span> / <span class="in">`json.dump()`</span></span>
@@ -1315,7 +1315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append — and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append, and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.</span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will give your chatbot persistent memory.</span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>

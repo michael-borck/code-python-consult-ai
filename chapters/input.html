@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">6.1</span> The Wall</h2>
-<p>AI built you a program that asked the user for their age. They typed “twenty-five” and it crashed. You asked AI to fix it — it added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.</p>
+<p>AI built you a program that asked the user for their age. They typed “twenty-five” and it crashed. You asked AI to fix it. It added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.</p>
 <p>AI’s default approach to user input is either “assume it is perfect” or “catch everything and ignore it.” Neither is acceptable. You need to understand how <code>input()</code> works and how to validate what comes back.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>How does Python’s input() function work? I know it reads from the keyboard, but what type does it return? And what happens if the user types nothing and just presses Enter?</p>
 </div>
 </div>
-<p>Your AI should emphasise that <code>input()</code> always returns a string — even if the user types a number. An empty Enter returns an empty string <code>""</code>, not None. This is the source of most input-related bugs in AI-generated code.</p>
+<p>Your AI should emphasise that <code>input()</code> always returns a string, even if the user types a number. An empty Enter returns an empty string <code>""</code>, not None. This is the source of most input-related bugs in AI-generated code.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">6.2.2</span> Go Deeper</h3>
@@ -625,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>age</code> is a string (from <code>input()</code>), so <code>age &gt; 0</code> compares a string to an integer — this raises a TypeError in Python 3. The fix is <code>age = int(input("Enter your age: "))</code> or validating and converting separately. AI generates this exact bug frequently.</p>
+<p><code>age</code> is a string (from <code>input()</code>), so <code>age &gt; 0</code> compares a string to an integer. This raises a TypeError in Python 3. The fix is <code>age = int(input("Enter your age: "))</code> or validating and converting separately. AI generates this exact bug frequently.</p>
 </div>
 </div>
 </section>
@@ -675,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use .strip() on all input to handle accidental spaces</li>
 <li>Use .lower() for command matching (quit, help)</li>
 <li>Add a “help” command that lists: quit, help</li>
-<li>When checking for numbers, if conversion fails, respond with a message about the input being text — do not silently ignore it</li>
+<li>When checking for numbers, if conversion fails, respond with a message about the input being text, do not silently ignore it</li>
 </ul>
 <p>Keep the existing features from v0.5 (welcome screen, name, message count, number recognition).</p>
 </div>
@@ -723,7 +723,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        number <span class="op">=</span> <span class="bu">int</span>(user_input)</span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>number<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="st">'even'</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'odd'</span><span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"Interesting — '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"Interesting. '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span></span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss"> (msg #</span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Notice">
@@ -736,7 +736,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The name input uses a <code>while not user_name</code> loop — keeps asking until something is entered. <code>.strip()</code> is called on every <code>input()</code> to remove accidental spaces. <code>command = user_input.lower()</code> creates a normalised version for comparison without changing the display. <code>continue</code> skips to the next loop iteration for empty input and help commands.</p>
+<p>The name input uses a <code>while not user_name</code> loop, keeps asking until something is entered. <code>.strip()</code> is called on every <code>input()</code> to remove accidental spaces. <code>command = user_input.lower()</code> creates a normalised version for comparison without changing the display. <code>continue</code> skips to the next loop iteration for empty input and help commands.</p>
 </div>
 </div>
 </section>
@@ -783,7 +783,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a number: "</span>).strip()</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        number <span class="op">=</span> <span class="bu">int</span>(value)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>                    <span class="co"># valid — exit loop</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>                    <span class="co"># valid, exit loop</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"That's not a number. Try again."</span>)</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -1279,7 +1279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it — it added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it. It added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>AI's default approach to user input is either "assume it is perfect" or "catch everything and ignore it." Neither is acceptable. You need to understand how <span class="in">`input()`</span> works and how to validate what comes back.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1293,7 +1293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>How does Python's input() function work? I know it reads from the keyboard, but what type does it return? And what happens if the user types nothing and just presses Enter?</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should emphasise that <span class="in">`input()`</span> always returns a string — even if the user types a number. An empty Enter returns an empty string <span class="in">`""`</span>, not None. This is the source of most input-related bugs in AI-generated code.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should emphasise that <span class="in">`input()`</span> always returns a string, even if the user types a number. An empty Enter returns an empty string <span class="in">`""`</span>, not None. This is the source of most input-related bugs in AI-generated code.</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
@@ -1327,7 +1327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">`age`</span> is a string (from <span class="in">`input()`</span>), so <span class="in">`age &gt; 0`</span> compares a string to an integer — this raises a TypeError in Python 3. The fix is <span class="in">`age = int(input("Enter your age: "))`</span> or validating and converting separately. AI generates this exact bug frequently.</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">`age`</span> is a string (from <span class="in">`input()`</span>), so <span class="in">`age &gt; 0`</span> compares a string to an integer. This raises a TypeError in Python 3. The fix is <span class="in">`age = int(input("Enter your age: "))`</span> or validating and converting separately. AI generates this exact bug frequently.</span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1364,7 +1364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use .strip() on all input to handle accidental spaces</span>
 <span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use .lower() for command matching (quit, help)</span>
 <span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Add a "help" command that lists: quit, help</span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>When checking for numbers, if conversion fails, respond with a message about the input being text — do not silently ignore it</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>When checking for numbers, if conversion fails, respond with a message about the input being text, do not silently ignore it</span>
 <span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>Keep the existing features from v0.5 (welcome screen, name, message count, number recognition).</span>
 <span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1413,13 +1413,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>        number <span class="op">=</span> <span class="bu">int</span>(user_input)</span>
 <span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>number<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span><span class="st">'even'</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'odd'</span><span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"Interesting — '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> <span class="ss">f"Interesting. '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span></span>
 <span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss"> (msg #</span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss">)"</span>)</span>
 <span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>The name input uses a <span class="in">`while not user_name`</span> loop — keeps asking until something is entered. <span class="in">`.strip()`</span> is called on every <span class="in">`input()`</span> to remove accidental spaces. <span class="in">`command = user_input.lower()`</span> creates a normalised version for comparison without changing the display. <span class="in">`continue`</span> skips to the next loop iteration for empty input and help commands.</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>The name input uses a <span class="in">`while not user_name`</span> loop, keeps asking until something is entered. <span class="in">`.strip()`</span> is called on every <span class="in">`input()`</span> to remove accidental spaces. <span class="in">`command = user_input.lower()`</span> creates a normalised version for comparison without changing the display. <span class="in">`continue`</span> skips to the next loop iteration for empty input and help commands.</span>
 <span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
@@ -1453,7 +1453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a number: "</span>).strip()</span>
 <span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
 <span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>        number <span class="op">=</span> <span class="bu">int</span>(value)</span>
-<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>                    <span class="co"># valid — exit loop</span></span>
+<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>                    <span class="co"># valid, exit loop</span></span>
 <span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
 <span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"That's not a number. Try again."</span>)</span>
 <span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a></span>

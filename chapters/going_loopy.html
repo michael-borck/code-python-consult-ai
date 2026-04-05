@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">12.1</span> The Wall</h2>
-<p>AI’s loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code — <code>for i in range(len(data)):</code> — and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.</p>
+<p>AI’s loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code, <code>for i in range(len(data)):</code>, and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.</p>
 <p>Loops are where AI makes off-by-one errors, forgets break conditions, and creates unnecessarily complex iterations. If you cannot trace through a loop manually, you will never spot these bugs.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -549,10 +549,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What are the two types of loops in Python — for and while? When should I use each one? And why does AI-generated code sometimes use <code>for i in range(len(items)):</code> instead of just <code>for item in items:</code>? Is the longer version ever better?</p>
+<p>What are the two types of loops in Python, for and while? When should I use each one? And why does AI-generated code sometimes use <code>for i in range(len(items)):</code> instead of just <code>for item in items:</code>? Is the longer version ever better?</p>
 </div>
 </div>
-<p>Your AI should explain: <code>for</code> iterates over a sequence (use when you know what you are iterating over), <code>while</code> repeats until a condition is false (use when you do not know how many times). The <code>range(len())</code> pattern gives you the index — sometimes needed, but <code>enumerate()</code> is better for that.</p>
+<p>Your AI should explain: <code>for</code> iterates over a sequence (use when you know what you are iterating over), <code>while</code> repeats until a condition is false (use when you do not know how many times). The <code>range(len())</code> pattern gives you the index, sometimes needed, but <code>enumerate()</code> is better for that.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="12.2.2">
 <h3 data-number="12.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">12.2.2</span> Go Deeper</h3>
@@ -566,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop — that seems strange. When would you actually use it?</p>
+<p>Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop. That seems strange. When would you actually use it?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Look For">
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>break</code> exits the loop immediately. <code>continue</code> skips to the next iteration. The <code>else</code> on a loop runs only if the loop completed without <code>break</code> — it is useful for “search” patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop <code>else</code>, the concept is probably not important enough to use.</p>
+<p><code>break</code> exits the loop immediately. <code>continue</code> skips to the next iteration. The <code>else</code> on a loop runs only if the loop completed without <code>break</code>. It is useful for “search” patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop <code>else</code>, the concept is probably not important enough to use.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -636,7 +636,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Loop 1: no <code>break</code> — it runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: <code>total = i</code> overwrites instead of accumulating — should be <code>total += i</code>. These are all bugs AI generates regularly.</p>
+<p>Loop 1: no <code>break</code>. It runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: <code>total = i</code> overwrites instead of accumulating, should be <code>total += i</code>. These are all bugs AI generates regularly.</p>
 </div>
 </div>
 </section>
@@ -655,7 +655,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-gap" class="level2" data-number="12.3">
 <h2 data-number="12.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">12.3</span> The Gap</h2>
 <p>You can now trace through any loop AI generates and predict its behaviour. You know the difference between accumulating (<code>+=</code>) and overwriting (<code>=</code>). You know why modifying a list during iteration is dangerous. When AI gives you a loop, you can verify it will terminate and process every item exactly once.</p>
-<p>In the Building Session, you will add word processing to your chatbot — iterating through user input to extract meaning.</p>
+<p>In the Building Session, you will add word processing to your chatbot, iterating through user input to extract meaning.</p>
 </section>
 <section id="building-session" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="building-session"><span class="header-section-number">12.4</span> Building Session</h2>
@@ -758,7 +758,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions — which is more readable?</p>
+<p>Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions, which is more readable?</p>
 </div>
 </div>
 </section>
@@ -1293,7 +1293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI's loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code — <span class="in">`for i in range(len(data)):`</span> — and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI's loop ran forever. Or it skipped items. Or it processed the last item twice. You stared at the code, <span class="in">`for i in range(len(data)):`</span>, and could not tell whether the range was right. You asked AI to fix the infinite loop and it restructured the entire program instead of fixing the one condition.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Loops are where AI makes off-by-one errors, forgets break conditions, and creates unnecessarily complex iterations. If you cannot trace through a loop manually, you will never spot these bugs.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1304,19 +1304,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What are the two types of loops in Python — for and while? When should I use each one? And why does AI-generated code sometimes use <span class="in">`for i in range(len(items)):`</span> instead of just <span class="in">`for item in items:`</span>? Is the longer version ever better?</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>What are the two types of loops in Python, for and while? When should I use each one? And why does AI-generated code sometimes use <span class="in">`for i in range(len(items)):`</span> instead of just <span class="in">`for item in items:`</span>? Is the longer version ever better?</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain: <span class="in">`for`</span> iterates over a sequence (use when you know what you are iterating over), <span class="in">`while`</span> repeats until a condition is false (use when you do not know how many times). The <span class="in">`range(len())`</span> pattern gives you the index — sometimes needed, but <span class="in">`enumerate()`</span> is better for that.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain: <span class="in">`for`</span> iterates over a sequence (use when you know what you are iterating over), <span class="in">`while`</span> repeats until a condition is false (use when you do not know how many times). The <span class="in">`range(len())`</span> pattern gives you the index, sometimes needed, but <span class="in">`enumerate()`</span> is better for that.</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop — that seems strange. When would you actually use it?</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Explain break, continue, and else on loops in Python. I see AI using all three and I do not understand the else on a for loop. That seems strange. When would you actually use it?</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">`break`</span> exits the loop immediately. <span class="in">`continue`</span> skips to the next iteration. The <span class="in">`else`</span> on a loop runs only if the loop completed without <span class="in">`break`</span> — it is useful for "search" patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop <span class="in">`else`</span>, the concept is probably not important enough to use.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">`break`</span> exits the loop immediately. <span class="in">`continue`</span> skips to the next iteration. The <span class="in">`else`</span> on a loop runs only if the loop completed without <span class="in">`break`</span>. It is useful for "search" patterns where you want to know if you found something. If your AI cannot explain a practical use case for loop <span class="in">`else`</span>, the concept is probably not important enough to use.</span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
@@ -1348,7 +1348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>Loop 1: no <span class="in">`break`</span> — it runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: <span class="in">`total = i`</span> overwrites instead of accumulating — should be <span class="in">`total += i`</span>. These are all bugs AI generates regularly.</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>Loop 1: no <span class="in">`break`</span>. It runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: <span class="in">`total = i`</span> overwrites instead of accumulating, should be <span class="in">`total += i`</span>. These are all bugs AI generates regularly.</span>
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1364,7 +1364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>You can now trace through any loop AI generates and predict its behaviour. You know the difference between accumulating (<span class="in">`+=`</span>) and overwriting (<span class="in">`=`</span>). You know why modifying a list during iteration is dangerous. When AI gives you a loop, you can verify it will terminate and process every item exactly once.</span>
 <span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add word processing to your chatbot — iterating through user input to extract meaning.</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will add word processing to your chatbot, iterating through user input to extract meaning.</span>
 <span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building Session</span></span>
 <span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
@@ -1441,7 +1441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
 <span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions — which is more readable?</span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>Rewrite count_positive() as a list comprehension that filters positive words, then use len() on the result. Compare both versions, which is more readable?</span>
 <span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>

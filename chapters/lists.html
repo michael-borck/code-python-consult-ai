@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may recognise lists from projects like the Quiz Game or Contact Book in <em>Think Python, Direct AI</em>. There you used lists to store questions or entries. This chapter explores lists more deeply — indexing, slicing, methods, and the patterns that make lists essential.</p>
+<p>You may recognise lists from projects like the Quiz Game or Contact Book in <em>Think Python, Direct AI</em>. There you used lists to store questions or entries. This chapter explores lists more deeply, indexing, slicing, methods, and the patterns that make lists essential.</p>
 </div>
 </div>
 </section>
@@ -562,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Explain Python lists to me. Not just “an ordered collection” — I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.</p>
+<p>Explain Python lists to me. Not just “an ordered collection”. I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.</p>
 </div>
 </div>
 <p>Your AI should cover indexing (starts at 0), negative indexing (<code>-1</code> is last item), <code>IndexError</code> for out-of-range access, and the key difference: lists are mutable (you can change items), strings are not.</p>
@@ -592,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The key distinction: <code>append()</code>, <code>extend()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>, <code>sort()</code>, <code>reverse()</code> all modify the list in place and return <code>None</code>. <code>sorted()</code> returns a new list. AI sometimes writes <code>my_list = my_list.sort()</code> — this sets <code>my_list</code> to <code>None</code>. If your AI does not mention this trap, ask about it.</p>
+<p>The key distinction: <code>append()</code>, <code>extend()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>, <code>sort()</code>, <code>reverse()</code> all modify the list in place and return <code>None</code>. <code>sorted()</code> returns a new list. AI sometimes writes <code>my_list = my_list.sort()</code>. This sets <code>my_list</code> to <code>None</code>. If your AI does not mention this trap, ask about it.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -641,7 +641,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Line 2: <code>append()</code> returns <code>None</code>, so <code>items</code> becomes <code>None</code>. Fix: just <code>items.append(4)</code>. Line 5: same issue — <code>sort()</code> returns <code>None</code>. Fix: <code>data.sort()</code> alone, or <code>data = sorted(data)</code>. Line 7: cannot add an integer to a list. Fix: <code>[1, 2] + [3]</code> or <code>[1, 2].append(3)</code>.</p>
+<p>Line 2: <code>append()</code> returns <code>None</code>, so <code>items</code> becomes <code>None</code>. Fix: just <code>items.append(4)</code>. Line 5: same issue. <code>sort()</code> returns <code>None</code>. Fix: <code>data.sort()</code> alone, or <code>data = sorted(data)</code>. Line 7: cannot add an integer to a list. Fix: <code>[1, 2] + [3]</code> or <code>[1, 2].append(3)</code>.</p>
 </div>
 </div>
 </section>
@@ -718,7 +718,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Good question! Let me think..."</span>, <span class="va">False</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> random.choice([</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Interesting — '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Interesting. '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>,</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Tell me more about that."</span>,</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"I see. Go on..."</span>,</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"That's a new one for me!"</span>,</span>
@@ -733,7 +733,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>random.choice()</code> picks one item from a list — this gives varied responses. The conversation history uses <code>append()</code> to add entries (in the main loop, not shown here). <code>history[-5:]</code> slices the last 5 items. Lists grow dynamically — no need to declare a size.</p>
+<p><code>random.choice()</code> picks one item from a list. This gives varied responses. The conversation history uses <code>append()</code> to add entries (in the main loop, not shown here). <code>history[-5:]</code> slices the last 5 items. Lists grow dynamically. No need to declare a size.</p>
 </div>
 </div>
 </section>
@@ -1285,7 +1285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Coming from Think Python?"}</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>You may recognise lists from projects like the Quiz Game or Contact Book in *Think Python, Direct AI*. There you used lists to store questions or entries. This chapter explores lists more deeply — indexing, slicing, methods, and the patterns that make lists essential.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>You may recognise lists from projects like the Quiz Game or Contact Book in *Think Python, Direct AI*. There you used lists to store questions or entries. This chapter explores lists more deeply, indexing, slicing, methods, and the patterns that make lists essential.</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thinking Session</span></span>
@@ -1293,7 +1293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Explain Python lists to me. Not just "an ordered collection" — I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Explain Python lists to me. Not just "an ordered collection". I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Your AI should cover indexing (starts at 0), negative indexing (<span class="in">`-1`</span> is last item), <span class="in">`IndexError`</span> for out-of-range access, and the key difference: lists are mutable (you can change items), strings are not.</span>
@@ -1305,7 +1305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>The key distinction: <span class="in">`append()`</span>, <span class="in">`extend()`</span>, <span class="in">`insert()`</span>, <span class="in">`remove()`</span>, <span class="in">`pop()`</span>, <span class="in">`sort()`</span>, <span class="in">`reverse()`</span> all modify the list in place and return <span class="in">`None`</span>. <span class="in">`sorted()`</span> returns a new list. AI sometimes writes <span class="in">`my_list = my_list.sort()`</span> — this sets <span class="in">`my_list`</span> to <span class="in">`None`</span>. If your AI does not mention this trap, ask about it.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>The key distinction: <span class="in">`append()`</span>, <span class="in">`extend()`</span>, <span class="in">`insert()`</span>, <span class="in">`remove()`</span>, <span class="in">`pop()`</span>, <span class="in">`sort()`</span>, <span class="in">`reverse()`</span> all modify the list in place and return <span class="in">`None`</span>. <span class="in">`sorted()`</span> returns a new list. AI sometimes writes <span class="in">`my_list = my_list.sort()`</span>. This sets <span class="in">`my_list`</span> to <span class="in">`None`</span>. If your AI does not mention this trap, ask about it.</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
@@ -1329,7 +1329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>Line 2: <span class="in">`append()`</span> returns <span class="in">`None`</span>, so <span class="in">`items`</span> becomes <span class="in">`None`</span>. Fix: just <span class="in">`items.append(4)`</span>. Line 5: same issue — <span class="in">`sort()`</span> returns <span class="in">`None`</span>. Fix: <span class="in">`data.sort()`</span> alone, or <span class="in">`data = sorted(data)`</span>. Line 7: cannot add an integer to a list. Fix: <span class="in">`[1, 2] + [3]`</span> or <span class="in">`[1, 2].append(3)`</span>.</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>Line 2: <span class="in">`append()`</span> returns <span class="in">`None`</span>, so <span class="in">`items`</span> becomes <span class="in">`None`</span>. Fix: just <span class="in">`items.append(4)`</span>. Line 5: same issue. <span class="in">`sort()`</span> returns <span class="in">`None`</span>. Fix: <span class="in">`data.sort()`</span> alone, or <span class="in">`data = sorted(data)`</span>. Line 7: cannot add an integer to a list. Fix: <span class="in">`[1, 2] + [3]`</span> or <span class="in">`[1, 2].append(3)`</span>.</span>
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
@@ -1394,7 +1394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Good question! Let me think..."</span>, <span class="va">False</span></span>
 <span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> random.choice([</span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Interesting — '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>,</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Interesting. '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'."</span>,</span>
 <span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Tell me more about that."</span>,</span>
 <span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>            <span class="st">"I see. Go on..."</span>,</span>
 <span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>            <span class="st">"That's a new one for me!"</span>,</span>
@@ -1402,7 +1402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="in">`random.choice()`</span> picks one item from a list — this gives varied responses. The conversation history uses <span class="in">`append()`</span> to add entries (in the main loop, not shown here). <span class="in">`history[-5:]`</span> slices the last 5 items. Lists grow dynamically — no need to declare a size.</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="in">`random.choice()`</span> picks one item from a list. This gives varied responses. The conversation history uses <span class="in">`append()`</span> to add entries (in the main loop, not shown here). <span class="in">`history[-5:]`</span> slices the last 5 items. Lists grow dynamically. No need to declare a size.</span>
 <span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

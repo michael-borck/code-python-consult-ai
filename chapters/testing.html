@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-wall" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">18.1</span> The Wall</h2>
-<p>AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path — the obvious, expected inputs — and missed every edge case.</p>
+<p>AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path. The obvious, expected inputs, and missed every edge case.</p>
 <p>You asked AI to “add tests” and it generated tests that passed trivially. One test checked that <code>add(2, 3)</code> returns <code>5</code>. It did not test what happens when you pass <code>None</code>, a string, or a negative number. The tests gave you false confidence.</p>
 <p>This chapter fixes that.</p>
 </section>
@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest — why do Python developers prefer it over the built-in unittest module?</p>
+<p>Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest, why do Python developers prefer it over the built-in unittest module?</p>
 </div>
 </div>
 <p>Your AI should explain: good tests check edge cases, not just happy paths. A test is useful if its failure tells you something is broken. pytest is preferred because it uses plain <code>assert</code> statements instead of special methods (<code>assertEqual</code>, <code>assertTrue</code>), making tests more readable.</p>
@@ -627,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug — it crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.</p>
+<p>The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug. It crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.</p>
 </div>
 </div>
 </section>
@@ -635,11 +635,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="18.2.4" class="anchored" data-anchor-id="what-you-should-have-learned"><span class="header-section-number">18.2.4</span> What You Should Have Learned</h3>
 <ul>
 <li>Good tests check edge cases, not just expected inputs</li>
-<li>pytest uses plain <code>assert</code> — simple and readable</li>
+<li>pytest uses plain <code>assert</code>, simple and readable</li>
 <li>Test files: <code>tests/test_*.py</code>, functions: <code>test_*()</code></li>
-<li>Arrange, Act, Assert — the test structure pattern</li>
+<li>Arrange, Act, Assert. The test structure pattern</li>
 <li>Edge case checklist: empty input, None, wrong type, boundary values, single item</li>
-<li>Tests give confidence to modify code — that is their real value</li>
+<li>Tests give confidence to modify code. That is their real value</li>
 </ul>
 </section>
 </section>
@@ -680,7 +680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>classify_input(“random text”) should return “default”</li>
 <li>classify_input(““) should return”default” (not crash)</li>
 <li>get_response() should return a tuple of (str, bool)</li>
-<li>get_response(“bye”) should return (str, True) — the exit flag</li>
+<li>get_response(“bye”) should return (str, True). The exit flag</li>
 </ul>
 <p>Use the arrange/act/assert pattern. Include at least one test that checks an edge case AI would miss.</p>
 </div>
@@ -1295,7 +1295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Wall</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path — the obvious, expected inputs — and missed every edge case.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path. The obvious, expected inputs, and missed every edge case.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>You asked AI to "add tests" and it generated tests that passed trivially. One test checked that <span class="in">`add(2, 3)`</span> returns <span class="in">`5`</span>. It did not test what happens when you pass <span class="in">`None`</span>, a string, or a negative number. The tests gave you false confidence.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -1306,7 +1306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting Oriented</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest — why do Python developers prefer it over the built-in unittest module?</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest, why do Python developers prefer it over the built-in unittest module?</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Your AI should explain: good tests check edge cases, not just happy paths. A test is useful if its failure tells you something is broken. pytest is preferred because it uses plain <span class="in">`assert`</span> statements instead of special methods (<span class="in">`assertEqual`</span>, <span class="in">`assertTrue`</span>), making tests more readable.</span>
@@ -1341,17 +1341,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug — it crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug. It crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.</span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Good tests check edge cases, not just expected inputs</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>pytest uses plain <span class="in">`assert`</span> — simple and readable</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>pytest uses plain <span class="in">`assert`</span>, simple and readable</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Test files: <span class="in">`tests/test_*.py`</span>, functions: <span class="in">`test_*()`</span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Arrange, Act, Assert — the test structure pattern</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Arrange, Act, Assert. The test structure pattern</span>
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Edge case checklist: empty input, None, wrong type, boundary values, single item</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tests give confidence to modify code — that is their real value</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tests give confidence to modify code. That is their real value</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
@@ -1381,7 +1381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>classify_input("random text") should return "default"</span>
 <span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>classify_input("") should return "default" (not crash)</span>
 <span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_response() should return a tuple of (str, bool)</span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_response("bye") should return (str, True) — the exit flag</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>get_response("bye") should return (str, True). The exit flag</span>
 <span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>Use the arrange/act/assert pattern. Include at least one test that checks an edge case AI would miss.</span>
 <span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>:::</span>

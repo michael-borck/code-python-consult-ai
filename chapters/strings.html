@@ -532,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-wall" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="the-wall"><span class="header-section-number">13.1</span> The Wall</h2>
 <p>AI’s string slicing gave you the wrong substring. It used <code>text[3:7]</code> and you expected 4 characters but got something different. In another case, AI used <code>.split()</code>, <code>.join()</code>, <code>.replace()</code>, and <code>.strip()</code> in a chain so long you could not tell what the final result would be without running it.</p>
-<p>Strings are the most common data type in AI-generated code — every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.</p>
+<p>Strings are the most common data type in AI-generated code, every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.</p>
 <p>This chapter fixes that.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Coming from Think Python?">
 <div class="callout-header d-flex align-content-center">
@@ -544,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you worked through <em>Think Python, Direct AI</em>, you already used string methods like <code>.lower()</code> and <code>.split()</code> to process user input in your projects. Here we explore strings more thoroughly — how they work internally, the full range of methods, and when to reach for each one.</p>
+<p>If you worked through <em>Think Python, Direct AI</em>, you already used string methods like <code>.lower()</code> and <code>.split()</code> to process user input in your projects. Here we explore strings more thoroughly, how they work internally, the full range of methods, and when to reach for each one.</p>
 </div>
 </div>
 </section>
@@ -565,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Explain Python strings in depth. I know they are text in quotes, but I want to understand: are they like lists? Can I change individual characters? How does indexing and slicing work on strings compared to lists?</p>
 </div>
 </div>
-<p>Your AI should explain that strings are immutable sequences — you can index and slice them like lists, but you cannot change individual characters. <code>text[0] = "X"</code> fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.</p>
+<p>Your AI should explain that strings are immutable sequences. You can index and slice them like lists, but you cannot change individual characters. <code>text[0] = "X"</code> fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.</p>
 </section>
 <section id="go-deeper" class="level3" data-number="13.2.2">
 <h3 data-number="13.2.2" class="anchored" data-anchor-id="go-deeper"><span class="header-section-number">13.2.2</span> Go Deeper</h3>
@@ -592,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Key pattern: all string methods return new strings (strings are immutable). <code>text.split()</code> returns a list. <code>" ".join(words)</code> returns a string. <code>text.replace("old", "new")</code> returns a new string — the original is unchanged. If your AI implies these modify the original string, that is wrong.</p>
+<p>Key pattern: all string methods return new strings (strings are immutable). <code>text.split()</code> returns a list. <code>" ".join(words)</code> returns a string. <code>text.replace("old", "new")</code> returns a new string. The original is unchanged. If your AI implies these modify the original string, that is wrong.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -642,14 +642,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>split()</code> gives <code>["hello", "world"]</code>. <code>join()</code> gives <code>"hello world"</code>. <code>strip()</code> gives <code>"hello"</code>. <code>replace()</code> gives <code>"hello Python"</code>. <code>[1:4]</code> gives <code>"ell"</code> (index 1, 2, 3 — stop is exclusive). <code>[::-1]</code> gives <code>"olleh"</code> (reversed). <code>title()</code> gives <code>"Hello World"</code>. <code>count("o")</code> gives <code>1</code>.</p>
+<p><code>split()</code> gives <code>["hello", "world"]</code>. <code>join()</code> gives <code>"hello world"</code>. <code>strip()</code> gives <code>"hello"</code>. <code>replace()</code> gives <code>"hello Python"</code>. <code>[1:4]</code> gives <code>"ell"</code> (index 1, 2, 3, stop is exclusive). <code>[::-1]</code> gives <code>"olleh"</code> (reversed). <code>title()</code> gives <code>"Hello World"</code>. <code>count("o")</code> gives <code>1</code>.</p>
 </div>
 </div>
 </section>
 <section id="what-you-should-have-learned" class="level3" data-number="13.2.4">
 <h3 data-number="13.2.4" class="anchored" data-anchor-id="what-you-should-have-learned"><span class="header-section-number">13.2.4</span> What You Should Have Learned</h3>
 <ul>
-<li>Strings are immutable — all methods return new strings</li>
+<li>Strings are immutable, all methods return new strings</li>
 <li>Indexing and slicing work like lists: <code>text[start:stop:step]</code></li>
 <li><code>split()</code> makes a list, <code>join()</code> makes a string</li>
 <li><code>strip()</code> removes whitespace, <code>replace()</code> substitutes text</li>
@@ -727,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>" ".join(text.split())</code> is a common idiom — it splits on any whitespace and rejoins with single spaces, normalising ” hello world ” to “hello world”. <code>text[::-1]</code> reverses the string. <code>"\n".join(lines)</code> joins a list of strings with newlines between them. All these methods return new strings — the original is never modified.</p>
+<p><code>" ".join(text.split())</code> is a common idiom. It splits on any whitespace and rejoins with single spaces, normalising ” hello world ” to “hello world”. <code>text[::-1]</code> reverses the string. <code>"\n".join(lines)</code> joins a list of strings with newlines between them. All these methods return new strings. The original is never modified.</p>
 </div>
 </div>
 </section>
@@ -1272,12 +1272,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>AI's string slicing gave you the wrong substring. It used <span class="in">`text[3:7]`</span> and you expected 4 characters but got something different. In another case, AI used <span class="in">`.split()`</span>, <span class="in">`.join()`</span>, <span class="in">`.replace()`</span>, and <span class="in">`.strip()`</span> in a chain so long you could not tell what the final result would be without running it.</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Strings are the most common data type in AI-generated code — every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>Strings are the most common data type in AI-generated code, every user interaction, every API response, every file path is a string. If you cannot predict what string operations do, you cannot debug half the code AI produces.</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>This chapter fixes that.</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Coming from Think Python?"}</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already used string methods like <span class="in">`.lower()`</span> and <span class="in">`.split()`</span> to process user input in your projects. Here we explore strings more thoroughly — how they work internally, the full range of methods, and when to reach for each one.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>If you worked through *Think Python, Direct AI*, you already used string methods like <span class="in">`.lower()`</span> and <span class="in">`.split()`</span> to process user input in your projects. Here we explore strings more thoroughly, how they work internally, the full range of methods, and when to reach for each one.</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Thinking Session</span></span>
@@ -1288,7 +1288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Explain Python strings in depth. I know they are text in quotes, but I want to understand: are they like lists? Can I change individual characters? How does indexing and slicing work on strings compared to lists?</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Your AI should explain that strings are immutable sequences — you can index and slice them like lists, but you cannot change individual characters. <span class="in">`text[0] = "X"`</span> fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Your AI should explain that strings are immutable sequences. You can index and slice them like lists, but you cannot change individual characters. <span class="in">`text[0] = "X"`</span> fails. To modify a string, you create a new one. This matters because AI sometimes writes code that tries to modify strings in place.</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Go Deeper</span></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -1297,7 +1297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>Key pattern: all string methods return new strings (strings are immutable). <span class="in">`text.split()`</span> returns a list. <span class="in">`" ".join(words)`</span> returns a string. <span class="in">`text.replace("old", "new")`</span> returns a new string — the original is unchanged. If your AI implies these modify the original string, that is wrong.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>Key pattern: all string methods return new strings (strings are immutable). <span class="in">`text.split()`</span> returns a list. <span class="in">`" ".join(words)`</span> returns a string. <span class="in">`text.replace("old", "new")`</span> returns a new string. The original is unchanged. If your AI implies these modify the original string, that is wrong.</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
@@ -1322,12 +1322,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">`split()`</span> gives <span class="in">`["hello", "world"]`</span>. <span class="in">`join()`</span> gives <span class="in">`"hello world"`</span>. <span class="in">`strip()`</span> gives <span class="in">`"hello"`</span>. <span class="in">`replace()`</span> gives <span class="in">`"hello Python"`</span>. <span class="in">`[1:4]`</span> gives <span class="in">`"ell"`</span> (index 1, 2, 3 — stop is exclusive). <span class="in">`[::-1]`</span> gives <span class="in">`"olleh"`</span> (reversed). <span class="in">`title()`</span> gives <span class="in">`"Hello World"`</span>. <span class="in">`count("o")`</span> gives <span class="in">`1`</span>.</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">`split()`</span> gives <span class="in">`["hello", "world"]`</span>. <span class="in">`join()`</span> gives <span class="in">`"hello world"`</span>. <span class="in">`strip()`</span> gives <span class="in">`"hello"`</span>. <span class="in">`replace()`</span> gives <span class="in">`"hello Python"`</span>. <span class="in">`[1:4]`</span> gives <span class="in">`"ell"`</span> (index 1, 2, 3, stop is exclusive). <span class="in">`[::-1]`</span> gives <span class="in">`"olleh"`</span> (reversed). <span class="in">`title()`</span> gives <span class="in">`"Hello World"`</span>. <span class="in">`count("o")`</span> gives <span class="in">`1`</span>.</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Should Have Learned</span></span>
 <span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Strings are immutable — all methods return new strings</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Strings are immutable, all methods return new strings</span>
 <span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indexing and slicing work like lists: <span class="in">`text[start:stop:step]`</span></span>
 <span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`split()`</span> makes a list, <span class="in">`join()`</span> makes a string</span>
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`strip()`</span> removes whitespace, <span class="in">`replace()`</span> substitutes text</span>
@@ -1388,7 +1388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="in">`" ".join(text.split())`</span> is a common idiom — it splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". <span class="in">`text[::-1]`</span> reverses the string. <span class="in">`"\n".join(lines)`</span> joins a list of strings with newlines between them. All these methods return new strings — the original is never modified.</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="in">`" ".join(text.split())`</span> is a common idiom. It splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". <span class="in">`text[::-1]`</span> reverses the string. <span class="in">`"\n".join(lines)`</span> joins a list of strings with newlines between them. All these methods return new strings. The original is never modified.</span>
 <span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>

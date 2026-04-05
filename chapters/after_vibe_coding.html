@@ -524,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-honeymoon" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="the-honeymoon"><span class="header-section-number">1.1</span> The Honeymoon</h2>
 <p>You discovered AI-assisted coding. You typed a few sentences into ChatGPT or Claude or Gemini, and it gave you working Python code. You ran it. It worked. You felt powerful.</p>
-<p>You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code — you just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.</p>
+<p>You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code. You just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.</p>
 <p>This is vibe coding. Code by feel, prompt until something works, do not worry about understanding the details. For simple, self-contained scripts, it is genuinely effective.</p>
 </section>
 <section id="the-wall" class="level2" data-number="1.2">
@@ -532,18 +532,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then you hit the wall.</p>
 <p>The AI gave you code with ten variables and you could not tell which ones mattered. It used a dictionary when a list would have worked. It wrapped everything in try/except and swallowed the actual error. You asked it to fix a bug and it introduced two more. You pasted the new error in and got a completely different approach that also did not work.</p>
 <p>The problem was not AI. The problem was that you could not read the code it produced. You could not tell correct from plausible. You could not describe what was wrong precisely enough for AI to actually help.</p>
-<p>This is the wall every vibe coder hits. Not on day one — on day thirty, or day sixty, when the code gets complex enough that “just make it work” stops working.</p>
+<p>This is the wall every vibe coder hits. Not on day one, on day thirty, or day sixty, when the code gets complex enough that “just make it work” stops working.</p>
 </section>
 <section id="what-this-book-does" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="what-this-book-does"><span class="header-section-number">1.3</span> What This Book Does</h2>
-<p>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer — to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.</p>
+<p>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.</p>
 <p>You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:</p>
 <section id="the-two-chat-method" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="the-two-chat-method"><span class="header-section-number">1.3.1</span> The Two-Chat Method</h3>
 <p><strong>Chat 1: Thinking Session.</strong> Open a conversation with your AI assistant. Explore the concept. Ask questions. Challenge the AI’s explanations. Push back when something does not make sense. Build understanding before writing a single line of code.</p>
 <p><strong>The Gap.</strong> Step back. Reflect on what you learned. Decide what matters for what you are building.</p>
 <p><strong>Chat 2: Building Session.</strong> Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.</p>
-<p>This is the difference between vibe coding and intentional prompting. Vibe coding does not compound — each session starts from zero. Understanding compounds — each concept makes the next one easier.</p>
+<p>This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.</p>
 </section>
 </section>
 <section id="your-first-thinking-session" class="level2" data-number="1.4">
@@ -588,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your AI should explain that the first five concepts are foundational — everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.</p>
+<p>Your AI should explain that the first five concepts are foundational, everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.</p>
 </div>
 </div>
 <p>This is what a Thinking Session feels like: exploring, questioning, building a mental map. You are not trying to write code yet. You are trying to understand the territory.</p>
@@ -613,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Echo the message back with a simple response</li>
 <li>Exit when the user types “quit”</li>
 </ul>
-<p>Keep it under 15 lines. Use only basic Python — no imports, no classes, no functions beyond print() and input().</p>
+<p>Keep it under 15 lines. Use only basic Python. No imports, no classes, no functions beyond print() and input().</p>
 </div>
 </div>
 <p>Your AI will produce something like this:</p>
@@ -636,23 +636,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Even in 10 lines, you can see several concepts: a variable (<code>bot_name</code>), a string with formatting (<code>f"..."</code>), a loop (<code>while True</code>), a decision (<code>if</code>), and a way to stop (<code>break</code>). You do not need to understand all of these yet — each chapter covers one. By the end of the book, you will understand every line.</p>
+<p>Even in 10 lines, you can see several concepts: a variable (<code>bot_name</code>), a string with formatting (<code>f"..."</code>), a loop (<code>while True</code>), a decision (<code>if</code>), and a way to stop (<code>break</code>). You do not need to understand all of these yet. Each chapter covers one. By the end of the book, you will understand every line.</p>
 </div>
 </div>
-<p>Run this code. Talk to it. It is not smart — it just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.</p>
+<p>Run this code. Talk to it. It is not smart. It just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.</p>
 </section>
 <section id="what-you-need" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="what-you-need"><span class="header-section-number">1.6</span> What You Need</h2>
 <ul>
 <li><strong>Python installed.</strong> If you do not have it yet, see the appendix on Setting Up Python.</li>
-<li><strong>An AI assistant.</strong> Any will do — ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.</li>
-<li><strong>A willingness to read code.</strong> Not just run it — read it, question it, understand it. That is the skill this book teaches.</li>
+<li><strong>An AI assistant.</strong> Any will do. ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.</li>
+<li><strong>A willingness to read code.</strong> Not just run it, read it, question it, understand it. That is the skill this book teaches.</li>
 </ul>
 </section>
 <section id="how-this-book-is-different" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="how-this-book-is-different"><span class="header-section-number">1.7</span> How This Book Is Different</h2>
 <p>There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.</p>
-<p>Every chapter follows the same two-chat structure. By the end, you will not just know Python — you will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</p>
+<p>Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</p>
 <p>That is the skill that outlasts any specific tool or framework.</p>
 
 
@@ -1145,7 +1145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>You discovered AI-assisted coding. You typed a few sentences into ChatGPT or Claude or Gemini, and it gave you working Python code. You ran it. It worked. You felt powerful.</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code — you just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code. You just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>This is vibe coding. Code by feel, prompt until something works, do not worry about understanding the details. For simple, self-contained scripts, it is genuinely effective.</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -1157,11 +1157,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>The problem was not AI. The problem was that you could not read the code it produced. You could not tell correct from plausible. You could not describe what was wrong precisely enough for AI to actually help.</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>This is the wall every vibe coder hits. Not on day one — on day thirty, or day sixty, when the code gets complex enough that "just make it work" stops working.</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>This is the wall every vibe coder hits. Not on day one, on day thirty, or day sixty, when the code gets complex enough that "just make it work" stops working.</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## What This Book Does</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer — to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:</span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -1173,7 +1173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>**Chat 2: Building Session.** Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.</span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>This is the difference between vibe coding and intentional prompting. Vibe coding does not compound — each session starts from zero. Understanding compounds — each concept makes the next one easier.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.</span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your First Thinking Session</span></span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
@@ -1194,7 +1194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Your AI should explain that the first five concepts are foundational — everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Your AI should explain that the first five concepts are foundational, everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.</span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>This is what a Thinking Session feels like: exploring, questioning, building a mental map. You are not trying to write code yet. You are trying to understand the territory.</span>
@@ -1211,7 +1211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Echo the message back with a simple response</span>
 <span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exit when the user types "quit"</span>
 <span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>Keep it under 15 lines. Use only basic Python — no imports, no classes, no functions beyond print() and input().</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>Keep it under 15 lines. Use only basic Python. No imports, no classes, no functions beyond print() and input().</span>
 <span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>Your AI will produce something like this:</span>
@@ -1229,22 +1229,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Even in 10 lines, you can see several concepts: a variable (<span class="in">`bot_name`</span>), a string with formatting (<span class="in">`f"..."`</span>), a loop (<span class="in">`while True`</span>), a decision (<span class="in">`if`</span>), and a way to stop (<span class="in">`break`</span>). You do not need to understand all of these yet — each chapter covers one. By the end of the book, you will understand every line.</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Even in 10 lines, you can see several concepts: a variable (<span class="in">`bot_name`</span>), a string with formatting (<span class="in">`f"..."`</span>), a loop (<span class="in">`while True`</span>), a decision (<span class="in">`if`</span>), and a way to stop (<span class="in">`break`</span>). You do not need to understand all of these yet. Each chapter covers one. By the end of the book, you will understand every line.</span>
 <span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>Run this code. Talk to it. It is not smart — it just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>Run this code. Talk to it. It is not smart. It just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.</span>
 <span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You Need</span></span>
 <span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Python installed.** If you do not have it yet, see the appendix on Setting Up Python.</span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**An AI assistant.** Any will do — ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.</span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**A willingness to read code.** Not just run it — read it, question it, understand it. That is the skill this book teaches.</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**An AI assistant.** Any will do. ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**A willingness to read code.** Not just run it, read it, question it, understand it. That is the skill this book teaches.</span>
 <span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## How This Book Is Different</span></span>
 <span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.</span>
 <span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>Every chapter follows the same two-chat structure. By the end, you will not just know Python — you will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</span>
 <span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>That is the skill that outlasts any specific tool or framework.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>

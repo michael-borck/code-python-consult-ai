@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your AI should explain that Python uses indentation to define code blocks — it is not decorative, it is structural. A misplaced space causes an <code>IndentationError</code>. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.</p>
+<p>Your AI should explain that Python uses indentation to define code blocks. It is not decorative, it is structural. A misplaced space causes an <code>IndentationError</code>. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Thinking Session Prompt">
@@ -644,7 +644,7 @@ message = "Hello, world!'</code></pre>
 </section>
 <section id="the-gap" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="the-gap"><span class="header-section-number">2.3</span> The Gap</h2>
-<p>You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean — even before you understand what the code does.</p>
+<p>You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean, even before you understand what the code does.</p>
 <p>In the Building Session, you will set up your Python environment and add proper structure to the chatbot from Chapter 1: comments, named constants, and clear formatting.</p>
 </section>
 <section id="building-session" class="level2" data-number="2.4">
@@ -681,7 +681,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">: Goodbye!"</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">: You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Improve it by adding: - A module docstring at the top describing the program - BOT_NAME and VERSION as constants (uppercase) - Inline comments explaining the while loop and the break - Keep it simple — no functions, no imports</p>
+<p>Improve it by adding: - A module docstring at the top describing the program - BOT_NAME and VERSION as constants (uppercase) - Inline comments explaining the while loop and the break - Keep it simple. No functions, no imports</p>
 </div>
 </div>
 </section>
@@ -701,7 +701,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello! I'm </span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss"> v</span><span class="sc">{</span>VERSION<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Type 'quit' to exit."</span>)</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Main conversation loop — runs until user quits</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Main conversation loop (runs until user quits)</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"You: "</span>)</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -720,7 +720,7 @@ message = "Hello, world!'</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The docstring at the top (triple quotes) describes the program. <code>BOT_NAME</code> and <code>VERSION</code> are uppercase — the naming convention signals these are constants that should not change. The comments explain <em>why</em> (the loop runs until quit) not <em>what</em> (print prints). The <code>break</code> comment is useful because <code>break</code> is a keyword you might not recognise yet.</p>
+<p>The docstring at the top (triple quotes) describes the program. <code>BOT_NAME</code> and <code>VERSION</code> are uppercase. The naming convention signals these are constants that should not change. The comments explain <em>why</em> (the loop runs until quit) not <em>what</em> (print prints). The <code>break</code> comment is useful because <code>break</code> is a keyword you might not recognise yet.</p>
 </div>
 </div>
 </section>
@@ -739,7 +739,7 @@ message = "Hello, world!'</code></pre>
 <p>Add a comment block after the constants that lists what the chatbot can do in this version. Format it as a multi-line comment. Also add a <code># TODO:</code> comment listing two features we will add in future chapters.</p>
 </div>
 </div>
-<p>Read the result. <code># TODO:</code> comments are a convention for marking planned work — you will see these frequently in AI-generated code and in professional projects.</p>
+<p>Read the result. <code># TODO:</code> comments are a convention for marking planned work. You will see these frequently in AI-generated code and in professional projects.</p>
 </section>
 </section>
 <section id="your-chatbot-so-far" class="level2" data-number="2.5">
@@ -1285,7 +1285,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>Your AI should explain that Python uses indentation to define code blocks — it is not decorative, it is structural. A misplaced space causes an <span class="in">`IndentationError`</span>. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>Your AI should explain that Python uses indentation to define code blocks. It is not decorative, it is structural. A misplaced space causes an <span class="in">`IndentationError`</span>. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.</span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
@@ -1322,7 +1322,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Gap</span></span>
 <span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean — even before you understand what the code does.</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean, even before you understand what the code does.</span>
 <span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>In the Building Session, you will set up your Python environment and add proper structure to the chatbot from Chapter 1: comments, named constants, and clear formatting.</span>
 <span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a></span>
@@ -1358,7 +1358,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A module docstring at the top describing the program</span>
 <span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>BOT_NAME and VERSION as constants (uppercase)</span>
 <span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inline comments explaining the while loop and the break</span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep it simple — no functions, no imports</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep it simple. No functions, no imports</span>
 <span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the Code</span></span>
@@ -1379,7 +1379,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello! I'm </span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss"> v</span><span class="sc">{</span>VERSION<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Type 'quit' to exit."</span>)</span>
 <span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="co"># Main conversation loop — runs until user quits</span></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="co"># Main conversation loop (runs until user quits)</span></span>
 <span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"You: "</span>)</span>
 <span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
@@ -1391,7 +1391,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>The docstring at the top (triple quotes) describes the program. <span class="in">`BOT_NAME`</span> and <span class="in">`VERSION`</span> are uppercase — the naming convention signals these are constants that should not change. The comments explain *why* (the loop runs until quit) not *what* (print prints). The <span class="in">`break`</span> comment is useful because <span class="in">`break`</span> is a keyword you might not recognise yet.</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>The docstring at the top (triple quotes) describes the program. <span class="in">`BOT_NAME`</span> and <span class="in">`VERSION`</span> are uppercase. The naming convention signals these are constants that should not change. The comments explain *why* (the loop runs until quit) not *what* (print prints). The <span class="in">`break`</span> comment is useful because <span class="in">`break`</span> is a keyword you might not recognise yet.</span>
 <span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
@@ -1400,7 +1400,7 @@ message = "Hello, world!'</code></pre>
 <span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>Add a comment block after the constants that lists what the chatbot can do in this version. Format it as a multi-line comment. Also add a <span class="in">`# TODO:`</span> comment listing two features we will add in future chapters.</span>
 <span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>Read the result. <span class="in">`# TODO:`</span> comments are a convention for marking planned work — you will see these frequently in AI-generated code and in professional projects.</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>Read the result. <span class="in">`# TODO:`</span> comments are a convention for marking planned work. You will see these frequently in AI-generated code and in professional projects.</span>
 <span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>
 <span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a></span>
