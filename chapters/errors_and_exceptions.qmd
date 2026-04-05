@@ -1,631 +1,179 @@
-# Errors and Exceptions - Handling the Unexpected
+# Errors and Exceptions
 
-## Chapter Outline
-- Understanding error types in Python
-- Python's exception handling mechanism
-- Using try/except blocks
-- Handling specific exceptions
-- Creating more robust code
-- Best practices for error handling
-- Using exceptions in real applications
+## The Wall
 
-## Learning Objectives
+AI wrapped everything in `try: ... except: pass` and your errors vanished. The program did not crash anymore, but it also did not work — it silently swallowed every problem. You had no idea where things went wrong because the error messages were being hidden.
 
-By the end of this chapter, you will be able to:
-- Identify the main types of errors in Python programs
-- Understand what exceptions are and how they work
-- Write try/except blocks to handle runtime errors
-- Handle specific exception types appropriately
-- Make your programs more resilient to errors
-- Create user-friendly error messages
-- Apply exception handling in practical applications
+Or the opposite: AI did not add error handling at all, and the program crashed on the first unexpected input with a traceback you could not read.
 
-## 1. Introduction: When Things Go Wrong
+This chapter fixes that.
 
-Even the most experienced programmers write code with errors. The difference between novice and expert programmers isn't whether they make mistakes—it's how they anticipate and handle those mistakes. In Python (and most programming languages), errors generally fall into three categories:
+## Thinking Session
 
-1. **Syntax Errors**: Mistakes in the structure of your code that prevent it from running
-2. **Runtime Errors**: Errors that occur while your program is running
-3. **Logical Errors**: Your code runs but doesn't do what you expect
+### Getting Oriented
 
-This chapter focuses primarily on runtime errors and how Python's exception handling system allows you to deal with them gracefully.
+::: {.callout-note title="Thinking Session Prompt"}
+What is the difference between a syntax error and an exception in Python? When I see a traceback, what information does it give me? Walk me through how to read a Python error message — I want to be able to look at AI-generated tracebacks and immediately find the problem.
+:::
 
-***AI Tip: Ask your AI assistant to analyse error messages you encounter and explain them in simple terms, highlighting exactly what went wrong and why.***
+Your AI should explain: syntax errors are caught before the code runs (missing colons, bad indentation), exceptions happen during execution (dividing by zero, missing keys, wrong types). The traceback reads bottom-up: the last line is the error, the lines above show the call stack. The file name and line number tell you exactly where to look.
 
-## 2. Understanding Error Types
+### Go Deeper
 
-### Syntax Errors
+::: {.callout-note title="Thinking Session Prompt"}
+What are the most common Python exceptions? I see TypeError, ValueError, KeyError, IndexError, FileNotFoundError, and AttributeError in AI-generated code. For each one, tell me what causes it and show me a one-line example that triggers it.
+:::
 
-Syntax errors occur when you break Python's grammar rules. The Python interpreter catches these when it tries to parse your code, preventing your program from running at all.
+::: {.callout-tip title="What to Look For"}
+`TypeError`: wrong type for an operation (`"5" + 3`). `ValueError`: right type but wrong value (`int("hello")`). `KeyError`: missing dictionary key (`d["missing"]`). `IndexError`: list index out of range (`[1,2][5]`). `FileNotFoundError`: file does not exist. `AttributeError`: calling a method that does not exist on that type.
+:::
 
-```python
-# Syntax error: missing closing parenthesis
-print("Hello, world!"
-```
+::: {.callout-note title="Thinking Session Prompt"}
+Explain Python's try/except properly. What is the right way to use it? Why is `except:` or `except Exception:` without specifying the error type considered bad practice? What is the finally clause for?
+:::
 
-The Python interpreter would respond with something like:
-```text
-  File "<stdin>", line 1
-    print("Hello, world!"
-                        ^
-SyntaxError: unexpected EOF while parsing
-```
+### Challenge It
 
-Syntax errors are usually easy to fix once you understand what's wrong.
-
-### Runtime Errors (Exceptions)
-
-Runtime errors, also called exceptions, occur during program execution. Unlike syntax errors, the code is valid Python, but something goes wrong when it runs. For example:
-
-```python
-# This code is syntactically correct but will cause a runtime error
-x = 10
-y = 0
-result = x / y  # ZeroDivisionError
-```
-
-When you run this, Python raises an exception:
-```text
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-ZeroDivisionError: division by zero
-```
-
-Common runtime errors include:
-- `ZeroDivisionError`: Trying to divide by zero
-- `TypeError`: Performing an operation on incompatible types
-- `ValueError`: Giving a function the right type but invalid value
-- `IndexError`: Trying to access a non-existent index in a sequence
-- `KeyError`: Trying to access a non-existent key in a dictionary
-- `FileNotFoundError`: Trying to open a file that doesn't exist
-- `NameError`: Using a variable that hasn't been defined
-
-### Logical Errors
-
-Logical errors are the trickiest to find. Your code runs without raising exceptions, but it doesn't do what you expect. For example:
-
-```python
-# Logical error: calculating average incorrectly
-scores = [85, 90, 78]
-average = sum(scores) / 4  # Should be divided by 3 (the length of the list)
-print(average)  # Returns 63.25 instead of 84.33
-```
-
-This chapter focuses on runtime errors (exceptions). For help with logical errors, see Chapter 17 on Debugging.
-
-## 3. Python's Exception Handling: try and except
-
-Python provides a powerful mechanism for handling exceptions: the `try`/`except` block. Here's the basic structure:
+::: {.callout-note title="Thinking Session Prompt"}
+What is wrong with this error handling?
 
 ```python
 try:
-    # Code that might cause an exception
-    result = 10 / 0
+    data = json.load(open("config.json"))
+    result = data["setting"] / data["count"]
+    save_to_database(result)
 except:
-    # Code that runs if an exception occurs
-    print("Something went wrong!")
+    pass
 ```
+:::
 
-The code inside the `try` block is executed. If an exception occurs, Python immediately jumps to the `except` block, skipping any remaining code in the `try` block.
+::: {.callout-tip title="What to Look For"}
+Three problems: (1) bare `except:` catches everything including KeyboardInterrupt and SystemExit. (2) `pass` silently swallows errors — you will never know something went wrong. (3) the try block is too broad — it should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.
+:::
 
-### A Simple Example
+### What You Should Have Learned
 
-Let's explore a simple example to see how exception handling works:
+- Syntax errors vs exceptions — different causes, different fixes
+- How to read a traceback: bottom-up, file + line number
+- The common exceptions: TypeError, ValueError, KeyError, IndexError
+- try/except should catch specific exceptions, not bare except
+- Never use `except: pass` — at minimum, log the error
+- `finally` runs whether or not an exception occurred
+
+## The Gap
+
+You can now read Python error messages and understand what went wrong. When AI generates error handling, you can evaluate whether it is catching the right exceptions or blindly swallowing everything. This is a critical skill — bad error handling is worse than no error handling.
+
+In the Building Session, you will add proper error handling to your chatbot.
+
+## Building Session
+
+### The Spec
+
+Add robust error handling to your chatbot:
+
+- Handle `FileNotFoundError` when loading conversation history
+- Handle `json.JSONDecodeError` when the history file is corrupted
+- Handle `KeyboardInterrupt` (Ctrl+C) gracefully
+- Log errors instead of silently ignoring them
+
+### Prompt It
+
+::: {.callout-note title="Building Session Prompt"}
+Update my chatbot to v1.6. Add proper error handling:
+
+- Wrap the history file loading in try/except that handles FileNotFoundError and json.JSONDecodeError separately, with specific error messages for each
+- Add a try/except around the main loop that catches KeyboardInterrupt and saves history before exiting
+- Add an error_log list that stores error messages during the session
+- Add an "errors" command that shows any errors that occurred
+- Never use bare except: or except: pass
+
+Keep existing features.
+:::
+
+### Read the Code
+
+Your AI will produce something like this:
 
 ```python
-# Without exception handling
-x = 10
-y = 0
-# result = x / y  # Program crashes with ZeroDivisionError
-
-# With exception handling
-try:
-    result = x / y
-    print(f"The result is {result}")
-except:
-    print("Cannot divide by zero!")
-    result = None
-
-print("Program continues executing...")
-```
-
-In the first case, the program would crash. In the second case, it captures the error, provides a useful message, and continues running.
-
-## 4. Handling Specific Exceptions
-
-The previous example catches any exception, but it's usually better to catch specific exception types. This allows different handling for different errors:
-
-```python
-try:
-    number = int(input("Enter a number: "))
-    result = 100 / number
-    print(f"100 divided by {number} is {result}")
-except ValueError:
-    print("That's not a valid number!")
-except ZeroDivisionError:
-    print("You cannot divide by zero!")
-```
-
-You can even catch multiple specific exceptions with a single handler:
-
-```python
-try:
-    # Code that might raise different exceptions
-    # ...
-except (ValueError, TypeError):
-    print("There was a problem with the data type or value")
-```
-
-## 5. Capturing Exception Information
-
-Sometimes you want to display or log the actual error message. You can capture the exception object using the `as` keyword:
-
-```python
-try:
-    with open("nonexistent_file.txt", "r") as file:
-        content = file.read()
-except FileNotFoundError as err:
-    print(f"Error: {err}")
-    # Could display: Error: [Errno 2] No such file or directory: 'nonexistent_file.txt'
-```
-
-This is especially useful for debugging or providing detailed feedback.
-
-## 6. The else and finally Clauses
-
-Python's exception handling has two additional clauses:
-
-### The else Clause
-
-The `else` clause runs if the `try` block completes without an exception:
-
-```python
-try:
-    number = int(input("Enter a number: "))
-    result = 100 / number
-except ValueError:
-    print("That's not a valid number!")
-except ZeroDivisionError:
-    print("You cannot divide by zero!")
-else:
-    # This runs only if no exceptions occurred
-    print(f"The result is {result}")
-```
-
-### The finally Clause
-
-The `finally` clause runs whether an exception occurred or not. It's useful for cleanup operations:
-
-```python
-try:
-    file = open("data.txt", "r")
-    content = file.read()
-except FileNotFoundError:
-    print("The file does not exist")
-finally:
-    # This runs regardless of what happened in the try block
-    if 'file' in locals() and not file.closed:
-        file.close()
-        print("File closed successfully")
-```
-
-The `finally` block is excellent for ensuring resources like files or network connections are properly closed.
-
-## 7. Preventing Errors vs. Handling Exceptions
-
-There are often two approaches to dealing with potential errors:
-
-### LBYL (Look Before You Leap)
-
-Check for potential problems before performing an operation:
-
-```python
-# LBYL approach
-if divisor != 0:
-    result = dividend / divisor
-else:
-    result = "Cannot divide by zero"
-```
-
-### EAFP (Easier to Ask Forgiveness than Permission)
-
-Try the operation and handle any exceptions that occur:
-
-```python
-# EAFP approach
-try:
-    result = dividend / divisor
-except ZeroDivisionError:
-    result = "Cannot divide by zero"
-```
-
-Python generally favours the EAFP approach (using try/except) as it's usually cleaner and handles rare edge cases better. However, if checking is simple and the exception would be common, LBYL might be more appropriate.
-
-## 8. Common Error Handling Patterns
-
-Here are some patterns you'll use frequently:
-
-### Input Validation
-
-```python
-def get_integer_input(prompt):
-    """Keep asking until a valid integer is provided."""
-    while True:
-        try:
-            return int(input(prompt))
-        except ValueError:
-            print("Please enter a valid integer.")
-```
-
-### Safe File Operations
-
-```python
-def read_file_safely(filename):
-    """Attempt to read a file and handle potential errors."""
+def load_history():
+    """Load history with specific error handling."""
     try:
-        with open(filename, 'r') as file:
-            return file.read()
+        with open(HISTORY_FILE, "r") as f:
+            return json.load(f)
     except FileNotFoundError:
-        print(f"The file '{filename}' was not found.")
-        return None
-    except PermissionError:
-        print(f"You don't have permission to read '{filename}'.")
-        return None
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        return None
-```
+        print(f"{BOT_NAME}: No previous history found. "
+              "Starting fresh.")
+        return []
+    except json.JSONDecodeError:
+        print(f"{BOT_NAME}: History file corrupted. "
+              "Starting fresh.")
+        return []
 
-### Graceful Degradation
 
-```python
-def get_user_profile(user_id):
-    """Retrieve user data, falling back to defaults on errors."""
+def main():
+    """Main loop with error handling."""
+    display_welcome(BOT_NAME, VERSION)
+    user_name = get_user_name(BOT_NAME)
+    history = load_history()
+    error_log = []
+
     try:
-        # Primary data source
-        return database.get_user(user_id)
-    except DatabaseError:
-        try:
-            # Backup data source
-            return api.fetch_user(user_id)
-        except APIError:
-            # Last resort - return default profile
-            return {"name": "Guest", "access_level": "minimal"}
-```
-
-## 9. Self-Assessment Quiz
-
-1. What is the main difference between a syntax error and an exception?
-   a) Syntax errors occur during runtime; exceptions occur during compilation
-   b) Syntax errors occur during parsing; exceptions occur during runtime
-   c) Syntax errors are always fatal; exceptions can be handled
-   d) There is no difference; they are different terms for the same thing
-
-2. Which of the following is NOT a common exception type in Python?
-   a) `ValueError`
-   b) `TypeError`
-   c) `SyntaxError`
-   d) `MemoryError`
-
-3. What does the following code print if the user enters "abc"?
-   ```python
-   try:
-       num = int(input("Enter a number: "))
-       print(f"You entered {num}")
-   except ValueError:
-       print("Not a valid number")
-   else:
-       print("Valid input received")
-   ```
-   a) "You entered abc" followed by "Valid input received"
-   b) "Not a valid number" followed by "Valid input received"
-   c) "Not a valid number"
-   d) It raises an unhandled exception
-
-4. In what order are the blocks executed in a try-except-else-finally statement when no exception occurs?
-   a) try → except → else → finally
-   b) try → else → except → finally
-   c) try → else → finally
-   d) try → finally → else
-
-5. What happens if an exception is raised in the `except` block of a try-except statement?
-   a) The program crashes with an unhandled exception
-   b) The exception is automatically handled
-   c) The program continues executing as if nothing happened
-   d) The `finally` block handles the new exception
-
-**Answers & Feedback:**
-1. b) Syntax errors occur during parsing; exceptions occur during runtime — Syntax errors prevent your code from running at all
-2. c) `SyntaxError` — While this is an error in Python, it's not considered an exception that you can catch with try/except
-3. c) "Not a valid number" — The else block only runs if no exception occurs
-4. c) try → else → finally — When no exception occurs, the except block is skipped
-5. a) The program crashes with an unhandled exception — Exception handlers don't protect against errors within themselves
-
-## 10. Common Exception Handling Mistakes
-
-- **Catching too broadly**: Using `except:` without specifying the exception type can catch unexpected errors
-- **Silencing errors**: Catching exceptions but not handling them properly can hide bugs
-- **Overusing try/except**: Using exception handling when simple conditionals would be clearer
-- **Forgetting cleanup**: Not using `finally` or `with` statements for resource management
-- **Raising generic exceptions**: Raising `Exception` instead of more specific types
-
-## Project Corner: Making Your Chatbot Robust with Error Handling
-
-Let's enhance our chatbot to handle errors gracefully, focusing on file operations:
-
-```python
-import os
-import datetime
-import random
-
-# Response patterns and templates from Chapter 14
-response_patterns = {
-    "greetings": ["hello", "hi", "hey", "howdy"],
-    "farewells": ["bye", "goodbye", "see you", "cya"],
-    # other patterns...
-}
-
-response_templates = {
-    "greetings": ["Hello there!", "Hi! Nice to chat with you!"],
-    "farewells": ["Goodbye! Come back soon!", "See you later!"],
-    # other templates...
-}
-
-def get_response(user_input):
-    """Get a response based on the user input."""
-    user_input = user_input.lower()
-
-    for category, patterns in response_patterns.items():
-        for pattern in patterns:
-            if pattern in user_input:
-                return random.choice(response_templates[category])
-
-    return "I'm still learning. Can you tell me more?"
-
-def save_conversation():
-    """Save the current conversation to a file with error handling."""
-    try:
-        # Create the chats directory if it doesn't exist
-        if not os.path.exists('chats'):
-            os.makedirs('chats')
-
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"chats/chat_with_{user_name}_{timestamp}.txt"
-
-        with open(filename, "w") as f:
-            f.write(f"Conversation with {bot_name} and {user_name}\n")
-            f.write(f"Date: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-
-            for entry in conversation_history:
-                f.write(f"{entry}\n")
-
-        return f"Conversation saved to {filename}"
-    except PermissionError:
-        return "Sorry, I don't have permission to save in that location."
-    except OSError as e:
-        return f"Error saving conversation: {str(e)}"
-    except Exception as e:
-        return f"An unexpected error occurred: {str(e)}"
-
-def load_conversation(filename):
-    """Load a previous conversation from a file with error handling."""
-    try:
-        # Make sure the file is in the chats directory for security
-        if not filename.startswith('chats/'):
-            filename = f"chats/{filename}"
-
-        with open(filename, "r") as f:
-            lines = f.readlines()
-
-        print("\n----- Loaded Conversation -----")
-        for line in lines:
-            print(line.strip())
-        print("-------------------------------\n")
-        return True
-    except FileNotFoundError:
-        print(f"{bot_name}> Sorry, I couldn't find the file '{filename}'.")
-        show_available_chats()
-        return False
-    except PermissionError:
-        print(f"{bot_name}> I don't have permission to read that file.")
-        return False
-    except UnicodeDecodeError:
-        print(f"{bot_name}> That doesn't appear to be a text file I can read.")
-        return False
-    except Exception as e:
-        print(f"{bot_name}> An error occurred: {str(e)}")
-        return False
-
-def show_available_chats():
-    """Show a list of available saved conversations with error handling."""
-    try:
-        if not os.path.exists('chats'):
-            print("No saved conversations found.")
-            return
-
-        chat_files = os.listdir('chats')
-        if not chat_files:
-            print("No saved conversations found.")
-            return
-
-        print("\nAvailable saved conversations:")
-        for i, chat_file in enumerate(chat_files, 1):
-            print(f"{i}. {chat_file}")
-    except Exception as e:
-        print(f"Error listing conversations: {str(e)}")
-
-def get_valid_input(prompt, validation_func=None, error_message=None):
-    """Repeatedly prompt the user until valid input is received."""
-    while True:
-        user_input = input(prompt)
-
-        # If no validation function was provided, any input is valid
-        if validation_func is None:
-            return user_input
-
-        # Check if the input is valid
-        if validation_func(user_input):
-            return user_input
-
-        # Display error message and try again
-        if error_message:
-            print(error_message)
-
-# Main chat loop
-bot_name = "PyBot"
-print(f"Hello! I'm {bot_name}. Type 'bye' to exit.")
-print("Special commands:")
-print("- 'save': Save the current conversation")
-print("- 'chats': Show available saved conversations")
-print("- 'load <filename>': Load a conversation")
-
-# Get user name with validation
-def is_valid_name(name):
-    return len(name.strip()) > 0
-
-user_name = get_valid_input(
-    "What's your name? ",
-    is_valid_name,
-    "Name cannot be empty. Please enter your name."
-)
-print(f"Nice to meet you, {user_name}!")
-
-conversation_history = []
-
-def save_to_history(speaker, text):
-    """Save an utterance to conversation history."""
-    conversation_history.append(f"{speaker}: {text}")
-
-# Save initial greeting
-save_to_history(bot_name, f"Nice to meet you, {user_name}!")
-
-while True:
-    try:
-        user_input = input(f"{user_name}> ")
-        save_to_history(user_name, user_input)
-
-        # Check for special commands
-        if user_input.lower() == "bye":
-            response = f"Goodbye, {user_name}!"
-            print(f"{bot_name}> {response}")
-            save_to_history(bot_name, response)
-            break
-
-        elif user_input.lower() == "save":
-            result = save_conversation()
-            print(f"{bot_name}> {result}")
-            save_to_history(bot_name, result)
-            continue
-
-        elif user_input.lower() == "chats":
-            show_available_chats()
-            continue
-
-        elif user_input.lower().startswith("load "):
-            filename = user_input[5:].strip()
-            load_conversation(filename)
-            continue
-
-        # Get and display response
-        response = get_response(user_input)
-        print(f"{bot_name}> {response}")
-        save_to_history(bot_name, response)
-
+        while True:
+            user_input = input(f"{user_name}: ").strip()
+            if not user_input:
+                continue
+            # ... response logic ...
     except KeyboardInterrupt:
-        # Handle Ctrl+C gracefully
-        print(f"\n{bot_name}> Conversation interrupted. Goodbye!")
-        break
-
-    except Exception as e:
-        # Catch-all for unexpected errors to prevent program crashes
-        error_msg = f"I encountered an error: {str(e)}"
-        print(f"{bot_name}> {error_msg}")
-        save_to_history(bot_name, error_msg)
+        print(f"\n{BOT_NAME}: Interrupted! Saving...")
+    finally:
+        save_history(history)
+        print(f"{BOT_NAME}: History saved. Goodbye!")
 ```
 
-This enhanced chatbot includes:
+::: {.callout-tip title="What to Notice"}
+Each `except` catches a specific exception with a helpful message. `KeyboardInterrupt` is caught separately — it is not a bug, it is a user action. The `finally` block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.
+:::
 
-1. Error handling for file operations (saving/loading)
-2. A validation function for user input
-3. Graceful handling of keyboard interrupts (Ctrl+C)
-4. Security measures for file access
-5. A catch-all exception handler to prevent crashes
-6. Informative error messages
+### Stretch It
 
-These improvements make the chatbot more robust and user-friendly. When problems occur, the program doesn't crash - it provides helpful information and continues running.
+::: {.callout-note title="Building Session Prompt"}
+Add a custom exception class `ChatbotError` that is raised when the chatbot encounters an invalid command format. Catch it in the main loop and add the error to the error_log.
+:::
 
-**Challenges**:
-- Add a log file that records errors for later review
-- Implement a system to recover from the last successful state after an error
-- Create more specific exception types for different chatbot-related errors
-- Add a "debug mode" that provides more detailed error information
-- Create a validation system for all user commands
+## Your Chatbot So Far
 
-## Cross-References
+- Ch 1-14: Full features with dictionaries and string processing
+- Ch 15: File persistence
+- **Ch 16: Proper error handling, error logging, graceful shutdown**
 
-- Previous Chapter: [Files](files.qmd)
-- Next Chapter: [Debugging](debugging.qmd)
-- Related Topics: Files (Chapter 15), Functions (Chapter 9)
-
-***AI Tip: Ask your AI assistant to help you convert cryptic Python error messages into plain English explanations that include specific suggestions for fixing the problem.***
-
-## Error Handling in the Real World
-
-Effective error handling is a hallmark of professional-quality code. Here are some real-world approaches:
-
-### Logging Instead of Printing
-
-In production applications, errors are typically logged rather than printed:
+## Quick Reference
 
 ```python
-import logging
-
-# Configure logging
-logging.basicConfig(
-    filename='app.log',
-    level=logging.ERROR,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-
+# Specific exception handling
 try:
-    # Risky code here
-    result = 10 / 0
-except Exception as e:
-    # Log the error with traceback information
-    logging.exception("An error occurred during calculation")
+    result = int(user_input)
+except ValueError:
+    print("Not a valid number")
+except TypeError:
+    print("Wrong type")
+
+# Multiple exceptions
+except (ValueError, TypeError) as e:
+    print(f"Error: {e}")
+
+# finally always runs
+try:
+    f = open("file.txt")
+except FileNotFoundError:
+    print("Missing file")
+finally:
+    print("This always runs")
+
+# Raise your own
+raise ValueError("Invalid input")
+
+# Custom exception
+class ChatbotError(Exception):
+    pass
 ```
-
-### Custom Exception Classes
-
-For complex applications, custom exceptions can make error handling more specific:
-
-```python
-class InsufficientFundsError(Exception):
-    """Raised when a bank account has insufficient funds for a withdrawal."""
-
-    def __init__(self, account, amount, balance):
-        self.account = account
-        self.amount = amount
-        self.balance = balance
-        self.deficit = amount - balance
-        super().__init__(f"Cannot withdraw ${amount} from account {account}. Balance: ${balance}, deficit: ${self.deficit}")
-
-# Using the custom exception
-def withdraw(account_id, amount):
-    balance = get_account_balance(account_id)
-    if balance < amount:
-        raise InsufficientFundsError(account_id, amount, balance)
-    # Process withdrawal if sufficient funds
-```
-
-### Error Recovery Strategies
-
-Robust systems need strategies for recovering from errors:
-
-1. **Retry with backoff**: When temporary failures occur (like network issues)
-2. **Fallback to alternatives**: When a primary method fails, try a backup
-3. **Graceful degradation**: Continue with limited functionality rather than failing completely
-4. **Checkpointing**: Save progress frequently so you can recover from the last good state
-5. **Circuit breakers**: Stop trying operations that consistently fail
-
-By implementing these strategies, you can create Python programs that not only handle errors gracefully but also recover from them effectively—a key skill for developing reliable software.

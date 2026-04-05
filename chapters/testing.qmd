@@ -1,565 +1,198 @@
-# Testing - Ensuring Your Code Works as Intended
+# Testing
 
-## Chapter Outline
-- Understanding software testing fundamentals
-- Types of tests and their purposes
-- Writing and running basic tests
-- Testing with assertions
-- Using unittest, Python's built-in testing framework
-- Test-driven development (TDD) basics
-- Best practices for effective testing
+## The Wall
 
-## Learning Objectives
+AI said the code worked. You ran it, it seemed fine. Then you gave it to someone else and it crashed with inputs you never tried. AI tested its own code with the happy path — the obvious, expected inputs — and missed every edge case.
 
-By the end of this chapter, you will be able to:
-- Understand why testing is crucial for reliable software
-- Create simple tests to verify your code's functionality
-- Use assertions to check code behaviour
-- Write basic unit tests with Python's unittest framework
-- Apply test-driven development principles
-- Know when and what to test
-- Integrate testing into your development workflow
+You asked AI to "add tests" and it generated tests that passed trivially. One test checked that `add(2, 3)` returns `5`. It did not test what happens when you pass `None`, a string, or a negative number. The tests gave you false confidence.
 
-## 1. Introduction: Why Test Your Code?
+This chapter fixes that.
 
-Imagine you're building a bridge. Would you let people drive across it without first testing that it can hold weight? Of course not! The same principle applies to software. Testing helps ensure your code works correctly and continues to work as you make changes.
+## Thinking Session
 
-Testing provides several key benefits:
+### Getting Oriented
 
-- **Bug detection**: Finds issues before your users do
-- **Prevention**: Prevents new changes from breaking existing functionality
-- **Documentation**: Shows how your code is meant to be used
-- **Design improvement**: Leads to more modular, testable code
-- **Confidence**: Gives you peace of mind when changing your code
+::: {.callout-note title="Thinking Session Prompt"}
+Why do we test code? I know AI can generate tests, but what makes a test actually useful? What is the difference between a test that gives you confidence and a test that just takes up space? And what is pytest — why do Python developers prefer it over the built-in unittest module?
+:::
 
-Even for small programs, testing can save you time and frustration by catching bugs early when they're easiest to fix.
+Your AI should explain: good tests check edge cases, not just happy paths. A test is useful if its failure tells you something is broken. pytest is preferred because it uses plain `assert` statements instead of special methods (`assertEqual`, `assertTrue`), making tests more readable.
 
-***AI Tip: When you're unsure what to test, ask your AI assistant to suggest test cases for your function or class, including edge cases you might not have considered.***
+### Go Deeper
 
-## 2. Testing Fundamentals
+::: {.callout-note title="Thinking Session Prompt"}
+How do I write a pytest test? Walk me through the structure: where do test files go, how do I name them, what does a test function look like, and how do I run tests? Also explain what "arrange, act, assert" means.
+:::
 
-Before diving into code, let's understand some basic testing concepts.
+::: {.callout-tip title="What to Look For"}
+Test files go in a `tests/` directory, named `test_*.py`. Test functions start with `test_`. Arrange-Act-Assert: set up the input (arrange), call the function (act), check the result (assert). `pytest` discovers and runs tests automatically. Your AI should show this structure, not just individual assert statements.
+:::
 
-### Types of Tests
+::: {.callout-note title="Thinking Session Prompt"}
+What are edge cases and how do I identify them? When AI generates a function, what inputs should I always test? Give me a checklist I can use for any function.
+:::
 
-There are several types of tests, each with a different purpose:
+### Challenge It
 
-1. **Unit tests**: Test individual components (functions, methods, classes) in isolation
-2. **Integration tests**: Test how components work together
-3. **Functional tests**: Test complete features or user workflows
-4. **Regression tests**: Ensure new changes don't break existing functionality
-5. **Performance tests**: Measure speed, resource usage, and scalability
-
-In this chapter, we'll focus primarily on unit tests, which are the foundation of a good testing strategy.
-
-### Testing Vocabulary
-
-Here are some key terms you'll encounter:
-
-- **Test case**: A specific scenario being tested
-- **Test fixture**: Setup code that creates a consistent testing environment
-- **Test suite**: A collection of related test cases
-- **Assertion**: A statement that verifies a condition is true
-- **Mocking**: Replacing real objects with simulated ones for testing
-- **Test coverage**: The percentage of your code that's tested
-
-## 3. Simple Testing with Assertions
-
-The simplest form of testing uses assertions - statements that verify a condition is true. If the condition is false, Python raises an `AssertionError`.
-
-Let's start with a simple function and test it:
+::: {.callout-note title="Thinking Session Prompt"}
+Here is a function and its AI-generated tests. Are the tests good enough?
 
 ```python
-def add(a, b):
-    return a + b
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
 
-# Test the function with assertions
-assert add(2, 3) == 5
-assert add(-1, 1) == 0
-assert add(0, 0) == 0
+def test_average():
+    assert calculate_average([1, 2, 3]) == 2.0
+    assert calculate_average([10, 20]) == 15.0
 ```
+:::
 
-If all assertions pass, you'll see no output. If one fails, you'll get an error:
+::: {.callout-tip title="What to Look For"}
+The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug — it crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.
+:::
+
+### What You Should Have Learned
+
+- Good tests check edge cases, not just expected inputs
+- pytest uses plain `assert` — simple and readable
+- Test files: `tests/test_*.py`, functions: `test_*()`
+- Arrange, Act, Assert — the test structure pattern
+- Edge case checklist: empty input, None, wrong type, boundary values, single item
+- Tests give confidence to modify code — that is their real value
+
+## The Gap
+
+Testing is what separates code that works from code you can trust. When AI generates code, you cannot verify it by running it once with expected input. You need tests for the edge cases AI did not think of. Now you know how to write those tests.
+
+In the Building Session, you will write tests for your chatbot's core functions.
+
+## Building Session
+
+### The Spec
+
+Add pytest tests for your chatbot:
+
+- Test `classify_input()` with greetings, questions, farewells, and unknown input
+- Test `get_response()` returns the right type (tuple of string and bool)
+- Test edge cases: empty input, very long input, input with only spaces
+- Test `load_history()` when the file does not exist
+
+### Prompt It
+
+::: {.callout-note title="Building Session Prompt"}
+Create a test file `tests/test_chatbot.py` for my chatbot. Write pytest tests for:
+
+- classify_input("hello") should return "greeting"
+- classify_input("bye") should return "farewell"
+- classify_input("what?") should return "question"
+- classify_input("random text") should return "default"
+- classify_input("") should return "default" (not crash)
+- get_response() should return a tuple of (str, bool)
+- get_response("bye") should return (str, True) — the exit flag
+
+Use the arrange/act/assert pattern. Include at least one test that checks an edge case AI would miss.
+:::
+
+### Read the Code
+
+Your AI will produce something like this:
 
 ```python
-assert add(2, 2) == 5  # This will fail
-# AssertionError
+"""Tests for the chatbot response system."""
+from chatbot import classify_input, get_response
+
+
+def test_classify_greeting():
+    assert classify_input("hello") == "greeting"
+    assert classify_input("hi there") == "greeting"
+    assert classify_input("Hey!") == "greeting"
+
+
+def test_classify_farewell():
+    assert classify_input("bye") == "farewell"
+    assert classify_input("goodbye") == "farewell"
+
+
+def test_classify_question():
+    assert classify_input("what is Python?") == "question"
+
+
+def test_classify_default():
+    assert classify_input("random text") == "default"
+
+
+def test_classify_empty():
+    """Edge case: empty input should not crash."""
+    assert classify_input("") == "default"
+
+
+def test_classify_whitespace():
+    """Edge case: whitespace-only input."""
+    assert classify_input("   ") == "default"
+
+
+def test_response_type():
+    """get_response returns (str, bool)."""
+    response, should_exit = get_response("hello")
+    assert isinstance(response, str)
+    assert isinstance(should_exit, bool)
+
+
+def test_response_farewell_exits():
+    """Farewell responses should signal exit."""
+    _, should_exit = get_response("bye")
+    assert should_exit is True
+
+
+def test_response_greeting_continues():
+    """Greeting responses should not exit."""
+    _, should_exit = get_response("hello")
+    assert should_exit is False
 ```
 
-### Writing Effective Assertions
+::: {.callout-tip title="What to Notice"}
+Each test function does one thing and has a descriptive name. Edge cases (empty input, whitespace) have their own tests with docstrings explaining why. `isinstance()` checks the type without caring about the specific value. The `_` in `_, should_exit` discards a value you do not need. Run with `pytest tests/` from the project root.
+:::
 
-Assertions should be:
+### Stretch It
 
-1. **Specific**: Test one thing at a time
-2. **Descriptive**: Include a message explaining what's being tested
-3. **Complete**: Cover normal cases, edge cases, and error cases
+::: {.callout-note title="Building Session Prompt"}
+Add a test for load_history() that uses pytest's tmp_path fixture to test with a temporary JSON file. Test both the case where the file exists with valid data and where it does not exist.
+:::
 
-Let's improve our assertions:
+## Your Chatbot So Far
+
+- Ch 1-16: Full features with persistence and error handling
+- Ch 17: Debug mode
+- **Ch 18: pytest test suite for core functions**
+
+## Quick Reference
 
 ```python
-# More descriptive assertions
-assert add(2, 3) == 5, "Basic positive number addition failed"
-assert add(-1, 1) == 0, "Addition with negative number failed"
-assert add(0, 0) == 0, "Addition with zeros failed"
-assert add(0.1, 0.2) == pytest.approx(0.3), "Floating point addition failed"
+# Test file: tests/test_example.py
+def test_addition():
+    # Arrange
+    x, y = 2, 3
+    # Act
+    result = x + y
+    # Assert
+    assert result == 5
+
+# Run tests
+# pytest                    # all tests
+# pytest tests/test_x.py   # specific file
+# pytest -v                 # verbose output
+
+# Common assertions
+assert result == expected
+assert result is True
+assert result is None
+assert isinstance(result, str)
+assert len(items) > 0
+
+# Expected exceptions
+import pytest
+def test_invalid_input():
+    with pytest.raises(ValueError):
+        int("not a number")
 ```
-
-### Testing More Complex Functions
-
-Let's test a more complex function that calculates factorial:
-
-```python
-def factorial(n):
-    """Calculate the factorial of n (n!)."""
-    if not isinstance(n, int) or n < 0:
-        raise ValueError("Input must be a non-negative integer")
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-# Test normal cases
-assert factorial(0) == 1, "Factorial of 0 should be 1"
-assert factorial(1) == 1, "Factorial of 1 should be 1"
-assert factorial(5) == 120, "Factorial of 5 should be 120"
-
-# Test error cases
-try:
-    factorial(-1)
-    assert False, "Should have raised ValueError for negative input"
-except ValueError:
-    pass  # This is expected
-
-try:
-    factorial(1.5)
-    assert False, "Should have raised ValueError for non-integer input"
-except ValueError:
-    pass  # This is expected
-```
-
-## 4. Structured Testing with unittest
-
-While assertions are useful for simple tests, Python provides the `unittest` framework for more structured testing. Here's how to use it:
-
-```python
-import unittest
-
-def add(a, b):
-    return a + b
-
-class TestAddFunction(unittest.TestCase):
-    def test_positive_numbers(self):
-        self.assertEqual(add(2, 3), 5)
-
-    def test_negative_numbers(self):
-        self.assertEqual(add(-1, -1), -2)
-
-    def test_mixed_numbers(self):
-        self.assertEqual(add(-1, 1), 0)
-
-    def test_zeros(self):
-        self.assertEqual(add(0, 0), 0)
-
-# Run the tests
-if __name__ == '__main__':
-    unittest.main()
-```
-
-### unittest Assertions
-
-The `unittest` framework provides many assertion methods:
-
-- `assertEqual(a, b)`: Verify a equals b
-- `assertNotEqual(a, b)`: Verify a doesn't equal b
-- `assertTrue(x)`: Verify x is True
-- `assertFalse(x)`: Verify x is False
-- `assertIs(a, b)`: Verify a is b (same object)
-- `assertIsNot(a, b)`: Verify a is not b
-- `assertIsNone(x)`: Verify x is None
-- `assertIsNotNone(x)`: Verify x is not None
-- `assertIn(a, b)`: Verify a is in b
-- `assertNotIn(a, b)`: Verify a is not in b
-- `assertRaises(exception, callable, *args, **kwargs)`: Verify the function raises the exception
-
-### Test Fixtures with setUp and tearDown
-
-When tests need common setup or cleanup, use the `setUp` and `tearDown` methods:
-
-```python
-import unittest
-import os
-
-class TestFileOperations(unittest.TestCase):
-    def setUp(self):
-        # This runs before each test
-        self.filename = "test_file.txt"
-        with open(self.filename, "w") as f:
-            f.write("Test content")
-
-    def tearDown(self):
-        # This runs after each test
-        if os.path.exists(self.filename):
-            os.remove(self.filename)
-
-    def test_file_exists(self):
-        self.assertTrue(os.path.exists(self.filename))
-
-    def test_file_content(self):
-        with open(self.filename, "r") as f:
-            content = f.read()
-        self.assertEqual(content, "Test content")
-```
-
-## 5. Test-Driven Development (TDD)
-
-Test-Driven Development is a development methodology where you write tests before writing the actual code. The process follows a cycle often called "Red-Green-Refactor":
-
-1. **Red**: Write a test for a feature that doesn't exist yet (the test will fail)
-2. **Green**: Write just enough code to make the test pass
-3. **Refactor**: Improve the code while keeping the tests passing
-
-Let's practice TDD by developing a function to check if a number is prime:
-
-### Step 1: Write the test first
-
-```python
-import unittest
-
-class TestPrimeChecker(unittest.TestCase):
-    def test_prime_numbers(self):
-        """Test that prime numbers return True."""
-        self.assertTrue(is_prime(2))
-        self.assertTrue(is_prime(3))
-        self.assertTrue(is_prime(5))
-        self.assertTrue(is_prime(7))
-        self.assertTrue(is_prime(11))
-        self.assertTrue(is_prime(13))
-
-    def test_non_prime_numbers(self):
-        """Test that non-prime numbers return False."""
-        self.assertFalse(is_prime(1))  # 1 is not considered prime
-        self.assertFalse(is_prime(4))
-        self.assertFalse(is_prime(6))
-        self.assertFalse(is_prime(8))
-        self.assertFalse(is_prime(9))
-        self.assertFalse(is_prime(10))
-
-    def test_negative_and_zero(self):
-        """Test that negative numbers and zero return False."""
-        self.assertFalse(is_prime(0))
-        self.assertFalse(is_prime(-1))
-        self.assertFalse(is_prime(-5))
-```
-
-### Step 2: Write the implementation
-
-```python
-def is_prime(n):
-    """Check if a number is prime."""
-    # Handle special cases
-    if n <= 1:
-        return False
-
-    # Check for divisibility
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-
-    return True
-```
-
-### Step 3: Refactor if needed
-
-Our implementation is already pretty efficient with the `n**0.5` optimisation, but we might add some comments or clearer variable names if needed.
-
-### Benefits of TDD
-
-TDD provides several benefits:
-- Clarifies requirements before coding
-- Prevents over-engineering
-- Ensures all code is testable
-- Creates a safety net for future changes
-- Leads to more modular design
-
-## 6. Testing Strategies: What and When to Test
-
-### What to Test
-
-Focus on testing:
-
-1. **Core functionality**: The main features of your program
-2. **Edge cases**: Boundary conditions where errors often occur
-3. **Error handling**: How your code responds to invalid inputs
-4. **Complex logic**: Areas with complex calculations or decisions
-5. **Bug fixes**: When you fix a bug, write a test to prevent regression
-
-### When to Test
-
-Ideally, you should:
-
-1. **Write tests early**: Either before or alongside your implementation
-2. **Run tests frequently**: After every significant change
-3. **Automate testing**: Set up continuous integration if possible
-4. **Update tests**: When requirements change, update tests first
-
-## 7. Best Practices for Effective Testing
-
-Here are some practical tips for writing good tests:
-
-1. **Keep tests small and focused**: Each test should verify one specific behaviour
-2. **Make tests independent**: Tests shouldn't depend on each other
-3. **Use descriptive test names**: Names should explain what's being tested
-4. **organise tests logically**: Group related tests into classes or modules
-5. **Test both positive and negative cases**: Check that errors are handled correctly
-6. **Avoid testing implementation details**: Test behaviour, not how it's implemented
-7. **Automate tests**: Make them easy to run with a single command
-8. **Maintain your tests**: Keep them up to date as your code evolves
-
-## 8. Self-Assessment Quiz
-
-1. What is the primary purpose of unit testing?
-   a) To check how components work together
-   b) To verify individual components work correctly in isolation
-   c) To measure application performance
-   d) To detect security vulnerabilities
-
-2. Which of the following is NOT an assertion method in unittest?
-   a) `assertEqual()`
-   b) `assertTruthy()`
-   c) `assertRaises()`
-   d) `assertIn()`
-
-3. In Test-Driven Development (TDD), what is the correct order of steps?
-   a) Write code, test code, refactor code
-   b) Write test, write code, refactor code
-   c) Design interface, write test, write code
-   d) Write code, refactor code, write test
-
-4. What happens when an assertion fails?
-   a) The program continues running but logs a warning
-   b) An AssertionError is raised
-   c) The test is automatically skipped
-   d) The program just stops silently
-
-5. Which method in unittest runs before each test method?
-   a) `beforeEach()`
-   b) `initialize()`
-   c) `setUp()`
-   d) `prepare()`
-
-**Answers & Feedback:**
-1. b) To verify individual components work correctly in isolation — Unit tests focus on testing components in isolation
-2. b) `assertTruthy()` — This is not a real unittest method. JavaScript has `truthy` values, but Python has `assertTrue()`
-3. b) Write test, write code, refactor code — This is the classic Red-Green-Refactor cycle of TDD
-4. b) An AssertionError is raised — Failed assertions raise exceptions that stop execution
-5. c) `setUp()` — This method is automatically called before each test method runs
-
-## Project Corner: Testing Your Chatbot
-
-Let's create tests for the core functionality of our chatbot:
-
-```python
-import unittest
-from unittest.mock import patch
-
-# Import your chatbot or include minimal implementation for testing
-class Chatbot:
-    def __init__(self, name="PyBot"):
-        self.name = name
-        self.user_name = None
-        self.conversation_history = []
-        self.response_patterns = {
-            "greetings": ["hello", "hi", "hey"],
-            "farewells": ["bye", "goodbye", "exit"],
-            "help": ["help", "commands", "options"]
-        }
-        self.response_templates = {
-            "greetings": ["Hello there!", "Hi! Nice to chat with you!"],
-            "farewells": ["Goodbye!", "See you later!"],
-            "help": ["Here are my commands...", "I can help with..."],
-            "default": ["I'm not sure about that.", "Can you tell me more?"]
-        }
-
-    def get_response(self, user_input):
-        """Generate a response based on user input."""
-        if not user_input:
-            return "I didn't catch that. Can you try again?"
-
-        user_input = user_input.lower()
-
-        # Check each category of responses
-        for category, patterns in self.response_patterns.items():
-            for pattern in patterns:
-                if pattern in user_input:
-                    # In a real implementation, you might pick randomly
-                    # but for testing, we'll use the first template
-                    return self.response_templates[category][0]
-
-        # Default response if no patterns match
-        return self.response_templates["default"][0]
-
-    def add_to_history(self, speaker, text):
-        """Add a message to conversation history."""
-        self.conversation_history.append(f"{speaker}: {text}")
-        return len(self.conversation_history)
-
-class TestChatbot(unittest.TestCase):
-    def setUp(self):
-        """Create a fresh chatbot for each test."""
-        self.chatbot = Chatbot(name="TestBot")
-
-    def test_initialization(self):
-        """Test that chatbot initializes with correct default values."""
-        self.assertEqual(self.chatbot.name, "TestBot")
-        self.assertIsNone(self.chatbot.user_name)
-        self.assertEqual(len(self.chatbot.conversation_history), 0)
-        self.assertIn("greetings", self.chatbot.response_patterns)
-        self.assertIn("farewells", self.chatbot.response_templates)
-
-    def test_greeting_response(self):
-        """Test that chatbot responds to greetings."""
-        response = self.chatbot.get_response("hello there")
-        self.assertEqual(response, "Hello there!")
-
-        response = self.chatbot.get_response("HI everyone")  # Testing case insensitivity
-        self.assertEqual(response, "Hello there!")
-
-    def test_farewell_response(self):
-        """Test that chatbot responds to farewells."""
-        response = self.chatbot.get_response("goodbye")
-        self.assertEqual(response, "Goodbye!")
-
-    def test_default_response(self):
-        """Test that chatbot gives default response for unknown input."""
-        response = self.chatbot.get_response("blah blah random text")
-        self.assertEqual(response, "I'm not sure about that.")
-
-    def test_empty_input(self):
-        """Test that chatbot handles empty input."""
-        response = self.chatbot.get_response("")
-        self.assertEqual(response, "I didn't catch that. Can you try again?")
-
-    def test_conversation_history(self):
-        """Test that messages are added to conversation history."""
-        initial_length = len(self.chatbot.conversation_history)
-        new_length = self.chatbot.add_to_history("User", "Test message")
-
-        # Check that length increased by 1
-        self.assertEqual(new_length, initial_length + 1)
-
-        # Check that message was added correctly
-        self.assertEqual(self.chatbot.conversation_history[-1], "User: Test message")
-
-    def test_multiple_patterns_in_input(self):
-        """Test that chatbot handles input with multiple patterns."""
-        # If input contains both greeting and farewell, it should match the first one found
-        response = self.chatbot.get_response("hello and goodbye")
-        self.assertEqual(response, "Hello there!")
-
-# Run the tests
-if __name__ == '__main__':
-    unittest.main()
-```
-
-This test suite verifies:
-1. Proper initialization of the chatbot
-2. Correct responses to different types of input
-3. Handling of empty input
-4. Conversation history functionality
-5. Pattern matching behaviour
-
-### Mock Testing
-
-For features like saving to files or API calls, we can use mocks:
-
-```python
-class TestChatbotWithMocks(unittest.TestCase):
-    @patch('builtins.open', new_callable=unittest.mock.mock_open)
-    def test_save_conversation(self, mock_open):
-        """Test that conversation is saved to a file."""
-        chatbot = Chatbot()
-        chatbot.add_to_history("User", "Hello")
-        chatbot.add_to_history("Bot", "Hi there!")
-
-        # Call the save method
-        chatbot.save_conversation("test_file.txt")
-
-        # Check that open was called with the right file
-        mock_open.assert_called_once_with("test_file.txt", "w")
-
-        # Check what was written to the file
-        written_data = ''.join(call.args[0] for call in mock_open().write.call_args_list)
-        self.assertIn("User: Hello", written_data)
-        self.assertIn("Bot: Hi there!", written_data)
-```
-
-**Challenges**:
-- Create tests for your chatbot's file handling operations
-- Test the response generation with various input patterns
-- Add tests for error handling and edge cases
-- Create a test suite that covers all core functionality
-- Implement a continuous integration system that runs tests automatically
-
-## Cross-References
-
-- Previous Chapter: [Debugging](debugging.qmd)
-- Next Chapter: [Modules and Packages](modules_and_packages.qmd)
-- Related Topics: Debugging (Chapter 17), Error Handling (Chapter 16)
-
-***AI Tip: When creating tests, ask your AI assistant to suggest edge cases and boundary conditions you might have overlooked. This can help you create more robust tests.***
-
-## Real-World Testing Practices
-
-In professional software development, testing goes beyond what we've covered here:
-
-### Test Coverage
-
-Test coverage measures how much of your code is executed during tests:
-
-```python
-# Install coverage (pip install coverage)
-# Run tests with coverage
-# coverage run -m unittest discover
-# Generate report
-# coverage report -m
-```
-
-### Continuous Integration (CI)
-
-CI systems automatically run tests when you push code changes:
-
-- GitHub Actions
-- Jenkins
-- CircleCI
-- GitLab CI
-
-### Property-Based Testing
-
-Instead of specific test cases, property-based testing checks that properties hold for all inputs:
-
-```python
-# Using the hypothesis library
-from hypothesis import given
-from hypothesis import strategies as st
-
-@given(st.integers(), st.integers())
-def test_addition_commutative(a, b):
-    """Test that a + b == b + a for all integers."""
-    assert add(a, b) == add(b, a)
-```
-
-### behaviour-Driven Development (BDD)
-
-BDD uses natural language to describe tests, making them accessible to non-programmers:
-
-```python
-# Using pytest-bdd
-"""
-Feature: Chatbot responses
-  Scenario: User greets the chatbot
-    When the user says "hello"
-    Then the chatbot should respond with a greeting
-"""
-```
-
-These advanced testing practices help teams build robust, maintainable software. As your projects grow in complexity, you may find it valuable to incorporate some of these techniques into your workflow.

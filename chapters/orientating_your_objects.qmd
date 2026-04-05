@@ -1,851 +1,254 @@
-# Object-Oriented Programming in Python
+# Objects
 
-## Chapter Outline
-- Understanding the concept of objects in programming
-- Working with abstraction to model real-world entities
-- Creating and designing Python classes
-- Instantiating objects from classes
-- Working with attributes and methods
-- Encapsulation and object-oriented design principles
-- Applying object-oriented programming to the chatbot project
+## The Wall
 
-## Learning Objectives
+AI used `class` and `self` everywhere and you had no idea why. It wrote `self.name`, `self.history`, `self.respond()` — every variable and function had `self` stuck on the front. You asked AI why and got a lecture about "object-oriented programming" and "encapsulation" that did not help you understand the actual code.
 
-By the end of this chapter, you will be able to:
-- Understand the concept of objects and object-oriented programming
-- Design and implement classes in Python
-- Create objects (instances) from classes
-- Define and work with object attributes and methods
-- Apply encapsulation in your code
-- Structure a program using object-oriented principles
-- Apply object-oriented design to enhance your chatbot project
+You tried changing `self.name` to just `name` and everything broke. You did not know why `self` was necessary or what it represented.
 
-## 1. Introduction: What Are Objects?
+This chapter fixes that.
 
-You've probably heard the term "object" in a programming context before, but what does it really mean? Let's start by looking at some real-world objects like pens, books, smartphones, and computers.
+## Thinking Session
 
-Objects come in different forms and shapes, but we can classify different versions of the same item into categories or groups. It's why you can go to a furniture store and recognise different items as chairs even if they look very different from one another.
+### Getting Oriented
 
-Our brains naturally recognise objects, notice commonalities between them, collect information, and create mental representations for categories. This cognitive process mirrors what we do in object-oriented programming.
+::: {.callout-note title="Thinking Session Prompt"}
+Explain Python classes and objects to me without jargon. I see AI using `class Chatbot:` and `self.name` constantly. What does `self` actually mean? Why can I not just use regular variables and functions? Give me a concrete example where a class is clearly better than functions.
+:::
 
-In programming, objects can be used to model entities from the real world. Since programs are designed to work and be used in the real world, it helps to mirror reality. Additionally, using objects is a useful way of grouping related data and functionality together.
+Your AI should explain: a class bundles data (attributes) and behaviour (methods) together. `self` refers to the specific instance — if you create two chatbots, `self.name` is different for each one. Without classes, you would need separate variables for each chatbot's name, history, and settings. If your AI starts with abstract theory about "blueprints" and "objects," ask for a concrete example first.
 
-***AI Tip: When designing classes, ask your AI assistant to help you identify the essential attributes and behaviours that should be included based on your problem description. It can help distinguish between what's necessary and what's optional for your specific use case.***
+### Go Deeper
 
-## 2. Understanding Abstraction
+::: {.callout-note title="Thinking Session Prompt"}
+Walk me through the parts of a Python class: `__init__`, methods, attributes, and the `self` parameter. Why does every method take `self` as the first parameter? What is `__init__` and when does it run? Show me with a simple example — not a theoretical one.
+:::
 
-Abstraction serves to hide complex mechanisms within an object, exposing only the information that we need to interact with it. For example, consider books - they all have titles, authors, covers, page counts, binding types, genres, languages, topics, publishers, publication years, and many other attributes.
+::: {.callout-tip title="What to Look For"}
+`__init__` is called automatically when you create an instance (`bot = Chatbot("PyBot")`). `self` is the instance being created or operated on — Python passes it automatically. Attributes set in `__init__` (like `self.name = name`) persist on the object. Methods are functions that operate on the object's data.
+:::
 
-However, for a specific programming problem, we want to abstract the most relevant details. The important attributes will emerge from requirements or discussions with clients. Let's say our client only wants to track the title, author, number of pages, and publisher.
+::: {.callout-note title="Thinking Session Prompt"}
+What is inheritance in Python? AI sometimes writes `class EnhancedBot(Chatbot):` — what does the parentheses part mean? When would I use inheritance versus just adding methods to the original class?
+:::
 
-This selective focus on essential details is the heart of abstraction. It allows us to:
+### Challenge It
 
-1. **Simplify complexity**: Focus only on what matters for the problem at hand
-2. **Hide implementation details**: Users of our code don't need to know how it works internally
-3. **Create clear interfaces**: Define how other code should interact with our objects
-
-In Python, abstraction is implemented through classes. A class serves as a blueprint or template that defines what attributes and behaviours objects of that type will have.
-
-## 3. Designing Classes
-
-To see how to design a class, let's continue with our book example. We've identified a sample of information that could describe any book:
-
-* Title
-* Author
-* Number of pages
-* Publisher
-
-These are attributes of books in real life. In Python classes, they're also called attributes - essentially variables that belong to an object!
-
-When designing a class, ask yourself:
-
-1. What data does this object need to store? (attributes)
-2. What actions can this object perform? (methods)
-3. How will other parts of my program interact with this object? (interface)
-
-Let's start designing our Book class.
-
-## 4. Class Declaration
-
-To declare a class in Python, we use the `class` keyword followed by a custom name and a colon:
+::: {.callout-note title="Thinking Session Prompt"}
+What is wrong with this class?
 
 ```python
-class Book:
-    pass
+class Counter:
+    count = 0
+
+    def increment(self):
+        count += 1
+
+    def get_count():
+        return count
 ```
+:::
 
-The `pass` statement is a placeholder that does nothing - it's used here because Python requires at least one statement in a class definition. Later we'll replace it with meaningful code.
+::: {.callout-tip title="What to Look For"}
+Three bugs: (1) `increment` uses `count` instead of `self.count` — it tries to modify a local variable that does not exist. (2) `get_count` is missing `self` parameter — it cannot be called as a method. (3) `count = 0` at the class level is a class variable shared by all instances — it should be `self.count = 0` in `__init__` for per-instance counting.
+:::
 
-> **What is `pass`?**
-> In Python, the `pass` keyword is a statement that does nothing - it's discarded during byte-compilation. Though it seems useless, it's quite handy as a placeholder during development when you want to define a structure but haven't implemented the details yet.
+### What You Should Have Learned
 
-## 5. Class Naming Conventions
+- A class bundles data (attributes) and behaviour (methods)
+- `self` refers to the specific instance
+- `__init__` sets up the instance when created
+- Every method takes `self` as its first parameter
+- Inheritance lets you extend existing classes
+- Use classes when you need multiple instances with their own state
 
-Similar to naming variables, class names must be descriptive and fully spelled out (avoid abbreviations). However, instead of using snake_case, Python class names follow CamelCase convention - the first letter of each word should be capitalized.
+## The Gap
 
-Examples:
-- Good: `Book`, `LibraryMember`, `ShoppingCart`
-- Not recommended: `book`, `libraryMember`, `shopping_cart`
+You now understand why AI uses classes. When you see `class Chatbot:` with `self.history` and `self.respond()`, you know that `self.history` belongs to that specific chatbot instance, and `respond()` operates on that instance's data. Classes are how AI structures any program that needs multiple instances of the same thing.
 
-## 6. Attributes and the Constructor Method
+In the final Building Session, you will refactor your entire chatbot into a class.
 
-To create a class with attributes, we define what's called a constructor method. In Python, this special method is named `__init__`:
+## Building Session
 
-```python
-class Book:
-    def __init__(self, title, author, number_of_pages, publisher):
-        self.title = title
-        self.author = author
-        self.number_of_pages = number_of_pages
-        self.publisher = publisher
-```
+### The Spec
 
-The `__init__` method is automatically called when a new object is created. The first parameter is always `self`, which represents the object being created. The other parameters are values that must be provided when creating a new `Book` object.
+Refactor your chatbot into a class:
 
-Inside the method, we assign these values to object attributes using the pattern `self.attribute_name = value`.
-## 7. Creating Objects from Classes
+- A `Chatbot` class with attributes for name, version, history, keywords, responses
+- Methods: `greet()`, `classify()`, `respond()`, `save_history()`, `load_history()`
+- An `__init__` method that sets up all state
+- A `run()` method that contains the main loop
+- The entry point creates an instance and calls `run()`
 
-Now that we've defined our `Book` class, what can we do with it? A class is an abstract blueprint, but to use it, we need to create concrete objects (also called instances).
+### Prompt It
 
-When you're looking for a book, you don't just search for any "book" - you want a specific one like "Harry Potter" or "Python Crash Course." Similarly, in programming, we need specific instances of our classes.
+::: {.callout-note title="Building Session Prompt"}
+Refactor my chatbot to v2.0 using a class. Create a Chatbot class that:
 
-To create an object from a class, we call the class name as if it were a function:
+- __init__(self, name, version) sets up: self.name, self.version, self.history (loaded from file), self.responses (the dictionary), self.keywords (the dictionary), self.message_count, self.debug_mode
+- greet(self) — displays the welcome screen
+- get_user_name(self) — asks for and validates the user's name
+- classify(self, text) — classifies input using self.keywords
+- respond(self, user_input) — returns (response, should_exit)
+- save_history(self) — saves self.history to JSON
+- load_history(self) — loads history from JSON
+- run(self) — the main conversation loop
 
-```python
-my_book = Book("Python for Business", "Michael Borck", 321, "OC")
-```
+Entry point:
+    bot = Chatbot("PyBot", "2.0")
+    bot.run()
+:::
 
-This code:
-1. Declares a variable named `my_book`
-2. Creates a new `Book` object with the provided attributes
-3. Assigns this object to the `my_book` variable
+### Read the Code
 
-We've now instantiated an object of the `Book` class! We can create as many different book objects as we need, each with its own set of attributes.
-
-## 8. Working with Object Attributes
-
-Once we have an object, we often need to access or modify its attributes. In Python, we use dot notation for this: `object_name.attribute_name`.
-
-### Accessing Attributes
-
-To read an attribute's value:
-
-```python
-print(my_book.title)       # Outputs: Python for Business
-print(my_book.author)      # Outputs: Michael Borck
-print(my_book.number_of_pages)  # Outputs: 321
-```
-
-### Modifying Attributes
-
-To change an attribute's value:
+Your AI will produce something like this:
 
 ```python
-my_book.title = "Coding in Python"
-my_book.author = "James Borck"
-my_book.number_of_pages += 10  # Add 10 pages
+"""PyBot v2.0: Object-oriented chatbot."""
+import json
+import random
 
-print(my_book.title)       # Outputs: Coding in Python
-print(my_book.author)      # Outputs: James Borck
-print(my_book.number_of_pages)  # Outputs: 331
-```
 
-Object attributes behave like variables - you can assign new values to them, use them in expressions, and pass them to functions.
-
-## 9. Adding behaviour: Object Methods
-
-So far, our objects can store data (attributes) but can't do anything. Real-world objects have behaviours: books can be read, cars can be driven, doors can be opened. In programming, we implement behaviours as methods.
-
-A method is simply a function that belongs to a class. Let's add a `read_book` method to our `Book` class:
-
-```python
-class Book:
-    def __init__(self, title, author, number_of_pages, publisher):
-        self.title = title
-        self.author = author
-        self.number_of_pages = number_of_pages
-        self.publisher = publisher
-
-    def read_book(self):
-        print(f"Reading {self.title} by {self.author}")
-```
-
-To call a method on an object, we use the same dot notation:
-
-```python
-my_book = Book("Python for Beginners", "John Smith", 250, "Tech Press")
-my_book.read_book()  # Outputs: Reading Python for Beginners by John Smith
-```
-
-Methods can also take parameters beyond `self`:
-
-```python
-class Book:
-    # Constructor and other methods...
-
-    def read_pages(self, start_page, end_page):
-        if start_page < 1 or end_page > self.number_of_pages:
-            print("Invalid page range!")
-            return
-        print(f"Reading pages {start_page} to {end_page} of {self.title}")
-```
-
-Using this method:
-
-```python
-my_book.read_pages(10, 25)  # Outputs: Reading pages 10 to 25 of Python for Beginners
-```
-
-Methods can also return values, just like regular functions:
-
-```python
-class Book:
-    # Constructor and other methods...
-
-    def get_reading_time(self, reading_speed=2):
-        """Estimate reading time in minutes based on pages and reading speed."""
-        return self.number_of_pages / reading_speed
-```
-
-Using this method:
-
-```python
-time = my_book.get_reading_time()
-print(f"Estimated reading time: {time} minutes")
-```
-
-## 10. Building a More Complete Book Class
-
-Let's bring everything together into a more useful `Book` class with multiple attributes and methods:
-
-```python
-class Book:
-    def __init__(self, title, author, number_of_pages, publisher, year=None, genre=None):
-        self.title = title
-        self.author = author
-        self.number_of_pages = number_of_pages
-        self.publisher = publisher
-        self.year = year
-        self.genre = genre
-        self.current_page = 0
-        self.bookmarked_pages = []
-
-    def read_to_page(self, page):
-        if page < 1 or page > self.number_of_pages:
-            print(f"Error: Page must be between 1 and {self.number_of_pages}")
-            return False
-
-        print(f"Reading {self.title} from page {self.current_page + 1} to page {page}")
-        self.current_page = page
-        return True
-
-    def bookmark_current_page(self):
-        if self.current_page > 0:
-            self.bookmarked_pages.append(self.current_page)
-            print(f"Bookmarked page {self.current_page}")
-        else:
-            print("No page to bookmark yet. Start reading first!")
-
-    def get_bookmarks(self):
-        return self.bookmarked_pages
-
-    def get_reading_progress(self):
-        if self.current_page == 0:
-            return 0
-        return (self.current_page / self.number_of_pages) * 100
-
-    def get_info(self):
-        info = f"Title: {self.title}\n"
-        info += f"Author: {self.author}\n"
-        info += f"Pages: {self.number_of_pages}\n"
-        info += f"Publisher: {self.publisher}\n"
-
-        if self.year:
-            info += f"Year: {self.year}\n"
-        if self.genre:
-            info += f"Genre: {self.genre}\n"
-
-        info += f"Reading progress: {self.get_reading_progress():.1f}%"
-        return info
-```
-
-Now we can interact with our improved `Book` class:
-
-```python
-# Create a book
-python_book = Book("Python Crash Course", "Eric Matthes", 544, "No Starch Press", 2019, "Programming")
-
-# Get book info
-print(python_book.get_info())
-
-# Read some pages
-python_book.read_to_page(50)
-
-# Bookmark the page
-python_book.bookmark_current_page()
-
-# Read more
-python_book.read_to_page(100)
-
-# Check progress
-print(f"Reading progress: {python_book.get_reading_progress():.1f}%")
-
-# View bookmarks
-print(f"Bookmarked pages: {python_book.get_bookmarks()}")
-```
-
-## 11. Encapsulation: Bundling Data and Methods
-
-You may have noticed how our `Book` class bundles together related data (title, author, pages) with the methods that operate on that data (`read_to_page`, `get_reading_progress`). This bundling of data and methods is called **encapsulation**.
-
-Encapsulation is a fundamental principle of object-oriented programming that:
-
-1. **Organizes code**: Keeps related functionality together
-2. **Hides complexity**: Exposes only what's necessary
-3. **Protects data**: Controls how data can be accessed and modified
-4. **Reduces dependencies**: Minimizes the impact of changes
-
-In our `Book` class, users don't need to know how reading progress is calculated or how bookmarks are stored - they just call the appropriate methods, and the implementation details are hidden.
-
-## 12. Creating a Library Management System
-
-Let's extend our example to build a simple library management system. This will show how objects can interact with each other:
-
-```python
-class Library:
-    def __init__(self, name):
-        self.name = name
-        self.books = []
-        self.members = []
-
-    def add_book(self, book):
-        self.books.append(book)
-        print(f"Added '{book.title}' to {self.name} library")
-
-    def add_member(self, member):
-        self.members.append(member)
-        print(f"Added {member.name} as a library member")
-
-    def search_books(self, search_term):
-        results = []
-        for book in self.books:
-            if (search_term.lower() in book.title.lower() or
-                search_term.lower() in book.author.lower()):
-                results.append(book)
-        return results
-
-    def get_library_info(self):
-        return f"{self.name} Library has {len(self.books)} books and {len(self.members)} members"
-
-
-class LibraryMember:
-    def __init__(self, name, member_id):
-        self.name = name
-        self.member_id = member_id
-        self.borrowed_books = []
-
-    def borrow_book(self, book, library):
-        if book in library.books:
-            self.borrowed_books.append(book)
-            library.books.remove(book)
-            print(f"{self.name} borrowed '{book.title}'")
-            return True
-        else:
-            print(f"Sorry, '{book.title}' is not available")
-            return False
-
-    def return_book(self, book, library):
-        if book in self.borrowed_books:
-            self.borrowed_books.remove(book)
-            library.books.append(book)
-            print(f"{self.name} returned '{book.title}'")
-            return True
-        else:
-            print(f"Error: '{book.title}' was not borrowed by {self.name}")
-            return False
-
-    def get_borrowed_books(self):
-        return [book.title for book in self.borrowed_books]
-```
-
-And here's how we might use these classes:
-
-```python
-# Create books
-book1 = Book("Python Crash Course", "Eric Matthes", 544, "No Starch Press")
-book2 = Book("Automate the Boring Stuff", "Al Sweigart", 504, "No Starch Press")
-book3 = Book("Clean Code", "Robert Martin", 464, "Prentice Hall")
-
-# Create library
-central_library = Library("Central")
-
-# Add books
-central_library.add_book(book1)
-central_library.add_book(book2)
-central_library.add_book(book3)
-
-# Create and add members
-alice = LibraryMember("Alice Smith", "M001")
-bob = LibraryMember("Bob Johnson", "M002")
-
-central_library.add_member(alice)
-central_library.add_member(bob)
-
-# Search for books
-python_books = central_library.search_books("Python")
-print(f"Found {len(python_books)} Python books:")
-for book in python_books:
-    print(f"- {book.title} by {book.author}")
-
-# Borrow and return books
-alice.borrow_book(book1, central_library)
-bob.borrow_book(book2, central_library)
-
-print(f"Alice's borrowed books: {alice.get_borrowed_books()}")
-print(f"Bob's borrowed books: {bob.get_borrowed_books()}")
-
-alice.return_book(book1, central_library)
-
-print(central_library.get_library_info())
-```
-
-## 13. Self-Assessment Quiz
-
-Test your understanding of object-oriented programming in Python:
-
-1. What is a class in Python?
-   a) A module containing functions
-   b) A blueprint for creating objects
-   c) A built-in data structure
-   d) A type of loop structure
-
-2. What naming convention is used for Python classes?
-   a) snake_case (lowercase with underscores)
-   b) camelCase (first word lowercase, subsequent words capitalized)
-   c) PascalCase/CamelCase (each word capitalized)
-   d) ALL_CAPS (all uppercase with underscores)
-
-3. What is the purpose of the `__init__` method in a Python class?
-   a) To initialize class variables
-   b) To create a constructor for the class
-   c) To define the methods available in the class
-   d) To import required modules
-
-4. How do you access an attribute of an object in Python?
-   a) object[attribute]
-   b) object->attribute
-   c) object.attribute
-   d) attribute(object)
-
-5. What is encapsulation in object-oriented programming?
-   a) The process of hiding implementation details
-   b) The bundling of data and methods that operate on that data
-   c) The ability of a class to inherit from another class
-   d) The process of converting a class to an object
-
-**Answers:**
-1. b) A blueprint for creating objects
-2. c) PascalCase/CamelCase (each word capitalized)
-3. b) To create a constructor for the class
-4. c) object.attribute
-5. b) The bundling of data and methods that operate on that data
-
-## 14. Project Corner: Enhancing Your Chatbot with Object-Oriented Design
-
-Let's apply object-oriented principles to our chatbot project by creating a well-organised class structure. This approach will make our code more maintainable and extensible.
-
-```python
 class Chatbot:
-    """A simple chatbot that becomes smarter as you learn Python."""
+    """A terminal chatbot with memory and
+    pattern matching."""
 
-    def __init__(self, name="PyBot"):
-        """Initialize the chatbot with a name and empty conversation history."""
+    def __init__(self, name, version):
+        """Initialise the chatbot."""
         self.name = name
-        self.user_name = None
-        self.conversation_history = []
-        self.response_patterns = {
-            "greetings": ["hello", "hi", "hey", "howdy", "hola"],
-            "farewells": ["bye", "goodbye", "see you", "cya", "farewell"],
-            "gratitude": ["thanks", "thank you", "appreciate"],
-            "bot_questions": ["who are you", "what are you", "your name"],
-            "user_questions": ["how are you", "what's up", "how do you feel"]
+        self.version = version
+        self.message_count = 0
+        self.debug_mode = False
+        self.history = self.load_history()
+        self.responses = {
+            "greeting": ["Hello!", "Hi there!"],
+            "farewell": ["Goodbye!", "See you!"],
+            "question": ["Good question!"],
+            "default": ["Interesting!", "Go on..."],
+        }
+        self.keywords = {
+            "hello": "greeting",
+            "hi": "greeting",
+            "bye": "farewell",
         }
 
-        self.response_templates = {
-            "greetings": ["Hello, {user}!", "Hi there, {user}!", "Great to see you again!"],
-            "farewells": ["Goodbye!", "See you later!", "Until next time!"],
-            "gratitude": ["You're welcome!", "Happy to help!", "No problem at all."],
-            "bot_questions": [f"I'm {name}, your chatbot assistant!", "I'm just a simple Python chatbot."],
-            "user_questions": ["I'm just a program, but I'm working well!", "I'm here and ready to chat!"],
-            "default": ["I'm not sure how to respond to that yet.", "Can you tell me more?", "Interesting, tell me more!"]
-        }
+    def classify(self, text):
+        """Classify input into a response category."""
+        words = text.lower().split()
+        for word in words:
+            if word in self.keywords:
+                return self.keywords[word]
+        if "?" in text:
+            return "question"
+        return "default"
 
-    def greet(self):
-        """Greet the user and get their name."""
-        print(f"Hello! I'm {self.name}. Type 'bye' to exit.")
-        self.user_name = input("What's your name? ")
-        print(f"Nice to meet you, {self.user_name}!")
-        self.add_to_history("SYSTEM", f"Conversation started with {self.user_name}")
+    def respond(self, user_input):
+        """Generate a response."""
+        category = self.classify(user_input)
+        responses = self.responses.get(
+            category, self.responses["default"]
+        )
+        return random.choice(responses), category == "farewell"
 
-    def get_response(self, user_input):
-        """Generate a response to the user input."""
-        import random
-
-        if not user_input:
-            return "I didn't catch that. Could you try again?"
-
-        user_input = user_input.lower()
-
-        # Handle special commands
-        if user_input == "help":
-            return self.get_help()
-        elif user_input == "history":
-            return self.show_history()
-
-        # Check each category of responses
-        for category, patterns in self.response_patterns.items():
-            for pattern in patterns:
-                if pattern in user_input:
-                    # Get a random response from the matching category
-                    template = random.choice(self.response_templates[category])
-                    # Format with user name if needed
-                    return template.replace("{user}", self.user_name)
-
-        # Default response if no patterns match
-        return random.choice(self.response_templates["default"])
-
-    def add_to_history(self, speaker, text):
-        """Add a message to the conversation history."""
-        from datetime import datetime
-        timestamp = datetime.now().strftime("%H:%M:%S")
-        entry = f"[{timestamp}] {speaker}: {text}"
-        self.conversation_history.append(entry)
-        return len(self.conversation_history)
-
-    def show_history(self):
-        """Return the conversation history."""
-        if not self.conversation_history:
-            return "No conversation history yet."
-
-        history = "\n----- Conversation History -----\n"
-        for entry in self.conversation_history:
-            history += f"{entry}\n"
-        history += "-------------------------------"
-        return history
-
-    def get_help(self):
-        """Return help information."""
-        help_text = f"""
-Available Commands:
-- 'help': Display this help message
-- 'history': Show conversation history
-- 'bye': End the conversation
-
-You can also just chat with me normally, {self.user_name}!
-"""
-        return help_text
-
-    def save_conversation(self):
-        """Save the conversation to a file."""
-        if not self.conversation_history:
-            return "No conversation to save."
-
-        from datetime import datetime
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"chat_with_{self.user_name}_{timestamp}.txt"
-
+    def load_history(self):
+        """Load conversation history from file."""
         try:
-            with open(filename, "w") as f:
-                f.write(f"Conversation between {self.name} and {self.user_name}\n")
-                f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+            with open("chat_history.json") as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
 
-                for entry in self.conversation_history:
-                    f.write(f"{entry}\n")
-
-            return f"Conversation saved to {filename}"
-        except Exception as e:
-            return f"Error saving conversation: {str(e)}"
+    def save_history(self):
+        """Save conversation history to file."""
+        with open("chat_history.json", "w") as f:
+            json.dump(self.history, f, indent=2)
 
     def run(self):
-        """Run the main chatbot loop."""
-        self.greet()
+        """Main conversation loop."""
+        print(f"Hello! I'm {self.name} v{self.version}.")
+        user_name = input(f"{self.name}: Your name? ").strip()
+        print(f"Nice to meet you, {user_name}!")
 
-        while True:
-            user_input = input(f"{self.user_name}> ")
-            self.add_to_history(self.user_name, user_input)
-
-            if user_input.lower() == "bye":
-                response = f"Goodbye, {self.user_name}! I hope to chat again soon."
-                print(f"{self.name}> {response}")
-                self.add_to_history(self.name, response)
-                break
-
-            if user_input.lower() == "save":
-                response = self.save_conversation()
-                print(f"{self.name}> {response}")
-                self.add_to_history(self.name, response)
-                continue
-
-            response = self.get_response(user_input)
-            print(f"{self.name}> {response}")
-            self.add_to_history(self.name, response)
-```
-
-## 15. Extending the Chatbot with Inheritance
-
-Now that we have a solid object-oriented foundation, let's extend our chatbot with specialized subclasses that add new features:
-
-```python
-class WeatherChatbot(Chatbot):
-    """A chatbot that can also report weather information."""
-
-    def __init__(self, name="WeatherBot"):
-        super().__init__(name)
-        # Add weather-related patterns
-        self.response_patterns["weather"] = ["weather", "temperature", "forecast", "rain", "sunny"]
-        self.response_templates["weather"] = [
-            "I don't have real-time weather data yet, but I'd be happy to discuss the weather!",
-            "Weather functionality coming soon!",
-            "I'm still learning how to check the weather."
-        ]
-
-    def get_weather(self, location):
-        """Simulate getting weather for a location."""
-        import random
-        conditions = ["sunny", "partly cloudy", "cloudy", "rainy", "stormy", "snowy"]
-        temperatures = range(10, 35)
-
-        condition = random.choice(conditions)
-        temperature = random.choice(temperatures)
-
-        return f"The weather in {location} is {condition} with a temperature of {temperature}°C."
-
-    def get_response(self, user_input):
-        """Override to add weather functionality."""
-        user_input = user_input.lower()
-
-        # Check for weather requests with location
-        import re
-        weather_match = re.search(r'weather in (\w+)', user_input)
-        if weather_match:
-            location = weather_match.group(1)
-            return self.get_weather(location)
-
-        return super().get_response(user_input)
-
-
-class QuizChatbot(Chatbot):
-    """A chatbot that can quiz the user on Python knowledge."""
-
-    def __init__(self, name="QuizBot"):
-        super().__init__(name)
-        # Add quiz-related patterns
-        self.response_patterns["quiz"] = ["quiz", "test", "question", "knowledge"]
-        self.response_templates["quiz"] = [
-            "I'd be happy to quiz you on Python! Type 'start quiz' to begin.",
-            "Want to test your Python knowledge? Type 'start quiz'!",
-            "I can ask you Python questions if you type 'start quiz'."
-        ]
-
-        self.quiz_questions = [
-            {
-                "question": "What is the output of print(2 + 2)?",
-                "options": ["2", "4", "22", "Error"],
-                "answer": "4"
-            },
-            {
-                "question": "Which of these is NOT a Python data type?",
-                "options": ["list", "dictionary", "tuple", "array"],
-                "answer": "array"
-            },
-            {
-                "question": "What does the 'len()' function do?",
-                "options": ["Returns the length of an object", "Returns the smallest item",
-                            "Converts to a list", "Creates a range"],
-                "answer": "Returns the length of an object"
-            }
-        ]
-        self.quiz_active = False
-        self.current_question = 0
-        self.score = 0
-
-    def start_quiz(self):
-        """Start the quiz session."""
-        self.quiz_active = True
-        self.current_question = 0
-        self.score = 0
-        return self.get_next_question()
-
-    def get_next_question(self):
-        """Get the next quiz question or end the quiz."""
-        if self.current_question >= len(self.quiz_questions):
-            self.quiz_active = False
-            return f"Quiz complete! Your score: {self.score}/{len(self.quiz_questions)}"
-
-        q = self.quiz_questions[self.current_question]
-        question_text = q["question"] + "\n"
-
-        for i, option in enumerate(q["options"]):
-            question_text += f"{i+1}. {option}\n"
-
-        return question_text + "\nType the number of your answer."
-
-    def check_answer(self, user_input):
-        """Check if the answer is correct and move to the next question."""
         try:
-            # Try to convert to integer first
-            choice = int(user_input) - 1
-            if 0 <= choice < len(self.quiz_questions[self.current_question]["options"]):
-                selected = self.quiz_questions[self.current_question]["options"][choice]
-            else:
-                return "Invalid choice. Please select a valid option number."
-        except ValueError:
-            # If not a number, treat as the actual answer text
-            selected = user_input
+            while True:
+                user_input = input(f"{user_name}: ").strip()
+                if not user_input:
+                    continue
 
-        correct = self.quiz_questions[self.current_question]["answer"]
+                self.message_count += 1
+                response, should_exit = self.respond(user_input)
+                print(f"{self.name}: {response}")
 
-        if selected == correct:
-            self.score += 1
-            result = "Correct! "
-        else:
-            result = f"Incorrect. The correct answer is: {correct}. "
+                self.history.append({
+                    "user": user_input,
+                    "bot": response,
+                })
 
-        self.current_question += 1
-        return result + self.get_next_question()
+                if should_exit:
+                    break
+        except KeyboardInterrupt:
+            print(f"\n{self.name}: Interrupted!")
+        finally:
+            self.save_history()
 
-    def get_response(self, user_input):
-        """Override to add quiz functionality."""
-        if self.quiz_active:
-            return self.check_answer(user_input)
-
-        if user_input.lower() == "start quiz":
-            return self.start_quiz()
-
-        return super().get_response(user_input)
-```
-
-## 16. Multiple Inheritance and Method Override
-
-Python supports multiple inheritance, allowing a class to inherit from more than one parent class. Let's create a "super" chatbot that combines both weather and quiz capabilities:
-
-```python
-class SuperChatbot(WeatherChatbot, QuizChatbot):
-    """A chatbot that combines weather and quiz capabilities."""
-
-    def __init__(self, name="SuperBot"):
-        super().__init__(name)
-
-    def get_response(self, user_input):
-        """Process responses with priority handling."""
-        # Handle quiz mode first if active
-        if hasattr(self, 'quiz_active') and self.quiz_active:
-            return self.check_answer(user_input)
-
-        # Then check for special commands
-        if user_input.lower() == "start quiz":
-            return self.start_quiz()
-
-        # Then check for weather requests
-        import re
-        weather_match = re.search(r'weather in (\w+)', user_input.lower())
-        if weather_match:
-            location = weather_match.group(1)
-            return self.get_weather(location)
-
-        # Finally, fall back to standard chatbot responses
-        return Chatbot.get_response(self, user_input)
-```
-
-## 17. Object-Oriented Benefits for Our Chatbot
-
-This object-oriented approach provides several advantages:
-
-1. **Modularity**: Each class handles one aspect of functionality
-2. **Extensibility**: New features can be added by creating new subclasses
-3. **Code reuse**: Inheritance allows sharing common functionality
-4. **Clarity**: The code is organised in a logical, structured way
-5. **Maintenance**: Changes to one feature don't affect others
-6. **Testability**: Each class can be tested independently
-
-These advantages become increasingly important as your projects grow in complexity. Our chatbot can now be extended with new features simply by creating new subclasses, without modifying the existing code.
-
-## 18. Key Object-Oriented Concepts Demonstrated
-
-In our chatbot examples, we've demonstrated several important object-oriented concepts:
-
-1. **Encapsulation**: Bundling data (attributes) and behaviours (methods) together
-2. **Inheritance**: Creating specialized classes (WeatherChatbot, QuizChatbot) from a base class (Chatbot)
-3. **Polymorphism**: Overriding methods (get_response) to provide specialized behaviour while maintaining the same interface
-4. **Composition**: Building complex objects that contain other objects (Chatbot contains conversation history, response patterns, etc.)
-5. **Method Override**: customising inherited behaviour by providing a new implementation in the subclass
-6. **Multiple Inheritance**: Combining features from multiple parent classes (SuperChatbot)
-
-## 19. Running the Object-Oriented Chatbot
-
-Let's see how we might run our object-oriented chatbot:
-
-```python
-def main():
-    print("Welcome to the Chatbot Selector!")
-    print("Choose a chatbot type:")
-    print("1: Basic Chatbot")
-    print("2: Weather-Aware Chatbot")
-    print("3: Quiz Chatbot")
-    print("4: Super Chatbot (Weather + Quiz)")
-
-    choice = input("Enter your choice (1-4): ")
-
-    if choice == "2":
-        bot = WeatherChatbot()
-    elif choice == "3":
-        bot = QuizChatbot()
-    elif choice == "4":
-        bot = SuperChatbot()
-    else:
-        bot = Chatbot()
-
-    # All chatbots use the same run method, but each will behave differently
-    # This is polymorphism in action!
-    bot.run()
 
 if __name__ == "__main__":
-    main()
+    bot = Chatbot("PyBot", "2.0")
+    bot.run()
 ```
 
-## 20. Further Enhancements
+::: {.callout-tip title="What to Notice"}
+All state lives on `self` — `self.history`, `self.keywords`, `self.message_count`. Methods access this shared state through `self`. You could create two chatbots with different names: `bot1 = Chatbot("PyBot", "2.0")` and `bot2 = Chatbot("Helper", "1.0")` — each has its own state. The `if __name__ == "__main__"` guard means this file works both as a script and as an importable module.
+:::
 
-You can continue to extend this object-oriented chatbot with additional features:
+### Stretch It
 
-1. **VoiceChatbot**: A chatbot that can convert text to speech
-2. **TranslatorChatbot**: A chatbot that can translate messages between languages
-3. **RememberingChatbot**: A chatbot that remembers facts about the user
-4. **MathChatbot**: A chatbot that can solve math problems
-5. **JokeChatbot**: A chatbot that tells jokes
+::: {.callout-note title="Building Session Prompt"}
+Create an EnhancedBot class that inherits from Chatbot and adds a mood system. Override the respond() method to adjust responses based on self.mood. Call super().respond() to get the base response, then modify it.
+:::
 
-Each of these can be implemented as a separate class that inherits from the base Chatbot class, adding its own specialized functionality.
+## Your Chatbot So Far
 
-## Cross-References
+- Ch 1-18: Full features split across functions and modules
+- Ch 19: Package structure
+- **Ch 20: Refactored into a Chatbot class with all features**
 
-- Previous Chapter: [Modules and Packages](modules_and_packages.qmd)
-- Next Chapter: [Working with AI Assistants](working_with_ai_assistants.qmd)
-- Related Topics: Functions (Chapter 9), Error Handling (Chapter 16), Modules and Packages (Chapter 19)
+Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.
 
-***AI Tip: When designing classes, don't try to add every possible feature at once. Instead, create a minimal viable class that does one thing well, then gradually extend it. AI assistants can help by suggesting how to refactor your code to make it more maintainable as complexity grows.***
+More importantly, you built it through conversation with AI — directing it, questioning it, and understanding every line it produced.
 
-## Summary
+## Quick Reference
 
-In this chapter, we've explored object-oriented programming in Python, learning how to:
+```python
+# Define a class
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
 
-1. Create classes to model real-world entities
-2. Instantiate objects from those classes
-3. Work with object attributes and methods
-4. Apply encapsulation to bundle data and behaviour
-5. Use inheritance to create specialized versions of classes
-6. Override methods to customise behaviour
-7. Apply object-oriented design to our chatbot project
+    def speak(self):
+        return f"{self.name} says Woof!"
 
-Object-oriented programming is a powerful paradigm that helps us manage complexity by organising code into logical, reusable components. As your Python projects grow, these skills will become increasingly valuable in keeping your code maintainable and extensible.
+# Create instances
+dog1 = Dog("Rex", "Labrador")
+dog2 = Dog("Bella", "Poodle")
+print(dog1.speak())    # "Rex says Woof!"
 
-The chatbot project now has a solid object-oriented foundation that you can continue to build upon. By understanding how to design classes and how they interact with each other, you've gained powerful tools for structuring larger Python applications.
+# Inheritance
+class Puppy(Dog):
+    def __init__(self, name, breed, age_months):
+        super().__init__(name, breed)
+        self.age_months = age_months
 
+    def speak(self):
+        return f"{self.name} says Yap!"
+
+# Special methods
+class Item:
+    def __str__(self):
+        return "display string"
+    def __repr__(self):
+        return "debug string"
+    def __len__(self):
+        return 42
+```

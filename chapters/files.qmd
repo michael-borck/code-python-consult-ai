@@ -1,649 +1,161 @@
-# Files - Persisting Your Data
+# Files
 
-## Chapter Outline
-- Understanding file operations
-- Opening and closing files
-- Reading from files
-- Writing to files
-- Working with different file modes
-- File paths and directories
-- Using the with statement
-- Common file operations
-- Handling text and binary files
+## The Wall
 
-## Learning Objectives
+AI wrote code that saved data to a file. You ran it, saw "Data saved!", and felt good. Then you restarted the program and the data was gone. It turned out AI opened the file with `"w"` (write mode) instead of `"a"` (append mode), so every run erased the previous data.
 
-By the end of this chapter, you will be able to:
-- Understand how file operations work in Python
-- Read data from text files
-- Write and append data to files
-- Safely manage file resources with the with statement
-- Work with file paths and different file formats
-- Create programs that persist data between runs
-- Implement file operations in practical applications
+In another case, AI read a file but forgot to handle the case where the file did not exist. The program crashed with `FileNotFoundError` — on the user's machine, not yours, because the file was in your test folder.
 
-## 1. Introduction: Why Store Data in Files?
+This chapter fixes that.
 
-So far, all the programs we've written have been ephemeral - the data exists only while the program is running. Once the program ends, all the variables, lists, and dictionaries vanish from memory. But what if you want to save your data for later use? Or what if you want to share data between different programs?
+## Thinking Session
 
-This is where files come in. Files allow your programs to:
+### Getting Oriented
 
-- Save data permanently on disk
-- Read existing data into your programs
-- Share information between different programs
-- Process large amounts of data that wouldn't fit in memory
-- Import data from external sources
-- Export results for other applications to use
+::: {.callout-note title="Thinking Session Prompt"}
+How does file I/O work in Python? Explain the open/read/write/close pattern. What are the different file modes (r, w, a, x) and when would I use each? Why does AI-generated code always use `with open()` instead of calling open() and close() separately?
+:::
 
-In this chapter, we'll learn how to read from and write to files, which is a fundamental skill for creating useful programs.
+Your AI should explain that `with open()` is a context manager that automatically closes the file even if an error occurs. The modes matter: `"r"` reads, `"w"` writes (erases existing content), `"a"` appends, `"x"` creates (fails if file exists). AI should always use `with` — if it does not, that is a code smell.
 
-***AI Tip: Ask your AI assistant to help you understand the difference between volatile memory (RAM) and persistent storage (disk) in computing.***
+### Go Deeper
 
-## 2. Understanding File Operations
+::: {.callout-note title="Thinking Session Prompt"}
+What is the difference between reading a file with read(), readline(), and readlines()? And for writing, what is the difference between write() and writelines()? When does AI use each one?
+:::
 
-Working with files in Python typically follows a three-step process:
+::: {.callout-tip title="What to Look For"}
+`read()` returns the entire file as one string. `readline()` returns one line. `readlines()` returns a list of lines. For writing, `write()` takes a string, `writelines()` takes a list of strings (and does not add newlines). AI usually uses `read()` for small files and iterates line by line for large ones.
+:::
 
-1. **Open** the file, which creates a connection to the file and prepares it for reading or writing
-2. **Read from** or **write to** the file
-3. **Close** the file to save changes and free up system resources
+::: {.callout-note title="Thinking Session Prompt"}
+How do I work with JSON files in Python? AI-generated code often saves configuration and data as JSON. Show me how to read and write JSON files using the json module.
+:::
 
-Let's look at the basic syntax:
+### Challenge It
+
+::: {.callout-note title="Thinking Session Prompt"}
+What is wrong with this code?
 
 ```python
-# Step 1: Open the file
-file = open('example.txt', 'r')  # 'r' means "read mode"
-
-# Step 2: Read from the file
-content = file.read()
-print(content)
-
-# Step 3: Close the file
-file.close()
+f = open("data.txt", "w")
+f.write("Hello")
+# program crashes here
+f.close()
 ```
+:::
 
-The `open()` function takes two arguments:
-- The filename (or path)
-- The mode (how you want to use the file)
+::: {.callout-tip title="What to Look For"}
+If the program crashes between `open()` and `close()`, the file is never properly closed, potentially losing data. The fix is `with open("data.txt", "w") as f:` — the `with` block guarantees closure. Also, `"w"` mode erases existing content — if that is not intended, use `"a"`.
+:::
 
-Common file modes include:
-- `'r'` - Read (default): Open for reading
-- `'w'` - Write: Open for writing (creates a new file or truncates an existing one)
-- `'a'` - Append: Open for writing, appending to the end of the file
-- `'r+'` - Read+Write: Open for both reading and writing
-- `'b'` - Binary mode (added to other modes, e.g., `'rb'` for reading binary files)
+### What You Should Have Learned
 
-## 3. Using the with Statement: A Safer Approach
+- Always use `with open()` — it handles closing automatically
+- File modes: `"r"` read, `"w"` write (erases), `"a"` append
+- `read()` gets all content, iterate for line-by-line processing
+- JSON is the standard format for structured data: `json.load()` / `json.dump()`
+- Always handle `FileNotFoundError` when reading files
 
-It's crucial to close files after you're done with them, but it's easy to forget or miss this step if an error occurs. Python provides a cleaner solution with the `with` statement, which automatically closes the file when the block is exited:
+## The Gap
 
-```python
-# A safer way to work with files
-with open('example.txt', 'r') as file:
-    content = file.read()
-    print(content)
-# File is automatically closed when the block exits
-```
+Files give your chatbot memory that survives between runs. Without files, everything resets when the program stops. Now you know how to read, write, and append — and how to use JSON for structured data. You also know the most common file bug AI generates: wrong file mode.
 
-This approach is preferred because:
-- It's more concise
-- The file is automatically closed, even if an error occurs
-- It follows Python's "context manager" pattern for resource management
+In the Building Session, you will give your chatbot persistent memory.
 
-Throughout this chapter, we'll use the `with` statement for all file operations.
+## Building Session
 
-## 4. Reading from Files
+### The Spec
 
-Python offers several methods for reading file content:
+Add file persistence to your chatbot:
 
-### Reading the Entire File
+- Save conversation history to a JSON file after each session
+- Load previous conversation history when the chatbot starts
+- Handle the case where the history file does not exist yet
+- Add a "save" command to save mid-conversation
 
-```python
-with open('example.txt', 'r') as file:
-    content = file.read()  # Reads the entire file into a single string
-    print(content)
-```
+### Prompt It
 
-### Reading Line by Line
+::: {.callout-note title="Building Session Prompt"}
+Update my chatbot to v1.5. Add file-based persistence:
 
-```python
-with open('example.txt', 'r') as file:
-    # Read one line at a time
-    first_line = file.readline()
-    second_line = file.readline()
-    print(first_line.strip())  # .strip() removes the newline character
-    print(second_line.strip())
-```
+- Save conversation history to "chat_history.json" using json.dump()
+- Load previous history on startup using json.load() with FileNotFoundError handling
+- The history should be a list of dicts: [{"role": "user", "text": "..."}, {"role": "bot", "text": "..."}]
+- Add a "save" command that saves the current history
+- Auto-save when the user quits
+- Add import json at the top
 
-### Reading All Lines into a List
+Keep existing dictionary-based response system from v1.4.
+:::
 
-```python
-with open('example.txt', 'r') as file:
-    lines = file.readlines()  # Returns a list where each element is a line
+### Read the Code
 
-    for line in lines:
-        print(line.strip())
-```
-
-### Iterating Over a File
-
-The most memory-efficient way to process large files is to iterate directly over the file object:
-
-```python
-with open('example.txt', 'r') as file:
-    for line in file:  # File objects are iterable
-        print(line.strip())
-```
-
-This approach reads only one line at a time into memory, which is ideal for large files.
-
-## 5. Writing to Files
-
-Writing to files is just as straightforward as reading:
-
-### Creating a New File or Overwriting an Existing One
-
-```python
-with open('output.txt', 'w') as file:
-    file.write('Hello, world!\n')  # \n adds a newline
-    file.write('This is a new file.')
-```
-
-This creates a new file named `output.txt` (or overwrites it if it already exists) with the content "Hello, world!" followed by "This is a new file." on the next line.
-
-### Appending to an Existing File
-
-If you want to add content to the end of an existing file without overwriting it, use the append mode:
-
-```python
-with open('log.txt', 'a') as file:
-    file.write('New log entry\n')
-```
-
-### Writing Multiple Lines at Once
-
-The `writelines()` method lets you write multiple lines from a list:
-
-```python
-lines = ['First line\n', 'Second line\n', 'Third line\n']
-
-with open('multiline.txt', 'w') as file:
-    file.writelines(lines)
-```
-
-Note that `writelines()` doesn't add newline characters automatically; you need to include them in your strings.
-
-## 6. Working with File Paths
-
-So far, we've worked with files in the current directory. To work with files in other locations, you need to specify the path:
-
-### Absolute Paths
-
-An absolute path specifies the complete location from the root directory:
-
-```python
-# Windows example
-with open(r'C:\Users\Username\Documents\file.txt', 'r') as file:
-    content = file.read()
-
-# Mac/Linux example
-with open('/home/username/documents/file.txt', 'r') as file:
-    content = file.read()
-```
-
-Note the `r` prefix in the Windows example, which creates a "raw string" that doesn't interpret backslashes as escape characters.
-
-### Relative Paths
-
-A relative path specifies the location relative to the current directory:
-
-```python
-# File in the current directory
-with open('file.txt', 'r') as file:
-    content = file.read()
-
-# File in a subdirectory
-with open('data/file.txt', 'r') as file:
-    content = file.read()
-
-# File in the parent directory
-with open('../file.txt', 'r') as file:
-    content = file.read()
-```
-
-### Using the os.path Module
-
-For platform-independent code, use the `os.path` module to handle file paths:
-
-```python
-import os
-
-# Join path components
-file_path = os.path.join('data', 'user_info', 'profile.txt')
-
-# Check if a file exists
-if os.path.exists(file_path):
-    with open(file_path, 'r') as file:
-        content = file.read()
-else:
-    print(f"File {file_path} does not exist")
-```
-
-## 7. Common File Operations
-
-Beyond basic reading and writing, here are some common file operations:
-
-### Checking if a File Exists
-
-```python
-import os
-
-if os.path.exists('file.txt'):
-    print("The file exists")
-else:
-    print("The file does not exist")
-```
-
-### Creating Directories
-
-```python
-import os
-
-# Create a single directory
-os.mkdir('new_folder')
-
-# Create multiple nested directories
-os.makedirs('parent/child/grandchild')
-```
-
-### Listing Files in a Directory
-
-```python
-import os
-
-# List all files and directories
-entries = os.listdir('.')  # '.' represents the current directory
-print(entries)
-```
-
-### Deleting Files
-
-```python
-import os
-
-# Delete a file
-if os.path.exists('unwanted.txt'):
-    os.remove('unwanted.txt')
-```
-
-### Renaming Files
-
-```python
-import os
-
-# Rename a file
-os.rename('old_name.txt', 'new_name.txt')
-```
-
-## 8. Working with CSV Files
-
-Comma-Separated Values (CSV) files are a common format for storing tabular data. Python provides the `csv` module for working with CSV files:
-
-### Reading CSV Files
-
-```python
-import csv
-
-with open('data.csv', 'r') as file:
-    csv_reader = csv.reader(file)
-
-    # Skip the header row (if present)
-    header = next(csv_reader)
-    print(f"Column names: {header}")
-
-    # Process each row
-    for row in csv_reader:
-        print(row)  # Each row is a list of values
-```
-
-### Writing CSV Files
-
-```python
-import csv
-
-data = [
-    ['Name', 'Age', 'City'],  # Header row
-    ['Alice', 25, 'New York'],
-    ['Bob', 30, 'San Francisco'],
-    ['Charlie', 35, 'Los Angeles']
-]
-
-with open('output.csv', 'w', newline='') as file:
-    csv_writer = csv.writer(file)
-
-    # Write all rows at once
-    csv_writer.writerows(data)
-```
-
-## 9. Working with JSON Files
-
-JavaScript Object Notation (JSON) is a popular data format that's particularly useful for storing hierarchical data. Python's `json` module makes it easy to work with JSON files:
-
-### Reading JSON Files
+Your AI will produce something like this:
 
 ```python
 import json
 
-with open('config.json', 'r') as file:
-    data = json.load(file)  # Parses JSON into a Python dictionary
+HISTORY_FILE = "chat_history.json"
 
-    print(data['name'])
-    print(data['settings']['theme'])
-```
 
-### Writing JSON Files
-
-```python
-import json
-
-data = {
-    'name': 'MyApp',
-    'version': '1.0',
-    'settings': {
-        'theme': 'dark',
-        'notifications': True,
-        'users': ['Alice', 'Bob', 'Charlie']
-    }
-}
-
-with open('config.json', 'w') as file:
-    json.dump(data, file, indent=4)  # indent for pretty formatting
-```
-
-## 10. Self-Assessment Quiz
-
-1. Which file mode would you use to add data to the end of an existing file?
-   a) `'r'`
-   b) `'w'`
-   c) `'a'`
-   d) `'x'`
-
-2. What is the main advantage of using the `with` statement when working with files?
-   a) It makes the code run faster
-   b) It automatically closes the file even if an error occurs
-   c) It allows you to open multiple files at once
-   d) It compresses the file content
-
-3. Which method reads the entire content of a file as a single string?
-   a) `file.readline()`
-   b) `file.readlines()`
-   c) `file.read()`
-   d) `file.extract()`
-
-4. What happens if you open a file in write mode (`'w'`) that already exists?
-   a) Python raises an error
-   b) The existing file is deleted and a new empty file is created
-   c) Python appends to the existing file
-   d) Python asks for confirmation before proceeding
-
-5. Which module would you use to work with CSV files in Python?
-   a) `csv`
-   b) `excel`
-   c) `tabular`
-   d) `data`
-
-**Answers & Feedback:**
-1. c) `'a'` — Append mode adds new content to the end of an existing file
-2. b) It automatically closes the file even if an error occurs — This prevents resource leaks
-3. c) `file.read()` — This method reads the entire file into memory as a string
-4. b) The existing file is deleted and a new empty file is created — Be careful with write mode!
-5. a) `csv` — Python's built-in module for working with CSV files
-
-## 11. Common File Handling Pitfalls
-
-- **Not closing files**: Always close files or use the `with` statement to avoid resource leaks
-- **Hardcoding file paths**: Use relative paths or `os.path` functions for more portable code
-- **Assuming file existence**: Check if a file exists before trying to read it
-- **Using the wrong mode**: Make sure to use the appropriate mode for your intended operation
-- **Loading large files into memory**: Use iterative approaches for large files to avoid memory issues
-- **Not handling encoding issues**: Specify the encoding when working with text files containing special characters
-
-## Project Corner: Persistent Chatbot with File Storage
-
-Let's enhance our chatbot by adding the ability to save and load conversations:
-
-```python
-import datetime
-import os
-import random
-
-# Using dictionaries for response patterns
-response_patterns = {
-    "greetings": ["hello", "hi", "hey", "howdy", "hola"],
-    "farewells": ["bye", "goodbye", "see you", "cya", "farewell"],
-    "gratitude": ["thanks", "thank you", "appreciate"],
-    "bot_questions": ["who are you", "what are you", "your name"],
-    "user_questions": ["how are you", "what's up", "how do you feel"]
-}
-
-response_templates = {
-    "greetings": ["Hello there! How can I help you today?", "Hi! Nice to chat with you!"],
-    "farewells": ["Goodbye! Come back soon!", "See you later! Have a great day!"],
-    "gratitude": ["You're welcome!", "Happy to help!"],
-    "bot_questions": ["I'm PyBot, a simple chatbot built with Python!"],
-    "user_questions": ["I'm functioning well, thanks for asking!"]
-}
-
-def get_response(user_input):
-    """Get a response based on the user input."""
-    user_input = user_input.lower()
-
-    # Check each category of responses
-    for category, patterns in response_patterns.items():
-        for pattern in patterns:
-            if pattern in user_input:
-                # Return a random response from the appropriate category
-                return random.choice(response_templates[category])
-
-    # Default response if no patterns match
-    return "I'm still learning. Can you tell me more?"
-
-def save_conversation():
-    """Save the current conversation to a file."""
-    # Create 'chats' directory if it doesn't exist
-    if not os.path.exists('chats'):
-        os.makedirs('chats')
-
-    # Generate a unique filename with timestamp
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"chats/chat_with_{user_name}_{timestamp}.txt"
-
+def load_history():
+    """Load conversation history from file."""
     try:
-        with open(filename, "w") as f:
-            # Write header information
-            f.write(f"Conversation with {bot_name} and {user_name}\n")
-            f.write(f"Date: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-
-            # Write each line of conversation
-            for entry in conversation_history:
-                f.write(f"{entry}\n")
-
-        return filename
-    except Exception as e:
-        return f"Error saving conversation: {str(e)}"
-
-def load_conversation(filename):
-    """Load a previous conversation from a file."""
-    try:
-        with open(filename, "r") as f:
-            lines = f.readlines()
-
-        print("\n----- Loaded Conversation -----")
-        for line in lines:
-            print(line.strip())
-        print("-------------------------------\n")
-        return True
+        with open(HISTORY_FILE, "r") as f:
+            return json.load(f)
     except FileNotFoundError:
-        print(f"Sorry, I couldn't find the file '{filename}'.")
-        # Show available files
-        show_available_chats()
-        return False
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-        return False
+        return []
 
-def show_available_chats():
-    """Show a list of available saved conversations."""
-    if not os.path.exists('chats'):
-        print("No saved conversations found.")
-        return
 
-    chat_files = os.listdir('chats')
-    if not chat_files:
-        print("No saved conversations found.")
-        return
-
-    print("\nAvailable saved conversations:")
-    for i, chat_file in enumerate(chat_files, 1):
-        print(f"{i}. {chat_file}")
-    print("\nTo load a conversation, type 'load' followed by the filename.")
-
-# Main chat loop
-bot_name = "PyBot"
-print(f"Hello! I'm {bot_name}. Type 'bye' to exit.")
-print("Special commands:")
-print("- 'save': Save the current conversation")
-print("- 'chats': Show available saved conversations")
-print("- 'load <filename>': Load a conversation")
-
-user_name = input("What's your name? ")
-print(f"Nice to meet you, {user_name}!")
-
-conversation_history = []
-
-def save_to_history(speaker, text):
-    """Save an utterance to conversation history."""
-    conversation_history.append(f"{speaker}: {text}")
-
-# Save initial greeting
-save_to_history(bot_name, f"Nice to meet you, {user_name}!")
-
-while True:
-    user_input = input(f"{user_name}> ")
-    save_to_history(user_name, user_input)
-
-    # Check for special commands
-    if user_input.lower() == "bye":
-        response = f"Goodbye, {user_name}!"
-        print(f"{bot_name}> {response}")
-        save_to_history(bot_name, response)
-        break
-    elif user_input.lower() == "save":
-        filename = save_conversation()
-        print(f"{bot_name}> Conversation saved to {filename}")
-        save_to_history(bot_name, f"Conversation saved to {filename}")
-        continue
-    elif user_input.lower() == "chats":
-        show_available_chats()
-        continue
-    elif user_input.lower().startswith("load "):
-        filename = user_input[5:].strip()
-        load_conversation(filename)
-        continue
-
-    # Get and display response
-    response = get_response(user_input)
-    print(f"{bot_name}> {response}")
-    save_to_history(bot_name, response)
+def save_history(history):
+    """Save conversation history to file."""
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
 ```
 
-With these enhancements, our chatbot can now:
-1. Save conversations to text files with timestamps
-2. Load and display previous conversations
-3. List available saved conversation files
-4. organise saved chats in a dedicated directory
+::: {.callout-tip title="What to Notice"}
+`json.load()` reads structured data from a file. `json.dump()` writes it. `indent=2` makes the JSON human-readable. The `try/except FileNotFoundError` handles the first run when no history file exists yet. `"w"` mode is correct here because we write the entire history each time (not appending).
+:::
 
-This makes the chatbot more useful, as you can review past interactions and continue conversations later.
+### Stretch It
 
-**Challenges**:
-- Add a feature to save conversations in JSON format
-- Implement automatic periodic saving
-- Create a settings file that remembers user preferences
-- Add the ability to search through saved conversations for specific keywords
-- Implement a feature to pick up a conversation where it left off
+::: {.callout-note title="Building Session Prompt"}
+Add a "history" command that loads and displays the last 10 entries from the saved file, formatted with timestamps. Use the datetime module to add timestamps when saving each entry.
+:::
 
-## Cross-References
+## Your Chatbot So Far
 
-- Previous Chapter: [Dictionaries](dictionaries.qmd)
-- Next Chapter: [Errors and Exceptions](errors_and_exceptions.qmd)
-- Related Topics: Strings (Chapter 13), Error Handling (Chapter 16)
+- Ch 1-14: Full features with dictionaries, loops, string processing
+- **Ch 15: Persistent conversation history saved to JSON file**
 
-***AI Tip: Ask your AI assistant to suggest file organisation strategies for different types of projects, such as data analysis, web development, or scientific computing.***
+## Quick Reference
 
-## Real-World File Applications
+```python
+# Read a file
+with open("file.txt", "r") as f:
+    content = f.read()        # entire file
+    lines = f.readlines()     # list of lines
 
-Files are fundamental to many programming tasks. Here are some common real-world applications:
+# Write a file
+with open("file.txt", "w") as f:    # erases first
+    f.write("hello\n")
 
-1. **Configuration Files**: Store application settings in a format like JSON or INI.
-   ```python
-   import json
+# Append to a file
+with open("file.txt", "a") as f:    # keeps existing
+    f.write("more\n")
 
-   # Load configuration
-   with open('config.json', 'r') as f:
-       config = json.load(f)
+# JSON
+import json
+with open("data.json", "r") as f:
+    data = json.load(f)
+with open("data.json", "w") as f:
+    json.dump(data, f, indent=2)
 
-   # Use configuration
-   theme = config['theme']
-   ```
-
-2. **Data Processing**: Read, process, and write large datasets.
-   ```python
-   # Process a CSV file line by line
-   with open('large_data.csv', 'r') as input_file:
-       with open('processed_data.csv', 'w') as output_file:
-           for line in input_file:
-               processed_line = process_line(line)  # Your processing function
-               output_file.write(processed_line)
-   ```
-
-3. **Logging**: Keep track of program execution and errors.
-   ```python
-   def log_event(message):
-       with open('app.log', 'a') as log_file:
-           timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-           log_file.write(f"{timestamp} - {message}\n")
-   ```
-
-4. **User Data Storage**: Save user preferences, history, or created content.
-   ```python
-   def save_user_profile(username, profile_data):
-       filename = f"users/{username}.json"
-       os.makedirs(os.path.dirname(filename), exist_ok=True)
-       with open(filename, 'w') as f:
-           json.dump(profile_data, f)
-   ```
-
-5. **Caching**: Store results of expensive operations for future use.
-   ```python
-   import os
-   import json
-
-   def get_data(query, use_cache=True):
-       cache_file = f"cache/{query.replace(' ', '_')}.json"
-
-       # Check for cached result
-       if use_cache and os.path.exists(cache_file):
-           with open(cache_file, 'r') as f:
-               return json.load(f)
-
-       # Perform expensive operation
-       result = expensive_operation(query)
-
-       # Cache the result
-       os.makedirs(os.path.dirname(cache_file), exist_ok=True)
-       with open(cache_file, 'w') as f:
-           json.dump(result, f)
-
-       return result
-   ```
-
-These examples illustrate how file operations are essential for creating practical, real-world applications that persist data beyond a single program execution.
+# Handle missing file
+try:
+    with open("file.txt") as f:
+        data = f.read()
+except FileNotFoundError:
+    data = ""
+```

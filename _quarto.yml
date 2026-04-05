@@ -13,7 +13,7 @@ book:
   chapters:
     - index.qmd
     - copyright.qmd
-    - chapters/python_in_the_age_of_ai.qmd
+    - chapters/after_vibe_coding.qmd
     - chapters/getting_started.qmd
     - chapters/values.qmd
     - chapters/variables.qmd
@@ -33,8 +33,6 @@ book:
     - chapters/testing.qmd
     - chapters/modules_and_packages.qmd
     - chapters/orientating_your_objects.qmd
-    - chapters/working_with_ai_assistants.qmd
-    - chapters/python_ai_integration.qmd
     - acknowledgments.qmd
     - about-author.qmd
   appendices:

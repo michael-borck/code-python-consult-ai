@@ -1,794 +1,193 @@
-# Modules and Packages - organising Your Python Code
+# Modules and Packages
 
-## Chapter Outline
-- Understanding modules and packages in Python
-- Importing modules using different approaches
-- Exploring Python's standard library
-- Finding and installing third-party packages
-- Creating your own modules and packages
-- Best practices for code organisation
+## The Wall
 
-## Learning Objectives
+AI wrote `import requests` at the top of your script. You ran it and got `ModuleNotFoundError: No module named 'requests'`. You had no idea whether `requests` was something you needed to install, something built into Python, or something AI made up entirely.
 
-By the end of this chapter, you will be able to:
-- Import and use built-in Python modules
-- Understand different import statement patterns and when to use them
-- Explore and utilise modules from Python's standard library
-- Find and install third-party packages
-- Create your own reusable modules
-- Structure your code for better organisation and reuse
-- Implement a modular design for your chatbot project
+In another case, AI split your code into three files and used `from chatbot.responses import get_response`. You did not understand what the dots meant, where Python looked for files, or why it could not find the module you were staring at in your file browser.
 
-## 1. Introduction: The Power of Modular Code
+This chapter fixes that.
 
-One of Python's greatest strengths is summed up in the phrase "batteries included." This means Python comes with a rich standard library containing modules for a wide range of tasks. Beyond that, a vast ecosystem of third-party packages extends Python's capabilities even further.
+## Thinking Session
 
-But what exactly are modules and packages, and why should you care about them?
+### Getting Oriented
 
-A **module** is simply a Python file containing code that can be imported and reused. A **package** is a collection of related modules organised in directories. Together, they enable several crucial benefits:
+::: {.callout-note title="Thinking Session Prompt"}
+What is the difference between a module and a package in Python? When AI writes `import json` versus `import requests`, one works immediately and the other does not. Why? How do I know which modules come with Python (standard library) and which need to be installed?
+:::
 
-- **Reuse**: Write code once, use it in multiple projects
-- **organisation**: Structure large codebases logically
-- **Maintenance**: Update code in one place that's used everywhere
-- **Collaboration**: Teams can work on different modules simultaneously
-- **Abstraction**: Use sophisticated functionality without understanding every detail
+Your AI should explain: the standard library (json, os, sys, datetime, random, pathlib) comes with Python. Third-party packages (requests, flask, pandas) need to be installed with `pip install`. A module is a single `.py` file. A package is a directory with an `__init__.py` file containing modules.
 
-As your programs grow more complex, proper modularization becomes essential for managing that complexity. It's like building with LEGO® blocks instead of sculpting from a single block of clay—modular code is easier to build, modify, and repair.
+### Go Deeper
 
-***AI Tip: When you're stuck solving a problem, ask your AI assistant "Is there a Python module in the standard library that handles [your task]?" You might discover that the solution already exists!***
+::: {.callout-note title="Thinking Session Prompt"}
+Explain the different ways to import in Python: `import module`, `from module import function`, `from module import *`, and `import module as alias`. When does AI use each one? Which are considered good practice and which should I avoid?
+:::
 
-## 2. Importing Modules: The `import` Statement
+::: {.callout-tip title="What to Look For"}
+`import module` is safest — you always see where things come from (`module.function()`). `from module import function` is fine for specific, well-known names. `from module import *` is dangerous — it pollutes your namespace and you cannot tell where names come from. `import module as alias` is conventional for some libraries (`import numpy as np`).
+:::
 
-Python provides several ways to import modules using the `import` statement. Let's explore each approach from most recommended to least recommended.
+::: {.callout-note title="Thinking Session Prompt"}
+How do I organise my own code into multiple files? If I have a chatbot with separate files for responses, history, and the main loop, how do I import between them? What is `__init__.py` and why does AI put it in directories?
+:::
 
-### 2.1 Explicit Module Import
+### Challenge It
 
-The standard way to import a module is with a simple `import` statement. This preserves the module's content in its own namespace, accessed with dot notation:
+::: {.callout-note title="Thinking Session Prompt"}
+What is wrong with these imports?
 
 ```python
-import math
-result = math.cos(math.pi)
-print(result)  # Outputs: -1.0
+from os import *
+import json
+from my_project import helper  # file exists in same directory
+import pandas  # never installed
 ```
+:::
 
-This approach is preferred because it:
-- Makes it clear where functions and variables come from
-- Avoids namespace conflicts with your own code
-- Keeps your global namespace clean
+::: {.callout-tip title="What to Look For"}
+Line 1: `import *` imports everything from os — pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script — relative imports depend on the project structure and whether you are running as a script or module. Line 4: `ModuleNotFoundError` if pandas is not installed. AI frequently imports packages it assumes are installed.
+:::
 
-### 2.2 Explicit Module Import with Alias
+### What You Should Have Learned
 
-For modules with longer names, it's common to use aliases for convenience:
+- Standard library vs third-party: `json` built-in, `requests` needs `pip install`
+- `import module` is preferred over `from module import *`
+- Packages are directories with `__init__.py`
+- `pip install package_name` installs third-party packages
+- `ModuleNotFoundError` means the module is not installed or not found
+- Organise your own code: one concern per file, clear imports
 
-```python
-import numpy as np
-result = np.cos(np.pi)
-print(result)  # Outputs: -1.0
-```
+## The Gap
 
-This pattern is especially common for frequently used libraries like:
-- `numpy` as `np`
-- `pandas` as `pd`
-- `matplotlib.pyplot` as `plt`
-- `tensorflow` as `tf`
+You can now read AI-generated import statements and know immediately whether something needs installation, comes with Python, or is a local file. When AI structures a project with multiple files, you understand how the pieces connect.
 
-### 2.3 Explicit Import of Module Contents
+In the Building Session, you will split your chatbot into a proper package.
 
-Sometimes you may want to import specific items from a module directly into your namespace:
+## Building Session
 
-```python
-from math import cos, pi
-result = cos(pi)
-print(result)  # Outputs: -1.0
-```
+### The Spec
 
-This makes your code more concise but has some drawbacks:
-- It's less clear where functions come from
-- Potential name conflicts if different modules have functions with the same name
-- May cause confusion when reading unfamiliar code
+Split your chatbot into a package with multiple modules:
 
-### 2.4 Implicit Import of Module Contents (Use Sparingly!)
+- `chatbot/` — the package directory
+- `chatbot/__init__.py` — package marker
+- `chatbot/config.py` — constants (BOT_NAME, VERSION, RESPONSES, KEYWORDS)
+- `chatbot/responses.py` — classify_input() and get_response()
+- `chatbot/history.py` — load_history() and save_history()
+- `chatbot/main.py` — the main loop
+- `run.py` — entry point that imports and runs main()
 
-Python also allows importing everything from a module:
+### Prompt It
 
-```python
-from math import *
-result = sin(pi)**2 + cos(pi)**2
-print(result)  # Outputs: 1.0
-```
+::: {.callout-note title="Building Session Prompt"}
+Restructure my chatbot into a package for v1.9. Create this structure:
 
-This approach should be used sparingly because:
-
-1. It makes your code less readable by hiding where functions come from
-2. It can cause unexpected name conflicts and overwrite built-in functions
-
-Here's an example of what can go wrong:
-
-```python
-# Python's built-in sum function
-print(sum(range(5), -1))  # Outputs: 9
-# This sums numbers 0-4, starting from -1
-
-# After importing everything from numpy
-from numpy import *
-print(sum(range(5), -1))  # Outputs: 10
-# The meaning changed! Now -1 refers to the axis parameter
-```
-
-This happens because `numpy.sum` replaces Python's built-in `sum` function, and they have different parameters. This type of subtle bug can be difficult to track down.
-
-## 3. Exploring Python's Standard Library
-
-Python's standard library is a treasure trove of useful modules for common tasks. Here are some especially valuable modules to know about:
-
-### Essential Standard Library Modules
-
-- **`os` and `sys`**: Operating system interfaces, file paths, and system information
-  ```python
-  import os
-
-  # Get current directory
-  print(os.getcwd())
-
-  # List files in a directory
-  print(os.listdir('.'))
-
-  # Join path components properly
-  path = os.path.join('folder', 'subfolder', 'file.txt')
-  ```
-
-- **`math` and `cmath`**: Mathematical functions for real and complex numbers
-  ```python
-  import math
-
-  # Basic mathematical operations
-  print(math.sqrt(16))     # Square root: 4.0
-  print(math.factorial(5)) # 5!: 120
-  print(math.gcd(24, 36))  # Greatest common divisor: 12
-  ```
-
-- **`random`**: Generate random numbers and make random selections
-  ```python
-  import random
-
-  # Random integer between 1 and 10
-  print(random.randint(1, 10))
-
-  # Random choice from a list
-  print(random.choice(['apple', 'banana', 'cherry']))
-
-  # Shuffle a list in place
-  cards = ['ace', 'king', 'queen', 'jack']
-  random.shuffle(cards)
-  print(cards)
-  ```
-
-- **`datetime`**: Working with dates and times
-  ```python
-  from datetime import datetime, timedelta
-
-  # Current date and time
-  now = datetime.now()
-  print(now)
-
-  # Adding time
-  tomorrow = now + timedelta(days=1)
-  print(tomorrow)
-  ```
-
-- **`json` and `csv`**: Working with common data formats
-  ```python
-  import json
-
-  # Parse JSON
-  data = '{"name": "John", "age": 30}'
-  person = json.loads(data)
-  print(person['name'])  # John
-
-  # Convert Python object to JSON
-  new_json = json.dumps({"city": "New York", "population": 8400000})
-  print(new_json)
-  ```
-
-- **`re`**: Regular expressions for text pattern matching
-  ```python
-  import re
-
-  # Find all email addresses in text
-  text = "Contact us at support@example.com or info@example.org"
-  emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', text)
-  print(emails)  # ['support@example.com', 'info@example.org']
-  ```
-
-- **`collections`**: Specialized container datatypes
-  ```python
-  from collections import Counter
-
-  # Count occurrences of elements
-  colors = ['red', 'blue', 'red', 'green', 'blue', 'blue']
-  color_counts = Counter(colors)
-  print(color_counts)  # Counter({'blue': 3, 'red': 2, 'green': 1})
-  ```
-
-- **`itertools`**: Functions for efficient iteration
-  ```python
-  import itertools
-
-  # Generate all combinations
-  result = list(itertools.combinations([1, 2, 3], 2))
-  print(result)  # [(1, 2), (1, 3), (2, 3)]
-  ```
-
-This is just a small sample of what's available. The complete standard library documentation is available at [Python's official documentation](https://docs.python.org/3/library/).
-
-## 4. Using Third-Party Packages
-
-While the standard library is extensive, the Python ecosystem's true power comes from third-party packages. These modules extend Python's capabilities for specific domains like data science, web development, machine learning, and more.
-
-### Finding and Installing Packages
-
-The standard repository for Python packages is the Python Package Index (PyPI) at [https://pypi.org/](https://pypi.org/).
-
-Python comes with a package installer called `pip` that makes it easy to install packages from PyPI:
-
-```bash
-# Basic installation
-pip install package_name
-
-# Install specific version
-pip install package_name==1.2.3
-
-# Upgrade existing package
-pip install --upgrade package_name
-
-# Install multiple packages
-pip install package1 package2 package3
-```
-
-### Popular Third-Party Packages
-
-Here are some widely-used third-party packages:
-
-- **NumPy**: Numerical computing with powerful array operations
-- **Pandas**: Data analysis and manipulation with DataFrame objects
-- **Matplotlib** and **Seaborn**: Data visualization
-- **Requests**: Simplified HTTP requests
-- **Flask** and **Django**: Web frameworks
-- **SQLAlchemy**: Database toolkit and ORM
-- **PyTorch** and **TensorFlow**: Machine learning frameworks
-- **Pillow**: Image processing
-- **Beautiful Soup**: HTML and XML parsing
-
-### Virtual Environments
-
-When working with third-party packages, it's best practice to use virtual environments to isolate dependencies for different projects:
-
-```bash
-# Create virtual environment
-python -m venv myproject_env
-
-# Activate environment (Windows)
-myproject_env\Scripts\activate
-
-# Activate environment (macOS/Linux)
-source myproject_env/bin/activate
-
-# Install packages
-pip install numpy pandas matplotlib
-
-# Deactivate when done
-deactivate
-```
-
-This keeps your projects isolated, preventing package conflicts between different projects.
-
-## 5. Creating Your Own Modules
-
-As your projects grow, you'll want to organise your code into reusable modules. Creating a module is as simple as saving Python code in a `.py` file.
-
-### Basic Module Creation
-
-Let's create a simple module for calculator functions:
-
-```python
-# calculator.py
-def add(a, b):
-    return a + b
-
-def subtract(a, b):
-    return a - b
-
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
-    return a / b
-```
-
-To use this module, import it like any other:
-
-```python
-import calculator
-
-result = calculator.add(10, 5)
-print(result)  # 15
-```
-
-### Module Scope and the `if __name__ == "__main__"` Pattern
-
-Every Python module has a special variable called `__name__`. When a module is run directly, `__name__` is set to `"__main__"`. When imported, `__name__` is set to the module's name.
-
-This lets you include code that only runs when the module is executed directly:
-
-```python
-# calculator.py
-def add(a, b):
-    return a + b
-
-def subtract(a, b):
-    return a - b
-
-# More functions...
-
-if __name__ == "__main__":
-    # This code only runs when calculator.py is executed directly
-    print("Calculator module test")
-    print(f"5 + 3 = {add(5, 3)}")
-    print(f"10 - 4 = {subtract(10, 4)}")
-```
-
-This pattern is useful for including test code or example usage in your modules.
-
-### Creating Packages
-
-A package is a directory containing multiple module files and a special `__init__.py` file (which can be empty):
-
-```text
-my_package/
-    __init__.py
-    module1.py
-    module2.py
-    subpackage/
-        __init__.py
-        module3.py
-```
-
-The `__init__.py` file indicates that the directory should be treated as a package. It can also contain initialization code that runs when the package is imported.
-
-To import from a package:
-
-```python
-# Import a specific module
-import my_package.module1
-
-# Import a specific function
-from my_package.module2 import some_function
-
-# Import from a subpackage
-from my_package.subpackage.module3 import another_function
-```
-
-## 6. organising Real-World Python Projects
-
-As your projects grow more complex, a clear organisation becomes crucial. Here's a common structure for medium-sized Python projects:
-
-```text
-project_name/
-    README.md
-    LICENSE
-    requirements.txt
-    setup.py
-    project_name/
-        __init__.py
-        main.py
-        core/
-            __init__.py
-            module1.py
-            module2.py
-        utils/
-            __init__.py
-            helpers.py
-    tests/
-        __init__.py
-        test_module1.py
-        test_module2.py
-    docs/
-        documentation.md
-    examples/
-        example1.py
-```
-
-This structure separates your core code, tests, documentation, and examples, making the project easier to navigate and maintain.
-
-## 7. Module and Package Best Practices
-
-Follow these guidelines for creating effective modules and packages:
-
-1. **Single Responsibility Principle**: Each module should have one primary purpose
-2. **Clear Interfaces**: Provide well-documented functions with clear parameters and return values
-3. **Avoid Side Effects**: Functions should not unexpectedly modify global state
-4. **Limit Public API**: Use underscore prefixes (`_function_name`) for internal helper functions
-5. **Include Documentation**: Add docstrings to explain what your modules and functions do
-6. **Consider Dependency Direction**: Lower-level modules should not import higher-level ones
-7. **Test Your Modules**: Create unit tests to ensure your modules work correctly
-8. **Use Relative Imports**: Within packages, use relative imports (`.module` instead of `package.module`)
-
-By following these practices, your code will be more maintainable, reusable, and easier to understand.
-
-## 8. Self-Assessment Quiz
-
-1. What's the preferred way to import the `random` module's `choice` function?
-   a) `import random.choice`
-   b) `from random import choice`
-   c) `import choice from random`
-   d) `from random import *`
-
-2. Which statement is true about the `from math import *` import style?
-   a) It's the recommended way to import mathematical functions
-   b) It's efficient because it only imports what you need
-   c) It should be used sparingly due to namespace pollution
-   d) It makes your code more readable
-
-3. What is the purpose of the `__init__.py` file in a directory?
-   a) It initializes the Python interpreter
-   b) It marks the directory as a package
-   c) It's required in every Python project folder
-   d) It creates a new instance of each module
-
-4. Which tool is commonly used to install third-party packages in Python?
-   a) `installer`
-   b) `pip`
-   c) `package`
-   d) `pyinstall`
-
-5. What does the `if __name__ == "__main__":` pattern allow you to do?
-   a) Make your module importable by other modules
-   b) Run code only when the module is executed directly
-   c) Define the main function of your program
-   d) Check if your module has been imported correctly
-
-**Answers & Feedback:**
-1. b) `from random import choice` — This is the proper syntax for importing a specific function
-2. c) It should be used sparingly due to namespace pollution — This style imports everything into your namespace which can cause conflicts
-3. b) It marks the directory as a package — This special file tells Python to treat the directory as a package
-4. b) `pip` — pip is Python's package installer
-5. b) Run code only when the module is executed directly — This pattern distinguishes between direct execution and being imported
-
-## Project Corner: Modularizing Your Chatbot
-
-Now that you understand modules and packages, let's apply this knowledge to our chatbot project. We'll organise the chatbot into a proper modular structure:
-
-```text
 chatbot/
-    __init__.py
-    main.py
-    response_manager.py
-    history_manager.py
-    ui_manager.py
-```
+    __init__.py      (empty or with version)
+    config.py        (BOT_NAME, VERSION, RESPONSES dict, KEYWORDS dict)
+    responses.py     (classify_input, get_response — imports from config)
+    history.py       (load_history, save_history — imports json)
+    main.py          (main function — imports from other modules)
+run.py               (entry point: from chatbot.main import main; main())
 
-Here's how we'll implement these modules:
+Show me the import statements for each file and the key functions. Keep the existing features from v1.7.
+:::
 
-### response_manager.py
+### Read the Code
+
+Your AI will produce something like this:
 
 ```python
-"""Functions for generating chatbot responses."""
+# chatbot/config.py
+BOT_NAME = "PyBot"
+VERSION = "1.9"
+HISTORY_FILE = "chat_history.json"
+
+RESPONSES = {
+    "greeting": ["Hello!", "Hi there!"],
+    "farewell": ["Goodbye!", "See you!"],
+    "question": ["Good question!", "Let me think..."],
+    "default": ["Interesting!", "Tell me more."],
+}
+
+KEYWORDS = {
+    "hello": "greeting",
+    "hi": "greeting",
+    "bye": "farewell",
+    "goodbye": "farewell",
+}
+```
+
+```python
+# chatbot/responses.py
 import random
+from chatbot.config import RESPONSES, KEYWORDS
 
-class ResponseManager:
-    def __init__(self, bot_name):
-        """Initialize with response patterns and templates."""
-        self.bot_name = bot_name
-        self.response_patterns = {
-            "greetings": ["hello", "hi", "hey", "howdy", "hola"],
-            "farewells": ["bye", "goodbye", "see you", "cya", "farewell"],
-            "gratitude": ["thanks", "thank you", "appreciate"],
-            "bot_questions": ["who are you", "what are you", "your name"],
-            "user_questions": ["how are you", "what's up", "how do you feel"]
-        }
+def classify_input(text):
+    words = text.lower().split()
+    for word in words:
+        if word in KEYWORDS:
+            return KEYWORDS[word]
+    if "?" in text:
+        return "question"
+    return "default"
 
-        self.response_templates = {
-            "greetings": ["Hello, {user_name}!", "Hi there, {user_name}!", "Great to see you again!"],
-            "farewells": ["Goodbye!", "See you later!", "Until next time!"],
-            "gratitude": ["You're welcome!", "Happy to help!", "No problem at all."],
-            "bot_questions": [f"I'm {bot_name}, your chatbot assistant!", "I'm just a simple Python chatbot."],
-            "user_questions": ["I'm just a program, but I'm working well!", "I'm here and ready to chat!"],
-            "default": ["I'm not sure how to respond to that yet.", "Can you tell me more?", "Interesting, tell me more!"]
-        }
-
-    def get_response(self, user_input, user_name):
-        """Generate a response to user input."""
-        if not user_input:
-            return "I didn't catch that. Could you try again?"
-
-        user_input = user_input.lower()
-
-        # Check each category of responses
-        for category, patterns in self.response_patterns.items():
-            for pattern in patterns:
-                if pattern in user_input:
-                    # Get a random response from the matching category
-                    templates = self.response_templates[category]
-                    response = random.choice(templates)
-
-                    # Format with user name if needed
-                    return response.format(user_name=user_name)
-
-        # Default response if no patterns match
-        return random.choice(self.response_templates["default"])
+def get_response(user_input):
+    category = classify_input(user_input)
+    responses = RESPONSES.get(category, RESPONSES["default"])
+    return random.choice(responses), category == "farewell"
 ```
 
-### history_manager.py
-
 ```python
-"""Functions for managing conversation history."""
-import datetime
-import os
-
-class HistoryManager:
-    def __init__(self):
-        """Initialize with empty history."""
-        self.conversation_history = []
-
-    def add_to_history(self, speaker, text):
-        """Add a message to conversation history."""
-        timestamp = datetime.datetime.now().strftime("%H:%M:%S")
-        entry = f"[{timestamp}] {speaker}: {text}"
-        self.conversation_history.append(entry)
-        return len(self.conversation_history)
-
-    def show_history(self):
-        """Return formatted conversation history."""
-        if not self.conversation_history:
-            return "No conversation history yet."
-
-        history = "\n----- Conversation History -----\n"
-        for entry in self.conversation_history:
-            history += f"{entry}\n"
-        history += "-------------------------------"
-        return history
-
-    def save_conversation(self, user_name, bot_name):
-        """Save conversation history to a file."""
-        if not self.conversation_history:
-            return "No conversation to save."
-
-        # Create a timestamped filename
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"chat_with_{user_name}_{timestamp}.txt"
-
-        try:
-            with open(filename, "w") as f:
-                f.write(f"Conversation between {bot_name} and {user_name}\n")
-                f.write(f"Date: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-
-                for entry in self.conversation_history:
-                    f.write(f"{entry}\n")
-
-            return f"Conversation saved to {filename}"
-        except Exception as e:
-            return f"Error saving conversation: {str(e)}"
-
-    def load_conversation(self, filename):
-        """Load a previous conversation from a file."""
-        try:
-            with open(filename, "r") as f:
-                content = f.read()
-            return content
-        except FileNotFoundError:
-            return f"Could not find file: {filename}"
-        except Exception as e:
-            return f"Error loading conversation: {str(e)}"
-```
-
-### ui_manager.py
-
-```python
-"""Functions for user interface and interaction."""
-
-class UIManager:
-    def __init__(self, bot_name):
-        """Initialize with bot name."""
-        self.bot_name = bot_name
-
-    def display_welcome(self):
-        """Display welcome message."""
-        welcome = f"""
-╔════════════════════════════════════════╗
-║ Welcome to {self.bot_name.center(28)} ║
-║                                        ║
-║  Type 'help' for available commands    ║
-║  Type 'bye' to exit the conversation   ║
-╚════════════════════════════════════════╝
-"""
-        return welcome
-
-    def display_help(self, user_name):
-        """Display help information."""
-        help_text = f"""
-Available Commands:
-- 'help': Display this help message
-- 'history': Show conversation history
-- 'save': Save this conversation to a file
-- 'load [filename]': Load a previous conversation
-- 'bye': End the conversation
-
-You can also just chat with me normally, {user_name}!
-"""
-        return help_text
-
-    def format_bot_response(self, text):
-        """Format the bot's response for display."""
-        return f"{self.bot_name}> {text}"
-
-    def format_user_prompt(self, user_name):
-        """Format the user's input prompt."""
-        return f"{user_name}> "
-```
-
-### main.py
-
-```python
-"""Main chatbot interface."""
-from chatbot.response_manager import ResponseManager
-from chatbot.history_manager import HistoryManager
-from chatbot.ui_manager import UIManager
-
-def run_chatbot():
-    """Run the main chatbot program."""
-    # Initialize components
-    bot_name = "PyBot"
-    response_manager = ResponseManager(bot_name)
-    history_manager = HistoryManager()
-    ui_manager = UIManager(bot_name)
-
-    # Display welcome and get user name
-    print(ui_manager.display_welcome())
-    user_name = input("What's your name? ")
-    print(f"Nice to meet you, {user_name}!")
-
-    # Main interaction loop
-    while True:
-        # Get user input
-        user_input = input(ui_manager.format_user_prompt(user_name))
-        history_manager.add_to_history(user_name, user_input)
-
-        # Process commands
-        if user_input.lower() == "bye":
-            response = f"Goodbye, {user_name}! I hope to chat again soon."
-            print(ui_manager.format_bot_response(response))
-            history_manager.add_to_history(bot_name, response)
-            break
-
-        elif user_input.lower() == "help":
-            response = ui_manager.display_help(user_name)
-            print(response)
-            continue
-
-        elif user_input.lower() == "history":
-            response = history_manager.show_history()
-            print(response)
-            continue
-
-        elif user_input.lower() == "save":
-            response = history_manager.save_conversation(user_name, bot_name)
-            print(ui_manager.format_bot_response(response))
-            history_manager.add_to_history(bot_name, response)
-            continue
-
-        elif user_input.lower().startswith("load "):
-            filename = user_input[5:].strip()
-            response = history_manager.load_conversation(filename)
-            print(response)
-            continue
-
-        # Get and display response for normal conversation
-        response = response_manager.get_response(user_input, user_name)
-        print(ui_manager.format_bot_response(response))
-        history_manager.add_to_history(bot_name, response)
+# run.py
+from chatbot.main import main
 
 if __name__ == "__main__":
-    run_chatbot()
+    main()
 ```
 
-### __init__.py
+::: {.callout-tip title="What to Notice"}
+Each file imports only what it needs. `config.py` has no imports — it is pure data. `responses.py` imports from `config` using the package path `from chatbot.config import ...`. `run.py` is the entry point — one line. The `__init__.py` file can be empty; it just tells Python this directory is a package.
+:::
+
+### Stretch It
+
+::: {.callout-note title="Building Session Prompt"}
+Add a `chatbot/utils.py` module with a debug_log() function and a format_message() function. Import them in main.py. Also add `__version__ = "1.9"` to `__init__.py` so users can check `import chatbot; print(chatbot.__version__)`.
+:::
+
+## Your Chatbot So Far
+
+- Ch 1-17: Full features with persistence, error handling, debug mode
+- Ch 18: Test suite
+- **Ch 19: Split into a proper package with separate modules**
+
+## Quick Reference
 
 ```python
-"""Chatbot package for Python Jumpstart course."""
-__version__ = '0.1.0'
+# Import styles
+import json                          # full module
+from datetime import datetime        # specific item
+import numpy as np                   # alias
+
+# Install third-party
+# pip install requests
+
+# Package structure
+# mypackage/
+#     __init__.py
+#     module1.py
+#     module2.py
+
+# Import from your package
+from mypackage.module1 import my_function
+
+# Common standard library
+import json        # JSON data
+import os          # file system
+import sys         # system
+import datetime    # dates/times
+import random      # randomness
+import pathlib     # file paths
 ```
-
-## Benefits of This Modular Design
-
-This modular organisation offers several advantages:
-
-1. **Separation of Concerns**: Each module has a specific responsibility
-2. **Readability**: Code is organised into logical units
-3. **Maintainability**: Changes to one aspect don't affect others
-4. **Testability**: Each module can be tested independently
-5. **Reusability**: Modules can be reused in other projects
-6. **Collaborative Development**: Multiple people can work on different modules
-
-### How to Use the Modular Chatbot
-
-To run the chatbot with this modular structure:
-
-1. Create the directory structure and files as shown above
-2. Run `python -m chatbot.main` from the parent directory
-
-Try enhancing it further with:
-- Additional response patterns
-- More sophisticated response generation
-- Integration with web APIs for information
-- Natural language processing capabilities
-- Database storage for conversation history
-
-## Cross-References
-
-- Previous Chapter: [Testing](testing.qmd)
-- Next Chapter: [Orientating Your Objects](orientating_your_objects.qmd)
-- Related Topics: Functions (Chapter 9), Error Handling (Chapter 16), Testing (Chapter 18)
-
-***AI Tip: When organising your code into modules, ask your AI assistant to help identify logical groupings of functions. Describe what your code does, and the AI can suggest a modular structure that follows good design principles.***
-
-## Real-World Applications of Python Modules
-
-Python's modular design is key to its success in diverse fields:
-
-### Web Development
-
-Frameworks like Django and Flask are built from modules for routing, templates, databases, and more:
-
-```python
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-```
-
-### Data Science
-
-Libraries like pandas make complex data operations simple:
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Load and analyse data
-df = pd.read_csv('data.csv')
-df.groupby('category').mean().plot(kind='bar')
-plt.show()
-```
-
-### Machine Learning
-
-TensorFlow and PyTorch provide modular building blocks for AI:
-
-```python
-import tensorflow as tf
-
-# Build a simple neural network
-model = tf.keras.Sequential([
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(10, activation='softmax')
-])
-```
-
-### DevOps and Automation
-
-Modules like `subprocess` and `paramiko` power system automation:
-
-```python
-import subprocess
-
-# Run a command and capture output
-result = subprocess.run(['ls', '-l'], capture_output=True, text=True)
-print(result.stdout)
-```
-
-By mastering modules and packages, you're learning the fundamental organising principle that powers Python's success across these diverse domains.
