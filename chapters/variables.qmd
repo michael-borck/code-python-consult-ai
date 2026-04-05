@@ -1,548 +1,186 @@
-# Variables - Storing and Managing Data
+# Variables
 
-## Chapter Outline
-- What are variables and why do we need them?
-- Creating variables and assigning values
-- Variable naming conventions and best practices
-- Changing and reassigning variable values
-- Variable scope and lifetime
-- Multiple assignment and swapping values
-- Constants vs. variables
-- Tracking state with variables in your chatbot
+## The Wall
 
-## Learning Objectives
+You asked AI to "make a chatbot that remembers the user's name." It gave you 40 lines of code with `user_name`, `bot_name`, `message_count`, `last_response`, `_internal_state`, and `MAX_RETRIES`. It worked — until you tried to change something and everything broke. You renamed a variable in one place but not another. You changed a value that turned out to be used in three different places.
 
-By the end of this chapter, you will be able to:
-- Understand what variables are and their role in programming
-- Create and assign values to variables using proper syntax
-- Follow Python's naming conventions and best practices
-- Change variable values and understand their dynamic nature
-- Implement multiple assignment and value swapping techniques
-- Distinguish between variables and constants
-- Use variables to track state in your chatbot project
-- recognise common variable-related issues and how to avoid them
+You could not tell which variables mattered, which were temporary, and which were constants you should not touch. Without understanding how variables work, AI-generated code is a minefield of names you cannot safely modify.
 
-## 1. Introduction: Variables as Memory Containers
-
-In programming, variables are named storage locations that hold data values in your computer's memory. Think of them as labelled containers that let you store, access, and modify information throughout your program.
-
-Without variables, we would have to use literal values everywhere, making our code inflexible and difficult to maintain. Variables allow us to:
-
-- Store data for later use
-- Give meaningful names to values
-- Change values during program execution
-- Track program state and progress
-- Make code more readable and maintainable
-
-> **Key Concept**: Variables connect the abstract world of values with meaningful names that make sense to humans. By naming our data, we can work with it more effectively and make our code more understandable.
+This chapter fixes that.
 
 ::: {.callout-note title="Coming from Think Python?"}
-If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practiced.
+If you worked through *Think Python, Direct AI*, you already used variables in projects like the Temperature Converter and Quiz Game. This chapter makes that knowledge systematic — explaining the rules and patterns behind what you practised.
 :::
 
-## 2. Creating Variables: The Assignment Statement
+## Thinking Session
 
-In Python, you create a variable by assigning a value using the `=` operator. This process is called assignment:
+### Getting Oriented
 
-```python
-# Creating variables with different data types
-user_name = "Alice"       # A string variable
-age = 25                  # An integer variable
-height = 5.9              # A float variable
-is_student = True         # A boolean variable
-favorite_colors = ["blue", "green"]  # A list variable
-```
+::: {.callout-note title="Thinking Session Prompt"}
+Explain Python variables to me, but do not use the "box that holds a value" metaphor. I want to understand what actually happens when I write `x = 5`. Also explain why Python lets me write `x = 5` and then `x = "hello"` on the next line — is that a feature or a problem?
+:::
 
-When Python executes an assignment statement:
-1. The expression on the right side is evaluated first
-2. Memory is allocated to store the resulting value
-3. The variable name on the left is connected to that memory location
+Your AI should talk about name binding — `x = 5` binds the name `x` to the integer object `5`. The "box" metaphor is misleading because it implies the variable contains the value. In Python, variables are labels pointing to objects. If your AI uses the box metaphor anyway, push back.
 
-### Dynamic Typing
+### Go Deeper
 
-Python is a dynamically-typed language, which means the type of a variable is determined by its assigned value, not by an explicit declaration:
+::: {.callout-note title="Thinking Session Prompt"}
+Show me three examples where choosing bad variable names would make AI-generated code confusing to modify. Then show the same code with good names. What naming conventions does Python use?
+:::
 
-```python
-# Variable types are determined by their values
-x = 10          # x is now an integer
-print(type(x))  # <class 'int'>
+::: {.callout-tip title="What to Look For"}
+The pattern: `snake_case` for variables and functions, `UPPER_CASE` for constants, `PascalCase` for classes. These are not just style — they carry meaning. When you see `MAX_RETRIES` in AI-generated code, the uppercase tells you it is a constant that should not change.
+:::
 
-x = "hello"     # x is now a string
-print(type(x))  # <class 'str'>
+::: {.callout-note title="Thinking Session Prompt"}
+What is the difference between `x = 5` and `x == 5`? When I am reading AI-generated code, how do I know which one I am looking at? And what about `x += 1` — what does that do?
+:::
 
-x = [1, 2, 3]   # x is now a list
-print(type(x))  # <class 'list'>
-```
+### Challenge It
 
-The type of a variable can change during program execution as you assign different values to it. This flexibility is powerful but requires careful attention.
-
-## 3. Variable Naming: Rules and Conventions
-
-Choosing good variable names is essential for writing clear, maintainable code. Python has specific rules and conventions for naming variables:
-
-### Rules (These are enforced by Python)
-
-- Must start with a letter or underscore (_)
-- Can only contain letters, numbers, and underscores
-- Cannot be a Python reserved keyword (like `if`, `for`, `class`, etc.)
-- Names are case-sensitive (`name` and `Name` are different variables)
+::: {.callout-note title="Thinking Session Prompt"}
+What is wrong with this code, and why would AI likely generate it?
 
 ```python
-# Valid variable names
 name = "Alice"
-_hidden = True
-count_2 = 42
-first_name = "Bob"
-
-# Invalid variable names
-# 2count = 10        # Cannot start with a number
-# my-variable = 5    # Cannot use hyphens
-# class = "Python"   # Cannot use Python keywords
-# $price = 19.99     # Cannot use special characters
+def greet():
+    print(name)
+    name = name + "!"
 ```
+:::
 
-### Conventions (Best practices recommended by PEP 8)
+::: {.callout-tip title="What to Look For"}
+This is a scope trap. The `name = name + "!"` inside the function creates a local variable that shadows the global one. Python sees the assignment and treats `name` as local for the entire function — so `print(name)` fails with `UnboundLocalError`. AI generates this pattern regularly.
+:::
 
-- Use lowercase letters for variable names
-- Separate words with underscores (snake_case)
-- Choose descriptive, meaningful names
-- Use plural names for collections
+### What You Should Have Learned
+
+- Variables are names bound to objects, not boxes holding values
+- Assignment (`=`) vs equality (`==`) vs augmented assignment (`+=`)
+- Python naming conventions: snake_case, UPPER_CASE, PascalCase
+- Dynamic typing means variables can change type — powerful but requires attention
+- Scope exists and can cause subtle bugs
+
+## The Gap
+
+You can now read AI-generated code and understand what the variable names mean, why they are structured the way they are, and what happens when values change. That is the difference between someone who copies AI output and someone who can safely modify it.
+
+In the Building Session, you will add memory to your chatbot — and understand every variable AI creates.
+
+## Building Session
+
+### The Spec
+
+Add state tracking to your chatbot:
+
+- Store the user's name (ask for it at the start)
+- Track how many messages have been exchanged
+- Use named constants for bot configuration
+- Reference the stored name in responses
+
+### Prompt It
+
+::: {.callout-note title="Building Session Prompt"}
+Here is my chatbot (v0.3). Update it to v0.4:
 
 ```python
-# Following naming conventions (do this)
-user_name = "Alice"
-items_count = 42
-active_users = ["Alice", "Bob", "Charlie"]
-is_registered = True
-
-# Not following conventions (avoid these)
-UserName = "Alice"     # PascalCase is for classes
-itemscount = 42        # Words run together
-a = ["Alice", "Bob"]   # Too short and non-descriptive
+"""PyBot v0.3: Recognises numbers vs text."""
+BOT_NAME = "PyBot"
+VERSION = "0.3"
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+print("Type 'quit' to exit.")
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye!")
+        break
+    try:
+        number = int(user_input)
+        response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
+    except ValueError:
+        response = f"You said '{user_input}'"
+    print(f"{BOT_NAME}: {response}")
 ```
 
-> **Readability Tip**: Write code as if someone else will read it later. That someone might be you in six months, struggling to remember what your code does.
+Add these features using variables:
+- Ask the user's name at the start, store in user_name
+- Add message_count that increments each turn
+- Include user's name and count in responses
+- Update VERSION to "0.4"
 
-## 4. Changing Variable Values
+Keep it simple — no functions, no classes.
+:::
 
-One of the most powerful features of variables is that their values can change during program execution:
+### Read the Code
+
+Your AI will produce something like this:
 
 ```python
-# Changing a variable's value
-score = 0           # Initial score
-print(score)        # Output: 0
-
-score = 10          # Score changed
-print(score)        # Output: 10
-
-score = score + 5   # Update based on current value
-print(score)        # Output: 15
-```
-
-### Compound Assignment Operators
-
-Python provides shorthand operators for updating variables:
-
-```python
-# Compound assignment operators
-count = 10
-count += 5      # Same as: count = count + 5
-print(count)    # Output: 15
-
-message = "Hello"
-message += " World"  # Same as: message = message + " World"
-print(message)  # Output: Hello World
-
-num = 10
-num *= 2        # Same as: num = num * 2
-print(num)      # Output: 20
-
-value = 100
-value -= 25     # Same as: value = value - 25
-print(value)    # Output: 75
-```
-
-Other compound operators include `//=` (floor division), `/=` (division), `%=` (modulo), and `**=` (exponentiation).
-
-## 5. Multiple Assignment and Value Swapping
-
-Python allows assigning values to multiple variables in a single statement:
-
-```python
-# Multiple assignment
-x, y, z = 1, 2, 3
-print(x, y, z)  # Output: 1 2 3
-
-# Assigning the same value to multiple variables
-a = b = c = 0
-print(a, b, c)  # Output: 0 0 0
-```
-
-A common use case is swapping variable values:
-
-```python
-# Swapping values (traditional way in many languages)
-a = 5
-b = 10
-
-temp = a
-a = b
-b = temp
-print(a, b)  # Output: 10 5
-
-# Python's elegant way to swap values
-x = 1
-y = 2
-
-x, y = y, x
-print(x, y)  # Output: 2 1
-```
-
-## 6. Constants: Variables That Shouldn't Change
-
-Constants are values that should not change during program execution. Python doesn't have built-in constants, but there's a convention to use uppercase names for values that shouldn't be modified:
-
-```python
-# Constants (by convention)
-PI = 3.14159
-MAX_RETRY_COUNT = 3
-DEFAULT_USERNAME = "guest"
-DATABASE_URL = "mongodb://localhost:27017"
-
-# Regular variables
-current_user = "Alice"
-retry_count = 0
-```
-
-Following this convention helps other programmers (and your future self) understand which values should remain unchanged.
-
-***AI Collaboration Corner: Naming Variables***
-
-When asking AI for help with variable naming, be specific about your context:
-
-Instead of:
-```text
-What should I name my variables?
-```
-
-Try:
-```text
-I'm building a shopping cart system with these pieces of data:
-- The items a user has selected to purchase
-- The total price of all items
-- Whether the cart has been checked out
-- The user's shipping address
-- The date when the order was placed
-
-Could you suggest clear, descriptive variable names that follow Python
-conventions for these data points? Also, which ones might be good candidates
-for constants instead of variables?
-```
-
-The second prompt gives specific context about your project and data, leading to more relevant naming suggestions. It also asks for guidance on variables vs. constants, adding another layer of value.
-
-## 7. Variable Scope: Where Variables Live
-
-In Python, a variable's scope determines where in your code the variable is accessible:
-
-```python
-# Global scope (accessible throughout the program)
-global_var = "I'm available everywhere"
-
-def my_function():
-    # Local scope (only accessible within this function)
-    local_var = "I'm only available inside this function"
-    print(global_var)  # Can access global_var
-    print(local_var)   # Can access local_var
-
-my_function()
-print(global_var)      # Can access global_var
-# print(local_var)     # Error! Can't access local_var outside the function
-```
-
-We'll cover scope in more detail when we discuss functions in later chapters.
-
-## 8. Project Corner: Building Chatbot State with Variables
-
-Let's enhance our chatbot by using variables to track the conversation state:
-
-```python
-"""
-PyBot: A Python chatbot with memory
-Version 0.4: Using variables to track state
-"""
-
-# Bot configuration (constants)
+"""PyBot v0.4: Remembers your name, tracks messages."""
 BOT_NAME = "PyBot"
 VERSION = "0.4"
-CREATOR = "Your Name"
 
-# Bot state variables (will change during execution)
-user_name = None
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+user_name = input(f"{BOT_NAME}: What's your name? ")
+print(f"{BOT_NAME}: Nice to meet you, {user_name}!")
+print("Type 'quit' to exit.")
+
 message_count = 0
-last_topic = None
-greeting_shown = False
-favorite_color = None
 
-# Display personalized greeting
-def display_greeting():
-    """Display greeting based on chatbot state."""
-    global greeting_shown, user_name
-
-    if not greeting_shown:
-        # First-time greeting
-        print(f"{BOT_NAME}> Hello! I'm {BOT_NAME}, version {VERSION}.")
-        user_input = input("What's your name? ")
-        user_name = user_input  # Store name in a variable for later use
-        print(f"{BOT_NAME}> Nice to meet you, {user_name}!")
-        greeting_shown = True  # Update state variable
-    else:
-        # Returning user greeting
-        print(f"{BOT_NAME}> Welcome back, {user_name}!")
-
-# Process user message
-def process_message(message):
-    """Process user message and update state variables."""
-    global message_count, last_topic, favorite_color
-
-    # Increment message counter
-    message_count += 1
-
-    # Convert to lowercase for easier processing
-    message = message.lower()
-
-    # Update last topic based on message content
-    if "weather" in message:
-        last_topic = "weather"
-    elif "food" in message:
-        last_topic = "food"
-    elif "color" in message:
-        last_topic = "color"
-
-        # If user mentions their favourite color, store it
-        if "favourite" in message and "is" in message:
-            # Simple color extraction (will improve in later chapters)
-            words = message.split()
-            for i, word in enumerate(words):
-                if word == "is" and i < len(words) - 1:
-                    favorite_color = words[i + 1].lower()
-                    break
-
-    # Respond based on state variables
-    if message_count == 1:
-        return f"That's your first message! Thanks for chatting with me."
-    elif "color" in message and favorite_color:
-        return f"I remember your favourite color is {favorite_color}!"
-    elif last_topic:
-        return f"I see we're talking about {last_topic} now."
-    else:
-        return f"Thanks for your message. That's {message_count} messages so far!"
-
-# Display chatbot status using state variables
-def display_status():
-    """Show current chatbot state using tracked variables."""
-    print("\n" + "=" * 50)
-    print(f"{BOT_NAME} Status:")
-    print(f"User: {user_name if user_name else 'Unknown'}")
-    print(f"Messages received: {message_count}")
-    print(f"Last topic: {last_topic if last_topic else 'None'}")
-    if favorite_color:
-        print(f"User's favourite color: {favorite_color}")
-    print("=" * 50 + "\n")
-
-# Run a simple chat session
-display_greeting()
-
-# Simulate a conversation
 while True:
-    # Get user input
-    user_message = input(f"{user_name}> ")
+    user_input = input(f"{user_name}: ")
 
-    # Check for exit command
-    if user_message.lower() in ["exit", "quit", "bye"]:
-        print(f"{BOT_NAME}> Goodbye, {user_name}! It was nice chatting with you.")
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye, {user_name}!")
+        print(f"We exchanged {message_count} messages.")
         break
 
-    # Check for status command
-    if user_message.lower() == "status":
-        display_status()
-        continue
+    message_count += 1
 
-    # Process message and respond
-    response = process_message(user_message)
-    print(f"{BOT_NAME}> {response}")
+    try:
+        number = int(user_input)
+        response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
+    except ValueError:
+        response = f"You said '{user_input}'"
+
+    print(f"{BOT_NAME}: {response} (msg #{message_count})")
 ```
 
-This enhanced chatbot demonstrates:
-- Using variables to store user information (`user_name`, `favorite_color`)
-- Tracking conversation state (`message_count`, `last_topic`, `greeting_shown`)
-- Updating variables as the conversation progresses
-- Using variables to customise responses
-- Distinguishing between constants (uppercase) and variables (lowercase)
+::: {.callout-tip title="What to Notice"}
+`user_name` stores the result of `input()` — it persists across the entire loop. `message_count` starts at `0` and uses `+= 1` to increment. Both `BOT_NAME` and `VERSION` are constants (uppercase) set once and never changed. The f-strings reference these variables by name — change the variable, change every response.
+:::
 
-> **Project Evolution**: We're building a chatbot that can remember information across the conversation. In future chapters, we'll enhance this with better input processing, decision logic, and more sophisticated memory management.
+### Stretch It
 
-## 9. Common Variable Pitfalls to Avoid
+::: {.callout-note title="Building Session Prompt"}
+Add a `favourite_topic` variable that starts as None. When the user mentions "python" or "coding", set it to that word. In future responses, if favourite_topic is set, occasionally mention it.
+:::
 
-When working with variables, be aware of these common issues:
+Notice how your AI handles the `None` initial value and the `is not None` check. This pattern appears constantly in AI-generated code.
 
-### Using Variables Before Assignment
+## Your Chatbot So Far
+
+- Ch 1: Basic loop with greeting and quit
+- Ch 2: Docstring, constants, comments
+- Ch 3: Recognises numbers vs text
+- **Ch 4: Remembers user name, tracks message count**
+
+## Quick Reference
 
 ```python
-# Error: Using a variable before assigning it
-# print(unassigned_var)  # NameError: name 'unassigned_var' is not defined
+# Assignment
+x = 5
+x = "hello"        # dynamic typing
+x += 1              # augmented assignment
+x, y = 1, 2         # multiple assignment
+x, y = y, x         # swap
 
-# Correct approach: Assign first, then use
-assigned_var = "I exist!"
-print(assigned_var)  # Works fine
+# Constants (convention)
+BOT_NAME = "PyBot"
+MAX_RETRIES = 3
+
+# None
+x = None
+if x is not None:
+    print(x)
 ```
-
-### Name Shadowing
-
-```python
-# Shadowing (overriding) variables
-name = "Global name"
-
-def test_function():
-    name = "Local name"  # Creates a new local variable, doesn't change the global one
-    print(name)  # Output: Local name
-
-test_function()
-print(name)  # Output: Global name (original value unchanged)
-```
-
-### Accidental Reassignment
-
-```python
-# Accidental type changes
-user_id = "ABC123"   # String (for an ID code)
-user_id = 42         # Now it's an integer!
-
-# This might cause problems later if code expects a string:
-# message = "User " + user_id  # TypeError: can only concatenate str (not "int") to str
-```
-
-### Confusing Assignment (=) with Equality (==)
-
-```python
-# Assignment vs. equality comparison
-x = 5      # Assignment: sets x to 5
-# if x = 10:  # SyntaxError: invalid syntax
-#     print("This is wrong!")
-
-# Correct comparison
-if x == 10:  # Equality check: is x equal to 10?
-    print("x is 10")
-else:
-    print("x is not 10")
-```
-
-## 10. Self-Assessment Quiz
-
-Test your understanding of variables:
-
-1. Which statement correctly creates a variable in Python?
-   a) variable name = "Alice"
-   b) name := "Alice"
-   c) name = "Alice"
-   d) define name = "Alice"
-
-2. Which of these is NOT a valid variable name in Python?
-   a) _user_name
-   b) UserName
-   c) user123
-   d) for
-
-3. What happens when you assign a new value to an existing variable?
-   a) Python creates a new variable with the same name
-   b) Python keeps both the old and new values
-   c) The old value is discarded and replaced with the new value
-   d) Python raises an error unless you use a special reassignment operator
-
-4. What does this code do? `x, y = y, x`
-   a) Creates a tuple containing x and y
-   b) Tests if x equals y and assigns the result
-   c) Swaps the values of x and y
-   d) Raises a syntax error
-
-5. What's the difference between a variable and a constant in Python?
-   a) Variables can be reassigned but constants cannot
-   b) Constants are faster than variables
-   c) Python doesn't have constants, only a naming convention
-   d) Constants must be declared with a special keyword
-
-6. In our chatbot project, why do we use variables like `message_count` and `last_topic`?
-   a) To make the code run faster
-   b) To track the state of the conversation
-   c) Because Python requires them
-   d) To reduce memory usage
-
-**Answers & Feedback:**
-1. c) name = "Alice" — The standard assignment syntax in Python
-2. d) for — Reserved keywords cannot be used as variable names
-3. c) The old value is discarded and replaced with the new value — Variables can change
-4. c) Swaps the values of x and y — A Python idiom for value swapping
-5. c) Python doesn't have constants, only a naming convention — UPPERCASE names signal constants
-6. b) To track the state of the conversation — Variables maintain information between interactions
-
-## 11. Try It Yourself: Variable Practice
-
-Apply what you've learned with these exercises:
-
-1. Create variables to store information about a person (name, age, city, is_student) with appropriate data types.
-
-2. Try swapping the values of two variables using Python's multiple assignment.
-
-3. Create a compound assignment that adds a greeting to a name variable.
-
-4. Define three constants representing configuration values for an application.
-
-5. Write a small program that updates a counter variable multiple times and displays it after each update.
-
-## Cross-References
-
-- Previous Chapter: [Values](values.qmd) — Understanding data types
-- Next Chapter: [Output](output.qmd) — Displaying information to users
-- Chatbot Development: See how variables evolve in [Input](input.qmd) and [Dictionaries](dictionaries.qmd)
-- Related Topics: Learn more about scope in [Creating Functions](creating_functions.qmd)
-- AI Integration: See how variables store AI responses in [Python AI Integration](python_ai_integration.qmd)
-
-***AI Collaboration Corner: Debugging Variable Issues***
-
-When asking AI for help with variable problems, provide the context around the issue:
-
-Instead of:
-```text
-My code isn't working with variables
-```
-
-Try:
-```text
-I'm getting this error when running my code:
-
-NameError: name 'user_response' is not defined
-
-Here's the relevant code section:
-
-def process_input():
-    if user_input == "yes":
-        result = "Affirmative"
-    else:
-        result = "Negative"
-
-    return user_response  # This line has the error
-
-What's causing this error and how should I fix it?
-```
-
-The second prompt shows the specific error, the code context, and lets the AI identify the issue (using an undefined variable name instead of the defined 'result' variable). This leads to a much more helpful response.
-
-## Summary
-
-In this chapter, you've learned how variables allow you to store, name, and manipulate data in your Python programs. You've explored how to create and name variables following Python conventions, how to change their values, and how to use them to track state in your applications.
-
-For our chatbot project, you've implemented a more sophisticated design that uses variables to remember user information and track the conversation state. This memory capability is a fundamental aspect of creating interactive applications that respond intelligently to users.
-
-Understanding variables is essential for effective programming, as they form the backbone of data management in your code. As your programs become more complex, organising and tracking data through well-named variables will become increasingly important.
-
-In the next chapter, we'll explore output techniques, learning how to display information to users in effective and formatted ways.

@@ -1,482 +1,177 @@
-# Values - Understanding Python's Data Types
+# Values
 
-## Chapter Outline
-- What are values in programming?
-- Python's core data types
-- Numbers: integers, floats, and complex numbers
-- Strings: working with text
-- Booleans: true and false values
-- Lists and collections
-- Special types: None and type conversion
-- Using the `type()` function
-- Data types in chatbot development
+## The Wall
 
-## Learning Objectives
+You asked AI to build a temperature converter. It produced code that multiplied a string by a number and crashed with `TypeError: can't multiply sequence by non-int of type 'float'`. You had no idea what a "sequence" was or why multiplying was a problem — the formula looked right.
 
-By the end of this chapter, you will be able to:
-- Understand what values are and their role in programming
-- recognise and use Python's fundamental data types
-- Apply the `type()` function to identify data types
-- Convert between different data types when needed
-- Choose appropriate data types for different scenarios
-- Begin implementing various data types in your chatbot project
-- recognise type-related errors and how to fix them
+The issue was data types. AI treated the input as text when it needed to be a number. If you do not know the difference between `"72"` and `72`, you cannot spot this in AI-generated code — and AI generates this bug constantly.
 
-## 1. Introduction: Values as the Foundation of Programming
+This chapter fixes that.
 
-In programming, values are the fundamental pieces of data that your code manipulates. Everything in a Python program ultimately boils down to values: the numbers you calculate with, the text you display, the true/false conditions that control your program's flow.
+## Thinking Session
 
-Think of values like the different materials a builder might use: just as a house can be built from wood, brick, metal, and glass, your program is built from numbers, text, true/false values, and collections of data. Each type of value has different properties and uses, and understanding them is essential for effective programming.
+### Getting Oriented
 
-> **Key Concept**: Choosing the right data type for a specific purpose is a fundamental programming skill. It affects how your program works, how much memory it uses, and what operations you can perform on your data.
+::: {.callout-note title="Thinking Session Prompt"}
+In Python, what is the difference between the number 42 and the text "42"? Why does Python treat them differently, and what goes wrong when you mix them up? Give me examples of errors that happen when types get confused.
+:::
 
-## 2. Python's Core Data Types
+Your AI should explain that `42` is an integer and `"42"` is a string, and that Python does not automatically convert between them. If your AI says "Python is dynamically typed so it handles this for you," push back — dynamic typing means variables can change type, not that types do not matter.
 
-Python comes with several built-in data types that serve different purposes:
+### Go Deeper
 
-### Numbers
+::: {.callout-note title="Thinking Session Prompt"}
+What are the main data types in Python? I do not need all of them — just the ones I will see most often in AI-generated code. For each one, show me what it looks like and one thing that catches people off guard about it.
+:::
 
-Python supports three main types of numbers:
+::: {.callout-tip title="What to Look For"}
+Your AI should cover: `int` (integers), `float` (decimals), `str` (text), `bool` (True/False), and `None`. The gotchas matter: float division can produce unexpected precision (`0.1 + 0.2` is not `0.3`), booleans are actually integers (`True + True` is `2`), and `None` is not the same as `0` or `""`.
+:::
 
-```python
-# Integer (whole numbers)
-age = 25
-population = 7_800_000_000  # Underscores can make large numbers readable
+::: {.callout-note title="Thinking Session Prompt"}
+How do I convert between types in Python? If AI gives me a string from user input and I need a number, how do I convert it? What happens if the conversion fails?
+:::
 
-# Floating-point (decimal numbers)
-pi = 3.14159
-temperature = -2.5
+### Challenge It
 
-# Complex numbers (with real and imaginary parts)
-complex_number = 3 + 4j  # j represents the imaginary component
-```
+::: {.callout-note title="Thinking Session Prompt"}
+What will each of these produce, and why?
 
-Number types support various operations:
+    "5" + "3"
+    5 + 3
+    "5" + 3
+    int("5") + 3
+    float("hello")
+:::
 
-```python
-# Basic arithmetic
-sum = 5 + 10
-difference = 20 - 15
-product = 4 * 7
-quotient = 20 / 4  # Division always returns a float: 5.0
+::: {.callout-tip title="What to Look For"}
+`"5" + "3"` gives `"53"` (string concatenation). `5 + 3` gives `8`. `"5" + 3` crashes with TypeError. `int("5") + 3` gives `8`. `float("hello")` crashes with ValueError. If you can explain all five, you understand values.
+:::
 
-# Integer division
-floor_division = 20 // 3  # Returns 6 (rounds down)
+### What You Should Have Learned
 
-# Modulo (remainder)
-remainder = 20 % 3  # Returns 2
+- Python has distinct types: int, float, str, bool, None
+- `"42"` and `42` are fundamentally different
+- Type conversion is explicit: `int()`, `float()`, `str()`
+- Conversion can fail — `int("hello")` crashes
+- The `type()` function tells you what you are working with
 
-# Exponentiation
-power = 2 ** 3  # 2³ = 8
-```
+## The Gap
 
-### Strings (Text)
+When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.
 
-Strings are sequences of characters, used to represent text:
+In the Building Session, you will make your chatbot respond differently to numbers versus text — the first step toward intelligent responses.
 
-```python
-# Strings can use single or double quotes
-name = 'Alice'
-greeting = "Hello, world!"
+## Building Session
 
-# Triple quotes for multi-line strings
-message = """This is a multi-line
-string that can span
-several lines of text."""
+### The Spec
 
-# String operations
-combined = greeting + " " + name  # Concatenation: "Hello, world! Alice"
-repeated = "echo " * 3  # Repetition: "echo echo echo "
-length = len(name)  # Length: 5
-```
+Make your chatbot recognise different types of input:
 
-### Booleans
+- If the user types a number, respond with a fun fact about it (even/odd, big/small)
+- If the user types text, echo it as before
+- Show the type of the input in debug-style output
 
-Boolean values represent true or false conditions:
+### Prompt It
+
+::: {.callout-note title="Building Session Prompt"}
+Here is my chatbot so far:
 
 ```python
-# Boolean values (note the capitalization)
-is_python_fun = True
-is_raining = False
+"""PyBot v0.2: Terminal chatbot with structure."""
+BOT_NAME = "PyBot"
+VERSION = "0.2"
 
-# Boolean operations
-and_result = True and False  # False
-or_result = True or False    # True
-not_result = not True        # False
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+print("Type 'quit' to exit.")
 
-# Comparison operations produce boolean results
-is_equal = (5 == 5)          # True
-is_greater = (10 > 5)        # True
-is_in_list = ('a' in ['a', 'b', 'c'])  # True
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye!")
+        break
+    print(f"{BOT_NAME}: You said '{user_input}'")
 ```
 
-### Lists
+Update to v0.3. Add logic that:
+- Tries to convert the input to a number using int()
+- If it succeeds, responds with whether the number is even or odd
+- If it fails, treats the input as text and echoes it
+- Prints the type of the input in parentheses after the response
+- Use a try/except for the conversion (just the basic pattern)
 
-Lists are ordered collections that can store multiple values:
+Keep it simple — no functions yet, keep the while loop structure.
+:::
+
+### Read the Code
+
+Your AI will produce something like this:
 
 ```python
-# A list of numbers
-numbers = [1, 2, 3, 4, 5]
-
-# A list of strings
-fruits = ['apple', 'banana', 'cherry']
-
-# A mixed list
-mixed = [42, 'hello', True, 3.14]
-
-# Accessing list elements (zero-indexed)
-first_fruit = fruits[0]  # 'apple'
-last_number = numbers[-1]  # 5
-
-# Modifying lists
-fruits.append('orange')  # Adds to the end
-numbers.insert(0, 0)     # Inserts at position 0
-```
-
-### None Type
-
-`None` represents the absence of a value:
-
-```python
-# None represents "nothing" or "no value"
-result = None
-
-# Often used to initialize variables
-user_input = None
-```
-
-## 3. Using the `type()` Function
-
-Python's `type()` function lets you identify the data type of any value:
-
-```python
-# Checking value types
-print(type(42))        # <class 'int'>
-print(type(3.14))      # <class 'float'>
-print(type('Hello'))   # <class 'str'>
-print(type(True))      # <class 'bool'>
-print(type([1, 2, 3])) # <class 'list'>
-print(type(None))      # <class 'NoneType'>
-```
-
-This function is especially useful when debugging or when you're unsure about a value's type.
-
-## 4. Type Conversion
-
-Python allows you to convert between different data types:
-
-```python
-# String to number
-age_str = "25"
-age_int = int(age_str)      # Converts to integer: 25
-price_str = "19.99"
-price_float = float(price_str)  # Converts to float: 19.99
-
-# Number to string
-count = 42
-count_str = str(count)      # Converts to string: "42"
-
-# To boolean
-bool(0)      # False (0 is False, all other numbers are True)
-bool("")     # False (empty string is False)
-bool([])     # False (empty list is False)
-bool(42)     # True
-bool("Hello") # True
-```
-
-> **Important**: Conversion may fail if the value can't be converted to the target type. For example, `int("hello")` will raise a ValueError.
-
-***AI Collaboration Corner: Working with Data Types***
-
-When asking AI for help with data types, specify what you're trying to accomplish:
-
-Instead of:
-```text
-How do I convert data types in Python?
-```
-
-Try:
-```text
-I have user input from a form that looks like:
-user_age = "42"
-user_height = "5.9"
-is_member = "yes"
-
-How can I convert these strings to appropriate data types (int, float, bool)
-for calculations and logical operations? What error handling should I include?
-```
-
-The second prompt gives context about your specific situation and asks for both conversion methods and error handling, leading to more practical, applicable advice.
-
-## 5. Choosing the Right Data Type
-
-Different scenarios call for different data types:
-
-| Type | Best For | Examples |
-|------|----------|----------|
-| Integer | Counting, indexing | Ages, counts, positions |
-| Float | Measurements, calculations | Prices, temperatures, percentages |
-| String | Text, identifiers | Names, messages, codes |
-| Boolean | Conditions, flags | Status checks, toggles |
-| List | Collections, sequences | Items, options, records |
-| None | Initialization, absence | Default values, optional parameters |
-
-Selecting the appropriate data type for your data helps prevent errors and makes your code more efficient.
-
-## 6. Project Corner: Enhancing Our Chatbot with Data Types
-
-Let's expand our chatbot by incorporating different data types for more sophisticated functionality:
-
-```python
-"""
-PyBot: A simple Python chatbot
-Version 0.3: Adding different data types
-"""
-
-# Configuration constants
+"""PyBot v0.3: Recognises numbers vs text."""
 BOT_NAME = "PyBot"
 VERSION = "0.3"
-CREATOR = "Your Name"
 
-# Bot characteristics using different data types
-bot_properties = {
-    "name": BOT_NAME,           # String
-    "version": VERSION,         # String
-    "creation_year": 2023,      # Integer
-    "is_active": True,          # Boolean
-    "response_time_ms": 10.5,   # Float
-    "capabilities": [           # List
-        "greeting",
-        "basic conversation",
-        "version info"
-    ],
-    "advanced_features": None   # None (for future development)
-}
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+print("Type 'quit' to exit.")
 
-# Display the bot information
-def display_bot_info():
-    """Display information about the bot using different data types."""
-    # Creating a border with string repetition
-    border = "=" * 50
+while True:
+    user_input = input("You: ")
 
-    print(border)
-    print(f"{bot_properties['name']} v{bot_properties['version']} Information")
-    print(border)
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye!")
+        break
 
-    # Looping through list items
-    print("\nCapabilities:")
-    for i, capability in enumerate(bot_properties['capabilities'], 1):
-        print(f"  {i}. {capability}")
+    # Try to treat input as a number
+    try:
+        number = int(user_input)
+        if number % 2 == 0:
+            response = f"{number} is even"
+        else:
+            response = f"{number} is odd"
+        input_type = type(number).__name__
+    except ValueError:
+        response = f"You said '{user_input}'"
+        input_type = type(user_input).__name__
 
-    # Using boolean for conditional message
-    status = "active" if bot_properties['is_active'] else "inactive"
-    print(f"\nCurrent Status: {status}")
-
-    # Using numeric types for calculations
-    uptime_days = 365 - (365 * 0.05)  # 95% uptime example
-    print(f"Expected Annual Uptime: {uptime_days:.1f} days")
-
-    # Using None check for conditional display
-    if bot_properties['advanced_features'] is None:
-        print("\nAdvanced features: Coming soon!")
-    else:
-        print(f"\nAdvanced features: {bot_properties['advanced_features']}")
-
-    print(border)
-
-# Display chatbot greeting with string formatting
-def display_greeting():
-    """Display the bot's greeting message."""
-    name = bot_properties['name']
-    version = bot_properties['version']
-
-    # Using string concatenation and formatting
-    greeting_message = (
-        f"Hello! I'm {name} v{version}.\n"
-        f"I'm a chatbot built with Python.\n"
-        f"I can respond to basic commands and questions."
-    )
-
-    print(f"{name}> {greeting_message}")
-
-# Run our enhanced chatbot
-display_bot_info()
-display_greeting()
+    print(f"{BOT_NAME}: {response} ({input_type})")
 ```
 
-This enhanced chatbot demonstrates:
-- String manipulation and formatting
-- Numeric operations
-- Boolean conditional logic
-- List iteration
-- None value checking
-- Mixed data types in a collection
+::: {.callout-tip title="What to Notice"}
+Line 16 uses `int(user_input)` — explicit type conversion. If it fails, the `except ValueError` catches it and the code falls through to the string handling. `type(number).__name__` gives the type as a readable string. The `%` operator checks even/odd — you will learn more about operators in Chapter 7.
+:::
 
-> **Project Evolution**: We're building a more sophisticated chatbot structure. In the next chapter, we'll learn about variables and how to store user information. Later chapters will add interactive input, decision-making, and more advanced features.
+### Stretch It
 
-## 7. Type-Related Errors and How to Fix Them
+::: {.callout-note title="Building Session Prompt"}
+Also handle float input. If the user types "3.14", recognise it as a decimal number and respond with "3.14 rounded down is 3". Try float() first, then int(), then fall back to string.
+:::
 
-When working with data types, you may encounter several common errors:
+## Your Chatbot So Far
 
-### TypeError
+- Ch 1: Basic loop with greeting and quit
+- Ch 2: Docstring, constants, comments
+- **Ch 3: Recognises numbers vs text, shows input type**
 
-Occurs when you try to perform an operation on incompatible types:
+## Quick Reference
 
 ```python
-# Error: Trying to add a string and a number
-result = "Age: " + 25  # TypeError: can only concatenate str (not "int") to str
+# Types
+x = 42          # int
+x = 3.14        # float
+x = "hello"     # str
+x = True        # bool
+x = None        # NoneType
 
-# Fix: Convert the number to a string
-result = "Age: " + str(25)  # Works: "Age: 25"
+# Check type
+type(x)             # <class 'int'>
+type(x).__name__    # 'int'
+isinstance(x, int)  # True
+
+# Convert
+int("42")       # 42
+float("3.14")   # 3.14
+str(42)         # "42"
+bool(0)         # False
+bool("")        # False
 ```
-
-### ValueError
-
-Occurs when you try to convert a value to a type that isn't compatible:
-
-```python
-# Error: Trying to convert a non-numeric string to an integer
-age = int("twenty-five")  # ValueError: invalid literal for int()
-
-# Fix: Ensure the string contains a valid number
-age = int("25")  # Works: 25
-```
-
-### IndexError
-
-Occurs when trying to access a list element that doesn't exist:
-
-```python
-# Error: Accessing beyond the list length
-fruits = ["apple", "banana", "cherry"]
-fourth_fruit = fruits[3]  # IndexError: list index out of range
-
-# Fix: Check list length or use a valid index
-if len(fruits) > 3:
-    fourth_fruit = fruits[3]
-else:
-    print("There is no fourth fruit.")
-```
-
-### Type Checking
-
-To prevent errors, you can check types before performing operations:
-
-```python
-def calculate_age(birth_year):
-    """Calculate age from birth year."""
-    # Check if birth_year is an integer
-    if not isinstance(birth_year, int):
-        print("Error: birth_year must be an integer.")
-        return None
-
-    current_year = 2023
-    return current_year - birth_year
-```
-
-***AI Tip: When debugging type errors, try adding `print(type(variable))` statements to identify the actual types you're working with.***
-
-## 8. Self-Assessment Quiz
-
-Test your understanding of Python data types:
-
-1. What type is the value `42.0`?
-   a) String
-   b) Float
-   c) Integer
-   d) Boolean
-
-2. What would `type("True")` return?
-   a) Boolean
-   b) String
-   c) Integer
-   d) NoneType
-
-3. What happens when you execute `5 + "5"`?
-   a) It returns 10
-   b) It returns "55"
-   c) It returns "5 + 5"
-   d) It raises a TypeError
-
-4. What is the result of `bool([])`?
-   a) True
-   b) False
-   c) None
-   d) Error
-
-5. Which of these is NOT a valid data type in Python?
-   a) Float
-   b) Character
-   c) Boolean
-   d) Integer
-
-6. In our chatbot example, what data type did we use to store multiple capabilities?
-   a) String
-   b) Dictionary
-   c) List
-   d) Boolean
-
-**Answers & Feedback:**
-1. b) Float — The decimal point makes it a float, not an integer
-2. b) String — The quotation marks make it a string, not a Boolean
-3. d) It raises a TypeError — Python doesn't automatically convert between strings and numbers
-4. b) False — Empty collections evaluate to False in a Boolean context
-5. b) Character — Python has no dedicated character type; single characters are strings
-6. c) List — Lists are perfect for storing collections of related items
-
-## 9. Try It Yourself: Data Type Exploration
-
-Practice working with different data types:
-
-1. Create variables with at least one example of each basic type: integer, float, string, boolean, list, and None.
-
-2. Use `type()` to verify the type of each variable.
-
-3. Try converting between different types, such as turning numbers to strings and vice versa.
-
-4. Create a list containing at least three different data types.
-
-5. Write a simple function that takes a value and returns a message saying what type it is.
-
-## Cross-References
-
-- Previous Chapter: [Getting Started](getting_started.qmd) — Your first Python program and syntax basics
-- Next Chapter: [Variables](variables.qmd) — Storing and naming values
-- Chatbot Development: See how we use data types in [Output](output.qmd) and [Dictionaries](dictionaries.qmd)
-- Related Topics: In-depth coverage in [Strings](strings.qmd) and [Lists](lists.qmd)
-- AI Integration: Learn about data types in AI contexts in [Python AI Integration](python_ai_integration.qmd)
-
-***AI Collaboration Corner: Troubleshooting Type Issues***
-
-When asking AI for help with type-related errors, provide the error message and context:
-
-Instead of:
-```text
-Why isn't my calculation working?
-```
-
-Try:
-```text
-I'm trying to calculate a user's age from their birth year:
-
-birth_year = input("Enter your birth year: ")
-current_year = 2023
-age = current_year - birth_year
-
-But I'm getting this error:
-TypeError: unsupported operand type(s) for -: 'int' and 'str'
-
-What's causing this and how can I fix it?
-```
-
-The second prompt provides the code, the exact error message, and clearly states what you're trying to accomplish, making it much easier for the AI to provide targeted, effective help.
-
-## Summary
-
-In this chapter, you've explored the fundamental building blocks of Python programming: values and their types. You've learned about Python's core data types—integers, floats, strings, booleans, lists, and None—and how to work with them effectively.
-
-For our chatbot project, you've implemented a more sophisticated structure that incorporates different data types to store and display information. This foundation will continue to grow as we add more capabilities in later chapters.
-
-Understanding data types is crucial for effective programming, as it helps you organise information appropriately, prevent errors, and write more efficient code. As your programs become more complex, choosing the right data types will become an increasingly important part of your development process.
-
-In the next chapter, we'll explore variables—how to store, name, and organise your values to make them easily accessible throughout your program.

@@ -1,1033 +1,186 @@
-# Input - The Gateway to User Interaction
+# Input
 
-## Chapter Outline
-- Understanding the `input()` function and its capabilities
-- Collecting and validating user input effectively
-- Converting input data between types for processing
-- Creating engaging prompts that guide users
-- Building interactive dialogues for engaging applications
-- Integrating user input into your chatbot project
+## The Wall
 
-## Learning Objectives
+AI built you a program that asked the user for their age. They typed "twenty-five" and it crashed. You asked AI to fix it — it added a try/except that silently ignored the error. Now the program did not crash, but it also did not work. The user typed invalid input and the program carried on as if nothing happened.
 
-By the end of this chapter, you will be able to:
-- Use the `input()` function confidently to collect information from users
-- Create clear, user-friendly prompts that guide effective responses
-- Process and validate user input for reliability
-- Convert input between different data types for computation
-- Handle potential input errors gracefully
-- Implement basic conversational abilities in your chatbot project
+AI's default approach to user input is either "assume it is perfect" or "catch everything and ignore it." Neither is acceptable. You need to understand how `input()` works and how to validate what comes back.
 
-## 1. Introduction: Why Input Makes Programs Come Alive
+This chapter fixes that.
 
-In previous chapters, we created programs that could produce output—displaying information to users. While useful, these programs were like a one-sided conversation; they could speak but not listen. In this chapter, we add the crucial ability to listen by collecting user input.
+## Thinking Session
 
-Input transforms static programs into interactive experiences. It allows your code to:
+### Getting Oriented
 
-- Adapt to different users and scenarios
-- Make decisions based on user preferences
-- Collect and process real-world data
-- Create personalized experiences
-- Build genuine two-way interactions
+::: {.callout-note title="Thinking Session Prompt"}
+How does Python's input() function work? I know it reads from the keyboard, but what type does it return? And what happens if the user types nothing and just presses Enter?
+:::
 
-> **Key Concept**: Input is the bridge between users and your program, turning passive consumers into active participants. It's what makes software truly interactive and useful in solving real-world problems.
+Your AI should emphasise that `input()` always returns a string — even if the user types a number. An empty Enter returns an empty string `""`, not None. This is the source of most input-related bugs in AI-generated code.
 
-For our chatbot project, input is especially critical—it's how users communicate with the bot. Without input capabilities, we'd have a bot that talks but never listens, which isn't much of a conversation!
+### Go Deeper
 
-## 2. The `input()` Function: Your Gateway to User Data
+::: {.callout-note title="Thinking Session Prompt"}
+What are good patterns for validating user input in Python? I want to handle these cases:
+- User types nothing (empty input)
+- User types the wrong type (text when I need a number)
+- User types something outside the expected range
 
-Python makes collecting user input remarkably straightforward with the built-in `input()` function:
+Show me a robust pattern I can reuse, not just a simple try/except that ignores errors.
+:::
+
+::: {.callout-tip title="What to Look For"}
+The robust pattern is a validation loop: keep asking until input is valid. This typically uses `while True` with a `break` when input passes validation. Your AI should show this pattern rather than a single try/except.
+:::
+
+::: {.callout-note title="Thinking Session Prompt"}
+When I look at AI-generated code, I often see `input().strip().lower()` chained together. What does each part do, and why is this pattern so common?
+:::
+
+### Challenge It
+
+::: {.callout-note title="Thinking Session Prompt"}
+What is wrong with this input validation code?
 
 ```python
-# Basic input with a prompt
-name = input('What is your name? ')
-
-# Using the collected input
-print(f"Hello, {name}! Nice to meet you.")
+age = input("Enter your age: ")
+if age > 0 and age < 150:
+    print(f"You are {age} years old")
 ```
+:::
 
-### How Input Works Behind the Scenes
+::: {.callout-tip title="What to Look For"}
+`age` is a string (from `input()`), so `age > 0` compares a string to an integer — this raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
+:::
 
-The `input()` function follows a simple process:
+### What You Should Have Learned
 
-1. Display the prompt text (if provided) to the user
-2. Pause program execution and wait for the user to type something
-3. Capture everything the user types until they press Enter
-4. Return the captured text as a string
-5. Program execution resumes with the captured value
+- `input()` always returns a string, even for numbers
+- Empty input returns `""`, not None
+- `.strip()` removes whitespace, `.lower()` normalises case
+- Validation loops (while True + break) are better than silent try/except
+- Chain methods: `input().strip().lower()` is idiomatic Python
 
-Let's look at this process in more detail:
+## The Gap
 
-```python
-print("Program starting...")
-user_response = input("Enter something: ")
-print(f"You entered: {user_response}")
-print("Program continuing...")
-```
+You now understand the most common source of bugs in AI-generated interactive programs: input that is not validated or not converted. When you see AI code that uses `input()`, you can immediately check whether it handles empty input, wrong types, and out-of-range values.
 
-When you run this code:
-- "Program starting..." is displayed
-- "Enter something: " is displayed (with no line break)
-- The program pauses, waiting for you to type
-- After you type and press Enter, your input is stored in `user_response`
-- The program displays what you entered and continues execution
+In the Building Session, you will make your chatbot handle bad input gracefully instead of crashing or ignoring errors.
 
-### Crafting Effective Prompts
+## Building Session
 
-The text you provide to `input()` serves as the prompt—your instructions to the user. Writing clear prompts is essential for good user experience:
+### The Spec
 
-```python
-# Unclear prompt
-x = input('Enter: ')  # What should the user enter?
+Add input validation to your chatbot:
 
-# Clear prompt
-age = input('How old are you? ')  # Specific request
+- Handle empty input (user just presses Enter)
+- Clean up input with strip() and lower() for comparisons
+- Add a "help" command that lists available commands
+- Validate any numeric input with a proper loop
 
-# Prompt with guidance
-email = input('Enter your email address (example@domain.com): ')  # With example
-```
+### Prompt It
 
-> **Usability Tip**: Your prompts are like micro-documentation for users. The more specific and helpful they are, the less frustration users will experience.
+::: {.callout-note title="Building Session Prompt"}
+Update my chatbot to v0.6. Add input validation:
 
-Some best practices for effective prompts:
+- If the user enters empty input (just presses Enter), prompt them again with a helpful message instead of treating it as a message
+- Use .strip() on all input to handle accidental spaces
+- Use .lower() for command matching (quit, help)
+- Add a "help" command that lists: quit, help
+- When checking for numbers, if conversion fails, respond with a message about the input being text — do not silently ignore it
 
-1. **Be specific** about what information you need
-2. **Provide format guidance** when specific formats are required
-3. **Indicate units** when requesting measurements
-4. **Use appropriate punctuation** (question mark for questions, colon for entries)
-5. **Consider adding a space** at the end of your prompt for better readability
+Keep the existing features from v0.5 (welcome screen, name, message count, number recognition).
+:::
+
+### Read the Code
+
+Your AI will produce something like this:
 
 ```python
-# Examples of well-crafted prompts
-temperature = input('Enter the temperature in Celsius: ')
-birth_year = input('What year were you born? ')
-filename = input('Enter the filename to save (including extension): ')
-```
+"""PyBot v0.6: Input validation."""
+BOT_NAME = "PyBot"
+VERSION = "0.6"
+WIDTH = 50
+COMMANDS = ["quit", "help"]
 
-## 3. Understanding Input Types: Everything is a String
+print("=" * WIDTH)
+print(f"{BOT_NAME:^{WIDTH}}")
+print("=" * WIDTH)
 
-One of the most important things to understand about `input()` is that it **always returns a string**, regardless of what the user enters:
+user_name = input(f"{BOT_NAME}: What's your name? ").strip()
+while not user_name:
+    user_name = input(f"{BOT_NAME}: Please enter your name: ").strip()
 
-```python
-# Demonstrating that input always returns a string
-age = input('How old are you? ')
-print(f"The value is: {age}")
-print(f"The type is: {type(age)}")  # Will always show <class 'str'>
-```
+print(f"{BOT_NAME}: Nice to meet you, {user_name}!")
+message_count = 0
 
-This behaviour is consistent but can cause confusion, especially with numeric input:
-
-```python
-# This looks like a math operation but won't work as expected
-birth_year = input('What year were you born? ')
-current_year = 2023
-age = current_year - birth_year  # TypeError: unsupported operand type(s) for -: 'int' and 'str'
-```
-
-The code above will fail because you cannot subtract a string from an integer. This leads us to our next important topic: type conversion.
-
-## 4. Converting Input to the Right Type
-
-Since `input()` always gives us strings, we often need to convert the input to a more appropriate type for processing:
-
-```python
-# Converting string input to appropriate types
-birth_year_str = input('What year were you born? ')
-birth_year_int = int(birth_year_str)  # Convert to integer
-
-current_year = 2023
-age = current_year - birth_year_int  # Now works correctly
-print(f"You are approximately {age} years old.")
-```
-
-Common type conversions include:
-
-```python
-# String to integer (for whole numbers)
-count_str = input('How many items? ')
-count = int(count_str)
-
-# String to float (for decimal numbers)
-price_str = input('Enter the price: ')
-price = float(price_str)
-
-# String to boolean (requires additional logic)
-response = input('Proceed? (yes/no): ')
-proceed = response.lower() in ['yes', 'y', 'true', '1', 'sure']
-```
-
-### Handling Conversion Errors
-
-Type conversion can fail if the input string doesn't match the expected format:
-
-```python
-# This will cause an error if the user enters text that's not a valid number
-age_str = input('How old are you? ')
-age = int(age_str)  # ValueError if input isn't a valid integer
-```
-
-In later chapters, we'll learn how to handle these potential errors gracefully. For now, be aware that type conversion requires valid input.
-
-### Shorthand for Input and Conversion
-
-You can combine input and conversion in a single line for more concise code:
-
-```python
-# One-step input and conversion
-age = int(input('How old are you? '))
-height = float(input('How tall are you in meters? '))
-```
-
-This style is common but carries the risk of conversion errors. Use it when you're confident the input will be valid or when you've learned error handling techniques.
-
-## 5. Building Interactive Dialogues
-
-Real applications often require multi-step interactions. Let's build a simple interactive dialogue:
-
-```python
-# Multi-step interactive dialogue
-print("Welcome to the Trip Planner!")
-print("-" * 30)
-
-name = input("What's your name? ")
-destination = input(f"Where would you like to travel, {name}? ")
-travelers = int(input("How many people are travelling? "))
-budget = float(input("What's your budget in dollars? $"))
-
-cost_per_person = budget / travelers
-
-print("\n--- Your Trip Summary ---")
-print(f"Traveler: {name}")
-print(f"Destination: {destination}")
-print(f"Party Size: {travelers}")
-print(f"Total Budget: ${budget:.2f}")
-print(f"Budget Per Person: ${cost_per_person:.2f}")
-print("-" * 30)
-print("Enjoy your trip!")
-```
-
-This program demonstrates how input can create a personalized experience that adapts to the user's specific situation.
-
-### Advanced Input Techniques
-
-For more advanced input needs, there are additional techniques you can use:
-
-```python
-# Collecting hidden input (like passwords) requires a package
-import getpass
-password = getpass.getpass("Enter your password: ")  # Input won't be visible as user types
-
-# Multi-line input
-print("Enter a multi-line note (press Enter twice to finish):")
-lines = []
 while True:
-    line = input()
-    if line:
-        lines.append(line)
-    else:
+    user_input = input(f"{user_name}: ").strip()
+
+    if not user_input:
+        print(f"{BOT_NAME}: Say something! Type 'help' for commands.")
+        continue
+
+    command = user_input.lower()
+
+    if command == "quit":
+        print(f"{BOT_NAME}: Goodbye, {user_name}!")
         break
-note = "\n".join(lines)
-print(f"Your note is:\n{note}")
-```
+    elif command == "help":
+        print(f"{BOT_NAME}: Commands: {', '.join(COMMANDS)}")
+        continue
 
-> **Looking Ahead**: As your programs become more complex, you might explore third-party libraries like `PyInquirer` or `questionary` that provide enhanced input capabilities, including menus, checkboxes, and more.
+    message_count += 1
 
-## 6. Project Corner: Making Your Chatbot Listen
-
-Now let's apply what we've learned to develop our chatbot project. In the previous chapter, our chatbot could only talk. Now, we'll teach it to listen and respond to input.
-
-### Basic Conversational Loop
-
-The foundation of any chatbot is a loop that listens, processes, and responds:
-
-```python
-def simple_chatbot():
-    """A basic chatbot that can respond to simple inputs."""
-    bot_name = "PyBot"
-
-    # Welcome message
-    print(f"\n{bot_name}> Hello! I'm {bot_name}, your Python learning assistant.")
-    print(f"{bot_name}> What's your name?")
-
-    # Get user's name
-    user_name = input("You> ")
-
-    print(f"\n{bot_name}> Nice to meet you, {user_name}!")
-    print(f"{bot_name}> You can chat with me by typing, or enter 'bye' to exit.")
-
-    # Main conversation loop
-    while True:
-        # Get user input
-        user_input = input(f"{user_name}> ")
-
-        # Convert to lowercase for easier processing
-        user_input_lower = user_input.lower()
-
-        # Check for exit command
-        if user_input_lower == "bye":
-            print(f"\n{bot_name}> Goodbye, {user_name}! Have a great day!")
-            break
-
-        # Generate a simple response based on user input
-        if "hello" in user_input_lower or "hi" in user_input_lower:
-            print(f"\n{bot_name}> Hello again, {user_name}!")
-        elif "how are you" in user_input_lower:
-            print(f"\n{bot_name}> I'm just a computer program, but I'm functioning well!")
-        elif "name" in user_input_lower:
-            print(f"\n{bot_name}> My name is {bot_name}. I'm a simple chatbot built with Python.")
-        elif "help" in user_input_lower:
-            print(f"\n{bot_name}> I can respond to greetings, questions about my name,")
-            print(f"{bot_name}> and how I'm doing. Try asking me something!")
-        else:
-            print(f"\n{bot_name}> That's interesting! Tell me more or try saying 'help'.")
-
-    print("\nChat session ended.")
-
-# Run the chatbot
-simple_chatbot()
-```
-
-This basic chatbot demonstrates:
-- Collecting the user's name for personalized interaction
-- A continuous loop for ongoing conversation
-- Simple input processing to generate responses
-- An exit command to end the conversation
-
-### Enhancing the Chatbot with Input Validation
-
-Let's improve our chatbot by adding input validation for more robust interactions:
-
-```python
-def enhanced_chatbot():
-    """An enhanced chatbot with input validation and better responses."""
-    bot_name = "PyBot"
-
-    # Welcome message with formatting
-    print("\n" + "=" * 60)
-    print(f"{bot_name} - Your Python Learning Assistant".center(60))
-    print("=" * 60 + "\n")
-
-    print(f"{bot_name}> Hello! I'm {bot_name}. What's your name?")
-
-    # Get user's name with validation
-    while True:
-        user_name = input("You> ").strip()
-        if user_name:  # Check that name isn't empty
-            break
-        print(f"\n{bot_name}> I didn't catch that. Could you tell me your name again?")
-
-    print(f"\n{bot_name}> Nice to meet you, {user_name}!")
-    print(f"{bot_name}> I can help with Python questions or just chat.")
-    print(f"{bot_name}> Type 'help' for options or 'bye' to exit.")
-
-    # Track conversation state
-    question_count = 0
-
-    # Main conversation loop
-    while True:
-        # Get user input
-        user_input = input(f"\n{user_name}> ").strip()
-
-        # Skip empty inputs
-        if not user_input:
-            print(f"\n{bot_name}> Did you want to ask something?")
-            continue
-
-        # Convert to lowercase for processing
-        user_input_lower = user_input.lower()
-
-        # Check for exit command
-        if user_input_lower in ["bye", "goodbye", "exit", "quit"]:
-            print(f"\n{bot_name}> Goodbye, {user_name}! I enjoyed our conversation.")
-            break
-
-        # Process input and generate responses
-        if user_input_lower in ["hello", "hi", "hey", "greetings"]:
-            print(f"\n{bot_name}> Hello again, {user_name}! How can I help you today?")
-
-        elif "how are you" in user_input_lower:
-            print(f"\n{bot_name}> I'm functioning perfectly! Thanks for asking.")
-            print(f"{bot_name}> How are you doing today?")
-
-        elif user_input_lower == "help":
-            print(f"\n{bot_name}> Here's what you can ask me about:")
-            print(f"{bot_name}> - Say hello or ask how I'm doing")
-            print(f"{bot_name}> - Ask about Python concepts")
-            print(f"{bot_name}> - Ask about my capabilities")
-            print(f"{bot_name}> - Type 'bye' to end our conversation")
-
-        elif "your name" in user_input_lower:
-            print(f"\n{bot_name}> My name is {bot_name}. I'm a Python-powered chatbot!")
-
-        elif "python" in user_input_lower:
-            print(f"\n{bot_name}> Python is a versatile programming language!")
-            print(f"{bot_name}> Is there something specific about Python you'd like to know?")
-
-        elif any(word in user_input_lower for word in ["thanks", "thank you"]):
-            print(f"\n{bot_name}> You're welcome, {user_name}! Happy to help.")
-
-        elif "?" in user_input:
-            question_count += 1
-            print(f"\n{bot_name}> That's a good question! As we progress through this book,")
-            print(f"{bot_name}> I'll learn to answer more complex questions like that.")
-            print(f"{bot_name}> You've asked {question_count} question(s) so far.")
-
-        else:
-            print(f"\n{bot_name}> That's interesting! As a simple chatbot, I'm still")
-            print(f"{bot_name}> learning how to respond to a wide range of topics.")
-            print(f"{bot_name}> Try asking me something about Python or type 'help'.")
-
-    # Farewell message
-    print("\n" + "-" * 60)
-    print("Chat session ended. Thanks for talking with PyBot!".center(60))
-    print("-" * 60 + "\n")
-
-# Run the enhanced chatbot (commented out to avoid execution)
-# enhanced_chatbot()
-```
-
-This enhanced version adds:
-- Input validation to ensure the user's name isn't empty
-- More sophisticated response patterns based on input content
-- A state variable to track how many questions have been asked
-- Better formatting for a more professional appearance
-
-### Numeric Input in a Chatbot Context
-
-Let's extend our chatbot to handle numeric input for a more interactive experience:
-
-```python
-def python_quiz_bot():
-    """A chatbot that asks Python quiz questions and processes numeric answers."""
-    bot_name = "QuizBot"
-
-    print(f"\n{bot_name}> Welcome to the Python Quiz!")
-    print(f"{bot_name}> Let's test your Python knowledge.")
-
-    # Get user's name
-    user_name = input("Your name> ").strip()
-    print(f"\n{bot_name}> Hi, {user_name}! I'll ask you 3 multiple-choice questions.")
-    print(f"{bot_name}> Enter the number of your answer (1-4).")
-
-    score = 0
-
-    # Question 1
-    print(f"\n{bot_name}> Question 1: What does the 'input()' function return?")
-    print(f"{bot_name}> 1) An integer")
-    print(f"{bot_name}> 2) A floating-point number")
-    print(f"{bot_name}> 3) Always a string")
-    print(f"{bot_name}> 4) The same type that was entered")
-
-    # Get and validate answer
-    while True:
-        try:
-            answer = int(input(f"{user_name}> "))
-            if 1 <= answer <= 4:
-                break
-            else:
-                print(f"\n{bot_name}> Please enter a number between 1 and 4.")
-        except ValueError:
-            print(f"\n{bot_name}> Please enter a number, not text.")
-
-    # Check answer
-    if answer == 3:
-        print(f"\n{bot_name}> Correct! input() always returns a string.")
-        score += 1
-    else:
-        print(f"\n{bot_name}> Not quite. input() always returns a string, regardless of what was entered.")
-
-    # More questions would follow with similar pattern
-
-    # Final score
-    print(f"\n{bot_name}> You scored {score} out of 1, {user_name}!")
-    if score == 1:
-        print(f"{bot_name}> Excellent work! You understand how input() works.")
-    else:
-        print(f"{bot_name}> Keep learning! Understanding input types is important.")
-
-    print(f"\n{bot_name}> Thanks for taking the quiz!")
-
-# Run the quiz bot (commented out to avoid execution)
-# python_quiz_bot()
-```
-
-This quiz bot demonstrates:
-- Handling numeric input with type conversion
-- Input validation with error handling
-- Using input to create an interactive learning experience
-
-> **Project Evolution**: The concepts in this chapter transform our chatbot from a one-way communication tool to a true conversational agent. As we progress through the book, we'll add more sophisticated processing, memory, and AI capabilities to make the interactions even more natural.
-
-## 7. AI Collaboration Corner: Effective Input Handling
-
-Let's explore how AI assistants can help you design better input systems for your Python applications.
-
-### Before: Vague Prompting
-
-```text
-Help me with Python input.
-```
-
-**AI Response:**
-*The input() function in Python allows you to get user input from the console. It takes an optional prompt parameter and returns the user's input as a string. Remember that you'll need to convert the input to other types like int or float if you want to perform numerical operations.*
-
-This response is technically correct but provides only basic information without addressing specific challenges or use cases.
-
-### After: Detailed, Specific Prompting
-
-```text
-I'm building a Python program that needs to collect and validate user input for:
-1. A username (letters only, 3-15 characters)
-2. An age (must be between 13-120)
-3. A selection from a menu of 5 options
-
-Please show me code examples with proper validation and error handling for each input type, including:
-- Clear user prompts
-- Input validation with specific error messages
-- Retrying until valid input is received
-```
-
-**AI Response:**
-*Here's a comprehensive approach to collecting and validating the different input types you need:*
-
-```python
-def get_valid_username():
-    """Get and validate a username (letters only, 3-15 characters)."""
-    while True:
-        username = input("Enter username (letters only, 3-15 characters): ").strip()
-
-        # Check length
-        if not 3 <= len(username) <= 15:
-            print("Error: Username must be between 3 and 15 characters long.")
-            continue
-
-        # Check if letters only
-        if not username.isalpha():
-            print("Error: Username must contain only letters (A-Z, a-z).")
-            continue
-
-        # If we get here, input is valid
-        return username
-
-def get_valid_age():
-    """Get and validate user age (between 13-120)."""
-    while True:
-        age_input = input("Enter your age (13-120): ").strip()
-
-        # Check if numeric
-        if not age_input.isdigit():
-            print("Error: Please enter a number.")
-            continue
-
-        # Convert to integer and validate range
-        age = int(age_input)
-        if not 13 <= age <= 120:
-            print("Error: Age must be between 13 and 120.")
-            continue
-
-        # If we get here, input is valid
-        return age
-
-def get_menu_selection():
-    """Get a valid menu selection from 5 options."""
-    menu_options = [
-        "View profile",
-        "Edit settings",
-        "Play game",
-        "View statistics",
-        "Log out"
-    ]
-
-    while True:
-        # Display menu
-        print("\nPlease select an option:")
-        for i, option in enumerate(menu_options, 1):
-            print(f"{i}. {option}")
-
-        # Get selection
-        selection = input("\nEnter option number (1-5): ").strip()
-
-        # Validate input
-        if not selection.isdigit():
-            print("Error: Please enter a number.")
-            continue
-
-        selection_num = int(selection)
-        if not 1 <= selection_num <= 5:
-            print("Error: Please select a number between 1 and 5.")
-            continue
-
-        # Return the selected option
-        selected_option = menu_options[selection_num - 1]
-        return selection_num, selected_option
-
-# Example usage:
-def main():
-    print("Welcome to the User Registration System")
-    print("-" * 40)
-
-    # Get validated inputs
-    username = get_valid_username()
-    age = get_valid_age()
-    selection_num, selected_option = get_menu_selection()
-
-    # Confirm information
-    print("\n=== Registration Complete ===")
-    print(f"Username: {username}")
-    print(f"Age: {age}")
-    print(f"Selected option: {selection_num}. {selected_option}")
-    print("Thank you for registering!")
-
-if __name__ == "__main__":
-    main()
-```
-
-*Key features of this implementation:*
-
-- *Each input type has its own dedicated validation function*
-- *Input validation uses while loops to retry until valid input is received*
-- *Clear error messages explain exactly what went wrong*
-- *The prompts specify the required format to guide users*
-- *Each function returns the validated input once it's correct*
-
-*This approach follows a robust pattern for input validation:*
-1. *Prompt the user with clear instructions*
-2. *Collect and sanitize the input (strip whitespace, etc.)*
-3. *Validate against specific criteria*
-4. *Provide helpful error messages and retry if needed*
-5. *Return the validated input when correct*
-
-*You can adapt these patterns for other types of validation as your application requires.*
-
-### How to Craft Effective Prompts for Input Handling
-
-When working with an AI assistant on input handling:
-
-1. **Specify the exact requirements** for each input (type, length, format, valid range)
-
-2. **Describe the user experience** you want to create (error messages, retry behaviour)
-
-3. **Mention any specific validations** needed (e.g., "must contain at least one number")
-
-4. **Request examples that handle edge cases** like empty input or incorrect types
-
-5. **Ask for explanations** of the validation techniques used
-
-For example:
-
-```text
-I need to collect a valid email address from users in my Python application.
-Please show me code that:
-1. Provides a clear prompt
-2. Validates that the input matches a basic email format (contains @ and a domain)
-3. Gives specific error feedback
-4. Allows the user to retry until valid input is provided
-5. Includes comments explaining the validation logic
-```
-
-This specific prompt will yield practical code that handles email validation properly, rather than generic input examples.
-
-## 8. Common Input Pitfalls to Avoid
-
-When working with user input, watch out for these common issues:
-
-### Forgetting That Input Returns Strings
-
-```python
-# Incorrect - will raise TypeError
-birth_year = input("Enter your birth year: ")
-age = 2023 - birth_year  # Error: cannot subtract string from integer
-
-# Correct
-birth_year = input("Enter your birth year: ")
-age = 2023 - int(birth_year)  # Convert string to integer first
-```
-
-### Not Checking for Empty Input
-
-```python
-# Problematic - empty input might cause issues later
-name = input("Enter your name: ")
-greeting = f"Hello, {name}!"  # Could be "Hello, !" if input is empty
-
-# Better approach
-name = input("Enter your name: ")
-if name:
-    greeting = f"Hello, {name}!"
-else:
-    greeting = "Hello, stranger!"
-```
-
-### Assuming Valid Numeric Input
-
-```python
-# Risky - will crash if user enters non-numeric text
-age = int(input("Enter your age: "))
-
-# More robust - handles invalid input
-while True:
-    age_input = input("Enter your age: ")
     try:
-        age = int(age_input)
-        break  # Exit loop if conversion succeeds
+        number = int(user_input)
+        response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
     except ValueError:
-        print("Please enter a valid number.")
+        response = f"Interesting — '{user_input}'"
+
+    print(f"{BOT_NAME}: {response} (msg #{message_count})")
 ```
 
-### Unclear Prompts Leading to Confusion
+::: {.callout-tip title="What to Notice"}
+The name input uses a `while not user_name` loop — keeps asking until something is entered. `.strip()` is called on every `input()` to remove accidental spaces. `command = user_input.lower()` creates a normalised version for comparison without changing the display. `continue` skips to the next loop iteration for empty input and help commands.
+:::
+
+### Stretch It
+
+::: {.callout-note title="Building Session Prompt"}
+Add an "age" command that asks the user for their age. Use a validation loop that keeps asking until they enter a valid number between 1 and 150.
+:::
+
+## Your Chatbot So Far
+
+- Ch 1: Basic loop with greeting and quit
+- Ch 2: Docstring, constants, comments
+- Ch 3: Recognises numbers vs text
+- Ch 4: Remembers user name, tracks messages
+- Ch 5: Formatted welcome screen
+- **Ch 6: Input validation, help command, strip/lower**
+
+## Quick Reference
 
 ```python
-# Confusing prompt
-x = input("Enter value: ")  # What value? What format?
+# input() always returns a string
+name = input("Name: ")           # str
+age = int(input("Age: "))        # convert to int
 
-# Clear prompt with guidance
-temperature = input("Enter temperature in Celsius (e.g., 22.5): ")
-```
+# Clean input
+text = input().strip()           # remove whitespace
+text = input().strip().lower()   # normalise
 
-### Not Sanitizing Input
-
-```python
-# Problematic - leading/trailing spaces can cause issues
-username = input("Username: ")  # User might accidentally type " john "
-
-# Better - clean the input
-username = input("Username: ").strip()  # Removes leading/trailing spaces
-```
-
-### Not Validating Within Range
-
-```python
-# Problematic - accepts any integer
-rating = int(input("Rate from 1-5: "))  # User could enter 10 or -3
-
-# Better - validates within range
+# Validation loop
 while True:
+    value = input("Enter a number: ").strip()
     try:
-        rating = int(input("Rate from 1-5: "))
-        if 1 <= rating <= 5:
-            break
-        else:
-            print("Please enter a number between 1 and 5.")
+        number = int(value)
+        break                    # valid — exit loop
     except ValueError:
-        print("Please enter a valid number.")
+        print("That's not a number. Try again.")
+
+# Empty check
+if not user_input:               # empty string is falsy
+    print("You didn't type anything")
 ```
-
-## 9. Real-World Input Examples
-
-Let's look at how input is used in professional-grade applications:
-
-### Command-Line Interface (CLI) Tools
-
-CLI tools often need to process input flags and arguments:
-
-```python
-def simple_cli():
-    """A simple command-line interface demonstrating input processing."""
-    import sys
-
-    # Display help if requested
-    if len(sys.argv) > 1 and sys.argv[1] in ['-h', '--help']:
-        print("Usage: python script.py [options]")
-        print("Options:")
-        print("  -h, --help     Show this help message")
-        print("  -n NAME        Specify your name")
-        return
-
-    # Process arguments or ask for input
-    name = None
-    for i, arg in enumerate(sys.argv[1:], 1):
-        if arg == '-n' and i < len(sys.argv) - 1:
-            name = sys.argv[i + 1]
-            break
-
-    if not name:
-        name = input("What is your name? ")
-
-    print(f"Hello, {name}!")
-
-    # Interactive mode
-    print("\nEnter commands (type 'exit' to quit):")
-    while True:
-        command = input("> ").strip().lower()
-
-        if command == 'exit':
-            print("Goodbye!")
-            break
-        elif command == 'help':
-            print("Available commands: help, time, date, exit")
-        elif command == 'time':
-            from datetime import datetime
-            print(f"Current time: {datetime.now().strftime('%H:%M:%S')}")
-        elif command == 'date':
-            from datetime import date
-            print(f"Today's date: {date.today().strftime('%Y-%m-%d')}")
-        else:
-            print(f"Unknown command: {command}")
-            print("Type 'help' for a list of commands")
-
-# Run the CLI demo (commented out to avoid execution)
-# simple_cli()
-```
-
-### Data Collection Forms
-
-Applications often need to collect multiple fields of related information:
-
-```python
-def user_registration_form():
-    """A data collection form with comprehensive validation."""
-    print("\n=== User Registration Form ===\n")
-
-    # Dictionary to store user data
-    user_data = {}
-
-    # Name (alphabetic characters and spaces only)
-    while True:
-        name = input("Full Name: ").strip()
-        if name and all(c.isalpha() or c.isspace() for c in name):
-            user_data['name'] = name
-            break
-        print("Error: Name must contain only letters and spaces.")
-
-    # Email (basic validation)
-    while True:
-        email = input("Email Address: ").strip().lower()
-        if '@' in email and '.' in email.split('@')[1]:
-            user_data['email'] = email
-            break
-        print("Error: Please enter a valid email address.")
-
-    # Age (numeric in range)
-    while True:
-        try:
-            age = int(input("Age: ").strip())
-            if 13 <= age <= 120:
-                user_data['age'] = age
-                break
-            print("Error: Age must be between 13 and 120.")
-        except ValueError:
-            print("Error: Please enter a valid number.")
-
-    # Password (with confirmation)
-    while True:
-        password = input("Password (min 8 characters): ").strip()
-        if len(password) < 8:
-            print("Error: Password must be at least 8 characters long.")
-            continue
-
-        confirm = input("Confirm Password: ").strip()
-        if password != confirm:
-            print("Error: Passwords do not match.")
-            continue
-
-        user_data['password'] = '*' * len(password)  # Store masked password for demo
-        break
-
-    # Subscription preference
-    while True:
-        subscription = input("Subscribe to newsletter? (yes/no): ").strip().lower()
-        if subscription in ['yes', 'no', 'y', 'n']:
-            user_data['subscribed'] = subscription in ['yes', 'y']
-            break
-        print("Error: Please enter 'yes' or 'no'.")
-
-    # Registration complete - display summary
-    print("\n=== Registration Summary ===")
-    for key, value in user_data.items():
-        print(f"{key.capitalize()}: {value}")
-    print("Registration successful!")
-
-# Run the registration form (commented out to avoid execution)
-# user_registration_form()
-```
-
-### Interactive Help System
-
-Help systems often use input to guide users through solutions:
-
-```python
-def interactive_help_system():
-    """An interactive help system that adapts to user input."""
-    print("\n=== Python Learning Assistant ===\n")
-    print("I can help you learn Python concepts. Tell me what you need help with.")
-    print("Type 'exit' at any time to quit.\n")
-
-    topics = {
-        "variables": "Variables store data that can be referenced and manipulated in a program.",
-        "input": "The input() function allows your program to collect user input.",
-        "strings": "Strings are sequences of characters, created with quotes.",
-        "lists": "Lists store multiple items in a single variable.",
-        "if": "If statements allow conditional execution of code.",
-        "loops": "Loops allow you to execute code repeatedly."
-    }
-
-    while True:
-        user_query = input("What Python topic do you need help with? ").strip().lower()
-
-        if user_query in ['exit', 'quit', 'bye']:
-            print("Thank you for using the Python Learning Assistant!")
-            break
-
-        # Check if any topic keyword is in the query
-        found_topics = [topic for topic in topics if topic in user_query]
-
-        if found_topics:
-            print("\nHere's information about the topic(s) you asked about:\n")
-            for topic in found_topics:
-                print(f"--- {topic.upper()} ---")
-                print(topics[topic])
-                print()
-
-            # Ask if they want an example
-            want_example = input("Would you like to see an example? (yes/no): ").strip().lower()
-            if want_example in ['yes', 'y']:
-                if 'variables' in found_topics:
-                    print("\nExample (Variables):")
-                    print("name = 'Alice'  # Creating a variable")
-                    print("age = 30")
-                    print("print(name)     # Using a variable")
-                elif 'input' in found_topics:
-                    print("\nExample (Input):")
-                    print("name = input('What is your name? ')")
-                    print("print(f'Hello, {name}!')")
-        else:
-            print("\nI don't have specific information about that topic.")
-            print("Available topics: " + ", ".join(topics.keys()))
-
-        # Ask if they need help with something else
-        print("\n" + "-" * 40)
-
-# Run the help system (commented out to avoid execution)
-# interactive_help_system()
-```
-
-These examples demonstrate how input can be used to create professional, user-friendly applications across different contexts. The techniques are the same as those we've covered—just applied with attention to user experience and validation.
-
-## 10. Self-Assessment Quiz
-
-Test your understanding of Python input concepts:
-
-1. What does the `input()` function return?
-   a) An integer
-   b) A floating-point number
-   c) Always a string
-   d) The same type as what the user entered
-
-2. If a user enters "42" when prompted by the `input()` function, what is the correct way to use this value in a calculation?
-   a) `result = 10 + input()`
-   b) `result = 10 + int(input())`
-   c) `user_value = input(); result = 10 + user_value`
-   d) `user_value = input(); result = 10 + int(user_value)`
-
-3. What's the best approach to handle potential errors when converting input to an integer?
-   a) Assume the user will always enter valid numbers
-   b) Use a try/except block to catch ValueError
-   c) Convert all input to strings to avoid errors
-   d) Use the is_integer() method
-
-4. Which of these is NOT a good practice for input prompts?
-   a) Including the expected format (e.g., "Enter date (YYYY-MM-DD)")
-   b) Adding a space at the end of the prompt
-   c) Using vague terms like "Enter value:" without context
-   d) Indicating units for measurements (e.g., "Enter height in cm:")
-
-5. When creating an interactive program, which of these is most important?
-   a) Collecting as much data as possible in one prompt
-   b) Providing clear feedback based on user input
-   c) Limiting user input to predefined options only
-   d) Making the program run with minimal user interaction
-
-6. In the context of the chatbot project, why is input validation important?
-   a) It makes the code more complex
-   b) It prevents crashes and ensures coherent conversation
-   c) It's required by Python syntax
-   d) It has no significant impact on user experience
-
-7. If you want a user to enter a yes/no response, which approach is most robust?
-   a) `if input("Continue? ") == "yes":`
-   b) `if input("Continue? ").lower() in ["y", "yes"]:`
-   c) `if input("Continue? (y/n): ").lower() in ["y", "yes", "n", "no"]:`
-   d) `if input("Continue? ") is True:`
-
-8. Which function would you use to collect a password without displaying what the user types?
-   a) `secret_input()`
-   b) `password()`
-   c) `getpass.getpass()`
-   d) `hidden_input()`
-
-**Answers:**
-1. c) Always a string - The `input()` function always returns user input as a string.
-2. d) `user_value = input(); result = 10 + int(user_value)` - Get the input first, then convert to integer.
-3. b) Use a try/except block to catch ValueError - This properly handles invalid input.
-4. c) Using vague terms like "Enter value:" without context - Unclear prompts confuse users.
-5. b) Providing clear feedback based on user input - Feedback helps users understand what's happening.
-6. b) It prevents crashes and ensures coherent conversation - Invalid input can break your chatbot.
-7. c) `if input("Continue? (y/n): ").lower() in ["y", "yes", "n", "no"]:` - Handles various forms of yes/no.
-8. c) `getpass.getpass()` - From the getpass module, specifically designed for password input.
-
-## 11. Try It Yourself: Input Exercises
-
-Practice your input skills with these exercises:
-
-### Exercise 1: Basic Chatbot Input
-Create a simple chatbot that:
-- Asks for the user's name
-- Greets the user by name
-- Asks what the user wants to talk about
-- Responds with a predefined message based on the topic
-- Continues the conversation until the user types "goodbye"
-
-### Exercise 2: Input Type Conversion
-Write a program that:
-- Asks the user for two numbers
-- Converts the input to integers
-- Displays the sum, difference, product, and quotient of the numbers
-- Handles potential errors if the user enters non-numeric data
-
-### Exercise 3: Validated Form Input
-Create a simple user registration form that collects and validates:
-- A username (letters and numbers only, 5-15 characters)
-- An email address (must contain @ and a period after it)
-- A password (minimum 8 characters)
-- Password confirmation (must match the first password)
-Display a summary of the information after successful validation.
-
-### Exercise 4: Chatbot with Memory
-Expand the chatbot from Exercise 1 to:
-- Remember the user's name throughout the conversation
-- Keep track of what topics have been discussed
-- Reference previous topics in responses (e.g., "Earlier you mentioned...")
-- Allow the user to ask for a summary of the conversation
-
-### Exercise 5: Multi-choice Quiz
-Create a multiple-choice quiz that:
-- Presents at least 5 questions with 4 options each
-- Accepts user input for the answer (1-4)
-- Validates the input is a valid option
-- Keeps track of the score
-- Displays final results at the end
-
-## 12. Cross-References
-
-- **Previous Chapter**: [Output](output.qmd) — Learn how to display information to users
-- **Next Chapter**: [Operators](operators.qmd) — Manipulate data with mathematical and logical operations
-- **Related Topic**: [Error Handling](errors_and_exceptions.qmd) — Learn to handle invalid input gracefully
-- **Project Connection**: [Making Decisions](making_decisions.qmd) shows how to use input to drive program flow
-- **Advanced Application**: In [Python AI Integration](python_ai_integration.qmd), you'll use input to interact with AI services
-
-## 13. Summary
-
-In this chapter, you've learned the essential skills for collecting and processing user input in Python:
-
-- Using the `input()` function to get information from users
-- Creating clear, effective prompts that guide users
-- Converting input to appropriate data types for processing
-- Validating input to ensure it meets your program's requirements
-- Implementing basic conversational capabilities in your chatbot
-- Avoiding common pitfalls when working with user input
-
-For our chatbot project, you've implemented the critical ability to listen and respond to users, transforming it from a one-way announcement system to a true conversational agent. As we progress through the book, we'll enhance this foundation with more sophisticated processing capabilities.
-
-Input is the bridge that connects users to your program's functionality. When combined with the output techniques from the previous chapter, you now have the fundamental tools for creating interactive, responsive applications. These skills form the basis for all user interaction in your Python programs and are essential for building effective human-computer interfaces.
-
-Remember that collecting input is just the beginning—the real power comes from what your program does with that input, which we'll explore in upcoming chapters on operators, decision making, and data structures.
