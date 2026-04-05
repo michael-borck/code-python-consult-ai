@@ -7,7 +7,6 @@ project:
 book:
   title: "Code Python, Consult AI"
   subtitle: "Python Fundamentals for the AI Era"
-  cover-image: cover.png
   favicon: favicon.svg
   author: "Michael Borck"
   license: "CC BY-SA 4.0 (content), MIT (code examples)"
@@ -67,6 +66,7 @@ format:
     theme:
       light: cosmo
       dark: darkly
+    cover-image: cover.png
     include-after-body: chatbot.html
     code-copy: true
     code-tools: true
