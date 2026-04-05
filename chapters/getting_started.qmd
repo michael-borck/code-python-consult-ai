@@ -1,280 +1,176 @@
 # Getting Started with Python
 
-## Learning Objectives
+## The Wall
 
-By the end of this chapter, you will be able to:
+AI gave you a Python script. You copied it into a file, double-clicked it, and nothing happened. Or you pasted it into a terminal and got `SyntaxError: invalid syntax`. Or it ran but the output disappeared instantly.
 
-- Write and run your first Python program
-- Navigate a Jupyter Notebook
-- Use comments to document your code
-- Apply proper indentation and whitespace
-- Follow Python naming conventions
-- Understand parentheses, brackets, and braces
+You asked AI how to run Python code and got a wall of text about interpreters, virtual environments, IDEs, and Jupyter Notebooks. You just wanted to run the file.
 
-## 1. Your First Python Program
+This chapter fixes that. You will learn how Python code runs, how to read the structure AI gives you, and why indentation and naming actually matter when you are trying to modify what AI produces.
 
-The "Hello, World!" program is a tradition dating back to 1978. It is the moment you move from theory to practice:
+## Thinking Session
 
-```python
-print('Hello, world!')
-```
+### Getting Oriented
 
-This simple line contains several important concepts:
-
-- `print()` is a **function** — a command that performs a specific action
-- The parentheses `()` contain the input to the function
-- `'Hello, world!'` is a **string** — text enclosed in quotation marks
-- The entire line is a **statement** — a complete instruction for the computer
-
-Python can also act as a calculator:
-
-```python
-2 + 2
-```
-
-In a Jupyter Notebook, the last value in a cell is automatically displayed. In regular Python scripts, you need `print()` to see results.
-
-## 2. Working in Jupyter Notebooks
-
-Jupyter Notebooks combine code, output, and documentation in one place. They have three key elements:
-
-- **Markdown Cells** — for writing explanations
-- **Code Cells** — for writing and running Python
-- **Output Area** — displays results below each cell
-
-The essential shortcuts:
-
-| Shortcut | Action |
-|----------|--------|
-| `Shift+Enter` | Run cell and move to next |
-| `Enter` | Edit current cell |
-| `Esc` | Exit edit mode |
-| `A` / `B` | Insert cell above / below |
-| `M` / `Y` | Convert to Markdown / Code |
-
-::: {.callout-tip}
-You can also use Python through the interactive interpreter, IPython, or standalone scripts. See the appendix on Setting Up Python for details on different ways to run Python code.
+::: {.callout-note title="Thinking Session Prompt"}
+I have a Python file that AI generated for me. When I try to run it, I get errors or nothing happens. Can you explain the different ways to run Python code? I want to understand: what is the difference between running code in a Jupyter Notebook, in a terminal, and in a script file? When would I use each one?
 :::
 
-## 3. Python's Syntax Philosophy
+Your AI should explain three main approaches: the interactive interpreter (type code line by line), script files (save and run a `.py` file), and Jupyter Notebooks (cells that mix code and output). If it jumps straight to IDE setup, pull it back to the basics first.
 
-Python was designed for readability. Unlike languages that use curly braces to structure code, Python uses whitespace and indentation. As Guido van Rossum emphasised: "Code is read much more often than it is written."
+### Go Deeper
 
-::: {.callout-tip title="AI Tip"}
-Clear, well-structured code produces better AI suggestions and makes it easier to review AI-generated solutions.
+::: {.callout-note title="Thinking Session Prompt"}
+When I look at AI-generated Python code, I notice it uses indentation to structure things, unlike other languages that use curly braces. Why does Python do this? What happens if I get the indentation wrong? Show me an example of code that breaks because of indentation.
 :::
 
-## 4. Comments: Documenting Your Code
-
-Comments explain your code in plain language. They are ignored by Python but invaluable for human readers:
-
-```python
-# This is a single-line comment
-
-x = 5  # Inline comment explaining a variable
-
-"""
-This is a docstring — a multi-line string used
-for documentation. Especially useful for
-explaining functions and modules.
-"""
-```
-
-Good comments explain *why* code exists, not just what it does:
-
-```python
-# POOR: Set x to 5
-x = 5
-
-# BETTER: Initialise countdown timer (seconds)
-x = 5
-```
-
-## 5. Statements and Line Continuation
-
-In Python, statements typically end at the end of a line:
-
-```python
-name = "Alice"
-age = 30
-greeting = "Hello"
-```
-
-For longer statements, use implicit continuation within parentheses, brackets, or braces:
-
-```python
-# Preferred: implicit continuation
-coordinates = (40.7128,   # Latitude
-               -74.0060)  # Longitude
-
-shopping_list = [
-    "apples",
-    "bananas",
-    "oranges",
-]
-
-user = {
-    "name": "Alice",
-    "age": 30,
-    "email": "alice@example.com"
-}
-```
-
-## 6. Whitespace and Indentation
-
-Python uses indentation to define code blocks:
-
-```python
-if temperature > 30:
-    print("It's hot outside!")
-    if humidity > 80:
-        print("And it's humid!")
-    print("Consider staying indoors.")
-print("End of weather report.")
-```
-
-The rules:
-
-- Use **4 spaces** per indentation level (PEP 8)
-- Be consistent — do not mix tabs and spaces
-- Every line in the same block must have the same indentation
-
-## 7. Parentheses, Brackets, and Braces
-
-Python uses three types of containers:
-
-```python
-# Parentheses () — grouping, function calls, tuples
-result = 10 * (2 + 3)
-print("Hello!")
-coordinates = (10.5, 20.6)
-
-# Square brackets [] — lists, indexing
-shopping_list = ["milk", "eggs", "bread"]
-first_item = shopping_list[0]
-
-# Curly braces {} — dictionaries, sets
-user = {"name": "Alice", "age": 30}
-unique_numbers = {1, 2, 3, 4, 5}
-```
-
-## 8. Naming Conventions
-
-Python has established naming conventions:
-
-```python
-# Variables and functions: snake_case
-user_name = "Alice"
-def calculate_total(items):
-    pass
-
-# Classes: PascalCase
-class UserAccount:
-    pass
-
-# Constants: UPPER_CASE
-MAX_LOGIN_ATTEMPTS = 3
-PI = 3.14159
-```
-
-::: {.callout-tip}
-Following naming conventions makes your code more readable and professional. It helps other programmers — and AI assistants — understand your code quickly.
+::: {.callout-tip title="What to Look For"}
+Your AI should explain that Python uses indentation to define code blocks — it is not decorative, it is structural. A misplaced space causes an `IndentationError`. This matters because when you copy AI-generated code and reformat it, you can accidentally break the structure.
 :::
 
-## 9. Common Pitfalls
+::: {.callout-note title="Thinking Session Prompt"}
+AI-generated code often has comments like `# This is a comment` and names like `user_name` or `MAX_RETRIES`. Are there rules for how to name things in Python? What conventions do Python programmers follow, and why should I care when I am mostly reading AI-generated code?
+:::
 
-Even simple programs can trip you up:
+The naming conventions matter because they carry meaning. When you see `MAX_RETRIES`, the uppercase tells you it is a constant. When you see `user_name`, the snake_case tells you it is a variable. When you see `UserAccount`, the PascalCase tells you it is a class. If you do not know these conventions, AI-generated code looks like a random collection of names.
 
-**Mismatched quotes:**
+### Challenge It
+
+::: {.callout-note title="Thinking Session Prompt"}
+Here is some Python code with several problems. Can you identify all of them?
+
+    if x > 10
+        Print("x is big")
+      print("done")
+    message = "Hello, world!'
+:::
+
+::: {.callout-tip title="What to Look For"}
+Four errors: missing colon after `if x > 10`, capital P in `Print` (Python is case-sensitive), inconsistent indentation on `print("done")`, and mismatched quotes on the string. These are exactly the errors you will see when you edit AI-generated code carelessly.
+:::
+
+### What You Should Have Learned
+
+After your Thinking Session, you should be able to:
+
+- Run Python code three ways: interpreter, script, notebook
+- Explain why indentation matters in Python (it defines structure, not style)
+- Read Python naming conventions: snake_case, PascalCase, UPPER_CASE
+- Spot common syntax errors: missing colons, wrong case, bad indentation, mismatched quotes
+
+If any of these are unclear, continue the conversation with your AI before moving on.
+
+## The Gap
+
+You now know how to run Python and how to read the structure of Python code. When AI generates code with indented blocks, comments, and named variables, you understand what those structural elements mean — even before you understand what the code does.
+
+In the Building Session, you will set up your Python environment and add proper structure to the chatbot from Chapter 1: comments, named constants, and clear formatting.
+
+## Building Session
+
+### The Spec
+
+Take the chatbot skeleton from Chapter 1 and add proper Python structure:
+
+- Add a descriptive comment at the top explaining what the code does
+- Use named constants for the bot name and version (UPPER_CASE)
+- Add inline comments on any non-obvious lines
+- Make sure indentation is consistent (4 spaces)
+
+### Prompt It
+
+::: {.callout-note title="Building Session Prompt"}
+Here is my chatbot from Chapter 1:
+
 ```python
-# Wrong
-message = "Hello, world!'
+bot_name = "PyBot"
+print(f"Hello! I'm {bot_name}. Type 'quit' to exit.")
 
-# Right
-message = "Hello, world!"
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "quit":
+        print(f"{bot_name}: Goodbye!")
+        break
+    print(f"{bot_name}: You said '{user_input}'")
 ```
 
-**Case sensitivity:**
-```python
-# Wrong — NameError
-Print("Hello!")
+Improve it by adding:
+- A module docstring at the top describing the program
+- BOT_NAME and VERSION as constants (uppercase)
+- Inline comments explaining the while loop and the break
+- Keep it simple — no functions, no imports
+:::
 
-# Right
-print("Hello!")
-```
+### Read the Code
 
-**Missing colons:**
-```python
-# Wrong — SyntaxError
-if x > 10
-    print("Greater")
-
-# Right
-if x > 10:
-    print("Greater")
-```
-
-**Inconsistent indentation:**
-```python
-# Wrong — IndentationError
-if x > 10:
-    print("First line")
-  print("Second line")
-
-# Right
-if x > 10:
-    print("First line")
-    print("Second line")
-```
-
-## 10. Built-in Help
-
-Python has built-in tools for exploring the language:
-
-```python
-help(print)       # Detailed help on any function
-dir(str)          # List all methods on a type
-```
-
-These are useful when you want to quickly check what a function does or what methods are available, without leaving your coding environment.
-
-## 11. Project Corner: Your First Chatbot
-
-Let's create the foundation of the chatbot you will build throughout this book:
+Your AI will produce something like this:
 
 ```python
 """
-PyBot: A simple Python chatbot
-Core functionality for our chatbot project.
+PyBot: A simple terminal chatbot.
+Greets the user and echoes their messages.
+Type 'quit' to exit.
 """
 
-# Configuration constants
+# Configuration
 BOT_NAME = "PyBot"
 VERSION = "0.2"
 
-def initialize_bot():
-    """Set up the chatbot with initial configuration."""
-    print(f"{BOT_NAME} v{VERSION} initialising...")
-    print("=" * 50)
-    print(f"Welcome to {BOT_NAME}!")
-    print("=" * 50)
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+print("Type 'quit' to exit.")
 
-def display_greeting():
-    """Display the bot's greeting message."""
-    greeting = (
-        f"Hello! I'm {BOT_NAME}, your friendly "
-        f"Python assistant.\n"
-        f"I'll learn new tricks as you progress "
-        f"through this book!"
-    )
-    print(f"{BOT_NAME}> {greeting}")
+# Main conversation loop — runs until user quits
+while True:
+    user_input = input("You: ")
 
-initialize_bot()
-display_greeting()
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye!")
+        break  # Exit the loop
+
+    print(f"{BOT_NAME}: You said '{user_input}'")
 ```
 
-This code demonstrates comments, docstrings, constants with proper naming, functions, indentation, and string formatting. Each chapter will build on this foundation in the Project Corner sections.
+::: {.callout-tip title="What to Notice"}
+The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `VERSION` are uppercase — the naming convention signals these are constants that should not change. The comments explain *why* (the loop runs until quit) not *what* (print prints). The `break` comment is useful because `break` is a keyword you might not recognise yet.
+:::
 
-## Summary
+### Stretch It
 
-You have written your first Python program, learned to navigate Jupyter Notebooks, and explored the syntax rules that make Python code work: comments, indentation, line continuation, naming conventions, and container types. These fundamentals form the foundation for everything that follows.
+::: {.callout-note title="Building Session Prompt"}
+Add a comment block after the constants that lists what the chatbot can do in this version. Format it as a multi-line comment. Also add a `# TODO:` comment listing two features we will add in future chapters.
+:::
+
+Read the result. `# TODO:` comments are a convention for marking planned work — you will see these frequently in AI-generated code and in professional projects.
+
+## Your Chatbot So Far
+
+After this chapter, your chatbot can:
+
+- Print a greeting with the bot's name and version
+- Accept user messages in a loop
+- Echo messages back
+- Exit when the user types "quit"
+- **Has proper structure: docstring, constants, comments**
+
+## Quick Reference
+
+```python
+# Comment styles
+# Single-line comment
+x = 5  # Inline comment
+"""Docstring for documentation."""
+
+# Naming conventions
+user_name = "alice"     # snake_case: variables
+MAX_RETRIES = 3         # UPPER_CASE: constants
+class UserAccount:      # PascalCase: classes
+    pass
+
+# Indentation: 4 spaces per level
+if True:
+    print("indented")
+
+# Running Python
+# Terminal:  python3 my_script.py
+# Notebook:  Shift+Enter to run cell
+```

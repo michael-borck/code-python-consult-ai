@@ -1,0 +1,108 @@
+# After Vibe Coding
+
+## The Honeymoon
+
+You discovered AI-assisted coding. You typed a few sentences into ChatGPT or Claude or Gemini, and it gave you working Python code. You ran it. It worked. You felt powerful.
+
+You built a web scraper. A data visualisation. Maybe even a small app. You did not need to understand the code — you just needed to describe what you wanted. When something broke, you pasted the error back into AI and asked it to fix it. Sometimes that worked too.
+
+This is vibe coding. Code by feel, prompt until something works, do not worry about understanding the details. For simple, self-contained scripts, it is genuinely effective.
+
+## The Wall
+
+Then you hit the wall.
+
+The AI gave you code with ten variables and you could not tell which ones mattered. It used a dictionary when a list would have worked. It wrapped everything in try/except and swallowed the actual error. You asked it to fix a bug and it introduced two more. You pasted the new error in and got a completely different approach that also did not work.
+
+The problem was not AI. The problem was that you could not read the code it produced. You could not tell correct from plausible. You could not describe what was wrong precisely enough for AI to actually help.
+
+This is the wall every vibe coder hits. Not on day one — on day thirty, or day sixty, when the code gets complex enough that "just make it work" stops working.
+
+## What This Book Does
+
+This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer — to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.
+
+You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:
+
+### The Two-Chat Method
+
+**Chat 1: Thinking Session.** Open a conversation with your AI assistant. Explore the concept. Ask questions. Challenge the AI's explanations. Push back when something does not make sense. Build understanding before writing a single line of code.
+
+**The Gap.** Step back. Reflect on what you learned. Decide what matters for what you are building.
+
+**Chat 2: Building Session.** Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.
+
+This is the difference between vibe coding and intentional prompting. Vibe coding does not compound — each session starts from zero. Understanding compounds — each concept makes the next one easier.
+
+## Your First Thinking Session
+
+Open your AI assistant. Paste this prompt:
+
+::: {.callout-note title="Thinking Session Prompt"}
+I have been using you to write Python code for me, but I do not really understand what is happening in the code you produce. I want to learn the fundamentals so I can stay in control.
+
+What are the five most important Python concepts I should understand first if my goal is to be able to read and evaluate AI-generated code? For each one, give me a one-sentence explanation and a one-line code example.
+:::
+
+Read the response carefully. Your AI will likely mention variables, data types, functions, control flow, and something about data structures. These are the chapters in this book.
+
+Now push back:
+
+::: {.callout-note title="Thinking Session Prompt"}
+You listed five concepts. But when I look at AI-generated Python code, I also see things like try/except, import statements, and classes. Where do those fit? Are they more or less important than the five you listed?
+:::
+
+::: {.callout-tip title="What to Look For"}
+Your AI should explain that the first five concepts are foundational — everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.
+:::
+
+This is what a Thinking Session feels like: exploring, questioning, building a mental map. You are not trying to write code yet. You are trying to understand the territory.
+
+## Your First Building Session
+
+Now open a fresh conversation. You are going to build the project that evolves across every chapter: a terminal chatbot.
+
+::: {.callout-note title="Building Session Prompt"}
+Write me a minimal Python chatbot that runs in a terminal. It should:
+
+- Print a greeting with the bot's name
+- Accept user messages in a loop
+- Echo the message back with a simple response
+- Exit when the user types "quit"
+
+Keep it under 15 lines. Use only basic Python — no imports, no classes, no functions beyond print() and input().
+:::
+
+Your AI will produce something like this:
+
+```python
+bot_name = "PyBot"
+print(f"Hello! I'm {bot_name}. Type 'quit' to exit.")
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "quit":
+        print(f"{bot_name}: Goodbye!")
+        break
+    print(f"{bot_name}: You said '{user_input}'")
+```
+
+::: {.callout-tip title="What to Notice"}
+Even in 10 lines, you can see several concepts: a variable (`bot_name`), a string with formatting (`f"..."`), a loop (`while True`), a decision (`if`), and a way to stop (`break`). You do not need to understand all of these yet — each chapter covers one. By the end of the book, you will understand every line.
+:::
+
+Run this code. Talk to it. It is not smart — it just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.
+
+## What You Need
+
+- **Python installed.** If you do not have it yet, see the appendix on Setting Up Python.
+- **An AI assistant.** Any will do — ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.
+- **A willingness to read code.** Not just run it — read it, question it, understand it. That is the skill this book teaches.
+
+## How This Book Is Different
+
+There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.
+
+Every chapter follows the same two-chat structure. By the end, you will not just know Python — you will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.
+
+That is the skill that outlasts any specific tool or framework.
