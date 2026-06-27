@@ -20,7 +20,7 @@ This is the wall every vibe coder hits. Not on day one, on day thirty, or day si
 
 ## What This Book Does
 
-This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.
+This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need. Put differently: AI is very good at producing a first draft. Your job is shifting from writing first drafts to evaluating and editing them — spotting the draft that is confidently wrong, asking for the change that actually fixes it, and knowing the difference. That is a higher-order skill than writing the code yourself, and it is the skill this book builds.
 
 You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:
 
@@ -33,6 +33,8 @@ You will learn through conversation with AI, not by reading textbook explanation
 **Chat 2: Building Session.** Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.
 
 This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.
+
+In current terms, this is *context engineering*. When you run a Thinking Session and then carry only your decisions into a fresh Building Session, you are doing the one thing that makes an AI assistant — or an autonomous agent — genuinely useful: curating the context it works from, and refusing to let it inherit a messy, half-explored conversation. The same habit scales from a two-chat workflow to directing a coding agent that edits your files: the quality of what it produces is bounded by the quality of the brief you hand it. Get the thinking right first, and the building — by you or by an agent — gets dramatically easier.
 
 ## Your First Thinking Session
 
@@ -106,3 +108,5 @@ There are hundreds of Python tutorials. This one does not explain variables the 
 Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.
 
 That is the skill that outlasts any specific tool or framework.
+
+It is also the skill that keeps you valuable as the tools improve. When AI can write competent code for anyone, the person who can read, evaluate, and steer it is the one adding the variation competent sameness cannot — and that is the one thing that does not commoditise. The full argument is in *Conversation, Not Delegation*.
