@@ -9,6 +9,7 @@ book:
   subtitle: "Python Fundamentals for the AI Era"
   favicon: favicon.svg
   author: "Michael Borck"
+  isbn: "979-8-254-65364-6"
   license: "CC BY-SA 4.0 (content), MIT (code examples)"
   chapters:
     - index.qmd
@@ -39,6 +40,8 @@ book:
     - appendices/setting_up_python.qmd
   repo-url: https://github.com/michael-borck/code-python-consult-ai
   repo-actions: [edit, issue]
+  sidebar:
+    footer: Paperback ISBN 979-8-254-65364-6
   other-links:
     - text: Download PDF
       icon: file-pdf

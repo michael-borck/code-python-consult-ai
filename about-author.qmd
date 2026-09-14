@@ -4,7 +4,7 @@
 
 **Michael Borck** is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while leveraging AI tools effectively.
 
-Michael believes that the future of programming lies not in delegating to AI, but in conversing with it---treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.
+Michael believes that the future of programming lies not in delegating to AI, but in conversing with it, treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.
 
 When not writing about AI collaboration, Michael works on practical applications of these principles across software development, education, and creative projects. He creates educational software and resources, and explores the 80/20 principle in learning and productivity.
 
@@ -12,9 +12,9 @@ When not writing about AI collaboration, Michael works on practical applications
 
 **Connect**
 
-- [michaelborck.dev](https://michaelborck.dev) --- Professional work and projects
-- [michaelborck.education](https://michaelborck.education) --- Educational software and resources
-- [8020workshop.com](https://8020workshop.com) --- Passion projects and workshops
+- [michaelborck.dev](https://michaelborck.dev): professional work and projects
+- [michaelborck.education](https://michaelborck.education): educational software and resources
+- [8020workshop.com](https://8020workshop.com): passion projects and workshops
 - [LinkedIn](https://linkedin.com/in/michaelborck)
 
 ---
