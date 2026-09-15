@@ -1,26 +1,12 @@
-# Dual License
+# Licensing
 
-This project uses a dual licensing approach:
+"Code Python, Consult AI" by Michael Borck uses separate licences for content and code:
 
-## Book Content License
-All written content, documentation, and educational materials in this book are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
+- Book text and original educational material: **CC BY 4.0 International**. The official legal text is in [LICENSE-CONTENT.md](LICENSE-CONTENT.md); see also https://creativecommons.org/licenses/by/4.0/.
+- Original code examples and accompanying software: **MIT License**, in [LICENSE-CODE.md](LICENSE-CODE.md).
 
-See [LICENSE-CONTENT.md](LICENSE-CONTENT.md) for the full text.
+These grants apply only to material the author has authority to license. Separately credited third-party material and dependencies retain their own terms; this notice does not grant rights in third-party trademarks, images or personal information.
 
-## Code Examples License
-All code examples, scripts, and software components are licensed under the **MIT License**.
+For content reuse, credit Michael Borck and the book, link the licence, and indicate changes. For code reuse, retain the MIT copyright and permission notice. Consult the full licence texts for their conditions and disclaimers.
 
-See [LICENSE-CODE.md](LICENSE-CODE.md) for the full text.
-
-## What This Means
-
-- **Book text, chapters, documentation**: You can freely share, adapt, and build upon this material for any purpose, even commercially, as long as you provide appropriate attribution AND license your derivative work under the same CC BY-SA 4.0 license.
-
-- **Code examples and scripts**: You can use, modify, and distribute the code with minimal restrictions, including in commercial projects.
-
-## Attribution
-
-When using book content, please attribute as:
-"Code Python, Consult AI: Python Fundamentals for the AI Era" by Michael Borck, licensed under CC BY-SA 4.0.
-
-When using code examples, include the MIT license notice found in LICENSE-CODE.md.
+The author approved this collection-wide policy on 2026-09-15. It does not withdraw permissions already granted for earlier copies under other licences.

@@ -96,3 +96,11 @@ This book is part of the [books.borck.education](https://books.borck.education) 
 | `rag-documents/` | Generated RAG chunks for chatbot |
 | `_book/` | Rendered output (gitignored) |
 | `_print_source/` | Generated print source (gitignored) |
+
+## Licence
+
+Book content is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0 International)](https://creativecommons.org/licenses/by/4.0/). Original code examples and accompanying software are licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+These grants cover material the author has authority to license. Separately credited third-party material retains its stated terms. Give appropriate credit, link the content licence and indicate changes; retain the MIT notice when reusing code.
+
+See [LICENSE](LICENSE), [LICENSE-CONTENT.md](LICENSE-CONTENT.md) and [LICENSE-CODE.md](LICENSE-CODE.md) for scope and full terms.

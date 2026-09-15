@@ -2,6 +2,9 @@ project:
   type: book
   output-dir: _book
   resources:
+    - LICENSE
+    - LICENSE-CONTENT.md
+    - LICENSE-CODE.md
     - tools/**
 
 book:
@@ -10,7 +13,7 @@ book:
   favicon: favicon.svg
   author: "Michael Borck"
   isbn: "979-8-254-65364-6"
-  license: "CC BY-SA 4.0 (content), MIT (code examples)"
+  license: "CC BY 4.0 International"
   chapters:
     - index.qmd
     - copyright.qmd
