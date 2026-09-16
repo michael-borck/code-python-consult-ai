@@ -132,10 +132,15 @@ Add a "history" command that loads and displays the last 10 entries from the sav
 ## Quick Reference
 
 ```python
-# Read a file
+# Read a file (pick ONE way to read it per open)
 with open("file.txt", "r") as f:
-    content = f.read()        # entire file
-    lines = f.readlines()     # list of lines
+    content = f.read()          # entire file as one string
+
+with open("file.txt", "r") as f:
+    lines = f.readlines()       # list of lines
+
+# A handle reads once: after f.read(), f.readlines() returns []
+# Reopen the file if you need to read it a second time
 
 # Write a file
 with open("file.txt", "w") as f:    # erases first

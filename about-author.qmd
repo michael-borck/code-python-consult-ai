@@ -12,8 +12,8 @@ When not writing about AI collaboration, Michael works on practical applications
 
 **Connect**
 
-- [michaelborck.dev](https://michaelborck.dev): professional work and projects
-- [michaelborck.education](https://michaelborck.education): educational software and resources
+- [GitHub](https://github.com/michael-borck): code, books and projects
+- [books.borck.education](https://books.borck.education): the free book collection
 - [8020workshop.com](https://8020workshop.com): passion projects and workshops
 - [LinkedIn](https://linkedin.com/in/michaelborck)
 

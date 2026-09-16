@@ -48,10 +48,10 @@ book:
   other-links:
     - text: Download PDF
       icon: file-pdf
-      href: code-python-consult-ai.pdf
+      href: /code-python-consult-ai.pdf
     - text: Download EPUB
       icon: book
-      href: code-python-consult-ai.epub
+      href: /code-python-consult-ai.epub
     - text: Download llm.txt
       icon: robot
       href: llm.txt

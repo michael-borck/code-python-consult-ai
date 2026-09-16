@@ -110,7 +110,10 @@ def debug_log(*args):
         print("[DEBUG]", *args)
 
 
-# In the main loop:
+# Inside main(), before the loop:
+    global debug_mode  # without this, the assignment below creates a local
+
+    # In the main loop:
     if command == "debug":
         debug_mode = not debug_mode
         status = "ON" if debug_mode else "OFF"
@@ -127,7 +130,7 @@ def debug_log(*args):
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.
+`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. And `global debug_mode` is not decoration: without it, the assignment inside `main()` creates a local variable, `debug_log()` keeps reading the untouched global, and the toggle silently does nothing — the same scope trap Chapter 9's Challenge demonstrated, and a bug AI produces regularly. A function that conditionally prints is how professional code handles debug output.
 :::
 
 ### Stretch It

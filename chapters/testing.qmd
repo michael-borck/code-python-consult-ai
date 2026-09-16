@@ -80,7 +80,7 @@ Add pytest tests for your chatbot:
 ### Prompt It
 
 ::: {.callout-note title="Building Session Prompt"}
-Create a test file `tests/test_chatbot.py` for my chatbot. Write pytest tests for:
+Update my chatbot to v1.8. First, save your chatbot script as `chatbot.py` in your project folder so the tests can import it (Chapter 19 covers modules properly). Then create a test file `tests/test_chatbot.py` with pytest tests for:
 
 - classify_input("hello") should return "greeting"
 - classify_input("bye") should return "farewell"
