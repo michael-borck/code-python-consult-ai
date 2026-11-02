@@ -37,7 +37,7 @@ Building Session. You open a fresh AI conversation with clear context and direct
 
 Quick Reference. A minimal syntax card for future reference.
 
-The two-chat structure used in every chapter comes from the Conversation, Not Delegation framework and is detailed in Converse Python, Partner AI. You do not need to read either to use this book. The method is built into every chapter. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound. Each session starts from zero.
+The two-chat structure used in every chapter comes from the Conversation, Not Delegation framework and is detailed in Converse Python, Partner AI. You do not need to read either to use this book. The method is built into every chapter. Understanding compounds. Each concept makes the next one easier. Vibe coding does not compound. Each session starts from zero.
 
 ## Who This Book Is For
 
@@ -84,6 +84,8 @@ Author guidance appears in tip boxes:
 
 Your AI should explain that lists are ordered by position and dictionaries are ordered by key.
 
+One note on the Building Session listings: from version to version they sometimes trim unrelated earlier features for space. When a listing shows only part of your chatbot, keep the features you have already built; each chapter tells you what to add, never what to remove.
+
 ## How This Book Was Written
 
 This book was written through human-AI collaboration using the methodology it teaches. The structure, pedagogy, and editorial decisions were made by the author. Claude (Anthropic) assisted with drafting and refining. The process demonstrates the book's core message: AI is most useful when you understand what you are asking it to do.
@@ -113,17 +115,22 @@ Found an error? Have a suggestion?
 
 This book is part of a series designed to help you master modern software development in the AI era.
 
-Conversation, Not Delegation. The general methodology for working with AI across any discipline.
+Two ways in:
 
-Converse Python, Partner AI: intentional prompting methodology applied to software development.
+| Start with | Continue with | Because |
+|---|---|---|
+| Conversation, Not Delegation | Build Web, Guide AI, or Converse Python, Partner AI | You want the ideas before (or without) code |
+| Think Python, Direct AI | Code Python, Consult AI (this book), then Ship Python, Orchestrate AI | You want to code from your first page |
 
-Think Python, Direct AI: computational thinking for absolute beginners.
+Converse Python, Partner AI can be read alongside either path; its methodology enhances every one.
 
-Code Python, Consult AI (this book). Python fundamentals through AI conversation.
-
-Ship Python, Orchestrate AI: professional Python development practices and tooling.
-
-Build Web, Guide AI: web development with AI as your development partner.
+- Conversation, Not Delegation: the general methodology for working with AI across any discipline. No code required; the broadest entry point.
+- Think Python, Direct AI: computational thinking for absolute beginners. The entry point if you want to code from the start.
+- Converse Python, Partner AI: the intentional prompting methodology applied to software development. A companion you can read alongside any Python book.
+- Code Python, Consult AI (this book): focused Python fundamentals through AI conversation.
+- Ship Python, Orchestrate AI: professional Python development practices and tooling.
+- The Absolute Minimum You Must Know: the free, always-current web companion at minimum.borck.education, quick primers on every topic this series covers in depth.
+- Build Web, Guide AI: web development with AI as your development partner.
 
 All titles are available at books.borck.education.
 
@@ -137,19 +144,17 @@ SOURCE: copyright.qmd
 
 Code Python, Consult AI: Python Fundamentals for the AI Era
 
-Copyright 2026 Michael Borck. All rights reserved.
+Copyright 2026 Michael Borck.
 
-No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the author, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+Book content is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0 International). Original code examples and accompanying software are licensed under the MIT License.
+
+These grants cover material the author has authority to license. Separately credited third-party material retains its stated terms. Give appropriate credit, link the content licence and indicate changes; retain the MIT notice when reusing code.
 
 First Edition, 2026
 
 While every precaution has been taken in the preparation of this book, the author assumes no responsibility for errors or omissions, or for damages resulting from the use of information contained herein.
 
 ---
-
-License
-Book content (text, explanations, documentation): Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-Code examples: MIT License
 
 ---
 
@@ -199,7 +204,7 @@ This is the wall every vibe coder hits. Not on day one, on day thirty, or day si
 
 ## What This Book Does
 
-This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.
+This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need. Put differently: AI is very good at producing a first draft. Your job is shifting from writing first drafts to evaluating and editing them: spotting the draft that is confidently wrong, asking for the change that actually fixes it, and knowing the difference. That is a higher-order skill than writing the code yourself, and it is the skill this book builds.
 
 You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:
 
@@ -212,6 +217,8 @@ The Gap. Step back. Reflect on what you learned. Decide what matters for what yo
 Chat 2: Building Session. Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.
 
 This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.
+
+In current terms, this is context engineering. When you run a Thinking Session and then carry only your decisions into a fresh Building Session, you are doing the one thing that makes an AI assistant, or an autonomous agent, genuinely useful: curating the context it works from, and refusing to let it inherit a messy, half-explored conversation. The same habit scales from a two-chat workflow to directing a coding agent that edits your files: the quality of what it produces is bounded by the quality of the brief you hand it. Get the thinking right first, and the building, by you or by an agent, gets dramatically easier.
 
 ## Your First Thinking Session
 
@@ -263,6 +270,8 @@ There are hundreds of Python tutorials. This one does not explain variables the 
 Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.
 
 That is the skill that outlasts any specific tool or framework.
+
+It is also the skill that keeps you valuable as the tools improve. When AI can write competent code for anyone, the person who can read, evaluate, and steer it is the one adding the variation competent sameness cannot, and that is the one thing that does not commoditise. The full argument is in Conversation, Not Delegation.
 
 ============================================================
 SOURCE: chapters/getting_started.qmd
@@ -339,15 +348,29 @@ Take the chatbot skeleton from Chapter 1 and add proper Python structure:
 
 Here is my chatbot from Chapter 1:
 
-Improve it by adding:
-- A module docstring at the top describing the program
-- BOT_NAME and VERSION as constants (uppercase)
-- Inline comments explaining the while loop and the break
-- Keep it simple. No functions, no imports
+python
+"""
+PyBot: A simple terminal chatbot.
+Greets the user and echoes their messages.
+Type 'quit' to exit.
+"""
 
-### Read the Code
+# Configuration
+BOT_NAME = "PyBot"
+VERSION = "0.2"
 
-Your AI will produce something like this:
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+print("Type 'quit' to exit.")
+
+# Main conversation loop (runs until user quits)
+while True:
+    user_input = input("You: ")
+
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye!")
+        break  # Exit the loop
+
+    print(f"{BOT_NAME}: You said '{user_input}'")
 
 The docstring at the top (triple quotes) describes the program. `BOT_NAME` and `VERSION` are uppercase. The naming convention signals these are constants that should not change. The comments explain why (the loop runs until quit) not what (print prints). The `break` comment is useful because `break` is a keyword you might not recognise yet.
 
@@ -423,7 +446,7 @@ What will each of these produce, and why?
 
 When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.
 
-In the Building Session, you will make your chatbot respond differently to numbers versus text. The first step toward intelligent responses.
+In the Building Session, you will make your chatbot respond differently to numbers versus text, the first step toward intelligent responses.
 
 ## Building Session
 
@@ -439,18 +462,34 @@ Make your chatbot recognise different types of input:
 
 Here is my chatbot so far:
 
-Update to v0.3. Add logic that:
-- Tries to convert the input to a number using int()
-- If it succeeds, responds with whether the number is even or odd
-- If it fails, treats the input as text and echoes it
-- Prints the type of the input in parentheses after the response
-- Use a try/except for the conversion (just the basic pattern)
+python
+"""PyBot v0.3: Recognises numbers vs text."""
+BOT_NAME = "PyBot"
+VERSION = "0.3"
 
-Keep it simple. No functions yet, keep the while loop structure.
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+print("Type 'quit' to exit.")
 
-### Read the Code
+while True:
+    user_input = input("You: ")
 
-Your AI will produce something like this:
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye!")
+        break
+
+    # Try to treat input as a number
+    try:
+        number = int(user_input)
+        if number % 2 == 0:
+            response = f"{number} is even"
+        else:
+            response = f"{number} is odd"
+        input_type = type(number).__name__
+    except ValueError:
+        response = f"You said '{user_input}'"
+        input_type = type(user_input).__name__
+
+    print(f"{BOT_NAME}: {response} ({input_type})")
 
 Line 16 uses `int(user_input)`, explicit type conversion. If it fails, the `except ValueError` catches it and the code falls through to the string handling. `type(number).__name__` gives the type as a readable string. The `%` operator checks even/odd. You will learn more about operators in Chapter 7.
 
@@ -502,6 +541,12 @@ What is the difference between `x = 5` and `x == 5`? When I am reading AI-genera
 
 What is wrong with this code, and why would AI likely generate it?
 
+```python
+name = "Alice"
+def greet():
+    print(name)
+    name = name + "!"
+
 This is a scope trap. The `name = name + "!"` inside the function creates a local variable that shadows the global one. Python sees the assignment and treats `name` as local for the entire function, so `print(name)` fails with `UnboundLocalError`. AI generates this pattern regularly.
 
 ### What You Should Have Learned
@@ -533,17 +578,35 @@ Add state tracking to your chatbot:
 
 Here is my chatbot (v0.3). Update it to v0.4:
 
-Add these features using variables:
-- Ask the user's name at the start, store in user_name
-- Add message_count that increments each turn
-- Include user's name and count in responses
-- Update VERSION to "0.4"
+python
+"""PyBot v0.4: Remembers your name, tracks messages."""
+BOT_NAME = "PyBot"
+VERSION = "0.4"
 
-Keep it simple. No functions, no classes.
+print(f"Hello! I'm {BOT_NAME} v{VERSION}.")
+user_name = input(f"{BOT_NAME}: What's your name? ")
+print(f"{BOT_NAME}: Nice to meet you, {user_name}!")
+print("Type 'quit' to exit.")
 
-### Read the Code
+message_count = 0
 
-Your AI will produce something like this:
+while True:
+    user_input = input(f"{user_name}: ")
+
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye, {user_name}!")
+        print(f"We exchanged {message_count} messages.")
+        break
+
+    message_count += 1
+
+    try:
+        number = int(user_input)
+        response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
+    except ValueError:
+        response = f"You said '{user_input}'"
+
+    print(f"{BOT_NAME}: {response} (msg #{message_count})")
 
 `user_name` stores the result of `input()`. It persists across the entire loop. `message_count` starts at `0` and uses `+= 1` to increment. Both `BOT_NAME` and `VERSION` are constants (uppercase) set once and never changed. The f-strings reference these variables by name, change the variable, change every response.
 
@@ -561,6 +624,23 @@ Notice how your AI handles the `None` initial value and the `is not None` check.
 - Ch 4: Remembers user name, tracks message count
 
 ## Quick Reference
+
+```python
+# Assignment
+x = 5
+x = "hello"        # dynamic typing
+x += 1              # augmented assignment
+x, y = 1, 2         # multiple assignment
+x, y = y, x         # swap
+
+# Constants (convention)
+BOT_NAME = "PyBot"
+MAX_RETRIES = 3
+
+# None
+x = None
+if x is not None:
+    print(x)
 
 ============================================================
 SOURCE: chapters/output.qmd
@@ -595,6 +675,14 @@ What is the difference between print(), f-strings, .format(), and % formatting i
 ### Challenge It
 
 What does this code print, and why?
+
+```python
+print("Name", "Age", "Score", sep=" | ")
+print(f"{'Alice':.5}")
+print("Loading", end="")
+print(".", end="")
+print(".", end="")
+print(" Done!")
 
 Line 1 prints `Name | Age | Score` (sep changes the separator). Line 2 prints `Alice..........   85` (left-aligned with dot fill, right-aligned number). Lines 3-5 print `Loading.. Done!` on one line (end="" suppresses the newline). These are tricks AI uses to create formatted output.
 
@@ -637,6 +725,42 @@ Use f-strings with format specifications for the alignment. Keep the rest of the
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+"""PyBot v0.5: Formatted output."""
+BOT_NAME = "PyBot"
+VERSION = "0.5"
+WIDTH = 50
+
+print("=" * WIDTH)
+print(f"{BOT_NAME:^{WIDTH}}")
+print(f"{'Your Python Assistant':^{WIDTH}}")
+print("=" * WIDTH)
+
+user_name = input(f"{BOT_NAME}: What's your name? ")
+message_count = 0
+
+print(f"{'User: ' + user_name:{WIDTH // 2}}")
+print("-" * WIDTH)
+
+while True:
+    user_input = input(f"{user_name}: ")
+
+    if user_input.lower() == "quit":
+        print("-" * WIDTH)
+        print(f"Goodbye, {user_name}! "
+              f"({message_count} messages)")
+        break
+
+    message_count += 1
+
+    try:
+        number = int(user_input)
+        response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
+    except ValueError:
+        response = f"You said '{user_input}'"
+
+    print(f"{BOT_NAME}: {response}")
 
 `{BOT_NAME:^{WIDTH}}` centres the text in a field of WIDTH characters. `{:>{WIDTH // 2}}` right-aligns in half the width. `"=" * WIDTH` repeats the character. A common pattern for separator lines. The `WIDTH` constant means you change one number to adjust all formatting.
 
@@ -693,7 +817,9 @@ When I look at AI-generated code, I often see `input().strip().lower()` chained 
 
 What is wrong with this input validation code?
 
-`age` is a string (from `input()`), so `age > 0` compares a string to an integer. This raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
+```python
+age = input("Enter your age: ")
+if age > 0 and age  0` compares a string to an integer. This raises a TypeError in Python 3. The fix is `age = int(input("Enter your age: "))` or validating and converting separately. AI generates this exact bug frequently.
 
 ### What You Should Have Learned
 
@@ -735,6 +861,50 @@ Keep the existing features from v0.5 (welcome screen, name, message count, numbe
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+"""PyBot v0.6: Input validation."""
+BOT_NAME = "PyBot"
+VERSION = "0.6"
+WIDTH = 50
+COMMANDS = ["quit", "help"]
+
+print("=" * WIDTH)
+print(f"{BOT_NAME:^{WIDTH}}")
+print("=" * WIDTH)
+
+user_name = input(f"{BOT_NAME}: What's your name? ").strip()
+while not user_name:
+    user_name = input(f"{BOT_NAME}: Please enter your name: ").strip()
+
+print(f"{BOT_NAME}: Nice to meet you, {user_name}!")
+message_count = 0
+
+while True:
+    user_input = input(f"{user_name}: ").strip()
+
+    if not user_input:
+        print(f"{BOT_NAME}: Say something! Type 'help' for commands.")
+        continue
+
+    command = user_input.lower()
+
+    if command == "quit":
+        print(f"{BOT_NAME}: Goodbye, {user_name}!")
+        break
+    elif command == "help":
+        print(f"{BOT_NAME}: Commands: {', '.join(COMMANDS)}")
+        continue
+
+    message_count += 1
+
+    try:
+        number = int(user_input)
+        response = f"{number} is {'even' if number % 2 == 0 else 'odd'}"
+    except ValueError:
+        response = f"Interesting. '{user_input}'"
+
+    print(f"{BOT_NAME}: {response} (msg #{message_count})")
 
 The name input uses a `while not user_name` loop, keeps asking until something is entered. `.strip()` is called on every `input()` to remove accidental spaces. `command = user_input.lower()` creates a normalised version for comparison without changing the display. `continue` skips to the next loop iteration for empty input and help commands.
 
@@ -787,6 +957,16 @@ How does Python evaluate compound conditions? What does `if x and y > 10` actual
 
 What does each of these evaluate to, and why?
 
+```python
+10 / 3
+10 // 3
+10 % 3
+2  10
+"hello" * 3
+"py" in "python"
+not ""
+True + True
+
 `10 / 3` is `3.333...`, `10 // 3` is `3`, `10 % 3` is `1` (remainder). `2  10` is `1024` (exponentiation). `"hello"  3` is `"hellohellohello"` (string repetition). `"py" in "python"` is `True` (substring check). `not ""` is `True` (empty string is falsy). `True + True` is `2` (booleans are integers).
 
 ### What You Should Have Learned
@@ -829,6 +1009,46 @@ Keep the existing features from v0.6.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+"""PyBot v0.7: Operator-based responses."""
+BOT_NAME = "PyBot"
+VERSION = "0.7"
+
+user_name = input(f"{BOT_NAME}: What's your name? ").strip()
+while not user_name:
+    user_name = input("Please enter your name: ").strip()
+
+print(f"Hello, {user_name}! Type 'quit' to exit, 'help' for commands.")
+
+message_count = 0
+has_asked_question = False
+
+while True:
+    user_input = input(f"{user_name}: ").strip()
+
+    if not user_input:
+        print(f"{BOT_NAME}: Type something! Try 'help'.")
+        continue
+
+    if user_input.lower() == "quit":
+        print(f"{BOT_NAME}: Goodbye, {user_name}!")
+        break
+
+    message_count += 1
+    milestone = " (milestone!)" if message_count % 5 == 0 else ""
+
+    if "?" in user_input:
+        has_asked_question = True
+        response = "Good question! I'm still learning..."
+    elif "python" in user_input.lower() or "coding" in user_input.lower():
+        response = "I love that topic!"
+    elif len(user_input) > 50:
+        response = "That's a lot to take in!"
+    else:
+        response = f"You said '{user_input}'"
+
+    print(f"{BOT_NAME}: {response}{milestone}")
 
 `"?" in user_input` uses the `in` operator for substring check. `message_count % 5 == 0` uses modulo to detect every 5th message. `has_asked_question = True` is a boolean flag. It starts `False` and flips once. The `or` in the keyword check means either match triggers the response.
 
@@ -879,6 +1099,15 @@ I see AI using `.lower()`, `.strip()`, `.split()`, `.join()`, `.replace()` on st
 
 What does each line produce?
 
+```python
+len("hello")
+len([1, 2, 3])
+list(range(3))
+sorted([3, 1, 2])
+sorted("python")
+list(enumerate(["a", "b", "c"]))
+list(zip([1, 2], ["x", "y"]))
+
 `len("hello")` is `5`. `len([1, 2, 3])` is `3`. `list(range(3))` is `[0, 1, 2]`. `sorted([3, 1, 2])` is `[1, 2, 3]`. `sorted("python")` is `['h', 'n', 'o', 'p', 't', 'y']`. It sorts characters. `enumerate` gives `[(0, 'a'), (1, 'b'), (2, 'c')]`. `zip` gives `[(1, 'x'), (2, 'y')]`.
 
 ### What You Should Have Learned
@@ -904,7 +1133,8 @@ Add built-in function usage to your chatbot:
 - Use `len()` to measure message length
 - Use `.split()` to count words
 - Use `.lower()` and `.strip()` for input cleaning (already started in Ch 6)
-- Use `sorted()` to show conversation stats alphabetically
+- Track the words the user has used, in the order they first appeared
+- Use a "words" command to show the 5 most recent unique words
 
 ### Prompt It
 
@@ -912,8 +1142,8 @@ Update my chatbot to v0.8. Add text processing using built-in functions:
 
 - Count the number of words in each message using split()
 - For the "stats" command, show: total messages, total words (sum across all messages), average words per message
-- Store all unique words the user has used (use a set)
-- For a "words" command, show the 5 most recently added unique words using sorted() and list slicing
+- Track every unique word the user has used in a list, keeping the words in the order they first appeared (skip a word if it is already in the list)
+- For a "words" command, show the 5 most recently added unique words using list slicing
 
 Keep the existing features from v0.7.
 
@@ -921,11 +1151,62 @@ Keep the existing features from v0.7.
 
 Your AI will produce something like this:
 
-`.split()` breaks a string into a list of words. `len(words)` counts them. `set()` stores unique values. `unique_words.update()` adds without duplicates. `sorted()` returns a sorted list, and `[-5:]` takes the last 5 items. `max(message_count, 1)` prevents division by zero.
+```python
+"""PyBot v0.8: Built-in function processing."""
+BOT_NAME = "PyBot"
+VERSION = "0.8"
+
+user_name = input(f"{BOT_NAME}: What's your name? ").strip()
+while not user_name:
+    user_name = input("Please enter your name: ").strip()
+
+print(f"Hello, {user_name}! Type 'help' for commands.")
+
+message_count = 0
+total_words = 0
+unique_words = []
+
+while True:
+    user_input = input(f"{user_name}: ").strip()
+
+    if not user_input:
+        continue
+
+    command = user_input.lower()
+
+    if command == "quit":
+        print(f"{BOT_NAME}: Goodbye, {user_name}!")
+        break
+    elif command == "help":
+        print(f"{BOT_NAME}: Commands: quit, help, stats, words")
+        continue
+    elif command == "stats":
+        avg = total_words // max(message_count, 1)
+        print(f"{BOT_NAME}: Messages: {message_count}, "
+              f"Words: {total_words}, Avg: {avg}/msg")
+        continue
+    elif command == "words":
+        recent = unique_words[-5:]
+        print(f"{BOT_NAME}: Recent words: {', '.join(recent)}")
+        continue
+
+    message_count += 1
+    words = user_input.split()
+    word_count = len(words)
+    total_words += word_count
+
+    for word in words:
+        if word.lower() not in unique_words:
+            unique_words.append(word.lower())
+
+    print(f"{BOT_NAME}: ({word_count} words) "
+          f"You said '{user_input}'")
+
+`.split()` breaks a string into a list of words. `len(words)` counts them. `unique_words` starts as an empty list. The `not in` check (Chapter 7's membership operator) appends each word only the first time it appears, so `unique_words` keeps the words in the order you first used them. That order is what makes `[-5:]` mean "the 5 most recent". Slicing a list keeps its order. `max(message_count, 1)` prevents division by zero.
 
 ### Stretch It
 
-Add an "info" command that takes a word as argument (e.g., "info python"). Use len() to show the word's character count, and check if it is in the unique_words set.
+Add an "info" command that takes a word as argument (e.g., "info python"). Use len() to show the word's character count, and check if it is in the unique_words list.
 
 ## Your Chatbot So Far
 
@@ -958,7 +1239,7 @@ If you worked through Think Python, Direct AI, you already created functions to 
 
 Why do we use functions in Python? I understand they group code, but what is the real benefit? Explain it from the perspective of someone who mostly reads and modifies AI-generated code. When should something be a function and when is it fine as inline code?
 
-Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions. `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
+Your AI should explain: functions make code reusable, testable, and readable. For someone reading AI code, functions create named abstractions. `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
 
 ### Go Deeper
 
@@ -971,6 +1252,16 @@ What is variable scope in Python? If I define a variable inside a function, can 
 ### Challenge It
 
 What is wrong with this function, and how would you fix it?
+
+```python
+def calculate_average(numbers):
+    total = 0
+    for n in numbers:
+        total += n
+    average = total / len(numbers)
+
+result = calculate_average([10, 20, 30])
+print(f"Average: {result}")
 
 The function calculates the average but never returns it. `result` will be `None`. The fix is adding `return average` at the end. AI generates this bug when it forgets the return statement. The code runs without error but produces `None` instead of the actual value.
 
@@ -1016,6 +1307,63 @@ Keep all existing features from v0.8.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+"""PyBot v0.9: Refactored with functions."""
+BOT_NAME = "PyBot"
+VERSION = "0.9"
+
+def display_welcome(bot_name, version):
+    """Print the welcome banner."""
+    print(f"Hello! I'm {bot_name} v{version}.")
+    print("Type 'help' for commands.")
+
+def get_user_name(bot_name):
+    """Ask for and validate the user's name."""
+    name = input(f"{bot_name}: What's your name? ").strip()
+    while not name:
+        name = input("Please enter your name: ").strip()
+    return name
+
+def get_response(user_input, message_count):
+    """Return a response based on the input."""
+    if "?" in user_input:
+        return "Good question! I'm still learning..."
+    elif "python" in user_input.lower():
+        return "I love that topic!"
+    try:
+        number = int(user_input)
+        return f"{number} is {'even' if number % 2 == 0 else 'odd'}"
+    except ValueError:
+        pass
+    return f"You said '{user_input}'"
+
+def main():
+    """Run the chatbot."""
+    display_welcome(BOT_NAME, VERSION)
+    user_name = get_user_name(BOT_NAME)
+    print(f"Nice to meet you, {user_name}!")
+
+    message_count = 0
+
+    while True:
+        user_input = input(f"{user_name}: ").strip()
+
+        if not user_input:
+            continue
+        if user_input.lower() == "quit":
+            print(f"{BOT_NAME}: Goodbye, {user_name}!")
+            break
+        if user_input.lower() == "help":
+            print(f"{BOT_NAME}: Commands: quit, help")
+            continue
+
+        message_count += 1
+        response = get_response(user_input, message_count)
+        print(f"{BOT_NAME}: {response}")
+
+if __name__ == "__main__":
+    main()
 
 Each function does one thing. `get_user_name()` returns a string. It handles its own validation loop. `get_response()` takes input and returns a response. It does not print anything. `main()` orchestrates the flow. The `if __name__ == "__main__"` guard means this file can be imported without running the chatbot, useful for testing.
 
@@ -1065,6 +1413,15 @@ What values are "truthy" and "falsy" in Python? AI writes things like `if items:
 
 What does this code print, and why is it probably a bug?
 
+```python
+temperature = 35
+if temperature > 30:
+    print("Hot")
+if temperature > 20:
+    print("Warm")
+if temperature > 10:
+    print("Mild")
+
 It prints "Hot", "Warm", and "Mild", all three. The programmer probably wanted only "Hot". The fix is `elif` instead of separate `if` statements. AI generates this bug when it builds conditions incrementally without considering mutual exclusivity.
 
 ### What You Should Have Learned
@@ -1111,6 +1468,26 @@ Update the main() function to handle the tuple return.
 
 Your AI will produce something like this:
 
+```python
+def get_response(user_input):
+    """Categorise input and return (response, should_exit)."""
+    text = user_input.lower().strip()
+
+    # Check categories in priority order
+    if text in ("bye", "goodbye", "quit"):
+        return "Goodbye! It was nice chatting.", True
+    elif text.startswith(("hello", "hi", "hey")):
+        return "Hello! Great to hear from you.", False
+    elif "?" in text:
+        return "Good question! Let me think...", False
+    else:
+        try:
+            number = int(user_input)
+            parity = "even" if number % 2 == 0 else "odd"
+            return f"{number} is {parity}.", False
+        except ValueError:
+            return f"Interesting. '{user_input}'.", False
+
 The `elif` chain ensures only one category matches. Farewells are checked first, if someone says "bye", that takes priority over everything else. `.startswith()` can take a tuple of options. The function returns a tuple `(response, should_exit)`. The boolean flag lets the caller decide what to do.
 
 ### Stretch It
@@ -1147,7 +1524,7 @@ You may recognise lists from projects like the Quiz Game or Contact Book in Thin
 
 Explain Python lists to me. Not just "an ordered collection". I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.
 
-Your AI should cover indexing (starts at 0), negative indexing (`-1` is last item), `IndexError` for out-of-range access, and the key difference: lists are mutable (you can change items), strings are not.
+Your AI should cover indexing (starts at 0), negative indexing (`-1` is last item), `IndexError` for out-of-range access, and the difference: lists are mutable (you can change items), strings are not.
 
 ### Go Deeper
 
@@ -1160,6 +1537,15 @@ What is list slicing in Python? I see notation like `items[1:3]`, `items[:5]`, `
 ### Challenge It
 
 What is wrong with each of these, and what should they be?
+
+```python
+items = [1, 2, 3]
+items = items.append(4)
+
+data = [3, 1, 2]
+data = data.sort()
+
+combined = [1, 2] + 3
 
 Line 2: `append()` returns `None`, so `items` becomes `None`. Fix: just `items.append(4)`. Line 5: same issue. `sort()` returns `None`. Fix: `data.sort()` alone, or `data = sorted(data)`. Line 7: cannot add an integer to a list. Fix: `[1, 2] + [3]` or `[1, 2].append(3)`.
 
@@ -1203,6 +1589,31 @@ Keep the categorised response system from v1.0.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+import random
+
+def get_response(user_input):
+    """Categorise input and return response."""
+    text = user_input.lower().strip()
+
+    if text in ("bye", "goodbye", "quit"):
+        return "Goodbye!", True
+    elif text.startswith(("hello", "hi", "hey")):
+        return random.choice([
+            "Hello! Great to hear from you.",
+            "Hi there! What's on your mind?",
+            "Hey! How can I help?",
+        ]), False
+    elif "?" in text:
+        return "Good question! Let me think...", False
+    else:
+        return random.choice([
+            f"Interesting. '{user_input}'.",
+            "Tell me more about that.",
+            "I see. Go on...",
+            "That's a new one for me!",
+        ]), False
 
 `random.choice()` picks one item from a list. This gives varied responses. The conversation history uses `append()` to add entries (in the main loop, not shown here). `history[-5:]` slices the last 5 items. Lists grow dynamically. No need to declare a size.
 
@@ -1252,6 +1663,23 @@ What are common loop patterns in Python? I see AI using counting loops, accumula
 
 What is wrong with each of these loops?
 
+```python
+# Loop 1
+while True:
+    data = input("Enter data: ")
+    process(data)
+
+# Loop 2
+items = [1, 2, 3, 4, 5]
+for i in range(len(items)):
+    if items[i] % 2 == 0:
+        items.remove(items[i])
+
+# Loop 3
+total = 0
+for i in range(10):
+    total = i
+
 Loop 1: no `break`. It runs forever. Loop 2: modifying a list while iterating over it skips items (removing index 1 shifts everything, so index 2 becomes the old index 3). Loop 3: `total = i` overwrites instead of accumulating, should be `total += i`. These are all bugs AI generates regularly.
 
 ### What You Should Have Learned
@@ -1294,6 +1722,43 @@ Keep existing features.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+POSITIVE_WORDS = ["good", "great", "nice", "thanks", "awesome"]
+
+QUIZ_QUESTIONS = [
+    ("What function prints output?", "print"),
+    ("What type is 3.14?", "float"),
+    ("What keyword exits a loop?", "break"),
+]
+
+def count_positive(text):
+    """Count positive words in text."""
+    words = text.lower().split()
+    count = 0
+    for word in words:
+        if word in POSITIVE_WORDS:
+            count += 1
+    return count
+
+def run_quiz(bot_name):
+    """Run a Python trivia quiz."""
+    score = 0
+    question_num = 0
+
+    while question_num < len(QUIZ_QUESTIONS):
+        question, answer = QUIZ_QUESTIONS[question_num]
+        user_answer = input(f"Q{question_num + 1}: {question} ").strip().lower()
+
+        if user_answer == answer:
+            print(f"{bot_name}: Correct!")
+            score += 1
+        else:
+            print(f"{bot_name}: The answer was '{answer}'.")
+
+        question_num += 1
+
+    print(f"{bot_name}: Quiz done! Score: {score}/{len(QUIZ_QUESTIONS)}")
 
 `count_positive()` uses a for loop with an accumulator pattern (`count += 1`). `run_quiz()` uses a while loop because the number of iterations depends on the question list length. The tuple unpacking `question, answer = QUIZ_QUESTIONS[question_num]` is a pattern AI uses frequently.
 
@@ -1345,6 +1810,16 @@ Explain string slicing in Python. What does `text[2:5]` give me? What about `tex
 
 What does each line produce?
 
+```python
+"hello world".split()
+" ".join(["hello", "world"])
+"  hello  ".strip()
+"hello world".replace("world", "Python")
+"hello"[1:4]
+"hello"[::-1]
+"hello world".title()
+"python".count("o")
+
 `split()` gives `["hello", "world"]`. `join()` gives `"hello world"`. `strip()` gives `"hello"`. `replace()` gives `"hello Python"`. `[1:4]` gives `"ell"` (index 1, 2, 3, stop is exclusive). `[::-1]` gives `"olleh"` (reversed). `title()` gives `"Hello World"`. `count("o")` gives `1`.
 
 ### What You Should Have Learned
@@ -1387,6 +1862,23 @@ Keep existing features.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+def process_message(text):
+    """Clean and analyse a message."""
+    cleaned = " ".join(text.split())  # normalise whitespace
+    words = cleaned.lower().split()
+    return cleaned, words
+
+def format_repeat(text):
+    """Show text in multiple formats."""
+    lines = [
+        f"  UPPER:    {text.upper()}",
+        f"  lower:    {text.lower()}",
+        f"  Title:    {text.title()}",
+        f"  Reversed: {text[::-1]}",
+    ]
+    return "\n".join(lines)
 
 `" ".join(text.split())` is a common idiom. It splits on any whitespace and rejoins with single spaces, normalising "  hello   world  " to "hello world". `text[::-1]` reverses the string. `"\n".join(lines)` joins a list of strings with newlines between them. All these methods return new strings. The original is never modified.
 
@@ -1438,6 +1930,16 @@ How do I loop through a dictionary in Python? What do I get when I use a for loo
 
 What happens with each of these?
 
+```python
+data = {"a": 1, "b": 2}
+data["c"]
+data.get("c")
+data.get("c", 0)
+"a" in data
+1 in data
+data["a"] = 10
+data.update({"b": 20, "d": 4})
+
 `data["c"]` raises `KeyError`. `data.get("c")` returns `None`. `data.get("c", 0)` returns `0`. `"a" in data` is `True` (checks keys). `1 in data` is `False` (1 is a value, not a key). `data["a"] = 10` updates the value. `data.update(...)` merges two dictionaries.
 
 ### What You Should Have Learned
@@ -1481,6 +1983,51 @@ Keep existing features.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+RESPONSES = {
+    "greeting": [
+        "Hello! Great to hear from you.",
+        "Hi there! What's on your mind?",
+    ],
+    "question": [
+        "Good question! Let me think...",
+        "That's interesting. I'm learning too.",
+    ],
+    "farewell": [
+        "Goodbye! It was nice chatting.",
+        "See you later!",
+    ],
+    "default": [
+        "Tell me more about that.",
+        "Interesting! Go on...",
+    ],
+}
+
+KEYWORDS = {
+    "hello": "greeting",
+    "hi": "greeting",
+    "hey": "greeting",
+    "bye": "farewell",
+    "goodbye": "farewell",
+    "quit": "farewell",
+}
+
+def classify_input(text):
+    """Map input to a response category."""
+    words = text.lower().split()
+    for word in words:
+        if word in KEYWORDS:
+            return KEYWORDS[word]
+    if "?" in text:
+        return "question"
+    return "default"
+
+def get_response(user_input):
+    """Get a response using dictionary lookup."""
+    category = classify_input(user_input)
+    responses = RESPONSES.get(category, RESPONSES["default"])
+    return random.choice(responses), category == "farewell"
 
 The if/elif chain is gone, replaced by dictionary lookups. Adding a new response category means adding entries to `RESPONSES` and `KEYWORDS`, not modifying logic. `RESPONSES.get(category, RESPONSES["default"])` uses `.get()` with a fallback. This is how AI structures most configurable systems.
 
@@ -1530,6 +2077,12 @@ How do I work with JSON files in Python? AI-generated code often saves configura
 
 What is wrong with this code?
 
+```python
+f = open("data.txt", "w")
+f.write("Hello")
+# program crashes here
+f.close()
+
 If the program crashes between `open()` and `close()`, the file is never properly closed, potentially losing data. The fix is `with open("data.txt", "w") as f:`. The `with` block guarantees closure. Also, `"w"` mode erases existing content, if that is not intended, use `"a"`.
 
 ### What You Should Have Learned
@@ -1573,6 +2126,24 @@ Keep existing dictionary-based response system from v1.4.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+import json
+
+HISTORY_FILE = "chat_history.json"
+
+def load_history():
+    """Load conversation history from file."""
+    try:
+        with open(HISTORY_FILE, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+def save_history(history):
+    """Save conversation history to file."""
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
 
 `json.load()` reads structured data from a file. `json.dump()` writes it. `indent=2` makes the JSON human-readable. The `try/except FileNotFoundError` handles the first run when no history file exists yet. `"w"` mode is correct here because we write the entire history each time (not appending).
 
@@ -1621,6 +2192,14 @@ Explain Python's try/except properly. What is the right way to use it? Why is `e
 
 What is wrong with this error handling?
 
+```python
+try:
+    data = json.load(open("config.json"))
+    result = data["setting"] / data["count"]
+    save_to_database(result)
+except:
+    pass
+
 Three problems: (1) bare `except:` catches everything including KeyboardInterrupt and SystemExit. (2) `pass` silently swallows errors. You will never know something went wrong. (3) the try block is too broad. It should be separate try/excepts for file reading, data access, and database saving. AI generates this pattern constantly.
 
 ### What You Should Have Learned
@@ -1664,6 +2243,40 @@ Keep existing features.
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+def load_history():
+    """Load history with specific error handling."""
+    try:
+        with open(HISTORY_FILE, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"{BOT_NAME}: No previous history found. "
+              "Starting fresh.")
+        return []
+    except json.JSONDecodeError:
+        print(f"{BOT_NAME}: History file corrupted. "
+              "Starting fresh.")
+        return []
+
+def main():
+    """Main loop with error handling."""
+    display_welcome(BOT_NAME, VERSION)
+    user_name = get_user_name(BOT_NAME)
+    history = load_history()
+    error_log = []
+
+    try:
+        while True:
+            user_input = input(f"{user_name}: ").strip()
+            if not user_input:
+                continue
+            # ... response logic ...
+    except KeyboardInterrupt:
+        print(f"\n{BOT_NAME}: Interrupted! Saving...")
+    finally:
+        save_history(history)
+        print(f"{BOT_NAME}: History saved. Goodbye!")
 
 Each `except` catches a specific exception with a helpful message. `KeyboardInterrupt` is caught separately. It is not a bug, it is a user action. The `finally` block saves history regardless of how the loop ends (quit command, Ctrl+C, or unexpected error). Errors are logged to a list, not silently discarded.
 
@@ -1713,6 +2326,18 @@ How should I use AI for debugging effectively? What information should I include
 
 This code is supposed to count vowels in a string but returns the wrong number. Debug it, do not just fix it, explain how you would find the bug step by step.
 
+```python
+def count_vowels(text):
+    vowels = "aeiou"
+    count = 0
+    for char in text:
+        if char in vowels:
+            count += 1
+    return count
+
+result = count_vowels("Hello World")
+print(f"Vowels: {result}")  # Expected: 3, Got: 3
+
 Trick question. This code is actually correct for lowercase vowels. But it misses uppercase vowels. `"Hello World"` has 3 lowercase vowels (e, o, o) and 0 uppercase. If the expected count was 3, the code works. But if the user expected to count "E" too, the fix is `text.lower()` or `vowels = "aeiouAEIOU"`. The lesson: always clarify what "correct" means.
 
 ### What You Should Have Learned
@@ -1758,7 +2383,33 @@ Keep existing features.
 
 Your AI will produce something like this:
 
-`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.
+```python
+debug_mode = False
+
+def debug_log(*args):
+    """Print debug info only when debug mode is on."""
+    if debug_mode:
+        print("[DEBUG]", *args)
+
+# Inside main(), before the loop:
+    global debug_mode  # without this, the assignment below creates a local
+
+    # In the main loop:
+    if command == "debug":
+        debug_mode = not debug_mode
+        status = "ON" if debug_mode else "OFF"
+        print(f"{BOT_NAME}: Debug mode {status}")
+        continue
+
+    category = classify_input(user_input)
+    debug_log(f"Raw: '{user_input}'")
+    debug_log(f"Category: {category}")
+    debug_log(f"History: {len(history)} entries")
+
+    response, should_exit = get_response(user_input)
+    debug_log(f"Response: '{response}'")
+
+`debug_log()` uses `*args` to accept any number of arguments, just like `print()`. The `[DEBUG]` prefix makes debug output instantly recognisable. The toggle uses `not debug_mode` to flip the boolean. And `global debug_mode` is not decoration: without it, the assignment inside `main()` creates a local variable, `debug_log()` keeps reading the untouched global, and the toggle silently does nothing. This is the same scope trap Chapter 9's Challenge demonstrated, and a bug AI produces regularly. A function that conditionally prints is how professional code handles debug output.
 
 ### Stretch It
 
@@ -1806,6 +2457,14 @@ What are edge cases and how do I identify them? When AI generates a function, wh
 
 Here is a function and its AI-generated tests. Are the tests good enough?
 
+```python
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+def test_average():
+    assert calculate_average([1, 2, 3]) == 2.0
+    assert calculate_average([10, 20]) == 15.0
+
 The tests miss: empty list (ZeroDivisionError), single item list, negative numbers, very large numbers, non-numeric values. The function itself has a bug. It crashes on empty input. Good tests would catch this. AI-generated tests often test only the happy path.
 
 ### What You Should Have Learned
@@ -1836,7 +2495,7 @@ Add pytest tests for your chatbot:
 
 ### Prompt It
 
-Create a test file `tests/test_chatbot.py` for my chatbot. Write pytest tests for:
+Update my chatbot to v1.8. First, save your chatbot script as `chatbot.py` in your project folder so the tests can import it (Chapter 19 covers modules properly). Then create a test file `tests/test_chatbot.py` with pytest tests for:
 
 - classify_input("hello") should return "greeting"
 - classify_input("bye") should return "farewell"
@@ -1851,6 +2510,49 @@ Use the arrange/act/assert pattern. Include at least one test that checks an edg
 ### Read the Code
 
 Your AI will produce something like this:
+
+```python
+"""Tests for the chatbot response system."""
+from chatbot import classify_input, get_response
+
+def test_classify_greeting():
+    assert classify_input("hello") == "greeting"
+    assert classify_input("hi there") == "greeting"
+    assert classify_input("Hey!") == "greeting"
+
+def test_classify_farewell():
+    assert classify_input("bye") == "farewell"
+    assert classify_input("goodbye") == "farewell"
+
+def test_classify_question():
+    assert classify_input("what is Python?") == "question"
+
+def test_classify_default():
+    assert classify_input("random text") == "default"
+
+def test_classify_empty():
+    """Edge case: empty input should not crash."""
+    assert classify_input("") == "default"
+
+def test_classify_whitespace():
+    """Edge case: whitespace-only input."""
+    assert classify_input("   ") == "default"
+
+def test_response_type():
+    """get_response returns (str, bool)."""
+    response, should_exit = get_response("hello")
+    assert isinstance(response, str)
+    assert isinstance(should_exit, bool)
+
+def test_response_farewell_exits():
+    """Farewell responses should signal exit."""
+    _, should_exit = get_response("bye")
+    assert should_exit is True
+
+def test_response_greeting_continues():
+    """Greeting responses should not exit."""
+    _, should_exit = get_response("hello")
+    assert should_exit is False
 
 Each test function does one thing and has a descriptive name. Edge cases (empty input, whitespace) have their own tests with docstrings explaining why. `isinstance()` checks the type without caring about the specific value. The `_` in `_, should_exit` discards a value you do not need. Run with `pytest tests/` from the project root.
 
@@ -1899,6 +2601,12 @@ How do I organise my own code into multiple files? If I have a chatbot with sepa
 ### Challenge It
 
 What is wrong with these imports?
+
+```python
+from os import *
+import json
+from my_project import helper  # file exists in same directory
+import pandas  # never installed
 
 Line 1: `import *` imports everything from os, pollutes namespace with hundreds of names. Line 3: might fail depending on how you run the script, relative imports depend on the project structure and whether you are running as a script or module. Line 4: `ModuleNotFoundError` if pandas is not installed. AI frequently imports packages it assumes are installed.
 
@@ -1949,6 +2657,31 @@ Show me the import statements for each file and the key functions. Keep the exis
 
 Your AI will produce something like this:
 
+python
+# chatbot/responses.py
+import random
+from chatbot.config import RESPONSES, KEYWORDS
+
+def classify_input(text):
+    words = text.lower().split()
+    for word in words:
+        if word in KEYWORDS:
+            return KEYWORDS[word]
+    if "?" in text:
+        return "question"
+    return "default"
+
+def get_response(user_input):
+    category = classify_input(user_input)
+    responses = RESPONSES.get(category, RESPONSES["default"])
+    return random.choice(responses), category == "farewell"
+```python
+# run.py
+from chatbot.main import main
+
+if __name__ == "__main__":
+    main()
+
 Each file imports only what it needs. `config.py` has no imports. It is pure data. `responses.py` imports from `config` using the package path `from chatbot.config import ...`. `run.py` is the entry point, one line. The `__init__.py` file can be empty; it just tells Python this directory is a package.
 
 ### Stretch It
@@ -1996,6 +2729,16 @@ What is inheritance in Python? AI sometimes writes `class EnhancedBot(Chatbot):`
 ### Challenge It
 
 What is wrong with this class?
+
+```python
+class Counter:
+    count = 0
+
+    def increment(self):
+        count += 1
+
+    def get_count():
+        return count
 
 Three bugs: (1) `increment` uses `count` instead of `self.count`. It tries to modify a local variable that does not exist. (2) `get_count` is missing `self` parameter. It cannot be called as a method. (3) `count = 0` at the class level is a class variable shared by all instances. It should be `self.count = 0` in `__init__` for per-instance counting.
 
@@ -2047,6 +2790,97 @@ Entry point:
 
 Your AI will produce something like this:
 
+```python
+"""PyBot v2.0: Object-oriented chatbot."""
+import json
+import random
+
+class Chatbot:
+    """A terminal chatbot with memory and
+    pattern matching."""
+
+    def __init__(self, name, version):
+        """Initialise the chatbot."""
+        self.name = name
+        self.version = version
+        self.message_count = 0
+        self.debug_mode = False
+        self.history = self.load_history()
+        self.responses = {
+            "greeting": ["Hello!", "Hi there!"],
+            "farewell": ["Goodbye!", "See you!"],
+            "question": ["Good question!"],
+            "default": ["Interesting!", "Go on..."],
+        }
+        self.keywords = {
+            "hello": "greeting",
+            "hi": "greeting",
+            "bye": "farewell",
+        }
+
+    def classify(self, text):
+        """Classify input into a response category."""
+        words = text.lower().split()
+        for word in words:
+            if word in self.keywords:
+                return self.keywords[word]
+        if "?" in text:
+            return "question"
+        return "default"
+
+    def respond(self, user_input):
+        """Generate a response."""
+        category = self.classify(user_input)
+        responses = self.responses.get(
+            category, self.responses["default"]
+        )
+        return random.choice(responses), category == "farewell"
+
+    def load_history(self):
+        """Load conversation history from file."""
+        try:
+            with open("chat_history.json") as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
+
+    def save_history(self):
+        """Save conversation history to file."""
+        with open("chat_history.json", "w") as f:
+            json.dump(self.history, f, indent=2)
+
+    def run(self):
+        """Main conversation loop."""
+        print(f"Hello! I'm {self.name} v{self.version}.")
+        user_name = input(f"{self.name}: Your name? ").strip()
+        print(f"Nice to meet you, {user_name}!")
+
+        try:
+            while True:
+                user_input = input(f"{user_name}: ").strip()
+                if not user_input:
+                    continue
+
+                self.message_count += 1
+                response, should_exit = self.respond(user_input)
+                print(f"{self.name}: {response}")
+
+                self.history.append({
+                    "user": user_input,
+                    "bot": response,
+                })
+
+                if should_exit:
+                    break
+        except KeyboardInterrupt:
+            print(f"\n{self.name}: Interrupted!")
+        finally:
+            self.save_history()
+
+if __name__ == "__main__":
+    bot = Chatbot("PyBot", "2.0")
+    bot.run()
+
 All state lives on `self`: `self.history`, `self.keywords`, `self.message_count`. Methods access this shared state through `self`. You could create two chatbots with different names: `bot1 = Chatbot("PyBot", "2.0")` and `bot2 = Chatbot("Helper", "1.0")`. Each has its own state. The `if __name__ == "__main__"` guard means this file works both as a script and as an importable module.
 
 ### Stretch It
@@ -2061,7 +2895,7 @@ Create an EnhancedBot class that inherits from Chatbot and adds a mood system. O
 
 Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.
 
-More importantly, you built it through conversation with AI, directing it, questioning it, and understanding every line it produced.
+You built it through conversation with AI, directing it, questioning it, and understanding every line it produced.
 
 ## Quick Reference
 
@@ -2079,7 +2913,7 @@ This book is part of a series, and the ideas in it were sharpened against its si
 
 The Python community and the open source ecosystem behind Quarto, GitHub, and GitHub Pages made it possible to write, build, and publish without a traditional publisher. The tools are free, transparent, and remarkably good.
 
-AI tools were used throughout the writing process. Claude (Anthropic) served as a conversation partner for drafting, iterating, and refining. The process was exactly what the book advocates: consult the AI, evaluate its output, and make your own decisions. The author's judgement shaped every page. The AI made the work faster. It did not make the decisions.
+AI tools were used throughout the writing process. Claude (Anthropic) was a conversation partner for drafting, iterating, and refining. The process was exactly what the book advocates: consult the AI, evaluate its output, and make your own decisions. The author's judgement shaped every page. The AI made the work faster. It did not make the decisions.
 
 ============================================================
 SOURCE: about-author.qmd
@@ -2087,9 +2921,9 @@ SOURCE: about-author.qmd
 
 # About the Author 
 
-Michael Borck is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while leveraging AI tools effectively.
+Michael Borck is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while using AI tools effectively.
 
-Michael believes that the future of programming lies not in delegating to AI, but in conversing with it---treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.
+Michael believes that the future of programming lies not in delegating to AI, but in conversing with it, treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.
 
 When not writing about AI collaboration, Michael works on practical applications of these principles across software development, education, and creative projects. He creates educational software and resources, and explores the 80/20 principle in learning and productivity.
 
@@ -2097,9 +2931,9 @@ When not writing about AI collaboration, Michael works on practical applications
 
 Connect
 
-- michaelborck.dev --- Professional work and projects
-- michaelborck.education --- Educational software and resources
-- 8020workshop.com --- Passion projects and workshops
+- GitHub: code, books and projects
+- books.borck.education: the free book collection
+- 8020workshop.com: passion projects and workshops
 - LinkedIn
 
 ---
@@ -2142,12 +2976,13 @@ Python is an interpreted language, your code is executed line by line rather tha
 
 The simplest way to run Python is the interactive interpreter. Open a terminal and type:
 
+```bash
+python3
 You will see a prompt (`>>>`) where you can type Python statements and see results immediately:
 
-### IPython
-
-IPython is an enhanced interactive shell with features like tab completion, syntax highlighting, and history search:
-
+bash
+pip install ipython
+ipython
 Useful IPython features:
 
 - Tab completion: type the start of a name and press Tab
@@ -2158,12 +2993,13 @@ Useful IPython features:
 
 For larger programs, save your code in `.py` files and run them:
 
-On macOS/Linux, you can make scripts directly executable:
-
-### Jupyter Notebooks
-
-Jupyter Notebooks combine code, output, and documentation in one file. They are ideal for learning, data analysis, and experimentation:
-
+python
+#!/usr/bin/env python3
+"""My first script."""
+print("Hello from a script!")
+bash
+pip install jupyter
+jupyter notebook
 This opens a browser-based interface where you can create and run notebooks.
 
 ### Choosing the Right Environment
@@ -2185,17 +3021,37 @@ Miniconda provides Python plus the `conda` package manager in a lightweight inst
 2. Run the installer and follow the prompts
 3. Verify the installation:
 
-### Alternative: Official Python
+bash
+# Install a package
+pip install requests
 
-Download from python.org if you prefer a minimal install without conda.
+# Install a specific version
+pip install pandas==2.0.0
 
-### Managing Packages with pip
+# Install from a requirements file
+pip install -r requirements.txt
 
-pip is Python's standard package installer:
-
+# List installed packages
+pip list
 ### Virtual Environments
 
 Virtual environments isolate each project's dependencies:
+
+```bash
+# Create a virtual environment
+python3 -m venv .venv
+
+# Activate it
+# macOS/Linux:
+source .venv/bin/activate
+# Windows:
+.venv\Scripts\activate
+
+# Install packages (isolated to this environment)
+pip install pytest
+
+# Deactivate when done
+deactivate
 
 Always use a virtual environment for each project. Add `.venv/` to your `.gitignore` file.
 
@@ -2223,9 +3079,15 @@ PyCharm is a full-featured alternative with built-in Python support.
 
 Jupyter Lab extends Jupyter Notebooks with a more complete IDE-like interface:
 
-## Troubleshooting
+bash
+# macOS/Linux: add to your PATH
+echo 'export PATH="$HOME/miniconda3/bin:$PATH"' \
+    >> ~/.bashrc
+source ~/.bashrc
 
-"command not found" errors:
+# Windows (PowerShell as administrator):
+$conda = "C:\Users\YourUsername\miniconda3"
+$Env:Path = "$Env:Path;$conda;$conda\Scripts"
 
 Package conflicts: Use virtual environments to isolate projects.
 

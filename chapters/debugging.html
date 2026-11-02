@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,14 +80,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6453f418aeef366c23116eb9cb0b6816.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-512512a359692b6a4a631bfed0d4ecc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-67bea543f22db4742c43a9439edb3419.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,6 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../book-design.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -479,7 +483,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Paperback ISBN 979-8-254-65364-6</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -506,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#your-chatbot-so-far" id="toc-your-chatbot-so-far" class="nav-link" data-scroll-target="#your-chatbot-so-far"><span class="header-section-number">17.5</span> Your Chatbot So Far</a></li>
   <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference"><span class="header-section-number">17.6</span> Quick Reference</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/debugging.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/debugging.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="/code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="/code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -700,20 +706,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"[DEBUG]"</span>, <span class="op">*</span>args)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># In the main loop:</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="op">==</span> <span class="st">"debug"</span>:</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        debug_mode <span class="op">=</span> <span class="kw">not</span> debug_mode</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"ON"</span> <span class="cf">if</span> debug_mode <span class="cf">else</span> <span class="st">"OFF"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Debug mode </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    category <span class="op">=</span> classify_input(user_input)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Raw: '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Category: </span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"History: </span><span class="sc">{</span><span class="bu">len</span>(history)<span class="sc">}</span><span class="ss"> entries"</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    response, should_exit <span class="op">=</span> get_response(user_input)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside main(), before the loop:</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> debug_mode  <span class="co"># without this, the assignment below creates a local</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># In the main loop:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="op">==</span> <span class="st">"debug"</span>:</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        debug_mode <span class="op">=</span> <span class="kw">not</span> debug_mode</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"ON"</span> <span class="cf">if</span> debug_mode <span class="cf">else</span> <span class="st">"OFF"</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Debug mode </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    category <span class="op">=</span> classify_input(user_input)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Raw: '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Category: </span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"History: </span><span class="sc">{</span><span class="bu">len</span>(history)<span class="sc">}</span><span class="ss"> entries"</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    response, should_exit <span class="op">=</span> get_response(user_input)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Notice">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -724,7 +733,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>debug_log()</code> uses <code>*args</code> to accept any number of arguments, just like <code>print()</code>. The <code>[DEBUG]</code> prefix makes debug output instantly recognisable. The toggle uses <code>not debug_mode</code> to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.</p>
+<p><code>debug_log()</code> uses <code>*args</code> to accept any number of arguments, just like <code>print()</code>. The <code>[DEBUG]</code> prefix makes debug output instantly recognisable. The toggle uses <code>not debug_mode</code> to flip the boolean. And <code>global debug_mode</code> is not decoration: without it, the assignment inside <code>main()</code> creates a local variable, <code>debug_log()</code> keeps reading the untouched global, and the toggle silently does nothing. This is the same scope trap Chapter 9’s Challenge demonstrated, and a bug AI produces regularly. A function that conditionally prints is how professional code handles debug output.</p>
 </div>
 </div>
 </section>
@@ -885,16 +894,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1368,58 +1377,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"[DEBUG]"</span>, <span class="op">*</span>args)</span>
 <span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="co"># In the main loop:</span></span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="op">==</span> <span class="st">"debug"</span>:</span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>        debug_mode <span class="op">=</span> <span class="kw">not</span> debug_mode</span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"ON"</span> <span class="cf">if</span> debug_mode <span class="cf">else</span> <span class="st">"OFF"</span></span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Debug mode </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>    category <span class="op">=</span> classify_input(user_input)</span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Raw: '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Category: </span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"History: </span><span class="sc">{</span><span class="bu">len</span>(history)<span class="sc">}</span><span class="ss"> entries"</span>)</span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>    response, should_exit <span class="op">=</span> get_response(user_input)</span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="in">`debug_log()`</span> uses <span class="in">`*args`</span> to accept any number of arguments, just like <span class="in">`print()`</span>. The <span class="in">`[DEBUG]`</span> prefix makes debug output instantly recognisable. The toggle uses <span class="in">`not debug_mode`</span> to flip the boolean. This pattern. A function that conditionally prints, is how professional code handles debug output.</span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>Add timing to the debug output. Use <span class="in">`import time`</span> and <span class="in">`time.time()`</span> to measure how long each response takes to generate. Show it as "<span class="co">[</span><span class="ot">DEBUG</span><span class="co">]</span> Response time: 0.002s".</span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 1-15: Full features with file persistence</span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 16: Error handling and logging</span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ch 17: Debug mode with toggle and verbose output**</span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Reference</span></span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="co"># Print debugging</span></span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DEBUG: </span><span class="sc">{</span>variable<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)        <span class="co"># Python 3.8+</span></span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DEBUG: x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="co"># Python debugger</span></span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="bu">breakpoint</span>()  <span class="co"># pauses execution here</span></span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a><span class="co"># Commands: n (next), s (step in), c (continue),</span></span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a><span class="co">#           p variable (print), q (quit)</span></span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditional debug output</span></span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> debug_log(<span class="op">*</span>args, enabled<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> enabled:</span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"[DEBUG]"</span>, <span class="op">*</span>args)</span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Assert (catches impossible states)</span></span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(items) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">"List should not be empty"</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="co"># Inside main(), before the loop:</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> debug_mode  <span class="co"># without this, the assignment below creates a local</span></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>    <span class="co"># In the main loop:</span></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="op">==</span> <span class="st">"debug"</span>:</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>        debug_mode <span class="op">=</span> <span class="kw">not</span> debug_mode</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"ON"</span> <span class="cf">if</span> debug_mode <span class="cf">else</span> <span class="st">"OFF"</span></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Debug mode </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>    category <span class="op">=</span> classify_input(user_input)</span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Raw: '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Category: </span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"History: </span><span class="sc">{</span><span class="bu">len</span>(history)<span class="sc">}</span><span class="ss"> entries"</span>)</span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>    response, should_exit <span class="op">=</span> get_response(user_input)</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>    debug_log(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="in">`debug_log()`</span> uses <span class="in">`*args`</span> to accept any number of arguments, just like <span class="in">`print()`</span>. The <span class="in">`[DEBUG]`</span> prefix makes debug output instantly recognisable. The toggle uses <span class="in">`not debug_mode`</span> to flip the boolean. And <span class="in">`global debug_mode`</span> is not decoration: without it, the assignment inside <span class="in">`main()`</span> creates a local variable, <span class="in">`debug_log()`</span> keeps reading the untouched global, and the toggle silently does nothing. This is the same scope trap Chapter 9's Challenge demonstrated, and a bug AI produces regularly. A function that conditionally prints is how professional code handles debug output.</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>Add timing to the debug output. Use <span class="in">`import time`</span> and <span class="in">`time.time()`</span> to measure how long each response takes to generate. Show it as "<span class="co">[</span><span class="ot">DEBUG</span><span class="co">]</span> Response time: 0.002s".</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 1-15: Full features with file persistence</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 16: Error handling and logging</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ch 17: Debug mode with toggle and verbose output**</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Reference</span></span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a><span class="co"># Print debugging</span></span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DEBUG: </span><span class="sc">{</span>variable<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)        <span class="co"># Python 3.8+</span></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DEBUG: x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a><span class="co"># Python debugger</span></span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a><span class="bu">breakpoint</span>()  <span class="co"># pauses execution here</span></span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Commands: n (next), s (step in), c (continue),</span></span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="co">#           p variable (print), q (quit)</span></span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditional debug output</span></span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> debug_log(<span class="op">*</span>args, enabled<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> enabled:</span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"[DEBUG]"</span>, <span class="op">*</span>args)</span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a><span class="co"># Assert (catches impossible states)</span></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(items) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">"List should not be empty"</span></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

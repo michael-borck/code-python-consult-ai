@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,14 +80,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6453f418aeef366c23116eb9cb0b6816.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-512512a359692b6a4a631bfed0d4ecc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-67bea543f22db4742c43a9439edb3419.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,6 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../book-design.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -479,7 +483,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Paperback ISBN 979-8-254-65364-6</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -506,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#your-chatbot-so-far" id="toc-your-chatbot-so-far" class="nav-link" data-scroll-target="#your-chatbot-so-far"><span class="header-section-number">10.5</span> Your Chatbot So Far</a></li>
   <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference"><span class="header-section-number">10.6</span> Quick Reference</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/making_decisions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/making_decisions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="/code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="/code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -885,16 +891,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,14 +80,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6453f418aeef366c23116eb9cb0b6816.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-512512a359692b6a4a631bfed0d4ecc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-67bea543f22db4742c43a9439edb3419.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,6 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../book-design.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -479,7 +483,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Paperback ISBN 979-8-254-65364-6</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -506,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#your-chatbot-so-far" id="toc-your-chatbot-so-far" class="nav-link" data-scroll-target="#your-chatbot-so-far"><span class="header-section-number">8.5</span> Your Chatbot So Far</a></li>
   <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference"><span class="header-section-number">8.6</span> Quick Reference</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/using_functions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/using_functions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="/code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="/code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -659,7 +665,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use <code>len()</code> to measure message length</li>
 <li>Use <code>.split()</code> to count words</li>
 <li>Use <code>.lower()</code> and <code>.strip()</code> for input cleaning (already started in Ch 6)</li>
-<li>Use <code>sorted()</code> to show conversation stats alphabetically</li>
+<li>Track the words the user has used, in the order they first appeared</li>
+<li>Use a “words” command to show the 5 most recent unique words</li>
 </ul>
 </section>
 <section id="prompt-it" class="level3" data-number="8.4.2">
@@ -678,8 +685,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Count the number of words in each message using split()</li>
 <li>For the “stats” command, show: total messages, total words (sum across all messages), average words per message</li>
-<li>Store all unique words the user has used (use a set)</li>
-<li>For a “words” command, show the 5 most recently added unique words using sorted() and list slicing</li>
+<li>Track every unique word the user has used in a list, keeping the words in the order they first appeared (skip a word if it is already in the list)</li>
+<li>For a “words” command, show the 5 most recently added unique words using list slicing</li>
 </ul>
 <p>Keep the existing features from v0.7.</p>
 </div>
@@ -700,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>message_count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>total_words <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>unique_words <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>unique_words <span class="op">=</span> []</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">: "</span>).strip()</span>
@@ -722,7 +729,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"Words: </span><span class="sc">{</span>total_words<span class="sc">}</span><span class="ss">, Avg: </span><span class="sc">{</span>avg<span class="sc">}</span><span class="ss">/msg"</span>)</span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"words"</span>:</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        recent <span class="op">=</span> <span class="bu">sorted</span>(unique_words)[<span class="op">-</span><span class="dv">5</span>:]</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        recent <span class="op">=</span> unique_words[<span class="op">-</span><span class="dv">5</span>:]</span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Recent words: </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(recent)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
@@ -730,10 +737,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> user_input.split()</span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    word_count <span class="op">=</span> <span class="bu">len</span>(words)</span>
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    total_words <span class="op">+=</span> word_count</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    unique_words.update(w.lower() <span class="cf">for</span> w <span class="kw">in</span> words)</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: (</span><span class="sc">{</span>word_count<span class="sc">}</span><span class="ss"> words) "</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> word.lower() <span class="kw">not</span> <span class="kw">in</span> unique_words:</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>            unique_words.append(word.lower())</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: (</span><span class="sc">{</span>word_count<span class="sc">}</span><span class="ss"> words) "</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="What to Notice">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -744,7 +754,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>.split()</code> breaks a string into a list of words. <code>len(words)</code> counts them. <code>set()</code> stores unique values. <code>unique_words.update()</code> adds without duplicates. <code>sorted()</code> returns a sorted list, and <code>[-5:]</code> takes the last 5 items. <code>max(message_count, 1)</code> prevents division by zero.</p>
+<p><code>.split()</code> breaks a string into a list of words. <code>len(words)</code> counts them. <code>unique_words</code> starts as an empty list. The <code>not in</code> check (Chapter 7’s membership operator) appends each word only the first time it appears, so <code>unique_words</code> keeps the words in the order you first used them. That order is what makes <code>[-5:]</code> mean “the 5 most recent”. Slicing a list keeps its order. <code>max(message_count, 1)</code> prevents division by zero.</p>
 </div>
 </div>
 </section>
@@ -760,7 +770,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Add an “info” command that takes a word as argument (e.g., “info python”). Use len() to show the word’s character count, and check if it is in the unique_words set.</p>
+<p>Add an “info” command that takes a word as argument (e.g., “info python”). Use len() to show the word’s character count, and check if it is in the unique_words list.</p>
 </div>
 </div>
 </section>
@@ -913,16 +923,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1361,118 +1371,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`len()`</span> to measure message length</span>
 <span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`.split()`</span> to count words</span>
 <span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`.lower()`</span> and <span class="in">`.strip()`</span> for input cleaning (already started in Ch 6)</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`sorted()`</span> to show conversation stats alphabetically</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prompt It</span></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>Update my chatbot to v0.8. Add text processing using built-in functions:</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Count the number of words in each message using split()</span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For the "stats" command, show: total messages, total words (sum across all messages), average words per message</span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Store all unique words the user has used (use a set)</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For a "words" command, show the 5 most recently added unique words using sorted() and list slicing</span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>Keep the existing features from v0.7.</span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the Code</span></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>Your AI will produce something like this:</span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="co">"""PyBot v0.8: Built-in function processing."""</span></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>BOT_NAME <span class="op">=</span> <span class="st">"PyBot"</span></span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>VERSION <span class="op">=</span> <span class="st">"0.8"</span></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: What's your name? "</span>).strip()</span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> user_name:</span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>    user_name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Please enter your name: "</span>).strip()</span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">! Type 'help' for commands."</span>)</span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>message_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>total_words <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>unique_words <span class="op">=</span> <span class="bu">set</span>()</span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">: "</span>).strip()</span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> user_input:</span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>    command <span class="op">=</span> user_input.lower()</span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="op">==</span> <span class="st">"quit"</span>:</span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Goodbye, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"help"</span>:</span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Commands: quit, help, stats, words"</span>)</span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"stats"</span>:</span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>        avg <span class="op">=</span> total_words <span class="op">//</span> <span class="bu">max</span>(message_count, <span class="dv">1</span>)</span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Messages: </span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss">, "</span></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"Words: </span><span class="sc">{</span>total_words<span class="sc">}</span><span class="ss">, Avg: </span><span class="sc">{</span>avg<span class="sc">}</span><span class="ss">/msg"</span>)</span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"words"</span>:</span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>        recent <span class="op">=</span> <span class="bu">sorted</span>(unique_words)[<span class="op">-</span><span class="dv">5</span>:]</span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Recent words: </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(recent)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>    message_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> user_input.split()</span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>    word_count <span class="op">=</span> <span class="bu">len</span>(words)</span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>    total_words <span class="op">+=</span> word_count</span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>    unique_words.update(w.lower() <span class="cf">for</span> w <span class="kw">in</span> words)</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Track the words the user has used, in the order they first appeared</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use a "words" command to show the 5 most recent unique words</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prompt It</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>Update my chatbot to v0.8. Add text processing using built-in functions:</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Count the number of words in each message using split()</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For the "stats" command, show: total messages, total words (sum across all messages), average words per message</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Track every unique word the user has used in a list, keeping the words in the order they first appeared (skip a word if it is already in the list)</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For a "words" command, show the 5 most recently added unique words using list slicing</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>Keep the existing features from v0.7.</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the Code</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>Your AI will produce something like this:</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="co">"""PyBot v0.8: Built-in function processing."""</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>BOT_NAME <span class="op">=</span> <span class="st">"PyBot"</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>VERSION <span class="op">=</span> <span class="st">"0.8"</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>user_name <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: What's your name? "</span>).strip()</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> user_name:</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>    user_name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Please enter your name: "</span>).strip()</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">! Type 'help' for commands."</span>)</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>message_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>total_words <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>unique_words <span class="op">=</span> []</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"</span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">: "</span>).strip()</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> user_input:</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>    command <span class="op">=</span> user_input.lower()</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> command <span class="op">==</span> <span class="st">"quit"</span>:</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Goodbye, </span><span class="sc">{</span>user_name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"help"</span>:</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Commands: quit, help, stats, words"</span>)</span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"stats"</span>:</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>        avg <span class="op">=</span> total_words <span class="op">//</span> <span class="bu">max</span>(message_count, <span class="dv">1</span>)</span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Messages: </span><span class="sc">{</span>message_count<span class="sc">}</span><span class="ss">, "</span></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>              <span class="ss">f"Words: </span><span class="sc">{</span>total_words<span class="sc">}</span><span class="ss">, Avg: </span><span class="sc">{</span>avg<span class="sc">}</span><span class="ss">/msg"</span>)</span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> command <span class="op">==</span> <span class="st">"words"</span>:</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>        recent <span class="op">=</span> unique_words[<span class="op">-</span><span class="dv">5</span>:]</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: Recent words: </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(recent)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>    message_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> user_input.split()</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>    word_count <span class="op">=</span> <span class="bu">len</span>(words)</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>    total_words <span class="op">+=</span> word_count</span>
 <span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: (</span><span class="sc">{</span>word_count<span class="sc">}</span><span class="ss"> words) "</span></span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> word.lower() <span class="kw">not</span> <span class="kw">in</span> unique_words:</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>            unique_words.append(word.lower())</span>
 <span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="in">`.split()`</span> breaks a string into a list of words. <span class="in">`len(words)`</span> counts them. <span class="in">`set()`</span> stores unique values. <span class="in">`unique_words.update()`</span> adds without duplicates. <span class="in">`sorted()`</span> returns a sorted list, and <span class="in">`[-5:]`</span> takes the last 5 items. <span class="in">`max(message_count, 1)`</span> prevents division by zero.</span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>BOT_NAME<span class="sc">}</span><span class="ss">: (</span><span class="sc">{</span>word_count<span class="sc">}</span><span class="ss"> words) "</span></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>Add an "info" command that takes a word as argument (e.g., "info python"). Use len() to show the word's character count, and check if it is in the unique_words set.</span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a><span class="in">`.split()`</span> breaks a string into a list of words. <span class="in">`len(words)`</span> counts them. <span class="in">`unique_words`</span> starts as an empty list. The <span class="in">`not in`</span> check (Chapter 7's membership operator) appends each word only the first time it appears, so <span class="in">`unique_words`</span> keeps the words in the order you first used them. That order is what makes <span class="in">`[-5:]`</span> mean "the 5 most recent". Slicing a list keeps its order. <span class="in">`max(message_count, 1)`</span> prevents division by zero.</span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stretch It</span></span>
 <span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 1-4: Loop, structure, types, name memory</span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 5-6: Formatted output, input validation</span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 7: Operators, keyword matching</span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ch 8: Word counting, unique words, stats commands**</span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Reference</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="co"># Common built-ins</span></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="st">"hello"</span>)          <span class="co"># 5</span></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">42</span>)              <span class="co"># &lt;class 'int'&gt;</span></span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a><span class="bu">range</span>(<span class="dv">5</span>)              <span class="co"># 0, 1, 2, 3, 4</span></span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>])     <span class="co"># [1, 2, 3]</span></span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>)          <span class="co"># 7</span></span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>)          <span class="co"># 2</span></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])        <span class="co"># 6</span></span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">5</span>)               <span class="co"># 5</span></span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop helpers</span></span>
-<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, item <span class="kw">in</span> <span class="bu">enumerate</span>(items):</span>
-<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>Add an "info" command that takes a word as argument (e.g., "info python"). Use len() to show the word's character count, and check if it is in the unique_words list.</span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Chatbot So Far</span></span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 1-4: Loop, structure, types, name memory</span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 5-6: Formatted output, input validation</span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ch 7: Operators, keyword matching</span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ch 8: Word counting, unique words, stats commands**</span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Reference</span></span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Common built-ins</span></span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="st">"hello"</span>)          <span class="co"># 5</span></span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">42</span>)              <span class="co"># &lt;class 'int'&gt;</span></span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="bu">range</span>(<span class="dv">5</span>)              <span class="co"># 0, 1, 2, 3, 4</span></span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>])     <span class="co"># [1, 2, 3]</span></span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>)          <span class="co"># 7</span></span>
+<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>)          <span class="co"># 2</span></span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])        <span class="co"># 6</span></span>
+<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">5</span>)               <span class="co"># 5</span></span>
 <span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a, b <span class="kw">in</span> <span class="bu">zip</span>(list1, list2):</span>
-<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> -&gt; </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a><span class="co"># String methods</span></span>
-<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a><span class="co">"hello world"</span>.split()       <span class="co"># ["hello", "world"]</span></span>
-<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a><span class="co">" "</span>.join([<span class="st">"a"</span>, <span class="st">"b"</span>])        <span class="co"># "a b"</span></span>
-<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello"</span>.lower()             <span class="co"># "hello"</span></span>
-<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a><span class="co">"  hi  "</span>.strip()            <span class="co"># "hi"</span></span>
-<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a><span class="co">"hello"</span>.replace(<span class="st">"l"</span>, <span class="st">"L"</span>)   <span class="co"># "heLLo"</span></span>
-<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop helpers</span></span>
+<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, item <span class="kw">in</span> <span class="bu">enumerate</span>(items):</span>
+<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a, b <span class="kw">in</span> <span class="bu">zip</span>(list1, list2):</span>
+<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> -&gt; </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a><span class="co"># String methods</span></span>
+<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a><span class="co">"hello world"</span>.split()       <span class="co"># ["hello", "world"]</span></span>
+<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a><span class="co">" "</span>.join([<span class="st">"a"</span>, <span class="st">"b"</span>])        <span class="co"># "a b"</span></span>
+<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello"</span>.lower()             <span class="co"># "hello"</span></span>
+<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a><span class="co">"  hi  "</span>.strip()            <span class="co"># "hi"</span></span>
+<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a><span class="co">"hello"</span>.replace(<span class="st">"l"</span>, <span class="st">"L"</span>)   <span class="co"># "heLLo"</span></span>
+<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

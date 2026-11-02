@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,14 +80,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6453f418aeef366c23116eb9cb0b6816.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-512512a359692b6a4a631bfed0d4ecc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-67bea543f22db4742c43a9439edb3419.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,6 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="book-design.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -479,12 +483,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Paperback ISBN 979-8-254-65364-6</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></div>
+    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="/code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="/code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -513,15 +519,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/author-photo.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
 </figure>
 </div>
-<p><strong>Michael Borck</strong> is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while leveraging AI tools effectively.</p>
-<p>Michael believes that the future of programming lies not in delegating to AI, but in conversing with it—treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.</p>
+<p><strong>Michael Borck</strong> is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while using AI tools effectively.</p>
+<p>Michael believes that the future of programming lies not in delegating to AI, but in conversing with it, treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.</p>
 <p>When not writing about AI collaboration, Michael works on practical applications of these principles across software development, education, and creative projects. He creates educational software and resources, and explores the 80/20 principle in learning and productivity.</p>
 <hr>
 <p><strong>Connect</strong></p>
 <ul>
-<li><a href="https://michaelborck.dev">michaelborck.dev</a> — Professional work and projects</li>
-<li><a href="https://michaelborck.education">michaelborck.education</a> — Educational software and resources</li>
-<li><a href="https://8020workshop.com">8020workshop.com</a> — Passion projects and workshops</li>
+<li><a href="https://github.com/michael-borck">GitHub</a>: code, books and projects</li>
+<li><a href="https://books.borck.education">books.borck.education</a>: the free book collection</li>
+<li><a href="https://8020workshop.com">8020workshop.com</a>: passion projects and workshops</li>
 <li><a href="https://linkedin.com/in/michaelborck">LinkedIn</a></li>
 </ul>
 <hr>
@@ -657,16 +663,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1032,9 +1038,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/author-photo.jpg)</span>{width=200px fig-align="center"}</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>**Michael Borck** is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while leveraging AI tools effectively.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>**Michael Borck** is a software developer and educator passionate about the intersection of human expertise and artificial intelligence. He developed the Intentional Prompting methodology to help programmers maintain agency and deepen their understanding while using AI tools effectively.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Michael believes that the future of programming lies not in delegating to AI, but in conversing with it---treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Michael believes that the future of programming lies not in delegating to AI, but in conversing with it, treating AI as a collaborative partner that enhances human capability rather than replacing human understanding.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>When not writing about AI collaboration, Michael works on practical applications of these principles across software development, education, and creative projects. He creates educational software and resources, and explores the 80/20 principle in learning and productivity.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -1042,9 +1048,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Connect**</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">michaelborck.dev</span><span class="co">](https://michaelborck.dev)</span> --- Professional work and projects</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">michaelborck.education</span><span class="co">](https://michaelborck.education)</span> --- Educational software and resources</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">8020workshop.com</span><span class="co">](https://8020workshop.com)</span> --- Passion projects and workshops</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/michael-borck)</span>: code, books and projects</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">books.borck.education</span><span class="co">](https://books.borck.education)</span>: the free book collection</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">8020workshop.com</span><span class="co">](https://8020workshop.com)</span>: passion projects and workshops</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">LinkedIn</span><span class="co">](https://linkedin.com/in/michaelborck)</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>---</span>

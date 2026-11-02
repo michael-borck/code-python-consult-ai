@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,14 +80,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6453f418aeef366c23116eb9cb0b6816.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-5c1318cf63eba56dbef7ba16bc7d56f5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-512512a359692b6a4a631bfed0d4ecc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d05bf2c3428979ef9cb136ebd9d2bc87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-67bea543f22db4742c43a9439edb3419.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-a0c208db2eb124d1f96df216fe31c4f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,6 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../book-design.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -479,7 +483,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
     </ul>
     </div>
-</nav>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Paperback ISBN 979-8-254-65364-6</p>
+</div></div></nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -498,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-you-need" id="toc-what-you-need" class="nav-link" data-scroll-target="#what-you-need"><span class="header-section-number">1.6</span> What You Need</a></li>
   <li><a href="#how-this-book-is-different" id="toc-how-this-book-is-different" class="nav-link" data-scroll-target="#how-this-book-is-different"><span class="header-section-number">1.7</span> How This Book Is Different</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/after_vibe_coding.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/michael-borck/code-python-consult-ai/edit/main/chapters/after_vibe_coding.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="/code-python-consult-ai.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li><li><a href="/code-python-consult-ai.epub"><i class="bi bi-book"></i>Download EPUB</a></li><li><a href="../llm.txt"><i class="bi bi-robot"></i>Download llm.txt</a></li><li><a href="https://github.com/michael-borck/code-python-consult-ai"><i class="bi bi-github"></i>GitHub</a></li><li><a href="https://deepwiki.com/michael-borck/code-python-consult-ai"><i class="bi bi-search"></i>DeepWiki</a></li><li><a href="https://books.borck.education"><i class="bi bi-collection"></i>All Books</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -538,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="what-this-book-does" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="what-this-book-does"><span class="header-section-number">1.3</span> What This Book Does</h2>
-<p>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.</p>
+<p>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need. Put differently: AI is very good at producing a first draft. Your job is shifting from writing first drafts to evaluating and editing them: spotting the draft that is confidently wrong, asking for the change that actually fixes it, and knowing the difference. That is a higher-order skill than writing the code yourself, and it is the skill this book builds.</p>
 <p>You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:</p>
 <section id="the-two-chat-method" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="the-two-chat-method"><span class="header-section-number">1.3.1</span> The Two-Chat Method</h3>
@@ -546,6 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>The Gap.</strong> Step back. Reflect on what you learned. Decide what matters for what you are building.</p>
 <p><strong>Chat 2: Building Session.</strong> Open a fresh conversation. This time, you have context. You write a specific, informed prompt. The AI produces better code because your input is better. And you can read what it produces because you understand the concept.</p>
 <p>This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.</p>
+<p>In current terms, this is <em>context engineering</em>. When you run a Thinking Session and then carry only your decisions into a fresh Building Session, you are doing the one thing that makes an AI assistant, or an autonomous agent, genuinely useful: curating the context it works from, and refusing to let it inherit a messy, half-explored conversation. The same habit scales from a two-chat workflow to directing a coding agent that edits your files: the quality of what it produces is bounded by the quality of the brief you hand it. Get the thinking right first, and the building, by you or by an agent, gets dramatically easier.</p>
 </section>
 </section>
 <section id="your-first-thinking-session" class="level2" data-number="1.4">
@@ -656,6 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.</p>
 <p>Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</p>
 <p>That is the skill that outlasts any specific tool or framework.</p>
+<p>It is also the skill that keeps you valuable as the tools improve. When AI can write competent code for anyone, the person who can read, evaluate, and steer it is the one adding the variation competent sameness cannot, and that is the one thing that does not commoditise. The full argument is in <em>Conversation, Not Delegation</em>.</p>
 
 
 <!-- -->
@@ -770,16 +778,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1163,7 +1171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## What This Book Does</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need.</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>This book gives you enough Python to stay on the right side of the wall. Not to become a software engineer, to become someone who can read AI-generated code, spot when it is wrong, and direct AI precisely enough to get what you actually need. Put differently: AI is very good at producing a first draft. Your job is shifting from writing first drafts to evaluating and editing them: spotting the draft that is confidently wrong, asking for the change that actually fixes it, and knowing the difference. That is a higher-order skill than writing the code yourself, and it is the skill this book builds.</span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>You will learn through conversation with AI, not by reading textbook explanations. Every chapter follows the same pattern:</span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -1177,78 +1185,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>This is the difference between vibe coding and intentional prompting. Vibe coding does not compound. Each session starts from zero. Understanding compounds. Each concept makes the next one easier.</span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your First Thinking Session</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>In current terms, this is *context engineering*. When you run a Thinking Session and then carry only your decisions into a fresh Building Session, you are doing the one thing that makes an AI assistant, or an autonomous agent, genuinely useful: curating the context it works from, and refusing to let it inherit a messy, half-explored conversation. The same habit scales from a two-chat workflow to directing a coding agent that edits your files: the quality of what it produces is bounded by the quality of the brief you hand it. Get the thinking right first, and the building, by you or by an agent, gets dramatically easier.</span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>Open your AI assistant. Paste this prompt:</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your First Thinking Session</span></span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>I have been using you to write Python code for me, but I do not really understand what is happening in the code you produce. I want to learn the fundamentals so I can stay in control.</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>What are the five most important Python concepts I should understand first if my goal is to be able to read and evaluate AI-generated code? For each one, give me a one-sentence explanation and a one-line code example.</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>Read the response carefully. Your AI will likely mention variables, data types, functions, control flow, and something about data structures. These are the chapters in this book.</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>Open your AI assistant. Paste this prompt:</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>I have been using you to write Python code for me, but I do not really understand what is happening in the code you produce. I want to learn the fundamentals so I can stay in control.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>What are the five most important Python concepts I should understand first if my goal is to be able to read and evaluate AI-generated code? For each one, give me a one-sentence explanation and a one-line code example.</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>Now push back:</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>Read the response carefully. Your AI will likely mention variables, data types, functions, control flow, and something about data structures. These are the chapters in this book.</span>
 <span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>You listed five concepts. But when I look at AI-generated Python code, I also see things like try/except, import statements, and classes. Where do those fit? Are they more or less important than the five you listed?</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Your AI should explain that the first five concepts are foundational, everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>This is what a Thinking Session feels like: exploring, questioning, building a mental map. You are not trying to write code yet. You are trying to understand the territory.</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>Now push back:</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Thinking Session Prompt"}</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>You listed five concepts. But when I look at AI-generated Python code, I also see things like try/except, import statements, and classes. Where do those fit? Are they more or less important than the five you listed?</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Look For"}</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>Your AI should explain that the first five concepts are foundational, everything else builds on them. If it just lists more concepts without prioritising, ask it to rank them by how often they appear in typical AI-generated code.</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your First Building Session</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>This is what a Thinking Session feels like: exploring, questioning, building a mental map. You are not trying to write code yet. You are trying to understand the territory.</span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>Now open a fresh conversation. You are going to build the project that evolves across every chapter: a terminal chatbot.</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your First Building Session</span></span>
 <span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>Write me a minimal Python chatbot that runs in a terminal. It should:</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print a greeting with the bot's name</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Accept user messages in a loop</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Echo the message back with a simple response</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exit when the user types "quit"</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>Keep it under 15 lines. Use only basic Python. No imports, no classes, no functions beyond print() and input().</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>Your AI will produce something like this:</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>Now open a fresh conversation. You are going to build the project that evolves across every chapter: a terminal chatbot.</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Building Session Prompt"}</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>Write me a minimal Python chatbot that runs in a terminal. It should:</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print a greeting with the bot's name</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Accept user messages in a loop</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Echo the message back with a simple response</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exit when the user types "quit"</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>Keep it under 15 lines. Use only basic Python. No imports, no classes, no functions beyond print() and input().</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello! I'm </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">. Type 'quit' to exit."</span>)</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"You: "</span>)</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input.lower() <span class="op">==</span> <span class="st">"quit"</span>:</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">: Goodbye!"</span>)</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">: You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Even in 10 lines, you can see several concepts: a variable (<span class="in">`bot_name`</span>), a string with formatting (<span class="in">`f"..."`</span>), a loop (<span class="in">`while True`</span>), a decision (<span class="in">`if`</span>), and a way to stop (<span class="in">`break`</span>). You do not need to understand all of these yet. Each chapter covers one. By the end of the book, you will understand every line.</span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>Run this code. Talk to it. It is not smart. It just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>Your AI will produce something like this:</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>bot_name <span class="op">=</span> <span class="st">"PyBot"</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hello! I'm </span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">. Type 'quit' to exit."</span>)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"You: "</span>)</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input.lower() <span class="op">==</span> <span class="st">"quit"</span>:</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">: Goodbye!"</span>)</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>bot_name<span class="sc">}</span><span class="ss">: You said '</span><span class="sc">{</span>user_input<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="What to Notice"}</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>Even in 10 lines, you can see several concepts: a variable (<span class="in">`bot_name`</span>), a string with formatting (<span class="in">`f"..."`</span>), a loop (<span class="in">`while True`</span>), a decision (<span class="in">`if`</span>), and a way to stop (<span class="in">`break`</span>). You do not need to understand all of these yet. Each chapter covers one. By the end of the book, you will understand every line.</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You Need</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>Run this code. Talk to it. It is not smart. It just echoes what you say. But it is the skeleton that you will build on. By chapter 20, it will have memory, pattern matching, file persistence, error handling, and a proper class structure.</span>
 <span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Python installed.** If you do not have it yet, see the appendix on Setting Up Python.</span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**An AI assistant.** Any will do. ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.</span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**A willingness to read code.** Not just run it, read it, question it, understand it. That is the skill this book teaches.</span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## How This Book Is Different</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## What You Need</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Python installed.** If you do not have it yet, see the appendix on Setting Up Python.</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**An AI assistant.** Any will do. ChatGPT, Claude, Gemini, or whatever you prefer. The prompts in this book work with all of them.</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**A willingness to read code.** Not just run it, read it, question it, understand it. That is the skill this book teaches.</span>
 <span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## How This Book Is Different</span></span>
 <span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>There are hundreds of Python tutorials. This one does not explain variables the way a textbook does. Instead, it shows you how to explore variables through conversation with AI, then apply what you learned by directing AI to build something specific.</span>
 <span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>That is the skill that outlasts any specific tool or framework.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>Every chapter follows the same two-chat structure. By the end, you will not just know Python. You will know how to learn anything through AI conversation, and how to direct AI to build what you actually need.</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>That is the skill that outlasts any specific tool or framework.</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>It is also the skill that keeps you valuable as the tools improve. When AI can write competent code for anyone, the person who can read, evaluate, and steer it is the one adding the variation competent sameness cannot, and that is the one thing that does not commoditise. The full argument is in *Conversation, Not Delegation*.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
