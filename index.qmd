@@ -28,7 +28,7 @@ Every chapter follows the same pattern:
 
 **Quick Reference**. A minimal syntax card for future reference.
 
-The two-chat structure used in every chapter comes from the *Conversation, Not Delegation* framework and is detailed in *Converse Python, Partner AI*. You do not need to read either to use this book. The method is built into every chapter. The key insight: understanding compounds. Each concept makes the next one easier. Vibe coding does not compound. Each session starts from zero.
+The two-chat structure used in every chapter comes from the *Conversation, Not Delegation* framework and is detailed in *Converse Python, Partner AI*. You do not need to read either to use this book. The method is built into every chapter. Understanding compounds. Each concept makes the next one easier. Vibe coding does not compound. Each session starts from zero.
 
 ## Who This Book Is For
 
@@ -129,7 +129,7 @@ Two ways in:
 - **Converse Python, Partner AI**: the intentional prompting methodology applied to software development. A companion you can read alongside any Python book.
 - **Code Python, Consult AI** (this book): focused Python fundamentals through AI conversation.
 - **Ship Python, Orchestrate AI**: professional Python development practices and tooling.
-- **The Absolute Minimum You Must Know**: the free, always-current web companion at [minimum.borck.education](https://minimum.borck.education) — quick primers on every topic this series covers in depth.
+- **The Absolute Minimum You Must Know**: the free, always-current web companion at [minimum.borck.education](https://minimum.borck.education), quick primers on every topic this series covers in depth.
 - **Build Web, Guide AI**: web development with AI as your development partner.
 
 All titles are available at [books.borck.education](https://books.borck.education).

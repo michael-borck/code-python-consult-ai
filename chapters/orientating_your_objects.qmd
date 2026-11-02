@@ -215,7 +215,7 @@ Create an EnhancedBot class that inherits from Chatbot and adds a mood system. O
 
 Your chatbot journey is complete. You started with 10 lines of print statements and built a full-featured conversational program with pattern matching, persistent memory, error handling, tests, and a clean class-based architecture.
 
-More importantly, you built it through conversation with AI, directing it, questioning it, and understanding every line it produced.
+You built it through conversation with AI, directing it, questioning it, and understanding every line it produced.
 
 ## Quick Reference
 

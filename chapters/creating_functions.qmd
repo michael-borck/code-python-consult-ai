@@ -20,7 +20,7 @@ If you worked through *Think Python, Direct AI*, you already created functions t
 Why do we use functions in Python? I understand they group code, but what is the real benefit? Explain it from the perspective of someone who mostly reads and modifies AI-generated code. When should something be a function and when is it fine as inline code?
 :::
 
-Your AI should explain: functions make code reusable, testable, and readable. The key insight for someone reading AI code is that functions create named abstractions. `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
+Your AI should explain: functions make code reusable, testable, and readable. For someone reading AI code, functions create named abstractions. `get_response(message)` tells you what happens without reading the implementation. If your AI only talks about "avoiding code duplication," push for the readability and testability angles.
 
 ### Go Deeper
 

@@ -20,7 +20,7 @@ You may recognise lists from projects like the Quiz Game or Contact Book in *Thi
 Explain Python lists to me. Not just "an ordered collection". I want to understand: how do I access individual items, what happens when I try to access an item that does not exist, and what is the difference between a list and a string? They seem similar.
 :::
 
-Your AI should cover indexing (starts at 0), negative indexing (`-1` is last item), `IndexError` for out-of-range access, and the key difference: lists are mutable (you can change items), strings are not.
+Your AI should cover indexing (starts at 0), negative indexing (`-1` is last item), `IndexError` for out-of-range access, and the difference: lists are mutable (you can change items), strings are not.
 
 ### Go Deeper
 

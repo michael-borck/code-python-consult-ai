@@ -60,7 +60,7 @@ What will each of these produce, and why?
 
 When AI generates code that processes user input, it almost always needs type conversion. The input comes in as a string, but the code needs a number. Now you can spot that moment in the code and verify AI handled it correctly.
 
-In the Building Session, you will make your chatbot respond differently to numbers versus text. The first step toward intelligent responses.
+In the Building Session, you will make your chatbot respond differently to numbers versus text, the first step toward intelligent responses.
 
 ## Building Session
 

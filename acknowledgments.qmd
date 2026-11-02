@@ -8,4 +8,4 @@ This book is part of a series, and the ideas in it were sharpened against its si
 
 The Python community and the open source ecosystem behind Quarto, GitHub, and GitHub Pages made it possible to write, build, and publish without a traditional publisher. The tools are free, transparent, and remarkably good.
 
-AI tools were used throughout the writing process. Claude (Anthropic) served as a conversation partner for drafting, iterating, and refining. The process was exactly what the book advocates: consult the AI, evaluate its output, and make your own decisions. The author's judgement shaped every page. The AI made the work faster. It did not make the decisions.
+AI tools were used throughout the writing process. Claude (Anthropic) was a conversation partner for drafting, iterating, and refining. The process was exactly what the book advocates: consult the AI, evaluate its output, and make your own decisions. The author's judgement shaped every page. The AI made the work faster. It did not make the decisions.

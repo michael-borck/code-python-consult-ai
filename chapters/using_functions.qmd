@@ -148,7 +148,7 @@ while True:
 ```
 
 ::: {.callout-tip title="What to Notice"}
-`.split()` breaks a string into a list of words. `len(words)` counts them. `unique_words` starts as an empty list. The `not in` check (Chapter 7's membership operator) appends each word only the first time it appears, so `unique_words` keeps the words in the order you first used them. That order is what makes `[-5:]` mean "the 5 most recent" — slicing a list keeps its order. `max(message_count, 1)` prevents division by zero.
+`.split()` breaks a string into a list of words. `len(words)` counts them. `unique_words` starts as an empty list. The `not in` check (Chapter 7's membership operator) appends each word only the first time it appears, so `unique_words` keeps the words in the order you first used them. That order is what makes `[-5:]` mean "the 5 most recent". Slicing a list keeps its order. `max(message_count, 1)` prevents division by zero.
 :::
 
 ### Stretch It
