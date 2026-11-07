@@ -21,6 +21,8 @@ But the wall is not the only reason to learn Python. AI keeps getting smarter, a
 
 Whether you hit the wall and need to get past it, or you are simply curious about how the code works, this book gives you that understanding.
 
+There is a deeper reason to learn Python that has nothing to do with writing more code. AI has not earned compiler-grade trust. It is non-deterministic and it fails fluently, which means the checks have to come from outside it. You need enough Python to read the output, test it, and build those checks. Not all of Python. Enough to hold the boundary.
+
 ## How This Book Works
 
 This is not a traditional Python textbook. You will not read pages of explanations and then try exercises at the end. Instead, you will learn through conversation with AI.
