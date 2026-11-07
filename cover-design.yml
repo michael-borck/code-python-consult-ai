@@ -2,12 +2,12 @@ version: 1
 style: editorial-c
 art: cover-art.png
 family: PROGRAMMING / PYTHON 02
-accent: '#345F8B'
-background: '#E1E8F2'
+accent: '#2DD4BF'
+background: '#134E4A'
 title_lines:
 - Code Python,
 - Consult AI
-dark: false
+dark: true
 pixel: false
 scene: inspect
 art_origin: Locally constructed editable vector illustration.
